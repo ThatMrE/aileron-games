@@ -317,6 +317,71 @@
     }
     .cta-note.flash { color: var(--gold); }
 
+    /* ── Gallery: the board in the wild ── */
+    .gallery-wrap { max-width: 920px; margin: 3.5rem auto 0; }
+    .gallery-head { text-align: center; margin-bottom: 1.6rem; }
+    .gallery-head .cta-eyebrow { margin-bottom: 0.5rem; }
+    .gallery-head h2 {
+      font-family: 'Cinzel', serif; font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2.1rem); letter-spacing: 0.04em;
+      color: var(--gold); text-shadow: 0 0 26px rgba(201,151,79,0.25);
+    }
+    .gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+    }
+    .shot {
+      position: relative; margin: 0; overflow: hidden;
+      border-radius: 12px; cursor: zoom-in;
+      border: 1px solid rgba(201,151,79,0.22);
+      background: rgba(20,12,8,0.6);
+      aspect-ratio: 4 / 3;
+    }
+    .shot img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, filter 0.3s ease;
+    }
+    .shot:hover img { transform: scale(1.06); }
+    .shot figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.4rem 0.7rem 0.55rem;
+      font-family: 'Space Mono', monospace; font-size: 0.66rem;
+      line-height: 1.35; letter-spacing: 0.02em; color: #f4ecd8;
+      background: linear-gradient(to top, rgba(12,7,5,0.92), transparent);
+      opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+    }
+    .shot:hover figcaption, .shot:focus-within figcaption { opacity: 1; transform: translateY(0); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(6,3,2,0.92); padding: 2rem;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox figure { margin: 0; max-width: 1100px; text-align: center; }
+    .lightbox img {
+      max-width: 100%; max-height: 82vh; border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    }
+    .lightbox figcaption {
+      margin-top: 0.9rem; font-family: 'Cinzel', serif; color: var(--gold);
+      font-size: clamp(0.95rem, 2.4vw, 1.2rem); letter-spacing: 0.03em;
+    }
+    .lightbox-close {
+      position: fixed; top: 1.1rem; right: 1.4rem;
+      font-family: 'Space Mono', monospace; font-size: 1.6rem; line-height: 1;
+      color: var(--ghost); background: none; border: none; cursor: pointer;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    @media (max-width: 620px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .shot figcaption { opacity: 1; transform: none; }
+    }
+
     footer {
       text-align: center; margin-top: 3rem;
       font-family: 'Space Mono', monospace; font-size: 0.66rem;
@@ -405,6 +470,47 @@
       <a class="cta-btn" id="kickstarterBtn" href="#" role="button">Support the Kickstarter</a>
       <div class="cta-note" id="ctaNote"></div>
     </section>
+
+    <div class="gallery-wrap">
+      <div class="gallery-head">
+        <div class="cta-eyebrow">&#128248; From the field</div>
+        <h2>The board in the wild</h2>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-1.jpg" alt="The full laser-cut Weji board and walnut planchette leaning against a stone wall in the greenery" loading="lazy">
+          <figcaption>The full board, made in RVA &mdash; basking between s&eacute;ances.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-2.jpg" alt="A full-size anatomical skeleton reclining with the Weji board across its lap" loading="lazy">
+          <figcaption>A regular takes a turn at the board.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-3.jpg" alt="Two anatomical skulls beside the walnut planchette on a shelf of curiosities" loading="lazy">
+          <figcaption>Second opinions from the anatomy department.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-4.jpg" alt="A two-headed calf taxidermy mount next to the engraved Weji board" loading="lazy">
+          <figcaption>Two heads, one question for the spirits.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-5.jpg" alt="The walnut planchette resting over comparative-anatomy specimen blocks" loading="lazy">
+          <figcaption>The planchette consults the comparative hearts.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-6.jpg" alt="Close-up of the walnut ghost-shaped planchette with its round viewing window" loading="lazy">
+          <figcaption>The walnut planchette, resting between readings.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <figure>
+        <img id="lightboxImg" src="" alt="">
+        <figcaption id="lightboxCap"></figcaption>
+      </figure>
+    </div>
 
     <footer>
       Weji &middot; an <a href="index.html">Aileron Games</a> curiosity &middot; Made in RVA
@@ -680,6 +786,40 @@
         setTimeout(() => ctaNote.classList.remove('flash'), 1200);
       });
     }
+
+    /* ── Gallery lightbox ── */
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCap = document.getElementById('lightboxCap');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(fig) {
+      const img = fig.querySelector('img');
+      const cap = fig.querySelector('figcaption');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = cap ? cap.textContent : '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    gallery.querySelectorAll('.shot').forEach(fig => {
+      fig.addEventListener('click', () => openLightbox(fig));
+      fig.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(fig); }
+      });
+    });
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
   </script>
 </body>
 </html>
