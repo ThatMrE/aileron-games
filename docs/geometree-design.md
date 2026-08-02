@@ -1,9 +1,10 @@
-# GeomeTree — Game Design Document (v0.1)
+# GeomeTree — Game Design Document (v0.2)
 
 > **One-line pitch:** A learning game where geometry *evolves*. You build each
 > form by tracing its edges — from a single line, up through the polygons and
-> the Platonic solids, to a dodecahedron — and every form you complete grows a
-> branch of your geometry tree.
+> all five Platonic solids, to a dodecahedron — and every form you complete grows
+> a branch of your geometry tree, in a synesthetic, audio-reactive build inspired
+> by *Tetris Effect*.
 
 ---
 
@@ -16,21 +17,27 @@
 2. **Learn by constructing, not memorising.** You never read that "a cube has 12
    edges." You draw all twelve. The count, the structure and the symmetry are
    things your hands discover, not facts on a card.
-3. **One verb, nine forms.** Every level uses the same action — *connect two
+3. **One verb, ten forms.** Every level uses the same action — *connect two
    vertices to draw the edge between them.* A single mechanic scales from a
    1-edge line to a 30-edge dodecahedron, so difficulty comes from the form, not
    from new rules.
 4. **The tree is the score.** "Stack shapes to grow your tree" is the whole
    reward loop. Completing a form lights its node and grows the trunk one branch
    higher. The side panel is a living progress bar shaped like evolution itself.
+5. **The build is synesthetic (a *Tetris Effect* nod).** Play is audiovisual, not
+   silent. Each edge you draw fires a particle burst and plays the next note of a
+   rising pentatonic; completion blooms a shower, a chord and a colour wash. Every
+   form owns a **hue zone** — the palette journeys cyan → violet as you evolve —
+   and the whole soundtrack climbs in key form by form, so finishing the tree
+   *feels* like an ascent.
 
 ---
 
 ## 2. The evolution ladder
 
-Nine forms, ordered by increasing dimension and complexity. Each carries one
+Ten forms, ordered by increasing dimension and complexity. Each carries one
 "fun fact" that is surfaced while you build it and again on completion — the
-learning payload.
+learning payload. Forms 6–10 are the **complete set of five Platonic solids**.
 
 | # | Form | Dim | V | E | Teaching beat |
 |---|------|-----|---|---|---------------|
@@ -42,11 +49,15 @@ learning payload.
 | 6 | Tetrahedron | 3D | 4 | 6 | The first solid; simplest Platonic solid. |
 | 7 | Cube | 3D | 8 | 12 | Euler's formula V − E + F = 2 appears (8 − 12 + 6). |
 | 8 | Octahedron | 3D | 6 | 12 | The cube's dual — swap faces for corners. |
-| 9 | Dodecahedron | 3D | 20 | 30 | The crown: 12 pentagons; Plato's shape for the cosmos. |
+| 9 | Icosahedron | 3D | 12 | 30 | The most faces of any Platonic solid; the dodecahedron's dual (and many virus shells). |
+| 10 | Dodecahedron | 3D | 20 | 30 | The crown: 12 pentagons; Plato's shape for the cosmos. |
 
 The arc: **1D → 2D polygons of rising order → 3D solids of rising complexity →
 dodecahedron.** The pentagon (form 4) is deliberately taught before the
-dodecahedron (form 9) so the player recognises its twelve faces.
+dodecahedron (form 10) so the player recognises its twelve faces. Vertex count
+rises monotonically across the solids (4 → 8 → 6… → 12 → 20); the icosahedron
+sits just before its dual, the dodecahedron, so the duality lands right as the
+tree crowns.
 
 ---
 
@@ -59,8 +70,23 @@ dodecahedron (form 9) so the player recognises its twelve faces.
   *walk* around a polygon, tracing edge after edge.
 - Clicking a non-adjacent vertex (no target edge, or one already drawn) simply
   re-anchors the trace — mistakes cost nothing.
-- Complete **every** target edge → the form blooms (a burst ring; polygons fill
-  with light) and a **Grow →** button advances you up the tree.
+- Complete **every** target edge → the form blooms (a burst ring, a particle
+  shower, a colour wash and a resolving chord) and a **Grow →** button advances
+  you up the tree.
+
+### Synesthetic feedback (the *Tetris Effect* layer)
+- **Colour zones.** Each form owns a hue on a cyan→violet journey; edges,
+  vertices, the ambient nebula glow, drifting motes, particles and the tree
+  thumbnails all take that hue, so evolving the tree reads as moving through
+  zones.
+- **Particles & pulse.** Placing an edge fires a hue-tinted burst at its midpoint;
+  completion fires a full shower from the centre. An ambient glow and the vertices
+  breathe on a ~90 BPM beat.
+- **A rising soundtrack.** Every placed edge plays the next note of a major
+  pentatonic (never dissonant), so tracing a form *is* a little ascending melody;
+  completion arpeggiates a major chord with a low bloom. The musical key climbs
+  form by form (G3 → G4 across the ten), and audio initialises on the first click
+  (respecting autoplay) — a **Sound** toggle mutes it.
 
 ### 3D forms
 - Solids render as **depth-shaded wireframes** — nearer edges brighter and
@@ -96,9 +122,12 @@ dodecahedron (form 9) so the player recognises its twelve faces.
   the Aileron cyan/dark house style (Orbitron / Inter / Space Mono).
 - 2D forms use explicit perimeter edges; 3D solids derive their edge set
   automatically by connecting every vertex pair at the minimum pairwise distance
-  — which yields exactly the right edges for the tetra (6), cube (12), octa (12)
-  and dodeca (30). Dodecahedron vertices are generated from the classic
-  golden-ratio coordinates.
+  — which yields exactly the right edges for the tetra (6), cube (12), octa (12),
+  icosa (30) and dodeca (30). Icosahedron and dodecahedron vertices are generated
+  from the classic golden-ratio coordinates.
+- Particles and motes are lightweight canvas primitives drawn with additive
+  (`lighter`) compositing; audio is synthesised live with the Web Audio API
+  (oscillators + gain envelopes) — no asset files.
 - `?embed=1` strips the page chrome and reports its height to a parent, so the
   homepage can iframe just the board (same convention as DNA Chess).
 
@@ -108,8 +137,8 @@ dodecahedron (form 9) so the player recognises its twelve faces.
 
 - **Net-folding view** — assemble a solid by folding its 2D net, making the
   face-count explicit.
-- **Icosahedron** — complete the set of five Platonic solids (the dodecahedron's
-  own dual).
+- **Duality mode** — morph a solid into its dual (cube↔octahedron,
+  dodecahedron↔icosahedron) by turning faces into vertices on screen.
 - **Timed / fewest-clicks challenge** and a shareable "tree grown" card.
 - **Star polygons & tilings** — a 2D branch of the tree (pentagram from the
   pentagon's diagonals).
