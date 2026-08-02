@@ -143,6 +143,23 @@
     .btn-outline:hover:not(:disabled) { border-color: var(--cyan); background: rgba(0,229,255,0.06); }
     .btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
+    /* ── ABOUT / HOW IT WORKS ── */
+    .g-about { max-width: 1000px; margin: 2rem auto 0; padding: 2rem; position: relative; z-index: 1; }
+    .g-about h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .g-about h2 span { color: var(--cyan); }
+    .g-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    @media (max-width: 900px) {
+      .g-about { padding: 1.5rem; }
+      .g-about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* ── GAME BOARD ── */
     .board {
       position: relative;
@@ -530,6 +547,59 @@
     </div>
 
   </main>
+
+  <!-- HOW IT WORKS (moved from home page spotlight) -->
+  <section class="g-about">
+    <p class="g-eyebrow">&#x269B;&#xFE0F; How HIGGS Works</p>
+    <h2><span>The Physics</span> Behind the Duel</h2>
+    <div class="g-about-grid">
+      <div>
+        <p style="font-size:1rem; color:var(--muted); line-height:1.8; margin-bottom:1rem;">
+          Every turn you draw a hand of particle cards and <strong style="color:var(--text)">collide two of them at a Feynman vertex</strong>. Whether the interaction fires is a <strong style="color:var(--text)">probability roll set by the real coupling constant</strong> of the force involved &mdash; the strong force is reliable, the weak force is fickle, and the Higgs prefers heavy partners. Win the collision and you keep the initiative and chain into another; miss and your turn passes.
+        </p>
+        <p style="font-size:1rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">
+          Build heavier and heavier particles &mdash; gluons, W and Z bosons, top and bottom quarks &mdash; spending beam energy to create mass (<em>E&nbsp;=&nbsp;mc&sup2;</em>). Get there first through any of <strong style="color:var(--text)">five real Higgs-production channels</strong>, or fire an antiparticle into your rival's beamline to annihilate an ingredient and stall their diagram.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.75rem;">
+          <span style="background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); padding:0.3rem 0.75rem; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan);">Gluon Fusion</span>
+          <span style="background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); padding:0.3rem 0.75rem; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan);">Top-Associated</span>
+          <span style="background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); padding:0.3rem 0.75rem; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan);">Vector Boson Fusion</span>
+          <span style="background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); padding:0.3rem 0.75rem; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan);">Associated (VH)</span>
+          <span style="background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.2); padding:0.3rem 0.75rem; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan);">H &rarr; &tau;&tau;</span>
+        </div>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn btn-cyan">&#x269B;&#xFE0F; Start Playing</a>
+          <a href="higgs-rules.html" class="btn btn-outline">Read the Rules &rarr;</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:var(--card-bg); border:1px solid var(--border); padding:2rem;">
+          <p class="g-eyebrow" style="margin-bottom:1.25rem;">Inside the Box</p>
+          <div style="display:flex; flex-direction:column; gap:0.85rem;">
+            <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid rgba(0,229,255,0.08); font-size:0.85rem;">
+              <span style="color:var(--muted);">Players</span><span style="color:var(--text); font-family:'Space Mono',monospace;">1 vs. CERN AI</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid rgba(0,229,255,0.08); font-size:0.85rem;">
+              <span style="color:var(--muted);">Play time</span><span style="color:var(--text); font-family:'Space Mono',monospace;">~15&ndash;20 min</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid rgba(0,229,255,0.08); font-size:0.85rem;">
+              <span style="color:var(--muted);">Genre</span><span style="color:var(--text); font-family:'Space Mono',monospace;">Deck-builder</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:0.5rem 0; font-size:0.85rem;">
+              <span style="color:var(--muted);">Teaches</span><span style="color:var(--text); font-family:'Space Mono',monospace;">Particle physics</span>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid rgba(0,229,255,0.08); text-align:center;">
+            <div style="font-family:'Orbitron',monospace; font-size:1.4rem; letter-spacing:0.05em; color:var(--cyan); text-shadow:0 0 18px rgba(0,229,255,0.4);">g + g &rarr; H</div>
+            <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:0.5rem;">A vertex on the path to the boson</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="footer-mini">
     HIGGS &mdash; a science-educational prototype by Aileron Studios. All couplings approximate the Standard Model, compressed for play.
