@@ -158,12 +158,21 @@
   </header>
 
   <!-- ================= BOARD ================= -->
-  <h2><span class="n">01</span>The board</h2>
+  <h2><span class="n">01</span>Play the board <span style="font-size:.55em;color:var(--accent);font-family:'Trebuchet MS',sans-serif;letter-spacing:.1em">v0.2 · PLAYABLE</span></h2>
   <p class="section-note">
-    A 10&times;10 cell interior (expanded from 8&times;8 for more room to maneuver). Both genomes sit on the far ranks. Everything else &mdash; RNA and
-    proteins &mdash; is <em>expressed during play</em>, not placed at setup.
-    <b>Click any molecule</b> to see how it moves and what it does. Rendered in the style of
-    David Goodsell's <em>Machinery of Life</em>.
+    A 10&times;10 cell interior, expanded from 8&times;8 for room to maneuver. <b>This board is a fully
+    playable prototype</b> of the v0.2 rules &mdash; grab a friend for hot-seat, or click
+    <em>New&nbsp;·&nbsp;vs&nbsp;AI</em> in the panel to play the basic opponent. Rendered in the style of David
+    Goodsell's <em>Machinery of Life</em>.<br>
+    <b>How to play:</b> on your turn take <em>one</em> action &mdash; click one of your <b>genes</b> to
+    express an RNA, or click a <b>molecule</b> and then a highlighted square to move or act.
+    Build a Nuclease and edit <b>6 of the opponent's 10 genes</b> to give them cancer.
+  </p>
+  <p class="section-note" style="margin-top:-10px;font-size:.9rem">
+    <b>What changed from v0.1</b> (see the <a class="inline" href="docs/dna-chess-playtest-01.md">break analysis</a>):
+    expression is now a <em>choice</em> (one gene per turn) so RNA is scarce; RNA is capped at 6/side with no decay timers;
+    the Nuclease mutates <em>any</em> adjacent gene (the colour trap is gone); Polymerase is pure transport;
+    Methyltransferase is parked for this test; and a Ligase can only repair a lesion no enemy is touching.
   </p>
 
   <div class="board-layout">
@@ -201,25 +210,25 @@
   <div class="roster" id="roster"></div>
 
   <!-- ================= TURN ================= -->
-  <h2><span class="n">03</span>How a turn runs</h2>
-  <p class="section-note"><em>"As time goes on, DNA produces RNA out of each square, moves one square, and takes an action."</em> &mdash; formalized into three phases.</p>
+  <h2><span class="n">03</span>How a turn runs <span style="font-size:.55em;color:var(--accent);font-family:'Trebuchet MS',sans-serif;letter-spacing:.1em">v0.2</span></h2>
+  <p class="section-note">Each turn you take <b>exactly one</b> action. The board doesn't fill on its own &mdash; you decide what to spend the turn on. That single choice is the whole game.</p>
   <div class="cols">
     <div class="panel">
-      <h3><span class="ico">&#10112;</span> Transcription <span style="font-size:.7rem;color:var(--ink-soft)">(the tick)</span></h3>
-      <p style="font-size:.95rem;color:var(--ink-soft)">Every active gene automatically spawns one <b>RNA</b> on the empty square in front of it &mdash; the board grows on its own. A gene that's <b>blocked</b> (something sits in front) or <b>silenced</b> stays quiet. Cap: one un-used RNA per gene, so the cell never floods.</p>
+      <h3><span class="ico">&#10112;</span> Express <span style="font-size:.7rem;color:var(--ink-soft)">(your action)</span></h3>
+      <p style="font-size:.95rem;color:var(--ink-soft)">Click one of your <b>genes</b> to transcribe a single <b>RNA</b> onto the square in front &mdash; that <em>is</em> your turn. Regulated expression: one gene, your choice. Genes that are <b>blocked</b>, <b>silenced</b>, or already at the <b>6-RNA cap</b> can't fire. This is what makes RNA scarce and every turn a real decision.</p>
     </div>
     <div class="panel">
-      <h3><span class="ico">&#10113;</span> One action</h3>
-      <p style="font-size:.95rem;color:var(--ink-soft)">Then you pull <b>one</b> deliberate lever:</p>
+      <h3><span class="ico">&#10113;</span> Move / act / build</h3>
+      <p style="font-size:.95rem;color:var(--ink-soft)">Instead of expressing, spend the turn to:</p>
       <ul>
-        <li><b>Move + act</b> with one piece (e.g. slide a Nuclease in and mutate a gene), or</li>
-        <li><b>Translate</b> RNA into a protein of your choice, or</li>
-        <li><b>Repair</b> a damaged gene with a Ligase.</li>
+        <li><b>Move</b> a molecule (each piece its own way), or</li>
+        <li><b>Mutate</b> with a Nuclease adjacent to an enemy gene &mdash; move <em>or</em> mutate, one per turn, and</li>
+        <li><b>Translate</b> a connected RNA cluster into a protein, or <b>Repair</b> with a Ligase.</li>
       </ul>
     </div>
     <div class="panel">
-      <h3><span class="ico">&#10114;</span> Decay <span style="font-size:.7rem;color:var(--ink-soft)">(upkeep)</span></h3>
-      <p style="font-size:.95rem;color:var(--ink-soft)">RNA is unstable. Any RNA that sits <b>unused for 3 of your turns degrades</b> and is removed. Use-it-or-lose-it keeps the game moving and stops turtling. <span style="font-style:italic">(Simple variant: no decay, just cap RNA at 6 per side.)</span></p>
+      <h3><span class="ico">&#10114;</span> Combo &amp; cap <span style="font-size:.7rem;color:var(--ink-soft)">(no timers)</span></h3>
+      <p style="font-size:.95rem;color:var(--ink-soft)">A <b>Kinase</b> can spend its turn to grant a friendly piece a <b>bonus action</b> &mdash; the one way to do two things at once (and the sudden-death combo to watch). RNA is simply <b>capped at 6 per side</b>: no decay counters to track. Then it's the opponent's turn.</p>
     </div>
   </div>
 
@@ -239,30 +248,32 @@
     <div class="panel">
       <h3>The core tension</h3>
       <ul>
-        <li><b>RNA is dual-use:</b> spend it to <b>build</b> a protein, or use it to <b>silence</b> a gene and <b>degrade</b> enemy RNA. Every transcript is an offense-or-defense decision.</li>
-        <li><b>Mutations are permanent</b> unless a slow, short-range Ligase reaches them in time &mdash; so you can't just turtle.</li>
-        <li><b>Tempo is king:</b> a Kinase can grant a second action, turning a 3&ndash;mutation position into a lethal 5 in one swing.</li>
+        <li><b>Every turn is one lever:</b> express more RNA, march a piece, or cash RNA in for a protein. With RNA scarce (v0.2), you can't do everything &mdash; that's the game.</li>
+        <li><b>RNA is dual-use:</b> spend it to <b>build</b> a protein, or move it to <b>degrade</b> enemy RNA and <b>silence</b> a gene by sitting beside it.</li>
+        <li><b>Mutations are permanent</b> unless a slow, short-range Ligase reaches an <em>unguarded</em> lesion &mdash; so you can't just turtle.</li>
+        <li><b>Tempo is king:</b> a Kinase grants a bonus action, so a double-mutate can swing the count by two in one turn.</li>
       </ul>
     </div>
     <div class="panel">
       <h3>Open questions for playtest</h3>
       <ul>
-        <li>Does the transcription tick still clog the board? (fallback: genes transcribe every <em>other</em> turn)</li>
+        <li>With expression regulated, is RNA now <em>too</em> scarce &mdash; does the opening drag?</li>
         <li>First-player advantage &mdash; use a pie rule, or give player&nbsp;2 a free starting RNA?</li>
-        <li>Should proteins also denature after N turns so the board keeps turning over?</li>
-        <li>Repair window &amp; Nuclease cost are the two big balance dials &mdash; tune together.</li>
+        <li>Is the Kinase bonus-action combo too swingy? (test barring a <em>mutate</em> as the bonus action)</li>
+        <li>Does the wider board make the middle a stall? Repair rule &amp; Nuclease cost are the balance dials.</li>
       </ul>
     </div>
   </div>
 
   <p style="margin-top:28px;color:var(--ink-soft)">
-    Full written spec (costs, states, variants): <a class="inline" href="docs/dna-chess-design.md">docs/dna-chess-design.md</a>.
-    This page is a self-contained reference implementation of the visuals.
+    Design docs: <a class="inline" href="docs/dna-chess-design.md">v0.1 spec</a> &middot;
+    <a class="inline" href="docs/dna-chess-playtest-01.md">playtest &amp; break analysis</a>.
+    This page is a self-contained, playable prototype of the v0.2 rules.
   </p>
 
   <footer>
     <span>&#9652; Aileron Games &mdash; Science. Play. Discovery.</span>
-    <span>DNA Chess &middot; design v0.1 &middot; art after D. Goodsell</span>
+    <span>DNA Chess &middot; playable v0.2 &middot; art after D. Goodsell</span>
   </footer>
 </div>
 
@@ -377,182 +388,261 @@ function molSVG(S,type,seed,mutated){
 /* ============================================================
    Board state + rendering
    ============================================================ */
-const N=10, CELL=68, MARG=0;   // expanded board: 10x10, viewBox = 10*68 = 680
-const BP=N*CELL, LAST=N-1;     // board pixels, last rank index
-// position: {r,c,type,side,state}  state for dna: 'healthy'|'mutated'|'silenced'
-const PIECES=[];
-// genomes — 10 genes per side; win at 6 mutated (>half of 10)
-for(let c=0;c<N;c++){PIECES.push({r:0,c,type:'dna',side:'B',state:(c===3||c===6)?'mutated':'healthy'});}
-for(let c=0;c<N;c++){PIECES.push({r:LAST,c,type:'dna',side:'A',state:(c===7)?'mutated':'healthy'});}
-// expressed — you (A, advancing up)
-PIECES.push({r:8,c:2,type:'rna',side:'A'});
-PIECES.push({r:8,c:4,type:'rna',side:'A'});
-PIECES.push({r:7,c:2,type:'methyltransferase',side:'A'});
-PIECES.push({r:7,c:4,type:'kinase',side:'A'});
-PIECES.push({r:5,c:7,type:'polymerase',side:'A'});
-PIECES.push({r:1,c:2,type:'nuclease',side:'A'});      // deep — threatening enemy gene c10
-PIECES.push({r:8,c:7,type:'ligase',side:'A'});        // guarding your mutated gene h1
-// expressed — opponent (B, advancing down)
-PIECES.push({r:1,c:5,type:'rna',side:'B'});
-PIECES.push({r:1,c:7,type:'rna',side:'B'});
-PIECES.push({r:2,c:8,type:'methyltransferase',side:'B'});
-PIECES.push({r:4,c:6,type:'helicase',side:'B'});
-PIECES.push({r:8,c:6,type:'nuclease',side:'B'});      // threatening your gene g1
-
-function pieceAt(r,c){return PIECES.find(p=>p.r===r&&p.c===c);}
-
-/* movement generators → array of {r,c,capture} */
+/* ============================================================
+   v0.2 PLAYABLE GAME ENGINE (10x10)
+   - Regulated expression: expressing one gene IS your action
+   - Flat RNA cap 6 / side, no decay timers
+   - Nuclease mutates ANY adjacent gene (king-adjacency; no colour trap)
+   - Polymerase = pure transport; Methyltransferase cut from the test set
+   - Ligase repairs only when no enemy touches the lesion (no timers)
+   - Kinase grants one bonus action; Helicase shoves
+   - One action per turn, alternating. Cancer = 6 of your genes mutated.
+   ============================================================ */
+const N=10, CELL=68, BP=N*CELL, LAST=N-1;
+const CAP_RNA=6, WIN=6;
+const COST={ligase:1,kinase:2,helicase:2,polymerase:2,nuclease:3};
+const PROTEINS=[['nuclease',3],['polymerase',2],['helicase',2],['kinase',2],['ligase',1]];
 const ORTHO=[[1,0],[-1,0],[0,1],[0,-1]];
 const DIAG=[[1,1],[1,-1],[-1,1],[-1,-1]];
 const KING=ORTHO.concat(DIAG);
 const KNIGHT=[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]];
-function inb(r,c){return r>=0&&r<N&&c>=0&&c<N;}
-function slide(p,dirs,max){
-  const out=[];
-  for(const[dr,dc]of dirs){
-    for(let k=1;k<=max;k++){
-      const r=p.r+dr*k,c=p.c+dc*k;if(!inb(r,c))break;
-      const occ=pieceAt(r,c);
-      if(!occ){out.push({r,c,capture:false});}
-      else{if(occ.side!==p.side)out.push({r,c,capture:true});break;}
-    }
-  }
-  return out;
-}
-function step(p,dirs){
-  const out=[];
-  for(const[dr,dc]of dirs){const r=p.r+dr,c=p.c+dc;if(!inb(r,c))continue;const occ=pieceAt(r,c);if(!occ)out.push({r,c,capture:false});else if(occ.side!==p.side)out.push({r,c,capture:true});}
-  return out;
-}
-function moves(p){
-  switch(p.type){
-    case 'dna':{ // immobile; show transcription square in front
-      const dir=p.side==='A'?-1:1;const r=p.r+dir;
-      if(p.state==='mutated'||p.state==='silenced')return [];
-      if(inb(r,p.c)&&!pieceAt(r,p.c))return [{r,c:p.c,capture:false,transcribe:true}];
-      return [];
-    }
-    case 'rna':return slide(p,ORTHO,3);
-    case 'nuclease':return slide(p,DIAG,N);
-    case 'polymerase':return slide(p,ORTHO,N);
-    case 'methyltransferase':return step(p,KING);
-    case 'ligase':return step(p,KING);
-    case 'kinase':return step(p,KNIGHT);
-    case 'helicase':return slide(p,ORTHO,3);
-  }
-  return [];
-}
-
-/* inspector copy */
-const INFO={
-  dna:{tag:'Genome · your lives',moves:'Immobile — sits on the back rank',act:'Passive: transcribes one RNA onto the square in front each turn (unless blocked, silenced, or mutated).',bio:'A gene. Healthy genes express; a mutated gene is corrupted forever and counts toward cancer.'},
-  rna:{tag:'Blocker & builder',moves:'Slides up to 3 squares orthogonally (diffusion)',act:'Translate → protein · silence an adjacent enemy gene · degrade an enemy RNA it lands on · or simply block a gene by sitting in front of it.',bio:'Messenger / interfering RNA — the dual-use heart of the game. Fragile: any enemy molecule that reaches it degrades it.'},
-  nuclease:{tag:'CRISPR-Cas9 · win weapon',moves:'Diagonal, any distance (bishop)',act:'MUTATE — end adjacent to an enemy gene and edit it to Mutated. This is how you win.',bio:'A programmable nuclease that cuts the genome. Your most expensive protein to build (3 RNA).'},
-  polymerase:{tag:'Transport & offense',moves:'Straight lines, any distance (rook)',act:'Fastest relocation on the board; can mutate an enemy gene on arrival if it started from your own half.',bio:'DNA polymerase — processive, needs a running start to do damage.'},
-  methyltransferase:{tag:'Soft control',moves:'One square, any direction (king)',act:'SILENCE — methylate an adjacent enemy gene, switching it off (reversible). Cheap; primes genes for a later kill.',bio:'An epigenetic writer. Silencing is tempo, not a win — only mutation counts.'},
-  kinase:{tag:'Tempo / combo',moves:'Knight’s L — jumps over pieces',act:'ACTIVATE — give one friendly piece an immediate second action. Enables double-mutate swings.',bio:'A signaling kinase relaying a phosphorylation cascade — it doesn’t need a clear path.'},
-  helicase:{tag:'Board control / defense',moves:'Straight, up to 3; can push',act:'DISPLACE — shove an enemy piece one square back: break a silencing lock or knock a Nuclease off your gene.',bio:'A helicase that unwinds and muscles molecules out of position.'},
-  ligase:{tag:'Repair crew',moves:'One square, any direction (king)',act:'REPAIR — restore an adjacent Mutated gene to Healthy (if the lesion is fresh) and clear silencing.',bio:'DNA ligase — slow and short-ranged, but the only thing standing between you and cancer.'}
-};
-
-/* ---- render board ---- */
 const board=document.getElementById('board');
-let selected=null;
 board.setAttribute('viewBox',`0 0 ${BP} ${BP}`);
-function render(){
-  let svg='';
-  // tiles
-  for(let r=0;r<N;r++)for(let c=0;c<N;c++){
-    const x=c*CELL,y=r*CELL;
-    let fill=(r+c)%2===0?'#c9b487':'#bda676';
-    if(r===0||r===LAST) fill=(r+c)%2===0?'#b39a68':'#a88f5f'; // nuclear membrane rows
-    svg+=`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${fill}"/>`;
+
+let G;
+function initGame(vsAI){
+  let id=1; const P=[];
+  const add=(r,c,type,side,state)=>P.push({id:id++,r,c,type,side,state:state||null});
+  for(let c=0;c<N;c++) add(0,c,'dna','B','healthy');
+  for(let c=0;c<N;c++) add(LAST,c,'dna','A','healthy');
+  // a small, legal opening so the board isn't bare
+  add(8,2,'rna','A'); add(8,3,'rna','A'); add(7,3,'rna','A');
+  add(5,4,'nuclease','A'); add(8,7,'ligase','A');
+  add(1,5,'rna','B'); add(1,6,'rna','B'); add(2,6,'rna','B');
+  add(4,5,'nuclease','B'); add(3,3,'helicase','B');
+  G={pieces:P,turn:'A',sel:null,over:null,vsAI:!!vsAI,bonus:false,grant:null,log:[]};
+  G.prompt=defaultPrompt();
+  recomputeSilence(); render();
+}
+
+const at=(r,c)=>G.pieces.find(p=>p.r===r&&p.c===c);
+const byId=id=>G.pieces.find(p=>p.id===id);
+const inb=(r,c)=>r>=0&&r<N&&c>=0&&c<N;
+const enemy=s=>s==='A'?'B':'A';
+const fwd=s=>s==='A'?-1:1;                 // A advances up (row -1), B down (+1)
+const genesOf=s=>G.pieces.filter(p=>p.type==='dna'&&p.side===s);
+const mutCount=s=>genesOf(s).filter(g=>g.state==='mutated').length;
+const rnaCount=s=>G.pieces.filter(p=>p.type==='rna'&&p.side===s).length;
+const nextId=()=>G.pieces.reduce((m,p)=>Math.max(m,p.id),0)+1;
+const sq=(r,c)=>String.fromCharCode(97+c)+(N-r);
+const LABEL={rna:'RNA',nuclease:'Nuclease',polymerase:'Polymerase',kinase:'Kinase',helicase:'Helicase',ligase:'Ligase',dna:'gene'};
+const label=p=>LABEL[p.type]||p.type;
+
+function recomputeSilence(){
+  for(const g of G.pieces){
+    if(g.type!=='dna'||g.state==='mutated') continue;         // mutation is permanent
+    const sil=ORTHO.some(([dr,dc])=>{const o=at(g.r+dr,g.c+dc);return o&&o.type==='rna'&&o.side!==g.side;});
+    g.state=sil?'silenced':'healthy';                          // positional, reversible
   }
-  // membrane emphasis lines
+}
+
+function slideT(p,dirs,max){
+  const moves=[],caps=[];
+  for(const [dr,dc] of dirs){
+    for(let k=1;k<=max;k++){const r=p.r+dr*k,c=p.c+dc*k;if(!inb(r,c))break;
+      const o=at(r,c);
+      if(!o){moves.push({r,c});}
+      else{if(o.type==='rna'&&o.side!==p.side)caps.push({r,c});break;}   // capture enemy RNA only
+    }
+  }
+  return {moves,caps};
+}
+function stepT(p,dirs){
+  const moves=[],caps=[];
+  for(const [dr,dc] of dirs){const r=p.r+dr,c=p.c+dc;if(!inb(r,c))continue;const o=at(r,c);
+    if(!o)moves.push({r,c});else if(o.type==='rna'&&o.side!==p.side)caps.push({r,c});}
+  return {moves,caps};
+}
+
+// what a current-player piece can do right now
+function targetsFor(p){
+  const res={moves:[],caps:[],mutates:[],repairs:[],pushes:[],activates:[]};
+  if(!p||p.side!==G.turn) return res;
+  if(p.type==='rna'){const t=slideT(p,ORTHO,3);res.moves=t.moves;res.caps=t.caps;}
+  else if(p.type==='nuclease'){const t=slideT(p,DIAG,N);res.moves=t.moves;res.caps=t.caps;
+    for(const [dr,dc] of KING){const o=at(p.r+dr,p.c+dc);if(o&&o.type==='dna'&&o.side!==p.side&&o.state!=='mutated')res.mutates.push({r:o.r,c:o.c});}}
+  else if(p.type==='polymerase'){const t=slideT(p,ORTHO,N);res.moves=t.moves;res.caps=t.caps;}
+  else if(p.type==='kinase'){const t=stepT(p,KNIGHT);res.moves=t.moves;res.caps=t.caps;
+    for(const [dr,dc] of KING){const o=at(p.r+dr,p.c+dc);if(o&&o.side===p.side&&o.type!=='dna'&&o.type!=='kinase')res.activates.push({r:o.r,c:o.c});}}
+  else if(p.type==='helicase'){const t=slideT(p,ORTHO,3);res.moves=t.moves;
+    for(const [dr,dc] of ORTHO){for(let k=1;k<=3;k++){const r=p.r+dr*k,c=p.c+dc*k;if(!inb(r,c))break;const o=at(r,c);if(!o)continue;
+      if(o.side!==p.side&&o.type!=='dna'){const br=r+dr,bc=c+dc;if(inb(br,bc)&&!at(br,bc))res.pushes.push({r,c,dir:[dr,dc]});}break;}}}
+  else if(p.type==='ligase'){const t=stepT(p,KING);res.moves=t.moves;res.caps=t.caps;
+    for(const [dr,dc] of KING){const o=at(p.r+dr,p.c+dc);if(o&&o.type==='dna'&&o.side===p.side&&o.state==='mutated'){
+      const guarded=KING.some(([er,ec])=>{const n=at(o.r+er,o.c+ec);return n&&n.side!==p.side&&n.type!=='dna';});
+      if(!guarded)res.repairs.push({r:o.r,c:o.c});}}}
+  return res;
+}
+
+function canExpress(g){return g.type==='dna'&&g.side===G.turn&&g.state==='healthy'&&rnaCount(G.turn)<CAP_RNA&&inb(g.r+fwd(g.side),g.c)&&!at(g.r+fwd(g.side),g.c);}
+
+function connectedRNA(start){
+  const seen=new Set([start.id]),stack=[start],out=[start];
+  while(stack.length){const cur=stack.pop();
+    for(const [dr,dc] of ORTHO){const o=at(cur.r+dr,cur.c+dc);if(o&&o.type==='rna'&&o.side===start.side&&!seen.has(o.id)){seen.add(o.id);stack.push(o);out.push(o);}}}
+  return out;
+}
+
+function logMove(s){G.log.unshift(s);if(G.log.length>8)G.log.pop();}
+
+/* ---- actions (each ends the action via finishAction) ---- */
+function doExpress(g){logMove(`${G.turn}: express ${sq(g.r,g.c)} → RNA`);G.pieces.push({id:nextId(),r:g.r+fwd(g.side),c:g.c,type:'rna',side:g.side,state:null});G.sel=null;finishAction();}
+function doMove(p,r,c){const o=at(r,c);if(o&&o.type==='rna'&&o.side!==p.side){G.pieces=G.pieces.filter(x=>x!==o);logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)} × RNA`);}else logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)}`);p.r=r;p.c=c;G.sel=null;finishAction();}
+function doMutate(p,g){g.state='mutated';logMove(`${G.turn}: Nuclease mutates ${sq(g.r,g.c)} ⚠`);G.sel=null;finishAction();}
+function doRepair(p,g){g.state='healthy';logMove(`${G.turn}: Ligase repairs ${sq(g.r,g.c)}`);G.sel=null;finishAction();}
+function doPush(p,tgt,dir){const or=tgt.r,oc=tgt.c;tgt.r=or+dir[0];tgt.c=oc+dir[1];p.r=or;p.c=oc;logMove(`${G.turn}: Helicase shoves ${label(tgt)} → ${sq(tgt.r,tgt.c)}`);G.sel=null;finishAction();}
+function doActivate(p,tgt){logMove(`${G.turn}: Kinase activates ${label(tgt)} — bonus action`);G.grant=tgt.id;finishAction();}
+function doTranslate(rna,type){const need=COST[type];const comp=connectedRNA(rna);if(comp.length<need)return;
+  const consume=[rna];for(const x of comp){if(consume.length>=need)break;if(x!==rna)consume.push(x);}
+  const ids=new Set(consume.map(x=>x.id));G.pieces=G.pieces.filter(x=>!ids.has(x.id));
+  G.pieces.push({id:nextId(),r:rna.r,c:rna.c,type,side:G.turn,state:null});
+  logMove(`${G.turn}: translate ${need} RNA → ${LABEL[type]}`);G.sel=null;finishAction();}
+
+function checkWin(){if(mutCount('A')>=WIN)return 'A';if(mutCount('B')>=WIN)return 'B';return null;}
+function defaultPrompt(){return G.turn==='A'?'Your move (A): click a gene to express RNA, or a molecule to move/act.':'Opponent (B) to move.';}
+
+function finishAction(){
+  recomputeSilence();
+  const loser=checkWin();
+  if(loser){G.over=loser;G.sel=null;G.prompt='';render();return;}
+  if(G.grant!=null){const t=byId(G.grant);G.grant=null;G.bonus=true;G.sel=t?t.id:null;
+    G.prompt=`Bonus action (Kinase): act again with ${t?label(t):'a piece'} — or any of your pieces.`;render();return;}
+  G.bonus=false;G.turn=enemy(G.turn);G.sel=null;G.prompt=defaultPrompt();render();
+  if(G.vsAI&&G.turn==='B'&&!G.over) setTimeout(aiMove,420);
+}
+
+function promptFor(p){return ({
+  rna:'RNA: move ≤3 straight (dots) · take enemy RNA (red) · or Translate in the panel.',
+  nuclease:'Nuclease: move on diagonals (dots) OR click a red gene to mutate it (move OR mutate).',
+  polymerase:'Polymerase: transport on ranks/files (dots) · take enemy RNA (red).',
+  kinase:'Kinase: jump (dots) or click a blue ally to grant it a bonus action.',
+  helicase:'Helicase: move ≤3 straight (dots) or click an orange enemy to shove it back.',
+  ligase:'Ligase: move 1 (dots) or click a green gene to repair it.'
+})[p.type]||'Selected.';}
+
+function onCell(r,c){
+  if(G.over) return;
+  const clicked=at(r,c);
+  if(G.sel!=null){
+    const sel=byId(G.sel);
+    if(sel&&sel.side===G.turn){
+      const t=targetsFor(sel), hit=arr=>arr.some(m=>m.r===r&&m.c===c);
+      if(hit(t.mutates)){doMutate(sel,at(r,c));return;}
+      if(hit(t.repairs)){doRepair(sel,at(r,c));return;}
+      if(hit(t.activates)){doActivate(sel,at(r,c));return;}
+      const pu=t.pushes.find(m=>m.r===r&&m.c===c);if(pu){doPush(sel,at(r,c),pu.dir);return;}
+      if(hit(t.moves)||hit(t.caps)){doMove(sel,r,c);return;}
+    }
+  }
+  if(clicked&&clicked.type==='dna'&&clicked.side===G.turn){
+    if(canExpress(clicked)){doExpress(clicked);return;}
+    G.sel=null;G.prompt='That gene can’t express now (blocked, silenced, mutated, or RNA cap 6 reached).';render();return;
+  }
+  if(clicked&&clicked.side===G.turn&&clicked.type!=='dna'){G.sel=clicked.id;G.prompt=promptFor(clicked);render();return;}
+  G.sel=null;G.prompt=defaultPrompt();render();
+}
+
+/* ---- basic greedy AI (optional opponent B) ---- */
+function aiMove(){
+  if(G.over||G.turn!=='B')return;
+  try{
+    for(const p of G.pieces.filter(p=>p.side==='B'&&p.type==='nuclease')){const t=targetsFor(p);if(t.mutates.length){doMutate(p,at(t.mutates[0].r,t.mutates[0].c));return;}}
+    const nB=G.pieces.filter(p=>p.side==='B'&&p.type==='nuclease').length;
+    if(nB<2){for(const p of G.pieces.filter(p=>p.side==='B'&&p.type==='rna')){if(connectedRNA(p).length>=3){doTranslate(p,'nuclease');return;}}}
+    const egenes=genesOf('A').filter(g=>g.state!=='mutated');
+    const dist=(a,b)=>Math.max(Math.abs(a.r-b.r),Math.abs(a.c-b.c));
+    for(const p of G.pieces.filter(p=>p.side==='B'&&p.type==='nuclease')){const t=targetsFor(p);if(t.moves.length&&egenes.length){let best=t.moves[0],bd=1e9;for(const m of t.moves){const d=Math.min(...egenes.map(g=>dist(m,g)));if(d<bd){bd=d;best=m;}}doMove(p,best.r,best.c);return;}}
+    if(rnaCount('B')<CAP_RNA){for(const g of genesOf('B')){if(canExpress(g)){doExpress(g);return;}}}
+    for(const p of G.pieces.filter(p=>p.side==='B'&&p.type==='rna')){const t=targetsFor(p);if(t.caps.length){doMove(p,t.caps[0].r,t.caps[0].c);return;}if(t.moves.length){doMove(p,t.moves[0].r,t.moves[0].c);return;}}
+    for(const p of G.pieces.filter(p=>p.side==='B'&&p.type!=='dna')){const t=targetsFor(p);if(t.moves.length){doMove(p,t.moves[0].r,t.moves[0].c);return;}}
+    logMove('B: pass');G.sel=null;finishAction();
+  }catch(e){logMove('B: pass');G.sel=null;finishAction();}
+}
+
+/* ---- render board + panel ---- */
+function render(){
+  const sel=G.sel!=null?byId(G.sel):null;
+  const t=sel?targetsFor(sel):{moves:[],caps:[],mutates:[],repairs:[],pushes:[],activates:[]};
+  const ctr=m=>[m.c*CELL+CELL/2,m.r*CELL+CELL/2];
+  let svg='';
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){const x=c*CELL,y=r*CELL;let fill=(r+c)%2===0?'#c9b487':'#bda676';if(r===0||r===LAST)fill=(r+c)%2===0?'#b39a68':'#a88f5f';svg+=`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${fill}"/>`;}
   svg+=`<line x1="0" y1="${CELL}" x2="${BP}" y2="${CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
   svg+=`<line x1="0" y1="${LAST*CELL}" x2="${BP}" y2="${LAST*CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
-
-  // empty-square move dots go UNDER pieces; capture/target rings go OVER (added after)
-  let underHints='',overHints='';
-  if(selected){
-    for(const m of moves(selected)){
-      const x=m.c*CELL+CELL/2,y=m.r*CELL+CELL/2;
-      if(m.capture){overHints+=`<circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="#8a2f24" stroke-width="5"/><circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="#f4c9bf" stroke-width="1.5"/>`;}
-      else if(m.transcribe){underHints+=`<circle cx="${x}" cy="${y}" r="${CELL*0.18}" fill="#9c4a5a" opacity=".55"/><circle cx="${x}" cy="${y}" r="${CELL*0.30}" fill="none" stroke="#9c4a5a" stroke-width="2.5" stroke-dasharray="4 3" opacity=".85"/>`;}
-      else{underHints+=`<circle cx="${x}" cy="${y}" r="${CELL*0.16}" fill="#f4e9c9" opacity=".8"/><circle cx="${x}" cy="${y}" r="${CELL*0.16}" fill="none" stroke="#7a6a45" stroke-width="1" opacity=".5"/>`;}
-    }
-  }
-  svg+=underHints;
-
-  // pieces
-  let idx=0;
-  for(const p of PIECES){
-    idx++;
-    const x=p.c*CELL,y=p.r*CELL;
-    const isSel=selected===p;
-    // side membrane halo
-    const ring=SIDE[p.side];
-    svg+=`<g class="cell-hit" data-i="${PIECES.indexOf(p)}" transform="translate(${x},${y})">`;
-    svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="${ring}" opacity="0.13"/>`;
-    svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="none" stroke="${ring}" stroke-width="2.5" opacity="0.55"/>`;
-    // side pip
+  for(const m of t.moves){const [x,y]=ctr(m);svg+=`<circle cx="${x}" cy="${y}" r="${CELL*0.15}" fill="#f4e9c9" opacity=".85"/><circle cx="${x}" cy="${y}" r="${CELL*0.15}" fill="none" stroke="#7a6a45" stroke-width="1" opacity=".5"/>`;}
+  for(const p of G.pieces){
+    const x=p.c*CELL,y=p.r*CELL,ring=SIDE[p.side],isSel=sel===p;
+    svg+=`<g transform="translate(${x},${y})">`;
+    svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="${ring}" opacity="0.13"/><circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="none" stroke="${ring}" stroke-width="2.5" opacity="0.55"/>`;
     svg+=`<circle cx="${CELL*0.14}" cy="${CELL*0.14}" r="5" fill="${ring}" stroke="#2b2416" stroke-width="1"/>`;
-    svg+=molSVG(CELL, p.type, (PIECES.indexOf(p)+1)*97+ (p.type.length*13), p.state==='mutated');
-    if(isSel) svg+=`<circle class="selring" cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.46}"/>`;
+    svg+=molSVG(CELL,p.type,(p.id*97)+(p.type.length*13),p.state==='mutated');
+    if(p.type==='dna'&&p.state==='silenced'){svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.42}" fill="#3b352a" opacity="0.4"/><text x="${CELL/2}" y="${CELL*0.62}" text-anchor="middle" font-size="${CELL*0.34}" fill="#f4e9c9" opacity=".85">✕</text>`;}
+    if(isSel)svg+=`<circle class="selring" cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.46}"/>`;
     svg+=`</g>`;
   }
-  svg+=overHints;   // capture/target rings on top of enemy molecules
+  const ring2=(m,col)=>{const [x,y]=ctr(m);return `<circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="${col}" stroke-width="5"/><circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="#f4e9c9" stroke-width="1.4"/>`;};
+  for(const m of t.caps) svg+=ring2(m,'#8a2f24');
+  for(const m of t.mutates) svg+=ring2(m,'#8a2f24');
+  for(const m of t.repairs) svg+=ring2(m,'#4a7a3a');
+  for(const m of t.activates) svg+=ring2(m,'#3f6f8a');
+  for(const m of t.pushes) svg+=ring2(m,'#a5673f');
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){svg+=`<rect class="hit" data-r="${r}" data-c="${c}" x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}" fill="transparent" style="cursor:pointer"/>`;}
   board.innerHTML=svg;
-  // attach handlers
-  board.querySelectorAll('.cell-hit').forEach(g=>{
-    g.addEventListener('click',()=>{
-      const p=PIECES[+g.dataset.i];
-      selected=(selected===p)?null:p;
-      if(selected)inspect(selected);else resetInspector();
-      render();
-    });
-  });
+  board.querySelectorAll('.hit').forEach(el=>el.addEventListener('click',()=>onCell(+el.dataset.r,+el.dataset.c)));
+  renderPanel(sel);
 }
 
-function inspect(p){
-  const info=INFO[p.type];const pal=PAL[p.type];
-  const stateTxt = p.type==='dna' ? (p.state==='mutated'?' — MUTATED (counts toward cancer)':p.state==='silenced'?' — silenced':' — healthy'):'';
-  const sideTxt = p.side==='A'?'Your organism':'Opponent';
-  const prev=`<svg class="previewsvg" viewBox="0 0 84 84">${molSVG(84,p.type,(PIECES.indexOf(p)+1)*97+(p.type.length*13),p.state==='mutated')}</svg>`;
-  document.getElementById('insp-body').innerHTML=`
-    ${prev}
-    <h3>${pal.name}${stateTxt.includes('MUTATED')?' ⚠':''}</h3>
-    <span class="tag" style="background:${SIDE[p.side]};color:#f4e9c9">${sideTxt}</span>
-    <span class="tag" style="background:${pal.base};color:#f4e9c9">${info.tag}</span>
-    <div class="row"><b>Moves</b>${info.moves}${p.type==='dna'?stateTxt:''}</div>
-    <div class="row"><b>Action</b>${info.act}</div>
-    <div class="row"><b>Biology</b>${info.bio}</div>
-    <div class="hint">Highlighted squares are this molecule's legal destinations right now &mdash; red rings are enemy molecules it can capture or a gene it can mutate.</div>`;
+function renderPanel(sel){
+  const el=document.getElementById('inspector');
+  let banner;
+  if(G.over){const w=enemy(G.over);banner=`<div style="background:${SIDE[w]};color:#f4e9c9;padding:11px 13px;border-radius:8px;font-weight:700;font-family:'Trebuchet MS',sans-serif">${G.over==='A'?'You (A)':'Opponent (B)'} reached 6 mutations — cancer.<br>${w==='A'?'You (A) win! 🎉':'Opponent (B) wins.'}</div>`;}
+  else banner=`<div style="display:flex;align-items:center;gap:8px"><span style="width:14px;height:14px;border-radius:50%;background:${SIDE[G.turn]};display:inline-block"></span><b style="font-family:'Trebuchet MS',sans-serif">${G.turn==='A'?'Your turn (A)':(G.vsAI?'AI thinking… (B)':'Opponent turn (B)')}</b>${G.bonus?' · <span style="color:#3f6f8a;font-weight:700">BONUS</span>':''}</div>`;
+  const counts=`<div class="row" style="display:flex;gap:16px;font-family:'Trebuchet MS',sans-serif;font-size:.78rem;margin-top:8px">
+    <div><b style="color:${SIDE.A}">You · A</b><br>RNA ${rnaCount('A')}/6<br>You've mutated B: <b>${mutCount('B')}/6</b></div>
+    <div><b style="color:${SIDE.B}">Opp · B</b><br>RNA ${rnaCount('B')}/6<br>B has mutated you: <b>${mutCount('A')}/6</b></div></div>`;
+  let menu='';
+  if(sel&&sel.type==='rna'&&sel.side===G.turn){
+    const size=connectedRNA(sel).length;
+    menu=`<div class="row" style="margin-top:6px"><b>Translate</b> — connected RNA cluster = ${size}</div><div style="display:flex;flex-wrap:wrap;gap:6px">`+
+      PROTEINS.map(([tp,cost])=>{const ok=size>=cost;return `<button data-tp="${tp}" ${ok?'':'disabled'} style="font-family:'Trebuchet MS',sans-serif;font-size:.72rem;padding:5px 8px;border-radius:6px;border:1px solid var(--line);cursor:${ok?'pointer':'not-allowed'};background:${ok?'#e8dcbb':'#d8c9a0'};opacity:${ok?1:.55}">${LABEL[tp]} (${cost})</button>`;}).join('')+`</div>`;
+  }
+  const controls=`<div style="display:flex;gap:6px;margin-top:12px">
+    <button id="pass" style="flex:1;font-family:'Trebuchet MS',sans-serif;font-size:.72rem;padding:6px;border-radius:6px;border:1px solid var(--line);cursor:pointer;background:#e8dcbb">Pass / end turn</button></div>
+    <div style="display:flex;gap:6px;margin-top:6px">
+    <button id="newh" style="flex:1;font-family:'Trebuchet MS',sans-serif;font-size:.7rem;padding:6px;border-radius:6px;border:1px solid var(--line);cursor:pointer;background:#efe6cf">New · 2-player</button>
+    <button id="newai" style="flex:1;font-family:'Trebuchet MS',sans-serif;font-size:.7rem;padding:6px;border-radius:6px;border:1px solid var(--line);cursor:pointer;background:#efe6cf">New · vs AI</button></div>`;
+  const log=`<div class="hint" style="max-height:150px;overflow:auto"><b style="display:block;margin-bottom:3px">Log</b>${G.log.map(l=>`<div>${l}</div>`).join('')||'—'}</div>`;
+  el.innerHTML=`<div id="insp-body">${banner}${counts}<div class="row" style="min-height:32px;font-style:italic">${G.prompt||''}</div>${menu}${controls}${log}</div>`;
+  const q=s=>el.querySelector(s);
+  q('#pass').addEventListener('click',()=>{if(!G.over){logMove(`${G.turn}: pass`);G.sel=null;finishAction();}});
+  q('#newh').addEventListener('click',()=>initGame(false));
+  q('#newai').addEventListener('click',()=>initGame(true));
+  el.querySelectorAll('button[data-tp]').forEach(b=>b.addEventListener('click',()=>{const s=G.sel!=null?byId(G.sel):null;if(s&&s.type==='rna')doTranslate(s,b.dataset.tp);}));
 }
-function resetInspector(){
-  document.getElementById('insp-body').innerHTML=`
-    <h3>Select a molecule</h3>
-    <span class="tag" style="background:#c7b485;color:#2b2416">the board is live</span>
-    <p class="row">Tap any piece on the board to inspect its movement, its biological role, and its in-game action. Legal destinations light up on the board.</p>
-    <div class="hint">
-      <span class="legdot" style="background:#3f6f7a"></span>Your organism &nbsp;
-      <span class="legdot" style="background:#9c4a5a"></span>Opponent<br>
-      <span class="legdot" style="background:#f4e9c9;border:1px solid #7a6a45"></span>Move &nbsp;
-      <span class="legdot" style="background:#8a3b30"></span>Capture / mutate target
-    </div>`;
-}
-render();
+
+// expose for headless testing
+window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:initGame};
+initGame(false);
 
 /* ---- roster cards ---- */
 const ROSTER=[
   {type:'dna',title:'DNA',mol:'Genome',move:'Immobile · back rank',cost:'—',desc:'Your ten genes and ten lives. Transcribes RNA each turn. Mutate six of the enemy’s and they get cancer.'},
   {type:'rna',title:'RNA',mol:'mRNA / miRNA',move:'Up to 3 · orthogonal',cost:'made by DNA',desc:'Blocker and builder. Silences genes, degrades enemy RNA, or translates into any protein.'},
-  {type:'nuclease',title:'Nuclease',mol:'CRISPR-Cas9',move:'Diagonal · any dist.',cost:'3 RNA',desc:'The win condition. Reaches an enemy gene and mutates it. Expensive — earn it.'},
-  {type:'polymerase',title:'Polymerase',mol:'DNA polymerase',move:'Straight · any dist.',cost:'2 RNA',desc:'Fast transport across the cell; mutates on arrival with a running start.'},
-  {type:'methyltransferase',title:'Methyltransferase',mol:'Epigenetic writer',move:'1 · any direction',cost:'1 RNA',desc:'Silences an enemy gene (reversible). Cheap control that primes kills.'},
-  {type:'kinase',title:'Kinase',mol:'Signaling kinase',move:'Knight’s L · jumps',cost:'2 RNA',desc:'Grants a friendly piece a second action — the combo engine.'},
-  {type:'helicase',title:'Helicase',mol:'Helicase',move:'Up to 3 · can push',cost:'2 RNA',desc:'Displaces enemy pieces: breaks silencing locks and bodyguards your genome.'},
-  {type:'ligase',title:'Ligase',mol:'DNA ligase',move:'1 · any direction',cost:'1 RNA',desc:'Repairs a freshly mutated gene back to healthy. Your lifeline against cancer.'}
+  {type:'nuclease',title:'Nuclease',mol:'CRISPR-Cas9',move:'Diagonal · any dist.',cost:'3 RNA',desc:'The win condition. v0.2: mutates ANY adjacent enemy gene (move OR mutate each turn). Expensive — earn it.'},
+  {type:'polymerase',title:'Polymerase',mol:'DNA polymerase',move:'Straight · any dist.',cost:'2 RNA',desc:'v0.2: pure transport — the fastest way across the cell; can degrade enemy RNA it runs into. No mutate.'},
+  {type:'methyltransferase',title:'Methyltransferase',mol:'Epigenetic writer',move:'1 · any direction',cost:'—',desc:'Silences an enemy gene (reversible). Parked for the v0.2 test — silencing now comes from RNA adjacency instead.'},
+  {type:'kinase',title:'Kinase',mol:'Signaling kinase',move:'Knight’s L · jumps',cost:'2 RNA',desc:'Grants a friendly piece a second action this turn — the combo engine (and the sudden-death risk to watch).'},
+  {type:'helicase',title:'Helicase',mol:'Helicase',move:'Up to 3 · can push',cost:'2 RNA',desc:'Shoves an enemy piece one square back: breaks silencing locks and bodyguards your genome across the middle.'},
+  {type:'ligase',title:'Ligase',mol:'DNA ligase',move:'1 · any direction',cost:'1 RNA',desc:'Repairs a mutated gene back to healthy — v0.2: only while no enemy touches the lesion. Your anti-cancer lifeline.'}
 ];
 const rosterEl=document.getElementById('roster');
 ROSTER.forEach((p,i)=>{
