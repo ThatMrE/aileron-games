@@ -144,6 +144,19 @@
   .modal .sw{width:15px;height:15px;border-radius:3px;flex:0 0 auto;margin-top:2px}
   .modal .btn-go{margin-top:16px;width:100%;font-family:"Trebuchet MS",system-ui,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.04em;padding:11px;border-radius:8px;border:none;cursor:pointer;background:var(--accent);color:#f4efdf}
   .helpbtn{font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.7rem;padding:5px 10px;border-radius:20px;border:1px solid var(--line);background:#efe6cf;color:var(--ink);cursor:pointer}
+
+  /* danger: pulsing frame when you're one mutation from cancer */
+  @keyframes dangerpulse{0%,100%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 0 rgba(160,40,30,0)}50%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 7px rgba(160,40,30,.4)}}
+  .board-frame.danger{animation:dangerpulse 1.3s ease-in-out infinite}
+  .danger-strip{background:linear-gradient(90deg,#8a2f24,#a5432f);color:#f6e7e2;font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.78rem;font-weight:700;padding:8px 11px;border-radius:8px;margin-bottom:8px;letter-spacing:.02em}
+  .op-strip{background:linear-gradient(90deg,#4a7a3a,#5e7a4e);color:#f2f6ea;font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.78rem;font-weight:700;padding:8px 11px;border-radius:8px;margin-bottom:8px}
+
+  /* mobile: board above panel, no sticky, roomier tap targets */
+  @media(max-width:880px){
+    .inspector{position:static}
+    .wrap{padding:0 14px 70px}
+    .topbar{flex-wrap:wrap;gap:8px}
+  }
 </style>
 </head>
 <body>
@@ -719,8 +732,12 @@ function render(){
   for(let r=0;r<N;r++)for(let c=0;c<N;c++){svg+=`<rect class="hit" data-r="${r}" data-c="${c}" x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}" fill="transparent" style="cursor:pointer"/>`;}
   board.innerHTML=svg;
   board.querySelectorAll('.hit').forEach(el=>el.addEventListener('click',()=>onCell(+el.dataset.r,+el.dataset.c)));
+  const frame=board.closest('.board-frame'); if(frame)frame.classList.toggle('danger',!G.over&&mutCount('A')===WIN-1);
   renderPanel(sel);
+  if(embedMode()) postEmbedHeight();
 }
+function embedMode(){return document.documentElement.classList.contains('embed');}
+function postEmbedHeight(){try{const h=document.querySelector('.wrap').scrollHeight+10;parent.postMessage({dnachess:'height',h},'*');}catch(e){}}
 
 const BTN="font-family:'Trebuchet MS',sans-serif;font-size:.72rem;padding:6px;border-radius:6px;border:1px solid var(--line);cursor:pointer;background:#efe6cf";
 function recapHTML(){
@@ -754,6 +771,10 @@ function renderPanel(sel){
       head+=`<div class="row" style="margin-top:2px"><b>Translate</b> — cluster ${size}${onR?' · <span style="color:#6e5a34">on RIBOSOME (−1)</span>':''}</div><div style="display:flex;flex-wrap:wrap;gap:6px">`+
         PROTEINS.map(([tp])=>{const cost=transCost(sel,tp);const ok=size>=cost;return `<button data-tp="${tp}" ${ok?'':'disabled'} style="font-family:'Trebuchet MS',sans-serif;font-size:.72rem;padding:5px 8px;border-radius:6px;border:1px solid var(--line);cursor:${ok?'pointer':'not-allowed'};background:${ok?'#e8dcbb':'#d8c9a0'};opacity:${ok?1:.55}">${LABEL[tp]} (${cost})</button>`;}).join('')+`</div>`;
     }
+  }
+  if(!G.over){
+    if(mutCount('A')===WIN-1) head=`<div class="danger-strip">⚠ CANCER IMMINENT — one more mutated gene and you lose. Repair or defend!</div>`+head;
+    else if(mutCount('B')===WIN-1) head=`<div class="op-strip">⚡ Match point — B is one gene from cancer. Land the last mutation!</div>`+head;
   }
   const R=getRecord();
   if(R.w||R.l) head+=`<div style="font-size:.72rem;color:var(--ink-soft);margin-top:8px;font-family:'Trebuchet MS',sans-serif">vs&nbsp;AI record: <b>${R.w}W–${R.l}L</b> · <a href="#" id="resetrec" style="color:var(--sideA)">reset</a></div>`;
@@ -827,6 +848,13 @@ window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:in
 const _hb=document.getElementById('howto-btn');if(_hb)_hb.addEventListener('click',showHowto);
 initGame(false);
 if(!document.documentElement.classList.contains('embed')){try{if(!localStorage.getItem('dnachess_seen'))setTimeout(showHowto,300);}catch(e){}}
+// embed auto-height: report content height to the homepage iframe
+if(embedMode()){
+  const p=()=>postEmbedHeight();
+  window.addEventListener('load',p); window.addEventListener('resize',p);
+  try{new ResizeObserver(p).observe(document.querySelector('.wrap'));}catch(e){}
+  setTimeout(p,200); setTimeout(p,600);
+}
 
 /* ---- roster cards ---- */
 const ROSTER=[
