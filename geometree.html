@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeomeTree &mdash; Grow Geometry, from a Line to a Dodecahedron</title>
+  <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Build each form by tracing its edges — from a single line up through the polygons and Platonic solids to the dodecahedron — and grow your geometry tree.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cyan:#00e5ff;
+      --cyan-dim:#0099cc;
+      --lime:#7CFFB2;
+      --purple:#7c3aed;
+      --pink:#f0abfc;
+      --dark:#050812;
+      --dark2:#090d1f;
+      --dark3:#0d1230;
+      --text:#e8f0ff;
+      --muted:rgba(232,240,255,0.55);
+      --faint:rgba(232,240,255,0.28);
+      --border:rgba(0,229,255,0.15);
+      --card-bg:rgba(0,229,255,0.03);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      background:var(--dark);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      min-height:100vh;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none;}
+
+    /* star field (matches the Aileron homepage) */
+    body::before{
+      content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 5%,  rgba(0,229,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(240,171,252,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 85%, rgba(0,229,255,0.3) 0%, transparent 100%),
+        radial-gradient(2px 2px at 30% 55%, rgba(0,229,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 45%, rgba(240,171,252,0.2) 0%, transparent 100%);
+    }
+
+    .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:1.6rem 1.25rem 4rem;}
+
+    /* top bar */
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.6rem;}
+    .brand-logo{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      font-family:'Orbitron',sans-serif;font-weight:700;font-size:0.95rem;
+      letter-spacing:0.12em;text-transform:uppercase;color:var(--text);
+      transition:color .2s,text-shadow .2s;
+    }
+    .brand-logo .tri{color:var(--cyan);font-size:0.85em;text-shadow:0 0 18px rgba(0,229,255,0.5);}
+    .brand-logo:hover{color:var(--cyan);}
+    .nav-home{
+      font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;
+      text-transform:uppercase;color:var(--muted);transition:color .2s;white-space:nowrap;
+    }
+    .nav-home:hover{color:var(--cyan);}
+
+    /* masthead */
+    header.mast{text-align:center;margin-bottom:1.4rem;}
+    .mast .eyebrow{
+      font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.24em;
+      text-transform:uppercase;color:var(--cyan);margin-bottom:0.7rem;
+    }
+    .mast h1{
+      font-family:'Orbitron',monospace;font-weight:900;
+      font-size:clamp(2.2rem,7vw,4rem);letter-spacing:0.05em;line-height:1;
+      text-shadow:0 0 50px rgba(0,229,255,0.28);
+    }
+    .mast h1 .g{color:var(--cyan);}
+    .mast .tagline{
+      font-family:'Space Mono',monospace;font-size:clamp(0.72rem,1.8vw,0.9rem);
+      letter-spacing:0.14em;color:var(--muted);margin-top:0.7rem;
+    }
+
+    /* game layout */
+    .game{
+      display:grid;grid-template-columns:1fr 250px;gap:1.5rem;align-items:start;
+      margin-top:0.6rem;
+    }
+    .stage-col{min-width:0;}
+
+    .levelbar{
+      display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+      flex-wrap:wrap;margin-bottom:0.7rem;
+    }
+    .levelbar .lb-left{display:flex;align-items:baseline;gap:0.8rem;flex-wrap:wrap;}
+    .lv-step{
+      font-family:'Space Mono',monospace;font-size:0.64rem;letter-spacing:0.16em;
+      text-transform:uppercase;color:var(--muted);
+    }
+    .lv-name{
+      font-family:'Orbitron',monospace;font-weight:700;font-size:1.35rem;
+      color:var(--text);letter-spacing:0.03em;
+    }
+    .lv-dim{
+      font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--cyan);border:1px solid var(--border);
+      background:rgba(0,229,255,0.06);padding:0.15rem 0.5rem;border-radius:3px;
+      position:relative;top:-2px;
+    }
+    .edgecount{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--muted);}
+    .edgecount b{color:var(--cyan);}
+
+    .stage-frame{
+      position:relative;border:1px solid var(--border);border-radius:14px;overflow:hidden;
+      background:
+        radial-gradient(120% 120% at 50% 0%, rgba(0,229,255,0.05), transparent 60%),
+        linear-gradient(180deg,#070b18,#04060f);
+      box-shadow:0 24px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,229,255,0.04);
+    }
+    canvas#stage{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair;}
+
+    /* completion banner */
+    .complete-banner{
+      position:absolute;left:50%;bottom:1rem;transform:translateX(-50%) translateY(140%);
+      display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;justify-content:center;
+      background:rgba(5,10,22,0.9);border:1px solid rgba(0,229,255,0.4);
+      backdrop-filter:blur(8px);border-radius:12px;padding:0.7rem 1rem;
+      box-shadow:0 12px 34px rgba(0,0,0,0.5);
+      transition:transform .45s cubic-bezier(.2,.9,.3,1.3);max-width:92%;
+    }
+    .complete-banner.show{transform:translateX(-50%) translateY(0);}
+    .cb-tick{
+      font-family:'Orbitron',monospace;font-weight:700;font-size:0.85rem;color:var(--lime);
+      text-shadow:0 0 16px rgba(124,255,178,0.5);white-space:nowrap;
+    }
+    .cb-fact{font-size:0.78rem;color:var(--muted);max-width:340px;line-height:1.45;}
+
+    .btn{
+      display:inline-block;padding:0.6rem 1.3rem;font-family:'Space Mono',monospace;
+      font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+      cursor:pointer;transition:all .2s;border:none;border-radius:6px;
+    }
+    .btn-cyan{background:var(--cyan);color:var(--dark);box-shadow:0 0 22px rgba(0,229,255,0.35);}
+    .btn-cyan:hover{box-shadow:0 0 36px rgba(0,229,255,0.6);transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--cyan);border:1px solid rgba(0,229,255,0.4);}
+    .btn-outline:hover{border-color:var(--cyan);background:rgba(0,229,255,0.08);}
+
+    /* controls row */
+    .controls{
+      display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-top:0.9rem;
+    }
+    .controls .spacer{flex:1;}
+    .ghostbtn{
+      font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;
+      text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,0.03);
+      border:1px solid rgba(232,240,255,0.14);border-radius:6px;padding:0.5rem 0.85rem;
+      cursor:pointer;transition:all .2s;
+    }
+    .ghostbtn:hover{color:var(--cyan);border-color:rgba(0,229,255,0.4);}
+    .ghostbtn.on{color:var(--cyan);border-color:rgba(0,229,255,0.4);background:rgba(0,229,255,0.06);}
+
+    /* fact / blurb */
+    .blurb{
+      margin-top:1rem;background:var(--card-bg);border:1px solid var(--border);
+      border-left:3px solid var(--cyan);border-radius:10px;padding:1rem 1.15rem;
+    }
+    .blurb .lbl{
+      font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.16em;
+      text-transform:uppercase;color:var(--cyan);margin-bottom:0.35rem;
+    }
+    .blurb p{font-size:0.9rem;line-height:1.65;color:var(--muted);}
+    .blurb p b{color:var(--text);font-weight:600;}
+
+    .howto{
+      margin-top:0.75rem;font-family:'Space Mono',monospace;font-size:0.68rem;
+      letter-spacing:0.04em;color:var(--faint);line-height:1.7;
+    }
+    .howto b{color:var(--cyan);font-weight:700;}
+
+    /* ── TREE PANEL ── */
+    .tree-panel{
+      background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
+      padding:1.1rem 1rem 1.2rem;position:sticky;top:1rem;
+    }
+    .tree-panel h2{
+      font-family:'Orbitron',monospace;font-size:0.78rem;font-weight:700;
+      letter-spacing:0.06em;color:var(--text);margin-bottom:0.15rem;
+    }
+    .tree-sub{
+      font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;
+      text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;
+    }
+    .tree-sub b{color:var(--cyan);}
+    .tree{display:flex;flex-direction:column-reverse;gap:0;position:relative;}
+    .node{
+      display:flex;align-items:center;gap:0.7rem;padding:0.32rem 0.2rem;position:relative;
+      opacity:0.4;transition:opacity .35s;
+    }
+    .node .thumb{
+      width:42px;height:42px;flex:0 0 42px;border:1px solid rgba(232,240,255,0.12);
+      border-radius:8px;background:rgba(0,0,0,0.25);transition:all .35s;
+    }
+    .node .meta{min-width:0;}
+    .node .n-name{
+      font-family:'Orbitron',monospace;font-size:0.72rem;font-weight:700;
+      color:var(--text);letter-spacing:0.02em;line-height:1.1;
+    }
+    .node .n-dim{
+      font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.1em;
+      text-transform:uppercase;color:var(--muted);
+    }
+    /* connector branch between nodes */
+    .node::after{
+      content:'';position:absolute;left:20px;top:-0.5rem;height:0.5rem;width:2px;
+      background:rgba(232,240,255,0.1);
+    }
+    .node:first-child::after{display:none;} /* topmost in column-reverse = crown */
+    .node.done{opacity:1;}
+    .node.done .thumb{border-color:rgba(0,229,255,0.5);box-shadow:0 0 16px rgba(0,229,255,0.18);}
+    .node.done::after{background:linear-gradient(180deg,rgba(0,229,255,0.5),rgba(0,229,255,0.15));}
+    .node.current{opacity:1;}
+    .node.current .thumb{
+      border-color:var(--cyan);box-shadow:0 0 20px rgba(0,229,255,0.4);
+      animation:pulse 1.6s ease-in-out infinite;
+    }
+    .node.current .n-name{color:var(--cyan);}
+    @keyframes pulse{0%,100%{box-shadow:0 0 12px rgba(0,229,255,0.25);}50%{box-shadow:0 0 26px rgba(0,229,255,0.6);}}
+    .node .seed{font-size:1.1rem;filter:grayscale(0.2);}
+
+    .tree-foot{
+      margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(232,240,255,0.08);
+      font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.06em;
+      color:var(--faint);display:flex;justify-content:space-between;align-items:center;gap:0.5rem;
+    }
+    .tree-foot a{color:var(--faint);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
+    .tree-foot a:hover{color:var(--cyan);}
+
+    /* victory */
+    .victory{
+      display:none;text-align:center;margin-top:1.2rem;background:linear-gradient(135deg,var(--dark3),var(--dark2));
+      border:1px solid rgba(0,229,255,0.35);border-radius:14px;padding:1.6rem 1.4rem;
+    }
+    .victory.show{display:block;}
+    .victory h3{font-family:'Orbitron',monospace;font-weight:900;font-size:1.35rem;color:var(--cyan);
+      text-shadow:0 0 30px rgba(0,229,255,0.4);margin-bottom:0.5rem;letter-spacing:0.03em;}
+    .victory p{color:var(--muted);font-size:0.9rem;line-height:1.65;max-width:460px;margin:0 auto 1.1rem;}
+
+    footer{
+      margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--border);
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;
+    }
+    .footer-logo{
+      font-family:'Orbitron',monospace;font-size:0.82rem;font-weight:700;color:var(--cyan);
+      letter-spacing:0.08em;text-shadow:0 0 15px rgba(0,229,255,0.4);
+    }
+    footer .fnote{font-family:'Space Mono',monospace;font-size:0.62rem;color:rgba(232,240,255,0.25);letter-spacing:0.05em;}
+
+    /* onboarding toast */
+    .intro-toast{
+      position:fixed;left:50%;top:1rem;transform:translateX(-50%) translateY(-160%);
+      z-index:60;background:rgba(5,10,22,0.95);border:1px solid rgba(0,229,255,0.4);
+      border-radius:12px;padding:0.9rem 1.2rem;max-width:min(90vw,520px);
+      box-shadow:0 18px 44px rgba(0,0,0,0.6);transition:transform .5s cubic-bezier(.2,.9,.3,1.3);
+    }
+    .intro-toast.show{transform:translateX(-50%) translateY(0);}
+    .intro-toast .it-t{font-family:'Orbitron',monospace;font-size:0.8rem;color:var(--cyan);margin-bottom:0.3rem;letter-spacing:0.03em;}
+    .intro-toast p{font-size:0.82rem;color:var(--muted);line-height:1.55;}
+    .intro-toast .x{float:right;color:var(--muted);cursor:pointer;font-size:1rem;line-height:1;padding-left:0.6rem;}
+    .intro-toast .x:hover{color:var(--cyan);}
+
+    @media (max-width:820px){
+      .game{grid-template-columns:1fr;}
+      .tree-panel{position:static;order:2;}
+      .tree{flex-direction:row;overflow-x:auto;gap:0.4rem;padding-bottom:0.4rem;}
+      .node{flex-direction:column;text-align:center;gap:0.3rem;min-width:74px;padding:0.3rem;}
+      .node::after{display:none;}
+      .node .meta{text-align:center;}
+      .tree-foot{flex-direction:column;align-items:flex-start;}
+    }
+
+    /* embed mode: strip chrome so the homepage can iframe just the game */
+    html.embed .topbar,
+    html.embed header.mast,
+    html.embed footer{display:none;}
+    html.embed .wrap{padding-top:0.8rem;}
+  </style>
+  <script>if(/[?&]embed/.test(location.search))document.documentElement.classList.add('embed');</script>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <a class="brand-logo" href="index.html"><span class="tri">&#9652;</span> Aileron Games</a>
+      <a class="nav-home" href="index.html">&larr; Back to the library</a>
+    </div>
+
+    <header class="mast">
+      <p class="eyebrow">&#9652; Aileron Games &mdash; Learn by Building</p>
+      <h1><span class="g">Geome</span>Tree</h1>
+      <p class="tagline">Grow geometry &mdash; from a single line to a dodecahedron</p>
+    </header>
+
+    <div class="game">
+      <!-- STAGE -->
+      <div class="stage-col">
+        <div class="levelbar">
+          <div class="lb-left">
+            <span class="lv-step" id="lvStep">Form 1 / 9</span>
+            <span class="lv-name" id="lvName">Line</span>
+            <span class="lv-dim" id="lvDim">1D</span>
+          </div>
+          <span class="edgecount"><b id="edgeDone">0</b> / <span id="edgeTotal">1</span> edges</span>
+        </div>
+
+        <div class="stage-frame">
+          <canvas id="stage" width="760" height="560"></canvas>
+          <div class="complete-banner" id="banner">
+            <span class="cb-tick" id="bannerTick">&#10003; Complete</span>
+            <span class="cb-fact" id="bannerFact"></span>
+            <button class="btn btn-cyan" id="growBtn">Grow &rarr;</button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="ghostbtn" id="hintBtn">&#128161; Hint</button>
+          <button class="ghostbtn" id="resetBtn">&#8635; Reset form</button>
+          <button class="ghostbtn on" id="spinBtn" title="Toggle auto-spin for 3D forms">&#8635; Spin</button>
+          <span class="spacer"></span>
+          <button class="ghostbtn" id="soundBtn">&#128266; Sound</button>
+        </div>
+
+        <div class="blurb">
+          <div class="lbl" id="blurbLbl">The Form</div>
+          <p id="blurbText"></p>
+        </div>
+
+        <p class="howto">
+          <b>How to play:</b> click a glowing vertex, then click a neighbour to draw the edge between them.
+          Trace every edge to complete the form and grow your tree. On 3D solids, <b>drag</b> to rotate.
+        </p>
+
+        <div class="victory" id="victory">
+          <h3>&#127793; Your GeomeTree is complete</h3>
+          <p>From a single line you evolved all the way to the dodecahedron &mdash; the crown of the five
+             Platonic solids and Plato&rsquo;s emblem for the cosmos. Nine forms, one growing tree.</p>
+          <button class="btn btn-cyan" id="replayBtn">Plant a new seed &#8635;</button>
+        </div>
+      </div>
+
+      <!-- TREE -->
+      <aside class="tree-panel">
+        <h2>Your GeomeTree</h2>
+        <p class="tree-sub">Grown: <b id="grownCount">0</b> / 9</p>
+        <div class="tree" id="tree"></div>
+        <div class="tree-foot">
+          <span>&#9652; from a line &rarr; the cosmos</span>
+          <a id="resetProgress">reset</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <span class="footer-logo">&#9652; AILERON GAMES</span>
+      <span class="fnote">GeomeTree &middot; a learning game &middot; Richmond, VA</span>
+    </footer>
+  </div>
+
+  <div class="intro-toast" id="introToast">
+    <span class="x" id="introX">&times;</span>
+    <div class="it-t">&#9652; Trace the form</div>
+    <p>Click a glowing <b>vertex</b>, then a neighbour, to draw an <b>edge</b>. Connect every edge to complete
+       the shape and grow your geometry tree &mdash; from a single line all the way to a dodecahedron.</p>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+  const PHI = (1 + Math.sqrt(5)) / 2;
+  const INV = 1 / PHI;
+
+  /* ---------- geometry builders ---------- */
+  function regPoly(n){                       // regular n-gon, apex-up (first vertex at visual top)
+    const v = [];
+    for(let i=0;i<n;i++){
+      const a = -Math.PI/2 + i*2*Math.PI/n;
+      v.push([Math.cos(a), -Math.sin(a), 0]);   // negate y so the leading vertex sits at the top
+    }
+    return v;
+  }
+  function ringEdges(n){                      // perimeter only
+    const e = [];
+    for(let i=0;i<n;i++) e.push([i,(i+1)%n]);
+    return e;
+  }
+  function autoEdges(verts){                  // connect all vertex pairs at the minimum distance
+    let min = Infinity;
+    for(let i=0;i<verts.length;i++)
+      for(let j=i+1;j<verts.length;j++){
+        const d = dist(verts[i],verts[j]);
+        if(d < min) min = d;
+      }
+    const e = [];
+    for(let i=0;i<verts.length;i++)
+      for(let j=i+1;j<verts.length;j++){
+        if(dist(verts[i],verts[j]) <= min*1.02) e.push([i,j]);
+      }
+    return e;
+  }
+  function dist(a,b){
+    const dx=a[0]-b[0], dy=a[1]-b[1], dz=a[2]-b[2];
+    return Math.sqrt(dx*dx+dy*dy+dz*dz);
+  }
+
+  // 3D vertex sets
+  const tetraV = [[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]];
+  const cubeV  = (()=>{const v=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])v.push([x,y,z]);return v;})();
+  const octaV  = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
+  const dodecaV = (()=>{
+    const v=[];
+    for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])v.push([x,y,z]);
+    for(const a of[-1,1])for(const b of[-1,1])v.push([0, a*INV, b*PHI]);
+    for(const a of[-1,1])for(const b of[-1,1])v.push([a*INV, b*PHI, 0]);
+    for(const a of[-1,1])for(const b of[-1,1])v.push([a*PHI, 0, b*INV]);
+    return v;
+  })();
+
+  /* ---------- the evolution ladder ---------- */
+  const LEVELS = [
+    { name:'Line', dim:'1D', d3:false, seed:'&#9679;',
+      verts:[[-1,0,0],[1,0,0]], edges:[[0,1]],
+      fact:'One dimension. The <b>shortest path between two points</b> &mdash; no width, no area, pure direction. Every shape that follows is made of lines like this one.' },
+    { name:'Triangle', dim:'2D', d3:false,
+      verts:regPoly(3), edges:ringEdges(3),
+      fact:'The first polygon &mdash; and the <b>only rigid one</b>. Push a triangle and it holds its shape, which is why bridges, roof trusses and cranes are built from them.' },
+    { name:'Square', dim:'2D', d3:false,
+      verts:regPoly(4), edges:ringEdges(4),
+      fact:'Four equal sides, four right angles. Squares <b>tile the plane</b> with no gaps &mdash; the reason floors, pixels and graph paper are built on them.' },
+    { name:'Pentagon', dim:'2D', d3:false,
+      verts:regPoly(5), edges:ringEdges(5),
+      fact:'Five sides, with the <b>golden ratio &phi;</b> hidden in its diagonals. Remember this face &mdash; twelve pentagons build the finale of your tree.' },
+    { name:'Hexagon', dim:'2D', d3:false,
+      verts:regPoly(6), edges:ringEdges(6),
+      fact:'Nature&rsquo;s favourite shape. <b>Bees build honeycomb in hexagons</b> because they tile a surface using the least wall for the most space.' },
+    { name:'Tetrahedron', dim:'3D', d3:true,
+      verts:tetraV, edges:autoEdges(tetraV),
+      fact:'Your first <b>solid</b>: 4 triangular faces, 4 corners, 6 edges. It is the simplest of the five <b>Platonic solids</b> &mdash; geometry leaving the flat page.' },
+    { name:'Cube', dim:'3D', d3:true,
+      verts:cubeV, edges:autoEdges(cubeV),
+      fact:'6 square faces, 8 corners, 12 edges. Notice <b>V &minus; E + F = 2</b> (8 &minus; 12 + 6): Euler&rsquo;s formula holds for every solid you build here.' },
+    { name:'Octahedron', dim:'3D', d3:true,
+      verts:octaV, edges:autoEdges(octaV),
+      fact:'8 triangular faces meeting at 6 points &mdash; the cube&rsquo;s <b>dual twin</b>. Swap every face of a cube for a corner and this is what you get.' },
+    { name:'Dodecahedron', dim:'3D', d3:true,
+      verts:dodecaV, edges:autoEdges(dodecaV),
+      fact:'The crown: <b>12 pentagons</b>, 20 corners, 30 edges. Plato tied it to the cosmos itself &mdash; the whole tree grows toward this single form.' },
+  ];
+
+  /* ---------- canvas / DPR ---------- */
+  const canvas = document.getElementById('stage');
+  const ctx = canvas.getContext('2d');
+  let W = 760, H = 560, dpr = 1;
+
+  function resize(){
+    const rect = canvas.getBoundingClientRect();
+    const cssW = rect.width || 760;
+    const cssH = Math.max(360, Math.min(620, cssW * 0.74));
+    dpr = Math.max(1, Math.min(2, window.devicePixelRatio||1));
+    canvas.style.height = cssH + 'px';
+    canvas.width = Math.round(cssW*dpr);
+    canvas.height = Math.round(cssH*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    W = cssW; H = cssH;
+  }
+
+  /* ---------- state ---------- */
+  let cur = 0;
+  let placed = new Set();        // "i-j" (i<j) placed on current level
+  let selected = -1;             // first-clicked vertex index, or -1
+  let rot = {x:-0.42, y:0.7};    // current 3D rotation
+  let drawRot = {x:-0.42, y:0.7};
+  let userDragged = false;
+  let autoSpin = true;
+  let introT0 = 0;               // level intro spin start
+  let completed = false;
+  let completeT0 = 0;
+  let hintEdge = null; let hintT0 = 0;
+  let hoverV = -1;
+  let pointer = {x:-999,y:-999,active:false};
+  let doneCount = 0;
+  let soundOn = false;
+  const embed = document.documentElement.classList.contains('embed');
+
+  /* ---------- persistence ---------- */
+  const SAVE = 'geometree_progress_v1';
+  function loadProgress(){
+    if(embed) return 0;
+    try{ const n = parseInt(localStorage.getItem(SAVE)||'0',10); return isNaN(n)?0:Math.max(0,Math.min(LEVELS.length,n)); }
+    catch(e){ return 0; }
+  }
+  function saveProgress(n){
+    if(embed) return;
+    try{ localStorage.setItem(SAVE, String(n)); }catch(e){}
+  }
+
+  /* ---------- sound (tiny, gesture-gated) ---------- */
+  let actx = null;
+  function beep(freq, dur, type, gain){
+    if(!soundOn) return;
+    try{
+      if(!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = type||'sine'; o.frequency.value = freq;
+      g.gain.value = 0; o.connect(g); g.connect(actx.destination);
+      const t = actx.currentTime;
+      g.gain.linearRampToValueAtTime(gain||0.12, t+0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, t+(dur||0.14));
+      o.start(t); o.stop(t+(dur||0.14)+0.02);
+    }catch(e){}
+  }
+  function chord(){ [523.25,659.25,783.99,1046.5].forEach((f,i)=>setTimeout(()=>beep(f,0.5,'triangle',0.1),i*70)); }
+
+  /* ---------- projection ---------- */
+  function project(v, useRot){
+    let x=v[0], y=v[1], z=v[2];
+    if(useRot){
+      const cy=Math.cos(drawRot.y), sy=Math.sin(drawRot.y);
+      let x1 = x*cy + z*sy, z1 = -x*sy + z*cy;
+      const cx=Math.cos(drawRot.x), sx=Math.sin(drawRot.x);
+      let y1 = y*cx - z1*sx, z2 = y*sx + z1*cx;
+      return {x:x1, y:y1, z:z2};
+    }
+    return {x:x, y:y, z:0};
+  }
+  // returns array of screen points {sx,sy,depth}
+  function screenPoints(level){
+    const rp = level.verts.map(v => project(v, level.d3));
+    let maxR = 0;
+    for(const v of level.verts){ const r=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); if(r>maxR)maxR=r; }
+    const margin = 46;
+    const scale = (Math.min(W,H)*0.5 - margin) / (maxR||1);
+    const cx = W/2, cy = H/2;
+    let zmin=Infinity, zmax=-Infinity;
+    for(const p of rp){ if(p.z<zmin)zmin=p.z; if(p.z>zmax)zmax=p.z; }
+    const zr = (zmax-zmin)||1;
+    return rp.map(p => ({
+      sx: cx + p.x*scale,
+      sy: cy - p.y*scale,
+      depth: level.d3 ? (p.z - zmin)/zr : 1   // 0 = far, 1 = near
+    }));
+  }
+
+  let PTS = [];  // cached screen points for hit-testing
+
+  /* ---------- edge helpers ---------- */
+  function key(i,j){ return i<j ? i+'-'+j : j+'-'+i; }
+  function isTarget(i,j){
+    const k = key(i,j);
+    return LEVELS[cur].edges.some(e => key(e[0],e[1])===k);
+  }
+  function nextTargetEdge(){
+    for(const e of LEVELS[cur].edges){ if(!placed.has(key(e[0],e[1]))) return e; }
+    return null;
+  }
+
+  /* ---------- rendering ---------- */
+  function draw(now){
+    const L = LEVELS[cur];
+    ctx.clearRect(0,0,W,H);
+
+    // rotation logic for 3D
+    if(L.d3){
+      const introDur = 1500;
+      const t = (now - introT0)/introDur;
+      if(t < 1 && !userDragged){
+        const e = 1 - Math.pow(1-t, 3);            // easeOutCubic
+        drawRot.x = rot.x;
+        drawRot.y = rot.y - (1-e)*Math.PI*2;        // one full reveal turn, easing to rest
+      } else if(autoSpin && !pointer.active && !completed){
+        rot.y += 0.006;
+        drawRot.x = rot.x; drawRot.y = rot.y;
+      } else {
+        drawRot.x = rot.x; drawRot.y = rot.y;
+      }
+    }
+
+    PTS = screenPoints(L);
+
+    // completion fill for polygons
+    if(completed && !L.d3 && L.verts.length >= 3){
+      const prog = Math.min(1,(now-completeT0)/700);
+      ctx.beginPath();
+      PTS.forEach((p,i)=> i===0 ? ctx.moveTo(p.sx,p.sy) : ctx.lineTo(p.sx,p.sy));
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(0,229,255,'+(0.12*prog)+')';
+      ctx.fill();
+    }
+
+    // ghost (unplaced) target edges
+    for(const [i,j] of L.edges){
+      if(placed.has(key(i,j))) continue;
+      const a=PTS[i], b=PTS[j];
+      const isHint = hintEdge && key(hintEdge[0],hintEdge[1])===key(i,j);
+      ctx.beginPath();
+      ctx.setLineDash([5,7]);
+      if(isHint){
+        const pulse = 0.5 + 0.5*Math.sin(now/140);
+        ctx.strokeStyle = 'rgba(0,229,255,'+(0.5+0.4*pulse)+')';
+        ctx.lineWidth = 2.4;
+      } else {
+        ctx.strokeStyle = 'rgba(232,240,255,0.14)';
+        ctx.lineWidth = 1.4;
+      }
+      ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // placed edges (depth-shaded)
+    const flash = completed ? Math.max(0, 1-(now-completeT0)/600) : 0;
+    for(const kk of placed){
+      const [i,j] = kk.split('-').map(Number);
+      const a=PTS[i], b=PTS[j];
+      const d = (a.depth+b.depth)/2;
+      const alpha = L.d3 ? (0.4 + 0.6*d) : 1;
+      const lw = (L.d3 ? (1.6 + 2.2*d) : 3) + flash*2;
+      ctx.beginPath();
+      ctx.lineCap='round';
+      ctx.shadowColor = 'rgba(0,229,255,0.7)';
+      ctx.shadowBlur = (L.d3 ? 6+8*d : 12) + flash*18;
+      ctx.strokeStyle = flash>0.02
+        ? 'rgba('+Math.round(180+75*(1-flash))+',255,255,'+alpha+')'
+        : 'rgba(0,229,255,'+alpha+')';
+      ctx.lineWidth = lw;
+      ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
+    }
+    ctx.shadowBlur = 0;
+
+    // rubber band from selected vertex to pointer
+    if(selected>=0 && pointer.x>-900 && !completed){
+      const a = PTS[selected];
+      ctx.beginPath();
+      ctx.setLineDash([3,6]);
+      ctx.strokeStyle = 'rgba(0,229,255,0.5)';
+      ctx.lineWidth = 1.6;
+      ctx.moveTo(a.sx,a.sy); ctx.lineTo(pointer.x,pointer.y); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // vertices
+    PTS.forEach((p,i)=>{
+      const d = L.d3 ? p.depth : 1;
+      const base = 3.6 + (L.d3 ? 2.4*d : 1.4);
+      let r = base, col='rgba(232,240,255,'+(0.45+0.4*d)+')', ring=false;
+      if(i===hoverV){ r=base+2.2; col='#00e5ff'; }
+      if(i===selected){ r=base+2.6; col='#7CFFB2'; ring=true; }
+      ctx.beginPath();
+      ctx.fillStyle = col;
+      ctx.shadowColor = (i===selected)?'rgba(124,255,178,0.9)':'rgba(0,229,255,0.6)';
+      ctx.shadowBlur = (i===hoverV||i===selected)?14:6;
+      ctx.arc(p.sx,p.sy,r,0,Math.PI*2); ctx.fill();
+      if(ring){
+        ctx.beginPath(); ctx.strokeStyle='rgba(124,255,178,0.8)'; ctx.lineWidth=2;
+        ctx.arc(p.sx,p.sy,r+4,0,Math.PI*2); ctx.stroke();
+      }
+      ctx.shadowBlur=0;
+    });
+
+    // completion burst ring (3D + all)
+    if(completed){
+      const prog = (now-completeT0)/900;
+      if(prog<1){
+        const R = 30 + prog*Math.min(W,H)*0.5;
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(0,229,255,'+(0.5*(1-prog))+')';
+        ctx.lineWidth = 3*(1-prog)+0.5;
+        ctx.arc(W/2,H/2,R,0,Math.PI*2); ctx.stroke();
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  /* ---------- hit testing ---------- */
+  function nearestVertex(x,y){
+    let best=-1, bd=1e9;
+    for(let i=0;i<PTS.length;i++){
+      const dx=PTS[i].sx-x, dy=PTS[i].sy-y, d=dx*dx+dy*dy;
+      if(d<bd){ bd=d; best=i; }
+    }
+    return bd <= 22*22 ? best : -1;
+  }
+
+  /* ---------- interaction ---------- */
+  let down=null;
+  function localXY(ev){
+    const r = canvas.getBoundingClientRect();
+    return { x:(ev.clientX-r.left), y:(ev.clientY-r.top) };
+  }
+  canvas.addEventListener('pointerdown', ev=>{
+    ev.preventDefault();
+    canvas.setPointerCapture(ev.pointerId);
+    const p = localXY(ev);
+    down = {x:p.x, y:p.y, moved:false, t:performance.now()};
+    pointer.x=p.x; pointer.y=p.y; pointer.active=true;
+  });
+  canvas.addEventListener('pointermove', ev=>{
+    const p = localXY(ev);
+    pointer.x=p.x; pointer.y=p.y;
+    if(down){
+      const dx=p.x-down.x, dy=p.y-down.y;
+      if(dx*dx+dy*dy > 36) down.moved = true;
+      if(down.moved && LEVELS[cur].d3 && !completed){
+        userDragged = true;
+        rot.y += dx*0.01; rot.x += dy*0.01;
+        rot.x = Math.max(-1.4, Math.min(1.4, rot.x));
+        down.x=p.x; down.y=p.y;
+        hoverV=-1;
+        return;
+      }
+    }
+    if(!completed) hoverV = nearestVertex(p.x,p.y);
+  });
+  function endPointer(ev){
+    const p = localXY(ev);
+    const wasClick = down && !down.moved;
+    down=null; pointer.active=false;
+    if(!wasClick || completed) return;
+    const v = nearestVertex(p.x,p.y);
+    if(v<0){ selected=-1; return; }
+    handleVertexClick(v);
+  }
+  canvas.addEventListener('pointerup', endPointer);
+  canvas.addEventListener('pointercancel', ()=>{ down=null; pointer.active=false; });
+  canvas.addEventListener('pointerleave', ()=>{ if(!down){ hoverV=-1; pointer.x=-999; } });
+
+  function handleVertexClick(v){
+    if(selected<0){ selected=v; beep(440,0.06,'sine',0.05); return; }
+    if(selected===v){ selected=-1; return; }
+    const k = key(selected,v);
+    if(isTarget(selected,v) && !placed.has(k)){
+      placed.add(k);
+      beep(560+placed.size*30,0.1,'triangle',0.09);
+      selected = v;                 // chain along the trace
+      hintEdge = null;
+      updateEdgeCount();
+      if(placed.size === LEVELS[cur].edges.length) onComplete();
+    } else {
+      // not a valid neighbour (or already drawn) — restart trace from here
+      beep(180,0.09,'sawtooth',0.05);
+      selected = v;
+    }
+  }
+
+  /* ---------- completion / progression ---------- */
+  function onComplete(){
+    completed = true;
+    completeT0 = performance.now();
+    selected=-1; hoverV=-1;
+    chord();
+    if(cur+1 > doneCount){ doneCount = cur+1; saveProgress(doneCount); }
+    markTree();
+    const L = LEVELS[cur];
+    document.getElementById('bannerTick').innerHTML = '&#10003; '+L.name+' complete';
+    document.getElementById('bannerFact').innerHTML = L.fact;
+    const isLast = cur === LEVELS.length-1;
+    document.getElementById('growBtn').textContent = isLast ? 'Finish →' : 'Grow →';
+    setTimeout(()=>document.getElementById('banner').classList.add('show'), 420);
+  }
+  document.getElementById('growBtn').addEventListener('click', ()=>{
+    document.getElementById('banner').classList.remove('show');
+    if(cur === LEVELS.length-1){ showVictory(); return; }
+    loadLevel(cur+1);
+  });
+
+  function showVictory(){
+    document.getElementById('victory').classList.add('show');
+    document.getElementById('victory').scrollIntoView({behavior:'smooth', block:'center'});
+    chord();
+  }
+
+  function loadLevel(i){
+    cur = i;
+    placed = new Set();
+    selected=-1; hoverV=-1; completed=false; hintEdge=null;
+    userDragged=false;
+    rot = {x:-0.42, y:0.7}; drawRot={x:-0.42,y:0.7};
+    introT0 = performance.now();
+    document.getElementById('victory').classList.remove('show');
+    document.getElementById('banner').classList.remove('show');
+    const L = LEVELS[i];
+    document.getElementById('lvStep').textContent = 'Form '+(i+1)+' / '+LEVELS.length;
+    document.getElementById('lvName').textContent = L.name;
+    document.getElementById('lvDim').textContent = L.dim;
+    document.getElementById('blurbLbl').textContent = L.name+' · '+L.dim;
+    document.getElementById('blurbText').innerHTML = L.fact;
+    updateEdgeCount();
+    markTree();
+  }
+  function updateEdgeCount(){
+    document.getElementById('edgeDone').textContent = placed.size;
+    document.getElementById('edgeTotal').textContent = LEVELS[cur].edges.length;
+  }
+
+  /* ---------- controls ---------- */
+  document.getElementById('hintBtn').addEventListener('click', ()=>{
+    if(completed) return;
+    hintEdge = nextTargetEdge(); hintT0 = performance.now();
+    setTimeout(()=>{ hintEdge=null; }, 2600);
+  });
+  document.getElementById('resetBtn').addEventListener('click', ()=>{
+    placed = new Set(); selected=-1; completed=false; hintEdge=null;
+    document.getElementById('banner').classList.remove('show');
+    updateEdgeCount();
+  });
+  const spinBtn = document.getElementById('spinBtn');
+  spinBtn.addEventListener('click', ()=>{
+    autoSpin = !autoSpin;
+    spinBtn.classList.toggle('on', autoSpin);
+  });
+  const soundBtn = document.getElementById('soundBtn');
+  soundBtn.addEventListener('click', ()=>{
+    soundOn = !soundOn;
+    soundBtn.classList.toggle('on', soundOn);
+    soundBtn.innerHTML = soundOn ? '&#128266; Sound on' : '&#128263; Muted';
+    if(soundOn) beep(660,0.1,'sine',0.08);
+  });
+  document.getElementById('replayBtn').addEventListener('click', ()=>{
+    doneCount = 0; saveProgress(0); loadLevel(0);
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  document.getElementById('resetProgress').addEventListener('click', ()=>{
+    doneCount = 0; saveProgress(0); loadLevel(0);
+  });
+  window.addEventListener('keydown', e=>{
+    if(e.key==='h'||e.key==='H') document.getElementById('hintBtn').click();
+    if(e.key==='r'||e.key==='R') document.getElementById('resetBtn').click();
+    if((e.key==='Enter'||e.key===' ') && completed){ e.preventDefault(); document.getElementById('growBtn').click(); }
+  });
+
+  /* ---------- tree panel ---------- */
+  const treeEl = document.getElementById('tree');
+  const thumbs = [];
+  function buildTree(){
+    treeEl.innerHTML='';
+    LEVELS.forEach((L,i)=>{
+      const node = document.createElement('div');
+      node.className='node';
+      const c = document.createElement('canvas');
+      c.className='thumb'; c.width=84; c.height=84;
+      const meta = document.createElement('div');
+      meta.className='meta';
+      meta.innerHTML = '<div class="n-name">'+L.name+'</div><div class="n-dim">'+L.dim+'</div>';
+      node.appendChild(c); node.appendChild(meta);
+      treeEl.appendChild(node);
+      thumbs.push({node, canvas:c});
+      drawThumb(c, L);
+    });
+  }
+  function drawThumb(c, L){
+    const tc = c.getContext('2d');
+    const w=c.width, h=c.height;
+    tc.clearRect(0,0,w,h);
+    // fixed pleasant rotation for 3D thumbnails
+    const rx=-0.5, ry=0.6;
+    let maxR=0;
+    for(const v of L.verts){ const r=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); if(r>maxR)maxR=r; }
+    const scale=(Math.min(w,h)*0.5 - 12)/(maxR||1);
+    const pts = L.verts.map(v=>{
+      let x=v[0],y=v[1],z=v[2];
+      if(L.d3){
+        const cy=Math.cos(ry),sy=Math.sin(ry);
+        let x1=x*cy+z*sy, z1=-x*sy+z*cy;
+        const cx=Math.cos(rx),sx=Math.sin(rx);
+        let y1=y*cx-z1*sx;
+        x=x1; y=y1;
+      }
+      return {sx:w/2+x*scale, sy:h/2-y*scale};
+    });
+    tc.strokeStyle='rgba(0,229,255,0.9)';
+    tc.lineWidth=1.4; tc.lineCap='round';
+    tc.shadowColor='rgba(0,229,255,0.5)'; tc.shadowBlur=4;
+    for(const [i,j] of L.edges){
+      tc.beginPath(); tc.moveTo(pts[i].sx,pts[i].sy); tc.lineTo(pts[j].sx,pts[j].sy); tc.stroke();
+    }
+    tc.shadowBlur=0;
+  }
+  function markTree(){
+    thumbs.forEach((t,i)=>{
+      t.node.classList.toggle('done', i < doneCount);
+      t.node.classList.toggle('current', i === cur);
+    });
+    document.getElementById('grownCount').textContent = doneCount;
+  }
+
+  /* ---------- onboarding ---------- */
+  function maybeIntro(){
+    if(embed) return;
+    let seen=false;
+    try{ seen = !!localStorage.getItem('geometree_seen'); }catch(e){}
+    if(seen) return;
+    const t = document.getElementById('introToast');
+    setTimeout(()=>t.classList.add('show'), 500);
+    const hide = ()=>{ t.classList.remove('show'); try{localStorage.setItem('geometree_seen','1');}catch(e){} };
+    document.getElementById('introX').addEventListener('click', hide);
+    setTimeout(hide, 9000);
+  }
+
+  /* ---------- boot ---------- */
+  function boot(){
+    resize();
+    buildTree();
+    doneCount = loadProgress();
+    const start = Math.min(doneCount, LEVELS.length-1);
+    loadLevel(start);
+    if(doneCount >= LEVELS.length){ /* all done previously */ markTree(); }
+    maybeIntro();
+    requestAnimationFrame(draw);
+    // report height to a parent iframe (embed mode on the homepage)
+    if(embed) reportHeight();
+  }
+  let ro;
+  if(window.ResizeObserver){
+    ro = new ResizeObserver(()=>{ resize(); });
+    ro.observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resize);
+  }
+  function reportHeight(){
+    try{
+      const h = document.querySelector('.wrap').scrollHeight + 24;
+      parent.postMessage({geometree:'height', h:h}, '*');
+      setTimeout(reportHeight, 1000);
+    }catch(e){}
+  }
+
+  boot();
+})();
+</script>
+</body>
+</html>
