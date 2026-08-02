@@ -142,7 +142,7 @@
       <span class="sub">Run the Central Dogma as a war machine. Give your opponent cancer.</span>
     </h1>
     <p class="lede">
-      Your back rank is your <b>genome</b> &mdash; eight genes, eight lives. Switch them on to
+      Your back rank is your <b>genome</b> &mdash; ten genes, ten lives. Switch them on to
       transcribe <b>RNA</b>, translate RNA into <b>protein enzymes</b>, and march those enzymes
       across the cell to <b>edit the enemy's DNA</b>. Mutate more than half of their genome and
       their cell loses control: <b>cancer</b>, and the game.
@@ -160,7 +160,7 @@
   <!-- ================= BOARD ================= -->
   <h2><span class="n">01</span>The board</h2>
   <p class="section-note">
-    An 8&times;8 cell interior. Both genomes sit on the far ranks. Everything else &mdash; RNA and
+    A 10&times;10 cell interior (expanded from 8&times;8 for more room to maneuver). Both genomes sit on the far ranks. Everything else &mdash; RNA and
     proteins &mdash; is <em>expressed during play</em>, not placed at setup.
     <b>Click any molecule</b> to see how it moves and what it does. Rendered in the style of
     David Goodsell's <em>Machinery of Life</em>.
@@ -169,9 +169,9 @@
   <div class="board-layout">
     <div>
       <div class="board-frame">
-        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h</span><span>OPPONENT&nbsp;GENOME</span></div>
-        <svg id="board" viewBox="0 0 672 672" role="img" aria-label="DNA Chess board"></svg>
-        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h</span><span>YOUR&nbsp;GENOME</span></div>
+        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h&nbsp;&nbsp;i&nbsp;&nbsp;j</span><span>OPPONENT&nbsp;GENOME</span></div>
+        <svg id="board" viewBox="0 0 680 680" role="img" aria-label="DNA Chess board"></svg>
+        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h&nbsp;&nbsp;i&nbsp;&nbsp;j</span><span>YOUR&nbsp;GENOME</span></div>
       </div>
     </div>
 
@@ -226,11 +226,11 @@
   <!-- ================= WIN ================= -->
   <h2><span class="n">04</span>Winning: cancer</h2>
   <div class="win">
-    <p class="big">You lose the moment <b>5 of your 8 genes are mutated</b> &mdash; strictly more than
-    half. Regulation collapses, the cell goes cancerous. So: <b>race to mutate five of your
-    opponent's genes before they mutate five of yours.</b></p>
+    <p class="big">You lose the moment <b>6 of your 10 genes are mutated</b> &mdash; strictly more than
+    half. Regulation collapses, the cell goes cancerous. So: <b>race to mutate six of your
+    opponent's genes before they mutate six of yours.</b></p>
     <div class="meter" id="winmeter"></div>
-    <p class="caption">Opponent's genome &mdash; 5 of 8 mutated tips them into cancer. Silenced genes (switched off) do <em>not</em> count; only permanent mutations do. Only a Ligase, reaching a fresh lesion in time, can pull a gene back.</p>
+    <p class="caption">Opponent's genome &mdash; 6 of 10 mutated tips them into cancer. Silenced genes (switched off) do <em>not</em> count; only permanent mutations do. Only a Ligase, reaching a fresh lesion in time, can pull a gene back.</p>
   </div>
 
   <!-- ================= DESIGN NOTES ================= -->
@@ -377,26 +377,27 @@ function molSVG(S,type,seed,mutated){
 /* ============================================================
    Board state + rendering
    ============================================================ */
-const N=8, CELL=84, MARG=0;   // viewBox 672 = 8*84
+const N=10, CELL=68, MARG=0;   // expanded board: 10x10, viewBox = 10*68 = 680
+const BP=N*CELL, LAST=N-1;     // board pixels, last rank index
 // position: {r,c,type,side,state}  state for dna: 'healthy'|'mutated'|'silenced'
 const PIECES=[];
-// genomes
-for(let c=0;c<8;c++){PIECES.push({r:0,c,type:'dna',side:'B',state:(c===2||c===5)?'mutated':'healthy'});}
-for(let c=0;c<8;c++){PIECES.push({r:7,c,type:'dna',side:'A',state:(c===6)?'mutated':'healthy'});}
+// genomes — 10 genes per side; win at 6 mutated (>half of 10)
+for(let c=0;c<N;c++){PIECES.push({r:0,c,type:'dna',side:'B',state:(c===3||c===6)?'mutated':'healthy'});}
+for(let c=0;c<N;c++){PIECES.push({r:LAST,c,type:'dna',side:'A',state:(c===7)?'mutated':'healthy'});}
 // expressed — you (A, advancing up)
-PIECES.push({r:6,c:1,type:'rna',side:'A'});
-PIECES.push({r:6,c:3,type:'rna',side:'A'});
-PIECES.push({r:5,c:1,type:'methyltransferase',side:'A'});
-PIECES.push({r:5,c:3,type:'kinase',side:'A'});
-PIECES.push({r:4,c:6,type:'polymerase',side:'A'});
-PIECES.push({r:1,c:1,type:'nuclease',side:'A'});      // deep — threatening enemy gene b8
-PIECES.push({r:6,c:6,type:'ligase',side:'A'});        // guarding your mutated gene g1
+PIECES.push({r:8,c:2,type:'rna',side:'A'});
+PIECES.push({r:8,c:4,type:'rna',side:'A'});
+PIECES.push({r:7,c:2,type:'methyltransferase',side:'A'});
+PIECES.push({r:7,c:4,type:'kinase',side:'A'});
+PIECES.push({r:5,c:7,type:'polymerase',side:'A'});
+PIECES.push({r:1,c:2,type:'nuclease',side:'A'});      // deep — threatening enemy gene c10
+PIECES.push({r:8,c:7,type:'ligase',side:'A'});        // guarding your mutated gene h1
 // expressed — opponent (B, advancing down)
-PIECES.push({r:1,c:4,type:'rna',side:'B'});
-PIECES.push({r:1,c:6,type:'rna',side:'B'});
-PIECES.push({r:2,c:7,type:'methyltransferase',side:'B'});
-PIECES.push({r:3,c:5,type:'helicase',side:'B'});
-PIECES.push({r:6,c:5,type:'nuclease',side:'B'});      // threatening your gene f1
+PIECES.push({r:1,c:5,type:'rna',side:'B'});
+PIECES.push({r:1,c:7,type:'rna',side:'B'});
+PIECES.push({r:2,c:8,type:'methyltransferase',side:'B'});
+PIECES.push({r:4,c:6,type:'helicase',side:'B'});
+PIECES.push({r:8,c:6,type:'nuclease',side:'B'});      // threatening your gene g1
 
 function pieceAt(r,c){return PIECES.find(p=>p.r===r&&p.c===c);}
 
@@ -405,7 +406,7 @@ const ORTHO=[[1,0],[-1,0],[0,1],[0,-1]];
 const DIAG=[[1,1],[1,-1],[-1,1],[-1,-1]];
 const KING=ORTHO.concat(DIAG);
 const KNIGHT=[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]];
-function inb(r,c){return r>=0&&r<8&&c>=0&&c<8;}
+function inb(r,c){return r>=0&&r<N&&c>=0&&c<N;}
 function slide(p,dirs,max){
   const out=[];
   for(const[dr,dc]of dirs){
@@ -432,8 +433,8 @@ function moves(p){
       return [];
     }
     case 'rna':return slide(p,ORTHO,3);
-    case 'nuclease':return slide(p,DIAG,7);
-    case 'polymerase':return slide(p,ORTHO,7);
+    case 'nuclease':return slide(p,DIAG,N);
+    case 'polymerase':return slide(p,ORTHO,N);
     case 'methyltransferase':return step(p,KING);
     case 'ligase':return step(p,KING);
     case 'kinase':return step(p,KNIGHT);
@@ -457,18 +458,19 @@ const INFO={
 /* ---- render board ---- */
 const board=document.getElementById('board');
 let selected=null;
+board.setAttribute('viewBox',`0 0 ${BP} ${BP}`);
 function render(){
   let svg='';
   // tiles
-  for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){
     const x=c*CELL,y=r*CELL;
     let fill=(r+c)%2===0?'#c9b487':'#bda676';
-    if(r===0||r===7) fill=(r+c)%2===0?'#b39a68':'#a88f5f'; // nuclear membrane rows
+    if(r===0||r===LAST) fill=(r+c)%2===0?'#b39a68':'#a88f5f'; // nuclear membrane rows
     svg+=`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${fill}"/>`;
   }
   // membrane emphasis lines
-  svg+=`<line x1="0" y1="${CELL}" x2="672" y2="${CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
-  svg+=`<line x1="0" y1="${7*CELL}" x2="672" y2="${7*CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
+  svg+=`<line x1="0" y1="${CELL}" x2="${BP}" y2="${CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
+  svg+=`<line x1="0" y1="${LAST*CELL}" x2="${BP}" y2="${LAST*CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
 
   // empty-square move dots go UNDER pieces; capture/target rings go OVER (added after)
   let underHints='',overHints='';
@@ -543,7 +545,7 @@ render();
 
 /* ---- roster cards ---- */
 const ROSTER=[
-  {type:'dna',title:'DNA',mol:'Genome',move:'Immobile · back rank',cost:'—',desc:'Your eight genes and eight lives. Transcribes RNA each turn. Mutate five of the enemy’s and they get cancer.'},
+  {type:'dna',title:'DNA',mol:'Genome',move:'Immobile · back rank',cost:'—',desc:'Your ten genes and ten lives. Transcribes RNA each turn. Mutate six of the enemy’s and they get cancer.'},
   {type:'rna',title:'RNA',mol:'mRNA / miRNA',move:'Up to 3 · orthogonal',cost:'made by DNA',desc:'Blocker and builder. Silences genes, degrades enemy RNA, or translates into any protein.'},
   {type:'nuclease',title:'Nuclease',mol:'CRISPR-Cas9',move:'Diagonal · any dist.',cost:'3 RNA',desc:'The win condition. Reaches an enemy gene and mutates it. Expensive — earn it.'},
   {type:'polymerase',title:'Polymerase',mol:'DNA polymerase',move:'Straight · any dist.',cost:'2 RNA',desc:'Fast transport across the cell; mutates on arrival with a running start.'},
@@ -568,10 +570,10 @@ ROSTER.forEach((p,i)=>{
 
 /* ---- win meter ---- */
 const wm=document.getElementById('winmeter');
-const genes=['A','B','C','D','E','F','G','H'];
+const genes=['A','B','C','D','E','F','G','H','I','J'];
 genes.forEach((g,i)=>{
   const seg=document.createElement('div');
-  const mutated=i<5; // illustrate the losing threshold
+  const mutated=i<6; // illustrate the losing threshold (>half of 10)
   seg.className='seg '+(mutated?'mut':'ok');
   seg.textContent=mutated?'MUT':'ok';
   wm.appendChild(seg);
