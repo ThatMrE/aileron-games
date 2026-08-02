@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeomeTree &mdash; Grow Geometry, from a Line to a Dodecahedron</title>
-  <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Build each form by tracing its edges — from a single line up through the polygons and Platonic solids to the dodecahedron — and grow your geometry tree.">
+  <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Trace each form's edges — from a single line up through the polygons and all five Platonic solids to the dodecahedron — in a synesthetic, audio-reactive build. Grow your geometry tree.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -311,7 +311,7 @@
       <div class="stage-col">
         <div class="levelbar">
           <div class="lb-left">
-            <span class="lv-step" id="lvStep">Form 1 / 9</span>
+            <span class="lv-step" id="lvStep">Form 1 / 10</span>
             <span class="lv-name" id="lvName">Line</span>
             <span class="lv-dim" id="lvDim">1D</span>
           </div>
@@ -343,12 +343,13 @@
         <p class="howto">
           <b>How to play:</b> click a glowing vertex, then click a neighbour to draw the edge between them.
           Trace every edge to complete the form and grow your tree. On 3D solids, <b>drag</b> to rotate.
+          <b>Sound is on</b> &mdash; each edge you draw plays the next note of a rising scale.
         </p>
 
         <div class="victory" id="victory">
           <h3>&#127793; Your GeomeTree is complete</h3>
           <p>From a single line you evolved all the way to the dodecahedron &mdash; the crown of the five
-             Platonic solids and Plato&rsquo;s emblem for the cosmos. Nine forms, one growing tree.</p>
+             Platonic solids and Plato&rsquo;s emblem for the cosmos. Ten forms, one growing tree.</p>
           <button class="btn btn-cyan" id="replayBtn">Plant a new seed &#8635;</button>
         </div>
       </div>
@@ -356,7 +357,7 @@
       <!-- TREE -->
       <aside class="tree-panel">
         <h2>Your GeomeTree</h2>
-        <p class="tree-sub">Grown: <b id="grownCount">0</b> / 9</p>
+        <p class="tree-sub">Grown: <b id="grownCount">0</b> / 10</p>
         <div class="tree" id="tree"></div>
         <div class="tree-foot">
           <span>&#9652; from a line &rarr; the cosmos</span>
@@ -375,7 +376,8 @@
     <span class="x" id="introX">&times;</span>
     <div class="it-t">&#9652; Trace the form</div>
     <p>Click a glowing <b>vertex</b>, then a neighbour, to draw an <b>edge</b>. Connect every edge to complete
-       the shape and grow your geometry tree &mdash; from a single line all the way to a dodecahedron.</p>
+       the shape and grow your geometry tree &mdash; from a single line, through all five Platonic solids, to a
+       dodecahedron. Sound&rsquo;s on: every edge is a note.</p>
   </div>
 
 <script>
@@ -421,6 +423,13 @@
   const tetraV = [[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]];
   const cubeV  = (()=>{const v=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])v.push([x,y,z]);return v;})();
   const octaV  = [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
+  const icosaV = (()=>{
+    const v=[];
+    for(const a of[-1,1])for(const b of[-1,1])v.push([0, a, b*PHI]);
+    for(const a of[-1,1])for(const b of[-1,1])v.push([a, b*PHI, 0]);
+    for(const a of[-1,1])for(const b of[-1,1])v.push([a*PHI, 0, b]);
+    return v;
+  })();
   const dodecaV = (()=>{
     const v=[];
     for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])v.push([x,y,z]);
@@ -456,10 +465,16 @@
     { name:'Octahedron', dim:'3D', d3:true,
       verts:octaV, edges:autoEdges(octaV),
       fact:'8 triangular faces meeting at 6 points &mdash; the cube&rsquo;s <b>dual twin</b>. Swap every face of a cube for a corner and this is what you get.' },
+    { name:'Icosahedron', dim:'3D', d3:true,
+      verts:icosaV, edges:autoEdges(icosaV),
+      fact:'20 triangular faces, 12 corners, 30 edges &mdash; the <b>most faces of any Platonic solid</b>, and the <b>dual of the dodecahedron</b> you build next. Many virus shells take exactly this shape.' },
     { name:'Dodecahedron', dim:'3D', d3:true,
       verts:dodecaV, edges:autoEdges(dodecaV),
-      fact:'The crown: <b>12 pentagons</b>, 20 corners, 30 edges. Plato tied it to the cosmos itself &mdash; the whole tree grows toward this single form.' },
+      fact:'The crown, and the <b>last of the five Platonic solids</b>: 12 pentagons, 20 corners, 30 edges. Plato tied it to the cosmos itself &mdash; the whole tree grows toward this single form.' },
   ];
+
+  // hue journey: cyan → violet as the tree evolves (Tetris-Effect "zones")
+  function hueFor(i){ return 187 + (300-187)*(i/(LEVELS.length-1)); }
 
   /* ---------- canvas / DPR ---------- */
   const canvas = document.getElementById('stage');
@@ -493,8 +508,11 @@
   let hoverV = -1;
   let pointer = {x:-999,y:-999,active:false};
   let doneCount = 0;
-  let soundOn = false;
+  let soundOn = true;            // Tetris-Effect: audio-reactive by default (starts on first gesture)
+  let curHue = hueFor(0);
+  let lastNow = 0;
   const embed = document.documentElement.classList.contains('embed');
+  const BEAT = 666.67;           // ~90 BPM visual pulse
 
   /* ---------- persistence ---------- */
   const SAVE = 'geometree_progress_v1';
@@ -508,22 +526,78 @@
     try{ localStorage.setItem(SAVE, String(n)); }catch(e){}
   }
 
-  /* ---------- sound (tiny, gesture-gated) ---------- */
-  let actx = null;
-  function beep(freq, dur, type, gain){
-    if(!soundOn) return;
+  /* ---------- audio: a rising, synesthetic soundtrack ---------- */
+  let actx = null, master = null;
+  function audio(){
+    if(actx) return actx;
     try{
-      if(!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
-      const o = actx.createOscillator(), g = actx.createGain();
-      o.type = type||'sine'; o.frequency.value = freq;
-      g.gain.value = 0; o.connect(g); g.connect(actx.destination);
-      const t = actx.currentTime;
-      g.gain.linearRampToValueAtTime(gain||0.12, t+0.01);
-      g.gain.exponentialRampToValueAtTime(0.0001, t+(dur||0.14));
-      o.start(t); o.stop(t+(dur||0.14)+0.02);
-    }catch(e){}
+      actx = new (window.AudioContext||window.webkitAudioContext)();
+      master = actx.createGain(); master.gain.value = 0.85; master.connect(actx.destination);
+    }catch(e){ actx = null; }
+    return actx;
   }
-  function chord(){ [523.25,659.25,783.99,1046.5].forEach((f,i)=>setTimeout(()=>beep(f,0.5,'triangle',0.1),i*70)); }
+  function resumeAudio(){ const ac=audio(); if(ac && ac.state==='suspended'){ try{ac.resume();}catch(e){} } }
+  function tone(freq, dur, type, gain, when){
+    if(!soundOn) return;
+    const ac = audio(); if(!ac) return;
+    const t = (when||ac.currentTime) + 0.0002;
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = type||'sine'; o.frequency.value = freq;
+    o.connect(g); g.connect(master);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(gain||0.08, t+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, t+(dur||0.3));
+    o.start(t); o.stop(t+(dur||0.3)+0.04);
+  }
+  function rootFor(i){ return 196 * Math.pow(2, i/(LEVELS.length-1)); }   // G3 → G4 across the journey
+  const PENTA = [0,2,4,7,9];                                              // major pentatonic — never dissonant
+  function playEdgeNote(k){                                              // k = how many edges placed so far
+    const root = rootFor(cur);
+    const semis = PENTA[k % PENTA.length] + 12*Math.floor(k/PENTA.length);
+    const f = root * Math.pow(2, semis/12);
+    tone(f, 0.30, 'triangle', 0.07);
+    tone(f*2, 0.18, 'sine', 0.022);
+  }
+  function playChord(){
+    const ac = audio(); if(!ac || !soundOn) return;
+    const root = rootFor(cur), t0 = ac.currentTime;
+    [0,4,7,12,16].forEach((s,i)=> tone(root*Math.pow(2,s/12), 0.95, 'triangle', 0.06, t0+i*0.055));
+    tone(root/2, 1.5, 'sine', 0.05, t0);                                 // low bloom
+    [0,7,12].forEach((s,i)=> tone(root*2*Math.pow(2,s/12), 0.7, 'sine', 0.02, t0+0.26+i*0.05));  // shimmer
+  }
+  function playWhoosh(){
+    const ac = audio(); if(!ac || !soundOn) return;
+    const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime;
+    o.type='sine'; o.connect(g); g.connect(master);
+    o.frequency.setValueAtTime(rootFor(cur), t);
+    o.frequency.exponentialRampToValueAtTime(rootFor(Math.min(cur+1,LEVELS.length-1))*2, t+0.4);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.045,t+0.05);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+0.55);
+    o.start(t); o.stop(t+0.6);
+  }
+
+  /* ---------- particles & motes ---------- */
+  const particles = [];
+  function spawnBurst(x,y,hue,n,spd){
+    for(let i=0;i<(n||14);i++){
+      const ang = Math.random()*Math.PI*2, v = (spd||1)*(0.5+Math.random()*1.9);
+      particles.push({x,y,vx:Math.cos(ang)*v,vy:Math.sin(ang)*v-0.4,life:1,
+        max:0.5+Math.random()*0.5,hue:hue-24+Math.random()*48,size:1.4+Math.random()*2.6});
+    }
+  }
+  function spawnShower(hue){
+    for(let i=0;i<96;i++){
+      const ang = Math.random()*Math.PI*2, v = 1.4+Math.random()*5.2;
+      particles.push({x:W/2,y:H/2,vx:Math.cos(ang)*v,vy:Math.sin(ang)*v,life:1,
+        max:0.8+Math.random()*0.9,hue:hue-34+Math.random()*68,size:1.5+Math.random()*3});
+    }
+  }
+  const motes = [];
+  function initMotes(){
+    motes.length=0;
+    for(let i=0;i<26;i++) motes.push({x:Math.random(),y:Math.random(),
+      vy:0.015+Math.random()*0.035,size:0.6+Math.random()*1.7,tw:Math.random()*Math.PI*2});
+  }
 
   /* ---------- projection ---------- */
   function project(v, useRot){
@@ -537,7 +611,6 @@
     }
     return {x:x, y:y, z:0};
   }
-  // returns array of screen points {sx,sy,depth}
   function screenPoints(level){
     const rp = level.verts.map(v => project(v, level.d3));
     let maxR = 0;
@@ -571,7 +644,34 @@
   /* ---------- rendering ---------- */
   function draw(now){
     const L = LEVELS[cur];
+    const dt = lastNow ? Math.min(0.05, (now-lastNow)/1000) : 0.016;
+    lastNow = now;
+    curHue = hueFor(cur);
+    const breath = 0.5 + 0.5*Math.sin(now/1600);
+    const bp = (now % BEAT)/BEAT, thump = Math.pow(1-bp, 3);   // per-beat accent
+
     ctx.clearRect(0,0,W,H);
+
+    // ── ambient nebula: hue-tinted glow that breathes and pulses with the beat ──
+    {
+      const glowR = Math.min(W,H)*(0.34 + 0.05*breath + 0.03*thump);
+      const g = ctx.createRadialGradient(W/2,H/2,0, W/2,H/2, glowR);
+      g.addColorStop(0, 'hsla('+curHue+',100%,55%,'+(0.10+0.05*breath+0.05*thump)+')');
+      g.addColorStop(1, 'hsla('+curHue+',100%,42%,0)');
+      ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    }
+
+    // ── drifting motes (atmosphere) ──
+    ctx.globalCompositeOperation = 'lighter';
+    for(const m of motes){
+      m.y -= m.vy*dt;
+      if(m.y < -0.05){ m.y = 1.05; m.x = Math.random(); }
+      const a = (0.10 + 0.14*(0.5+0.5*Math.sin(now/700 + m.tw))) * (0.6+0.4*breath);
+      ctx.beginPath();
+      ctx.fillStyle = 'hsla('+curHue+',85%,78%,'+a+')';
+      ctx.arc(m.x*W, m.y*H, m.size, 0, Math.PI*2); ctx.fill();
+    }
+    ctx.globalCompositeOperation = 'source-over';
 
     // rotation logic for 3D
     if(L.d3){
@@ -597,7 +697,7 @@
       ctx.beginPath();
       PTS.forEach((p,i)=> i===0 ? ctx.moveTo(p.sx,p.sy) : ctx.lineTo(p.sx,p.sy));
       ctx.closePath();
-      ctx.fillStyle = 'rgba(0,229,255,'+(0.12*prog)+')';
+      ctx.fillStyle = 'hsla('+curHue+',100%,60%,'+(0.12*prog)+')';
       ctx.fill();
     }
 
@@ -610,7 +710,7 @@
       ctx.setLineDash([5,7]);
       if(isHint){
         const pulse = 0.5 + 0.5*Math.sin(now/140);
-        ctx.strokeStyle = 'rgba(0,229,255,'+(0.5+0.4*pulse)+')';
+        ctx.strokeStyle = 'hsla('+curHue+',100%,65%,'+(0.5+0.4*pulse)+')';
         ctx.lineWidth = 2.4;
       } else {
         ctx.strokeStyle = 'rgba(232,240,255,0.14)';
@@ -620,21 +720,20 @@
     }
     ctx.setLineDash([]);
 
-    // placed edges (depth-shaded)
+    // placed edges (depth-shaded, hue-journeyed, additive glow)
     const flash = completed ? Math.max(0, 1-(now-completeT0)/600) : 0;
     for(const kk of placed){
       const [i,j] = kk.split('-').map(Number);
       const a=PTS[i], b=PTS[j];
       const d = (a.depth+b.depth)/2;
       const alpha = L.d3 ? (0.4 + 0.6*d) : 1;
-      const lw = (L.d3 ? (1.6 + 2.2*d) : 3) + flash*2;
+      const lw = (L.d3 ? (1.6 + 2.2*d) : 3) + flash*2 + thump*0.5;
+      const light = 60 + 35*flash + 6*thump;
       ctx.beginPath();
       ctx.lineCap='round';
-      ctx.shadowColor = 'rgba(0,229,255,0.7)';
-      ctx.shadowBlur = (L.d3 ? 6+8*d : 12) + flash*18;
-      ctx.strokeStyle = flash>0.02
-        ? 'rgba('+Math.round(180+75*(1-flash))+',255,255,'+alpha+')'
-        : 'rgba(0,229,255,'+alpha+')';
+      ctx.shadowColor = 'hsla('+curHue+',100%,55%,0.75)';
+      ctx.shadowBlur = (L.d3 ? 6+8*d : 12) + flash*18 + thump*4;
+      ctx.strokeStyle = 'hsla('+curHue+',100%,'+Math.min(96,light)+'%,'+alpha+')';
       ctx.lineWidth = lw;
       ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
     }
@@ -645,22 +744,22 @@
       const a = PTS[selected];
       ctx.beginPath();
       ctx.setLineDash([3,6]);
-      ctx.strokeStyle = 'rgba(0,229,255,0.5)';
+      ctx.strokeStyle = 'hsla('+curHue+',100%,65%,0.5)';
       ctx.lineWidth = 1.6;
       ctx.moveTo(a.sx,a.sy); ctx.lineTo(pointer.x,pointer.y); ctx.stroke();
       ctx.setLineDash([]);
     }
 
-    // vertices
+    // vertices (hue-tinted, beat-pulsed)
     PTS.forEach((p,i)=>{
       const d = L.d3 ? p.depth : 1;
-      const base = 3.6 + (L.d3 ? 2.4*d : 1.4);
-      let r = base, col='rgba(232,240,255,'+(0.45+0.4*d)+')', ring=false;
-      if(i===hoverV){ r=base+2.2; col='#00e5ff'; }
+      const base = 3.6 + (L.d3 ? 2.4*d : 1.4) + thump*0.8;
+      let r = base, col='hsla('+curHue+',85%,'+(72+12*d)+'%,'+(0.5+0.4*d)+')', ring=false;
+      if(i===hoverV){ r=base+2.2; col='hsl('+curHue+',100%,72%)'; }
       if(i===selected){ r=base+2.6; col='#7CFFB2'; ring=true; }
       ctx.beginPath();
       ctx.fillStyle = col;
-      ctx.shadowColor = (i===selected)?'rgba(124,255,178,0.9)':'rgba(0,229,255,0.6)';
+      ctx.shadowColor = (i===selected)?'rgba(124,255,178,0.9)':'hsla('+curHue+',100%,60%,0.6)';
       ctx.shadowBlur = (i===hoverV||i===selected)?14:6;
       ctx.arc(p.sx,p.sy,r,0,Math.PI*2); ctx.fill();
       if(ring){
@@ -670,15 +769,34 @@
       ctx.shadowBlur=0;
     });
 
-    // completion burst ring (3D + all)
+    // ── particles (bursts + completion shower), additive ──
+    if(particles.length){
+      ctx.globalCompositeOperation = 'lighter';
+      for(let i=particles.length-1;i>=0;i--){
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.vx *= 0.99; p.vy *= 0.99;
+        p.life -= dt/p.max;
+        if(p.life <= 0){ particles.splice(i,1); continue; }
+        ctx.beginPath();
+        ctx.fillStyle = 'hsla('+p.hue+',100%,66%,'+Math.max(0,p.life)+')';
+        ctx.arc(p.x, p.y, p.size*(0.35+0.65*p.life), 0, Math.PI*2); ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+    }
+
+    // completion burst ring + full-canvas hue wash
     if(completed){
       const prog = (now-completeT0)/900;
       if(prog<1){
         const R = 30 + prog*Math.min(W,H)*0.5;
         ctx.beginPath();
-        ctx.strokeStyle = 'rgba(0,229,255,'+(0.5*(1-prog))+')';
+        ctx.strokeStyle = 'hsla('+curHue+',100%,66%,'+(0.5*(1-prog))+')';
         ctx.lineWidth = 3*(1-prog)+0.5;
         ctx.arc(W/2,H/2,R,0,Math.PI*2); ctx.stroke();
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.fillStyle = 'hsla('+curHue+',100%,60%,'+(0.16*(1-prog))+')';
+        ctx.fillRect(0,0,W,H);
+        ctx.globalCompositeOperation = 'source-over';
       }
     }
 
@@ -704,6 +822,7 @@
   canvas.addEventListener('pointerdown', ev=>{
     ev.preventDefault();
     canvas.setPointerCapture(ev.pointerId);
+    resumeAudio();
     const p = localXY(ev);
     down = {x:p.x, y:p.y, moved:false, t:performance.now()};
     pointer.x=p.x; pointer.y=p.y; pointer.active=true;
@@ -739,19 +858,21 @@
   canvas.addEventListener('pointerleave', ()=>{ if(!down){ hoverV=-1; pointer.x=-999; } });
 
   function handleVertexClick(v){
-    if(selected<0){ selected=v; beep(440,0.06,'sine',0.05); return; }
+    if(selected<0){ selected=v; tone(rootFor(cur),0.08,'sine',0.03); return; }
     if(selected===v){ selected=-1; return; }
     const k = key(selected,v);
     if(isTarget(selected,v) && !placed.has(k)){
+      const a=PTS[selected], b=PTS[v];
       placed.add(k);
-      beep(560+placed.size*30,0.1,'triangle',0.09);
+      playEdgeNote(placed.size-1);                     // rising pentatonic as you trace
+      if(a && b){ spawnBurst((a.sx+b.sx)/2,(a.sy+b.sy)/2, curHue, 14, 1.2); }
       selected = v;                 // chain along the trace
       hintEdge = null;
       updateEdgeCount();
       if(placed.size === LEVELS[cur].edges.length) onComplete();
     } else {
       // not a valid neighbour (or already drawn) — restart trace from here
-      beep(180,0.09,'sawtooth',0.05);
+      tone(150,0.10,'sawtooth',0.04);
       selected = v;
     }
   }
@@ -761,7 +882,8 @@
     completed = true;
     completeT0 = performance.now();
     selected=-1; hoverV=-1;
-    chord();
+    spawnShower(curHue);
+    playChord();
     if(cur+1 > doneCount){ doneCount = cur+1; saveProgress(doneCount); }
     markTree();
     const L = LEVELS[cur];
@@ -774,20 +896,23 @@
   document.getElementById('growBtn').addEventListener('click', ()=>{
     document.getElementById('banner').classList.remove('show');
     if(cur === LEVELS.length-1){ showVictory(); return; }
+    playWhoosh();
     loadLevel(cur+1);
   });
 
   function showVictory(){
+    spawnShower(curHue); playChord();
     document.getElementById('victory').classList.add('show');
     document.getElementById('victory').scrollIntoView({behavior:'smooth', block:'center'});
-    chord();
   }
 
   function loadLevel(i){
     cur = i;
+    curHue = hueFor(i);
     placed = new Set();
     selected=-1; hoverV=-1; completed=false; hintEdge=null;
     userDragged=false;
+    particles.length = 0;
     rot = {x:-0.42, y:0.7}; drawRot={x:-0.42,y:0.7};
     introT0 = performance.now();
     document.getElementById('victory').classList.remove('show');
@@ -814,6 +939,7 @@
   });
   document.getElementById('resetBtn').addEventListener('click', ()=>{
     placed = new Set(); selected=-1; completed=false; hintEdge=null;
+    particles.length = 0;
     document.getElementById('banner').classList.remove('show');
     updateEdgeCount();
   });
@@ -823,11 +949,14 @@
     spinBtn.classList.toggle('on', autoSpin);
   });
   const soundBtn = document.getElementById('soundBtn');
-  soundBtn.addEventListener('click', ()=>{
-    soundOn = !soundOn;
+  function syncSoundBtn(){
     soundBtn.classList.toggle('on', soundOn);
     soundBtn.innerHTML = soundOn ? '&#128266; Sound on' : '&#128263; Muted';
-    if(soundOn) beep(660,0.1,'sine',0.08);
+  }
+  soundBtn.addEventListener('click', ()=>{
+    soundOn = !soundOn;
+    syncSoundBtn();
+    if(soundOn){ resumeAudio(); tone(rootFor(cur),0.14,'triangle',0.07); }
   });
   document.getElementById('replayBtn').addEventListener('click', ()=>{
     doneCount = 0; saveProgress(0); loadLevel(0);
@@ -858,10 +987,10 @@
       node.appendChild(c); node.appendChild(meta);
       treeEl.appendChild(node);
       thumbs.push({node, canvas:c});
-      drawThumb(c, L);
+      drawThumb(c, L, hueFor(i));
     });
   }
-  function drawThumb(c, L){
+  function drawThumb(c, L, hue){
     const tc = c.getContext('2d');
     const w=c.width, h=c.height;
     tc.clearRect(0,0,w,h);
@@ -881,9 +1010,9 @@
       }
       return {sx:w/2+x*scale, sy:h/2-y*scale};
     });
-    tc.strokeStyle='rgba(0,229,255,0.9)';
+    tc.strokeStyle='hsla('+hue+',100%,62%,0.9)';
     tc.lineWidth=1.4; tc.lineCap='round';
-    tc.shadowColor='rgba(0,229,255,0.5)'; tc.shadowBlur=4;
+    tc.shadowColor='hsla('+hue+',100%,55%,0.5)'; tc.shadowBlur=4;
     for(const [i,j] of L.edges){
       tc.beginPath(); tc.moveTo(pts[i].sx,pts[i].sy); tc.lineTo(pts[j].sx,pts[j].sy); tc.stroke();
     }
@@ -913,7 +1042,9 @@
   /* ---------- boot ---------- */
   function boot(){
     resize();
+    initMotes();
     buildTree();
+    syncSoundBtn();
     doneCount = loadProgress();
     const start = Math.min(doneCount, LEVELS.length-1);
     loadLevel(start);
