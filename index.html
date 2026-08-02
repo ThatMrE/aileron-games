@@ -521,6 +521,7 @@
     <ul class="nav-links">
       <li><a href="#games">Games</a></li>
       <li><a href="#higgs">Play HIGGS</a></li>
+      <li><a href="#play">Play DNA Chess</a></li>
       <li><a href="#science-rpg">Science RPG</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="mailto:hello@aileron.games" class="btn btn-cyan" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Contact</a></li>
@@ -535,10 +536,11 @@
     <p class="hero-desc">
       Aileron Games makes playful, science-educational games that make learning feel like winning.
       From DNA Chess to Science RPG &mdash; games built for curious minds.
-      Our first playable prototype, <strong style="color:var(--cyan)">HIGGS</strong>, is live in your browser now.
+      Several are playable in your browser right now &mdash; including <strong style="color:var(--cyan)">HIGGS</strong>, our Feynman-diagram card game.
     </p>
     <div class="hero-actions">
       <a href="higgs.html" class="btn btn-cyan">&#x269B;&#xFE0F; Play HIGGS</a>
+      <a href="dna-chess.html" class="btn btn-outline">&#9654; Play DNA Chess</a>
       <a href="#games" class="btn btn-outline">Explore Our Games</a>
     </div>
   </section>
@@ -616,19 +618,27 @@
           <p>A Feynman-diagram deck-building duel. Collide particles, resolve real quantum coupling probabilities, and race an opponent to build a path to the Higgs boson. <strong style="color:var(--cyan)">Play in your browser &rarr;</strong></p>
         </a>
 
-        <div class="game-card">
-          <div class="game-icon">&#x1F43B;</div>
-          <h3>Punbearable</h3>
-          <span class="game-status status-active">50% Complete</span>
-          <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly.</p>
-        </div>
+        <a href="weji.html" class="game-card" style="display:block;">
+          <div class="game-icon">&#x1F52E;</div>
+          <h3>Weji</h3>
+          <span class="game-status status-active">Play Now</span>
+          <p>An emoji Ouija board. Ask a question and the spirits guide the planchette to spell your answer in three emoji. Playable online.</p>
+        </a>
 
-        <div class="game-card">
+        <a href="punbearable.html" class="game-card">
+          <div class="game-icon">&#x1F43B;</div>
+          <h3>Pun Bearable</h3>
+          <span class="game-status status-active">Play Now</span>
+          <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
+        </a>
+
+        <a class="game-card" href="dna-chess.html" style="display:block">
           <div class="game-icon">&#x1F9EC;</div>
           <h3>DNA Chess</h3>
-          <span class="game-status status-dev">25% Complete</span>
-          <p>Chess reimagined through the lens of genetics. Pieces evolve, mutate, and adapt. Every match is a different organism.</p>
-        </div>
+          <span class="game-status status-active">&#9654; Playable Prototype</span>
+          <p>Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Now playable in the browser &mdash; hot-seat or vs AI.</p>
+          <p style="margin-top:0.75rem; color:var(--cyan); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em;">&#9654; PLAY THE PROTOTYPE &rarr;</p>
+        </a>
 
         <div class="game-card">
           <div class="game-icon">&#x1F52C;</div>
@@ -679,6 +689,23 @@
           <p>A procedurally-generated narrative exploration game set in the deep ocean. Every playthrough discovers a different ocean story.</p>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAY NOW — DNA CHESS (embedded) -->
+  <div id="play" class="games-band" style="border-top:1px solid var(--border);">
+    <div class="section">
+      <p class="section-eyebrow">&#9654; Play Now &mdash; No Download</p>
+      <h2 class="section-title">DNA Chess, <span>in your browser</span></h2>
+      <p class="section-body">A playable prototype. Run the Central Dogma &mdash; express RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Hot-seat a friend or take on the AI, right here. Art after David Goodsell&rsquo;s <em>Machinery of Life</em>.</p>
+      <div style="max-width:1120px; margin:2rem auto 0;">
+        <div style="border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45); background:#cdbb90;">
+          <iframe id="dnachess-frame" src="dna-chess.html?embed=1" title="DNA Chess &mdash; playable prototype" loading="lazy" style="width:100%; height:800px; border:0; display:block;"></iframe>
+        </div>
+        <p style="text-align:center; margin-top:1.5rem;">
+          <a href="dna-chess.html" class="btn btn-cyan">Open full screen &amp; read the design &rarr;</a>
+        </p>
       </div>
     </div>
   </div>
@@ -806,12 +833,16 @@
               <span class="game-status status-active" style="margin:0;">Playable</span>
             </div>
             <div style="display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.88rem;">
-              <span style="color:var(--text); font-weight:500;">Punbearable</span>
-              <span class="game-status status-active" style="margin:0;">50% Complete</span>
+              <a href="weji.html" style="color:var(--text); font-weight:500;">Weji &mdash; Emoji Ouija</a>
+              <span class="game-status status-active" style="margin:0;">Play Now</span>
             </div>
+            <a href="punbearable.html" style="display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.88rem;">
+              <span style="color:var(--text); font-weight:500;">Pun Bearable</span>
+              <span class="game-status status-active" style="margin:0;">Play Now</span>
+            </a>
             <div style="display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.88rem;">
               <span style="color:var(--text); font-weight:500;">DNA Chess</span>
-              <span class="game-status status-dev" style="margin:0;">25% Complete</span>
+              <span class="game-status status-active" style="margin:0;">&#9654; Playable</span>
             </div>
             <div style="display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.88rem;">
               <span style="color:var(--text); font-weight:500;">Science RPG</span>
@@ -889,5 +920,14 @@
     <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:rgba(232,240,255,0.2); letter-spacing:0.05em;">&copy; 2025 Aileron Studios &middot; Richmond, VA</span>
   </footer>
 
+  <script>
+    // auto-size the embedded DNA Chess board to its content
+    window.addEventListener('message', function(e){
+      if(e && e.data && e.data.dnachess === 'height'){
+        var f = document.getElementById('dnachess-frame');
+        if(f){ f.style.height = Math.max(560, Math.min(1400, e.data.h)) + 'px'; }
+      }
+    });
+  </script>
 </body>
 </html>
