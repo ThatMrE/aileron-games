@@ -593,13 +593,10 @@ const RECIPES = [
   {a:"c",b:"cbar", out:"g", force:"Strong", p:75, e:0},
   {a:"s",b:"sbar", out:"g", force:"Strong", p:75, e:0},
   {a:"b",b:"bbar", out:"g", force:"Strong", p:75, e:0},
-  // --- QCD heavy-quark pair production g g → Q (energy = mass) ---
-  {a:"g",b:"g", out:"c",    force:"Strong", p:72, e:2},
-  {a:"g",b:"g", out:"cbar", force:"Strong", p:72, e:2},
-  {a:"g",b:"g", out:"b",    force:"Strong", p:68, e:5},
-  {a:"g",b:"g", out:"bbar", force:"Strong", p:68, e:5},
-  {a:"g",b:"g", out:"t",    force:"Strong", p:62, e:9},
-  {a:"g",b:"g", out:"tbar", force:"Strong", p:62, e:9},
+  // --- QCD heavy-quark PAIR production: one collision yields the quark AND its antiquark (g g → Q Q̄) ---
+  {a:"g",b:"g", out:"c", out2:"cbar", force:"Strong", p:72, e:2},
+  {a:"g",b:"g", out:"b", out2:"bbar", force:"Strong", p:72, e:5},
+  {a:"g",b:"g", out:"t", out2:"tbar", force:"Strong", p:62, e:6},
   // --- QED (electromagnetic, ~55%) ---
   {a:"e-",b:"e+",   out:"gamma", force:"EM", p:55, e:0},
   {a:"mu-",b:"mu+", out:"gamma", force:"EM", p:55, e:0},
@@ -607,22 +604,24 @@ const RECIPES = [
   {a:"gamma",b:"gamma", out:"e-",  force:"EM", p:55, e:1}, // γγ → pair production
   {a:"gamma",b:"gamma", out:"e+",  force:"EM", p:55, e:1},
   // --- Weak charged current (W, ~35%) : flavor-changing ---
-  {a:"u",b:"dbar", out:"W+", force:"Weak", p:35, e:5},
-  {a:"d",b:"ubar", out:"W-", force:"Weak", p:35, e:5},
-  {a:"c",b:"sbar", out:"W+", force:"Weak", p:35, e:5},
-  {a:"e-",b:"e+",  out:"W+", force:"Weak", p:32, e:5}, // via virtual state (abstracted)
-  // --- Weak neutral current (Z, ~40%) ---
-  {a:"e-",b:"e+", out:"Z", force:"Weak", p:40, e:5},
-  {a:"mu-",b:"mu+",out:"Z",force:"Weak", p:40, e:5},
-  {a:"u",b:"ubar",out:"Z", force:"Weak", p:40, e:5},
-  {a:"d",b:"dbar",out:"Z", force:"Weak", p:40, e:5},
+  {a:"u",b:"dbar", out:"W+", force:"Weak", p:50, e:5},
+  {a:"d",b:"ubar", out:"W-", force:"Weak", p:50, e:5},
+  {a:"c",b:"sbar", out:"W+", force:"Weak", p:50, e:5},
+  {a:"e-",b:"e+",  out:"W+", force:"Weak", p:45, e:5}, // via virtual state (abstracted)
+  // --- Weak neutral current (Z, ~55%) ---
+  {a:"e-",b:"e+", out:"Z", force:"Weak", p:55, e:5},
+  {a:"mu-",b:"mu+",out:"Z",force:"Weak", p:55, e:5},
+  {a:"u",b:"ubar",out:"Z", force:"Weak", p:55, e:5},
+  {a:"d",b:"dbar",out:"Z", force:"Weak", p:55, e:5},
   // ================= HIGGS PRODUCTION CHANNELS (win vertices) =================
-  {a:"g",b:"g",     out:"H", force:"Yukawa (top loop)", p:50, e:12, ch:"Gluon Fusion (ggF)"},
-  {a:"t",b:"tbar",  out:"H", force:"Top Yukawa",        p:60, e:14, ch:"Top-Associated (ttH)"},
-  {a:"W+",b:"W-",   out:"H", force:"Weak / VBF",        p:45, e:12, ch:"Vector Boson Fusion"},
-  {a:"Z",b:"Z",     out:"H", force:"Weak / VBF",        p:40, e:12, ch:"Vector Boson Fusion"},
-  {a:"b",b:"bbar",  out:"H", force:"b Yukawa",          p:35, e:8,  ch:"Associated (VH, b b̅)"},
-  {a:"tau-",b:"tau+",out:"H",force:"τ Yukawa",     p:25, e:6,  ch:"H → ττ"}
+  // ggF is loop-induced (top-quark triangle) → cheap ingredients but suppressed odds.
+  // Tree-level channels are more reliable but need real massive particles.
+  {a:"g",b:"g",     out:"H", force:"Yukawa (top loop)", p:40, e:12, ch:"Gluon Fusion (ggF)"},
+  {a:"t",b:"tbar",  out:"H", force:"Top Yukawa",        p:72, e:9,  ch:"Top-Associated (ttH)"},
+  {a:"W+",b:"W-",   out:"H", force:"Weak / VBF",        p:66, e:6,  ch:"Vector Boson Fusion"},
+  {a:"Z",b:"Z",     out:"H", force:"Weak / VBF",        p:62, e:6,  ch:"Vector Boson Fusion"},
+  {a:"b",b:"bbar",  out:"H", force:"b Yukawa",          p:50, e:8,  ch:"Associated (VH, b b̅)"},
+  {a:"tau-",b:"tau+",out:"H",force:"τ Yukawa",     p:62, e:3,  ch:"H → ττ"}
 ];
 
 /* Find all recipes matching an unordered particle pair */
@@ -648,7 +647,7 @@ const MARKET = [
   {k:"s",   cost:3}, {k:"b",   cost:5}, {k:"bbar",cost:5},
   {k:"t",   cost:8}, {k:"tbar",cost:8},
   {k:"W+",  cost:5}, {k:"W-",  cost:5}, {k:"Z",   cost:5},
-  {k:"tau-",cost:4}, {k:"tau+",cost:4},
+  {k:"tau-",cost:3}, {k:"tau+",cost:3},
   {k:"e+",  cost:2}, {k:"gamma",cost:2},
   {k:"u",   cost:1}, {k:"ubar",cost:1}, {k:"d",cost:1}, {k:"dbar",cost:1}
 ];
@@ -731,7 +730,8 @@ function doReaction(r){
 
   const success = roll(r.p);
   const outNm = P[r.out] ? P[r.out].nm : r.out;
-  const eqn = P[k1].sym + " + " + P[k2].sym + " → " + P[r.out].sym;
+  const prod = P[r.out].sym + (r.out2 ? " + " + P[r.out2].sym : "");
+  const eqn = P[k1].sym + " + " + P[k2].sym + " → " + prod;
 
   if(success){
     G.you.energy -= r.e; // pay the rest-mass energy only when the particle is actually created
@@ -744,8 +744,9 @@ function doReaction(r){
       G.sel=[]; render(); return;
     }
     G.you.beam.push(r.out);
+    if(r.out2) G.you.beam.push(r.out2); // pair production yields both particles
     if(r.force==="Strong") G.you.energy = Math.min(20, G.you.energy+1); // strong collisions heat the beam
-    logMsg("ok","✔ "+eqn+"  ["+r.force+", rolled success @ "+r.p+"%] → gained "+outNm);
+    logMsg("ok","✔ "+eqn+"  ["+r.force+", rolled success @ "+r.p+"%] → gained "+prod);
     logMsg("you","Interaction won — initiative retained. Collide again or end turn.");
   } else {
     // only hand cards are spent on failure; beamline particles survive
@@ -794,9 +795,9 @@ function buy(m){
   if(G.acquiredThisTurn){ logMsg("sys","Only one acquisition per turn (beam realignment)."); render(); return; }
   if(G.you.energy < m.cost){ return; }
   G.you.energy -= m.cost;
-  G.you.discard.push(m.k);
+  G.you.deck.push(m.k); // acquired card goes to the top of your deck — drawn next turn
   G.acquiredThisTurn = true;
-  logMsg("you","Acquired "+P[m.k].nm+" ("+P[m.k].sym+") → added to your deck.");
+  logMsg("you","Acquired "+P[m.k].nm+" ("+P[m.k].sym+") → next shipment (top of deck).");
   render();
 }
 
@@ -812,67 +813,87 @@ function endYourTurn(){
 }
 
 /* ---------- AI ---------- */
+const HIGGS_VERTICES = RECIPES.filter(r=>r.out==="H");
+const HEAVYQ = new Set(["c","cbar","b","bbar","t","tbar"]);
+function vertexByPair(a,b){
+  return RECIPES.find(r=>r.out==="H" && ((r.a===a&&r.b===b)||(r.a===b&&r.b===a)));
+}
+// Each game the AI commits to a production channel, weighted toward the competitive
+// gluon-ladder lines with occasional vector-boson / tau plans for variety.
+function pickAiPlan(){
+  const table = [
+    {v:vertexByPair("g","g"),     w:4}, // Gluon Fusion — fast, risky
+    {v:vertexByPair("t","tbar"),  w:4}, // ttH — reliable, needs a top pair
+    {v:vertexByPair("b","bbar"),  w:4}, // VH (bb) — fast tree-level
+    {v:vertexByPair("Z","Z"),     w:2}, // VBF (ZZ)
+    {v:vertexByPair("W+","W-"),   w:2}, // VBF (WW)
+    {v:vertexByPair("tau-","tau+"),w:1} // H → ττ
+  ].filter(x=>x.v);
+  let total=table.reduce((s,x)=>s+x.w,0), roll=Math.random()*total;
+  for(const x of table){ if((roll-=x.w)<0) return x.v; }
+  return table[0].v;
+}
+function aiPool(){
+  return G.ai.hand.map((k,i)=>({k,zone:"hand",idx:i}))
+        .concat(G.ai.beam.map((k,i)=>({k,zone:"beam",idx:i})));
+}
+function aiCount(k){ return G.ai.hand.filter(x=>x===k).length + G.ai.beam.filter(x=>x===k).length; }
+function needFor(v){ return v.a===v.b ? [[v.a,2]] : [[v.a,1],[v.b,1]]; }
+// Find an action to produce one unit of ingredient K (K may be a pair-production partner),
+// recursing to gluons for heavy quarks. Returns null if it must be bought/drawn.
+function aiMakeStep(K){
+  const pool = aiPool();
+  for(const r of RECIPES){
+    if(r.out==="H") continue;
+    if(r.out!==K && r.out2!==K) continue;
+    const pair = findPair(pool, r.a, r.b);
+    if(pair && G.ai.energy>=r.e) return {r, pair};
+  }
+  if(HEAVYQ.has(K)){ const g=aiMakeStep("g"); if(g) return g; }
+  return null;
+}
 function aiTurn(){
   if(G.over) return;
   const ai = G.ai;
   startTurn(ai,"ai");
-  logMsg("ai","AI draws. Energy now "+ai.energy+"⚡.");
+  if(!ai.plan) ai.plan = pickAiPlan();
+  logMsg("ai","AI draws. Energy "+ai.energy+"⚡. Target: "+ai.plan.ch+".");
 
-  // Goal-directed plan: default to Gluon Fusion (cheapest reliable win) —
-  // hold two gluons, bank energy to 10, then attempt g + g → H each turn.
-  // Keep a Top-Fusion (ttH) backup once the AI is energy-rich.
   let guard=0;
-  while(!G.over && guard<16){
+  while(!G.over && guard<18){
     guard++;
-    const pool = ai.hand.map((k,i)=>({k, zone:"hand", idx:i}))
-               .concat(ai.beam.map((k,i)=>({k, zone:"beam", idx:i})));
+    const pool = aiPool();
 
-    // 1) WIN now if any Higgs vertex is assembled & affordable
+    // 1) Opportunistic WIN — fire any Higgs vertex it can assemble & afford
     let winMove=null;
-    for(const r of RECIPES){
-      if(r.out!=="H") continue;
+    for(const r of HIGGS_VERTICES){
       const pair = findPair(pool, r.a, r.b);
-      if(pair && ai.energy>=r.e){ winMove={r, pair}; break; }
+      if(pair && ai.energy>=r.e){ winMove={r,pair}; break; }
     }
     if(winMove){ aiResolve(winMove.r, winMove.pair); continue; }
 
-    const gluons = ai.beam.filter(k=>k==="g").length;
-
-    // 2) Build toward two gluons (the ggF pair) before spending them on anything
-    if(gluons<2){
-      const r = firstAffordable(pool, k=>k==="g", ai.energy);
-      if(r){ aiResolve(r.r, r.pair); continue; }
+    // 2) Advance the chosen channel — build a missing ingredient
+    let acted=false;
+    for(const [k,n] of needFor(ai.plan)){
+      if(aiCount(k)>=n) continue;
+      const step=aiMakeStep(k);
+      if(step){ aiResolve(step.r, step.pair); acted=true; break; }
     }
+    if(acted) continue;
 
-    // 3) Have the pair but not yet enough ⚡ for gluon fusion: make surplus gluons for tempo/backup, else wait
-    if(gluons>=2 && ai.energy<12){
-      const r = firstAffordable(pool, k=>k==="g", ai.energy);
-      if(r){ aiResolve(r.r, r.pair); continue; }
-      break; // nothing productive — bank energy, end turn
-    }
-
-    // 4) Energy-rich backup: convert surplus gluons into a top / anti-top for ttH
-    if(gluons>=4 && ai.energy>=9){
-      const want = !ai.beam.includes("t") ? "t" : (!ai.beam.includes("tbar") ? "tbar" : null);
-      if(want){
-        const r = firstAffordable(pool, k=>k===want, ai.energy);
-        if(r){ aiResolve(r.r, r.pair); continue; }
-      }
-    }
+    // 3) Fallback — keep building gluons (universal precursor) if the plan is stalled
+    if(aiCount("g")<2){ const g=aiMakeStep("g"); if(g){ aiResolve(g.r,g.pair); continue; } }
     break;
   }
 
-  // Acquire toward the plan (once) — but only with SURPLUS energy, never dipping
-  // below the 10⚡ fusion threshold, so buying can't starve its own win.
+  // Acquire a buyable ingredient the plan needs (W/Z/τ/heavy quark), keeping the vertex energy in reserve
   if(!G.over){
-    const gluonsAccessible = ai.beam.filter(k=>k==="g").length + ai.hand.filter(k=>k==="g").length;
-    const wish = gluonsAccessible<2 ? ["g","t","b","c"] : ["t","tbar","b","g"];
-    for(const wk of wish){
-      const m = MARKET.find(mm=>mm.k===wk);
-      const reserve = 12; // keep enough banked for gluon fusion
-      if(m && ai.energy >= m.cost + reserve){
-        ai.energy-=m.cost; ai.discard.push(m.k);
-        logMsg("ai","AI acquires "+P[m.k].nm+" for its deck.");
+    for(const [k,n] of needFor(ai.plan)){
+      if(aiCount(k)>=n) continue;
+      const m = MARKET.find(mm=>mm.k===k);
+      if(m && ai.energy >= m.cost + ai.plan.e){
+        ai.energy-=m.cost; ai.deck.push(m.k);
+        logMsg("ai","AI acquires "+P[m.k].nm+" (top of its deck).");
         break;
       }
     }
@@ -884,16 +905,6 @@ function aiTurn(){
     logMsg("you","Your turn. Energy "+G.you.energy+"⚡. Collide!");
     render();
   }
-}
-// find the first recipe whose output matches wantFn and whose inputs exist in the pool & are affordable
-function firstAffordable(pool, wantFn, energy){
-  for(const r of RECIPES){
-    if(!wantFn(r.out)) continue;
-    if(energy < r.e) continue;
-    const pair = findPair(pool, r.a, r.b);
-    if(pair) return {r, pair};
-  }
-  return null;
 }
 function findPair(pool, ka, kb){
   if(ka===kb){
@@ -910,15 +921,17 @@ function aiResolve(r, pair){
   const ai=G.ai;
   const [pa,pb]=pair;
   const ka=pa.k, kb=pb.k;
-  const eqn = P[ka].sym+" + "+P[kb].sym+" → "+P[r.out].sym;
+  const prod = P[r.out].sym + (r.out2 ? " + "+P[r.out2].sym : "");
+  const eqn = P[ka].sym+" + "+P[kb].sym+" → "+prod;
   const ok = roll(r.p);
   if(ok){
     ai.energy -= r.e; // energy spent only on a successful vertex
     aiConsume([pa,pb]);
     if(r.out==="H"){ ai.beam.push("H"); logMsg("ai","✔ AI: "+eqn+" via "+r.ch); endGame("ai"); return; }
     ai.beam.push(r.out);
+    if(r.out2) ai.beam.push(r.out2); // pair production yields both particles
     if(r.force==="Strong") ai.energy=Math.min(20,ai.energy+1);
-    logMsg("ai","✔ AI: "+eqn+" ["+r.force+", "+r.p+"%] → "+P[r.out].nm);
+    logMsg("ai","✔ AI: "+eqn+" ["+r.force+", "+r.p+"%] → "+prod);
   } else {
     aiConsume([pa,pb].filter(s=>s.zone==="hand"));
     logMsg("ai","✘ AI: "+eqn+" failed ["+r.p+"%].");
@@ -1059,7 +1072,8 @@ function renderChamber(){
   const rows = rs.map(r=>{
     const afford = G.you.energy>=r.e;
     const win = r.out==="H";
-    const eqn = P[k1].sym+" + "+P[k2].sym+" → "+P[r.out].sym;
+    const prod = P[r.out].sym + (r.out2 ? " + "+P[r.out2].sym : "");
+    const eqn = P[k1].sym+" + "+P[k2].sym+" → "+prod;
     const chTag = r.ch ? ' &middot; '+r.ch : '';
     return '<div class="reaction '+(win?"win":"")+(afford?"":" unaffordable")+'" '+
       (afford?'onclick=\'doReaction('+JSON.stringify(r)+')\'':'')+'>'+
@@ -1141,27 +1155,28 @@ const RULES_HTML = `
     <li><b>Resolve.</b> The dice roll against the coupling probability.
       <ul><li><b>Success</b> &rarr; the product joins your beamline and you <b>keep initiative</b> — collide again (chain reactions!).</li>
       <li><b>Failure</b> &rarr; the hand cards are spent and your turn passes to the AI. <i>Beamline particles survive a failed roll</i>, so your structure is safe.</li></ul></li>
-    <li><b>Acquire (once/turn).</b> Spend &#9889; in the <b>Collider Market</b> to add stronger particles (gluons, W/Z, top, bottom, tau) to your deck.</li>
+    <li><b>Acquire (once/turn).</b> Spend &#9889; in the <b>Collider Market</b> to add stronger particles (gluons, W/Z, top, bottom, tau). Acquired cards go to the <b>top of your deck</b> — you draw them next turn.</li>
     <li><b>Disrupt.</b> Select one card from <b>your hand</b> + one particle in the <b>AI's beamline</b>. If the two share a Feynman vertex (its antiparticle, or e.g. a <b>gluon into a gluon</b>), fire a collision beam (<code>2&#9889;</code>) to knock that particle out and stall their diagram — including breaking up a gluon-fusion setup.</li>
   </ol>
 
   <h3>The forces (why the odds differ)</h3>
   <ul>
-    <li><b>Strong</b> (gluons) &mdash; ~75%. Strongest coupling; how you make gluons &amp; heavy quarks.</li>
+    <li><b>Strong</b> (gluons) &mdash; ~75%. Strongest coupling; makes gluons and, via <b>pair production</b> (<code>g + g &rarr; Q Q&#773;</code>), a heavy quark <i>and</i> its antiquark in one collision.</li>
     <li><b>Electromagnetic</b> (photons) &mdash; ~55%. Annihilations &amp; pair production.</li>
-    <li><b>Weak</b> (W, Z) &mdash; ~35&ndash;40%. Flavor-changing; builds the vector bosons.</li>
-    <li><b>Higgs / Yukawa</b> &mdash; scales with mass. The <b>top quark</b> couples most strongly, so top-based channels win fastest.</li>
+    <li><b>Weak</b> (W, Z) &mdash; ~50&ndash;55%. Flavor-changing; builds the vector bosons.</li>
+    <li><b>Higgs / Yukawa</b> &mdash; tree-level vertices are reliable; the <b>gluon-fusion</b> vertex runs through a <i>top-quark loop</i>, so it's cheap but <b>loop-suppressed</b> (lower odds).</li>
   </ul>
 
   <h3>Paths to the Higgs (win conditions)</h3>
+  <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.4rem;">Five real production channels &mdash; a genuine choice, not one dominant line:</p>
   <ul>
-    <li><code>g + g &rarr; H</code> &mdash; <b>Gluon Fusion</b> (dominant LHC mode) &middot; 50% &middot; 12&#9889;</li>
-    <li><code>t + t&#773; &rarr; H</code> &mdash; <b>Top-Associated</b> &middot; 60% &middot; 14&#9889;</li>
-    <li><code>W&#8314; + W&#8315; &rarr; H</code> / <code>Z + Z &rarr; H</code> &mdash; <b>Vector Boson Fusion</b> &middot; 40&ndash;45% &middot; 12&#9889;</li>
-    <li><code>b + b&#773; &rarr; H</code> &mdash; <b>Associated (VH)</b> &middot; 35% &middot; 8&#9889; (cheap but risky)</li>
-    <li><code>&#964;&#8314; + &#964;&#8315; &rarr; H</code> &mdash; light Yukawa &middot; 25% &middot; 6&#9889;</li>
+    <li><code>g + g &rarr; H</code> &mdash; <b>Gluon Fusion</b> (fast, loop-suppressed) &middot; 40% &middot; 12&#9889;</li>
+    <li><code>t + t&#773; &rarr; H</code> &mdash; <b>Top-Associated</b> (reliable) &middot; 72% &middot; 9&#9889;</li>
+    <li><code>W&#8314; + W&#8315; &rarr; H</code> / <code>Z + Z &rarr; H</code> &mdash; <b>Vector Boson Fusion</b> &middot; 62&ndash;66% &middot; 6&#9889;</li>
+    <li><code>b + b&#773; &rarr; H</code> &mdash; <b>Associated (VH)</b> &middot; 50% &middot; 8&#9889;</li>
+    <li><code>&#964;&#8314; + &#964;&#8315; &rarr; H</code> &mdash; <b>H &rarr; &tau;&tau;</b> (cheap gamble) &middot; 62% &middot; 3&#9889;</li>
   </ul>
-  <p style="font-size:0.8rem;color:rgba(232,240,255,0.4)">Probabilities compress the real coupling constants (strong &raquo; EM &raquo; weak; Yukawa &prop; mass) into a playable range while preserving their ordering. Full tabletop rules &amp; card list: <a href="higgs-rules.html" style="color:var(--cyan)">higgs-rules.html</a>.</p>
+  <p style="font-size:0.8rem;color:rgba(232,240,255,0.4)">Odds compress the real coupling constants (strong &raquo; EM &raquo; weak; Yukawa &prop; mass; loop channels suppressed) into a playable range while preserving their ordering. Full tabletop rules &amp; card list: <a href="higgs-rules.html" style="color:var(--cyan)">higgs-rules.html</a>.</p>
   <div class="modal-close"><button class="btn btn-cyan" onclick="closeOverlay()">Start Colliding</button></div>
 `;
 

@@ -122,7 +122,8 @@
       <li><b>Feynman vertices.</b> Cards combine two-in / one-out exactly like a diagram vertex, where two particle lines meet a force carrier.</li>
       <li><b>Coupling constants as probability.</b> The chance a vertex "fires" is the interaction's coupling strength &mdash; strong &raquo; electromagnetic &raquo; weak.</li>
       <li><b>E = mc&sup2;.</b> Making a heavy particle (top, W, Z) costs beam <b>energy</b> equal to its mass &mdash; and you only pay when the particle actually forms. You literally pay energy to create mass.</li>
-      <li><b>Yukawa coupling.</b> The Higgs couples in proportion to mass, so the <b>top quark</b> (heaviest fermion) gives the best odds &mdash; which is why gluon fusion through a top loop is the real dominant production channel.</li>
+      <li><b>Yukawa coupling.</b> The Higgs couples in proportion to mass, so heavy tree-level partners (top, W/Z, bottom) give reliable vertices. <b>Gluon fusion</b> is <i>loop-induced</i> (it runs through a virtual top-quark triangle), so it's cheap to set up but has suppressed odds &mdash; a fast gamble rather than a sure thing.</li>
+      <li><b>Pair production.</b> A gluon collision can split into a matched quark&ndash;antiquark pair (<code>g g &rarr; Q Q&#773;</code>), producing both particles at once &mdash; how you assemble a t&nbsp;t&#773; or b&nbsp;b&#773; pair for the Higgs.</li>
       <li><b>Antimatter &amp; annihilation.</b> A particle meeting its antiparticle annihilates into a boson &mdash; the basis of both production and disruption.</li>
       <li><b>Generations &amp; flavor change.</b> The W boson changes quark/lepton flavor, letting you climb from first-generation matter toward the third.</li>
     </ul>
@@ -175,15 +176,15 @@
 
     <!-- 5 -->
     <h2 id="vertices">5. Feynman Vertices (the recipe table)</h2>
-    <p>A collision is legal only if a real vertex connects the two particles. Every vertex is two-in / one-out. <code>&#9889;</code> is the energy invested to create the product's mass.</p>
+    <p>A collision is legal only if a real vertex connects the two particles. Most vertices are two-in / one-out; <b>pair-production</b> vertices are two-in / two-out (they yield a particle and its antiparticle). <code>&#9889;</code> is the energy invested to create the product's mass, paid only when the vertex fires.</p>
 
     <h3>Strong force &mdash; QCD (gluon vertices)</h3>
     <div class="table-wrap"><table>
       <tr><th>Vertex</th><th>Force</th><th>Odds</th><th>Energy</th><th>Note</th></tr>
       <tr><td class="sym">q + q&#773; → g</td><td><span class="tag tag-strong">Strong</span></td><td>75%</td><td>free</td><td>annihilation to a gluon (u,d,c,s,b)</td></tr>
-      <tr><td class="sym">g + g → c / c&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>72%</td><td>2&#9889;</td><td>heavy-quark pair production</td></tr>
-      <tr><td class="sym">g + g → b / b&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>68%</td><td>5&#9889;</td><td></td></tr>
-      <tr><td class="sym">g + g → t / t&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>62%</td><td>9&#9889;</td><td>top pair production</td></tr>
+      <tr><td class="sym">g + g → c + c&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>72%</td><td>2&#9889;</td><td>pair production &mdash; yields <b>both</b> quark &amp; antiquark</td></tr>
+      <tr><td class="sym">g + g → b + b&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>72%</td><td>5&#9889;</td><td>one collision makes the whole b&nbsp;b&#773; pair</td></tr>
+      <tr><td class="sym">g + g → t + t&#773;</td><td><span class="tag tag-strong">Strong</span></td><td>62%</td><td>6&#9889;</td><td>top pair &mdash; the ttH ingredient in one step</td></tr>
     </table></div>
 
     <h3>Electromagnetic force &mdash; QED (photon vertices)</h3>
@@ -196,20 +197,20 @@
     <h3>Weak force &mdash; W &amp; Z vertices</h3>
     <div class="table-wrap"><table>
       <tr><th>Vertex</th><th>Force</th><th>Odds</th><th>Energy</th><th>Note</th></tr>
-      <tr><td class="sym">u + d&#773; → W⁺</td><td><span class="tag tag-weak">Weak</span></td><td>35%</td><td>5&#9889;</td><td>charged current, flavor-changing</td></tr>
-      <tr><td class="sym">d + u&#773; → W⁻</td><td><span class="tag tag-weak">Weak</span></td><td>35%</td><td>5&#9889;</td><td></td></tr>
-      <tr><td class="sym">f + f&#773; → Z</td><td><span class="tag tag-weak">Weak</span></td><td>40%</td><td>5&#9889;</td><td>neutral current (e, μ, u, d)</td></tr>
+      <tr><td class="sym">u + d&#773; → W⁺</td><td><span class="tag tag-weak">Weak</span></td><td>50%</td><td>5&#9889;</td><td>charged current, flavor-changing</td></tr>
+      <tr><td class="sym">d + u&#773; → W⁻</td><td><span class="tag tag-weak">Weak</span></td><td>50%</td><td>5&#9889;</td><td></td></tr>
+      <tr><td class="sym">f + f&#773; → Z</td><td><span class="tag tag-weak">Weak</span></td><td>55%</td><td>5&#9889;</td><td>neutral current (e, μ, u, d)</td></tr>
     </table></div>
 
     <h3>Higgs / Yukawa vertices &mdash; the win moves</h3>
     <div class="table-wrap"><table>
       <tr><th>Vertex</th><th>Channel</th><th>Odds</th><th>Energy</th></tr>
-      <tr><td class="sym">g + g → H</td><td><span class="tag tag-higgs">Gluon Fusion (ggF)</span></td><td>50%</td><td>12&#9889;</td></tr>
-      <tr><td class="sym">t + t&#773; → H</td><td><span class="tag tag-higgs">Top-Associated (ttH)</span></td><td>60%</td><td>14&#9889;</td></tr>
-      <tr><td class="sym">W⁺ + W⁻ → H</td><td><span class="tag tag-higgs">Vector Boson Fusion</span></td><td>45%</td><td>12&#9889;</td></tr>
-      <tr><td class="sym">Z + Z → H</td><td><span class="tag tag-higgs">Vector Boson Fusion</span></td><td>40%</td><td>12&#9889;</td></tr>
-      <tr><td class="sym">b + b&#773; → H</td><td><span class="tag tag-higgs">Associated (VH)</span></td><td>35%</td><td>8&#9889;</td></tr>
-      <tr><td class="sym">τ⁺ + τ⁻ → H</td><td><span class="tag tag-higgs">H → ττ</span></td><td>25%</td><td>6&#9889;</td></tr>
+      <tr><td class="sym">g + g → H</td><td><span class="tag tag-higgs">Gluon Fusion (ggF)</span></td><td>40%</td><td>12&#9889;</td></tr>
+      <tr><td class="sym">t + t&#773; → H</td><td><span class="tag tag-higgs">Top-Associated (ttH)</span></td><td>72%</td><td>9&#9889;</td></tr>
+      <tr><td class="sym">W⁺ + W⁻ → H</td><td><span class="tag tag-higgs">Vector Boson Fusion</span></td><td>66%</td><td>6&#9889;</td></tr>
+      <tr><td class="sym">Z + Z → H</td><td><span class="tag tag-higgs">Vector Boson Fusion</span></td><td>62%</td><td>6&#9889;</td></tr>
+      <tr><td class="sym">b + b&#773; → H</td><td><span class="tag tag-higgs">Associated (VH)</span></td><td>50%</td><td>8&#9889;</td></tr>
+      <tr><td class="sym">τ⁺ + τ⁻ → H</td><td><span class="tag tag-higgs">H → ττ</span></td><td>62%</td><td>3&#9889;</td></tr>
     </table></div>
 
     <!-- 6 -->
@@ -219,8 +220,9 @@
       <tr><th>Interaction</th><th>Real coupling</th><th>Game odds</th></tr>
       <tr><td>Strong (α<sub>s</sub>)</td><td class="q">~0.1 &ndash; 1</td><td>75%</td></tr>
       <tr><td>Electromagnetic (α &asymp; 1/137)</td><td class="q">~0.0073</td><td>55%</td></tr>
-      <tr><td>Weak (at low energy)</td><td class="q">strongly suppressed</td><td>35&ndash;40%</td></tr>
-      <tr><td>Yukawa (y<sub>f</sub> &prop; m<sub>f</sub>)</td><td class="q">y<sub>top</sub>&asymp;1, y<sub>b</sub>&asymp;0.024, y<sub>τ</sub>&asymp;0.010</td><td>scales with mass</td></tr>
+      <tr><td>Weak (W, Z)</td><td class="q">suppressed at low energy</td><td>50&ndash;55%</td></tr>
+      <tr><td>Higgs, tree-level (ttH, VBF, VH, ττ)</td><td class="q">y<sub>f</sub> &prop; m<sub>f</sub></td><td>50&ndash;72%</td></tr>
+      <tr><td>Higgs, loop-induced (ggF)</td><td class="q">top-loop suppressed</td><td>40%</td></tr>
     </table></div>
     <div class="callout warn">
       <b>Design note.</b> Literal ratios (EM at 0.7%, weak far lower) would be unplayable, so we rank rather than reproduce them. What survives is the physics students should feel: the strong force fires reliably, the weak force is fickle, and the Higgs prefers heavy partners &mdash; the top quark most of all.
@@ -238,19 +240,20 @@
         </ul>
       </li>
       <li><b>Disrupt (optional).</b> Fire a card from your hand at one particle in the opponent's beamline (<code>2&#9889;</code>), provided the two share a Feynman vertex — its antiparticle (annihilation), or any particle that meets it at a vertex, including a <b>gluon into a gluon</b> (strong self-interaction). On success their ingredient is knocked out. This is the primary way to <b>block</b> an opponent's path — even a gluon-fusion setup.</li>
-      <li><b>Acquire (once per turn).</b> Spend energy to buy a card from the Collider Market into your discard pile.</li>
+      <li><b>Acquire (once per turn).</b> Spend energy to buy a card from the Collider Market. Acquired cards go to the <b>top of your deck</b> (your next shipment) &mdash; you draw them at the start of your next turn.</li>
       <li><b>End turn.</b> Play passes. Cards cycle: when your deck empties, shuffle your discard into a new deck.</li>
     </ol>
     <div class="callout"><b>Initiative = tempo.</b> Because a winning collision lets you go again, a hot streak of strong-force vertices can carry you a long way in one turn &mdash; exactly the "the winner of the interaction plays next" dynamic.</div>
 
     <!-- 8 -->
     <h2 id="win">8. Win Conditions</h2>
-    <p>These mirror the four real Higgs-production mechanisms at the LHC, roughly in order of how often nature uses them:</p>
+    <p>These mirror the five real Higgs-production &amp; decay channels at the LHC. In-game they're tuned to be <b>genuinely competitive</b> &mdash; each is the best choice under different draws and tempo, so there's no single dominant line:</p>
     <ol>
-      <li><b>Gluon Fusion (ggF)</b> &mdash; <code>g + g → H</code>. The dominant real channel (~87% of LHC Higgs). Cheapest reliable win: make two gluons, invest 12&#9889;, roll 50%.</li>
-      <li><b>Vector Boson Fusion (VBF)</b> &mdash; <code>W⁺ + W⁻ → H</code> or <code>Z + Z → H</code>. Second most common (~7%). Requires building the weak bosons (12&#9889;).</li>
-      <li><b>Associated production / Higgs-strahlung (VH)</b> &mdash; <code>b + b&#773; → H</code>. Cheap (8&#9889;) but low odds (35%) &mdash; the gambler's route.</li>
-      <li><b>Top-Associated (ttH)</b> &mdash; <code>t + t&#773; → H</code>. Rarest in nature (~1%) but the highest odds in-game (60%), because the top's Yukawa coupling is the strongest of all &mdash; if you can afford to build a top + anti-top (9&#9889; each) and then pay 14&#9889; for the vertex.</li>
+      <li><b>Gluon Fusion (ggF)</b> &mdash; <code>g + g → H</code>. The dominant real channel (~87% of LHC Higgs). Fastest setup (two free gluons, 12&#9889;) but <b>loop-suppressed to 40%</b> &mdash; a gamble you'll often re-attempt.</li>
+      <li><b>Top-Associated (ttH)</b> &mdash; <code>t + t&#773; → H</code>. Build a top pair in one pair-production step (<code>g g → t t&#773;</code>, 6&#9889;), then the most reliable Higgs vertex in the game (72%, 9&#9889;) &mdash; the top's Yukawa coupling is the strongest of all.</li>
+      <li><b>Vector Boson Fusion (VBF)</b> &mdash; <code>W⁺ + W⁻ → H</code> or <code>Z + Z → H</code>. Build the weak bosons from light fermions (or buy them), then a reliable 62&ndash;66% vertex for just 6&#9889;.</li>
+      <li><b>Associated production (VH)</b> &mdash; <code>b + b&#773; → H</code>. A b&nbsp;b&#773; pair (<code>g g → b b&#773;</code>) then a 50% vertex at 8&#9889; &mdash; a solid middle road.</li>
+      <li><b>H &rarr; &tau;&tau;</b> &mdash; <code>τ⁺ + τ⁻ → H</code>. Buy a &tau; pair cheaply and fire a 62% vertex for just 3&#9889; &mdash; a fast, market-dependent gamble.</li>
     </ol>
     <p><b>Alternate win &mdash; Deadlock:</b> if an opponent cannot make any legal collision and has no cards left to draw, you win by default (their diagram has collapsed).</p>
     <p><b>Blocking win:</b> aggressive disruption can stall an opponent long enough that you complete your own Higgs first &mdash; the "block your opponent's structure" path from the brief.</p>
@@ -275,22 +278,22 @@
       <tr><td>1&#9889;</td><td class="sym">u, u&#773;, d, d&#773;</td><td>more raw fermions / antimatter for disruption</td></tr>
       <tr><td>2&#9889;</td><td class="sym">e⁺, γ</td><td>annihilation &amp; pair-production fuel</td></tr>
       <tr><td>3&#9889;</td><td class="sym">g, c, c&#773;, s</td><td>gluon shortcut &amp; second-generation quarks</td></tr>
-      <tr><td>4&#9889;</td><td class="sym">τ⁻, τ⁺</td><td>the cheap τ⁺τ⁻ → H gamble</td></tr>
+      <tr><td>3&#9889;</td><td class="sym">τ⁻, τ⁺</td><td>the cheap τ⁺τ⁻ → H gamble</td></tr>
       <tr><td>5&#9889;</td><td class="sym">b, b&#773;, W⁺, W⁻, Z</td><td>bottom quarks &amp; vector bosons (VBF/VH)</td></tr>
       <tr><td>8&#9889;</td><td class="sym">t, t&#773;</td><td>top quarks &mdash; the ttH power play</td></tr>
     </table></div>
-    <div class="callout"><b>Deck-building.</b> Acquired cards go to your discard and get shuffled in as your deck recycles, so buying a top now means drawing it a turn or two later &mdash; plan your beam around the delay.</div>
+    <div class="callout"><b>Deck-building.</b> Acquired cards go to the <b>top of your deck</b> and are drawn at the start of your next turn &mdash; so a market buy is only a one-turn detour, which keeps the boson- and &tau;-based channels viable.</div>
 
     <!-- 10 -->
     <h2 id="strategy">10. Strategy &amp; Balance</h2>
     <ul>
-      <li><b>Gluon economy.</b> Strong-force annihilations are free, 75%, and refund energy &mdash; the engine that funds everything. Flood your beamline with gluons early.</li>
-      <li><b>Two roads to gg-fusion.</b> Two gluons + 12&#9889; is the most efficient win. Everything else is a hedge or a flex.</li>
-      <li><b>The top gambit.</b> ttH has the best Higgs odds but needs ~32&#9889; of investment total (two <code>g+g→t</code> at 9&#9889; each, then 14&#9889; for the vertex) &mdash; a late-game haymaker.</li>
+      <li><b>Gluon economy.</b> Strong-force annihilations are free, 75%, and refund energy &mdash; the engine that funds every channel. Gluons are the universal precursor: fuse them straight to a Higgs, or split them into a heavy-quark pair.</li>
+      <li><b>Pick your channel &mdash; there's no single best line.</b> <b>ggF</b> is fastest but only 40% (expect re-attempts). <b>ttH</b> is the most reliable (72%) once you land a top pair. <b>VBF</b> and <b>VH</b> sit in between; <b>ττ</b> is a cheap market gamble. Read your draws and your opponent's pace, then commit.</li>
+      <li><b>Loop vs. tree.</b> Behind on tempo? Gamble on the fast ggF loop. Ahead, or facing a disruptor? Take the reliable tree-level ttH/VBF and close it out.</li>
       <li><b>Deny at the vertex.</b> Keep an antiquark to annihilate the opponent's top or bottom, or a spare gluon to break up their gluon-fusion pair, right before their win roll.</li>
       <li><b>Riding initiative.</b> Chain cheap strong vertices to build tempo, then spend a whole turn's momentum on your Higgs attempt.</li>
     </ul>
-    <div class="callout"><b>Rough balance target:</b> games run ~4&ndash;7 rounds per player. The first gluon-fusion attempt typically lands around turn 4&ndash;5 (two gluons + 12&#9889;); disruption and the market push it later. Adjust the energy income (&plusmn;1/turn) to speed up or slow down the whole game.</div>
+    <div class="callout"><b>Rough balance target:</b> games run ~4&ndash;6 rounds per player. Simulation of ~5,000 games shows the four leading channels (ggF, ttH, VBF, VH) each win a comparable share &mdash; no single line dominates &mdash; with ττ a viable niche. Adjust the energy income (&plusmn;1/turn) to speed up or slow down the whole game.</div>
 
     <p style="margin-top:2.5rem;text-align:center;"><a href="higgs.html" class="cta">&#x269B;&#xFE0F; Play HIGGS now &rarr;</a></p>
   </div>
