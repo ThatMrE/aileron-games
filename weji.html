@@ -269,41 +269,118 @@
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
     }
 
-    /* ── Build-spec ledger (physical fabrication notes) ── */
-    details.specs {
-      max-width: 760px; margin: 3.5rem auto 0;
-      background: rgba(20,12,8,0.55);
-      border: 1px solid rgba(201,151,79,0.22);
-      border-radius: 10px; overflow: hidden;
+    /* ── Kickstarter call-to-action ── */
+    .cta {
+      max-width: 680px; margin: 3.5rem auto 0; text-align: center;
+      background:
+        radial-gradient(120% 140% at 50% -20%, rgba(201,151,79,0.14), transparent 60%),
+        rgba(20,12,8,0.6);
+      border: 1px solid rgba(201,151,79,0.3);
+      border-radius: 16px;
+      padding: 2.4rem 1.6rem 2.6rem;
+      box-shadow: 0 20px 44px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
     }
-    details.specs summary {
-      cursor: pointer; list-style: none;
-      padding: 1rem 1.25rem;
+    .cta-eyebrow {
+      font-family: 'Space Mono', monospace; font-size: 0.66rem;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+    .cta h2 {
+      font-family: 'Cinzel', serif; font-weight: 900;
+      font-size: clamp(1.5rem, 4.5vw, 2.3rem); letter-spacing: 0.04em;
+      color: var(--gold); text-shadow: 0 0 30px rgba(201,151,79,0.3);
+      line-height: 1.2;
+    }
+    .cta p {
+      color: var(--muted); font-size: 0.98rem; line-height: 1.6;
+      max-width: 460px; margin: 0.85rem auto 0;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      margin-top: 1.6rem;
+      font-family: 'Cinzel', serif; font-weight: 700;
+      font-size: clamp(0.95rem, 2.4vw, 1.1rem); letter-spacing: 0.05em;
+      padding: 0.95rem 2rem; border-radius: 8px;
+      color: #1c1109; cursor: pointer; text-decoration: none;
+      background: linear-gradient(180deg, var(--gold), #b9843f);
+      border: 1px solid #d8a75a;
+      box-shadow: 0 6px 20px rgba(201,151,79,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+      transition: transform 0.12s, box-shadow 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-note {
+      min-height: 1.2em; margin-top: 0.9rem;
       font-family: 'Space Mono', monospace; font-size: 0.72rem;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
-      display: flex; align-items: center; gap: 0.6rem;
+      letter-spacing: 0.1em; color: rgba(239,224,200,0.5);
+      transition: color 0.2s;
     }
-    details.specs summary::-webkit-details-marker { display: none; }
-    details.specs summary::before { content: '\25B8'; transition: transform 0.2s; }
-    details.specs[open] summary::before { transform: rotate(90deg); }
-    .specs-body { padding: 0 1.25rem 1.4rem; }
-    .specs-body h4 {
-      font-family: 'Cinzel', serif; color: var(--ink); font-size: 0.95rem;
-      letter-spacing: 0.06em; margin: 1rem 0 0.5rem;
+    .cta-note.flash { color: var(--gold); }
+
+    /* ── Gallery: the board in the wild ── */
+    .gallery-wrap { max-width: 920px; margin: 3.5rem auto 0; }
+    .gallery-head { text-align: center; margin-bottom: 1.6rem; }
+    .gallery-head .cta-eyebrow { margin-bottom: 0.5rem; }
+    .gallery-head h2 {
+      font-family: 'Cinzel', serif; font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2.1rem); letter-spacing: 0.04em;
+      color: var(--gold); text-shadow: 0 0 26px rgba(201,151,79,0.25);
     }
-    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 0.75rem; }
-    .spec {
-      background: rgba(255,255,255,0.03); border: 1px solid rgba(201,151,79,0.15);
-      border-radius: 8px; padding: 0.8rem 0.9rem;
+    .gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
     }
-    .spec .k { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .spec .v { font-size: 0.92rem; color: var(--ink); margin-top: 0.25rem; line-height: 1.4; }
-    .spec .v a { color: var(--gold); }
-    .changelog { list-style: none; margin-top: 0.4rem; }
-    .changelog li { font-size: 0.85rem; color: rgba(239,224,200,0.75); padding: 0.28rem 0; padding-left: 1.4rem; position: relative; line-height: 1.5; }
-    .changelog li::before { content: '\2726'; position: absolute; left: 0; color: var(--gold); }
-    .changelog .rm::before { content: '\2212'; color: #c98d8d; }
-    .changelog .add::before { content: '+'; color: #9dc98d; }
+    .shot {
+      position: relative; margin: 0; overflow: hidden;
+      border-radius: 12px; cursor: zoom-in;
+      border: 1px solid rgba(201,151,79,0.22);
+      background: rgba(20,12,8,0.6);
+      aspect-ratio: 4 / 3;
+    }
+    .shot img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, filter 0.3s ease;
+    }
+    .shot:hover img { transform: scale(1.06); }
+    .shot figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.4rem 0.7rem 0.55rem;
+      font-family: 'Space Mono', monospace; font-size: 0.66rem;
+      line-height: 1.35; letter-spacing: 0.02em; color: #f4ecd8;
+      background: linear-gradient(to top, rgba(12,7,5,0.92), transparent);
+      opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+    }
+    .shot:hover figcaption, .shot:focus-within figcaption { opacity: 1; transform: translateY(0); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(6,3,2,0.92); padding: 2rem;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox figure { margin: 0; max-width: 1100px; text-align: center; }
+    .lightbox img {
+      max-width: 100%; max-height: 82vh; border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    }
+    .lightbox figcaption {
+      margin-top: 0.9rem; font-family: 'Cinzel', serif; color: var(--gold);
+      font-size: clamp(0.95rem, 2.4vw, 1.2rem); letter-spacing: 0.03em;
+    }
+    .lightbox-close {
+      position: fixed; top: 1.1rem; right: 1.4rem;
+      font-family: 'Space Mono', monospace; font-size: 1.6rem; line-height: 1;
+      color: var(--ghost); background: none; border: none; cursor: pointer;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    @media (max-width: 620px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .shot figcaption { opacity: 1; transform: none; }
+    }
 
     footer {
       text-align: center; margin-top: 3rem;
@@ -386,29 +463,54 @@
 
     <div class="status" id="status"></div>
 
-    <details class="specs">
-      <summary>Physical build &amp; fabrication spec</summary>
-      <div class="specs-body">
-        <p style="color:var(--muted); font-size:0.85rem; line-height:1.6; margin-top:0.4rem;">
-          This web version mirrors the laser-cut wooden board. Notes for the physical rebuild:
-        </p>
-        <div class="specs-grid" style="margin-top:0.9rem;">
-          <div class="spec"><div class="k">Board stock</div><div class="v">4&#39; &times; 3&#39; &times; 0.5&#8243; &mdash; thinner panel, cuts all the way through</div></div>
-          <div class="spec"><div class="k">Engrave power</div><div class="v">20% power, minimum set to 0% (or toggle settings) &mdash; dial in shading</div></div>
-          <div class="spec"><div class="k">Cut power</div><div class="v">70% power for full through-cuts</div></div>
-          <div class="spec"><div class="k">Finish</div><div class="v">Stained wood board, painted planchette</div></div>
-          <div class="spec"><div class="k">Wood sourcing</div><div class="v"><a href="https://www.discountbuilderssupplysf.com/lumber-building-materials/" target="_blank" rel="noopener">Discount Builders Supply, SF</a></div></div>
-          <div class="spec"><div class="k">Art</div><div class="v">Cleaned-up emoji glyphs with shading (color emoji stand in for the engraved line art here)</div></div>
-        </div>
+    <section class="cta">
+      <div class="cta-eyebrow">&#127775; Help make Weji real</div>
+      <h2>Back Weji on Kickstarter</h2>
+      <p>Loved your reading? The real, laser-cut wooden Weji board is coming to Kickstarter. Be the first to summon one for your table.</p>
+      <a class="cta-btn" id="kickstarterBtn" href="#" role="button">Support the Kickstarter</a>
+      <div class="cta-note" id="ctaNote"></div>
+    </section>
 
-        <h4>Emoji changelog</h4>
-        <ul class="changelog">
-          <li class="rm">Removed: knife, hammer, beer, lightning bolt, web, hourglass, target, unicorn, fist, and angel face (face section)</li>
-          <li class="add">Added: raising hands &#127881; (yellow), clapping hands (yellow), sparkles, recycling symbol, multiple musical notes, party popper, see-no-evil monkey, information-desk person, kiss mark, and flushed face (face section)</li>
-          <li>Updated: skull &amp; crossbones refreshed</li>
-        </ul>
+    <div class="gallery-wrap">
+      <div class="gallery-head">
+        <div class="cta-eyebrow">&#128248; From the field</div>
+        <h2>The board in the wild</h2>
       </div>
-    </details>
+      <div class="gallery" id="gallery">
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-1.jpg" alt="The full laser-cut Weji board and walnut planchette leaning against a stone wall in the greenery" loading="lazy">
+          <figcaption>The full board, made in RVA &mdash; basking between s&eacute;ances.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-2.jpg" alt="A full-size anatomical skeleton reclining with the Weji board across its lap" loading="lazy">
+          <figcaption>A regular takes a turn at the board.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-3.jpg" alt="Two anatomical skulls beside the walnut planchette on a shelf of curiosities" loading="lazy">
+          <figcaption>Second opinions from the anatomy department.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-4.jpg" alt="A two-headed calf taxidermy mount next to the engraved Weji board" loading="lazy">
+          <figcaption>Two heads, one question for the spirits.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-5.jpg" alt="The walnut planchette resting over comparative-anatomy specimen blocks" loading="lazy">
+          <figcaption>The planchette consults the comparative hearts.</figcaption>
+        </figure>
+        <figure class="shot" tabindex="0">
+          <img src="photos/weji-6.jpg" alt="Close-up of the walnut ghost-shaped planchette with its round viewing window" loading="lazy">
+          <figcaption>The walnut planchette, resting between readings.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <figure>
+        <img id="lightboxImg" src="" alt="">
+        <figcaption id="lightboxCap"></figcaption>
+      </figure>
+    </div>
 
     <footer>
       Weji &middot; an <a href="index.html">Aileron Games</a> curiosity &middot; Made in RVA
@@ -662,6 +764,61 @@
     window.addEventListener('resize', () => {
       const picked = document.querySelector('.cell.picked:last-of-type');
       if (picked) moveTo(picked);
+    });
+
+    /* ── Kickstarter CTA ──
+       Drop the live campaign URL into KICKSTARTER_URL when it goes up.
+       Empty string = link pending: the button shows a "coming soon" note. */
+    const KICKSTARTER_URL = '';
+    const ksBtn = document.getElementById('kickstarterBtn');
+    const ctaNote = document.getElementById('ctaNote');
+
+    if (KICKSTARTER_URL) {
+      ksBtn.href = KICKSTARTER_URL;
+      ksBtn.target = '_blank';
+      ksBtn.rel = 'noopener';
+    } else {
+      ctaNote.textContent = 'Campaign launching soon — link coming.';
+      ksBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        ctaNote.textContent = 'Not live yet — the spirits are still counting the votes. Check back soon!';
+        ctaNote.classList.add('flash');
+        setTimeout(() => ctaNote.classList.remove('flash'), 1200);
+      });
+    }
+
+    /* ── Gallery lightbox ── */
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCap = document.getElementById('lightboxCap');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(fig) {
+      const img = fig.querySelector('img');
+      const cap = fig.querySelector('figcaption');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = cap ? cap.textContent : '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    gallery.querySelectorAll('.shot').forEach(fig => {
+      fig.addEventListener('click', () => openLightbox(fig));
+      fig.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(fig); }
+      });
+    });
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
   </script>
 </body>
