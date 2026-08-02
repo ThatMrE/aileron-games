@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biopunk &mdash; Science Belongs to Everyone</title>
+  <meta name="description" content="Biopunk is an open community rewilding biology — community labs, residencies, microgrants, hackathons and open hardware. One home for everything biopunk: Biopunk Lab, Biopunk House, Cellsius, Crab Lab, Primordia Grants, the Biohackathon, and more.">
+  <meta property="og:title" content="Biopunk — Science Belongs to Everyone">
+  <meta property="og:description" content="One home for everything biopunk — the open community rewilding biology from Frontier Tower, San Francisco.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg:      #04070a;
+      --bg2:     #070d0f;
+      --bg3:     #0a1316;
+      --bio:     #7dffa8;   /* acid-bio green */
+      --bio-dim: #3ecf7a;
+      --cyan:    #4fd6ff;
+      --magenta: #ff5db1;
+      --amber:   #ffcf5c;
+      --text:    #e7fbf0;
+      --muted:   rgba(231,251,240,0.55);
+      --faint:   rgba(231,251,240,0.35);
+      --border:  rgba(125,255,168,0.14);
+      --card:    rgba(125,255,168,0.025);
+    }
+
+    *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter',sans-serif;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+
+    /* ── living background ── */
+    .bg-layer {
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background:
+        radial-gradient(900px 600px at 12% -5%, rgba(62,207,122,0.10), transparent 60%),
+        radial-gradient(800px 700px at 92% 8%, rgba(79,214,255,0.07), transparent 55%),
+        radial-gradient(700px 700px at 70% 100%, rgba(255,93,177,0.06), transparent 55%);
+    }
+    .bg-grid {
+      position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.4;
+      background-image:
+        linear-gradient(rgba(125,255,168,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,255,168,0.04) 1px, transparent 1px);
+      background-size:64px 64px;
+      mask-image:radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+      -webkit-mask-image:radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+    }
+    .cell {
+      position:fixed; border-radius:50%; z-index:0; pointer-events:none;
+      filter:blur(1px); opacity:0.5;
+      animation:drift 26s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      from { transform:translate(0,0) scale(1); }
+      to   { transform:translate(24px,-32px) scale(1.12); }
+    }
+
+    /* ── nav ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1.05rem 2.5rem;
+      background:rgba(4,7,10,0.72);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+    .logo {
+      font-family:'Space Grotesk',sans-serif;
+      font-weight:700; font-size:1.12rem; letter-spacing:0.14em;
+      color:var(--text); display:flex; align-items:center; gap:0.55rem;
+    }
+    .logo b { color:var(--bio); text-shadow:0 0 22px rgba(125,255,168,0.5); }
+    .dna-mark {
+      width:12px; height:12px; border-radius:50%;
+      background:var(--bio); box-shadow:0 0 14px var(--bio);
+      animation:pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.7);} }
+
+    .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
+    .nav-links a {
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--muted); transition:color 0.2s;
+    }
+    .nav-links a:hover { color:var(--bio); }
+    .btn {
+      display:inline-block; font-family:'JetBrains Mono',monospace;
+      font-size:0.74rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+      padding:0.85rem 1.9rem; transition:all 0.22s; border-radius:3px; cursor:pointer;
+    }
+    .btn-bio { background:var(--bio); color:#04160c; box-shadow:0 0 26px rgba(125,255,168,0.32); }
+    .btn-bio:hover { box-shadow:0 0 42px rgba(125,255,168,0.6); transform:translateY(-2px); }
+    .btn-ghost { border:1px solid rgba(125,255,168,0.4); color:var(--bio); }
+    .btn-ghost:hover { background:rgba(125,255,168,0.07); border-color:var(--bio); }
+    .nav-links .btn { padding:0.5rem 1.2rem; font-size:0.68rem; }
+
+    /* ── hero ── */
+    .hero {
+      position:relative; z-index:1;
+      min-height:100vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; text-align:center;
+      padding:9rem 1.5rem 6rem;
+    }
+    .eyebrow {
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.72rem; letter-spacing:0.24em; text-transform:uppercase;
+      color:var(--bio); margin-bottom:1.6rem;
+      display:inline-flex; align-items:center; gap:0.6rem;
+    }
+    .eyebrow::before { content:''; width:26px; height:1px; background:var(--bio); opacity:0.6; }
+    .hero h1 {
+      font-family:'Space Grotesk',sans-serif;
+      font-size:clamp(2.7rem, 8vw, 6.6rem);
+      font-weight:700; line-height:1.02; letter-spacing:-0.01em;
+      margin-bottom:1.4rem; max-width:14ch;
+    }
+    .hero h1 em {
+      font-style:normal;
+      background:linear-gradient(120deg, var(--bio), var(--cyan) 55%, var(--magenta));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero p.lead {
+      font-size:clamp(1rem,1.6vw,1.2rem); color:var(--muted);
+      max-width:600px; line-height:1.75; margin-bottom:2.6rem;
+    }
+    .hero p.lead strong { color:var(--text); font-weight:600; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+    .hero-meta {
+      margin-top:3.4rem; display:flex; gap:2.4rem; flex-wrap:wrap; justify-content:center;
+      font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.1em;
+      color:var(--faint); text-transform:uppercase;
+    }
+    .hero-meta span b { color:var(--bio); font-weight:700; }
+
+    /* ── section scaffolding ── */
+    .section { position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:6.5rem 2rem; }
+    .band { position:relative; z-index:1; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .band-dark { background:var(--bg2); }
+    .sec-eyebrow {
+      font-family:'JetBrains Mono',monospace;
+      font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--bio); margin-bottom:0.9rem;
+    }
+    .sec-title {
+      font-family:'Space Grotesk',sans-serif;
+      font-size:clamp(1.9rem,4vw,3rem); font-weight:700; letter-spacing:-0.01em;
+      line-height:1.1; margin-bottom:1.1rem;
+    }
+    .sec-title em { font-style:normal; color:var(--bio); }
+    .sec-lead { color:var(--muted); max-width:620px; font-size:1.02rem; line-height:1.8; }
+
+    /* ── manifesto ── */
+    .manifesto .sec-lead { max-width:760px; font-size:1.12rem; }
+    .manifesto p + p { margin-top:1.2rem; }
+    .manifesto strong { color:var(--text); }
+
+    /* ── ecosystem grid ── */
+    .eco-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:3rem;
+    }
+    .eco-card {
+      position:relative; display:flex; flex-direction:column;
+      background:var(--card); border:1px solid var(--border); border-radius:10px;
+      padding:1.7rem 1.6rem 1.5rem; overflow:hidden;
+      transition:border-color 0.28s, background 0.28s, transform 0.2s;
+    }
+    .eco-card::before {
+      content:''; position:absolute; inset:0 auto auto 0; height:2px; width:100%;
+      background:linear-gradient(90deg,transparent,var(--bio),transparent);
+      opacity:0; transition:opacity 0.3s;
+    }
+    .eco-card:hover { border-color:rgba(125,255,168,0.42); background:rgba(125,255,168,0.055); transform:translateY(-4px); }
+    .eco-card:hover::before { opacity:1; }
+    .eco-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.05rem; }
+    .eco-num { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--faint); letter-spacing:0.1em; }
+    .eco-tag {
+      font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.14em;
+      text-transform:uppercase; padding:0.28rem 0.6rem; border-radius:3px;
+      border:1px solid var(--border); color:var(--bio);
+      display:inline-flex; align-items:center; gap:0.4rem;
+    }
+    .eco-tag::before { content:''; width:6px; height:6px; border-radius:50%; background:currentColor; box-shadow:0 0 8px currentColor; }
+    .tag-cyan { color:var(--cyan); }
+    .tag-magenta { color:var(--magenta); }
+    .tag-amber { color:var(--amber); }
+    .eco-card h3 {
+      font-family:'Space Grotesk',sans-serif; font-size:1.24rem; font-weight:600;
+      margin-bottom:0.55rem; letter-spacing:-0.005em;
+    }
+    .eco-card p { font-size:0.9rem; color:var(--muted); line-height:1.65; flex:1; }
+    .eco-visit {
+      margin-top:1.3rem; font-family:'JetBrains Mono',monospace; font-size:0.68rem;
+      letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);
+      display:flex; align-items:center; justify-content:space-between; gap:0.5rem;
+      transition:color 0.2s;
+    }
+    .eco-card:hover .eco-visit { color:var(--bio); }
+    .eco-visit .host { opacity:0.7; text-transform:none; letter-spacing:0.02em; }
+    .eco-visit .arrow { transition:transform 0.22s; }
+    .eco-card:hover .eco-visit .arrow { transform:translateX(4px); }
+
+    /* ── atlas band ── */
+    .atlas-inner {
+      display:flex; align-items:center; justify-content:space-between; gap:3rem; flex-wrap:wrap;
+    }
+    .atlas-copy { max-width:620px; }
+    .atlas-visual {
+      flex:1; min-width:260px; height:220px; position:relative;
+      border:1px solid var(--border); border-radius:12px; overflow:hidden;
+      background:radial-gradient(circle at 40% 40%, rgba(79,214,255,0.08), transparent 60%), var(--bg3);
+    }
+    .atlas-visual .node {
+      position:absolute; width:9px; height:9px; border-radius:50%;
+      background:var(--bio); box-shadow:0 0 12px var(--bio);
+    }
+    .atlas-visual .node.c { background:var(--cyan); box-shadow:0 0 12px var(--cyan); }
+    .atlas-visual .node.m { background:var(--magenta); box-shadow:0 0 12px var(--magenta); }
+    .atlas-visual svg { position:absolute; inset:0; width:100%; height:100%; }
+
+    /* ── movement quote ── */
+    .quote-band { background:var(--bg2); text-align:center; padding:6rem 2rem; }
+    .quote-band blockquote {
+      font-family:'Space Grotesk',sans-serif; font-weight:600;
+      font-size:clamp(1.4rem,3.4vw,2.3rem); line-height:1.35; max-width:900px;
+      margin:0 auto 1.2rem; letter-spacing:-0.01em;
+    }
+    .quote-band blockquote em { font-style:normal; color:var(--bio); }
+    .quote-band cite {
+      font-family:'JetBrains Mono',monospace; font-style:normal;
+      font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint);
+    }
+
+    /* ── join ── */
+    .join { text-align:center; padding:7rem 2rem; }
+    .join h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:700; margin-bottom:1.1rem; letter-spacing:-0.01em; }
+    .join h2 em { font-style:normal; color:var(--bio); }
+    .join p { color:var(--muted); font-size:1.05rem; margin-bottom:2.4rem; max-width:560px; margin-left:auto; margin-right:auto; }
+
+    /* ── footer ── */
+    footer {
+      position:relative; z-index:1; border-top:1px solid var(--border);
+      background:rgba(4,7,10,0.9); padding:3rem 2.5rem 2.2rem;
+    }
+    .foot-top { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-bottom:2.4rem; }
+    .foot-brand { max-width:280px; }
+    .foot-brand .logo { margin-bottom:0.9rem; }
+    .foot-brand p { color:var(--faint); font-size:0.85rem; line-height:1.6; }
+    .foot-cols { display:flex; gap:4rem; flex-wrap:wrap; }
+    .foot-col h4 {
+      font-family:'JetBrains Mono',monospace; font-size:0.64rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--bio); margin-bottom:1rem;
+    }
+    .foot-col a {
+      display:block; font-size:0.85rem; color:var(--muted); margin-bottom:0.6rem; transition:color 0.2s;
+    }
+    .foot-col a:hover { color:var(--bio); }
+    .foot-bottom {
+      display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;
+      padding-top:1.6rem; border-top:1px solid var(--border);
+      font-family:'JetBrains Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; color:var(--faint);
+    }
+
+    /* ── responsive ── */
+    @media (max-width:920px) {
+      nav { padding:0.85rem 1.2rem; }
+      .nav-links { gap:1.1rem; }
+      .nav-links li.hide-sm { display:none; }
+      .eco-grid { grid-template-columns:1fr 1fr; }
+      .section { padding:4.5rem 1.4rem; }
+    }
+    @media (max-width:600px) {
+      .eco-grid { grid-template-columns:1fr; }
+      .hero-meta { gap:1.4rem; }
+      .foot-cols { gap:2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="bg-grid"></div>
+  <div class="cell" style="top:18%; left:8%; width:120px; height:120px; background:radial-gradient(circle at 35% 35%, rgba(125,255,168,0.5), transparent 70%);"></div>
+  <div class="cell" style="top:60%; left:82%; width:170px; height:170px; background:radial-gradient(circle at 40% 40%, rgba(79,214,255,0.4), transparent 70%); animation-duration:32s;"></div>
+  <div class="cell" style="top:80%; left:20%; width:90px; height:90px; background:radial-gradient(circle at 40% 40%, rgba(255,93,177,0.4), transparent 70%); animation-duration:22s;"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#top" class="logo"><span class="dna-mark"></span>BIO<b>PUNK</b></a>
+    <ul class="nav-links">
+      <li class="hide-sm"><a href="#ecosystem">Ecosystem</a></li>
+      <li class="hide-sm"><a href="#movement">Movement</a></li>
+      <li class="hide-sm"><a href="#atlas">Atlas</a></li>
+      <li><a href="https://biopunklab.com/" target="_blank" rel="noopener" class="btn btn-bio">Visit the Lab</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <span class="eyebrow">The Biopunk Community &middot; San Francisco</span>
+    <h1>Science belongs to <em>everyone.</em></h1>
+    <p class="lead">
+      Biopunk is an open community <strong>rewilding biology</strong> &mdash; a network of community labs,
+      residencies, microgrants, hackathons and open hardware for scientists, hackers, artists,
+      and the wildly curious. This is the front door to all of it.
+    </p>
+    <div class="hero-actions">
+      <a href="#ecosystem" class="btn btn-bio">Explore the Ecosystem</a>
+      <a href="#movement" class="btn btn-ghost">What is Biopunk?</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>9</b> projects</span>
+      <span><b>1</b> movement</span>
+      <span>Open &middot; nonprofit &middot; <b>hands-on</b></span>
+    </div>
+  </header>
+
+  <!-- MOVEMENT / MANIFESTO -->
+  <div id="movement" class="band band-dark">
+    <section class="section manifesto">
+      <p class="sec-eyebrow">// The Movement</p>
+      <h2 class="sec-title">Biology at the <em>edge</em>, in the open.</h2>
+      <div class="sec-lead">
+        <p>
+          For too long, biotech has lived behind institutional walls &mdash; expensive, credentialed,
+          closed. <strong>Biopunk is the counter-move:</strong> open-access labs, low-cost tools,
+          and hands-on training so anyone can experiment, tinker, and build at the frontier of biology.
+        </p>
+        <p>
+          What started as a scrappy community lab has grown into an ecosystem &mdash; a place to run your
+          first experiment, live alongside other builders, get a grant, ship a project in a weekend
+          hackathon, or fork an open-source lab and drop it anywhere in the world. Much of it runs out of
+          the <strong>8th-floor biotech village at Frontier Tower, 995 Market St, San Francisco</strong>,
+          and it&rsquo;s spreading well beyond.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ECOSYSTEM -->
+  <section id="ecosystem" class="section">
+    <p class="sec-eyebrow">// The Ecosystem</p>
+    <h2 class="sec-title">One community, <em>many organisms.</em></h2>
+    <p class="sec-lead">Every project below is its own thing &mdash; and part of the same living network. Follow any link to dive in.</p>
+
+    <div class="eco-grid">
+
+      <a class="eco-card" href="https://biopunklab.com/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">01</span><span class="eco-tag">Community Lab</span></div>
+        <h3>Biopunk Lab</h3>
+        <p>The flagship &mdash; the world&rsquo;s largest open-access biolab. Shared equipment, low-cost bench space, and skill-building workshops so early-stage biotech projects can incubate. The home base at Frontier Tower.</p>
+        <span class="eco-visit"><span class="host">biopunklab.com</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://biopunk.house/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">02</span><span class="eco-tag tag-magenta">Residency</span></div>
+        <h3>Biopunk House</h3>
+        <p>A live-in residency for biotech founders &mdash; a home for biologists, hackers, and the wildly curious. DIY, rebellious, deeply collaborative, with access to a cutting-edge lab in San Francisco.</p>
+        <span class="eco-visit"><span class="host">biopunk.house</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="http://cellsius.org/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">03</span><span class="eco-tag">Community Lab</span></div>
+        <h3>Cellsius</h3>
+        <p>The community bio lab that started it all in SF. Project-based learning, classes, and open experimentation across synbio, tissue engineering, DNA sequencing, robotics and more &mdash; the seed the wider community grew from.</p>
+        <span class="eco-visit"><span class="host">cellsius.org</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://primordiagrants.com/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">04</span><span class="eco-tag tag-amber">Microgrants</span></div>
+        <h3>Primordia Grants</h3>
+        <p>Fast microgrants &mdash; up to $3,000 &mdash; for early-stage biology experiments in community labs. No institution or credentials required. Grantees share their lab notes in the open and close each cohort with a public showcase.</p>
+        <span class="eco-visit"><span class="host">primordiagrants.com</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://biopunk-hackathon.vercel.app/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">05</span><span class="eco-tag tag-magenta">Event</span></div>
+        <h3>Biohackathon</h3>
+        <p>A sprint of rebellious science at the intersection of synthetic biology, DeSci, and open science. Builders, hackers, artists and scientists prototype frontier biotech &mdash; DIY diagnostics, living art, lab automation &mdash; in days, not years.</p>
+        <span class="eco-visit"><span class="host">biopunk-hackathon.vercel.app</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="http://crablaboratory.com/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">06</span><span class="eco-tag tag-cyan">Open Hardware</span></div>
+        <h3>Crab Lab</h3>
+        <p>Open-source, modular shipping-container laboratories designed to be built anywhere. Blueprints and protocols are fully open, so any community can replicate a lab from local materials &mdash; science for remote and underserved places.</p>
+        <span class="eco-visit"><span class="host">crablaboratory.com</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://biologicalfrontierfoundation.org/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">07</span><span class="eco-tag tag-amber">Nonprofit</span></div>
+        <h3>Biological Frontier Foundation</h3>
+        <p>The nonprofit backbone of the community &mdash; advancing open, community-driven biology and supporting the labs, people, and projects working at the frontier of science.</p>
+        <span class="eco-visit"><span class="host">biologicalfrontierfoundation.org</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://templelab.org/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">08</span><span class="eco-tag tag-cyan">Analytical</span></div>
+        <h3>Temple Lab</h3>
+        <p>Analytical chemistry with harm reduction as its central sacrament. HPLC-anchored testing and full certificates of analysis for peptides, supplements, research groups and traditional-medicine practitioners &mdash; accurate information for anyone who needs it.</p>
+        <span class="eco-visit"><span class="host">templelab.org</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+      <a class="eco-card" href="https://fathomm.org/" target="_blank" rel="noopener">
+        <div class="eco-top"><span class="eco-num">09</span><span class="eco-tag tag-cyan">Project</span></div>
+        <h3>Fathomm</h3>
+        <p>A biopunk community venture exploring the deeper end of biology. Dive into the project to see what&rsquo;s taking shape.</p>
+        <span class="eco-visit"><span class="host">fathomm.org</span><span class="arrow">Visit &rarr;</span></span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ATLAS -->
+  <div id="atlas" class="band band-dark">
+    <section class="section">
+      <div class="atlas-inner">
+        <div class="atlas-copy">
+          <p class="sec-eyebrow">// Beyond the Community</p>
+          <h2 class="sec-title">Find a lab <em>near you.</em></h2>
+          <p class="sec-lead" style="margin-bottom:2rem;">
+            Biopunk is one node in a much bigger movement. The <strong style="color:var(--text)">Global Biolab Atlas</strong>
+            is a living map of DIYbio, community biotech, and open-science labs worldwide &mdash; with activity status for each.
+            Whether you&rsquo;re looking for a bench, a community, or collaborators, start there.
+          </p>
+          <a href="https://global-biolab-atlas.netlify.app/" target="_blank" rel="noopener" class="btn btn-ghost">Open the Global Biolab Atlas &rarr;</a>
+        </div>
+        <div class="atlas-visual" aria-hidden="true">
+          <svg viewBox="0 0 400 220" preserveAspectRatio="none">
+            <line x1="60" y1="60" x2="150" y2="120" stroke="rgba(125,255,168,0.25)" stroke-width="1"/>
+            <line x1="150" y1="120" x2="280" y2="70" stroke="rgba(79,214,255,0.25)" stroke-width="1"/>
+            <line x1="280" y1="70" x2="340" y2="150" stroke="rgba(125,255,168,0.2)" stroke-width="1"/>
+            <line x1="150" y1="120" x2="200" y2="180" stroke="rgba(255,93,177,0.22)" stroke-width="1"/>
+            <line x1="60" y1="60" x2="200" y2="180" stroke="rgba(125,255,168,0.12)" stroke-width="1"/>
+          </svg>
+          <span class="node" style="top:53px; left:56px;"></span>
+          <span class="node c" style="top:112px; left:146px;"></span>
+          <span class="node" style="top:63px; left:276px;"></span>
+          <span class="node" style="top:143px; left:336px;"></span>
+          <span class="node m" style="top:172px; left:196px;"></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-band">
+    <blockquote>&ldquo;Science isn&rsquo;t something that happens to you. It&rsquo;s something you <em>do</em> &mdash; with your hands, in the open, with your community.&rdquo;</blockquote>
+    <cite>The Biopunk Community</cite>
+  </div>
+
+  <!-- JOIN -->
+  <section class="join">
+    <p class="sec-eyebrow" style="text-align:center;">// Get Involved</p>
+    <h2>Come <em>build</em> with us.</h2>
+    <p>Walk into a lab, apply for a grant, join a hackathon, or move into the house. There&rsquo;s a way in for every level of curiosity.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="https://biopunklab.com/" target="_blank" rel="noopener" class="btn btn-bio">Visit Biopunk Lab</a>
+      <a href="https://primordiagrants.com/" target="_blank" rel="noopener" class="btn btn-ghost">Apply for a Grant</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="dna-mark"></span>BIO<b>PUNK</b></a>
+        <p>An open community rewilding biology. Based at Frontier Tower, 995 Market St, San Francisco &mdash; and everywhere the movement spreads.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Labs &amp; Spaces</h4>
+          <a href="https://biopunklab.com/" target="_blank" rel="noopener">Biopunk Lab</a>
+          <a href="https://biopunk.house/" target="_blank" rel="noopener">Biopunk House</a>
+          <a href="http://cellsius.org/" target="_blank" rel="noopener">Cellsius</a>
+          <a href="http://crablaboratory.com/" target="_blank" rel="noopener">Crab Lab</a>
+          <a href="https://templelab.org/" target="_blank" rel="noopener">Temple Lab</a>
+        </div>
+        <div class="foot-col">
+          <h4>Programs</h4>
+          <a href="https://primordiagrants.com/" target="_blank" rel="noopener">Primordia Grants</a>
+          <a href="https://biopunk-hackathon.vercel.app/" target="_blank" rel="noopener">Biohackathon</a>
+          <a href="https://biologicalfrontierfoundation.org/" target="_blank" rel="noopener">Biological Frontier Foundation</a>
+          <a href="https://fathomm.org/" target="_blank" rel="noopener">Fathomm</a>
+        </div>
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="https://global-biolab-atlas.netlify.app/" target="_blank" rel="noopener">Global Biolab Atlas</a>
+          <a href="#ecosystem">The Ecosystem</a>
+          <a href="#movement">The Movement</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Biopunk Community &middot; Science belongs to everyone.</span>
+      <span>biopunk.community</span>
+    </div>
+  </footer>
+
+</body>
+</html>
