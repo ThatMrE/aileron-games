@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIGGS &mdash; A Feynman Diagram Card Game | Aileron Games</title>
+  <meta name="description" content="HIGGS is a two-player Feynman-diagram deck-building duel. Collide particles, resolve real quantum coupling probabilities, and race to build a path to the Higgs boson.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #00e5ff;
+      --cyan-dim: #0099cc;
+      --purple: #7c3aed;
+      --pink: #f0abfc;
+      --gold: #ffd166;
+      --green: #4ade80;
+      --red: #ff6b6b;
+      --dark: #050812;
+      --dark2: #090d1f;
+      --dark3: #0d1230;
+      --text: #e8f0ff;
+      --muted: rgba(232,240,255,0.55);
+      --border: rgba(0,229,255,0.15);
+      --card-bg: rgba(0,229,255,0.03);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 5%,  rgba(0,229,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(240,171,252,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 85%, rgba(0,229,255,0.3) 0%, transparent 100%),
+        radial-gradient(2px 2px at 30% 55%, rgba(0,229,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 45%, rgba(240,171,252,0.2) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(5,8,18,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 20px rgba(0,229,255,0.5);
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ── HERO ── */
+    .g-hero {
+      padding: 8rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .g-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .g-hero h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 60px rgba(0,229,255,0.3);
+    }
+    .g-hero h1 span { color: var(--cyan); }
+    .g-tagline {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin-top: 0.5rem;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--cyan);
+    }
+    .btn-cyan { background: var(--cyan); color: var(--dark); box-shadow: 0 0 24px rgba(0,229,255,0.35); }
+    .btn-cyan:hover:not(:disabled) { box-shadow: 0 0 40px rgba(0,229,255,0.6); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid rgba(0,229,255,0.4); }
+    .btn-outline:hover:not(:disabled) { border-color: var(--cyan); background: rgba(0,229,255,0.06); }
+    .btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ── GAME BOARD ── */
+    .board {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 5rem;
+    }
+
+    .hud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .hud-chip {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 0.5rem 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 3px;
+      color: var(--muted);
+    }
+    .hud-chip b { color: var(--cyan); }
+    .hud-chip.you { border-color: rgba(0,229,255,0.4); }
+    .hud-chip.ai  { border-color: rgba(240,171,252,0.3); }
+    .hud-chip.ai b { color: var(--pink); }
+
+    .lane {
+      border: 1px solid var(--border);
+      background: rgba(9,13,31,0.6);
+      border-radius: 6px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .lane-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .lane-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .lane-title.you { color: var(--cyan); }
+    .lane-title.ai  { color: var(--pink); }
+    .lane.ai-lane { border-color: rgba(240,171,252,0.18); }
+
+    .beamline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 58px;
+      align-items: center;
+    }
+    .beamline .empty-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(232,240,255,0.28);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── PARTICLE CHIP ── */
+    .chip {
+      position: relative;
+      min-width: 52px;
+      padding: 0.5rem 0.55rem 0.4rem;
+      border-radius: 5px;
+      border: 1px solid;
+      background: rgba(5,8,18,0.7);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
+      user-select: none;
+    }
+    .chip:hover { transform: translateY(-2px); }
+    .chip .sym {
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1;
+      display: block;
+    }
+    .chip .nm {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    /* type colors */
+    .t-quark     { border-color: rgba(0,229,255,0.5);   color: var(--cyan); }
+    .t-antiquark { border-color: rgba(0,229,255,0.35);  color: #7fe9ff; border-style: dashed; }
+    .t-lepton    { border-color: rgba(240,171,252,0.55); color: var(--pink); }
+    .t-antilepton{ border-color: rgba(240,171,252,0.4);  color: #ffd6ff; border-style: dashed; }
+    .t-boson     { border-color: rgba(255,209,102,0.6);  color: var(--gold); }
+    .t-higgs     { border-color: #fff; color: #fff; box-shadow: 0 0 22px rgba(255,255,255,0.5); }
+
+    .chip.sel { box-shadow: 0 0 0 2px var(--cyan), 0 0 18px rgba(0,229,255,0.5); transform: translateY(-3px); }
+    .chip.sel-opp { box-shadow: 0 0 0 2px var(--red), 0 0 18px rgba(255,107,107,0.5); transform: translateY(-3px); }
+    .chip.dim { opacity: 0.4; }
+
+    /* ── COLLIDER / CHAMBER ── */
+    .chamber {
+      border: 1px solid rgba(0,229,255,0.3);
+      background: linear-gradient(135deg, rgba(13,18,48,0.7), rgba(9,13,31,0.7));
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .chamber-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .reactions { display: flex; flex-direction: column; gap: 0.5rem; }
+    .reaction {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: rgba(0,229,255,0.02);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .reaction:hover { border-color: var(--cyan); background: rgba(0,229,255,0.07); }
+    .reaction.win { border-color: #fff; background: rgba(255,255,255,0.05); }
+    .reaction.disrupt { border-color: rgba(255,107,107,0.5); }
+    .reaction.disrupt:hover { border-color: var(--red); background: rgba(255,107,107,0.08); }
+    .reaction.unaffordable { opacity: 0.45; cursor: not-allowed; }
+    .rx-formula {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+    .rx-meta {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+    }
+    .rx-force { color: var(--muted); text-transform: uppercase; }
+    .rx-prob { color: var(--green); font-weight: 700; }
+    .rx-cost { color: var(--gold); }
+    .chamber-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: rgba(232,240,255,0.35);
+      text-align: center;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    /* ── MARKET ── */
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+      gap: 0.5rem;
+    }
+    .market-item {
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.55rem 0.4rem;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(0,229,255,0.02);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .market-item:hover:not(.unaffordable) { border-color: var(--cyan); background: rgba(0,229,255,0.07); }
+    .market-item .m-sym {
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .market-item .m-nm {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.48rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin: 0.2rem 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .market-item .m-cost {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--gold);
+    }
+    .market-item.unaffordable { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── LOG ── */
+    .log-box {
+      border: 1px solid var(--border);
+      background: rgba(5,8,18,0.75);
+      border-radius: 6px;
+      padding: 0.75rem 0.9rem;
+      height: 180px;
+      overflow-y: auto;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+    .log-line { color: var(--muted); margin-bottom: 0.15rem; }
+    .log-line.you { color: var(--cyan); }
+    .log-line.ai  { color: var(--pink); }
+    .log-line.ok  { color: var(--green); }
+    .log-line.fail{ color: var(--red); }
+    .log-line.sys { color: rgba(232,240,255,0.35); }
+    .log-line.win { color: #fff; font-weight: 700; }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      nav { padding: 0.9rem 1.1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── OVERLAY (rules / win) ── */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(5,8,18,0.92);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .overlay.show { display: flex; }
+    .modal {
+      max-width: 720px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .modal h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.4rem;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .modal h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      color: var(--pink);
+      margin: 1.25rem 0 0.5rem;
+      letter-spacing: 0.04em;
+    }
+    .modal p, .modal li { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+    .modal ul, .modal ol { margin: 0.4rem 0 0.4rem 1.2rem; }
+    .modal code {
+      font-family: 'Space Mono', monospace;
+      background: rgba(0,229,255,0.08);
+      color: var(--cyan);
+      padding: 0.05rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.82rem;
+    }
+    .modal .win-head { color: var(--green); }
+    .modal-close { margin-top: 1.5rem; text-align: center; }
+
+    .footer-mini {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 1;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(232,240,255,0.3);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">&#9652; AILERON</a>
+    <ul class="nav-links">
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="#" onclick="openRules();return false;">How to Play</a></li>
+      <li><a href="higgs-rules.html">Full Rules</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="g-hero">
+    <p class="g-eyebrow">&#9652; Aileron Games &mdash; Playable Prototype</p>
+    <h1><span>HIGGS</span></h1>
+    <p class="g-tagline">A Feynman-Diagram Card Duel &middot; Collide. Couple. Create the Boson.</p>
+  </header>
+
+  <main class="board">
+
+    <div class="hud" id="hud"></div>
+
+    <!-- Opponent -->
+    <div class="lane ai-lane">
+      <div class="lane-head">
+        <span class="lane-title ai">&#x1F916; CERN AI &mdash; Beamline</span>
+        <span class="lane-title" id="aiInfo"></span>
+      </div>
+      <div class="beamline" id="aiBeam"></div>
+    </div>
+
+    <!-- Collider chamber -->
+    <div class="chamber">
+      <div class="chamber-title">&#x269B;&#xFE0F; Collision Chamber</div>
+      <div id="chamberBody"></div>
+    </div>
+
+    <div class="controls" id="controls"></div>
+
+    <!-- Player -->
+    <div class="lane">
+      <div class="lane-head">
+        <span class="lane-title you">&#x1F52C; You &mdash; Beamline</span>
+        <span class="lane-title" id="youInfo"></span>
+      </div>
+      <div class="beamline" id="youBeam"></div>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><span class="lane-title you">&#x1F0CF; Your Hand</span></div>
+      <div class="beamline" id="youHand"></div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p class="section-label">Collider Market &mdash; spend energy (&#9889;) to acquire particles into your deck</p>
+        <div class="market-grid" id="market"></div>
+      </div>
+      <div>
+        <p class="section-label">Interaction Log</p>
+        <div class="log-box" id="log"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="footer-mini">
+    HIGGS &mdash; a science-educational prototype by Aileron Studios. All couplings approximate the Standard Model, compressed for play.
+    &nbsp;&middot;&nbsp; <a href="higgs-rules.html" style="color:var(--cyan)">Read the full rules &amp; card list &rarr;</a>
+  </div>
+
+  <!-- RULES / WIN OVERLAY -->
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modalBody"></div>
+  </div>
+
+<script>
+/* ============================================================
+   HIGGS — A Feynman Diagram Card Game (playable prototype)
+   All particle data & vertices approximate the Standard Model.
+   ============================================================ */
+
+/* ---------- PARTICLE DATABASE ---------- */
+const OL = "̅"; // combining overline for antiquarks
+const P = {
+  // quarks
+  u:  {sym:"u",       nm:"up",      type:"quark",      q:"+2/3", mass:0.0022},
+  d:  {sym:"d",       nm:"down",    type:"quark",      q:"-1/3", mass:0.0047},
+  c:  {sym:"c",       nm:"charm",   type:"quark",      q:"+2/3", mass:1.27},
+  s:  {sym:"s",       nm:"strange", type:"quark",      q:"-1/3", mass:0.095},
+  t:  {sym:"t",       nm:"top",     type:"quark",      q:"+2/3", mass:173},
+  b:  {sym:"b",       nm:"bottom",  type:"quark",      q:"-1/3", mass:4.18},
+  // antiquarks
+  ubar:{sym:"u"+OL,   nm:"anti-up",   type:"antiquark", q:"-2/3", mass:0.0022},
+  dbar:{sym:"d"+OL,   nm:"anti-down", type:"antiquark", q:"+1/3", mass:0.0047},
+  cbar:{sym:"c"+OL,   nm:"anti-charm",type:"antiquark", q:"-2/3", mass:1.27},
+  sbar:{sym:"s"+OL,   nm:"anti-str",  type:"antiquark", q:"+1/3", mass:0.095},
+  tbar:{sym:"t"+OL,   nm:"anti-top",  type:"antiquark", q:"-2/3", mass:173},
+  bbar:{sym:"b"+OL,   nm:"anti-bot",  type:"antiquark", q:"+1/3", mass:4.18},
+  // leptons
+  "e-":  {sym:"e⁻", nm:"electron", type:"lepton",     q:"-1", mass:0.000511},
+  "e+":  {sym:"e⁺", nm:"positron", type:"antilepton", q:"+1", mass:0.000511},
+  "mu-": {sym:"μ⁻", nm:"muon", type:"lepton",     q:"-1", mass:0.1057},
+  "mu+": {sym:"μ⁺", nm:"anti-muon", type:"antilepton", q:"+1", mass:0.1057},
+  "tau-":{sym:"τ⁻", nm:"tau",  type:"lepton",     q:"-1", mass:1.777},
+  "tau+":{sym:"τ⁺", nm:"anti-tau", type:"antilepton", q:"+1", mass:1.777},
+  // gauge bosons
+  gamma:{sym:"γ", nm:"photon",  type:"boson", q:"0",  mass:0},
+  g:    {sym:"g",      nm:"gluon",   type:"boson", q:"0",  mass:0},
+  "W+": {sym:"W⁺",nm:"W boson", type:"boson", q:"+1", mass:80.4},
+  "W-": {sym:"W⁻",nm:"W boson", type:"boson", q:"-1", mass:80.4},
+  Z:    {sym:"Z",      nm:"Z boson", type:"boson", q:"0",  mass:91.2},
+  // scalar
+  H:    {sym:"H",      nm:"HIGGS",   type:"higgs", q:"0",  mass:125}
+};
+function cls(key){ return "t-" + P[key].type; }
+
+/* ---------- VERTEX / RECIPE TABLE (2-in → 1-out Feynman vertices) ----------
+   force: physical interaction    p: game success %    e: energy (GeV) to invest
+   Probabilities preserve the real ordering Strong > EM > Weak,
+   and the Yukawa (Higgs) coupling scales with the mass of the particle.      */
+const RECIPES = [
+  // --- QCD (strong, ~75%) : quark–antiquark annihilation to a gluon ---
+  {a:"u",b:"ubar", out:"g", force:"Strong", p:75, e:0},
+  {a:"d",b:"dbar", out:"g", force:"Strong", p:75, e:0},
+  {a:"c",b:"cbar", out:"g", force:"Strong", p:75, e:0},
+  {a:"s",b:"sbar", out:"g", force:"Strong", p:75, e:0},
+  {a:"b",b:"bbar", out:"g", force:"Strong", p:75, e:0},
+  // --- QCD heavy-quark pair production g g → Q (energy = mass) ---
+  {a:"g",b:"g", out:"c",    force:"Strong", p:72, e:2},
+  {a:"g",b:"g", out:"cbar", force:"Strong", p:72, e:2},
+  {a:"g",b:"g", out:"b",    force:"Strong", p:68, e:5},
+  {a:"g",b:"g", out:"bbar", force:"Strong", p:68, e:5},
+  {a:"g",b:"g", out:"t",    force:"Strong", p:62, e:9},
+  {a:"g",b:"g", out:"tbar", force:"Strong", p:62, e:9},
+  // --- QED (electromagnetic, ~55%) ---
+  {a:"e-",b:"e+",   out:"gamma", force:"EM", p:55, e:0},
+  {a:"mu-",b:"mu+", out:"gamma", force:"EM", p:55, e:0},
+  {a:"tau-",b:"tau+",out:"gamma",force:"EM", p:55, e:0},
+  {a:"gamma",b:"gamma", out:"e-",  force:"EM", p:55, e:1}, // γγ → pair production
+  {a:"gamma",b:"gamma", out:"e+",  force:"EM", p:55, e:1},
+  // --- Weak charged current (W, ~35%) : flavor-changing ---
+  {a:"u",b:"dbar", out:"W+", force:"Weak", p:35, e:5},
+  {a:"d",b:"ubar", out:"W-", force:"Weak", p:35, e:5},
+  {a:"c",b:"sbar", out:"W+", force:"Weak", p:35, e:5},
+  {a:"e-",b:"e+",  out:"W+", force:"Weak", p:32, e:5}, // via virtual state (abstracted)
+  // --- Weak neutral current (Z, ~40%) ---
+  {a:"e-",b:"e+", out:"Z", force:"Weak", p:40, e:5},
+  {a:"mu-",b:"mu+",out:"Z",force:"Weak", p:40, e:5},
+  {a:"u",b:"ubar",out:"Z", force:"Weak", p:40, e:5},
+  {a:"d",b:"dbar",out:"Z", force:"Weak", p:40, e:5},
+  // ================= HIGGS PRODUCTION CHANNELS (win vertices) =================
+  {a:"g",b:"g",     out:"H", force:"Yukawa (top loop)", p:50, e:10, ch:"Gluon Fusion (ggF)"},
+  {a:"t",b:"tbar",  out:"H", force:"Top Yukawa",        p:60, e:12, ch:"Top-Associated (ttH)"},
+  {a:"W+",b:"W-",   out:"H", force:"Weak / VBF",        p:45, e:10, ch:"Vector Boson Fusion"},
+  {a:"Z",b:"Z",     out:"H", force:"Weak / VBF",        p:40, e:10, ch:"Vector Boson Fusion"},
+  {a:"b",b:"bbar",  out:"H", force:"b Yukawa",          p:35, e:6,  ch:"Associated (VH, b b̅)"},
+  {a:"tau-",b:"tau+",out:"H",force:"τ Yukawa",     p:25, e:4,  ch:"H → ττ"}
+];
+
+/* Find all recipes matching an unordered particle pair */
+function matchRecipes(k1, k2){
+  return RECIPES.filter(r =>
+    (r.a===k1 && r.b===k2) || (r.a===k2 && r.b===k1)
+  );
+}
+/* Annihilation check for disruption (particle + its antiparticle, or any QED/QCD/weak boson output) */
+const ANTI = {
+  u:"ubar", ubar:"u", d:"dbar", dbar:"d", c:"cbar", cbar:"c",
+  s:"sbar", sbar:"s", t:"tbar", tbar:"t", b:"bbar", bbar:"b",
+  "e-":"e+","e+":"e-","mu-":"mu+","mu+":"mu-","tau-":"tau+","tau+":"tau-"
+};
+
+/* ---------- DECK & MARKET ---------- */
+function starterDeck(){
+  // Standard Model Starter (12 cards): light fermions + antimatter + a photon
+  return ["u","u","ubar","ubar","d","d","dbar","dbar","e-","e-","e+","gamma"];
+}
+const MARKET = [
+  {k:"g",   cost:3}, {k:"c",   cost:3}, {k:"cbar",cost:3},
+  {k:"s",   cost:3}, {k:"b",   cost:5}, {k:"bbar",cost:5},
+  {k:"t",   cost:8}, {k:"tbar",cost:8},
+  {k:"W+",  cost:5}, {k:"W-",  cost:5}, {k:"Z",   cost:5},
+  {k:"tau-",cost:4}, {k:"tau+",cost:4},
+  {k:"e+",  cost:2}, {k:"gamma",cost:2},
+  {k:"u",   cost:1}, {k:"ubar",cost:1}, {k:"d",cost:1}, {k:"dbar",cost:1}
+];
+
+/* ---------- GAME STATE ---------- */
+let G;
+function newGame(){
+  G = {
+    turn: "you",
+    over: false,
+    sel: [],            // selected instances {zone, idx}
+    disruptMode: false,
+    acquiredThisTurn: false,
+    you: newPlayer(),
+    ai:  newPlayer(),
+    log: []
+  };
+  logMsg("sys","— A new collision run begins. Race the CERN AI to the Higgs boson. —");
+  logMsg("you","Your turn. Draw to 5, then collide.");
+  startTurn(G.you, "you", false);
+  render();
+}
+function newPlayer(){
+  const deck = shuffle(starterDeck());
+  return { deck, hand:[], discard:[], beam:[], energy:3 };
+}
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+function draw(pl, n){
+  for(let i=0;i<n;i++){
+    if(pl.deck.length===0){
+      if(pl.discard.length===0) break;
+      pl.deck = shuffle(pl.discard); pl.discard=[];
+    }
+    if(pl.hand.length>=7) break;
+    pl.hand.push(pl.deck.pop());
+  }
+}
+function startTurn(pl, who){
+  pl.energy = Math.min(20, pl.energy + 3);
+  // Deck-builder cleanup: discard any leftover hand, then draw a fresh hand of 5.
+  // This keeps the deck cycling so acquired cards reliably come back around.
+  while(pl.hand.length) pl.discard.push(pl.hand.pop());
+  draw(pl, 5);
+  G.acquiredThisTurn = false;
+}
+
+/* ---------- LOG ---------- */
+function logMsg(kind, text){
+  G.log.push({kind, text});
+  if(G.log.length>120) G.log.shift();
+}
+
+/* ---------- SELECTION ---------- */
+function clickChip(zone, idx){
+  if(G.over || G.turn!=="you") return;
+  const existing = G.sel.findIndex(s=>s.zone===zone && s.idx===idx);
+  if(existing>=0){ G.sel.splice(existing,1); render(); return; }
+  if(G.sel.length>=2) G.sel.shift();
+  G.sel.push({zone, idx});
+  render();
+}
+function selKey(s){
+  if(s.zone==="hand")   return G.you.hand[s.idx];
+  if(s.zone==="beam")   return G.you.beam[s.idx];
+  if(s.zone==="oppBeam")return G.ai.beam[s.idx];
+}
+
+/* ---------- RESOLVE A REACTION ---------- */
+function roll(p){ return Math.random()*100 < p; }
+
+function doReaction(r){
+  if(G.over || G.turn!=="you") return;
+  const [s1,s2] = G.sel;
+  if(!s1||!s2) return;
+  const k1 = selKey(s1), k2 = selKey(s2);
+
+  // must have the energy available to attempt, but it is only spent if the vertex fires
+  if(G.you.energy < r.e){ return; }
+
+  const success = roll(r.p);
+  const outNm = P[r.out] ? P[r.out].nm : r.out;
+  const eqn = P[k1].sym + " + " + P[k2].sym + " → " + P[r.out].sym;
+
+  if(success){
+    G.you.energy -= r.e; // pay the rest-mass energy only when the particle is actually created
+    // consume inputs
+    consumeInstances([s1,s2]);
+    if(r.out==="H"){
+      G.you.beam.push("H");
+      logMsg("ok","✔ "+eqn+"  ["+r.force+", "+r.p+"%] via "+r.ch);
+      endGame("you");
+      G.sel=[]; render(); return;
+    }
+    G.you.beam.push(r.out);
+    if(r.force==="Strong") G.you.energy = Math.min(20, G.you.energy+1); // strong collisions heat the beam
+    logMsg("ok","✔ "+eqn+"  ["+r.force+", rolled success @ "+r.p+"%] → gained "+outNm);
+    logMsg("you","Interaction won — initiative retained. Collide again or end turn.");
+  } else {
+    // only hand cards are spent on failure; beamline particles survive
+    const spent = [s1,s2].filter(s=>s.zone==="hand");
+    consumeInstances(spent);
+    logMsg("fail","✘ "+eqn+"  ["+r.force+", "+r.p+"%] — interaction failed. Initiative lost.");
+    G.sel=[];
+    render();
+    setTimeout(endYourTurn, 650);
+    return;
+  }
+  G.sel=[];
+  render();
+}
+
+function doDisrupt(r){
+  // r = {theirKey, prob, force, formula, sHand, sOpp}
+  if(G.you.energy < 2){ logMsg("sys","Need 2⚡ to fire a disruption beam."); render(); return; }
+  G.you.energy -= 2;
+  const success = roll(r.prob);
+  if(success){
+    consumeInstances([r.sHand]);      // your card spent
+    G.ai.beam.splice(r.sOpp.idx,1);   // their particle destroyed
+    logMsg("ok","✔ DISRUPT: "+r.formula+"  — annihilated the AI's "+P[r.theirKey].nm+"!");
+    logMsg("you","Disruption succeeded — initiative retained.");
+    G.sel=[]; render();
+  } else {
+    consumeInstances([r.sHand]);
+    logMsg("fail","✘ DISRUPT failed: "+r.formula+"  ["+r.prob+"%]. Initiative lost.");
+    G.sel=[]; render();
+    setTimeout(endYourTurn, 650);
+  }
+}
+
+/* remove instances from hand/beam (higher indices first, per zone) */
+function consumeInstances(list){
+  const hand=[], beam=[];
+  list.forEach(s=>{ if(s.zone==="hand") hand.push(s.idx); else if(s.zone==="beam") beam.push(s.idx); });
+  hand.sort((a,b)=>b-a).forEach(i=>{ G.you.discard.push(G.you.hand[i]); G.you.hand.splice(i,1); });
+  beam.sort((a,b)=>b-a).forEach(i=>{ G.you.beam.splice(i,1); });
+}
+
+/* ---------- MARKET ---------- */
+function buy(m){
+  if(G.over || G.turn!=="you") return;
+  if(G.acquiredThisTurn){ logMsg("sys","Only one acquisition per turn (beam realignment)."); render(); return; }
+  if(G.you.energy < m.cost){ return; }
+  G.you.energy -= m.cost;
+  G.you.discard.push(m.k);
+  G.acquiredThisTurn = true;
+  logMsg("you","Acquired "+P[m.k].nm+" ("+P[m.k].sym+") → added to your deck.");
+  render();
+}
+
+/* ---------- END TURN ---------- */
+function endYourTurn(){
+  if(G.over) return;
+  // discard down to keep hand flowing? Keep hand; just pass.
+  G.sel=[];
+  G.turn="ai";
+  logMsg("sys","— CERN AI is computing amplitudes… —");
+  render();
+  setTimeout(aiTurn, 700);
+}
+
+/* ---------- AI ---------- */
+function aiTurn(){
+  if(G.over) return;
+  const ai = G.ai;
+  startTurn(ai,"ai");
+  logMsg("ai","AI draws. Energy now "+ai.energy+"⚡.");
+
+  // Goal-directed plan: default to Gluon Fusion (cheapest reliable win) —
+  // hold two gluons, bank energy to 10, then attempt g + g → H each turn.
+  // Keep a Top-Fusion (ttH) backup once the AI is energy-rich.
+  let guard=0;
+  while(!G.over && guard<16){
+    guard++;
+    const pool = ai.hand.map((k,i)=>({k, zone:"hand", idx:i}))
+               .concat(ai.beam.map((k,i)=>({k, zone:"beam", idx:i})));
+
+    // 1) WIN now if any Higgs vertex is assembled & affordable
+    let winMove=null;
+    for(const r of RECIPES){
+      if(r.out!=="H") continue;
+      const pair = findPair(pool, r.a, r.b);
+      if(pair && ai.energy>=r.e){ winMove={r, pair}; break; }
+    }
+    if(winMove){ aiResolve(winMove.r, winMove.pair); continue; }
+
+    const gluons = ai.beam.filter(k=>k==="g").length;
+
+    // 2) Build toward two gluons (the ggF pair) before spending them on anything
+    if(gluons<2){
+      const r = firstAffordable(pool, k=>k==="g", ai.energy);
+      if(r){ aiResolve(r.r, r.pair); continue; }
+    }
+
+    // 3) Have the pair but not yet 10⚡: make surplus gluons for tempo/backup, else wait
+    if(gluons>=2 && ai.energy<10){
+      const r = firstAffordable(pool, k=>k==="g", ai.energy);
+      if(r){ aiResolve(r.r, r.pair); continue; }
+      break; // nothing productive — bank energy, end turn
+    }
+
+    // 4) Energy-rich backup: convert surplus gluons into a top / anti-top for ttH
+    if(gluons>=4 && ai.energy>=9){
+      const want = !ai.beam.includes("t") ? "t" : (!ai.beam.includes("tbar") ? "tbar" : null);
+      if(want){
+        const r = firstAffordable(pool, k=>k===want, ai.energy);
+        if(r){ aiResolve(r.r, r.pair); continue; }
+      }
+    }
+    break;
+  }
+
+  // Acquire toward the plan (once) — but only with SURPLUS energy, never dipping
+  // below the 10⚡ fusion threshold, so buying can't starve its own win.
+  if(!G.over){
+    const gluonsAccessible = ai.beam.filter(k=>k==="g").length + ai.hand.filter(k=>k==="g").length;
+    const wish = gluonsAccessible<2 ? ["g","t","b","c"] : ["t","tbar","b","g"];
+    for(const wk of wish){
+      const m = MARKET.find(mm=>mm.k===wk);
+      const reserve = 10; // keep enough banked for gluon fusion
+      if(m && ai.energy >= m.cost + reserve){
+        ai.energy-=m.cost; ai.discard.push(m.k);
+        logMsg("ai","AI acquires "+P[m.k].nm+" for its deck.");
+        break;
+      }
+    }
+  }
+
+  if(!G.over){
+    G.turn="you";
+    startTurn(G.you,"you");
+    logMsg("you","Your turn. Energy "+G.you.energy+"⚡. Collide!");
+    render();
+  }
+}
+// find the first recipe whose output matches wantFn and whose inputs exist in the pool & are affordable
+function firstAffordable(pool, wantFn, energy){
+  for(const r of RECIPES){
+    if(!wantFn(r.out)) continue;
+    if(energy < r.e) continue;
+    const pair = findPair(pool, r.a, r.b);
+    if(pair) return {r, pair};
+  }
+  return null;
+}
+function findPair(pool, ka, kb){
+  if(ka===kb){
+    const first = pool.find(x=>x.k===ka);
+    if(!first) return null;
+    const second = pool.find(x=>x.k===kb && !(x.zone===first.zone && x.idx===first.idx));
+    return second ? [first,second] : null;
+  }
+  const a = pool.find(x=>x.k===ka);
+  const b = pool.find(x=>x.k===kb);
+  return (a&&b)? [a,b] : null;
+}
+function aiResolve(r, pair){
+  const ai=G.ai;
+  const [pa,pb]=pair;
+  const ka=pa.k, kb=pb.k;
+  const eqn = P[ka].sym+" + "+P[kb].sym+" → "+P[r.out].sym;
+  const ok = roll(r.p);
+  if(ok){
+    ai.energy -= r.e; // energy spent only on a successful vertex
+    aiConsume([pa,pb]);
+    if(r.out==="H"){ ai.beam.push("H"); logMsg("ai","✔ AI: "+eqn+" via "+r.ch); endGame("ai"); return; }
+    ai.beam.push(r.out);
+    if(r.force==="Strong") ai.energy=Math.min(20,ai.energy+1);
+    logMsg("ai","✔ AI: "+eqn+" ["+r.force+", "+r.p+"%] → "+P[r.out].nm);
+  } else {
+    aiConsume([pa,pb].filter(s=>s.zone==="hand"));
+    logMsg("ai","✘ AI: "+eqn+" failed ["+r.p+"%].");
+  }
+}
+function aiConsume(list){
+  const hand=[],beam=[];
+  list.forEach(s=>{ if(s.zone==="hand")hand.push(s.idx); else beam.push(s.idx); });
+  hand.sort((a,b)=>b-a).forEach(i=>{ G.ai.discard.push(G.ai.hand[i]); G.ai.hand.splice(i,1); });
+  beam.sort((a,b)=>b-a).forEach(i=>{ G.ai.beam.splice(i,1); });
+}
+
+/* ---------- WIN ---------- */
+function endGame(winner){
+  G.over=true;
+  if(winner==="you"){
+    logMsg("win","★ HIGGS BOSON DETECTED in your beamline. YOU WIN. ★");
+  } else {
+    logMsg("win","☠ The CERN AI reconstructed the Higgs first. You lose this run.");
+  }
+  render();
+  showWin(winner);
+}
+
+/* ============================================================
+   RENDERING
+   ============================================================ */
+function render(){
+  // HUD
+  const y=G.you, a=G.ai;
+  document.getElementById("hud").innerHTML =
+    chipHUD("you","YOU", "⚡"+y.energy+"  &middot; hand "+y.hand.length+" &middot; deck "+y.deck.length+" &middot; discard "+y.discard.length) +
+    chipHUD("", G.turn==="you" ? "&#x25B6; YOUR TURN" : "&#x231B; AI TURN", "Race to the Higgs (125 GeV)") +
+    chipHUD("ai","CERN AI", "⚡"+a.energy+"  &middot; hand "+a.hand.length+" &middot; deck "+a.deck.length);
+
+  document.getElementById("aiInfo").innerHTML = a.beam.length ? (a.beam.length+" particles built") : "";
+  document.getElementById("youInfo").innerHTML = y.beam.length ? (y.beam.length+" particles built") : "";
+
+  // beamlines
+  document.getElementById("aiBeam").innerHTML  = renderBeam(a.beam, "oppBeam");
+  document.getElementById("youBeam").innerHTML = renderBeam(y.beam, "beam");
+  document.getElementById("youHand").innerHTML = renderBeam(y.hand, "hand");
+
+  // chamber
+  renderChamber();
+  renderControls();
+  renderMarket();
+
+  // log
+  const lg = document.getElementById("log");
+  lg.innerHTML = G.log.map(l=>'<div class="log-line '+l.kind+'">'+l.text+'</div>').join("");
+  lg.scrollTop = lg.scrollHeight;
+}
+
+function chipHUD(kind,label,sub){
+  return '<div class="hud-chip '+kind+'"><b>'+label+'</b> &nbsp; '+sub+'</div>';
+}
+
+function renderBeam(arr, zone){
+  if(arr.length===0){
+    const hint = zone==="hand" ? "empty hand" : (zone==="oppBeam"?"no particles yet":"build particles here → aim for a Higgs vertex");
+    return '<span class="empty-hint">'+hint+'</span>';
+  }
+  return arr.map((k,i)=>chipHTML(k,zone,i)).join("");
+}
+function chipHTML(k, zone, i){
+  const selHere = G.sel.find(s=>s.zone===zone && s.idx===i);
+  let selCls = "";
+  if(selHere) selCls = (zone==="oppBeam") ? " sel-opp" : " sel";
+  const p=P[k];
+  return '<div class="chip '+cls(k)+selCls+'" onclick="clickChip(\''+zone+'\','+i+')" title="'+p.nm+'  |  charge '+p.q+'  |  mass '+fmtMass(p.mass)+'">'+
+         '<span class="sym">'+p.sym+'</span><span class="nm">'+p.nm+'</span></div>';
+}
+function fmtMass(m){
+  if(m===0) return "0 (massless)";
+  if(m<1) return (m*1000).toFixed(m<0.01?3:1)+" MeV";
+  return m+" GeV";
+}
+
+function renderChamber(){
+  const body=document.getElementById("chamberBody");
+  if(G.over){ body.innerHTML='<div class="chamber-hint">Run complete. Press NEW RUN to play again.</div>'; return; }
+  if(G.turn!=="you"){ body.innerHTML='<div class="chamber-hint">Awaiting the CERN AI…</div>'; return; }
+  if(G.sel.length<2){
+    body.innerHTML='<div class="chamber-hint">Select <b>two particles</b> (from your hand or beamline) to attempt a vertex — '+
+      'or one of yours + one of the AI’s to fire a disruption beam.</div>';
+    return;
+  }
+  const [s1,s2]=G.sel;
+  const k1=selKey(s1), k2=selKey(s2);
+
+  // Disruption: one yours + one opponent
+  const zones=[s1.zone,s2.zone];
+  const isDisrupt = zones.includes("oppBeam") && (zones.includes("hand")||zones.includes("beam"));
+  if(isDisrupt){
+    const sHand = s1.zone==="oppBeam"?s2:s1;
+    const sOpp  = s1.zone==="oppBeam"?s1:s2;
+    const yourK=selKey(sHand), theirK=selKey(sOpp);
+    if(sHand.zone!=="hand"){
+      body.innerHTML='<div class="chamber-hint">Disruption beams must be fired from a card in <b>your hand</b>.</div>'; return;
+    }
+    if(ANTI[theirK]===yourK){
+      const rr = matchRecipes(yourK,theirK)[0];
+      const prob = rr? rr.p : 55;
+      const formula = P[yourK].sym+" + "+P[theirK].sym+" → annihilate";
+      const canAfford = G.you.energy>=2;
+      body.innerHTML =
+        '<div class="reactions"><div class="reaction disrupt'+(canAfford?"":" unaffordable")+'" '+
+        (canAfford?'onclick=\'doDisrupt('+JSON.stringify({theirKey:theirK,prob,force:"annihilation",formula,sHand,sOpp})+')\'':'')+'>'+
+        '<span class="rx-formula">'+formula+'</span>'+
+        '<span class="rx-meta"><span class="rx-force">DISRUPT</span><span class="rx-prob">'+prob+'%</span><span class="rx-cost">2⚡</span></span>'+
+        '</div></div>'+
+        '<div class="chamber-hint">A successful annihilation removes the AI’s '+P[theirK].nm+' from its beamline.</div>';
+    } else {
+      body.innerHTML='<div class="chamber-hint">No annihilation channel: '+P[yourK].sym+' is not the antiparticle of '+P[theirK].sym+
+        '. Pick the matching antiparticle to disrupt.</div>';
+    }
+    return;
+  }
+
+  // both opponent — invalid
+  if(zones.every(z=>z==="oppBeam")){
+    body.innerHTML='<div class="chamber-hint">You can only combine your own particles, or disrupt one AI particle with one of yours.</div>';
+    return;
+  }
+
+  // Production / Higgs vertices
+  const rs = matchRecipes(k1,k2);
+  if(rs.length===0){
+    body.innerHTML='<div class="chamber-hint">No Standard-Model vertex connects '+P[k1].sym+' and '+P[k2].sym+
+      '. Try a particle with its antiparticle, two gluons, two W/Z, or a top + anti-top.</div>';
+    return;
+  }
+  const rows = rs.map(r=>{
+    const afford = G.you.energy>=r.e;
+    const win = r.out==="H";
+    const eqn = P[k1].sym+" + "+P[k2].sym+" → "+P[r.out].sym;
+    const chTag = r.ch ? ' &middot; '+r.ch : '';
+    return '<div class="reaction '+(win?"win":"")+(afford?"":" unaffordable")+'" '+
+      (afford?'onclick=\'doReaction('+JSON.stringify(r)+')\'':'')+'>'+
+      '<span class="rx-formula">'+eqn+(win?'  ★':'')+'</span>'+
+      '<span class="rx-meta"><span class="rx-force">'+r.force+chTag+'</span>'+
+      '<span class="rx-prob">'+r.p+'%</span>'+
+      (r.e>0?'<span class="rx-cost">'+r.e+'⚡</span>':'<span class="rx-cost">free</span>')+
+      '</span></div>';
+  }).join("");
+  body.innerHTML='<div class="reactions">'+rows+'</div>'+
+    '<div class="chamber-hint">Same particles, multiple forces — choose your interaction. Success keeps initiative &amp; chains.</div>';
+}
+
+function renderControls(){
+  const c=document.getElementById("controls");
+  if(G.over){
+    c.innerHTML='<button class="btn btn-cyan" onclick="newGame()">&#x21BB; New Run</button>'+
+                '<button class="btn btn-outline" onclick="openRules()">How to Play</button>';
+    return;
+  }
+  const yourTurn = G.turn==="you";
+  c.innerHTML =
+    '<button class="btn btn-outline" onclick="clearSel()" '+(yourTurn&&G.sel.length?'':'disabled')+'>Clear Selection</button>'+
+    '<button class="btn btn-cyan" onclick="endYourTurn()" '+(yourTurn?'':'disabled')+'>End Turn &rarr;</button>'+
+    '<button class="btn btn-outline" onclick="openRules()">How to Play</button>'+
+    '<button class="btn btn-outline" onclick="newGame()">New Run</button>';
+}
+function clearSel(){ G.sel=[]; render(); }
+
+function renderMarket(){
+  const m=document.getElementById("market");
+  m.innerHTML = MARKET.map(item=>{
+    const afford = G.turn==="you" && !G.over && !G.acquiredThisTurn && G.you.energy>=item.cost;
+    const p=P[item.k];
+    return '<div class="market-item '+(afford?"":"unaffordable")+'" '+
+      (afford?'onclick=\'buy('+JSON.stringify(item)+')\'':'')+' title="'+p.nm+' — '+fmtMass(p.mass)+'">'+
+      '<div class="m-sym '+cls(item.k)+'" style="border:none;background:none;padding:0;">'+p.sym+'</div>'+
+      '<div class="m-nm">'+p.nm+'</div>'+
+      '<div class="m-cost">'+item.cost+'⚡</div></div>';
+  }).join("");
+}
+
+/* ============================================================
+   OVERLAYS
+   ============================================================ */
+function openRules(){
+  document.getElementById("modalBody").innerHTML = RULES_HTML;
+  document.getElementById("overlay").classList.add("show");
+}
+function closeOverlay(){ document.getElementById("overlay").classList.remove("show"); }
+function showWin(winner){
+  const won = winner==="you";
+  const html =
+    '<h2 class="'+(won?'win-head':'')+'">'+(won?'★ HIGGS BOSON DETECTED':'☠ SIGNAL LOST')+'</h2>'+
+    '<p>'+(won
+      ? 'You reconstructed the Higgs boson (125 GeV) in your beamline before the CERN AI. Symmetry broken, mass conferred — the run is yours.'
+      : 'The CERN AI closed its Feynman diagram first. The Higgs field claims this round. Re-rack the beam and try a faster channel.')+'</p>'+
+    '<h3>What just happened, physically</h3>'+
+    '<p>You built a chain of real Feynman vertices — quark&ndash;antiquark annihilations into gluons, gluon fusion into heavy quarks, and finally a Higgs-production vertex. The dominant real-world channel, <code>g + g → H</code> (gluon fusion via a top-quark loop), is exactly the one that produces ~87% of Higgs bosons at the LHC.</p>'+
+    '<div class="modal-close">'+
+      '<button class="btn btn-cyan" onclick="closeOverlay();newGame()">&#x21BB; Play Again</button> '+
+      '<button class="btn btn-outline" onclick="closeOverlay()">Review Board</button>'+
+    '</div>';
+  document.getElementById("modalBody").innerHTML = html;
+  document.getElementById("overlay").classList.add("show");
+}
+document.addEventListener("click", e=>{
+  if(e.target.id==="overlay") closeOverlay();
+});
+
+const RULES_HTML = `
+  <h2>&#x269B;&#xFE0F; HIGGS — How to Play</h2>
+  <p><b>Goal:</b> Be the first to build a <b>Higgs-production vertex</b> in your beamline. You and the CERN AI each draw particle cards, collide them at real Feynman vertices, and race up the Standard Model to 125&nbsp;GeV.</p>
+
+  <h3>Your turn</h3>
+  <ol>
+    <li><b>Draw &amp; gain energy.</b> You refill to 5 cards and gain <code>+3&#9889;</code> (beam energy) at the start of each turn.</li>
+    <li><b>Collide.</b> Click <b>two of your particles</b> (hand or beamline) to load the Collision Chamber. If a Standard-Model vertex connects them, it appears with its <span style="color:var(--green)">success %</span> and any <span style="color:var(--gold)">energy cost&#9889;</span> (heavier products cost more — that's E=mc&sup2;).</li>
+    <li><b>Resolve.</b> The dice roll against the coupling probability.
+      <ul><li><b>Success</b> &rarr; the product joins your beamline and you <b>keep initiative</b> — collide again (chain reactions!).</li>
+      <li><b>Failure</b> &rarr; the hand cards are spent and your turn passes to the AI. <i>Beamline particles survive a failed roll</i>, so your structure is safe.</li></ul></li>
+    <li><b>Acquire (once/turn).</b> Spend &#9889; in the <b>Collider Market</b> to add stronger particles (gluons, W/Z, top, bottom, tau) to your deck.</li>
+    <li><b>Disrupt.</b> Select one card from <b>your hand</b> + one particle in the <b>AI's beamline</b>. If your card is its antiparticle, you can fire an annihilation beam (<code>2&#9889;</code>) to destroy that particle and stall their diagram.</li>
+  </ol>
+
+  <h3>The forces (why the odds differ)</h3>
+  <ul>
+    <li><b>Strong</b> (gluons) &mdash; ~75%. Strongest coupling; how you make gluons &amp; heavy quarks.</li>
+    <li><b>Electromagnetic</b> (photons) &mdash; ~55%. Annihilations &amp; pair production.</li>
+    <li><b>Weak</b> (W, Z) &mdash; ~35&ndash;40%. Flavor-changing; builds the vector bosons.</li>
+    <li><b>Higgs / Yukawa</b> &mdash; scales with mass. The <b>top quark</b> couples most strongly, so top-based channels win fastest.</li>
+  </ul>
+
+  <h3>Paths to the Higgs (win conditions)</h3>
+  <ul>
+    <li><code>g + g &rarr; H</code> &mdash; <b>Gluon Fusion</b> (dominant LHC mode) &middot; 50% &middot; 10&#9889;</li>
+    <li><code>t + t&#773; &rarr; H</code> &mdash; <b>Top-Associated</b> &middot; 60% &middot; 12&#9889;</li>
+    <li><code>W&#8314; + W&#8315; &rarr; H</code> / <code>Z + Z &rarr; H</code> &mdash; <b>Vector Boson Fusion</b> &middot; 40&ndash;45%</li>
+    <li><code>b + b&#773; &rarr; H</code> &mdash; <b>Associated (VH)</b> &middot; 35% &middot; 6&#9889; (cheap but risky)</li>
+    <li><code>&#964;&#8314; + &#964;&#8315; &rarr; H</code> &mdash; light Yukawa &middot; 25% &middot; 4&#9889;</li>
+  </ul>
+  <p style="font-size:0.8rem;color:rgba(232,240,255,0.4)">Probabilities compress the real coupling constants (strong &raquo; EM &raquo; weak; Yukawa &prop; mass) into a playable range while preserving their ordering. Full tabletop rules &amp; card list: <a href="higgs-rules.html" style="color:var(--cyan)">higgs-rules.html</a>.</p>
+  <div class="modal-close"><button class="btn btn-cyan" onclick="closeOverlay()">Start Colliding</button></div>
+`;
+
+/* ---------- BOOT ---------- */
+newGame();
+</script>
+</body>
+</html>
