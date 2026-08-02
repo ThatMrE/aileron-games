@@ -374,19 +374,6 @@
       object-fit: contain;
       padding: 0.5rem;
     }
-    .topic-card .score {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: #1a1204;
-      background: var(--honey);
-      padding: 0.15rem 0.45rem;
-      border-radius: 100px;
-    }
     .topic-card .wild {
       position: absolute;
       top: 8px;
@@ -679,8 +666,8 @@
     <h2 class="section-title">40 Topics. Infinite <span>Wordplay.</span></h2>
     <p class="section-body">
       Every card is a fresh minefield of wordplay &mdash; from <em>Fruit</em> (dangerously
-      punnable) to <em>Transportation</em> (good luck). A few carry a <b>Pun Index</b>: our
-      rough read on how pun-rich the topic is. Higher means easier pickings.
+      punnable) to <em>Transportation</em> (good luck). Draw one, beat the clock, or wear
+      the shame.
     </p>
 
     <div class="deck-toolbar">
@@ -691,7 +678,6 @@
     <div class="deck-grid" id="deckGrid"></div>
 
     <div class="deck-legend">
-      <span><span class="legend-dot" style="background:var(--honey);"></span> Pun Index &mdash; higher = more punnable</span>
       <span><span class="legend-dot" style="background:var(--purple);"></span> Wildcard &mdash; table picks the theme</span>
     </div>
   </section>
@@ -901,9 +887,6 @@
         card.className = 'topic-card';
         var badges = '';
         if (t.wild) badges += '<span class="wild">Wild</span>';
-        if (typeof t.score === 'number') {
-          badges += '<span class="score">' + t.score.toFixed(2) + '</span>';
-        }
         card.innerHTML =
           badges +
           '<img src="assets/cards/' + t.file + '.png" alt="' + t.name + ' topic card" loading="lazy">' +
