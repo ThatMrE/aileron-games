@@ -572,6 +572,157 @@
     }
     .footer-links a:hover { color: var(--honey); }
 
+    /* ── TRY A ROUND (playable demo) ── */
+    .play-band {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .play-stage {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    /* dealt card slot */
+    .play-card-slot {
+      position: relative;
+      background: #fdfdfb;
+      border-radius: 12px;
+      aspect-ratio: 5 / 7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      overflow: hidden;
+    }
+    .play-card-slot img { width: 100%; height: 100%; object-fit: contain; padding: 0.75rem; }
+    .play-card-slot.empty {
+      background: rgba(0,229,255,0.02);
+      border: 1px dashed rgba(255,180,84,0.35);
+      box-shadow: none;
+    }
+    .play-card-back {
+      text-align: center;
+      padding: 1.5rem;
+      font-family: 'Orbitron', monospace;
+      color: var(--muted);
+    }
+    .play-card-back .bear-lg { font-size: 3rem; display: block; margin-bottom: 0.75rem; }
+    .play-card-back small {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      color: rgba(232,240,255,0.4);
+    }
+    .play-card-slot.dealt { animation: dealIn 0.35s ease; }
+    @keyframes dealIn {
+      from { transform: translateY(14px) rotate(-3deg); opacity: 0; }
+      to   { transform: translateY(0) rotate(0); opacity: 1; }
+    }
+
+    .play-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    /* timer ring */
+    .timer-wrap { display: flex; align-items: center; gap: 1.5rem; }
+    .timer-ring { position: relative; width: 118px; height: 118px; flex-shrink: 0; }
+    .timer-ring svg { transform: rotate(-90deg); }
+    .timer-ring .track { fill: none; stroke: rgba(255,180,84,0.12); stroke-width: 8; }
+    .timer-ring .bar {
+      fill: none;
+      stroke: var(--honey);
+      stroke-width: 8;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.1s linear, stroke 0.3s;
+    }
+    .timer-ring.danger .bar { stroke: #ff6b6b; }
+    .timer-num {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', monospace;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .timer-ring.danger .timer-num { color: #ff6b6b; }
+    .timer-caption {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .timer-caption b { color: var(--honey); font-family: 'Orbitron', monospace; }
+
+    .play-status {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 1.5em;
+      font-weight: 500;
+    }
+    .play-status .topic-hl { color: var(--honey); font-family: 'Orbitron', monospace; letter-spacing: 0.03em; }
+
+    .play-controls { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn-sm { padding: 0.7rem 1.4rem; font-size: 0.72rem; cursor: pointer; }
+    .btn-good { background: transparent; color: var(--cyan); border: 1px solid rgba(0,229,255,0.45); }
+    .btn-good:hover { background: rgba(0,229,255,0.08); border-color: var(--cyan); }
+    .btn-bad { background: transparent; color: #ff6b6b; border: 1px solid rgba(255,107,107,0.45); }
+    .btn-bad:hover { background: rgba(255,107,107,0.08); border-color: #ff6b6b; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .btn-ghost:hover { color: var(--honey); border-color: rgba(255,180,84,0.4); }
+
+    .play-puns {
+      border-left: 3px solid var(--honey);
+      background: rgba(255,180,84,0.05);
+      padding: 1rem 1.25rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .play-puns .puns-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--honey);
+      margin-bottom: 0.6rem;
+    }
+    .play-puns ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .play-puns li { font-size: 0.92rem; color: var(--text); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+    .play-puns li::before { content: '\201C'; position: absolute; left: 0; color: var(--honey); font-family: 'Orbitron', monospace; }
+
+    .play-score {
+      display: flex;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.1rem;
+    }
+    .play-score b { font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--text); margin-left: 0.4rem; }
+    .play-score .shame b { color: #ff6b6b; }
+    .play-hint { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 0.9rem 1.25rem; }
@@ -581,6 +732,8 @@
       .section { padding: 4rem 1.5rem; }
       footer { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
       .deck-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      .play-stage { grid-template-columns: 1fr; gap: 1.75rem; }
+      .play-card-slot { max-width: 220px; margin: 0 auto; }
     }
     @media (min-width: 601px) and (max-width: 900px) {
       .modes-grid, .pledge-grid { grid-template-columns: 1fr 1fr; }
@@ -594,6 +747,7 @@
     <a href="index.html" class="nav-logo">&#9652; AILERON<small>Pun Bearable</small></a>
     <ul class="nav-links">
       <li class="hide-sm"><a href="#how">How to Play</a></li>
+      <li class="hide-sm"><a href="#play">Try a Round</a></li>
       <li class="hide-sm"><a href="#deck">The Deck</a></li>
       <li class="hide-sm"><a href="#modes">Modes</a></li>
       <li><a href="#back" data-ks class="btn btn-honey" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Back It</a></li>
@@ -611,7 +765,7 @@
       you&rsquo;re doing. Fewest cards takes the crown.
     </p>
     <div class="hero-actions">
-      <a href="#back" data-ks class="btn btn-honey">Back the Game</a>
+      <a href="#play" class="btn btn-honey">Play a Round</a>
       <a href="#how" class="btn btn-outline">How to Play &rarr;</a>
     </div>
     <div class="countdown" aria-hidden="true">
@@ -655,6 +809,59 @@
         <div>
           <span class="def-label">What counts as a true pun?</span>
           <p>A true pun is the <b>misuse of a specific word in an improper context</b>. Scoring is like golf &mdash; the more cards (points) you collect, the worse you&rsquo;re doing. The player with the fewest cards wins; the one buried in shame loses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRY A ROUND (playable demo) -->
+  <div id="play" class="play-band">
+    <div class="section">
+      <p class="section-eyebrow">Try a Round</p>
+      <h2 class="section-title">Think Fast. <span>Pun Harder.</span></h2>
+      <p class="section-body">
+        Deal a random topic and beat the 10-second clock &mdash; say your pun out loud
+        before time runs out. Landed one? Great. Blanked? Take the card and check
+        yourself against a few we came up with.
+      </p>
+
+      <div class="play-stage">
+        <div class="play-card-slot empty" id="playCardSlot">
+          <div class="play-card-back">
+            <span class="bear-lg">&#x1F43B;</span>
+            Your topic
+            <small>Press deal to draw</small>
+          </div>
+        </div>
+
+        <div class="play-panel">
+          <div class="timer-wrap">
+            <div class="timer-ring" id="timerRing">
+              <svg width="118" height="118" viewBox="0 0 118 118">
+                <circle class="track" cx="59" cy="59" r="52"></circle>
+                <circle class="bar" id="timerBar" cx="59" cy="59" r="52"></circle>
+              </svg>
+              <div class="timer-num" id="timerNum">10</div>
+            </div>
+            <div class="timer-caption">Ten seconds<br>on the clock.<br><b>Go!</b></div>
+          </div>
+
+          <div class="play-status" id="playStatus">Ready when you are &mdash; deal a topic to start the clock.</div>
+
+          <div class="play-controls" id="playControls">
+            <button type="button" class="btn btn-honey btn-sm" id="dealBtn">Deal a Topic</button>
+          </div>
+
+          <div class="play-puns" id="playPuns" hidden>
+            <div class="puns-label">A few we came up with</div>
+            <ul id="punsList"></ul>
+          </div>
+
+          <div class="play-score">
+            <span>Rounds<b id="roundCount">0</b></span>
+            <span class="shame">Cards of shame<b id="shameCount">0</b></span>
+          </div>
+          <p class="play-hint">Scoring&rsquo;s like golf &mdash; fewest cards wins. Keep that shame count low.</p>
         </div>
       </div>
     </div>
@@ -833,48 +1040,48 @@
       el.rel = 'noopener';
     });
 
-    // ── Deck data: 40 topic cards ──
+    // ── Deck data: 40 topic cards, each with a few sample puns ──
     var TOPICS = [
-      { name: 'Art',            file: 'art',            score: 3.25 },
-      { name: 'Furniture',      file: 'furniture',      score: 0.441 },
-      { name: 'Memes & Internet', file: 'memes-internet', score: 1.35 },
-      { name: 'Holidays',       file: 'holidays',       score: 0.742 },
-      { name: 'Transportation', file: 'transportation', score: 0.322 },
-      { name: 'Weather',        file: 'weather',        score: 0.837 },
-      { name: 'Pets',           file: 'pets',           score: 0.917 },
-      { name: 'Alcohol',        file: 'alcohol',        score: 0.468 },
-      { name: 'Science',        file: 'science',        score: 3.42 },
-      { name: 'Cooking',        file: 'cooking',        score: 0.627 },
-      { name: 'Fruit',          file: 'fruit',          score: 8.61 },
-      { name: 'Animals',        file: 'animals',        score: 1.13 },
-      { name: 'Countries',      file: 'countries',      score: 0.524 },
-      { name: 'Vegetables',     file: 'vegetables' },
-      { name: 'Music',          file: 'music' },
-      { name: 'Games',          file: 'games' },
-      { name: 'Food',           file: 'food' },
-      { name: 'Sex',            file: 'sex' },
-      { name: 'Colors',         file: 'color' },
-      { name: 'Comic Books',    file: 'comicbooks' },
-      { name: 'Cartoons',       file: 'cartoons' },
-      { name: 'Sports',         file: 'sports' },
-      { name: 'Genres',         file: 'genres' },
-      { name: 'Camping',        file: 'camping' },
-      { name: 'Vacation',       file: 'vacation' },
-      { name: 'Celebrities',    file: 'celebrities' },
-      { name: 'Water',          file: 'water' },
-      { name: 'Apparel',        file: 'apparel' },
-      { name: 'Literature',     file: 'literature' },
-      { name: 'Space',          file: 'space' },
-      { name: 'Politics',       file: 'politics' },
-      { name: 'TV',             file: 'tv' },
-      { name: 'Landmarks',      file: 'landmarks' },
-      { name: 'Cities',         file: 'cities' },
-      { name: 'History',        file: 'history' },
-      { name: 'Jobs',           file: 'jobs' },
-      { name: 'Love',           file: 'love' },
-      { name: 'Math',           file: 'math' },
-      { name: 'Meta',           file: 'meta',           meta: true },
-      { name: 'Pick the Theme', file: 'pick-the-theme', wild: true }
+      { name: 'Art', file: 'art', puns: ['I have a Monet-tary interest in this painting.', 'That sculpture is a bit off the easel.', 'I Van Gogh-ing to finish this masterpiece.'] },
+      { name: 'Furniture', file: 'furniture', puns: ['You’re the chair-man of the board.', 'Let’s settee this once and for all.', 'I love you a lot, ottoman.'] },
+      { name: 'Memes & Internet', file: 'memes-internet', puns: ['That joke really Rick-rolled off the tongue.', 'You’ve cat to be kitten me with this meme.', 'I’m feeling a little meme today.'] },
+      { name: 'Holidays', file: 'holidays', puns: ['I’ve got a Claus for concern.', 'Let’s give them pumpkin to talk about.', 'You absolutely sleigh me.'] },
+      { name: 'Transportation', file: 'transportation', puns: ['Wheel meet again someday.', 'I’m truck-ing along just fine.', 'This whole plan is going off the rails.'] },
+      { name: 'Weather', file: 'weather', puns: ['I’m under the weather, thunder-standably.', 'You’re the light-ning of my life.', 'Any way the wind blows.'] },
+      { name: 'Pets', file: 'pets', puns: ['You’ve cat to be kitten me right now.', 'I’m feeling paw-sitively great.', 'Honestly? That’s a bit ruff.'] },
+      { name: 'Alcohol', file: 'alcohol', puns: ['This is whiskey business.', 'You’re the beer-y best.', 'Let’s wine about it later.'] },
+      { name: 'Science', file: 'science', puns: ['I’ve got my ion you.', 'Let’s not overreact here.', 'I’m totally in my element.'] },
+      { name: 'Cooking', file: 'cooking', puns: ['You’re bacon me crazy.', 'Let’s give it a whisk.', 'I really relish the thought.'] },
+      { name: 'Fruit', file: 'fruit', puns: ['You’re one in a melon.', 'I find you very a-peel-ing.', 'We make a great pear.'] },
+      { name: 'Vegetables', file: 'vegetables', puns: ['I’m rooting for you.', 'You’re kind of a big dill.', 'Lettuce turnip the beet.'] },
+      { name: 'Music', file: 'music', puns: ['Well, that’s noteworthy.', 'Let’s tempo-rarily stop.', 'I’m feeling a little treble-d.'] },
+      { name: 'Animals', file: 'animals', puns: ['You otter know better.', 'I’m no bunny’s fool.', 'Toucan play at that game.'] },
+      { name: 'Countries', file: 'countries', puns: ['Don’t be Russian me.', 'I could really use a little Greece.', 'Let’s Iran away together.'] },
+      { name: 'Games', file: 'games', puns: ['That’s a board decision.', 'You’re totally playing me.', 'I like to dice with danger.'] },
+      { name: 'Food', file: 'food', puns: ['Let’s ketchup soon.', 'You’re the greatest thing since sliced bread.', 'That’s a rare-ly good idea.'] },
+      { name: 'Sex', file: 'sex', puns: ['Wow, we really clicked.', 'That was a very touching moment.', 'You’ve got some nerve.'] },
+      { name: 'Colors', file: 'color', puns: ['I’m feeling kind of blue.', 'That’s a red flag.', 'Don’t be so green with envy.'] },
+      { name: 'Comic Books', file: 'comicbooks', puns: ['That is simply marvel-ous.', 'I’ve got a super hunch.', 'Let’s DC what happens.'] },
+      { name: 'Cartoons', file: 'cartoons', puns: ['That’s all, folks.', 'You’re really drawing me in.', 'I’m just animated about it.'] },
+      { name: 'Sports', file: 'sports', puns: ['You knocked it out of the park.', 'That was a total slam dunk.', 'Let’s tackle this together.'] },
+      { name: 'Genres', file: 'genres', puns: ['What a novel idea.', 'Plot twist!', 'Let’s not get too dramatic.'] },
+      { name: 'Camping', file: 'camping', puns: ['I’m a little in-tents about this.', 'You’re s’more than enough.', 'Let’s not make a big fire about it.'] },
+      { name: 'Vacation', file: 'vacation', puns: ['I really need to sea the world.', 'Let’s beach about it later.', 'I’ll resort to relaxation.'] },
+      { name: 'Celebrities', file: 'celebrities', puns: ['That’s a star-tling revelation.', 'You’re famous-ly late.', 'Let’s not make a scene.'] },
+      { name: 'Water', file: 'water', puns: ['Whatever floats your boat.', 'I’m feeling a bit drained.', 'You’re worth every drop.'] },
+      { name: 'Apparel', file: 'apparel', puns: ['That really suits you.', 'Hat’s off to you.', 'I’m sock-ed by that outfit.'] },
+      { name: 'Literature', file: 'literature', puns: ['Well, that’s a plot hole.', 'You’re totally my type.', 'Let’s just book it.'] },
+      { name: 'Space', file: 'space', puns: ['You’re out of this world.', 'I just need my space.', 'That’s a-star-ounding.'] },
+      { name: 'Politics', file: 'politics', puns: ['Let’s not campaign about it.', 'That’s a poll-arizing take.', 'You’ve got my vote of confidence.'] },
+      { name: 'TV', file: 'tv', puns: ['Stay tuned.', 'That’s a re-run of an argument.', 'Let’s channel our energy.'] },
+      { name: 'Landmarks', file: 'landmarks', puns: ['I Eiffel for you.', 'That was a monumental mistake.', 'Let’s tower over the competition.'] },
+      { name: 'Cities', file: 'cities', puns: ['You’re New York-ing my nerves.', 'Let’s Rome around a while.', 'I’ve got Berlin on my mind.'] },
+      { name: 'History', file: 'history', puns: ['That’s ancient history.', 'Let’s not repeat ourselves.', 'You’re making me feel medieval.'] },
+      { name: 'Jobs', file: 'jobs', puns: ['I’m working on it.', 'That’s not in my job-scription.', 'Let’s get down to business.'] },
+      { name: 'Love', file: 'love', puns: ['You stole my heart.', 'I’m completely smitten.', 'We’re a perfect match.'] },
+      { name: 'Math', file: 'math', puns: ['You can count on me.', 'Let’s not divide us.', 'I’m a sum-thing special.'] },
+      { name: 'Meta', file: 'meta', meta: true, puns: ['This pun is about puns.', 'We’re breaking the fourth wall here.', 'That joke was a little too on-the-nose.'] },
+      { name: 'Pick the Theme', file: 'pick-the-theme', wild: true, puns: ['Dealer’s choice — name your poison.', 'The table decides your fate.', 'Wild card: pick any topic and pun away.'] }
     ];
 
     var grid = document.getElementById('deckGrid');
@@ -910,6 +1117,142 @@
       n = n <= 1 ? 10 : n - 1;
       clock.textContent = n;
     }, 1000);
+
+    // ── Try a Round: playable demo ──
+    (function () {
+      var ROUND_SECONDS = 10;
+      var slot     = document.getElementById('playCardSlot');
+      var ring     = document.getElementById('timerRing');
+      var bar      = document.getElementById('timerBar');
+      var numEl    = document.getElementById('timerNum');
+      var statusEl = document.getElementById('playStatus');
+      var controls = document.getElementById('playControls');
+      var punsBox  = document.getElementById('playPuns');
+      var punsList = document.getElementById('punsList');
+      var roundEl  = document.getElementById('roundCount');
+      var shameEl  = document.getElementById('shameCount');
+
+      // ring geometry
+      var R = 52;
+      var CIRC = 2 * Math.PI * R;
+      bar.style.strokeDasharray = CIRC.toFixed(2);
+      bar.style.strokeDashoffset = '0';
+
+      var timerId = null;
+      var endAt = 0;
+      var current = null;
+      var rounds = 0;
+      var shame = 0;
+      var lastIndex = -1;
+
+      function setRing(fraction) { // fraction 1 -> full, 0 -> empty
+        bar.style.strokeDashoffset = (CIRC * (1 - fraction)).toFixed(2);
+      }
+
+      function pickTopic() {
+        var i = Math.floor(Math.random() * TOPICS.length);
+        if (TOPICS.length > 1 && i === lastIndex) { i = (i + 1) % TOPICS.length; }
+        lastIndex = i;
+        return TOPICS[i];
+      }
+
+      function renderPuns(topic) {
+        punsList.innerHTML = '';
+        (topic.puns || []).forEach(function (p) {
+          var li = document.createElement('li');
+          li.textContent = p;
+          punsList.appendChild(li);
+        });
+      }
+
+      function button(label, cls, handler) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'btn btn-sm ' + cls;
+        b.innerHTML = label;
+        b.addEventListener('click', handler);
+        return b;
+      }
+
+      function stopTimer() {
+        if (timerId) { clearInterval(timerId); timerId = null; }
+      }
+
+      function timeUp() {
+        stopTimer();
+        numEl.textContent = '0';
+        setRing(0);
+        ring.classList.add('danger');
+        statusEl.innerHTML = 'Time! Did you land a pun on <span class="topic-hl">' + current.name + '</span>?';
+        showJudgeButtons();
+      }
+
+      function showJudgeButtons() {
+        controls.innerHTML = '';
+        controls.appendChild(button('&#x2713; I landed one', 'btn-good', function () { resolveRound(false); }));
+        controls.appendChild(button('&#x2717; I choked', 'btn-bad', function () { resolveRound(true); }));
+        if (punsBox.hidden) {
+          controls.appendChild(button('Show example puns', 'btn-ghost', function () {
+            punsBox.hidden = false;
+            this.remove();
+          }));
+        }
+      }
+
+      function resolveRound(choked) {
+        stopTimer();
+        rounds += 1;
+        roundEl.textContent = rounds;
+        if (choked) {
+          shame += 1;
+          shameEl.textContent = shame;
+          statusEl.innerHTML = 'Ouch &mdash; take the <span class="topic-hl">' + current.name + '</span> card. That’s your shame.';
+        } else {
+          statusEl.innerHTML = 'Nice. No card this round &mdash; you’re still golfing under par.';
+        }
+        punsBox.hidden = false;
+        controls.innerHTML = '';
+        controls.appendChild(button('Deal Another', 'btn-honey', deal));
+      }
+
+      function deal() {
+        stopTimer();
+        current = pickTopic();
+        renderPuns(current);
+        punsBox.hidden = true;
+        ring.classList.remove('danger');
+
+        // show the dealt card
+        slot.classList.remove('empty');
+        slot.classList.remove('dealt');
+        // force reflow so the animation replays each deal
+        void slot.offsetWidth;
+        slot.classList.add('dealt');
+        slot.innerHTML = '<img src="assets/cards/' + current.file + '.png" alt="' + current.name + ' topic card">';
+
+        statusEl.innerHTML = 'Topic: <span class="topic-hl">' + current.name + '</span> &mdash; say a pun out loud, fast!';
+
+        // controls: let players call it early
+        controls.innerHTML = '';
+        controls.appendChild(button('&#x2713; I landed one', 'btn-good', function () { resolveRound(false); }));
+        controls.appendChild(button('&#x2717; I give up', 'btn-bad', function () { resolveRound(true); }));
+
+        // start the clock
+        numEl.textContent = ROUND_SECONDS;
+        setRing(1);
+        endAt = Date.now() + ROUND_SECONDS * 1000;
+        timerId = setInterval(function () {
+          var remaining = Math.max(0, endAt - Date.now()) / 1000;
+          setRing(remaining / ROUND_SECONDS);
+          var shown = Math.ceil(remaining);
+          numEl.textContent = shown;
+          if (remaining <= 3) { ring.classList.add('danger'); }
+          if (remaining <= 0) { timeUp(); }
+        }, 100);
+      }
+
+      document.getElementById('dealBtn').addEventListener('click', deal);
+    })();
   </script>
 
 </body>
