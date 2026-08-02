@@ -7,7 +7,7 @@
   <meta name="description" content="Weji is an emoji Ouija board. Ask a question and the spirits spell out an answer in three emoji, guided by the planchette. Made in RVA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Stained-wood palette */
@@ -53,6 +53,29 @@
     @keyframes fog { from { opacity: 0.5; } to { opacity: 1; } }
 
     .wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+
+    /* ── Site nav (back to Aileron Games) ── */
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; max-width: 920px; margin: 0 auto 2.2rem;
+    }
+    .brand-logo {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: 'Orbitron', sans-serif; font-weight: 700;
+      font-size: 0.98rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .brand-logo .tri { color: var(--gold); font-size: 0.85em; transition: text-shadow 0.2s; }
+    .brand-logo:hover { color: var(--gold); }
+    .brand-logo:hover .tri { text-shadow: 0 0 16px rgba(201,151,79,0.6); }
+    .nav-home {
+      font-family: 'Space Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-home:hover { color: var(--gold); }
 
     /* ── Masthead ── */
     header { text-align: center; margin-bottom: 2rem; }
@@ -397,6 +420,13 @@
 </head>
 <body>
   <div class="wrap">
+
+    <nav class="site-nav">
+      <a class="brand-logo" href="index.html" aria-label="Aileron Games — back to home">
+        <span class="tri" aria-hidden="true">&#9652;</span> Aileron
+      </a>
+      <a class="nav-home" href="index.html">&larr; Back to Aileron Games</a>
+    </nav>
 
     <header>
       <div class="brand">weji</div>
