@@ -609,7 +609,7 @@
       <li class="hide-sm"><a href="#how">How to Play</a></li>
       <li class="hide-sm"><a href="#deck">The Deck</a></li>
       <li class="hide-sm"><a href="#modes">Modes</a></li>
-      <li><a href="#back" class="btn btn-honey" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Back It</a></li>
+      <li><a href="#back" data-ks class="btn btn-honey" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Back It</a></li>
     </ul>
   </nav>
 
@@ -624,7 +624,7 @@
       you&rsquo;re doing. Fewest cards takes the crown.
     </p>
     <div class="hero-actions">
-      <a href="#back" class="btn btn-honey">Back the Game</a>
+      <a href="#back" data-ks class="btn btn-honey">Back the Game</a>
       <a href="#how" class="btn btn-outline">How to Play &rarr;</a>
     </div>
     <div class="countdown" aria-hidden="true">
@@ -748,64 +748,64 @@
     </p>
 
     <div class="pledge-grid">
-      <div class="pledge">
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$1</div>
         <div class="pledge-name">Thank You</div>
         <div class="pledge-desc">Our eternal gratitude and a warm, pun-adjacent glow.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$5</div>
         <div class="pledge-name">Sticker</div>
         <div class="pledge-desc">A Pun Bearable sticker to slap on something you love.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$10</div>
         <div class="pledge-name">Print &amp; Play PDF</div>
         <div class="pledge-desc">The full deck as a downloadable PDF &mdash; print, cut, play tonight.</div>
-      </div>
-      <div class="pledge featured">
+      </a>
+      <a class="pledge featured" href="#back" data-ks target="_blank" rel="noopener">
         <span class="pledge-tag">Early Bird</span>
         <div class="pledge-amount">$15</div>
         <div class="pledge-name">Early Bird Game</div>
         <div class="pledge-desc">A physical copy of the game at the early-backer price. Limited.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$20</div>
         <div class="pledge-name">The Game</div>
         <div class="pledge-desc">One full retail copy of Pun Bearable, shipped to your door.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$25</div>
         <div class="pledge-name">T-Shirt</div>
         <div class="pledge-desc">Wear your shame proudly with an official Pun Bearable tee.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$35</div>
         <div class="pledge-name">Two Copies</div>
         <div class="pledge-desc">Two games &mdash; one to keep, one to inflict on a friend.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$40</div>
         <div class="pledge-name">Game + T-Shirt</div>
         <div class="pledge-desc">The full copy plus the tee. Play it, then advertise it.</div>
-      </div>
-      <div class="pledge featured">
+      </a>
+      <a class="pledge featured" href="#back" data-ks target="_blank" rel="noopener">
         <span class="pledge-tag">Best Value</span>
         <div class="pledge-amount">$50</div>
         <div class="pledge-name">The Ultimate</div>
         <div class="pledge-desc">Two games <em>and</em> a T-shirt. The whole punishing package.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <div class="pledge-amount">$80</div>
         <div class="pledge-name">Pundora&rsquo;s Box</div>
         <div class="pledge-desc">A deluxe everything-bundle. Get a specific quote from us first &mdash; contents tailored.</div>
-      </div>
-      <div class="pledge">
+      </a>
+      <a class="pledge" href="#back" data-ks target="_blank" rel="noopener">
         <span class="pledge-tag">Experience</span>
         <div class="pledge-amount">$500</div>
         <div class="pledge-name">O. Henry Pun-Off</div>
         <div class="pledge-desc">A trip to the legendary O. Henry Pun-Off World Championships. The big leagues.</div>
-      </div>
+      </a>
     </div>
 
     <div class="stretch">
@@ -837,6 +837,16 @@
   </footer>
 
   <script>
+    // ── Kickstarter campaign link ──
+    // PLACEHOLDER — replace with the real campaign URL when it goes live.
+    // Every "Back It" / "Back the Game" button and every pledge tier ([data-ks]) points here.
+    var KICKSTARTER_URL = 'https://www.kickstarter.com/projects/aileron-games/pun-bearable';
+    document.querySelectorAll('[data-ks]').forEach(function (el) {
+      el.href = KICKSTARTER_URL;
+      el.target = '_blank';
+      el.rel = 'noopener';
+    });
+
     // ── Deck data: 40 topic cards ──
     var TOPICS = [
       { name: 'Art',            file: 'art',            score: 3.25 },
