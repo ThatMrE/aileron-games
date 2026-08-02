@@ -126,14 +126,36 @@
   /* board interactivity */
   .cell-hit{cursor:pointer}
   .selring{fill:none;stroke:#f4e9c9;stroke-width:3;stroke-dasharray:5 4;opacity:.95}
+
+  /* embed mode — show only the board+panel (used by the homepage iframe) */
+  html.embed .wrap{padding:10px 12px 16px}
+  html.embed .wrap > *:not(.board-layout){display:none}
+  html.embed .inspector{position:static}
+
+  /* how-to-play overlay */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(30,24,12,0.55);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}
+  .modal{background:var(--card);color:var(--ink);max-width:560px;width:100%;max-height:88vh;overflow:auto;border:1px solid var(--line);border-radius:14px;padding:26px 28px;box-shadow:0 24px 60px rgba(43,36,22,.4)}
+  .modal h3{font-size:1.5rem;margin-bottom:4px}
+  .modal .eyebrow{margin-bottom:12px}
+  .modal ol{margin:10px 0 12px 1.1em;font-size:.95rem;color:var(--ink-soft)}
+  .modal li{margin:7px 0}
+  .modal li b{color:var(--ink)}
+  .modal .orow{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;color:var(--ink-soft);margin:6px 0}
+  .modal .sw{width:15px;height:15px;border-radius:3px;flex:0 0 auto;margin-top:2px}
+  .modal .btn-go{margin-top:16px;width:100%;font-family:"Trebuchet MS",system-ui,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.04em;padding:11px;border-radius:8px;border:none;cursor:pointer;background:var(--accent);color:#f4efdf}
+  .helpbtn{font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.7rem;padding:5px 10px;border-radius:20px;border:1px solid var(--line);background:#efe6cf;color:var(--ink);cursor:pointer}
 </style>
 </head>
 <body>
+<script>if(/[?&]embed/.test(location.search))document.documentElement.classList.add('embed');</script>
 <div class="wrap">
 
   <div class="topbar">
     <div class="brand">&#9652; Aileron <span>Games</span></div>
-    <a href="index.html">&larr; Back to the library</a>
+    <div style="display:flex;gap:14px;align-items:center">
+      <button class="helpbtn" id="howto-btn">? How to play</button>
+      <a href="index.html">&larr; Back to the library</a>
+    </div>
   </div>
 
   <header class="hero">
@@ -526,7 +548,7 @@ function endAction(extra){G.actions-=1;if(extra)G.actions+=extra;finishAction();
 function trapIfGolgi(p){if(ter(p.r,p.c)==='golgi'){p.trap=2;logMove(`${G.turn}: ${label(p)} caught in Golgi (1 turn)`);}}
 function doExpress(g){pushHistory();G.stats.express[G.turn]++;logMove(`${G.turn}: express ${sq(g.r,g.c)} → RNA`);G.pieces.push({id:nextId(),r:g.r+fwd(g.side),c:g.c,type:'rna',side:g.side,state:null,trap:0});G.sel=null;endAction();}
 function doMove(p,r,c){pushHistory();const o=at(r,c);if(o&&o.type==='rna'&&o.side!==p.side){G.pieces=G.pieces.filter(x=>x!==o);logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)} × RNA`);}else logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)}`);p.r=r;p.c=c;trapIfGolgi(p);G.sel=null;endAction();}
-function doMutate(p,g){pushHistory();g.state='mutated';G.stats.mut[G.turn]++;logMove(`${G.turn}: Nuclease mutates ${sq(g.r,g.c)} ⚠`);G.sel=null;endAction();}
+function doMutate(p,g){pushHistory();g.state='mutated';G.stats.mut[G.turn]++;logMove(`${G.turn}: Nuclease mutates ${sq(g.r,g.c)} ⚠`);G.fx={r:g.r,c:g.c};beep(170,0.18,0.11);G.sel=null;endAction();setTimeout(()=>{G.fx=null;if(G&&!G.over)render();},600);}
 function doRepair(p,g){pushHistory();g.state='healthy';G.stats.repair[G.turn]++;logMove(`${G.turn}: Ligase repairs ${sq(g.r,g.c)}`);G.sel=null;endAction();}
 function doPush(p,tgt,dir){pushHistory();const or=tgt.r,oc=tgt.c;tgt.r=or+dir[0];tgt.c=oc+dir[1];p.r=or;p.c=oc;logMove(`${G.turn}: Helicase shoves ${label(tgt)} → ${sq(tgt.r,tgt.c)}`);if(ter(tgt.r,tgt.c)==='golgi'){tgt.trap=2;logMove(`  ${label(tgt)} shoved into Golgi!`);}G.sel=null;endAction();}
 function doActivate(p,tgt){pushHistory();logMove(`${G.turn}: Kinase activates ${label(tgt)} (+1 action)`);G.kinaseUsed=true;G.sel=tgt.id;endAction(2);}   // spend 1, grant 2 = net +1
@@ -543,7 +565,11 @@ function actionPrompt(){return G.turn==='A'?`Your turn (A) — ${G.actions} acti
 function finishAction(){
   recomputeSilence();
   const loser=checkWin();
-  if(loser){G.over=loser;G.sel=null;G.prompt='';render();return;}
+  if(loser){G.over=loser;G.sel=null;G.prompt='';
+    if(!G.recorded){G.recorded=true;const won=enemy(loser)==='A';
+      if(G.vsAI){const r=getRecord();won?r.w++:r.l++;setRecord(r);}
+      won?fanfare():beep(120,0.4,0.12);}
+    render();return;}
   if(G.actions>0){                       // same player keeps going (bonus / granted action)
     G.prompt=actionPrompt();render();
     if(G.vsAI&&G.turn==='B') setTimeout(aiStep,340);
@@ -687,6 +713,9 @@ function render(){
   for(const m of t.repairs) svg+=ring2(m,'#4a7a3a');
   for(const m of t.activates) svg+=ring2(m,'#3f6f8a');
   for(const m of t.pushes) svg+=ring2(m,'#a5673f');
+  if(G.fx){const x=G.fx.c*CELL+CELL/2,y=G.fx.r*CELL+CELL/2;
+    svg+=`<circle cx="${x}" cy="${y}" r="${CELL*0.2}" fill="#c7502f" opacity="0.5"><animate attributeName="r" from="${CELL*0.2}" to="${CELL*0.6}" dur="0.55s" fill="freeze"/><animate attributeName="opacity" from="0.55" to="0" dur="0.55s" fill="freeze"/></circle>`+
+      `<circle cx="${x}" cy="${y}" r="${CELL*0.2}" fill="none" stroke="#8a2f24" stroke-width="5"><animate attributeName="r" from="${CELL*0.2}" to="${CELL*0.62}" dur="0.55s" fill="freeze"/><animate attributeName="opacity" from="0.95" to="0" dur="0.55s" fill="freeze"/></circle>`;}
   for(let r=0;r<N;r++)for(let c=0;c<N;c++){svg+=`<rect class="hit" data-r="${r}" data-c="${c}" x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}" fill="transparent" style="cursor:pointer"/>`;}
   board.innerHTML=svg;
   board.querySelectorAll('.hit').forEach(el=>el.addEventListener('click',()=>onCell(+el.dataset.r,+el.dataset.c)));
@@ -726,6 +755,8 @@ function renderPanel(sel){
         PROTEINS.map(([tp])=>{const cost=transCost(sel,tp);const ok=size>=cost;return `<button data-tp="${tp}" ${ok?'':'disabled'} style="font-family:'Trebuchet MS',sans-serif;font-size:.72rem;padding:5px 8px;border-radius:6px;border:1px solid var(--line);cursor:${ok?'pointer':'not-allowed'};background:${ok?'#e8dcbb':'#d8c9a0'};opacity:${ok?1:.55}">${LABEL[tp]} (${cost})</button>`;}).join('')+`</div>`;
     }
   }
+  const R=getRecord();
+  if(R.w||R.l) head+=`<div style="font-size:.72rem;color:var(--ink-soft);margin-top:8px;font-family:'Trebuchet MS',sans-serif">vs&nbsp;AI record: <b>${R.w}W–${R.l}L</b> · <a href="#" id="resetrec" style="color:var(--sideA)">reset</a></div>`;
   const undoOff=!G.history.length;
   const controls=`<div style="display:flex;gap:6px;margin-top:12px">
       <button id="undo" ${undoOff?'disabled':''} style="flex:1;${BTN};background:#e8dcbb;opacity:${undoOff?.5:1};cursor:${undoOff?'not-allowed':'pointer'}">↶ Undo</button>
@@ -734,7 +765,9 @@ function renderPanel(sel){
       <button id="newh" style="flex:1;${BTN};font-size:.68rem">New · 2P</button>
       <button id="newai" style="flex:1;${BTN};font-size:.68rem">New · vs AI</button>
       <select id="diff" title="AI difficulty" style="${BTN};background:#efe6cf;font-size:.68rem">
-        <option value="easy">Easy</option><option value="normal">Normal</option><option value="hard">Hard</option></select></div>`;
+        <option value="easy">Easy</option><option value="normal">Normal</option><option value="hard">Hard</option></select>
+      <button id="snd" title="Sound on/off" style="${BTN};flex:0 0 auto;font-size:.9rem;padding:5px 8px">${soundOff()?'🔇':'🔊'}</button></div>
+    <div style="margin-top:6px"><button id="help2" style="${BTN};width:100%;font-size:.68rem;background:#e5d8b8">? How to play</button></div>`;
   const legend=`<div class="hint" style="font-size:.72rem;margin-top:10px"><b>Organelles</b><br>
     <span style="display:inline-block;width:11px;height:11px;background:#b89a5f;border:1px solid #6e5a34;vertical-align:middle"></span> Ribosome — translate costs −1 RNA &nbsp;
     <span style="display:inline-block;width:11px;height:11px;background:#7f97a8;border:1px solid #3f5a6e;vertical-align:middle"></span> ER — start here, move farther<br>
@@ -746,14 +779,54 @@ function renderPanel(sel){
   if(q('#pass'))q('#pass').addEventListener('click',()=>{if(!G.over){pushHistory();logMove(`${G.turn}: pass`);switchTurn();}});
   q('#newh').addEventListener('click',()=>initGame(false));
   q('#newai').addEventListener('click',()=>initGame(true));
+  q('#snd').addEventListener('click',toggleSound);
+  q('#help2').addEventListener('click',showHowto);
+  if(q('#resetrec'))q('#resetrec').addEventListener('click',e=>{e.preventDefault();resetRecord();});
   const ds=q('#diff');if(ds){ds.value=AI_DIFF;ds.addEventListener('change',()=>{AI_DIFF=ds.value;if(G.vsAI){G.diff=ds.value;}render();});}
   el.querySelectorAll('button[data-tp]').forEach(b=>b.addEventListener('click',()=>{const s=G.sel!=null?byId(G.sel):null;if(s&&s.type==='rna')doTranslate(s,b.dataset.tp);}));
 }
 
 // expose for headless testing
-window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:initGame,undo:()=>undo(),
+/* ---- sound (WebAudio), win/loss record, how-to overlay ---- */
+let AC=null;
+const soundOff=()=>{try{return localStorage.getItem('dnachess_sound')==='off';}catch(e){return false;}};
+function beep(freq,dur,vol){if(soundOff())return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+  const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='triangle';o.frequency.setValueAtTime(freq,t);
+  g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(vol||0.1,t+0.012);g.gain.exponentialRampToValueAtTime(0.0001,t+(dur||0.18));
+  o.connect(g).connect(AC.destination);o.start(t);o.stop(t+(dur||0.18)+0.03);}catch(e){}}
+function fanfare(){[523,659,784,1047].forEach((f,i)=>setTimeout(()=>beep(f,0.16,0.09),i*110));}
+function toggleSound(){try{localStorage.setItem('dnachess_sound',soundOff()?'on':'off');}catch(e){}if(!soundOff())beep(660,0.1,0.08);render();}
+function getRecord(){try{return JSON.parse(localStorage.getItem('dnachess_record')||'{"w":0,"l":0}');}catch(e){return{w:0,l:0};}}
+function setRecord(r){try{localStorage.setItem('dnachess_record',JSON.stringify(r));}catch(e){}}
+function resetRecord(){setRecord({w:0,l:0});render();}
+
+const HOWTO=`<div class="modal">
+  <div class="eyebrow">DNA Chess — how to play</div>
+  <h3>Give your opponent cancer</h3>
+  <p style="color:var(--ink-soft);font-size:.95rem">Your back rank is your genome — <b>ten genes</b>. Mutate <b>six of your opponent's</b> and their cell loses control: cancer, and the game.</p>
+  <ol>
+    <li><b>Two actions per turn.</b> Each action: click one of your <b>genes</b> to express an <b>RNA</b>, or click a <b>molecule</b> then a highlighted square to move or act.</li>
+    <li><b>Build a Nuclease.</b> Select an RNA in a cluster of your RNA and hit <b>Translate → Nuclease</b> (3 RNA) — your win weapon.</li>
+    <li><b>Mutate.</b> Move the Nuclease next to an enemy gene, then click that gene (red ring) to edit it. Move <em>or</em> mutate — one per action.</li>
+    <li><b>Defend.</b> A <b>Ligase</b> repairs an unguarded lesion; a <b>Helicase</b> shoves attackers off your genes.</li>
+  </ol>
+  <div class="orow"><span class="sw" style="background:#b89a5f"></span><span><b>Ribosome</b> — translate a cluster here for 1 less RNA.</span></div>
+  <div class="orow"><span class="sw" style="background:#7f97a8"></span><span><b>ER</b> — a molecule that starts here moves farther.</span></div>
+  <div class="orow"><span class="sw" style="background:#b07f88"></span><span><b>Golgi</b> — landing here traps a piece for a turn (shove enemies in!).</span></div>
+  <button class="btn-go" id="howto-close">Got it — let's play</button></div>`;
+function showHowto(){if(document.getElementById('howto-modal'))return;
+  const d=document.createElement('div');d.className='modal-backdrop';d.id='howto-modal';d.innerHTML=HOWTO;
+  document.body.appendChild(d);
+  const close=()=>{d.remove();try{localStorage.setItem('dnachess_seen','1');}catch(e){}};
+  d.addEventListener('click',e=>{if(e.target===d)close();});
+  d.querySelector('#howto-close').addEventListener('click',close);
+}
+
+window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:initGame,undo:()=>undo(),howto:showHowto,
   setDiff:d=>{AI_DIFF=d;if(G)G.diff=d;},targets:(r,c)=>{const p=at(r,c);return p?targetsFor(p):null;},ter:(r,c)=>ter(r,c)};
+const _hb=document.getElementById('howto-btn');if(_hb)_hb.addEventListener('click',showHowto);
 initGame(false);
+if(!document.documentElement.classList.contains('embed')){try{if(!localStorage.getItem('dnachess_seen'))setTimeout(showHowto,300);}catch(e){}}
 
 /* ---- roster cards ---- */
 const ROSTER=[
