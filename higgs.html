@@ -617,12 +617,12 @@ const RECIPES = [
   {a:"u",b:"ubar",out:"Z", force:"Weak", p:40, e:5},
   {a:"d",b:"dbar",out:"Z", force:"Weak", p:40, e:5},
   // ================= HIGGS PRODUCTION CHANNELS (win vertices) =================
-  {a:"g",b:"g",     out:"H", force:"Yukawa (top loop)", p:50, e:10, ch:"Gluon Fusion (ggF)"},
-  {a:"t",b:"tbar",  out:"H", force:"Top Yukawa",        p:60, e:12, ch:"Top-Associated (ttH)"},
-  {a:"W+",b:"W-",   out:"H", force:"Weak / VBF",        p:45, e:10, ch:"Vector Boson Fusion"},
-  {a:"Z",b:"Z",     out:"H", force:"Weak / VBF",        p:40, e:10, ch:"Vector Boson Fusion"},
-  {a:"b",b:"bbar",  out:"H", force:"b Yukawa",          p:35, e:6,  ch:"Associated (VH, b b̅)"},
-  {a:"tau-",b:"tau+",out:"H",force:"τ Yukawa",     p:25, e:4,  ch:"H → ττ"}
+  {a:"g",b:"g",     out:"H", force:"Yukawa (top loop)", p:50, e:12, ch:"Gluon Fusion (ggF)"},
+  {a:"t",b:"tbar",  out:"H", force:"Top Yukawa",        p:60, e:14, ch:"Top-Associated (ttH)"},
+  {a:"W+",b:"W-",   out:"H", force:"Weak / VBF",        p:45, e:12, ch:"Vector Boson Fusion"},
+  {a:"Z",b:"Z",     out:"H", force:"Weak / VBF",        p:40, e:12, ch:"Vector Boson Fusion"},
+  {a:"b",b:"bbar",  out:"H", force:"b Yukawa",          p:35, e:8,  ch:"Associated (VH, b b̅)"},
+  {a:"tau-",b:"tau+",out:"H",force:"τ Yukawa",     p:25, e:6,  ch:"H → ττ"}
 ];
 
 /* Find all recipes matching an unordered particle pair */
@@ -688,7 +688,7 @@ function draw(pl, n){
   }
 }
 function startTurn(pl, who){
-  pl.energy = Math.min(20, pl.energy + 3);
+  pl.energy = Math.min(20, pl.energy + 2);
   // Deck-builder cleanup: discard any leftover hand, then draw a fresh hand of 5.
   // This keeps the deck cycling so acquired cards reliably come back around.
   while(pl.hand.length) pl.discard.push(pl.hand.pop());
@@ -844,8 +844,8 @@ function aiTurn(){
       if(r){ aiResolve(r.r, r.pair); continue; }
     }
 
-    // 3) Have the pair but not yet 10⚡: make surplus gluons for tempo/backup, else wait
-    if(gluons>=2 && ai.energy<10){
+    // 3) Have the pair but not yet enough ⚡ for gluon fusion: make surplus gluons for tempo/backup, else wait
+    if(gluons>=2 && ai.energy<12){
       const r = firstAffordable(pool, k=>k==="g", ai.energy);
       if(r){ aiResolve(r.r, r.pair); continue; }
       break; // nothing productive — bank energy, end turn
@@ -869,7 +869,7 @@ function aiTurn(){
     const wish = gluonsAccessible<2 ? ["g","t","b","c"] : ["t","tbar","b","g"];
     for(const wk of wish){
       const m = MARKET.find(mm=>mm.k===wk);
-      const reserve = 10; // keep enough banked for gluon fusion
+      const reserve = 12; // keep enough banked for gluon fusion
       if(m && ai.energy >= m.cost + reserve){
         ai.energy-=m.cost; ai.discard.push(m.k);
         logMsg("ai","AI acquires "+P[m.k].nm+" for its deck.");
@@ -1020,21 +1020,25 @@ function renderChamber(){
     if(sHand.zone!=="hand"){
       body.innerHTML='<div class="chamber-hint">Disruption beams must be fired from a card in <b>your hand</b>.</div>'; return;
     }
-    if(ANTI[theirK]===yourK){
-      const rr = matchRecipes(yourK,theirK)[0];
-      const prob = rr? rr.p : 55;
-      const formula = P[yourK].sym+" + "+P[theirK].sym+" → annihilate";
+    const rr = matchRecipes(yourK,theirK)[0];
+    if(rr){
+      const prob = rr.p;
+      const isAnn = ANTI[theirK]===yourK;
+      const formula = isAnn
+        ? P[yourK].sym+" + "+P[theirK].sym+" → annihilate"
+        : P[yourK].sym+" + "+P[theirK].sym+" → "+P[rr.out].sym+" (knock-out)";
       const canAfford = G.you.energy>=2;
       body.innerHTML =
         '<div class="reactions"><div class="reaction disrupt'+(canAfford?"":" unaffordable")+'" '+
-        (canAfford?'onclick=\'doDisrupt('+JSON.stringify({theirKey:theirK,prob,force:"annihilation",formula,sHand,sOpp})+')\'':'')+'>'+
+        (canAfford?'onclick=\'doDisrupt('+JSON.stringify({theirKey:theirK,prob,force:rr.force,formula,sHand,sOpp})+')\'':'')+'>'+
         '<span class="rx-formula">'+formula+'</span>'+
-        '<span class="rx-meta"><span class="rx-force">DISRUPT</span><span class="rx-prob">'+prob+'%</span><span class="rx-cost">2⚡</span></span>'+
+        '<span class="rx-meta"><span class="rx-force">DISRUPT &middot; '+rr.force+'</span><span class="rx-prob">'+prob+'%</span><span class="rx-cost">2⚡</span></span>'+
         '</div></div>'+
-        '<div class="chamber-hint">A successful annihilation removes the AI’s '+P[theirK].nm+' from its beamline.</div>';
+        '<div class="chamber-hint">'+(isAnn?"Annihilation":"Collision")+' removes the AI’s '+P[theirK].nm+' from its beamline. '+
+        (yourK==="g"&&theirK==="g"?"(Gluon self-interaction lets you break up a rival’s gluon-fusion setup.)":"")+'</div>';
     } else {
-      body.innerHTML='<div class="chamber-hint">No annihilation channel: '+P[yourK].sym+' is not the antiparticle of '+P[theirK].sym+
-        '. Pick the matching antiparticle to disrupt.</div>';
+      body.innerHTML='<div class="chamber-hint">No shared vertex: '+P[yourK].sym+' cannot interact with '+P[theirK].sym+
+        '. Use its antiparticle, or a particle that meets it at a Feynman vertex (e.g. a gluon into a gluon).</div>';
     }
     return;
   }
@@ -1132,13 +1136,13 @@ const RULES_HTML = `
 
   <h3>Your turn</h3>
   <ol>
-    <li><b>Draw &amp; gain energy.</b> You refill to 5 cards and gain <code>+3&#9889;</code> (beam energy) at the start of each turn.</li>
+    <li><b>Draw &amp; gain energy.</b> You draw a fresh hand of 5 cards and gain <code>+2&#9889;</code> (beam energy) at the start of each turn.</li>
     <li><b>Collide.</b> Click <b>two of your particles</b> (hand or beamline) to load the Collision Chamber. If a Standard-Model vertex connects them, it appears with its <span style="color:var(--green)">success %</span> and any <span style="color:var(--gold)">energy cost&#9889;</span> (heavier products cost more — that's E=mc&sup2;).</li>
     <li><b>Resolve.</b> The dice roll against the coupling probability.
       <ul><li><b>Success</b> &rarr; the product joins your beamline and you <b>keep initiative</b> — collide again (chain reactions!).</li>
       <li><b>Failure</b> &rarr; the hand cards are spent and your turn passes to the AI. <i>Beamline particles survive a failed roll</i>, so your structure is safe.</li></ul></li>
     <li><b>Acquire (once/turn).</b> Spend &#9889; in the <b>Collider Market</b> to add stronger particles (gluons, W/Z, top, bottom, tau) to your deck.</li>
-    <li><b>Disrupt.</b> Select one card from <b>your hand</b> + one particle in the <b>AI's beamline</b>. If your card is its antiparticle, you can fire an annihilation beam (<code>2&#9889;</code>) to destroy that particle and stall their diagram.</li>
+    <li><b>Disrupt.</b> Select one card from <b>your hand</b> + one particle in the <b>AI's beamline</b>. If the two share a Feynman vertex (its antiparticle, or e.g. a <b>gluon into a gluon</b>), fire a collision beam (<code>2&#9889;</code>) to knock that particle out and stall their diagram — including breaking up a gluon-fusion setup.</li>
   </ol>
 
   <h3>The forces (why the odds differ)</h3>
@@ -1151,11 +1155,11 @@ const RULES_HTML = `
 
   <h3>Paths to the Higgs (win conditions)</h3>
   <ul>
-    <li><code>g + g &rarr; H</code> &mdash; <b>Gluon Fusion</b> (dominant LHC mode) &middot; 50% &middot; 10&#9889;</li>
-    <li><code>t + t&#773; &rarr; H</code> &mdash; <b>Top-Associated</b> &middot; 60% &middot; 12&#9889;</li>
-    <li><code>W&#8314; + W&#8315; &rarr; H</code> / <code>Z + Z &rarr; H</code> &mdash; <b>Vector Boson Fusion</b> &middot; 40&ndash;45%</li>
-    <li><code>b + b&#773; &rarr; H</code> &mdash; <b>Associated (VH)</b> &middot; 35% &middot; 6&#9889; (cheap but risky)</li>
-    <li><code>&#964;&#8314; + &#964;&#8315; &rarr; H</code> &mdash; light Yukawa &middot; 25% &middot; 4&#9889;</li>
+    <li><code>g + g &rarr; H</code> &mdash; <b>Gluon Fusion</b> (dominant LHC mode) &middot; 50% &middot; 12&#9889;</li>
+    <li><code>t + t&#773; &rarr; H</code> &mdash; <b>Top-Associated</b> &middot; 60% &middot; 14&#9889;</li>
+    <li><code>W&#8314; + W&#8315; &rarr; H</code> / <code>Z + Z &rarr; H</code> &mdash; <b>Vector Boson Fusion</b> &middot; 40&ndash;45% &middot; 12&#9889;</li>
+    <li><code>b + b&#773; &rarr; H</code> &mdash; <b>Associated (VH)</b> &middot; 35% &middot; 8&#9889; (cheap but risky)</li>
+    <li><code>&#964;&#8314; + &#964;&#8315; &rarr; H</code> &mdash; light Yukawa &middot; 25% &middot; 6&#9889;</li>
   </ul>
   <p style="font-size:0.8rem;color:rgba(232,240,255,0.4)">Probabilities compress the real coupling constants (strong &raquo; EM &raquo; weak; Yukawa &prop; mass) into a playable range while preserving their ordering. Full tabletop rules &amp; card list: <a href="higgs-rules.html" style="color:var(--cyan)">higgs-rules.html</a>.</p>
   <div class="modal-close"><button class="btn btn-cyan" onclick="closeOverlay()">Start Colliding</button></div>
