@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POLYGENIK — A Biotech Art Collective</title>
+<meta name="description" content="Polygenik is a biotech art collective. We stage the experiments culture is too polite to run — a Chinese Peptide Rave, a Celebrity Meat Tasting, and whatever's next. For research use only.">
+<meta name="theme-color" content="#0b0b0b">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="POLYGENIK — A Biotech Art Collective">
+<meta property="og:description" content="We stage the experiments culture is too polite to run. Peptide raves. Celebrity meat. For research use only.">
+<meta property="og:site_name" content="POLYGENIK">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bone:#ece7da;
+    --bone-2:#f4f0e6;
+    --paper:#e4dece;
+    --ink:#0b0b0b;
+    --ink-2:#171613;
+    --acid:#c9f227;         /* peptide / hazard lime */
+    --acid-deep:#aad400;
+    --flesh:#ff3d68;        /* celebrity meat */
+    --flesh-deep:#c8003c;
+    --muted:#5c574c;
+    --muted-ink:rgba(236,231,218,0.55);
+    --line:rgba(11,11,11,0.16);
+    --line-ink:rgba(236,231,218,0.18);
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --disp:'Archivo', system-ui, sans-serif;
+  }
+
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--disp);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--acid);color:var(--ink);}
+
+  .mono{font-family:var(--mono);}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+
+  /* ── TICKER ── */
+  .ticker{
+    background:var(--ink);
+    color:var(--acid);
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    overflow:hidden;
+    border-bottom:1px solid #000;
+    position:relative;
+    z-index:60;
+  }
+  .ticker-track{
+    display:inline-block;
+    padding:0.55rem 0;
+    animation:scroll 34s linear infinite;
+    will-change:transform;
+  }
+  .ticker-track span{padding:0 1.4rem;}
+  .ticker-track b{color:var(--flesh);font-weight:600;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+
+  /* ── NAV ── */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(236,231,218,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    height:60px;
+  }
+  .brand{
+    font-family:var(--disp);
+    font-weight:900;
+    font-size:1.15rem;
+    letter-spacing:-0.02em;
+    display:flex;align-items:center;gap:0.55rem;
+  }
+  .brand .mark{
+    width:20px;height:20px;flex:none;
+    background:var(--ink);
+    border-radius:50%;
+    position:relative;
+    box-shadow:0 0 0 3px var(--bone),0 0 0 4px var(--ink);
+  }
+  .brand .mark::after{
+    content:'';position:absolute;inset:5px;border-radius:50%;
+    background:var(--acid);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(0.62);opacity:0.55;}}
+  .nav-links{display:flex;align-items:center;gap:1.9rem;list-style:none;}
+  .nav-links a{
+    font-family:var(--mono);
+    font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--muted);transition:color .18s;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+    background:var(--ink);color:var(--acid);
+    padding:0.55rem 1rem;border:1px solid var(--ink);
+    transition:background .18s,color .18s;
+  }
+  .nav-cta:hover{background:var(--acid);color:var(--ink);}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* ── HERO ── */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+  #mol{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0.9;}
+  .hero-inner{position:relative;z-index:2;padding:clamp(3.5rem,9vw,7rem) 0 clamp(3rem,7vw,5.5rem);}
+  .spec-row{
+    display:flex;flex-wrap:wrap;gap:0.5rem 1.4rem;
+    font-family:var(--mono);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1.6rem;
+  }
+  .spec-row .dot{color:var(--acid-deep);}
+  .hero h1{
+    font-weight:900;
+    font-size:clamp(3rem,13vw,10.5rem);
+    line-height:0.86;
+    letter-spacing:-0.04em;
+    text-transform:uppercase;
+  }
+  .hero h1 .out{
+    color:transparent;
+    -webkit-text-stroke:2px var(--ink);
+    text-stroke:2px var(--ink);
+  }
+  .hero-sub{
+    margin-top:1.8rem;
+    max-width:640px;
+    font-size:clamp(1.05rem,2.3vw,1.5rem);
+    font-weight:500;line-height:1.4;
+  }
+  .hero-sub b{background:var(--acid);padding:0 .18em;font-weight:700;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2.4rem;}
+  .btn{
+    font-family:var(--mono);font-size:0.76rem;letter-spacing:0.12em;text-transform:uppercase;
+    padding:0.95rem 1.7rem;border:1px solid var(--ink);
+    display:inline-flex;align-items:center;gap:0.5rem;cursor:pointer;
+    transition:transform .12s ease,background .18s,color .18s;
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink);}
+  .btn-fill{background:var(--ink);color:var(--bone);}
+  .btn-fill:hover{background:var(--acid);color:var(--ink);border-color:var(--ink);box-shadow:4px 4px 0 var(--flesh);}
+  .btn-line{background:transparent;color:var(--ink);}
+  .disclaimer-strip{
+    margin-top:2.6rem;
+    display:inline-flex;align-items:center;gap:0.7rem;
+    font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--muted);
+    border:1px dashed var(--line);padding:0.5rem 0.85rem;
+  }
+  .biohazard{width:15px;height:15px;flex:none;}
+
+  /* ── MANIFESTO ── */
+  .manifesto{background:var(--ink);color:var(--bone);border-bottom:1px solid #000;}
+  .manifesto .wrap{padding-top:clamp(3.5rem,7vw,6rem);padding-bottom:clamp(3.5rem,7vw,6rem);}
+  .kicker{
+    font-family:var(--mono);font-size:0.7rem;letter-spacing:0.24em;text-transform:uppercase;
+    color:var(--acid);margin-bottom:1.6rem;display:flex;align-items:center;gap:0.7rem;
+  }
+  .kicker::before{content:'';width:26px;height:1px;background:var(--acid);}
+  .manifesto blockquote{
+    font-weight:800;
+    font-size:clamp(1.6rem,4.4vw,3.4rem);
+    line-height:1.06;letter-spacing:-0.02em;
+    max-width:16ch;
+  }
+  .manifesto blockquote em{color:var(--acid);font-style:normal;}
+  .manifesto blockquote .pink{color:var(--flesh);}
+  .manifesto-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem;
+  }
+  .m-card{border:1px solid var(--line-ink);padding:1.5rem;}
+  .m-card .n{font-family:var(--mono);color:var(--acid);font-size:0.72rem;letter-spacing:0.14em;margin-bottom:0.7rem;}
+  .m-card h4{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;}
+  .m-card p{font-size:0.9rem;color:var(--muted-ink);line-height:1.6;}
+
+  /* ── SECTION HEADINGS ── */
+  section{position:relative;z-index:1;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem;}
+  .sec-title{font-weight:900;font-size:clamp(2rem,6vw,4rem);line-height:0.92;letter-spacing:-0.03em;text-transform:uppercase;}
+  .sec-eyebrow{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem;}
+  .sec-note{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;color:var(--muted);max-width:26ch;text-align:right;}
+
+  /* ── DROPS INDEX ── */
+  .drops{padding:clamp(3.5rem,7vw,6rem) 0;border-bottom:1px solid var(--line);}
+  .drop-row{
+    display:grid;
+    grid-template-columns:88px 1fr auto;
+    gap:1.5rem;align-items:center;
+    padding:1.5rem 0.4rem;
+    border-top:1px solid var(--line);
+    transition:background .2s,padding .2s;
+    position:relative;
+  }
+  .drop-row:last-child{border-bottom:1px solid var(--line);}
+  .drop-row:hover{background:var(--bone-2);}
+  .drop-row.linked{cursor:pointer;}
+  .drop-num{font-family:var(--mono);font-size:1.1rem;font-weight:600;color:var(--ink);}
+  .drop-main h3{font-size:clamp(1.3rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1;text-transform:uppercase;}
+  .drop-main p{font-family:var(--mono);font-size:0.76rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.02em;}
+  .drop-meta{display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;text-align:right;}
+  .badge{
+    font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;
+    padding:0.28rem 0.6rem;border:1px solid var(--ink);white-space:nowrap;
+  }
+  .badge.sold{background:var(--ink);color:var(--bone);}
+  .badge.live{background:var(--flesh);color:#fff;border-color:var(--flesh);animation:blink 1.6s step-end infinite;}
+  .badge.next{background:var(--acid);color:var(--ink);border-color:var(--ink);}
+  .badge.classified{background:transparent;color:var(--muted);border-style:dashed;}
+  @keyframes blink{50%{opacity:0.45;}}
+  .drop-arrow{font-family:var(--mono);font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;}
+  .drop-row.linked:hover .drop-arrow{color:var(--ink);}
+
+  /* ── FEATURE (inverted) ── */
+  .feature{color:var(--bone);position:relative;overflow:hidden;border-bottom:1px solid #000;}
+  .feature.peptide{background:var(--ink);}
+  .feature.meat{background:#120608;}
+  .feature .wrap{padding:clamp(3.5rem,8vw,6.5rem) clamp(1.1rem,4vw,3rem);position:relative;z-index:2;}
+  .feat-tag{
+    font-family:var(--mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.4rem;
+  }
+  .feature.peptide .feat-tag{color:var(--acid);}
+  .feature.meat .feat-tag{color:var(--flesh);}
+  .feat-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;}
+  .feat-grid h2{font-weight:900;font-size:clamp(2.2rem,6vw,4.6rem);line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;}
+  .feature.peptide h2 em{color:var(--acid);font-style:normal;}
+  .feature.meat h2 em{color:var(--flesh);font-style:normal;}
+  .feat-lede{font-size:clamp(1.02rem,1.7vw,1.2rem);line-height:1.55;margin-top:1.4rem;color:rgba(236,231,218,0.82);}
+  .feat-lede b{color:var(--bone);}
+  .feat-body{font-size:0.96rem;line-height:1.7;color:rgba(236,231,218,0.62);}
+  .feat-body p+p{margin-top:1rem;}
+  .pull{
+    border-left:3px solid var(--acid);padding:0.4rem 0 0.4rem 1.2rem;margin:1.6rem 0;
+    font-weight:600;font-size:1.05rem;line-height:1.4;color:var(--bone);
+  }
+  .feature.meat .pull{border-color:var(--flesh);}
+  .pull cite{display:block;margin-top:0.7rem;font-family:var(--mono);font-size:0.68rem;font-style:normal;letter-spacing:0.1em;color:var(--muted-ink);text-transform:uppercase;}
+  .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-ink);border:1px solid var(--line-ink);margin-top:1.8rem;}
+  .stat{background:#0e0e0e;padding:1.3rem;}
+  .feature.meat .stat{background:#160709;}
+  .stat .num{font-weight:900;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1;letter-spacing:-0.02em;}
+  .feature.peptide .stat .num{color:var(--acid);}
+  .feature.meat .stat .num{color:var(--flesh);}
+  .stat .lbl{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-ink);margin-top:0.5rem;line-height:1.4;}
+  .feat-list{list-style:none;margin-top:1.6rem;display:flex;flex-direction:column;gap:0.7rem;}
+  .feat-list li{font-family:var(--mono);font-size:0.82rem;letter-spacing:0.02em;color:rgba(236,231,218,0.75);display:flex;gap:0.7rem;}
+  .feat-list li::before{content:'▸';color:var(--acid);}
+  .feature.meat .feat-list li::before{color:var(--flesh);}
+  .feat-actions{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2rem;}
+  .btn.inv{border-color:currentColor;}
+  .feature.peptide .btn-fill.inv{background:var(--acid);color:var(--ink);border-color:var(--acid);}
+  .feature.peptide .btn-fill.inv:hover{box-shadow:4px 4px 0 var(--bone);}
+  .feature.meat .btn-fill.inv{background:var(--flesh);color:#fff;border-color:var(--flesh);}
+  .feature.meat .btn-fill.inv:hover{box-shadow:4px 4px 0 var(--bone);}
+  .btn.ghost{color:var(--bone);border-color:rgba(236,231,218,0.4);}
+  .btn.ghost:hover{box-shadow:4px 4px 0 rgba(236,231,218,0.3);}
+
+  .countdown{display:flex;gap:0.9rem;margin-top:1.6rem;}
+  .cd-cell{border:1px solid var(--line-ink);padding:0.7rem 0.9rem;min-width:70px;text-align:center;background:#160709;}
+  .cd-cell .v{font-weight:900;font-size:1.7rem;line-height:1;color:var(--flesh);font-variant-numeric:tabular-nums;}
+  .cd-cell .k{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-ink);margin-top:0.4rem;}
+
+  .warn-tape{
+    background:var(--flesh);color:#fff;
+    font-family:var(--mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
+    white-space:nowrap;overflow:hidden;padding:0.5rem 0;
+    border-top:1px solid #000;border-bottom:1px solid #000;
+  }
+  .warn-tape .tt{display:inline-block;animation:scroll 26s linear infinite;}
+  .warn-tape .tt span{padding:0 1.3rem;}
+
+  /* ── LINEAGE ── */
+  .lineage{padding:clamp(3.5rem,7vw,6rem) 0;border-bottom:1px solid var(--line);}
+  .lin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:0.5rem;}
+  .lin-card{border:1px solid var(--line);padding:1.5rem;transition:transform .12s,box-shadow .18s,background .18s;background:var(--bone-2);}
+  .lin-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);background:#fff;}
+  .lin-card .yr{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--acid-deep);text-transform:uppercase;}
+  .lin-card h4{font-size:1.15rem;font-weight:800;margin:0.4rem 0 0.2rem;letter-spacing:-0.01em;}
+  .lin-card .who{font-family:var(--mono);font-size:0.72rem;color:var(--muted);margin-bottom:0.7rem;}
+  .lin-card p{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+
+  /* ── ABOUT ── */
+  .about{background:var(--ink);color:var(--bone);border-bottom:1px solid #000;}
+  .about .wrap{padding:clamp(3.5rem,7vw,6rem) clamp(1.1rem,4vw,3rem);}
+  .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .about h2{font-weight:900;font-size:clamp(1.9rem,5vw,3.4rem);line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:1.4rem;}
+  .about h2 em{color:var(--acid);font-style:normal;}
+  .about p{color:rgba(236,231,218,0.72);line-height:1.75;font-size:1rem;}
+  .about p+p{margin-top:1.1rem;}
+  .about p b{color:var(--bone);}
+  .facts{border:1px solid var(--line-ink);}
+  .fact{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--line-ink);font-family:var(--mono);font-size:0.8rem;}
+  .fact:last-child{border-bottom:0;}
+  .fact .k{color:var(--muted-ink);letter-spacing:0.08em;text-transform:uppercase;font-size:0.66rem;}
+  .fact .v{color:var(--acid);text-align:right;}
+
+  /* ── SIGNUP ── */
+  .signup{padding:clamp(4rem,9vw,7rem) 0;text-align:center;position:relative;overflow:hidden;}
+  .signup h2{font-weight:900;font-size:clamp(2.4rem,9vw,7rem);line-height:0.86;letter-spacing:-0.04em;text-transform:uppercase;}
+  .signup h2 em{color:transparent;-webkit-text-stroke:2px var(--ink);font-style:normal;}
+  .signup p{font-family:var(--mono);font-size:0.82rem;letter-spacing:0.06em;color:var(--muted);margin:1.4rem auto 2.2rem;max-width:44ch;}
+  .form{display:flex;gap:0;max-width:520px;margin:0 auto;border:1px solid var(--ink);background:var(--bone-2);}
+  .form input{flex:1;border:0;background:transparent;padding:1rem 1.1rem;font-family:var(--mono);font-size:0.86rem;color:var(--ink);outline:none;min-width:0;}
+  .form input::placeholder{color:var(--muted);}
+  .form button{border:0;border-left:1px solid var(--ink);background:var(--ink);color:var(--acid);font-family:var(--mono);font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;padding:0 1.4rem;cursor:pointer;transition:background .18s,color .18s;}
+  .form button:hover{background:var(--acid);color:var(--ink);}
+  .form-note{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.1em;color:var(--muted);margin-top:1rem;text-transform:uppercase;}
+  #signup-ok{display:none;margin-top:1.4rem;font-family:var(--mono);font-size:0.82rem;color:var(--acid-deep);letter-spacing:0.05em;}
+
+  /* ── FOOTER ── */
+  footer{background:var(--ink);color:var(--muted-ink);border-top:1px solid #000;}
+  footer .wrap{padding:3rem clamp(1.1rem,4vw,3rem) 2.4rem;}
+  .foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;}
+  .foot-brand{font-weight:900;font-size:1.6rem;letter-spacing:-0.02em;color:var(--bone);}
+  .foot-tag{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;margin-top:0.5rem;color:var(--muted-ink);max-width:34ch;line-height:1.6;}
+  .foot-links{display:flex;gap:1.6rem;flex-wrap:wrap;}
+  .foot-links a{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-ink);transition:color .18s;}
+  .foot-links a:hover{color:var(--acid);}
+  .foot-bottom{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line-ink);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:0.64rem;letter-spacing:0.08em;color:rgba(236,231,218,0.4);text-transform:uppercase;}
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    .nav-links.open{display:flex;position:absolute;top:60px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:1.1rem;background:var(--bone);border-bottom:1px solid var(--line);padding:1.4rem clamp(1.1rem,4vw,3rem);}
+    .manifesto-grid{grid-template-columns:1fr;}
+    .feat-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .lin-grid{grid-template-columns:1fr;}
+    .drop-row{grid-template-columns:52px 1fr;gap:0.9rem 1rem;}
+    .drop-meta{grid-column:2;flex-direction:row;align-items:center;justify-content:flex-start;flex-wrap:wrap;}
+    .sec-note{text-align:left;}
+  }
+  @media (max-width:520px){
+    .stat-grid{grid-template-columns:1fr;}
+    .countdown{flex-wrap:wrap;}
+    .form{flex-direction:column;}
+    .form button{border-left:0;border-top:1px solid var(--ink);padding:0.9rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:0.001ms!important;animation-iteration-count:1!important;}
+    .ticker-track,.warn-tape .tt{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TICKER ── -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>◉ POLYGENIK</span><span>A BIOTECH ART COLLECTIVE</span><span>SAN FRANCISCO · FRONTIER TOWER</span><span><b>FOR RESEARCH USE ONLY</b></span><span>DROP 001 — CHINESE PEPTIDE RAVE — SOLD OUT</span><span>DROP 002 — CELEBRITY MEAT TASTING — <b>LOADING</b></span><span>NOT FOR HUMAN CONSUMPTION*</span>
+    <span>◉ POLYGENIK</span><span>A BIOTECH ART COLLECTIVE</span><span>SAN FRANCISCO · FRONTIER TOWER</span><span><b>FOR RESEARCH USE ONLY</b></span><span>DROP 001 — CHINESE PEPTIDE RAVE — SOLD OUT</span><span>DROP 002 — CELEBRITY MEAT TASTING — <b>LOADING</b></span><span>NOT FOR HUMAN CONSUMPTION*</span>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand"><span class="mark"></span>POLYGENIK</a>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#manifesto">Manifesto</a></li>
+      <li><a href="#drops">Drops</a></li>
+      <li><a href="#peptide">Peptide Rave</a></li>
+      <li><a href="#meat">Celebrity Meat</a></li>
+      <li><a href="#about">Lab</a></li>
+      <li><a href="#join" class="nav-cta">Join the Colony</a></li>
+    </ul>
+    <button class="nav-toggle" id="navtoggle" aria-label="Toggle menu">Menu +</button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero" id="top">
+  <canvas id="mol" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <div class="spec-row">
+      <span><span class="dot">●</span> SPECIMEN&nbsp;NO. PGK-0000</span>
+      <span>EST. 2025</span>
+      <span>LOT: MARKET&nbsp;ST / FLR&nbsp;08</span>
+      <span>STATUS: CONTAGIOUS</span>
+    </div>
+    <h1>Poly<span class="out">genik</span></h1>
+    <p class="hero-sub">
+      A biotech art collective. We stage the <b>experiments</b> culture is too polite to run —
+      then invite you to the after&#8209;party.
+    </p>
+    <div class="hero-actions">
+      <a href="#drops" class="btn btn-fill">View the Drops →</a>
+      <a href="#meat" class="btn btn-line">Celebrity Meat Tasting</a>
+    </div>
+    <div class="disclaimer-strip">
+      <svg class="biohazard" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><circle cx="50" cy="50" r="9"/><path d="M50 6a30 30 0 0 1 26 15 22 22 0 0 0-18 18 15 15 0 0 0-16 0 22 22 0 0 0-18-18A30 30 0 0 1 50 6z"/><path d="M12 84a30 30 0 0 1-4-30 22 22 0 0 0 24 6 15 15 0 0 0 8 14 22 22 0 0 0-25 10 30 30 0 0 1-3 0z"/><path d="M88 84a30 30 0 0 1-27 10 22 22 0 0 0-1-25 15 15 0 0 0 8-14 22 22 0 0 0 24-6 30 30 0 0 1-4 35z"/></g></svg>
+      For research use only. Reader discretion is a personal choice.
+    </div>
+  </div>
+</header>
+
+<!-- ── MANIFESTO ── -->
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <p class="kicker">The Thesis</p>
+    <blockquote>
+      We don't ship <em>products.</em><br>
+      We ship <span class="pink">discourse</span> —<br>
+      and occasionally, dinner.
+    </blockquote>
+    <p class="mono" style="margin-top:1.6rem;font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-ink);">House rules: We always punch up. Nothing is sacred. The joke is never explained.</p>
+    <div class="manifesto-grid">
+      <div class="m-card">
+        <div class="n">01 / PROVOCATION AS MEDIUM</div>
+        <h4>The stunt is the sculpture.</h4>
+        <p>Biotechnology arrives faster than the conversation about it. We build the conversation — as a party, a tasting, a rave — so the ethics get argued in public before the regulators wake up.</p>
+      </div>
+      <div class="m-card">
+        <div class="n">02 / THE LAB IS A KITCHEN</div>
+        <h4>Tasteful experimentation.</h4>
+        <p>Every drop is a real experiment dressed as an event. Mix-your-own peptides. Meat cultured from famous cells. We run it, we plate it, and we let you decide whether to take a bite.</p>
+      </div>
+      <div class="m-card">
+        <div class="n">03 / CONSENT &amp; CONSEQUENCE</div>
+        <h4>You can eat yourself. The cow can't opt in.</h4>
+        <p>Our favorite questions are the uncomfortable ones. Who gets to consent? Who gets cultured? What are we willing to swallow in the name of progress? Bring your appetite and your objections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DROPS INDEX ── -->
+<section class="drops" id="drops">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-eyebrow">The Ledger — Numbered Drops</p>
+        <h2 class="sec-title">Field<br>Experiments</h2>
+      </div>
+      <p class="sec-note">Each drop is a one&#8209;night biological event. When it's gone, it's a case study.</p>
+    </div>
+
+    <div class="drop-row linked" onclick="location.href='#peptide'">
+      <div class="drop-num">001</div>
+      <div class="drop-main">
+        <h3>Chinese Peptide Rave</h3>
+        <p>Mix-your-own peptides · techno · Frontier Tower · Dec 13, 2025</p>
+      </div>
+      <div class="drop-meta">
+        <span class="badge sold">Sold Out</span>
+        <span class="drop-arrow">CASE FILE →</span>
+      </div>
+    </div>
+
+    <div class="drop-row linked" onclick="location.href='#meat'">
+      <div class="drop-num">002</div>
+      <div class="drop-main">
+        <h3>Celebrity Meat Tasting</h3>
+        <p>Cultivated meat from famous cells · a dinner party about consent</p>
+      </div>
+      <div class="drop-meta">
+        <span class="badge next">Now Loading</span>
+        <span class="drop-arrow">GET ON THE LIST →</span>
+      </div>
+    </div>
+
+    <div class="drop-row">
+      <div class="drop-num">003</div>
+      <div class="drop-main">
+        <h3>Classified</h3>
+        <p>Something is growing in the incubator. It is not ready to be named.</p>
+      </div>
+      <div class="drop-meta">
+        <span class="badge classified">Culturing</span>
+      </div>
+    </div>
+
+    <div class="drop-row">
+      <div class="drop-num">004</div>
+      <div class="drop-main">
+        <h3>Classified</h3>
+        <p>Join the colony to be notified the moment it goes contagious.</p>
+      </div>
+      <div class="drop-meta">
+        <span class="badge classified">Incubating</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURE: PEPTIDE RAVE ── -->
+<section class="feature peptide" id="peptide">
+  <div class="wrap">
+    <p class="feat-tag">◉ DROP 001 — CASE FILE — SOLD OUT</p>
+    <div class="feat-grid">
+      <div>
+        <h2>The Chinese<br><em>Peptide Rave</em></h2>
+        <p class="feat-lede">
+          On <b>December 13, 2025</b>, we turned the 8th&#8209;floor lab at Frontier Tower into a nightclub for gray&#8209;market biology. A field trip through live experiments, then a DJ spinning techno while molecular structures strobed across the wall.
+        </p>
+        <div class="feat-body">
+          <p>A <b>mix&#8209;your&#8209;own peptides</b> workshop. BPC&#8209;157, TB&#8209;500, epitalon, retatrutide — the alphabet soup Silicon Valley is injecting faster than the FDA can spell it. Dress code: <em>crazy futuristic cyberpunk.</em> Tall shiny boots and light&#8209;up headwear encouraged. Trash fits turned away at the door.</p>
+          <p>Then <a href="https://www.nytimes.com/2026/01/03/business/chinese-peptides-silicon-valley.html" target="_blank" rel="noopener" style="color:var(--acid);text-decoration:underline;">The New York Times showed up</a>, and our little rave became the face of a movement.</p>
+        </div>
+        <blockquote class="pull">
+          "A mix&#8209;your&#8209;own peptides workshop, a D.J. playing techno with chemistry structures projected in the background and a dress code calling for crazy futuristic cyberpunk attire."
+          <cite>— The New York Times, Jan 3 2026</cite>
+        </blockquote>
+        <div class="feat-actions">
+          <a href="https://www.nytimes.com/2026/01/03/business/chinese-peptides-silicon-valley.html" target="_blank" rel="noopener" class="btn btn-fill inv">Read the NYT piece →</a>
+          <a href="#join" class="btn ghost inv">Never miss the next one</a>
+        </div>
+      </div>
+      <div>
+        <div class="stat-grid">
+          <div class="stat"><div class="num">$328M</div><div class="lbl">Chinese peptide imports, first 3 quarters of 2025 — roughly double a year prior</div></div>
+          <div class="stat"><div class="num">300×</div><div class="lbl">Growth in "chinese peptides" searches, Jan 2025 → Jan 2026</div></div>
+          <div class="stat"><div class="num">01</div><div class="lbl">Nights it took to become a NYT headline</div></div>
+          <div class="stat"><div class="num">FLR 08</div><div class="lbl">Frontier Tower, 995 Market St — the lab that became a dancefloor</div></div>
+        </div>
+        <ul class="feat-list">
+          <li>Live lab field trip + interactive experiments</li>
+          <li>Peptide chemistry projected in real time</li>
+          <li>Techno until the incubators hummed</li>
+          <li>Zero prescriptions written — this is art, not medicine</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURE: CELEBRITY MEAT ── -->
+<section class="feature meat" id="meat">
+  <div class="wrap">
+    <p class="feat-tag">◆ DROP 002 — NOW LOADING</p>
+    <div class="feat-grid">
+      <div>
+        <h2>The Celebrity<br><em>Meat Tasting</em></h2>
+        <p class="feat-lede">
+          A dinner party where the menu is people — <b>consensually.</b> Cultivated meat grown from celebrity cells, plated, seasoned, and served to a room willing to ask the question out loud: <b>would you take a bite?</b>
+        </p>
+        <div class="feat-body">
+          <p>Cell&#8209;cultured meat means we no longer need to kill an animal to eat one. It also means we could, in theory, culture <em>anyone</em>. The technology is real. The consent is the art. The tasting is where the debate gets a fork.</p>
+          <p>It's not cannibalism if the cells were donated — <em>technically.</em> That "technically" is the entire exhibit.</p>
+        </div>
+        <blockquote class="pull">
+          "What sacrifices do we need to make to keep eating meat at the pace we do — and who will be able to afford animal meat, versus who may have no option but to culture it from themselves?"
+          <cite>— The question behind Ouroboros Steak &amp; celebrity&#8209;meat art</cite>
+        </blockquote>
+        <p class="mono" style="font-size:0.72rem;letter-spacing:0.06em;color:var(--muted-ink);text-transform:uppercase;">Next tasting — date to be cultured</p>
+        <div class="countdown" id="countdown" aria-label="Countdown to next drop">
+          <div class="cd-cell"><div class="v" id="cd-d">00</div><div class="k">Days</div></div>
+          <div class="cd-cell"><div class="v" id="cd-h">00</div><div class="k">Hours</div></div>
+          <div class="cd-cell"><div class="v" id="cd-m">00</div><div class="k">Min</div></div>
+          <div class="cd-cell"><div class="v" id="cd-s">00</div><div class="k">Sec</div></div>
+        </div>
+        <div class="feat-actions">
+          <a href="https://celebrity-meat.netlify.app/" target="_blank" rel="noopener" class="btn btn-fill inv">Enter the Tasting Room →</a>
+          <a href="#join" class="btn ghost inv">Reserve a seat</a>
+        </div>
+      </div>
+      <div>
+        <ul class="feat-list">
+          <li>Cultivated meat — cells, not slaughter</li>
+          <li>Sourced from famous (consenting) tissue</li>
+          <li>A menu that argues bioethics back at you</li>
+          <li>Plated by people who read the papers first</li>
+          <li>Seats strictly limited · strong stomachs preferred</li>
+        </ul>
+        <div class="stat-grid">
+          <div class="stat"><div class="num">100%</div><div class="lbl">Consent&#8209;forward · zero animals harmed in the concept</div></div>
+          <div class="stat"><div class="num">∞</div><div class="lbl">Ethical questions served per course</div></div>
+        </div>
+        <p class="mono" style="font-size:0.7rem;letter-spacing:0.1em;color:var(--muted-ink);text-transform:uppercase;margin-top:1.6rem;">* No human is harmed. The provocation is the point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- warning tape -->
+<div class="warn-tape" aria-hidden="true"><div class="tt"><span>⚠ FOR RESEARCH USE ONLY</span><span>⚠ NOT FOR HUMAN CONSUMPTION</span><span>⚠ THE PROVOCATION IS THE POINT</span><span>⚠ CONSENT IS THE ART</span><span>⚠ FOR RESEARCH USE ONLY</span><span>⚠ NOT FOR HUMAN CONSUMPTION</span><span>⚠ THE PROVOCATION IS THE POINT</span><span>⚠ CONSENT IS THE ART</span></div></div>
+
+<!-- ── LINEAGE ── -->
+<section class="lineage" id="lineage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="sec-eyebrow">Standing on the Shoulders of Provocateurs</p>
+        <h2 class="sec-title">The<br>Lineage</h2>
+      </div>
+      <p class="sec-note">We didn't invent trouble. We're just running it through a bioreactor.</p>
+    </div>
+    <div class="lin-grid">
+      <div class="lin-card">
+        <div class="yr">2019 — · BROOKLYN</div>
+        <h4>MSCHF</h4>
+        <div class="who">Numbered "drops" · Satan Shoes · Big Red Boots</div>
+        <p>The blueprint: release provocations as scarce, numbered products and let the internet do the arguing. Critique capitalism by out&#8209;performing it. We swapped sneakers for cell cultures.</p>
+      </div>
+      <div class="lin-card">
+        <div class="yr">2014 — · CONCEPT</div>
+        <h4>BiteLabs</h4>
+        <div class="who">Salami from A&#8209;list tissue</div>
+        <p>A slick startup pitch to grow celebrity salami — half hoax, half market test. It proved a website and a provocation could force a global conversation about celebrity, consent, and appetite.</p>
+      </div>
+      <div class="lin-card">
+        <div class="yr">2020 — · DESIGN MUSEUM</div>
+        <h4>Ouroboros Steak</h4>
+        <div class="who">Telhan · Pelling · Knight</div>
+        <p>A grow&#8209;your&#8209;own kit for steaks made from your own cells — "technically" not cannibalism. Nominated for Design of the Year. The direct ancestor of our tasting menu.</p>
+      </div>
+      <div class="lin-card">
+        <div class="yr">2003 — · SYMBIOTICA</div>
+        <h4>Disembodied Cuisine</h4>
+        <div class="who">Oron Catts &amp; Ionat Zurr</div>
+        <p>Frog steaks grown in a gallery bioreactor, then cooked and eaten — the first humans to eat in&#8209;vitro meat, a decade before the lab&#8209;grown burger. They coined the "semi&#8209;living" and put biology on the gallery wall. Our tasting menu's true ancestor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <h2>We operate out of a <em>vertical village.</em></h2>
+        <p>Polygenik is based at <b>Frontier Tower</b> — sixteen floors of deep&#8209;tech founders, biohackers and artists at 995 Market Street, San Francisco. Our lab lives on the 8th floor. Some nights it's a lab. Some nights it's a dancefloor. The difference is mostly the lighting.</p>
+        <p>We believe the most important biotech debates shouldn't happen in a subcommittee — they should happen at a party, with the actual technology in the room. So we <b>run the real experiment</b>, throw the doors open, and turn the ethics into an evening you can't stop talking about.</p>
+        <p>Founded in the tradition of the biopunk and DIY&#8209;bio movements: <b>curiosity first, permission later, spectacle always.</b></p>
+      </div>
+      <div>
+        <div class="facts">
+          <div class="fact"><span class="k">Collective</span><span class="v">POLYGENIK</span></div>
+          <div class="fact"><span class="k">Discipline</span><span class="v">Biotech / Art / Events</span></div>
+          <div class="fact"><span class="k">HQ</span><span class="v">Frontier Tower · SF</span></div>
+          <div class="fact"><span class="k">Location</span><span class="v">995 Market St · Flr 08</span></div>
+          <div class="fact"><span class="k">Drops shipped</span><span class="v">002 &amp; counting</span></div>
+          <div class="fact"><span class="k">Medium</span><span class="v">Provocation</span></div>
+          <div class="fact"><span class="k">Warranty</span><span class="v">For research use only</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SIGNUP ── -->
+<section class="signup" id="join">
+  <div class="wrap">
+    <h2>Join the<br><em>Colony</em></h2>
+    <p>Drops are small, unannounced, and disappear fast. Get the coordinates before the rest of the internet does.</p>
+    <form class="form" id="joinform" onsubmit="return joinColony(event)">
+      <input type="email" id="joinemail" placeholder="you@lab.bio" required aria-label="Email address">
+      <button type="submit">Inoculate Me</button>
+    </form>
+    <p class="form-note">No spam. No prescriptions. Occasional biohazards.</p>
+    <p id="signup-ok">◉ Sample logged. You're in the culture now — watch your inbox.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">POLYGENIK</div>
+        <p class="foot-tag">A biotech art collective. We stage the experiments culture is too polite to run.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#drops">Drops</a>
+        <a href="#peptide">Peptide Rave</a>
+        <a href="#meat">Celebrity Meat</a>
+        <a href="#lineage">Lineage</a>
+        <a href="#join">Join</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Polygenik · San Francisco</span>
+      <span>For research use only · Not for human consumption* · *The provocation is the point</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── mobile nav ── */
+(function(){
+  var t=document.getElementById('navtoggle'),l=document.getElementById('navlinks');
+  if(t){t.addEventListener('click',function(){l.classList.toggle('open');t.textContent=l.classList.contains('open')?'Close ×':'Menu +';});
+  l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.textContent='Menu +';});});}
+})();
+
+/* ── signup ── */
+function joinColony(e){
+  e.preventDefault();
+  var f=document.getElementById('joinform'),ok=document.getElementById('signup-ok');
+  f.style.display='none';ok.style.display='block';
+  return false;
+}
+
+/* ── countdown (rolling target ~ next drop) ── */
+(function(){
+  var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+      m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+  if(!d)return;
+  // target: a fixed future window that rolls forward so it never expires visually
+  var base=new Date('2026-10-31T20:00:00-07:00').getTime();
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var now=Date.now(),diff=base-now;
+    if(diff<0){base+=1000*60*60*24*90;diff=base-now;} // roll another quarter
+    var dd=Math.floor(diff/86400000),
+        hh=Math.floor(diff%86400000/3600000),
+        mm=Math.floor(diff%3600000/60000),
+        ss=Math.floor(diff%60000/1000);
+    d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* ── hero molecular field ── */
+(function(){
+  var c=document.getElementById('mol');
+  if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var ctx=c.getContext('2d'),W,H,DPR=Math.min(window.devicePixelRatio||1,2),pts=[],raf;
+  var ACID='rgba(170,212,0,';
+  function resize(){
+    W=c.clientWidth;H=c.clientHeight;
+    c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+    var n=Math.round(Math.min(64,W/22));
+    pts=[];
+    for(var i=0;i<n;i++){
+      pts.push({x:Math.random()*W,y:Math.random()*H,
+        vx:(Math.random()-0.5)*0.28,vy:(Math.random()-0.5)*0.28,
+        r:Math.random()*1.7+1.1});
+    }
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<118){
+          ctx.strokeStyle='rgba(11,11,11,'+(0.12*(1-dist/118))+')';
+          ctx.lineWidth=1;
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();
+        }
+      }
+    }
+    for(var k=0;k<pts.length;k++){
+      var pp=pts[k];
+      ctx.beginPath();ctx.arc(pp.x,pp.y,pp.r,0,6.283);
+      ctx.fillStyle=k%5===0?ACID+'0.85)':'rgba(11,11,11,0.35)';
+      ctx.fill();
+    }
+    raf=requestAnimationFrame(step);
+  }
+  var ro=new ResizeObserver(resize);ro.observe(c);
+  resize();step();
+})();
+</script>
+</body>
+</html>
