@@ -1,0 +1,31 @@
+{
+  "name": "God Does Not Play Dice",
+  "short_name": "Play Dice",
+  "id": "/dice.html",
+  "start_url": "/dice.html?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050812",
+  "theme_color": "#050812",
+  "description": "A Standard-Model card duel. Collide quarks and leptons at real Feynman vertices, harvest gauge bosons, assemble hadrons — and spend hidden variables to overrule quantum probability.",
+  "categories": ["games", "education"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Run",
+      "url": "/dice.html?source=pwa",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Rules & Design Notes",
+      "url": "/dice-rules.html",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
