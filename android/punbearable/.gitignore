@@ -1,0 +1,26 @@
+# Pun Bearable TWA (Bubblewrap) — keep keys and build artifacts out of git.
+# NOTE: this folder is separate from the native "God Does Not Play Dice"
+# project that lives directly in ../ (android/).
+
+# Signing keys — NEVER commit these
+*.keystore
+*.jks
+android.keystore
+
+# Build artifacts
+*.apk
+*.aab
+app-release-*.apk
+app-release-*.aab
+
+# Bubblewrap-generated project (regenerated from twa-manifest.json)
+/app/
+/gradle/
+/gradlew
+/gradlew.bat
+/build.gradle
+/settings.gradle
+/gradle.properties
+/store_icon.png
+/.gradle/
+/build/
