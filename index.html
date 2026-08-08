@@ -254,6 +254,30 @@
     }
     .game-card:hover::before { opacity: 1; }
 
+    /* Pun Bearable install chip (sibling overlay so the card stays a link) */
+    .game-card-wrap { position: relative; display: flex; }
+    .game-card-wrap .game-card { flex: 1; }
+    .install-chip {
+      position: absolute;
+      top: 14px; right: 14px;
+      z-index: 3;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a1204;
+      background: #ffb454;
+      border: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(255,180,84,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .install-chip:hover { transform: translateY(-1px); box-shadow: 0 0 26px rgba(255,180,84,0.65); }
+    .install-chip:active { transform: translateY(0); }
+
     .game-icon { font-size: 2.2rem; margin-bottom: 1rem; }
 
     .game-card h3 {
@@ -568,12 +592,15 @@
           <p>An emoji Ouija board. Ask a question and the spirits guide the planchette to spell your answer in three emoji. Playable online.</p>
         </a>
 
-        <a href="punbearable.html" class="game-card">
-          <div class="game-icon">&#x1F43B;</div>
-          <h3>Pun Bearable</h3>
-          <span class="game-status status-active">Play Now</span>
-          <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="punbearable.html" class="game-card">
+            <div class="game-icon">&#x1F43B;</div>
+            <h3>Pun Bearable</h3>
+            <span class="game-status status-active">Play Now</span>
+            <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
+          </a>
+          <button type="button" id="installBtn" class="install-chip">&#x1F4F2; Install app</button>
+        </div>
 
         <a class="game-card" href="dna-chess.html" style="display:block">
           <div class="game-icon">&#x1F9EC;</div>
@@ -725,6 +752,30 @@
         if(f){ f.style.height = Math.max(560, Math.min(1400, e.data.h)) + 'px'; }
       }
     });
+
+    // Pun Bearable "Install app" chip: native install prompt when the browser
+    // offers it, otherwise open the installable game page.
+    (function(){
+      var btn = document.getElementById('installBtn');
+      if(!btn){ return; }
+      function isStandalone(){
+        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      }
+      if(isStandalone()){ btn.style.display = 'none'; return; }
+      var deferred = null;
+      window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
+      window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
+      btn.addEventListener('click', function(){
+        if(deferred){
+          deferred.prompt();
+          deferred.userChoice.then(function(){ deferred = null; });
+        } else {
+          // No install prompt on this page/browser — go to the game page,
+          // which carries the manifest + service worker and can install there.
+          window.location.href = 'punbearable.html?install=1';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
