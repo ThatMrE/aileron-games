@@ -353,10 +353,16 @@ const MESON = { // key: sorted flavor pair (quark+antiquark, different flavors)
   "c,u":["D",4], "c,d":["D",4], "c,s":["Dₛ",4],
   "b,u":["B",5], "b,d":["B",5], "b,s":["Bₛ",5], "b,c":["Bᴄ",6]
 };
+// Keys MUST be alphabetically sorted flavor triples (b<c<d<s<u) to match the lookup.
 const BARYON_NAMES = {
-  "d,u,u":"p", "d,d,u":"n", "u,u,s":"Σ⁺", "d,u,s":"Λ⁰", "d,d,s":"Σ⁻",
+  "d,u,u":"p", "d,d,u":"n", "u,u,u":"Δ⁺⁺", "d,d,d":"Δ⁻", "s,u,u":"Σ⁺", "d,s,u":"Λ⁰", "d,d,s":"Σ⁻",
   "s,s,u":"Ξ⁰", "d,s,s":"Ξ⁻", "s,s,s":"Ω⁻",
-  "c,d,u":"Λᴄ", "b,d,u":"Λᵇ", "c,c,c":"Ωᴄᴄᴄ", "b,b,b":"Ωᵇᵇᵇ"
+  "c,d,u":"Λᴄ⁺", "c,u,u":"Σᴄ⁺⁺", "c,d,d":"Σᴄ⁰", "c,s,u":"Ξᴄ⁺", "c,d,s":"Ξᴄ⁰", "c,s,s":"Ωᴄ⁰",
+  "b,d,u":"Λᵇ⁰", "b,u,u":"Σᵇ⁺", "b,d,d":"Σᵇ⁻", "b,s,u":"Ξᵇ⁰", "b,d,s":"Ξᵇ⁻", "b,s,s":"Ωᵇ⁻",
+  "c,c,u":"Ξᴄᴄ⁺⁺", "c,c,d":"Ξᴄᴄ⁺", "c,c,s":"Ωᴄᴄ⁺",
+  "b,c,u":"Ξᵇᴄ⁺", "b,c,d":"Ξᵇᴄ⁰", "b,c,s":"Ωᵇᴄ⁰",
+  "b,b,u":"Ξᵇᵇ⁰", "b,b,d":"Ξᵇᵇ⁻", "b,b,s":"Ωᵇᵇ⁻",
+  "c,c,c":"Ωᴄᴄᴄ", "b,b,c":"Ωᵇᵇᴄ", "b,c,c":"Ωᵇᴄᴄ", "b,b,b":"Ωᵇᵇᵇ"
 };
 function chargeSup(q){ if(Math.abs(q-1)<0.01)return "⁺"; if(Math.abs(q+1)<0.01)return "⁻"; if(Math.abs(q)<0.01)return "⁰"; return ""; }
 function mesonOf(k1,k2){ // one quark + one antiquark, different flavors
@@ -578,6 +584,12 @@ function applyOutcome(who, oc, card, st, stackIdx){
   if(oc.kind==="meson"||oc.kind==="onium"||oc.kind==="baryon"){
     p.score+=oc.pts; p.pile.push({name:oc.name,pts:oc.pts});
     if(oc.tok){ p.tok+=oc.tok; logMsg("fx",whoNm+" gain"+(who==="you"?"":"s")+" a hidden variable ("+oc.name+")."); }
+    // Catch-up valve: falling 8+ behind sharpens the underdog's resolve —
+    // each scoring play that opens (or deepens) such a lead grants the trailer a hidden variable.
+    if(p.score - o.score >= 8 && p.score < TARGET){
+      o.tok += 1;
+      logMsg("fx","Underdog measurement: trailing by "+(p.score-o.score)+", "+(who==="you"?"the AI gains":"you gain")+" a hidden variable.");
+    }
     G.removed.push(card, ...st.cards);
     G.stacks.splice(stackIdx,1);
     logMsg("ok","✔ "+whoNm+": "+ocLabel(oc)+" pts — "+(oc.kind==="baryon"?"baryon assembled":oc.kind==="onium"?"bound state":"hadronization")+".");
@@ -1000,7 +1012,7 @@ const RULES_HTML = `
     <li><b>Jettison</b> — beam-dump a card from your hand into the debris (the escape valve when nothing collides).</li>
   </ul>
   <h3>Collisions never fizzle</h3>
-  <p>Every legal collision produces <i>something</i>. The dice only decide <i>what</i>: annihilations yield a random gauge boson; hadronization usually gives the meson but sometimes a W or Z sneaks out. Spend <b>1 hidden variable</b> before rolling to pick the outcome yourself. You earn hidden variables from <b>Z-boson measurements</b> and famous discoveries (J/ψ, Υ, Ω⁻).</p>
+  <p>Every legal collision produces <i>something</i>. The dice only decide <i>what</i>: annihilations yield a random gauge boson; hadronization usually gives the meson but sometimes a W sneaks out. Spend <b>1 hidden variable</b> before rolling to pick the outcome yourself. You earn hidden variables from <b>Z-boson measurements</b>, famous discoveries (J/ψ, Υ, Ω⁻) — and from <b>falling behind</b>: each enemy scoring play that opens a lead of 8+ grants you one (the underdog measurement).</p>
   <h3>The four gauge bosons (real forces, real effects)</h3>
   <ul>
     <li><b>g gluon — strong:</b> confinement drags a random card out of your opponent's hand, and the gluon stays as fusion fuel.</li>
