@@ -8,15 +8,19 @@ An Android wrapper around the game in `../fda.html`. The whole game ships
 | | `native/` | `mobile/` (Capacitor) |
 |---|---|---|
 | Needs Google's SDK? | **No** — Debian/Ubuntu packages only | Yes (`dl.google.com`) |
-| Built and verified here? | **Yes** — signed APK produced | No, never compiled |
+| Builds green in CI? | **Yes** (~30 s) | **Yes** (~90 s) |
+| APK size | ~407 KB | ~3.7 MB |
 | Plugin ecosystem | None (plain WebView) | Full Capacitor plugins |
 | Play Store ready | Needs work | Closer (bump `targetSdk`) |
 
-**Start with [`native/`](native/README.md)** — `cd native && ./build.sh` produces
-a real, signed, installable APK, and that is the path actually exercised here.
+**Both are built by CI on every change** — see
+[`.github/workflows/android.yml`](../.github/workflows/android.yml). Each run
+uploads its APK as a downloadable artifact, so you never need a local Android
+SDK to get a build.
 
-Use the Capacitor project below when you want the plugin ecosystem or are
-heading for the Play Store, on a machine that can reach Google's Maven.
+Use `native/` when you want a tiny APK or a machine that cannot reach Google's
+Maven. Use Capacitor when you want the plugin ecosystem or are heading for the
+Play Store.
 
 > **Why two?** Capacitor 6 requires Android Gradle Plugin 8.x, which Google
 > publishes **only** to its own Maven repository. Maven Central's newest AGP is
@@ -28,11 +32,11 @@ heading for the Play Store, on a machine that can reach Google's Maven.
 
 ## The Capacitor build
 
-> **Not built here.** This path has never been compiled, because the environment
-> it was authored in cannot reach `dl.google.com` and therefore has no Android
-> SDK or AGP. Everything below is complete and the web payload is verified
-> offline (see *What was verified*), but the Gradle build itself is unrun. Treat
-> the first `assembleDebug` as the real smoke test.
+> **Not buildable in every environment.** Capacitor 6 needs Android Gradle
+> Plugin 8.x and androidx, which Google publishes **only** to its own Maven
+> repository — androidx is a 404 on Maven Central. Anywhere that cannot reach
+> `dl.google.com`, this path is impossible and `native/` is the answer.
+> It **does** build green on GitHub-hosted runners, which is what CI uses.
 
 ## Build it
 
@@ -181,12 +185,15 @@ Additionally, for the `native/` path, an APK was actually built and inspected �
 signatures, dex integrity, contents, and a full playthrough of the payload
 extracted back out of the finished APK. See [`native/README.md`](native/README.md).
 
-**Not verified** — needs the Android SDK and a device:
+**Both Gradle and the native pipeline now build green in CI**, so
+`assembleDebug` is no longer an open question — see the Android workflow runs.
 
-- **The Capacitor Gradle build.** It has never been run.
+**Not verified** — needs a physical device:
+
 - The Capacitor plugin bridge at runtime: status bar colour, splash hide, the
   hardware back button, and Custom Tabs link opening. The shim is written
   defensively (every plugin call is presence-checked, so a missing plugin
   degrades rather than throws) but it has not executed on a device.
 - Icon and splash rendering on a real launcher.
-- Neither APK has been installed on physical hardware.
+- **Neither APK has been installed on physical hardware.** Everything above is
+  a successful compile plus a browser-level run of the payload.

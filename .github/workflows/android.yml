@@ -25,6 +25,13 @@ on:
 permissions:
   contents: read
 
+# A branch with an open PR fires both `push` and `pull_request` on the same SHA,
+# which builds everything twice. Group by ref so the second run supersedes the
+# first, and cancel superseded runs when new commits land.
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   capacitor:
     name: Capacitor APK
