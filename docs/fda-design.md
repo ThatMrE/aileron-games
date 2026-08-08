@@ -1,124 +1,201 @@
-# FDA: Forever Doesn't Allow — Game Design & Sources (v1.0)
+# FDA: Forever Doesn't Allow — Design & Sources (v2.0)
 
-> **One-line pitch:** An *Oregon Trail* reskin where the wagon is a diagnosis,
-> the river fordings are IRB queues, and the trail always ends the same way.
-> Every rule the game enforces is a real FDA regulation or a real, cited
-> historical outcome. There is no win state, on purpose.
+> **One-line pitch:** An 8-bit *Oregon Trail* reskin where the trail is the U.S.
+> drug approval process and you are the patient, not the sponsor. Every
+> obstacle is a real, currently-in-force rule; every dollar figure is a
+> published statistic with a citation; the health bar is a real clinical scale.
+> There is no score and no win state, and that is the argument.
 
 ---
 
 ## 1. Design pillars
 
-1. **The bureaucracy is the terrain.** Oregon Trail's landmarks (Fort Kearney,
-   river crossings, South Pass) become regulatory milestones (IND filing,
-   IRB review, randomization). You don't manage oxen and wagon wheels — you
-   manage Health, Money, and Hope against a calendar that a terminal
-   diagnosis doesn't share with the agency, the sponsor, or your insurer.
-2. **Every catch-22 is load-bearing, not decorative.** The seven structural
-   traps below aren't random flavor text — they are scripted milestones that
-   fire in every playthrough, because they are true of the system in every
-   playthrough. Player choice changes how much Health/Money/Hope you have
-   left when you hit them, not whether they happen.
-3. **No winning branch exists in the code.** This isn't a game you're bad at.
-   There is no path through the state machine that ends in "you got the drug
-   and lived." That's not a balancing failure — it's the thesis.
-4. **The ending is a real person, not a stat block.** The game is fiction (a
-   composite disease, a composite patient) but the closing card is not. It
-   names a real person, a real drug, and real dates, with citations.
+1. **The health bar is a real instrument.** *The Oregon Trail* displayed party
+   health as one of four words — *good, fair, poor, very poor*. Oncology
+   already has a scale for exactly that: **ECOG performance status**, 0 to 5,
+   where **5 means dead**. So the status readout is the real scale, and the
+   central catch-22 becomes *mechanical* rather than narrated.
+2. **Two HUD numbers in opposition.** Alongside ECOG sits **prior lines of
+   therapy** — the other real eligibility criterion. Later-line trials require
+   ≥2 prior lines *and* ECOG 0–1. Each line of therapy you accumulate costs you
+   performance status. The player watches the two numbers cross. There is no
+   week in which both conditions are true.
+3. **It is not the FDA's fault, and the game says so.** The single most common
+   public misconception is that the agency is the blocker. It usually isn't.
+   The game separates the barriers precisely: an **approved** drug used
+   off-label is blocked by a **payer**; an **investigational** drug is blocked
+   by a **manufacturer**. The FDA authorises the great majority of individual
+   expanded-access requests it receives, often within days. The title is
+   ironic on purpose.
+4. **The pixel art stops when the real person starts.** The end card
+   deliberately abandons the 8-bit styling entirely — different fonts, light
+   background, ordinary prose. The costume comes off for Abigail Burroughs.
+5. **No branch grants a cure.** Death is guaranteed by design, not by a
+   balancing accident.
 
 ---
 
-## 2. The seven catch-22s (and where they live in the game)
+## 2. The fixed patient
 
-| # | Catch-22 | In-game chapter | Legal/factual grounding |
-|---|----------|------------------|--------------------------|
-| 1 | Expanded access requires the manufacturer's agreement — and the manufacturer has no obligation, and a real disincentive, to give it. | **Three Doors** | 21 CFR 312.305 / Subpart I: FDA authorizes the *use*, but the sponsor must independently agree to *supply* the drug and cannot be compelled to. FDA authorizes ~99% of individual patient expanded-access requests it receives — the bottleneck is never the agency. |
-| 2 | A single-patient IND still needs a supplying manufacturer, so the loop closes on itself. | **Three Doors** | Same CFR subpart. FDA can approve the IND application itself in days (even hours, for emergencies) — an approval to receive a drug no one is obligated to ship you. |
-| 3 | By the time you meet the progression criteria that qualify you for a trial, you often fail the performance-status criteria that let you enroll. | **Screening — Trial A** | Registrational oncology trials overwhelmingly restrict to ECOG performance status 0–1; historically well under 5% of patients in pivotal trials leading to FDA approval had ECOG PS ≥2, despite PS-2 patients being a large share of the real-world population. Progression (the thing that makes you eligible for a later-line trial) is often exactly what erodes performance status (the thing that makes you eligible to enroll). |
-| 4 | Randomization means you may spend your remaining time in the control arm. | **Screening — Trial B** | Most confirmatory Phase 3 oncology trials are randomized 1:1 or 2:1 against standard of care or placebo; cross-over on progression is not guaranteed by protocol. |
-| 5 | Your insurer covers standard of care, but not the standard of care you receive *while on trial* — so being enrolled costs you money. | **On Trial** | ACA §2709 (PHS Act, added 2010, effective 2014) requires most plans to cover *routine patient care costs* during a qualifying trial, but explicitly excludes the investigational article itself and any item "provided solely to satisfy data collection... and not used in direct clinical management." Extra protocol-mandated scans, biopsies, and visits routinely fall outside that line. Medicaid wasn't required to cover routine trial costs until the Clinical Treatment Act (2021), effective Jan 2022. |
-| 6 | Site IRB queues and clinical holds run on institutional time, not patient time. | **Institutional Time** | 21 CFR 312.42 gives FDA up to 30 days just to *review* an IND and can impose a clinical hold that stops the clock entirely; IRB continuing review and multi-site amendment cycles routinely add weeks to months, and none of it is expedited because a given patient is running out of time. |
-| 7 | Accelerated approval, then withdrawal after the confirmatory trial reads out negative — years after you'd have needed it. | **Countdown (epilogue ticker)** | Real, cited examples, not composites: **Avastin/bevacizumab**, metastatic breast cancer — accelerated approval Feb 2008; confirmatory AVADO/RIBBON1 trials failed to verify benefit; FDA withdrew the indication Nov 18, 2011 (≈3 yrs 9 mo later). **Pepaxto/melphalan flufenamide**, multiple myeloma — accelerated approval Feb 26, 2021; confirmatory OCEAN trial showed a worse-survival signal; withdrawn 2023–24 (≈3 yrs later). |
+One patient, no picker (v1 had a disease/insurance selector; it implied a
+customisation depth the game does not have, since none of it changes the
+outcome).
 
----
+- **41 years old, metastatic pancreatic adenocarcinoma**, KRAS **G12C** mutation
+  (~1–2% of pancreatic cancers).
+- **ACA marketplace Silver plan.** This is deliberate: the only public US
+  claim-denial dataset covers HealthCare.gov marketplace plans, so the patient
+  is marketplace-insured in order for the 19% denial statistic to legitimately
+  apply. There is no comparable published denial rate for employer coverage.
+- Starts with $12,000 savings — better off than a great many real patients.
 
-## 3. The ending
-
-The game always ends the same way: the player's Health reaches zero and they
-die, mid-process, with no drug in hand. There is no score.
-
-The end card tells the story of **Abigail Burroughs** (1979–2001), diagnosed
-with head-and-neck cancer at 19. Cetuximab (Erbitux) was showing promising
-results, but was only open to *colon cancer* trial patients — her cancer was
-in the wrong organ to qualify. She sought compassionate use and was denied;
-she died June 9, 2001, before any pathway resolved. Erbitux received
-accelerated approval for colorectal cancer in February 2004 and full approval
-for head-and-neck cancer (in combination with radiation) in March 2006 — 2.5
-and nearly 5 years after she died. Her father, Frank Burroughs, founded the
-Abigail Alliance for Better Access to Developmental Drugs; its 2003 lawsuit
-against the FDA reached the D.C. Circuit and lost in 2007, and the Alliance's
-advocacy fed directly into the state and federal Right to Try movement that
-culminated in the federal Right to Try Act of 2018 — a law that, per catch-22
-#1/#2 above, still does not compel any manufacturer to say yes.
-
-This is presented as a real historical account with citations, clearly
-demarcated from the fictional playthrough that precedes it.
+**Why this disease.** It produces the Abigail Burroughs trap exactly, with a
+real drug: **sotorasib** received accelerated approval for KRAS G12C **lung**
+cancer in May 2021. In the pancreatic cohort of the same trial programme it
+produced a 21% response rate and 6.9-month median OS — and was never approved
+for pancreatic cancer. Same drug, same mutation, wrong organ. Abigail's cancer
+was in her head and neck when the cetuximab trials were enrolling colon cancer.
 
 ---
 
-## 4. Sources consulted (also surfaced in-game via the "Sources" screen)
+## 3. The eight catch-22s
 
-**Expanded access / compassionate use / Right to Try**
-- 21 CFR Part 312, Subpart I — [eCFR](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/subpart-I)
-- FDA, *Expanded Access to Investigational Drugs for Treatment Use* — [fda.gov/media/162793](https://www.fda.gov/media/162793/download)
-- FDA, *Physician Request for a Single Patient IND for Compassionate or Emergency Use* — [fda.gov](https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/physician-request-single-patient-ind-compassionate-or-emergency-use)
-- FDA, *Right to Try* — [fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try](https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try)
-- Congressional Research Service, *Right to Try: Access to Investigational Drugs* (R45414) — [congress.gov](https://www.congress.gov/crs-product/R45414)
-
-**Trial eligibility / performance status / randomization**
-- *Performance Status Restriction in Phase III Cancer Clinical Trials* — [PMC9671537](https://pmc.ncbi.nlm.nih.gov/articles/PMC9671537/)
-- Friends of Cancer Research, *Rethinking ECOG Scores to Improve Patient Access and Clinical Trials Eligibility* — [friendsofcancerresearch.org](https://friendsofcancerresearch.org/news/applied-clinical-trials-online-rethinking-ecog-scores-to-improve-patient-access-and-clinical-trials-eligibility/)
-
-**Insurance coverage of trial costs**
-- 42 U.S.C. §300gg-8 (PHS Act §2709) — [uscode.house.gov](https://uscode.house.gov/view.xhtml?req=%28title%3A42+section%3A300gg-8+edition%3Aprelim%29)
-- CMS, *ACA Implementation FAQs — Set 15* — [cms.gov](https://www.cms.gov/cciio/resources/fact-sheets-and-faqs/aca_implementation_faqs15)
-- Clinical Treatment Act (Consolidated Appropriations Act, 2021), Medicaid routine-cost coverage effective Jan. 1, 2022
-
-**IND review, clinical holds, IRB timing**
-- 21 CFR 312.42 (clinical holds) — [eCFR](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312)
-- WCG, *Questions on the FDA's 30-Day IND Review Period and IRB Approval* — [wcgclinical.com](https://www.wcgclinical.com/insights/questions-on-the-fdas-30-day-ind-review-period-and-irb-approval/)
-
-**Accelerated approval, withdrawal**
-- FDA, *Regulatory Decision to Withdraw Avastin (bevacizumab)* — [fda.gov/media/79525](https://www.fda.gov/media/79525/download)
-- *The Avastin Story*, NEJM — [nejm.org/doi/full/10.1056/NEJMc1109550](https://www.nejm.org/doi/full/10.1056/NEJMc1109550)
-- FDA, *Final Decision on the Proposal to Withdraw Approval of [melphalan flufenamide]* — [fda.gov/media/176510](https://www.fda.gov/media/176510/download)
-- FDA, *Withdrawn: FDA grants accelerated approval to melphalan flufenamide...* — [fda.gov](https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-fda-grants-accelerated-approval-melphalan-flufenamide-relapsed-or-refractory-multiple)
-
-**Development timelines / success rates**
-- PDUFA goals: 10-month standard / 6-month priority review — [FDA, Priority Review](https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review)
-- Clinical development success rates (Phase 1 → approval, ~6.7–10%) — Biostatistics/Nature Reviews Drug Discovery literature (see reading list; figures compressed for in-game display).
-
-**Abigail Burroughs / Erbitux / Abigail Alliance**
-- *The Drug Chase*, CURE — [curetoday.com](https://www.curetoday.com/view/v4n3---the-drug-chase)
-- *Abigail Alliance v. Von Eschenbach: A closer look*, Fierce Biotech — [fiercebiotech.com](https://www.fiercebiotech.com/biotech/abigail-alliance-v-von-eschenbach-a-closer-look)
-- *The Abigail Alliance Case*, Neurology Today — [neurologytoday.aan.com](https://neurologytoday.aan.com/doi/10.1097/01.NT.0000337677.15055.11)
-- University of Pittsburgh, *Abigail Alliance case discussed: Balancing study drugs, safety* — [utimes.pitt.edu](https://www.utimes.pitt.edu/archives/?p=8605)
+| # | Trap | Chapter | Grounding |
+|---|------|---------|-----------|
+| 1 | Expanded access requires the manufacturer's agreement, and nothing compels it | Three Doors, door 1 | 21 CFR 312 Subpart I. FDA authorises the *use*; only the sponsor can *supply*. |
+| 2 | A single-patient IND still needs a supplier, so the loop closes | Three Doors, door 2 | Granted in days, worth nothing alone. Door 2 opens onto door 1. |
+| 3 | Right to Try removed two gatekeepers and left the third | Three Doors, door 3 | Right to Try Act 2018 bypasses FDA *and* the IRB, and does not oblige the manufacturer. |
+| 4 | Progression qualifies you; the decline it causes disqualifies you | Screening, Trial A | ECOG 0–1 requirement vs. ≥2 prior lines. Patients at ECOG ≥2 are historically well under 5% of registrational trial enrolment. |
+| 5 | Randomisation may spend your remaining time in the control arm | Screening, Trial B | 1:1 randomisation, no guaranteed crossover. |
+| 6 | Your insurer covers routine care but not the research-only care | The Research Bill | ACA §2709 / 42 USC §300gg-8 mandates routine costs, excludes the investigational item and anything "solely to satisfy data collection." |
+| 7 | IRB queues and clinical holds run on institutional time | The Institutional Crossing | 21 CFR 312.42; 30-day IND window; IRB calendars. |
+| 8 | **Off-label is legal but unfunded — and the blocker is not the FDA** | Prior Authorisation | *Added in v2.* The drug is approved, the prescription lawful, and the payer says no. 19% of marketplace in-network claims were denied in 2024. |
+| — | Accelerated approval, then withdrawal, ~3 years too late | Countdown | Avastin 2008→2011; Pepaxto 2021→2023-24. |
 
 ---
 
-## 5. Technical notes
+## 4. The Oregon Trail homage, specifically
 
-- Single self-contained `fda.html`, matching the Aileron dark/cyan house
-  style (Orbitron / Inter / Space Mono), no external dependencies beyond the
-  shared Google Fonts link used sitewide.
-- State machine: a linear array of **chapters**, each either a scripted
-  `milestone` (fixed regulatory beat, real citation shown) or a `travel` leg
-  (2–3 flavor choices with small, real resource trade-offs). No chapter or
-  branch grants a cure or long-term drug access — death is guaranteed by
-  Health reaching 0, and the chapter list is long enough relative to disease
-  decline rates that it always resolves before the "Countdown" chapter ends.
-- HUD tracks Health / Money / Hope / elapsed weeks at all times, styled as a
-  case-file readout rather than a game HUD.
-- A **Sources** screen (reachable from the end card and a persistent footer
-  link) lists the full bibliography above with live links, so every claim
-  the game makes is checkable.
+Researched against the 1971/78 BASIC source and transcriptions of the 1985
+Apple II disk, rather than from memory.
+
+**Borrowed:**
+- **"You may:"** — the original's characteristic menu prompt, kept verbatim.
+- **The river crossing.** 1985 offered *ford / caulk and float / take a ferry /
+  wait to see if conditions improve*, and told you the river's width and depth
+  first. The Institutional Crossing offers the same four moves against an IRB
+  queue and quotes its depth the same way.
+- **The tombstone.** "Would you like to write an epitaph?" The 1985 Apple II
+  input routine capped epitaphs at **29 characters** from a fixed alphabet
+  (letters, digits, space, comma, period, apostrophe, hyphen). Both limits are
+  enforced here.
+- **The gravesite.** The original wrote your tombstone back to the game *disk*,
+  so the next player of that copy met your grave ("YOU PASS A GRAVESITE. WOULD
+  YOU LIKE TO LOOK CLOSER?"). Reproduced with `localStorage`.
+- **Naming your party.** The original had you type the names of the people who
+  would then die in front of you. Here you name the one person coming with you,
+  and they appear through the script and at the death screen.
+- **The palette.** The 1985 version shipped a monitor-calibration screen naming
+  its whole colour vocabulary: *Orange, Green, Blue, Violet*, plus black and
+  white. Its travel screen was predominantly **black** with a single horizon
+  line above the wagon, and terrain shifted **green prairie → purple mountains**
+  at the halfway point. The scene here does the same, and uses the colour
+  change to mark the player's decline.
+
+**Deliberately inverted:**
+- **Occupations.** The original paid a *larger* score multiplier for starting
+  poorer (banker $1,600 ×1, carpenter $800 ×2, farmer $400 ×3) — "the harder
+  you have to try, the more points you deserve." Here there is one patient and
+  no multiplier. Starting with less money earns nothing; it kills you sooner.
+- **The Oregon Top Ten.** The original's meta-layer was a high-score board
+  rating you Trail Guide / Adventurer / Greenhorn. There is no score here,
+  because a score would imply the outcome measured how well you played.
+- **Arrival.** The Willamette Valley exists. There is no equivalent here.
+
+**A note on the famous line.** "You have died of dysentery" was **never on
+screen**. The game printed "*\<name\> has dysentery*" and later "*\<name\> died
+of dysentery*" — a named person, never "you." The remembered phrasing is a
+fusion of the two. A generation vividly remembers a sentence nobody saw, which
+is apt for a game about a system whose obstacles are almost universally
+attributed to the wrong institution.
+
+**Deliberate liberty:** the 1985 travel screen had no multi-layer parallax —
+that's a DOS-era feature. The light parallax here is a knowing anachronism.
+
+---
+
+## 5. The reskin lineage (cited in-game)
+
+- **Organ Trail: Director's Cut** — The Men Who Wear Many Hats, 2010 (Flash) /
+  2012–13. The canonical reskin.
+- **The Migrant Trail** — Gigantic Mechanic with Marco Williams, 2014. The most
+  important precedent: it proves the Oregon Trail form is *not neutral*. The
+  same mechanics that read as frontier optimism in 1985 read as lethal
+  attrition when the traveller is undocumented.
+- **MECC's own siblings** — Amazon Trail (1993), Yukon Trail (1994), MayaQuest
+  (1995), Africa Trail (1995). The publisher reskinned its own game repeatedly.
+- **Spent** (McKinney / Urban Ministries of Durham, 2011), **Cart Life**
+  (Hofmeier, 2011), **Papers, Please** (Pope, 2013), **Bury Me, My Love**
+  (The Pixel Hunt / ARTE, 2017), **Ayiti: The Cost of Life** (Global Kids /
+  Gamelab, 2006).
+
+**The three mechanics that actually carry the weight** (and which every
+successful reskin keeps): you type the names of the people who will die;
+failure is written to disk and shown to the next player; and every choice
+trades one resource against a *different* resource, never simply against money.
+This game keeps all three.
+
+---
+
+## 6. Money: sourcing policy
+
+Money is as easy to invent as it is to check, so the in-game Sources sheet
+lists **every dollar figure with its own citation and the year it refers to**,
+and flags scenario assumptions as assumptions rather than laundering them.
+
+Cited figures used:
+- Marketplace Silver deductible **$5,304** (2026, KFF); OOP max **$10,600**
+  (2026 self-only, HHS revised figure).
+- **19%** of in-network marketplace claims denied in 2024; **<1%** appealed;
+  **66%** of appeals upheld; only **5%** of denials cited lack of medical
+  necessity while **36%** were logged as "other" (KFF).
+- Additional out-of-pocket cost of a cancer diagnosis: **$592.53/month**
+  overall, **$719.97/month** at stage IV (JAMA Network Open 2025, 2024 dollars)
+  — used to calibrate the weekly care charge.
+- CT abdomen/pelvis with contrast: **$1,654** median commercial vs **$431**
+  Medicare (Radiology 2021). *This replaced a bone-marrow biopsy in v1, which
+  was a myeloma procedure and clinically wrong for this patient.*
+- Sotorasib launch list price **$17,900/month** (May 2021).
+- Trial travel **~$600/month**; **48%** of phase I participants report ≥$1,000/mo
+  out of pocket, **50%** live >300 miles from the clinic (The Oncologist 2021).
+- **70%** of US counties had no active cancer trial in 2022 (JCO OP 2024).
+- Crowdfunding: median goal **$10,000**, median raised **$4,000**, only **11.5%**
+  reach goal (JNCCN 2025).
+- Median US household income **$83,730** (Census 2024); **37%** of adults could
+  not cover a $400 emergency expense with cash (Federal Reserve).
+
+**Flagged as scenario assumptions, not statistics:** starting savings ($12,000),
+20% coinsurance, weekly take-home pay ($850).
+
+**Deliberately omitted:** PET/CT, bone marrow biopsy, single infusion visit and
+office visit prices. No source worth citing could be found — the figures that
+circulate come from price-comparison sites, not research. The game says so in
+its Sources sheet rather than filling the gap with plausible numbers.
+
+---
+
+## 7. Technical notes
+
+- Single self-contained `fda.html`. No dependencies beyond Google Fonts
+  (Press Start 2P for headings/HUD, VT323 for body, Inter/Space Mono for the
+  end card).
+- Pixel art drawn procedurally to a 160×96 canvas with
+  `imageSmoothingEnabled = false`, upscaled with `image-rendering: pixelated`.
+  No image assets.
+- Numbered menus are keyboard-selectable (press 1–4), as the original was.
+- Square-wave UI blips via Web Audio, mutable from the nav — and silent from
+  the death screen onward, deliberately.
+- Bills route through a real deductible → coinsurance → out-of-pocket-maximum
+  model rather than being flat subtractions.
+- A turn-claim guard (`claimTurn()`) prevents a fast double-click applying one
+  choice twice; found by hammer-testing, not by reading the code.
