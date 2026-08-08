@@ -1267,7 +1267,7 @@
     // ── Service worker: offline app shell for the installed app ──
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () { /* offline caching is best-effort */ });
+        navigator.serviceWorker.register('/punbearable-sw.js', { scope: '/punbearable.html' }).catch(function () { /* offline caching is best-effort */ });
       });
     }
   </script>

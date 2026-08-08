@@ -15,12 +15,17 @@ package.
 | File | Purpose |
 | --- | --- |
 | `pun-bearable.webmanifest` | Web App Manifest (name, icons, colors, `start_url`) |
-| `sw.js` | Service worker — offline app shell (page + all 40 cards + icons) |
+| `punbearable-sw.js` | Service worker — offline app shell (page + all 40 cards + icons) |
 | `assets/app-icons/` | App icons: `icon-192/512`, `icon-maskable-192/512`, `apple-touch-icon-180`, `icon-1024` (store) |
 | `.well-known/assetlinks.json` | Digital Asset Links — **fingerprint placeholder to fill in** |
-| `android/twa-manifest.json` | Bubblewrap config (package id, colors, URLs, icons) |
+| `android/punbearable/twa-manifest.json` | Bubblewrap config (package id, colors, URLs, icons) |
+| `android/punbearable/.gitignore` | Keeps keys/build artifacts out of git |
 
-`punbearable.html` links the manifest, sets `theme-color`, and registers `sw.js`.
+> The Pun Bearable TWA lives in its own `android/punbearable/` folder so it
+> stays separate from the native **God Does Not Play Dice** Android project,
+> which lives directly in `android/`.
+
+`punbearable.html` links the manifest, sets `theme-color`, and registers `punbearable-sw.js`.
 
 ## Prerequisites
 
@@ -50,14 +55,14 @@ merging to `main` publishes them. Confirm each URL returns `200`.
 From the repo root:
 
 ```bash
-cd android
+cd android/punbearable
 # Initialize the project from the web manifest (uses twa-manifest.json here).
 bubblewrap init --manifest="https://aileron.games/pun-bearable.webmanifest"
 # ...or, to reuse the committed config directly:
 #   bubblewrap build   (run this once a twa-manifest.json + keystore exist)
 ```
 
-- When prompted, accept the values from `android/twa-manifest.json`
+- When prompted, accept the values from `android/punbearable/twa-manifest.json`
   (package id `games.aileron.punbearable`, colors, etc.).
 - Bubblewrap will offer to **create a signing key** — say yes. It writes
   `android.keystore` (alias `android`). **Keep this file and its passwords
@@ -74,7 +79,7 @@ Outputs:
 - `app-release-bundle.aab` — for the Play Store
 
 > `android.keystore`, `*.apk`, and `*.aab` are git-ignored (see
-> `android/.gitignore`) — never commit signing keys or build artifacts.
+> `android/punbearable/.gitignore`) — never commit signing keys or build artifacts.
 
 ## 3. Wire up Digital Asset Links (removes the URL bar)
 
@@ -140,7 +145,7 @@ with **no address bar**. If you see a URL bar, the fingerprint/host in
 
 - **Web/game changes:** just deploy the site — the TWA loads the live page, so
   users get updates instantly (the service worker refreshes its cache on the
-  next visit; bump `VERSION` in `sw.js` to force a refresh).
+  next visit; bump `VERSION` in `punbearable-sw.js` to force a refresh).
 - **Native shell changes** (icon, name, colors, new Android features): edit
-  `android/twa-manifest.json`, bump `appVersionCode` (and `appVersionName`),
+  `android/punbearable/twa-manifest.json`, bump `appVersionCode` (and `appVersionName`),
   run `bubblewrap update && bubblewrap build`, and upload the new `.aab`.

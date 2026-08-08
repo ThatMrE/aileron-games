@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weji &mdash; The Emoji Ouija Board</title>
   <meta name="description" content="Weji is an emoji Ouija board. Ask a question and the spirits spell out an answer in three emoji, guided by the planchette. Made in RVA.">
+
+  <!-- PWA: installable Android/iOS app (namespaced so it coexists with the site's other apps) -->
+  <link rel="manifest" href="/weji.webmanifest">
+  <meta name="theme-color" content="#0c0705">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Weji">
+  <link rel="apple-touch-icon" href="/icons/weji-apple-touch.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/weji-favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/icons/weji-512.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -76,6 +88,21 @@
       white-space: nowrap;
     }
     .nav-home:hover { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    #installBtn {
+      display: none;                 /* revealed by JS when installable */
+      font-family: 'Space Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #1c1109; cursor: pointer;
+      background: linear-gradient(180deg, var(--gold), #b9843f);
+      border: 1px solid #d8a75a; border-radius: 6px;
+      padding: 0.5rem 0.9rem; white-space: nowrap;
+      box-shadow: 0 3px 10px rgba(201,151,79,0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+      transition: transform 0.12s, box-shadow 0.2s;
+    }
+    #installBtn:hover { transform: translateY(-1px); box-shadow: 0 5px 16px rgba(201,151,79,0.45), inset 0 1px 0 rgba(255,255,255,0.3); }
+    #installBtn.show { display: inline-block; }
+    @media (max-width: 480px) { .nav-home { display: none; } }
 
     /* ── Masthead ── */
     header { text-align: center; margin-bottom: 2rem; }
@@ -425,7 +452,10 @@
       <a class="brand-logo" href="index.html" aria-label="Aileron Games — back to home">
         <span class="tri" aria-hidden="true">&#9652;</span> Aileron
       </a>
-      <a class="nav-home" href="index.html">&larr; Back to Aileron Games</a>
+      <div class="nav-right">
+        <button id="installBtn" type="button" aria-label="Install the Weji app">&#128241; Install app</button>
+        <a class="nav-home" href="index.html">&larr; Back to Aileron Games</a>
+      </div>
     </nav>
 
     <header>
@@ -849,6 +879,34 @@
     lightboxClose.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+
+    /* ── PWA: service worker + install prompt ── */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Scoped to /weji.html so it coexists with the site's other app workers.
+        navigator.serviceWorker.register('/weji-sw.js', { scope: '/weji.html' }).catch(() => {});
+      });
+    }
+
+    // Android/Chrome custom install button
+    const installBtn = document.getElementById('installBtn');
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.classList.add('show');
+    });
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBtn.classList.remove('show');
+    });
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      installBtn.classList.remove('show');
     });
   </script>
 </body>

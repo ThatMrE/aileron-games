@@ -1,7 +1,9 @@
 /* Pun Bearable service worker — offline app shell for the PWA / TWA.
-   Scoped conservatively: it only handles the Pun Bearable page, its card art,
-   icons, manifest and the Google Fonts it uses. All other site requests
-   (the studio homepage, Weji, etc.) pass straight through to the network. */
+   Registered with scope "/punbearable.html" so it coexists with the site's
+   other app service workers (dice-sw.js at scope "/", weji-sw.js at
+   "/weji.html"): the most specific scope controls the Pun Bearable page.
+   Cache cleanup below only touches this app's own "pb-" caches, so it never
+   evicts a sibling app's cache. */
 
 const VERSION = 'pb-v1';
 const SHELL_CACHE = 'pb-shell-' + VERSION;
@@ -52,7 +54,10 @@ self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (keys) {
       return Promise.all(keys.map(function (k) {
-        if (k !== SHELL_CACHE && k !== RUNTIME_CACHE) { return caches.delete(k); }
+        // Only evict *this* app's stale caches — never a sibling app's.
+        if (k.indexOf('pb-') === 0 && k !== SHELL_CACHE && k !== RUNTIME_CACHE) {
+          return caches.delete(k);
+        }
       }));
     }).then(function () { return self.clients.claim(); })
   );
