@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FDA: Forever Doesn&rsquo;t Allow &mdash; An Oregon Trail for Drug Approval | Aileron Games</title>
+<meta name="description" content="An 8-bit Oregon Trail reskin built from real FDA regulation. Your health stat is the real ECOG performance scale. You will not win. The ending is a real patient's real timeline, with citations.">
+<meta property="og:title" content="FDA: Forever Doesn't Allow">
+<meta property="og:description" content="An Oregon Trail for the drug approval process. Every rule is a real regulation. There is no win state.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* 8-bit / EGA-leaning palette */
+    --sky:#6fb2d8; --tan:#c9a06a; --tanD:#a87f4d; --trail:#8a6538;
+    --amber:#ffc447; --amberD:#c8901f;
+    --green:#63d16a; --red:#ff5c5c; --redD:#c03a3a;
+    --cyan:#00e5ff;
+    --paper:#e8e2cf;
+    --ink:#1b1e28;
+    --bezel:#20242f; --bezelD:#14171f; --screen:#0d1017;
+    --line:#39404f;
+    --dim:#8d97ab;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:#07080c; color:var(--paper);
+    font-family:'VT323',monospace;
+    -webkit-font-smoothing:none;
+    image-rendering:pixelated;
+    min-height:100vh;
+  }
+  a{color:inherit;text-decoration:none;}
+  .px{font-family:'Press Start 2P',monospace;}
+
+  /* ── NAV ── */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0.8rem 1.2rem;background:#0b0d13;border-bottom:2px solid var(--line);
+    flex-wrap:wrap;gap:0.6rem;
+  }
+  .nav-logo{font-family:'Press Start 2P',monospace;font-size:0.66rem;color:var(--cyan);letter-spacing:0.02em;}
+  .nav-logo small{display:block;font-family:'VT323',monospace;font-size:0.85rem;color:var(--dim);letter-spacing:0.06em;margin-top:0.3rem;}
+  .nav-links{display:flex;align-items:center;gap:0.5rem;list-style:none;flex-wrap:wrap;}
+  .nav-btn{
+    font-family:'Press Start 2P',monospace;font-size:0.5rem;letter-spacing:0.02em;
+    color:var(--dim);background:none;border:2px solid var(--line);cursor:pointer;
+    padding:0.45rem 0.6rem;transition:none;
+  }
+  .nav-btn:hover{color:var(--amber);border-color:var(--amber);}
+
+  /* ── MONITOR ── */
+  .wrap{max-width:880px;margin:0 auto;padding:1.2rem 1rem 3rem;}
+  .monitor{
+    background:var(--bezel);
+    border:4px solid var(--bezelD);
+    box-shadow:0 0 0 2px #2c313d inset;
+    padding:0.7rem;
+  }
+  .screen{
+    background:var(--screen);
+    border:3px solid #000;
+    position:relative;
+    overflow:hidden;
+  }
+  /* scanlines */
+  .screen::after{
+    content:'';position:absolute;inset:0;pointer-events:none;z-index:6;
+    background:repeating-linear-gradient(to bottom, rgba(0,0,0,0.16) 0 1px, transparent 1px 3px);
+  }
+  .screen.clean::after{display:none;}
+
+  /* ── SCENE CANVAS ── */
+  #scene{display:block;width:100%;height:auto;image-rendering:pixelated;border-bottom:3px solid #000;background:#000;}
+  #scene.hide{display:none;}
+
+  /* ── HUD (Oregon Trail status readout) ── */
+  .hud{display:none;grid-template-columns:repeat(4,1fr);gap:2px;background:#000;}
+  .hud.show{display:grid;}
+  .hud-cell{background:#151a24;padding:0.5rem 0.55rem;}
+  .hud-k{font-family:'Press Start 2P',monospace;font-size:0.42rem;color:var(--dim);letter-spacing:0.02em;line-height:1.5;}
+  .hud-v{font-family:'Press Start 2P',monospace;font-size:0.72rem;color:var(--amber);margin-top:0.4rem;}
+  .hud-v.warn{color:var(--red);}
+  .hud-v.ok{color:var(--green);}
+  .hud-sub{font-size:0.9rem;color:var(--dim);line-height:1.25;margin-top:0.3rem;}
+
+  /* ── TEXT PANEL ── */
+  .panel{padding:1.1rem 1.2rem 1.3rem;}
+  .land{
+    font-family:'Press Start 2P',monospace;font-size:0.5rem;color:var(--amber);
+    letter-spacing:0.02em;margin-bottom:0.7rem;line-height:1.7;
+  }
+  .panel h2{
+    font-family:'Press Start 2P',monospace;font-size:0.95rem;line-height:1.65;
+    color:var(--paper);margin-bottom:0.9rem;letter-spacing:0.01em;
+  }
+  .panel h2 .hl{color:var(--amber);}
+  .txt{font-size:1.24rem;line-height:1.5;color:#cfd6e4;}
+  .txt p{margin-bottom:0.75rem;}
+  .txt b{color:var(--paper);}
+  .txt i{color:var(--amber);font-style:normal;}
+  .txt .bad{color:var(--red);}
+
+  /* citation block */
+  .cite{
+    border-left:4px solid var(--amberD);background:rgba(255,196,71,0.07);
+    padding:0.6rem 0.8rem;margin:0.9rem 0;font-size:1.08rem;line-height:1.45;color:#d8bd7e;
+  }
+  .cite b{color:var(--amber);}
+  .cite a{color:var(--cyan);text-decoration:underline;}
+
+  /* ── MENU (numbered, Oregon Trail style) ── */
+  .menu{margin-top:1.1rem;border-top:2px solid var(--line);padding-top:0.9rem;}
+  .menu-q{font-size:1.18rem;color:var(--dim);margin-bottom:0.6rem;}
+  .opt{
+    display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    color:#cfd6e4;font-family:'VT323',monospace;font-size:1.26rem;line-height:1.35;
+    padding:0.35rem 0.4rem;border-left:4px solid transparent;
+  }
+  .opt:hover,.opt:focus{color:var(--amber);border-left-color:var(--amber);background:rgba(255,196,71,0.07);outline:none;}
+  .opt .n{color:var(--amber);}
+  .opt .sub{display:block;color:var(--dim);font-size:1.06rem;padding-left:1.5rem;}
+  .opt .cost{display:block;padding-left:1.5rem;font-size:1.02rem;}
+  .cost .m{color:var(--amber);} .cost .h{color:var(--red);} .cost .t{color:var(--cyan);}
+  .cursor{display:inline-block;width:0.55em;height:1.05em;background:var(--amber);vertical-align:-0.16em;animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0}}
+
+  /* ── STAMP ── */
+  .stamp{
+    display:inline-block;font-family:'Press Start 2P',monospace;font-size:0.72rem;
+    color:var(--red);border:3px solid var(--red);padding:0.5rem 0.8rem;margin:0.9rem 0;
+    transform:rotate(-2deg);line-height:1.6;
+  }
+  .stamp.ok{color:var(--green);border-color:var(--green);}
+
+  /* ── DOORS ── */
+  .doors{display:grid;grid-template-columns:1fr;gap:0.6rem;margin:1rem 0;}
+  .door{border:2px solid var(--line);padding:0.75rem 0.85rem;background:#12161f;}
+  .door-h{font-family:'Press Start 2P',monospace;font-size:0.55rem;color:var(--cyan);line-height:1.7;margin-bottom:0.5rem;}
+  .door-r{font-size:1.12rem;line-height:1.45;color:#cfd6e4;}
+  .door-r .no{color:var(--red);font-family:'Press Start 2P',monospace;font-size:0.55rem;}
+  .door-r .yes{color:var(--green);font-family:'Press Start 2P',monospace;font-size:0.55rem;}
+
+  /* ── TOMBSTONE ── */
+  .tomb-wrap{text-align:center;padding:1.6rem 0 0.6rem;}
+  .tomb{
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    background:#9aa0ac;color:#3c4250;
+    padding:2.6rem 1.4rem 2rem;position:relative;
+    width:min(300px,88%);min-height:232px;margin:0 auto;text-align:center;
+    box-shadow:inset -4px -4px 0 0 #7d838f, inset 4px 4px 0 0 #b6bcc7;
+    border:4px solid #6a6f7c;
+    border-radius:130px 130px 0 0;
+  }
+  .tomb .rip{font-family:'Press Start 2P',monospace;font-size:0.6rem;margin-bottom:1.4rem;color:#5a606e;}
+  .tomb .epi{font-family:'Press Start 2P',monospace;font-size:0.56rem;line-height:2.1;word-break:break-word;max-width:21ch;}
+  .epi-input{
+    font-family:'Press Start 2P',monospace;font-size:0.55rem;background:#b6bcc7;color:#2b3140;
+    border:3px solid #6a6f7c;padding:0.5rem;width:100%;margin-top:0.6rem;text-align:center;
+  }
+  .grass{height:14px;background:#4f6b58;border-top:3px solid #3b5343;}
+
+  /* ── END CARD: deliberately NOT 8-bit ── */
+  .endcard{
+    background:#f6f4ee;color:#1b1e28;padding:2.2rem 2.1rem;
+    font-family:'Inter',system-ui,sans-serif;
+  }
+  .endcard .kicker{
+    font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.18em;
+    text-transform:uppercase;color:#6b7280;margin-bottom:0.9rem;
+  }
+  .endcard h2{font-family:'Inter',sans-serif;font-size:1.75rem;font-weight:600;line-height:1.25;margin-bottom:0.3rem;letter-spacing:-0.01em;}
+  .endcard .dates{font-family:'Space Mono',monospace;font-size:0.8rem;color:#6b7280;margin-bottom:1.4rem;}
+  .endcard p{font-size:1rem;line-height:1.78;margin-bottom:1rem;color:#33383f;}
+  .endcard p b{color:#0d0f14;font-weight:600;}
+  .endcard .rule{height:1px;background:#d6d2c6;margin:1.6rem 0;}
+  .endcard .small{font-size:0.85rem;color:#6b7280;line-height:1.7;}
+  .endcard a{color:#1d4ed8;text-decoration:underline;}
+  .end-actions{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.5rem;}
+  .ebtn{
+    font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+    padding:0.75rem 1.1rem;border:1px solid #1b1e28;background:none;color:#1b1e28;cursor:pointer;
+  }
+  .ebtn.solid{background:#1b1e28;color:#f6f4ee;}
+
+  /* ── LOG ── */
+  .log{
+    margin-top:0.7rem;border:2px solid var(--line);background:#0a0c11;
+    padding:0.55rem 0.7rem;max-height:132px;overflow-y:auto;font-size:1.05rem;line-height:1.35;display:none;
+  }
+  .log.show{display:block;}
+  .log div{color:var(--dim);}
+  .log div.bad{color:var(--red);} .log div.good{color:var(--green);} .log div.money{color:var(--amber);}
+
+  /* ── OVERLAY ── */
+  .ov{position:fixed;inset:0;z-index:400;background:rgba(4,5,8,0.94);display:none;align-items:flex-start;justify-content:center;padding:1.5rem 1rem;overflow-y:auto;}
+  .ov.show{display:flex;}
+  .sheet{
+    max-width:760px;width:100%;background:#0d1017;border:3px solid var(--line);padding:1.5rem 1.6rem;
+  }
+  .sheet h2{font-family:'Press Start 2P',monospace;font-size:0.85rem;color:var(--amber);margin-bottom:1rem;line-height:1.7;}
+  .sheet h3{font-family:'Press Start 2P',monospace;font-size:0.56rem;color:var(--cyan);margin:1.4rem 0 0.6rem;line-height:1.8;}
+  .sheet p{font-size:1.14rem;line-height:1.5;color:#cfd6e4;margin-bottom:0.7rem;}
+  .sheet ul{margin:0.3rem 0 0.7rem 1.1rem;}
+  .sheet li{font-size:1.1rem;line-height:1.55;color:#cfd6e4;margin-bottom:0.35rem;}
+  .sheet a{color:var(--cyan);text-decoration:underline;}
+  .sheet .num{color:var(--amber);}
+  .sheet-close{margin-top:1.4rem;}
+
+  footer{
+    text-align:center;padding:1.6rem 1rem 2.4rem;font-size:1.02rem;color:#5b6373;line-height:1.7;
+  }
+  footer a{color:var(--cyan);text-decoration:underline;cursor:pointer;}
+
+  @media(max-width:640px){
+    .hud.show{grid-template-columns:repeat(2,1fr);}
+    .panel h2{font-size:0.78rem;}
+    .nav-logo{font-size:0.55rem;}
+    .endcard{padding:1.5rem 1.2rem;}
+    .endcard h2{font-size:1.4rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">&#9652; AILERON<small>fda: forever doesn&rsquo;t allow</small></a>
+  <ul class="nav-links">
+    <li><button class="nav-btn" id="bSources">Sources</button></li>
+    <li><button class="nav-btn" id="bLineage">Reskins</button></li>
+    <li><button class="nav-btn" id="bSound">Sound: on</button></li>
+    <li><button class="nav-btn" id="bRestart">Restart</button></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <div class="monitor">
+    <div class="screen" id="screen">
+      <canvas id="scene" width="160" height="96"></canvas>
+      <div class="hud" id="hud"></div>
+      <div id="panel" class="panel"></div>
+    </div>
+  </div>
+  <div class="log" id="log"></div>
+</div>
+
+<footer>
+  A work of fiction assembled entirely from real, cited U.S. drug regulation. Not medical or legal advice.<br>
+  <a id="fSources">sources</a> &middot; <a id="fLineage">the reskin lineage</a> &middot; <a href="index.html">back to aileron games</a>
+</footer>
+
+<!-- ══════════ SOURCES ══════════ -->
+<div class="ov" id="ovSources"><div class="sheet">
+  <h2>Sources</h2>
+  <p>Every rule, criterion and dollar figure in this game comes from somewhere. This is where. The regulations are current U.S. law; the cost figures are real published averages, cited individually below; the patient is fictional and the disease is real.</p>
+  <div id="srcBody"></div>
+  <div class="sheet-close"><button class="nav-btn" onclick="closeOv()">&larr; back to the trail</button></div>
+</div></div>
+
+<!-- ══════════ RESKIN LINEAGE ══════════ -->
+<div class="ov" id="ovLineage"><div class="sheet">
+  <h2>The Reskin Lineage</h2>
+  <p>This game is a reskin, and reskinning <i>The Oregon Trail</i> to argue about something is an old and honourable tradition. It is worth naming what this is descended from.</p>
+  <div id="lineageBody"></div>
+  <div class="sheet-close"><button class="nav-btn" onclick="closeOv()">&larr; back to the trail</button></div>
+</div></div>
+
+<script>
+/* ==================================================================
+   FDA: FOREVER DOESN'T ALLOW
+   An 8-bit Oregon Trail reskin built on real FDA regulation.
+
+   Design notes that matter to the code:
+   - HEALTH IS ECOG. Oregon Trail displayed health as good/fair/poor.
+     Oncology has a real 0-5 scale for exactly this (ECOG performance
+     status), where grade 5 is death. So the health readout is the real
+     scale, and the trial-eligibility trap becomes mechanical rather
+     than narrated: trials want ECOG 0-1, progression pushes you to 2+.
+   - PRIOR LINES is the other half of the trap and is also a real
+     eligibility criterion. The two HUD numbers move in opposition:
+     you need lines of therapy to qualify, and each one costs you
+     performance status. The player can watch the trap close.
+   - No branch grants a cure or lasting access. Death is guaranteed by
+     design, not by a balancing accident.
+   - The pixel art stops when the real person starts: the end card
+     deliberately drops the 8-bit styling entirely.
+   ================================================================== */
+
+/* ─────────── SOURCES (single source of truth for citations) ─────────── */
+const SRC = {
+  ecog:      { t:'ECOG-ACRIN Cancer Research Group — ECOG Performance Status Scale', u:'https://ecog-acrin.org/resources/ecog-performance-status/' },
+  psRestrict:{ t:'Performance Status Restriction in Phase III Cancer Clinical Trials', u:'https://pmc.ncbi.nlm.nih.gov/articles/PMC9671537/' },
+  psFriends: { t:'Friends of Cancer Research — Rethinking ECOG Scores to Improve Patient Access', u:'https://friendsofcancerresearch.org/news/applied-clinical-trials-online-rethinking-ecog-scores-to-improve-patient-access-and-clinical-trials-eligibility/' },
+  eligStd:   { t:'Standardizing eligibility criteria in cancer clinical trials', u:'https://pmc.ncbi.nlm.nih.gov/articles/PMC9934063/' },
+  subpartI:  { t:'21 CFR Part 312, Subpart I — Expanded Access to Investigational Drugs', u:'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/subpart-I' },
+  eaGuide:   { t:'FDA — Expanded Access to Investigational Drugs for Treatment Use (guidance)', u:'https://www.fda.gov/media/162793/download' },
+  singleIND: { t:'FDA — Physician Request for a Single Patient IND', u:'https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/physician-request-single-patient-ind-compassionate-or-emergency-use' },
+  rtt:       { t:'FDA — Right to Try', u:'https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try' },
+  rttCRS:    { t:'Congressional Research Service — Right to Try: Access to Investigational Drugs (R45414)', u:'https://www.congress.gov/crs-product/R45414' },
+  hold:      { t:'21 CFR 312.42 — Clinical holds and requests for modification', u:'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312' },
+  irbTiming: { t:'WCG — Questions on the FDA’s 30-Day IND Review Period and IRB Approval', u:'https://www.wcgclinical.com/insights/questions-on-the-fdas-30-day-ind-review-period-and-irb-approval/' },
+  s2709:     { t:'42 U.S.C. §300gg-8 (ACA §2709) — Coverage for individuals in approved clinical trials', u:'https://uscode.house.gov/view.xhtml?req=%28title%3A42+section%3A300gg-8+edition%3Aprelim%29' },
+  cms2709:   { t:'CMS — ACA Implementation FAQs, Set 15 (routine costs vs. investigational item)', u:'https://www.cms.gov/cciio/resources/fact-sheets-and-faqs/aca_implementation_faqs15' },
+  avastin:   { t:'FDA — Regulatory Decision to Withdraw Avastin (bevacizumab) breast cancer indication', u:'https://www.fda.gov/media/79525/download' },
+  avastinNEJM:{t:'The Avastin Story — New England Journal of Medicine', u:'https://www.nejm.org/doi/full/10.1056/NEJMc1109550' },
+  pepaxto:   { t:'FDA — Final Decision to Withdraw Approval of Pepaxto (melphalan flufenamide)', u:'https://www.fda.gov/media/176510/download' },
+  pepaxtoAA: { t:'FDA — Withdrawn: accelerated approval, melphalan flufenamide', u:'https://www.fda.gov/drugs/resources-information-approved-drugs/withdrawn-fda-grants-accelerated-approval-melphalan-flufenamide-relapsed-or-refractory-multiple' },
+  sotoPanc:  { t:'Strickler et al., Sotorasib in KRAS p.G12C-Mutated Advanced Pancreatic Cancer, NEJM 2023', u:'https://www.nejm.org/doi/full/10.1056/NEJMoa2208470' },
+  sotoLung:  { t:'FDA — accelerated approval of sotorasib for KRAS G12C NSCLC (May 2021)', u:'https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sotorasib-kras-g12c-mutated-nsclc' },
+  abigailCURE:{t:'The Drug Chase — CURE Magazine (Abigail Burroughs)', u:'https://www.curetoday.com/view/v4n3---the-drug-chase' },
+  abigailFB: { t:'Abigail Alliance v. Von Eschenbach: A closer look — Fierce Biotech', u:'https://www.fiercebiotech.com/biotech/abigail-alliance-v-von-eschenbach-a-closer-look' },
+  abigailNT: { t:'The Abigail Alliance Case — Neurology Today', u:'https://neurologytoday.aan.com/doi/10.1097/01.NT.0000337677.15055.11' },
+  abigailPitt:{t:'Abigail Alliance case discussed — University of Pittsburgh University Times', u:'https://www.utimes.pitt.edu/archives/?p=8605' }
+};
+
+/* ─────────── COST SOURCES ─────────── */
+const COST_SRC = {
+  kffDeduct:  { t:'KFF — The average Marketplace deductible grew by about $1,000 per person in 2026', u:'https://www.kff.org/affordable-care-act/the-average-marketplace-deductible-grew-by-about-1000-per-person-in-2026-with-more-enrollees-shifting-to-higher-deductible-plans-as-enhanced-tax-credits-expired/' },
+  oopMax:     { t:'HHS/CMS 2026 cost-sharing limits (revised): $10,600 self-only', u:'https://www.wtwco.com/en-us/insights/2025/07/cms-releases-revised-2026-out-of-pocket-expense-limits' },
+  denialRate: { t:'KFF — Claims Denials and Appeals in ACA Marketplace Plans in 2024', u:'https://www.kff.org/patient-consumer-protections/claims-denials-and-appeals-in-aca-marketplace-plans-in-2024/' },
+  jamaOOP:    { t:'Estimated Out-of-Pocket Costs for Patients With Common Cancers and Private Insurance, JAMA Network Open 2025', u:'https://doi.org/10.1001/jamanetworkopen.2025.21575' },
+  radiology:  { t:'Jiang, Makary & Bai — hospital commercial vs Medicare prices for radiology, Radiology 2021', u:'https://doi.org/10.1148/radiol.2021211948' },
+  foundation: { t:'CMS clinical lab fee schedule rate for FoundationOne CDx comprehensive genomic profiling', u:'https://www.360dx.com/molecular-diagnostics/foundation-medicine-expects-boost-reimbursement-fda-approval-cms-coverage' },
+  lumakras:   { t:'Sotorasib (Lumakras) launched at a list price of $17,900 per month, May 2021 — CNBC', u:'https://www.cnbc.com/2021/05/28/fda-approves-amgen-drug-for-lung-cancer-with-specific-mutation-.html' },
+  huey:       { t:'Huey et al. — Financial toxicity in phase I oncology trial participants, The Oncologist 2021', u:'https://doi.org/10.1002/onco.13767' },
+  camTrial:   { t:'Understanding the financial cost of cancer clinical trial participation, Cancer Medicine 2024', u:'https://doi.org/10.1002/cam4.7185' },
+  ascoGeo:    { t:'Kirkwood et al. — geographic availability of US cancer trials, JCO Oncology Practice 2024', u:'https://doi.org/10.1200/OP.24.00261' },
+  crowdfund:  { t:'Cancer-Related Crowdfunding Economy in the United States, JNCCN 2025', u:'https://doi.org/10.6004/jnccn.2025.7069' },
+  census:     { t:'US Census Bureau — real median household income, $83,730 (2024)', u:'https://www.census.gov/newsroom/press-releases/2025/income-poverty-health-insurance-coverage.html' },
+  acsDebt:    { t:'ACS CAN Survivor Views — majority of cancer patients have or expect medical debt (2024)', u:'https://www.fightcancer.org/policy-resources/survivor-views-majority-cancer-patients-survivors-have-or-expect-have-medical-debt' },
+  fed400:     { t:'Federal Reserve — Economic Well-Being of U.S. Households (share who could cover a $400 emergency expense with cash)', u:'https://www.federalreserve.gov/publications/2026-economic-well-being-of-us-households-in-2025-savings-investments.htm' },
+  zajacova:   { t:'Zajacova et al. — earnings and employment after a cancer diagnosis, Cancer 2015', u:'https://doi.org/10.1002/cncr.29510' }
+};
+
+/* ─────────── COSTS: every dollar figure, with its citation ───────────
+   v = value, y = the year the figure refers to, s = COST_SRC key,
+   note = how the figure is used or derived. Figures marked
+   assumption:true are scenario choices, NOT published statistics —
+   they are flagged as such in the in-game Sources sheet, because a
+   game that cites its law properly should not launder its arithmetic. */
+const COSTS = {
+  savings:            { v:12000,  y:'—',    s:'census',    assumption:true,
+    note:'Starting liquid savings. A scenario assumption, roughly two months of real median household income ($83,730, 2024). Not a published savings statistic — the Federal Reserve reports 37% of adults could not cover even a $400 emergency expense with cash, so this patient starts better off than a great many real ones.' },
+  deductible:         { v:5304,   y:2026,   s:'kffDeduct',
+    note:'Average deductible for an ACA marketplace Silver plan, 2026. Marketplace deductibles rose sharply in 2026 as enhanced premium tax credits expired and enrollees shifted to higher-deductible plans.' },
+  oopMax:             { v:10600,  y:2026,   s:'oopMax',
+    note:'Annual out-of-pocket maximum for self-only coverage, 2026 plan year (revised figure; HHS initially published $10,150 before replacing it). Once reached, covered in-network cost sharing stops — the game models this.' },
+  coinsurance:        { v:0.20,   y:'—',    s:'kffDeduct', assumption:true,
+    note:'20% coinsurance after the deductible. A typical Silver-plan design and a scenario assumption, not a cited average.' },
+  weeklyWage:         { v:850,    y:2024,   s:'census',    assumption:true,
+    note:'Weekly take-home pay while working. Derived from real median household income ($83,730, 2024) for a single earner after tax — a scenario assumption. Real earnings loss is steeper than this game models: annual labour earnings fall roughly 40% within two years of a cancer diagnosis.' },
+  supportiveWeekly:   { v:166,    y:2024,   s:'jamaOOP',
+    note:'Weekly gross charge for ongoing supportive and oncology care. Calibrated so that, before the deductible is met, the player pays about $720 a month — the published additional out-of-pocket cost for a privately insured patient with stage IV disease ($719.97/month, 2024 dollars).' },
+  ngsPanel:           { v:3500,   y:2019,   s:'foundation',
+    note:'Comprehensive genomic profiling panel, gross charge. The CMS fee-schedule rate for FoundationOne CDx. This figure is the oldest in the game and may be stale.' },
+  sotorasibMonth:     { v:17900,  y:2021,   s:'lumakras',
+    note:'One month of sotorasib at the list price it launched with in May 2021. Cash price, because no insurer is paying for it in this scenario.' },
+  ctScan:             { v:1654,   y:2021,   s:'radiology',
+    note:'Median commercial negotiated price for CT of the abdomen and pelvis with contrast — the standard restaging scan in pancreatic cancer — against a Medicare rate of $431. Hospital radiology prices run roughly 2 to 6 times Medicare.' },
+  researchProcedures: { v:3308,   y:2021,   s:'radiology',
+    note:'Two protocol-mandated restaging CT scans beyond what the patient’s own oncologist would have ordered, at the median commercial price above. These are the scans that fall outside the ACA’s routine-cost protection.' },
+  trialTravel:        { v:600,    y:2021,   s:'huey',
+    note:'One month of travel and lodging to reach a trial site. Roughly the average among patients enrolled in one large centre’s trial expense programme. In phase I trials, 48% of patients report out-of-pocket costs of at least $1,000 a month, half live more than 300 miles from the clinic, and 37% need to fly.' },
+  crowdfundGoal:      { v:10000,  y:2023,   s:'crowdfund',
+    note:'Median goal of a cancer-related GoFundMe campaign, from 78,338 campaigns raising $506 million between 2021 and 2023.' },
+  crowdfundRaised:    { v:4000,   y:2023,   s:'crowdfund',
+    note:'Median amount actually raised by those campaigns. Only 11.5% reached their goal, and campaigns collectively received 34.5% of what they asked for.' }
+};
+
+/* Non-dollar statistics quoted in the script, kept here so they are
+   sourced in exactly the same place as the money. */
+const STAT = {
+  denialRate:'19%', denialAppealed:'fewer than 1%', denialUpheld:'66%',
+  denialMedNec:'5%', denialOther:'36%',
+  countiesNoTrials:'70%'
+};
+
+function initCosts(){ /* costs are static literals above; hook kept for clarity */ }
+
+/* ─────────── ECOG performance status (real scale, real wording) ─────────── */
+const ECOG = [
+  { g:0, label:'Fully active; able to carry on all activities without restriction.' },
+  { g:1, label:'Restricted in strenuous activity; ambulatory, able to do light or sedentary work.' },
+  { g:2, label:'Ambulatory and capable of all self-care, but unable to work; up and about more than half of waking hours.' },
+  { g:3, label:'Capable of only limited self-care; confined to bed or chair more than half of waking hours.' },
+  { g:4, label:'Completely disabled; no self-care; totally confined to bed or chair.' },
+  { g:5, label:'Dead.' }
+];
+/* reserve (0-100) -> ECOG grade */
+function ecogOf(reserve){
+  if(reserve<=0) return 5;
+  if(reserve<25) return 4;
+  if(reserve<45) return 3;
+  if(reserve<65) return 2;
+  if(reserve<85) return 1;
+  return 0;
+}
+
+/* ══════════════════ PIXEL ART ══════════════════
+   The 1985 Apple II version had six colours, and we know exactly which
+   six because the game shipped a monitor-calibration screen that names
+   them: Orange, Green, Blue, Violet — plus black and white. Its travel
+   screen was predominantly black, with one horizon line across the full
+   width and a silhouette landscape below it, and the terrain changed
+   from green prairie to purple mountains at the halfway point of the
+   journey. This scene does the same thing, and uses that colour change
+   to mark the player's own decline. (Approximate modern equivalents of
+   the Apple II hi-res artifact colours; emulators differ.) */
+const A2 = {
+  black:'#000000', white:'#ffffff',
+  green:'#2ee85c', violet:'#e14bff', blue:'#28a8ff', orange:'#ff7a29'
+};
+const PX = {
+  bg:A2.black, horizon:A2.white,
+  gown:A2.white, skin:A2.white, hair:A2.white,
+  pole:A2.white, bag:A2.green, tube:A2.white,
+  wheel:A2.white, black:A2.black,
+  post:A2.white, sign:A2.white,
+  coat:A2.orange, coatHair:A2.orange
+};
+const S_PATIENT_A=['...hhh..','..hhhhh.','..sssss.','..sssss.','...sss..','..ggggg.','.gggggggs','.ggggggg','.ggggggg','..ddddd.','..gg.gg.','..gg.gg.','..ss.ss.','.bb..bb.'];
+const S_PATIENT_B=['...hhh..','..hhhhh.','..sssss.','..sssss.','...sss..','..ggggg.','.gggggggs','.ggggggg','.ggggggg','..ddddd.','..ggggg.','.gg...gg','.ss...ss','bb....bb'];
+const P_PAL={h:PX.hair,s:PX.skin,g:PX.gown,d:A2.blue,b:PX.gown};
+const S_POLE=['.AAAA.','.AAAA.','.AAAA.','..PP..','..PP..','..PP..','..PP..','..PP..','..PP..','..PP..','.PPPP.','W....W'];
+const POLE_PAL={A:PX.bag,P:PX.pole,W:PX.wheel};
+const S_COMP=['..hhh..','.hhhhh.','.sssss.','.sssss.','..sss..','.ccccc.','cccccccs','.ccccc.','.ccccc.','.cc.cc.','.cc.cc.','.ss.ss.','bb...bb'];
+const C_PAL={h:PX.coatHair,s:PX.coat,c:PX.coat,b:PX.coat};
+
+const HORIZON=54, TRAIL_Y=80, FEET_Y=84;
+let sceneT=0, sceneMoving=true, sceneRAF=null;
+
+function spr(ctx,art,pal,ox,oy){
+  for(let y=0;y<art.length;y++){
+    const row=art[y];
+    for(let x=0;x<row.length;x++){
+      const ch=row[x]; if(ch==='.'||ch===' ')continue;
+      ctx.fillStyle=pal[ch]; ctx.fillRect(ox+x,oy+y,1,1);
+    }
+  }
+}
+/* terrain colour: green for the first half of the trail, violet for the
+   second — exactly as the 1985 game shifted from prairie to mountains */
+function terrainColor(){
+  if(!S||!CH||!CH.length) return A2.green;
+  return (S.i/CH.length < 0.5) ? A2.green : A2.violet;
+}
+function ridge(ctx,x,col){
+  x=Math.floor(x); ctx.fillStyle=col;
+  for(let i=0;i<6;i++){
+    const bx=x+i*44, peak=6+((i*5)%7);
+    for(let dx=0;dx<44;dx++){
+      const h=Math.round(peak*Math.sin(Math.PI*dx/44));
+      if(h>0) ctx.fillRect(bx+dx,HORIZON-h,1,h);
+    }
+  }
+}
+/* institutional silhouettes on the skyline — the joke, in period style */
+function tower(ctx,x,w,h,col){
+  x=Math.floor(x); const top=HORIZON-h;
+  ctx.fillStyle=col; ctx.fillRect(x,top,w,h);
+  ctx.fillStyle=PX.bg;
+  for(let wy=top+3;wy<HORIZON-2;wy+=4)
+    for(let wx=x+2;wx<x+w-2;wx+=3) ctx.fillRect(wx,wy,1,2);
+}
+function bush(ctx,x,y,col){x=Math.floor(x);ctx.fillStyle=col;ctx.fillRect(x,y,7,2);ctx.fillRect(x+2,y-2,3,2);}
+function signpost(ctx,x,col){
+  x=Math.floor(x); if(x<-40||x>200)return;
+  ctx.fillStyle=col; ctx.fillRect(x+11,TRAIL_Y-14,2,14);
+  ctx.fillRect(x,TRAIL_Y-24,24,11);
+  ctx.fillStyle=PX.bg;
+  for(let i=0;i<7;i++)ctx.fillRect(x+3+i*3,TRAIL_Y-21,2,1);
+  for(let i=0;i<5;i++)ctx.fillRect(x+5+i*3,TRAIL_Y-18,2,1);
+}
+function drawScene(){
+  const cv=document.getElementById('scene'); if(!cv) return;
+  const ctx=cv.getContext('2d'); ctx.imageSmoothingEnabled=false;
+  const W=160,H=96,t=sceneT,col=terrainColor();
+
+  ctx.fillStyle=PX.bg; ctx.fillRect(0,0,W,H);
+  ridge(ctx,-(t*0.22)%44-44,col);
+  const bx=-(t*0.45)%150;
+  for(let k=-1;k<3;k++){const o=bx+k*150;
+    tower(ctx,o+12,16,24,col); tower(ctx,o+34,10,15,col);
+    tower(ctx,o+86,20,30,col); tower(ctx,o+112,12,18,col);}
+  // the single horizon line, all the way across
+  ctx.fillStyle=PX.horizon; ctx.fillRect(0,HORIZON,W,1);
+  const sx=-(t*0.85)%64;
+  for(let k=-1;k<4;k++) bush(ctx,sx+k*64+9,HORIZON+10,col);
+  signpost(ctx,190-((t*1.5)%300),col);
+  // the trail itself: a dashed line, not a painted road
+  ctx.fillStyle=col;
+  const dx=-(t*1.5)%14;
+  for(let x=dx;x<W;x+=14) ctx.fillRect(Math.floor(x),TRAIL_Y+6,7,1);
+
+  const bob=Math.floor(t/8)%2, art=bob?S_PATIENT_A:S_PATIENT_B;
+  const py=FEET_Y-art.length+(bob?0:1);
+  const cbob=Math.floor((t+5)/8)%2;
+  spr(ctx,S_COMP,C_PAL,52,FEET_Y-S_COMP.length+(cbob?1:0));
+  spr(ctx,S_POLE,POLE_PAL,78,FEET_Y-S_POLE.length);
+  spr(ctx,art,P_PAL,66,py);
+  ctx.fillStyle=PX.tube; ctx.fillRect(74,py+5,5,1);
+}
+function sceneLoop(){ if(sceneMoving) sceneT++; drawScene(); sceneRAF=requestAnimationFrame(sceneLoop); }
+
+/* ══════════════════ SOUND (square-wave blips) ══════════════════ */
+let actx=null, soundOn=true;
+function beep(freq,dur,type){
+  if(!soundOn) return;
+  try{
+    if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)();
+    const o=actx.createOscillator(), g=actx.createGain();
+    o.type=type||'square'; o.frequency.value=freq;
+    g.gain.value=0.045;
+    o.connect(g); g.connect(actx.destination);
+    const now=actx.currentTime;
+    g.gain.setValueAtTime(0.045,now);
+    g.gain.exponentialRampToValueAtTime(0.0005,now+dur);
+    o.start(now); o.stop(now+dur);
+  }catch(e){/* audio unavailable; game is fully playable silent */}
+}
+const sfxMove=()=>beep(330,0.06);
+const sfxPick=()=>beep(520,0.05);
+const sfxBad =()=>{beep(180,0.13);setTimeout(()=>beep(120,0.18),110);};
+
+/* ══════════════════ STATE ══════════════════ */
+let S=null, CH=[];
+
+function money(n){ return (n<0?'−$':'$')+Math.abs(Math.round(n)).toLocaleString(); }
+function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+function rnd(a,b){ return a+Math.random()*(b-a); }
+
+function newGame(){
+  S={ reserve:96, funds:COSTS.savings.v, week:0, lines:0, i:0,
+      spentOOP:0, deductibleMet:false, flags:{}, log:[], dead:false, busy:false,
+      epitaph:'', companion:'' };
+  CH=buildChapters();
+  sceneMoving=true;
+  document.getElementById('log').classList.remove('show');
+  document.getElementById('hud').classList.remove('show');
+  document.getElementById('screen').classList.remove('clean');
+  document.getElementById('scene').classList.remove('hide');
+  // the end card replaces #panel wholesale, so restore its class on restart
+  const p=document.getElementById('panel');
+  p.className='panel'; p.removeAttribute('style');
+  closeOv();
+  titleScreen();
+}
+
+/* ══════════════════ HUD ══════════════════ */
+function hud(){
+  const g=ecogOf(S.reserve);
+  const el=document.getElementById('hud');
+  el.classList.add('show');
+  el.innerHTML=`
+    <div class="hud-cell">
+      <div class="hud-k">Performance<br>status</div>
+      <div class="hud-v ${g>=2?'warn':'ok'}">ECOG ${g}</div>
+      <div class="hud-sub">${ECOG[g].label}</div>
+    </div>
+    <div class="hud-cell">
+      <div class="hud-k">Prior lines<br>of therapy</div>
+      <div class="hud-v">${S.lines}</div>
+      <div class="hud-sub">${S.lines<2?'Most later-line trials want 2 or more.':'Enough to qualify on paper.'}</div>
+    </div>
+    <div class="hud-cell">
+      <div class="hud-k">Funds</div>
+      <div class="hud-v ${S.funds<0?'warn':''}">${money(S.funds)}</div>
+      <div class="hud-sub">Out of pocket so far: ${money(S.spentOOP)}</div>
+    </div>
+    <div class="hud-cell">
+      <div class="hud-k">Week on<br>the trail</div>
+      <div class="hud-v">${S.week}</div>
+      <div class="hud-sub">${S.deductibleMet?'Deductible met.':'Deductible not yet met.'}</div>
+    </div>`;
+}
+
+function logIt(t,c){
+  S.log.push({t,c:c||''});
+  const el=document.getElementById('log');
+  el.classList.add('show');
+  el.innerHTML=S.log.map(l=>`<div class="${l.c}">&gt; ${l.t}</div>`).join('');
+  el.scrollTop=el.scrollHeight;
+}
+
+/* bills route through the deductible / OOP maximum like real coverage */
+function bill(gross){
+  let out;
+  if(!S.deductibleMet){
+    const remaining=COSTS.deductible.v-S.spentOOP;
+    if(gross<=remaining){ out=gross; }
+    else { out=remaining+(gross-remaining)*COSTS.coinsurance.v; S.deductibleMet=true; }
+  } else {
+    out=gross*COSTS.coinsurance.v;
+  }
+  const capLeft=COSTS.oopMax.v-S.spentOOP;
+  out=Math.max(0,Math.min(out,capLeft));
+  S.spentOOP+=out; S.funds-=out;
+  if(S.spentOOP>=COSTS.deductible.v) S.deductibleMet=true;
+  return out;
+}
+
+/* ══════════════════ ENGINE ══════════════════ */
+function claim(){ if(S.dead||S.busy) return false; S.busy=true; return true; }
+
+function apply(d){
+  d=d||{};
+  if(d.reserve) S.reserve+=d.reserve;
+  if(d.funds) S.funds+=d.funds;
+  if(d.lines) S.lines+=d.lines;
+  S.week+=(d.weeks===undefined?1:d.weeks);
+  S.reserve=clamp(S.reserve,0,100);
+}
+function step(d,text,cls){
+  if(!claim()) return;
+  apply(d);
+  if(text) logIt(text,cls);
+  hud();
+  if(S.reserve<=0){ S.dead=true; setTimeout(death,420); return; }
+  S.i++;
+  if(S.i>=CH.length){ S.dead=true; setTimeout(death,420); return; }
+  render();
+}
+function render(){
+  S.busy=false; hud(); sceneMoving=true;
+  document.getElementById('scene').classList.remove('hide');
+  const c=CH[S.i];
+  if(c.kind==='travel') travelScreen(c); else c.go();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* menu builder: numbered options, keyboard-selectable */
+let keyMap={};
+function menu(q,opts){
+  keyMap={};
+  const html=opts.map((o,i)=>{
+    keyMap[String(i+1)]=o.fn;
+    return `<button class="opt" onclick="(${o.fn})()">
+      <span class="n">${i+1}.</span> ${o.label}
+      ${o.sub?`<span class="sub">${o.sub}</span>`:''}
+      ${o.cost?`<span class="cost">${o.cost}</span>`:''}
+    </button>`;
+  }).join('');
+  return `<div class="menu"><div class="menu-q">${q||'What is your choice?'} <span class="cursor"></span></div>${html}</div>`;
+}
+document.addEventListener('keydown',e=>{
+  const fn=keyMap[e.key];
+  if(fn){ e.preventDefault(); sfxPick(); fn(); }
+});
+
+/* ══════════════════ SCREENS ══════════════════ */
+function titleScreen(){
+  document.getElementById('hud').classList.remove('show');
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Aileron Games presents</div>
+    <h2>FDA:<br><span class="hl">FOREVER DOESN&rsquo;T ALLOW</span></h2>
+    <div class="txt">
+      <p>You are 41 years old. You have <b>metastatic pancreatic adenocarcinoma</b>. Your tumour carries a mutation called <b>KRAS G12C</b>, which occurs in roughly 1 to 2% of pancreatic cancers. You are insured &mdash; a marketplace Silver plan, ${money(COSTS.deductible.v)} deductible &mdash; and you have ${money(COSTS.savings.v)} in savings, which makes you luckier than most people who walk this trail.</p>
+      <p>There is a drug that targets exactly that mutation. It is FDA-approved. It is not approved for your organ.</p>
+      <p>This trail cannot be completed. Every obstacle on it is a real, currently-in-force rule, cited on screen as you meet it. There is no score and no win state. That is the argument, not the difficulty setting.</p>
+    </div>
+    ${menu('You may:',[
+      {label:'Travel the trail', sub:'Begin. It takes about ten minutes.', fn:'nameCompanion'},
+      {label:'Learn about the approval process', sub:'The eight structural traps, with citations.', fn:'openSources'},
+      {label:'See the reskin lineage', sub:'Oregon Trail, Organ Trail, The Migrant Trail, and this.', fn:'openLineage'},
+      {label:'Turn sound off', sub:'As the original menu offered.', fn:'toggleSound'}
+    ])}`;
+}
+function toggleSound(){
+  soundOn=!soundOn;
+  document.getElementById('bSound').textContent='Sound: '+(soundOn?'on':'off');
+  titleScreen();
+}
+
+/* The Oregon Trail had you type the names of the people who would die.
+   It is the single most load-bearing thing in the game, so it is here. */
+function nameCompanion(){
+  sfxMove();
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Before you set out</div>
+    <h2>WHO IS COMING<br>WITH YOU?</h2>
+    <div class="txt">
+      <p>The Oregon Trail asked you to type the names of your party before it began, and then killed them one at a time in front of you. It knew exactly what it was doing.</p>
+      <p>Somebody is going to drive you to the infusions, sit in the chairs, argue with the prior-authorisation department, and lose income doing it. Give them a name.</p>
+    </div>
+    <div class="menu">
+      <div class="menu-q">What is their first name? <span class="cursor"></span></div>
+      <input class="epi-input" id="compIn" maxlength="14" placeholder="TYPE A NAME"
+        style="background:#151a24;color:var(--amber);border-color:var(--line);text-align:left;">
+      <button class="opt" style="margin-top:0.7rem" onclick="startTrail()"><span class="n">&rarr;</span> Set out</button>
+    </div>`;
+  const inp=document.getElementById('compIn');
+  inp.focus();
+  inp.addEventListener('keydown',e=>{
+    e.stopPropagation();
+    if(e.key==='Enter') startTrail();
+  });
+}
+function startTrail(){
+  const inp=document.getElementById('compIn');
+  const v=inp?inp.value.trim():'';
+  S.companion = v ? v.replace(/[^A-Za-z0-9 .,'-]/g,'').slice(0,14) : 'your sister';
+  sfxMove(); S.i=0; render();
+}
+
+/* ── Gravesite: the 1985 game wrote your tombstone back to the disk, so
+   the next person to play that copy would meet your grave on the trail
+   ("YOU PASS A GRAVESITE. WOULD YOU LIKE TO LOOK CLOSER?"). This does the
+   same thing with localStorage: your last epitaph waits for your next run. */
+function loadGrave(){
+  try{ return JSON.parse(localStorage.getItem('fda_grave')||'null'); }catch(e){ return null; }
+}
+function saveGrave(){
+  try{
+    localStorage.setItem('fda_grave', JSON.stringify({
+      epi:S.epitaph||'', week:S.week, comp:S.companion||'', oop:Math.round(S.spentOOP)
+    }));
+  }catch(e){/* private browsing; the grave simply does not persist */}
+}
+function gravesiteScreen(){
+  const g=S.flags.grave;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Week ${S.week+1} &mdash; on the trail</div>
+    <h2>YOU PASS A<br>GRAVESITE</h2>
+    <div class="txt">
+      <p>Someone walked this trail before you and did not finish it either. The marker is still legible.</p>
+    </div>
+    <div class="tomb-wrap"><div class="tomb">
+      <div class="rip">HERE LIES</div>
+      <div class="epi">${(g.epi||'A PATIENT WHO MET EVERY CRITERION BUT ONE').replace(/</g,'&lt;')}</div>
+    </div></div>
+    <div class="grass"></div>
+    <div class="txt" style="margin-top:0.9rem;">
+      <p>They lasted ${g.week} weeks and paid ${money(g.oop)} out of pocket${g.comp?`, with ${g.comp.replace(/</g,'&lt;')} beside them`:''}.</p>
+      <p style="color:var(--dim)">That was you, last time. The Oregon Trail saved your tombstone to the disk so the next player would find it. This does the same.</p>
+    </div>
+    ${menu('You may:',[
+      {label:'Pay your respects and move on', fn:'travelRest'}
+    ])}`;
+}
+
+function travelScreen(c){
+  const g=ecogOf(S.reserve);
+  // one gravesite per run, once we are properly out on the trail
+  if(!S.flags.graveShown && S.i>5){
+    const grave=loadGrave();
+    if(grave){ S.flags.graveShown=true; S.flags.grave=grave; gravesiteScreen(); return; }
+  }
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Week ${S.week+1} &mdash; on the trail &mdash; ${c.label}</div>
+    <h2>${c.head}</h2>
+    <div class="txt"><p>${c.body}</p></div>
+    ${menu('How are you spending this week?',[
+      { label:'Keep working, keep every appointment',
+        sub:'Oregon Trail called this a grueling pace. Here it means holding down a job through chemotherapy.',
+        cost:`<span class="h">performance status falls faster</span> &middot; <span class="m">income ${money(COSTS.weeklyWage.v)}</span>`,
+        fn:'travelWork' },
+      { label:'Cut back to part time',
+        sub:'Fewer hours, less money, a little less wear.',
+        cost:`<span class="h">steady decline</span> &middot; <span class="m">income ${money(Math.round(COSTS.weeklyWage.v*0.45))}</span>`,
+        fn:'travelPart' },
+      { label:'Stop working and rest',
+        sub:'The slowest decline available to you. It is not a treatment.',
+        cost:`<span class="h">slowest decline</span> &middot; <span class="m">no income</span>`,
+        fn:'travelRest' },
+      { label:'Skip this week&rsquo;s supportive care to save the copay',
+        sub:'Oregon Trail let you set rations to &ldquo;bare bones.&rdquo; This is that setting.',
+        cost:`<span class="h">sharper decline</span> &middot; <span class="m">saves ${money(COSTS.supportiveWeekly.v)}</span>`,
+        fn:'travelSkip' }
+    ])}`;
+}
+function travelWork(){
+  const d=rnd(4.5,7.0)+ (S.funds<0?0.8:0);
+  const g=bill(COSTS.supportiveWeekly.v);
+  step({reserve:-d, funds:COSTS.weeklyWage.v, weeks:1},
+    `You worked through the week. Supportive care cost you ${money(g)}.`,'money');
+}
+function travelPart(){
+  const d=rnd(3.6,5.6)+ (S.funds<0?0.8:0);
+  const g=bill(COSTS.supportiveWeekly.v);
+  step({reserve:-d, funds:Math.round(COSTS.weeklyWage.v*0.45), weeks:1},
+    `Part-time week. Supportive care cost you ${money(g)}.`,'money');
+}
+function travelRest(){
+  const d=rnd(2.4,4.2)+ (S.funds<0?0.8:0);
+  const g=bill(COSTS.supportiveWeekly.v);
+  step({reserve:-d, funds:0, weeks:1},
+    `You rested. Supportive care cost you ${money(g)}.`,'money');
+}
+function travelSkip(){
+  const d=rnd(6.0,8.5)+ (S.funds<0?0.8:0);
+  step({reserve:-d, funds:0, weeks:1},
+    'You skipped supportive care to avoid the copay. The week cost you more than money.','bad');
+}
+
+/* ─────────── LANDMARKS ─────────── */
+
+function chDiagnosis(){
+  const panel=document.getElementById('panel');
+  panel.innerHTML=`
+    <div class="land">Landmark 1 of 9 &mdash; Diagnosis</div>
+    <h2>THE SCAN HAS<br>A NAME NOW</h2>
+    <div class="txt">
+      <p>Metastatic pancreatic adenocarcinoma. Your oncologist is kind and direct: first-line chemotherapy, probably FOLFIRINOX, and a molecular profile of the tumour so you know what you are dealing with.</p>
+      <p>Median overall survival with first-line chemotherapy in metastatic disease runs to roughly <b>11 months</b>. Five-year survival for metastatic pancreatic cancer is about <b>3%</b>. Nobody says these numbers out loud in the room. They are in the literature.</p>
+      <p>The sequencing panel is the thing that will matter later. It is also a bill.</p>
+    </div>
+    ${menu('Do you send the tumour for sequencing?',[
+      { label:'Yes. Send the full sequencing panel.',
+        sub:'It is how you would ever find a targetable mutation.',
+        cost:`<span class="m">billed ${money(COSTS.ngsPanel.v)} gross &mdash; your share depends on your deductible</span>`,
+        fn:'doSequence' }
+    ])}`;
+}
+function doSequence(){
+  const paid=bill(COSTS.ngsPanel.v);
+  step({reserve:-2, lines:1, weeks:2},
+    `Sequencing sent. Your share: ${money(paid)}. First-line chemotherapy begins.`,'money');
+}
+
+function chMutation(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 2 of 9 &mdash; The Molecular Report</div>
+    <h2>YOU HAVE THE<br><span class="hl">MUTATION</span></h2>
+    <div class="txt">
+      <p>The report comes back: <b>KRAS p.G12C</b>. For most of the history of this disease that would have been a curiosity. It is not any more, because a drug exists that targets that exact mutation.</p>
+      <p><b>Sotorasib</b> received accelerated FDA approval in <i>May 2021</i> for KRAS G12C non-small-cell lung cancer. It is on the market. It is manufactured at scale. Pharmacies stock it.</p>
+      <p>In the same trial programme, a cohort of heavily pretreated pancreatic cancer patients with your mutation was treated with it. The published response rate was <b>21%</b>, with median overall survival of <b>6.9 months</b>. Real, modest, and better than nothing.</p>
+      <p>It has never been approved for pancreatic cancer. Your mutation is right. Your organ is wrong.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> accelerated approval for NSCLC, May 2021 &mdash; ${A(SRC.sotoLung)}. Pancreatic cohort results (21% response, 6.9-month median OS) &mdash; Strickler et al., ${A(SRC.sotoPanc)}.</div>
+    ${menu('What do you ask your oncologist to do?',[
+      { label:'Ask her to prescribe it off-label anyway',
+        sub:'Legal. The FDA regulates drug marketing, not the practice of medicine. Whether anyone pays for it is a separate question.',
+        fn:'doOffLabel' }
+    ])}`;
+}
+function doOffLabel(){ step({reserve:-1,weeks:1},'Off-label prescription written and sent to your insurer for prior authorisation.'); }
+
+function chDenial(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 3 of 9 &mdash; Prior Authorisation</div>
+    <h2>NOT THE FDA.<br>THE <span class="hl">PAYER</span>.</h2>
+    <div class="txt">
+      <p>Your oncologist can legally write that prescription. She did. It came back denied: <i>not medically necessary for this indication &mdash; investigational.</i></p>
+      <p>This is the part people get wrong about drug access. Nothing in federal law forbids you this drug. The FDA is not in this conversation at all. A utilisation-management reviewer is, and the word &ldquo;investigational&rdquo; is doing work here that has nothing to do with the agency that coined it.</p>
+      <p>Denial is not an unusual outcome. Insurers on the federal marketplace denied <b>${STAT.denialRate}</b> of in-network claims in 2024 &mdash; about 85 million of them. Patients appealed <b>${STAT.denialAppealed}</b>, and insurers upheld their own denial in <b>${STAT.denialUpheld}</b> of the appeals they did receive.</p>
+      <p>Here is the detail that should bother you most. Of all those denials, only <b>${STAT.denialMedNec}</b> were recorded as being for lack of medical necessity. The single most common reason insurers gave, at <b>${STAT.denialOther}</b>, was the category <i>&ldquo;other&rdquo;</i>. The largest category of reason for refusing to pay for American medical care is a box marked <i>other</i>.</p>
+      <p>You can appeal. It costs weeks. Or you can pay cash: this drug launched at a list price of <b>${money(COSTS.sotorasibMonth.v)} per month</b>.</p>
+    </div>
+    <div class="cite" id="denialCite"></div>
+    ${menu('How do you respond to the denial?',[
+      { label:'File the appeal',
+        sub:'Costs you weeks. Most appeals of this kind fail, and yours is asking a payer to fund a use the label does not cover.',
+        cost:`<span class="t">3 weeks</span>`,
+        fn:'doAppeal' },
+      { label:'Pay one month cash and see if it does anything',
+        sub:'One month is not a course of treatment. It is a test you cannot really interpret.',
+        cost:`<span class="m">${money(COSTS.sotorasibMonth.v)} out of pocket</span>`,
+        fn:'doCash' },
+      { label:'Let it go and stay on chemotherapy',
+        sub:'The option most people take, because it is the only one that is free.',
+        fn:'doLetGo' }
+    ])}`;
+  document.getElementById('denialCite').innerHTML=
+    `<b>Cited:</b> off-label prescribing is lawful &mdash; the FDA regulates how drugs are marketed, not how medicine is practised, and insurer coverage is an entirely separate determination. Denial, appeal and reason-code figures (2024, HealthCare.gov marketplace plans) &mdash; ${A(COST_SRC.denialRate)}. Launch list price &mdash; ${A(COST_SRC.lumakras)}.`;
+}
+function doAppeal(){
+  S.flags.appealed=true;
+  step({reserve:-rnd(9,13), weeks:3},'Appeal filed, and denied on review. Three weeks gone.','bad');
+  sfxBad();
+}
+function doCash(){
+  S.funds-=COSTS.sotorasibMonth.v; S.spentOOP+=COSTS.sotorasibMonth.v;
+  step({reserve:-rnd(2,4), weeks:4},
+    `You paid ${money(COSTS.sotorasibMonth.v)} cash for one month. Nothing about one month is interpretable.`,'money');
+}
+function doLetGo(){ step({reserve:-rnd(3,5), weeks:2},'You stay on chemotherapy. The prescription stays unfilled.'); }
+
+function chSearch(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 4 of 9 &mdash; The Search</div>
+    <h2>THOUSANDS OF<br>TRIALS. NONE<br>OF THEM YOURS.</h2>
+    <div class="txt">
+      <p>If the approved drug is closed to you, the investigational ones might not be. You start where everyone starts: the federal trial registry, thousands of open studies, a search box, and a diagnosis that has to match on every line.</p>
+      <p>A modern registrational protocol&rsquo;s eligibility section can run to dozens of separate criteria &mdash; tumour type, mutation, prior lines of therapy, organ function, washout periods, brain metastases, performance status. Each one is a gate, and you must pass all of them on the same day.</p>
+      <p>Two studies could take someone like you. You call both.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> eligibility-criteria complexity and its effect on accrual &mdash; ${A(SRC.eligStd)}.</div>
+    ${menu('Which do you screen for first?',[
+      { label:'Trial A &mdash; a targeted agent for your mutation',
+        sub:'Single-arm, so everyone who enrols gets the drug. Requires 2 or more prior lines of therapy.',
+        fn:'doScreenA' }
+    ])}`;
+}
+function doScreenA(){ step({reserve:-1,weeks:1},'Screening visit scheduled for Trial A.'); }
+
+function chTrialA(){
+  const g=ecogOf(S.reserve);
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 5 of 9 &mdash; Screening, Trial A</div>
+    <h2>THE TRAP<br>WAS ALWAYS<br>GOING TO CLOSE</h2>
+    <div class="txt">
+      <p>Trial A requires <b>two or more prior lines of therapy</b>. You have ${S.lines}. You qualify on that line, and you earned it the worst way there is.</p>
+      <p>Trial A also requires <b>ECOG performance status 0 or 1</b>. The study coordinator assesses you at <b class="bad">ECOG ${g}</b>: ${ECOG[g].label.toLowerCase()}</p>
+      <p>Look at your own status readout. Those two numbers have been moving in opposite directions since week one, and they were always going to cross. Progression is what qualifies you. Progression is also what disqualifies you. There is no week in which both conditions are true.</p>
+      <p>This is not your bad luck. In the pivotal trials that lead to FDA approvals, patients at performance status 2 or worse have historically made up <b>well under 5%</b> of enrolment, while making up a large share of actual patients. The trial population and the patient population are different populations.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> the scale itself &mdash; ${A(SRC.ecog)}. Under-representation of ECOG &ge;2 in registrational trials &mdash; ${A(SRC.psRestrict)} and ${A(SRC.psFriends)}.</div>
+    <div class="stamp">SCREEN FAILED<br>PERFORMANCE STATUS</div>
+    ${menu('What now?',[
+      { label:'Ask them to make an exception',
+        sub:'The person on the phone agrees with you and cannot help you. Protocol deviations of this kind are not theirs to grant.',
+        fn:'doNoException' },
+      { label:'Ask about the other study',
+        sub:'Trial B. Randomised.',
+        fn:'doNoException' }
+    ])}`;
+  sfxBad();
+}
+function doNoException(){ step({reserve:-rnd(3,5),weeks:1},'Trial A: screen failed on performance status, not on disease.','bad'); }
+
+function chTrialB(){
+  if(!S.flags.bDrawn){
+    document.getElementById('panel').innerHTML=`
+      <div class="land">Landmark 6 of 9 &mdash; Screening, Trial B</div>
+      <h2>A COIN&rsquo;S CHANCE<br>AT THE DRUG</h2>
+      <div class="txt">
+        <p>Trial B will take you. Your performance status is inside its window, barely, because its window is wider.</p>
+        <p>It is a randomised phase 3 study: the investigational agent plus standard of care, against standard of care alone, one to one. A computer decides which you get. Neither you nor your oncologist is allowed to influence it, and that is not a flaw &mdash; randomisation is the only reason anyone will ever know whether the drug works.</p>
+        <p>It is also the reason that enrolling is not the same as being treated. The protocol offers you a 50% chance at the drug, and a 50% chance of spending the remainder of your life as this study&rsquo;s control arm. There is no guaranteed crossover on progression.</p>
+      </div>
+      <div class="cite"><b>Cited:</b> randomisation and the absence of guaranteed crossover are standard features of confirmatory phase 3 oncology design; see the eligibility and trial-design literature in ${A(SRC.eligStd)}.</div>
+      ${menu('Do you enrol?',[
+        { label:'Enrol and accept randomisation',
+          sub:'The alternative is not enrolling.',
+          fn:'doRandomise' }
+      ])}`;
+  }
+}
+function doRandomise(){
+  if(S.dead||S.flags.bDrawn) return;
+  S.flags.bDrawn=true;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 6 of 9 &mdash; Randomisation</div>
+    <h2>ASSIGNING&hellip;</h2>
+    <div class="txt"><p>The randomisation module is deciding. <span class="cursor"></span></p></div>`;
+  let n=0;
+  const iv=setInterval(()=>{ beep(n%2?440:660,0.04); n++; if(n>7) clearInterval(iv); },130);
+  setTimeout(()=>{
+    const drug=Math.random()<0.5;
+    S.flags.onDrug=drug;
+    document.getElementById('panel').innerHTML=`
+      <div class="land">Landmark 6 of 9 &mdash; Randomisation</div>
+      <h2>${drug?'INVESTIGATIONAL<br>ARM':'CONTROL<br>ARM'}</h2>
+      <div class="stamp ${drug?'ok':''}">${drug?'YOU GET THE DRUG':'YOU GET STANDARD OF CARE'}</div>
+      <div class="txt">
+        ${drug
+          ? `<p>You are assigned to the investigational arm. You will receive the agent on top of standard of care.</p>
+             <p>This is the best outcome available on this screen, and it is worth being precise about what it is: a randomised trial exists because nobody yet knows whether this drug helps or how much. You are not receiving a treatment. You are helping to find out whether it is one.</p>`
+          : `<p>You are assigned to the control arm. You will receive standard of care, plus the study&rsquo;s extra scans and extra visits.</p>
+             <p>The drug you enrolled to reach is now, for you, something that happens to other people in the same study. You will not be offered it on progression. You consented to exactly this, and consenting to it does not make it feel like a coin landing fairly.</p>`}
+      </div>
+      ${menu('',[{label:'Continue', fn:'doPostRandom'}])}`;
+  },1150);
+}
+function doPostRandom(){
+  step({reserve:-rnd(2,4), lines:1, weeks:2},
+    S.flags.onDrug?'Randomised to the investigational arm.':'Randomised to the control arm.',
+    S.flags.onDrug?'good':'bad');
+}
+
+function chResearchBill(){
+  const extra=COSTS.researchProcedures.v;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 7 of 9 &mdash; The Research Bill</div>
+    <h2>BEING IN<br>THE TRIAL IS<br>ITSELF A BILL</h2>
+    <div class="txt">
+      <p>The protocol requires restaging CT scans of your abdomen and pelvis on a fixed schedule &mdash; more often than your own oncologist would order them, because the study needs the data points, not because you need the pictures.</p>
+      <p>Federal law does require your plan to cover the <b>routine patient costs</b> of care you receive while in an approved clinical trial. It does not require coverage of the investigational item itself, or of anything provided <i>solely to satisfy data collection and analysis needs and not used in the direct clinical management of the patient</i>. That second clause is precisely where protocol-mandated extra imaging lives.</p>
+      <p>The explanation of benefits calls the extra scans research-related and declines them. Two of them, at a median commercial price of ${money(COSTS.ctScan.v)} each against a Medicare rate of $431: <b>${money(extra)}</b>.</p>
+      <p>Then there is getting there. The site is not your hospital &mdash; <b>${STAT.countiesNoTrials}</b> of US counties had no active cancer trial at all in 2022. Mileage, parking, the hotel the night before an early draw, and the days ${S.companion} does not get paid for driving you.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> ${A(SRC.s2709)}, and the routine-versus-research distinction spelled out in ${A(SRC.cms2709)}. Imaging prices &mdash; ${A(COST_SRC.radiology)}. Trial geography &mdash; ${A(COST_SRC.ascoGeo)}. Travel burden &mdash; ${A(COST_SRC.huey)} and ${A(COST_SRC.camTrial)}.</div>
+    ${menu('The bills are here. What do you do?',[
+      { label:'Pay it and stay in the study',
+        sub:'You did not come this far to leave over an invoice.',
+        cost:`<span class="m">research charges + travel</span>`,
+        fn:'doPayResearch' },
+      { label:'Start a crowdfunding campaign',
+        sub:`Ask for ${money(COSTS.crowdfundGoal.v)} — the median goal of a cancer campaign. Only about 1 in 9 reach it.`,
+        cost:`<span class="m">median outcome: ${money(COSTS.crowdfundRaised.v)}</span> &middot; <span class="t">3 weeks</span>`,
+        fn:'doCrowdfund' }
+    ])}`;
+}
+function doPayResearch(){
+  const paid=bill(COSTS.researchProcedures.v);
+  const trav=COSTS.trialTravel.v;
+  S.funds-=trav; S.spentOOP+=trav;
+  step({reserve:-rnd(2.5,4.5), weeks:2},
+    `Research charges ${money(paid)} plus ${money(trav)} in travel and lost pay.`,'money');
+}
+function doCrowdfund(){
+  const paid=bill(COSTS.researchProcedures.v);
+  const trav=COSTS.trialTravel.v;
+  S.funds-=trav; S.spentOOP+=trav;
+  const got=COSTS.crowdfundRaised.v;
+  S.funds+=got;
+  S.flags.crowdfunded=true;
+  step({reserve:-rnd(3.5,5.5), weeks:3},
+    `Asked ${money(COSTS.crowdfundGoal.v)}, raised ${money(got)} — the median outcome. Charges were ${money(paid+trav)}.`,'money');
+}
+
+/* River crossing homage: the IRB queue */
+function chIRB(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 8 of 9 &mdash; The Institutional Crossing</div>
+    <h2>THE QUEUE IS<br>ELEVEN WEEKS<br>DEEP</h2>
+    <div class="txt">
+      <p>A safety signal at another site puts the whole study on <b>clinical hold</b>. Dosing stops. Enrolment stops. Federal rules give the FDA up to <b>30 days</b> simply to act on an IND submission, and a hold runs until the agency is satisfied. Your site&rsquo;s ethics board &mdash; the IRB that must approve every protocol amendment &mdash; meets on its own calendar, and the amendment that lifts the hold has to go through it.</p>
+      <p>Nobody in this story is being slow by institutional standards. The institution&rsquo;s clock and your clock have simply never been the same clock, and only one of them is running out.</p>
+      <p><i>The river is 11 weeks deep and the current is bureaucratic.</i></p>
+    </div>
+    <div class="cite" style="border-left-color:var(--cyan);color:#9fd8e4;">
+      You must cross the queue in order to continue.<br>
+      <b>Queue depth:</b> 11 weeks &nbsp;&middot;&nbsp; <b>Queue width:</b> 3 committees &nbsp;&middot;&nbsp; <b>Bottom:</b> muddy
+    </div>
+    <div class="cite"><b>Cited:</b> ${A(SRC.hold)} (clinical holds; the 30-day review window), and IRB review timing in practice &mdash; ${A(SRC.irbTiming)}.</div>
+    ${menu('You may:',[
+      { label:'Wait for the queue to clear',
+        sub:'The honest option. Also the expensive one, in the only currency you have left.',
+        cost:`<span class="t">4 weeks</span> &middot; <span class="h">significant decline</span>`,
+        fn:'irbWait' },
+      { label:'Attempt to ford it &mdash; request expedited review',
+        sub:'Expedited review exists, for minor amendments. Lifting a clinical hold is not one.',
+        cost:`<span class="t">3 weeks</span> &middot; <span class="h">decline</span>`,
+        fn:'irbFord' },
+      { label:'Take the ferry &mdash; transfer to another site',
+        sub:'The hold is on the study, not the site. Transferring re-runs your paperwork against the same stopped clock.',
+        cost:`<span class="t">4 weeks</span> &middot; <span class="m">travel + re-screening</span>`,
+        fn:'irbFerry' },
+      { label:'Wait to see if conditions improve',
+        sub:'They are conditions. They do not know you are here.',
+        cost:`<span class="t">5 weeks</span> &middot; <span class="h">severe decline</span>`,
+        fn:'irbHope' }
+    ])}`;
+}
+function irbWait(){ step({reserve:-rnd(12,16),weeks:4},'Four weeks of hold. Nothing you did could have shortened them.','bad'); sfxBad(); }
+function irbFord(){ step({reserve:-rnd(10,14),weeks:3},'Expedited review requested and correctly refused: a clinical hold is not a minor amendment.','bad'); sfxBad(); }
+function irbFerry(){
+  const paid=COSTS.trialTravel.v*2; S.funds-=paid; S.spentOOP+=paid;
+  step({reserve:-rnd(12,16),weeks:4},`Transferred sites for ${money(paid)}. The hold was never site-specific.`,'bad'); sfxBad();
+}
+function irbHope(){ step({reserve:-rnd(16,21),weeks:5},'Five weeks. Conditions did not know you were waiting on them.','bad'); sfxBad(); }
+
+/* Three doors — investigational access */
+const DOORS=[
+  { h:'DOOR 1 — ASK THE COMPANY (EXPANDED ACCESS)',
+    r:`<span class="no">DENIED.</span> Federal rules provide for exactly this: expanded access, 21 CFR 312 Subpart I. The FDA is not the obstacle here and the numbers say so &mdash; the agency authorises the overwhelming majority of the individual expanded-access requests it receives, often within days, and for emergencies within hours. But FDA authorising a <i>use</i> is not the company agreeing to <i>supply</i>. That decision belongs to the sponsor alone and nothing compels it. Their reasons are real ones: drug supply committed to the pivotal trial, liability, and a genuine fear that a death outside a controlled setting complicates the filing they are about to make. Rational, from a boardroom. Fatal, from here.` },
+  { h:'DOOR 2 — FILE A SINGLE-PATIENT IND',
+    r:`<span class="yes">APPROVED IN DAYS.</span> Your physician files, the FDA says yes, and you now hold federal authorisation to receive a drug that no one is obliged to send you. This door opens onto the first door. The loop closes on itself.` },
+  { h:'DOOR 3 — INVOKE THE FEDERAL RIGHT TO TRY ACT (2018)',
+    r:`<span class="no">SAME DOOR. DIFFERENT SIGN.</span> Right to Try lets you bypass the FDA and your IRB for this request entirely. It does not require the manufacturer to say yes, and it was never drafted to. Congress removed two gatekeepers and left the only one that was actually holding the door shut exactly where it was.` }
+];
+function chDoors(){
+  if(S.flags.doors===undefined) S.flags.doors=0;
+  const n=S.flags.doors;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 9 of 9 &mdash; Three Doors</div>
+    <h2>THE PATHWAYS<br>THAT EXIST<br>FOR THIS</h2>
+    <div class="txt">
+      <p>Trial B will not give you the drug in time, or at all. But there is another agent &mdash; genuinely investigational this time, approved for nothing, sitting inside a company that is running its own study. Your oncologist tries every lawful route to it. There are exactly three.</p>
+    </div>
+    <div class="doors">
+      ${DOORS.map((d,i)=>`
+        <div class="door">
+          <div class="door-h">${d.h}</div>
+          ${i<n?`<div class="door-r">${d.r}</div>`
+                :`<button class="nav-btn" ${i===n?`onclick="openDoor(${i})"`:'disabled style="opacity:.35"'}>knock</button>`}
+        </div>`).join('')}
+    </div>
+    <div class="cite"><b>Cited:</b> ${A(SRC.subpartI)}; ${A(SRC.eaGuide)}; ${A(SRC.singleIND)}; ${A(SRC.rtt)}; and the Congressional Research Service&rsquo;s side-by-side of the two pathways, ${A(SRC.rttCRS)}.</div>
+    ${n>=3?`
+      <div class="txt"><p><b>Three federal pathways. Not one of them requires the company on the other end of the phone to say yes.</b> You have knocked on a single locked door three times and been told no in three different registers of politeness.</p></div>
+      ${menu('',[{label:'Continue', fn:'doAfterDoors'}])}`:''}`;
+}
+function openDoor(i){
+  if(S.dead||i!==S.flags.doors) return;
+  S.flags.doors=i+1; sfxBad(); chDoors();
+}
+function doAfterDoors(){ step({reserve:-rnd(3,5),weeks:2},'Three doors. Three variations on no.','bad'); }
+
+function chCountdown(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Epilogue &mdash; The Countdown</div>
+    <h2>THERE IS NO<br>FOURTH DOOR</h2>
+    <div class="txt">
+      <p>Accelerated approval is the mechanism meant to fix this: let a drug onto the market on a promising early signal, and confirm the real benefit afterwards. Sometimes the confirmation arrives and is good. Here is what it looks like when it does not, and neither of these is hypothetical.</p>
+    </div>
+    <div class="cite">
+      <b>Bevacizumab (Avastin), metastatic breast cancer.</b><br>
+      Feb 2008 &mdash; accelerated approval on progression-free survival.<br>
+      Nov 2011 &mdash; indication withdrawn after two confirmatory trials failed to verify benefit.<br>
+      <i>Elapsed: three years, nine months.</i><br>
+      ${A(SRC.avastin)} &middot; ${A(SRC.avastinNEJM)}
+    </div>
+    <div class="cite">
+      <b>Melphalan flufenamide (Pepaxto), multiple myeloma.</b><br>
+      Feb 2021 &mdash; accelerated approval on response rate in heavily pretreated patients.<br>
+      2023&ndash;24 &mdash; withdrawn after the confirmatory trial trended toward <i>more</i> deaths in the treated arm.<br>
+      <i>Elapsed: about three years.</i><br>
+      ${A(SRC.pepaxtoAA)} &middot; ${A(SRC.pepaxto)}
+    </div>
+    <div class="txt">
+      <p>Three years is the unit here. It is longer than you have. It was longer than you had on the day of your diagnosis.</p>
+      <p>There is nothing left to try.</p>
+    </div>
+    ${menu('',[{label:'…', fn:'doEnd'}])}`;
+}
+function doEnd(){ step({reserve:-999,weeks:1},'There was nothing left to try.','bad'); }
+
+/* ─────────── CHAPTER LIST ─────────── */
+function buildChapters(){
+  const T=(label,head,body)=>({kind:'travel',label,head,body});
+  return [
+    {kind:'mark',go:chDiagnosis},
+    T('first-line chemotherapy','THE INFUSION CHAIR','Every other Tuesday, four hours, then two days of feeling like weather. The chair by the window is the good one. You learn the names of the nurses before you learn the name of your regimen.'),
+    {kind:'mark',go:chMutation},
+    {kind:'mark',go:chDenial},
+    T('waiting on the appeal','THE HOLD MUSIC','You have the prior-authorisation department&rsquo;s hours memorised. A representative explains, kindly and correctly, that she cannot see the clinical file she is asking you about.'),
+    {kind:'mark',go:chSearch},
+    T('screening logistics','FORMS, AND MORE FORMS','Records requests, a repeat scan because the outside images are the wrong slice thickness, a signature from a doctor who is on holiday. None of it is anybody&rsquo;s fault. All of it is time.'),
+    {kind:'mark',go:chTrialA},
+    T('looking for the next one','THE SECOND SEARCH','You get better at reading protocols than anyone should have to. You start recognising the exclusion criteria that are really about liability, and the ones that are really about you.'),
+    {kind:'mark',go:chTrialB},
+    {kind:'mark',go:chResearchBill},
+    T('on study','CYCLE THREE','Scans, draws, a symptom diary you fill in honestly and then wonder if you should have. Somebody in the waiting room asks if you are on the drug or the other thing. Neither of you knows.'),
+    {kind:'mark',go:chIRB},
+    {kind:'mark',go:chDoors},
+    T('after the doors','THE QUIET WEEK',`${S.companion} stops asking what the plan is. You start sleeping in the front room, because the stairs have become a decision.`),
+    {kind:'mark',go:chCountdown}
+  ];
+}
+
+/* ══════════════════ DEATH ══════════════════ */
+function death(){
+  S.dead=true; sceneMoving=false;
+  document.getElementById('scene').classList.add('hide');
+  document.getElementById('hud').classList.remove('show');
+  beep(150,0.5,'triangle');
+  const wk=S.week;
+  document.getElementById('panel').innerHTML=`
+    <div class="tomb-wrap">
+      <div class="tomb">
+        <div class="rip">HERE LIES</div>
+        <div class="epi" id="epiOut">A PATIENT WHO<br>MET EVERY<br>CRITERION<br>BUT ONE</div>
+      </div>
+    </div>
+    <div class="grass"></div>
+    <div class="panel" style="padding:1.2rem 0 0;">
+      <h2 style="color:var(--red)">YOU HAVE DIED OF<br>A SCREENING<br>CRITERION</h2>
+      <div class="txt">
+        <p>Week ${wk}. Performance status ECOG 5 &mdash; which is, in the real scale this game has been using all along, simply the grade that means <i>dead</i>. ${S.companion} was there.</p>
+        <p>You never received the drug that targeted your mutation. It was on the market the entire time.</p>
+        <p>You did not lose because you chose badly. No sequence of choices in this game reaches the drug, because the barriers modelled here are not obstacles to be optimised past &mdash; they are the structure. Out of pocket, in total: <b>${money(S.spentOOP)}</b>.</p>
+      </div>
+      <div class="txt" style="margin-top:0.9rem;">
+        <p style="color:var(--dim)">Would you like to write an epitaph?</p>
+        <input class="epi-input" id="epiIn" maxlength="29" placeholder="TYPE AN EPITAPH">
+        <p style="color:var(--dim);font-size:1rem;margin-top:0.4rem;">
+          29 characters, the same limit the 1985 Apple II input routine enforced.
+        </p>
+      </div>
+      ${menu('You may:',[{label:'Continue', fn:'endCard'}])}
+    </div>`;
+  const inp=document.getElementById('epiIn');
+  inp.addEventListener('input',()=>{
+    // the original permitted digits, letters, space, comma, period,
+    // apostrophe and hyphen — and nothing else
+    const clean=inp.value.replace(/[^A-Za-z0-9 ,.'-]/g,'').slice(0,29);
+    if(clean!==inp.value) inp.value=clean;
+    S.epitaph=clean.toUpperCase();
+    document.getElementById('epiOut').textContent=S.epitaph||'A PATIENT WHO MET EVERY CRITERION BUT ONE';
+  });
+  // typing in the epitaph box must not trigger the numbered menu
+  inp.addEventListener('keydown',e=>e.stopPropagation());
+}
+
+/* ══════════════════ END CARD (deliberately not 8-bit) ══════════════════ */
+function endCard(){
+  saveGrave();
+  sceneMoving=false;
+  document.getElementById('scene').classList.add('hide');
+  document.getElementById('hud').classList.remove('show');
+  document.getElementById('screen').classList.add('clean');
+  document.getElementById('log').classList.remove('show');
+  keyMap={};
+  document.getElementById('panel').outerHTML=`<div id="panel" class="endcard">
+    <div class="kicker">The game stops here. This part is not fiction.</div>
+    <h2>Abigail Burroughs, 1979&ndash;2001</h2>
+    <div class="dates">Diagnosed with head and neck cancer at 19 &middot; Died 9 June 2001, aged 21</div>
+
+    <p>Abigail Burroughs had squamous cell carcinoma of the head and neck. Her oncologist at Johns Hopkins believed a drug then in development &mdash; cetuximab, later marketed as Erbitux &mdash; was a reasonable thing to try, because her tumour type expressed the receptor it targeted.</p>
+    <p>She could not get it. The trials that were open were enrolling <b>colon cancer</b> patients. Her cancer was in her head and neck. The drug was right, the target was right, and the organ was wrong. Her family campaigned for compassionate use and did not obtain it in time. She died in June 2001, aged 21.</p>
+    <p>Cetuximab received accelerated FDA approval for colorectal cancer in <b>February 2004</b> &mdash; two years and eight months after she died. It was approved for squamous cell carcinoma of the head and neck, her disease, in <b>March 2006</b> &mdash; four years and nine months after she died.</p>
+    <p>Her father, Frank Burroughs, founded the Abigail Alliance for Better Access to Developmental Drugs. Its lawsuit arguing that terminally ill patients have a constitutional right to investigational drugs was heard by the D.C. Circuit and lost in 2007. The Alliance&rsquo;s campaigning fed the movement that produced state Right to Try laws and, eventually, the federal Right to Try Act of 2018 &mdash; the law you knocked on as Door 3, which removed the FDA from the conversation and left the manufacturer&rsquo;s veto entirely intact.</p>
+
+    <div class="rule"></div>
+    <p class="small">This game invented a patient. It did not invent the structure that killed her, and it did not need to. Every regulation, criterion, dollar figure and date in it is sourced.</p>
+    <div class="end-actions">
+      <button class="ebtn solid" onclick="newGame()">Walk the trail again</button>
+      <button class="ebtn" onclick="openSources()">Read every source</button>
+      <button class="ebtn" onclick="openLineage()">The reskin lineage</button>
+      <a class="ebtn" href="index.html">Aileron Games</a>
+    </div>
+  </div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ══════════════════ SOURCES SHEET ══════════════════ */
+function A(s){ return `<a href="${s.u}" target="_blank" rel="noopener">${s.t}</a>`; }
+
+const TRAPS = [
+  ['Expanded access needs the manufacturer to agree, and nothing makes them',
+   'FDA can authorise the use. Only the sponsor can supply the drug, and no rule obliges them to. Their disincentives are real: supply committed to the pivotal trial, liability, and the risk that a death outside a controlled setting complicates the filing.',
+   [SRC.subpartI, SRC.eaGuide]],
+  ['A single-patient IND still needs a supplier, so the loop closes',
+   'The IND itself is granted quickly and almost always. It confers permission to receive a drug nobody has to send you. Door 2 opens onto Door 1.',
+   [SRC.singleIND, SRC.subpartI]],
+  ['Right to Try removed two gatekeepers and left the third',
+   'The 2018 federal Act lets a patient bypass both FDA and the IRB. It does not require the manufacturer to say yes, and was never drafted to.',
+   [SRC.rtt, SRC.rttCRS]],
+  ['Progression qualifies you; the decline it causes disqualifies you',
+   'Later-line trials require prior lines of therapy. They also require ECOG performance status 0 or 1. Patients at ECOG 2 or worse have historically been well under 5% of enrolment in the pivotal trials that produce approvals, while being a large share of real patients. The two criteria move in opposite directions.',
+   [SRC.ecog, SRC.psRestrict, SRC.psFriends]],
+  ['Randomisation means you may spend your remaining time in the control arm',
+   'A randomised trial offers a chance at the drug, not the drug. Crossover on progression is not guaranteed by protocol — and randomisation is also the only reason anyone ever learns whether a drug works.',
+   [SRC.eligStd]],
+  ['Your insurer covers standard care, but not all the care you get on trial',
+   'Federal law mandates coverage of routine patient costs in an approved trial, but explicitly excludes the investigational item and anything done solely to satisfy data collection. Protocol-mandated extra imaging lives in that gap. Being enrolled is itself a bill.',
+   [SRC.s2709, SRC.cms2709]],
+  ['IRB queues and clinical holds run on institutional time, not patient time',
+   'FDA has up to 30 days to act on an IND submission and can hold a study indefinitely; IRBs meet on their own calendar. None of it accelerates because one patient is running out of time.',
+   [SRC.hold, SRC.irbTiming]],
+  ['Accelerated approval, then withdrawal, about three years too late',
+   'Avastin for metastatic breast cancer: approved Feb 2008, withdrawn Nov 2011. Pepaxto for multiple myeloma: approved Feb 2021, withdrawn 2023–24 after the confirmatory trial trended toward more deaths.',
+   [SRC.avastin, SRC.avastinNEJM, SRC.pepaxtoAA, SRC.pepaxto]]
+];
+
+function SOURCES_HTML(){
+  let h='<h3>The structural traps, and where each one is written down</h3><ul>';
+  TRAPS.forEach((t,i)=>{
+    h+=`<li style="margin-bottom:0.8rem;"><b class="num">${i+1}.</b> <b>${t[0]}</b><br>${t[1]}<br>${t[2].map(A).join(' &middot; ')}</li>`;
+  });
+  h+='</ul>';
+
+  h+=`<h3>The disease, the mutation and the drug</h3>
+    <p>The patient is fictional. Everything about their situation is not.</p>
+    <ul>
+      <li>KRAS p.G12C occurs in roughly 1–2% of pancreatic cancers. Sotorasib was given accelerated approval for KRAS G12C non-small-cell lung cancer in May 2021 &mdash; ${A(SRC.sotoLung)}.</li>
+      <li>In the pancreatic cohort of the same trial programme it produced a 21% response rate and 6.9-month median overall survival, and has never been approved for pancreatic cancer &mdash; ${A(SRC.sotoPanc)}.</li>
+      <li>The performance-status scale the game uses as its health readout is the real one, including grade 5, which means dead &mdash; ${A(SRC.ecog)}.</li>
+    </ul>`;
+
+  h+='<h3>Every dollar figure in the game</h3>';
+  h+='<p>Money is as easy to invent as it is to check, so each figure below names its own source and its year. Figures marked <b>scenario assumption</b> are choices this game made, not statistics — they are labelled rather than laundered.</p><ul>';
+  Object.keys(COSTS).forEach(k=>{
+    const c=COSTS[k];
+    const val = (k==='coinsurance') ? Math.round(c.v*100)+'%' : money(c.v);
+    h+=`<li style="margin-bottom:0.7rem;"><b class="num">${val}</b> &mdash; ${c.note}
+        ${c.assumption?'<b> [scenario assumption]</b>':''}<br>
+        <span style="opacity:.8">${c.y!=='—'?'Figure year: '+c.y+'. ':''}${A(COST_SRC[c.s])}</span></li>`;
+  });
+  h+='</ul>';
+
+  h+=`<h3>Other statistics quoted on screen</h3><ul>
+    <li>Marketplace insurers denied <b class="num">19%</b> of in-network claims in 2024 (about 85 million). Patients appealed <b class="num">fewer than 1%</b>; insurers upheld <b class="num">66%</b> of the appeals received. Only <b class="num">5%</b> of denials were recorded as lack of medical necessity, while <b class="num">36%</b> were logged under &ldquo;other&rdquo; &mdash; ${A(COST_SRC.denialRate)}. These data cover HealthCare.gov marketplace plans only; no comparable public figure exists for employer coverage, which is why the patient in this game is marketplace-insured.</li>
+    <li><b class="num">70%</b> of US counties had no active cancer clinical trial in 2022, rising to <b class="num">86%</b> of non-metropolitan counties &mdash; ${A(COST_SRC.ascoGeo)}.</li>
+    <li><b class="num">49%</b> of cancer patients and survivors have incurred cancer-related medical debt; <b class="num">98%</b> of them were insured when it accrued, and <b class="num">25%</b> skipped or delayed care &mdash; ${A(COST_SRC.acsDebt)}.</li>
+    <li><b class="num">48%</b> of phase I oncology trial participants report at least $1,000 a month out of pocket; <b class="num">50%</b> live more than 300 miles from the clinic &mdash; ${A(COST_SRC.huey)}. <b class="num">13%</b> of patients who declined a trial cited cost &mdash; ${A(COST_SRC.camTrial)}.</li>
+    <li>Annual labour earnings fall roughly <b class="num">40%</b> within two years of a cancer diagnosis &mdash; ${A(COST_SRC.zajacova)}.</li>
+    <li><b class="num">37%</b> of US adults could not cover a $400 emergency expense with cash or its equivalent &mdash; ${A(COST_SRC.fed400)}. Note the Fed's actual wording: this is not the same as being unable to afford $400.</li>
+  </ul>`;
+
+  h+=`<h3>Abigail Burroughs</h3>
+    <p>The end card is a real account of a real person, assembled from these:</p>
+    <ul>
+      <li>${A(SRC.abigailCURE)}</li>
+      <li>${A(SRC.abigailFB)}</li>
+      <li>${A(SRC.abigailNT)}</li>
+      <li>${A(SRC.abigailPitt)}</li>
+    </ul>`;
+
+  h+=`<h3>What this game is honest about not knowing</h3>
+    <p>Published US prices for PET/CT, bone marrow biopsy, single infusion visits and office visits could not be traced to a source worth citing &mdash; the figures that circulate come from price-comparison sites, not research. So the game does not use them. The imaging cost it does use is the one with a peer-reviewed price attached. The genomic panel figure is the oldest number here and may be out of date. Where a range exists rather than a number, the game says range.</p>`;
+  return h;
+}
+function openSources(){
+  document.getElementById('srcBody').innerHTML=SOURCES_HTML();
+  document.getElementById('ovSources').classList.add('show');
+}
+function LINEAGE_HTML(){ return LINEAGE_PENDING; }
+function openLineage(){
+  document.getElementById('lineageBody').innerHTML=LINEAGE_HTML();
+  document.getElementById('ovLineage').classList.add('show');
+}
+function closeOv(){
+  document.getElementById('ovSources').classList.remove('show');
+  document.getElementById('ovLineage').classList.remove('show');
+}
+document.getElementById('bSources').onclick=openSources;
+document.getElementById('fSources').onclick=openSources;
+document.getElementById('bLineage').onclick=openLineage;
+document.getElementById('fLineage').onclick=openLineage;
+document.getElementById('bRestart').onclick=()=>{ if(confirm('Restart the trail?')) newGame(); };
+document.getElementById('bSound').onclick=function(){
+  soundOn=!soundOn; this.textContent='Sound: '+(soundOn?'on':'off'); if(soundOn) sfxPick();
+};
+[document.getElementById('ovSources'),document.getElementById('ovLineage')].forEach(o=>{
+  o.addEventListener('click',e=>{ if(e.target===o) closeOv(); });
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeOv(); });
+
+const LINEAGE_PENDING = `
+<h3>What this is a reskin of</h3>
+<p><i>The Oregon Trail</i> was written in <b class="num">December 1971</b> by three student teachers &mdash; Don Rawitsch, Bill Heinemann and Paul Dillenberger &mdash; in HP Time-Shared BASIC, played on a teletype that printed onto paper. Rawitsch took it to MECC, the Minnesota state education computing agency, in 1974. The version almost everyone actually remembers is the <b>1985 Apple II rewrite</b>, designed by R. Philip Bouchard &mdash; the first fully graphical one. The series has sold somewhere north of 65 million copies.
+<a href="https://en.wikipedia.org/wiki/The_Oregon_Trail_(series)" target="_blank" rel="noopener">series history</a> &middot;
+<a href="https://github.com/clintmoyer/oregon-trail" target="_blank" rel="noopener">the original 1971/78 BASIC source</a></p>
+
+<h3>What this game borrowed, precisely</h3>
+<ul>
+  <li><b>The health readout.</b> The 1985 game showed party health as one of four words: <i>good, fair, poor, very poor</i>. Oncology already has a scale for exactly that, running 0 to 5, where 5 means dead. So the status bar here is the real <b>ECOG performance status</b>, and the eligibility trap is built out of it rather than narrated on top of it.</li>
+  <li><b>&ldquo;You may:&rdquo;</b> The original's characteristic prompt, kept verbatim.</li>
+  <li><b>The river crossing.</b> The 1985 options were <i>attempt to ford the river</i>, <i>caulk the wagon and float it</i>, <i>take a ferry across</i>, <i>wait to see if conditions improve</i>, and the game told you the river's width and depth first. The institutional crossing in this game offers the same four moves against a queue, and quotes you its depth the same way.</li>
+  <li><b>The tombstone.</b> The original asked &ldquo;Would you like to write an epitaph?&rdquo; over the stone with Taps already playing, and its input routine allowed <b class="num">29 characters</b> from a fixed alphabet of letters, digits, space, comma, period, apostrophe and hyphen. This one enforces the same limit and the same alphabet.</li>
+  <li><b>The gravesite.</b> The 1985 game wrote your tombstone back to the game disk, so the next person to play <i>that copy</i> would meet your grave on the trail and be asked whether to look closer. That is the best idea in the game and it is reproduced here.</li>
+  <li><b>The palette.</b> The 1985 version shipped a monitor-calibration screen naming its entire colour vocabulary: <i>Orange, Green, Blue, Violet</i>, plus black and white. Its travel screen was mostly black with a single horizon line, and the terrain changed from green prairie to purple mountains at the halfway point. This scene does the same, and uses the change to mark decline.</li>
+</ul>
+
+<h3>What this game deliberately inverted</h3>
+<ul>
+  <li><b>The occupations.</b> The original let you be a banker from Boston ($1,600), a carpenter from Ohio ($800) or a farmer from Illinois ($400) &mdash; and paid you a <i>bigger</i> score multiplier for starting poorer, because &ldquo;the harder you have to try, the more points you deserve.&rdquo; Here there is one patient and no multiplier. Starting with less money does not earn you anything. It just kills you sooner.</li>
+  <li><b>The Oregon Top Ten.</b> The original's whole meta-layer was a high-score board, pre-seeded with real historical travellers, rating you Trail Guide, Adventurer or Greenhorn. This game has no score, because a score would imply the outcome was a measure of how well you played it.</li>
+  <li><b>Arrival.</b> The Willamette Valley exists. There is no equivalent here, and that is the entire argument.</li>
+</ul>
+
+<h3>A note on the most famous line in video games</h3>
+<p>&ldquo;You have died of dysentery&rdquo; was <b>never on the screen</b>. The game printed <i>&ldquo;&lt;name&gt; has dysentery&rdquo;</i> and, later, <i>&ldquo;&lt;name&gt; died of dysentery&rdquo;</i> &mdash; a named person, never &ldquo;you.&rdquo; Bouchard has confirmed the remembered phrasing is a fusion of the two. An entire generation vividly remembers a sentence that no one ever saw. There is something apt in that, for a game about a system whose obstacles are almost universally attributed to the wrong institution.
+<a href="https://knowyourmeme.com/memes/you-have-died-of-dysentery" target="_blank" rel="noopener">on the misquotation</a></p>
+
+<h3>The reskins this stands behind</h3>
+<ul>
+  <li><b>Organ Trail: Director's Cut</b> &mdash; The Men Who Wear Many Hats, 2010 as browser Flash, Director's Cut 2012&ndash;13. The canonical reskin: zombie apocalypse, a station wagon instead of oxen, mufflers and tyres instead of wagon axles, and companions whose infection forces you to decide whether to shoot them. It proved the form survives total setting replacement so long as you keep scarce resources, named companions who die, and a persistent record of failure.
+  <a href="https://en.wikipedia.org/wiki/Organ_Trail" target="_blank" rel="noopener">reference</a></li>
+  <li><b>The Migrant Trail</b> &mdash; Gigantic Mechanic with documentarian Marco Williams, 2014. The Sonoran Desert crossing, played first as a migrant walking north and then as the Border Patrol agent policing the same ground. It is the most important precedent for this game, because it demonstrates that the Oregon Trail form is <i>not neutral</i>: the identical mechanics that read as frontier optimism in 1985 read as lethal attrition when the traveller is undocumented. Nominated for Most Significant Impact at the 2014 Games for Change Awards.
+  <a href="https://www.giganticmechanic.com/portfolio/migrant-trail/" target="_blank" rel="noopener">reference</a></li>
+  <li><b>MECC's own siblings</b> &mdash; The Amazon Trail (1993), The Yukon Trail (1994), MayaQuest (1995), Africa Trail (1995). The publisher reskinned its own game repeatedly, usually by swapping the vehicle &mdash; canoe, bicycle &mdash; and keeping the resource-and-landmark spine. Reskinning Oregon Trail was legitimised by the people who made it.</li>
+  <li><b>Spent</b> &mdash; McKinney for Urban Ministries of Durham, 2011. Survive a month on $1,000, where every choice is a forced trade between two necessities. The purest &ldquo;budget as tragedy&rdquo; mechanic there is.
+  <a href="https://playspent.org/" target="_blank" rel="noopener">reference</a></li>
+  <li><b>Cart Life</b> &mdash; Richard Hofmeier, 2011. A black-and-white retail simulator about street vendors that deliberately refuses to empower you, so that precarity feels like precarity. IGF Grand Prize 2013.</li>
+  <li><b>Papers, Please</b> &mdash; Lucas Pope, 2013. Not a reskin, but the definitive demonstration that paperwork is a game verb and that a rulebook can be an antagonist without anyone in it being a villain. This game owes it the Three Doors.</li>
+  <li><b>Bury Me, My Love</b> &mdash; The Pixel Hunt / Figs / ARTE, 2017. A Syrian woman's journey to Germany told entirely through a messaging app, with real-time delays. Journey structure, branching, and bureaucracy as terrain.
+  <a href="https://en.wikipedia.org/wiki/Bury_Me,_My_Love" target="_blank" rel="noopener">reference</a></li>
+  <li><b>Ayiti: The Cost of Life</b> &mdash; Global Kids / Gamelab, 2006. Four years in the life of a Haitian family, allocating labour, schooling and health care. Structurally the closest poverty game to Oregon Trail: party members, seasons, illness, allocation.</li>
+</ul>
+
+<h3>The one thing worth stealing</h3>
+<p>The prices, the landmarks and the green-and-violet palette are the costume. Three mechanics carry the actual weight, and every reskin that works keeps all three: <b>you type the names of the people who are going to die</b>; <b>failure is written to disk and shown to the next player</b>; and <b>every choice trades one resource against a different resource, never simply against money</b>. This game keeps all three. The third one is why the status bar tracks performance status and prior lines of therapy side by side, moving in opposite directions.</p>`;
+
+/* ══════════════════ BOOT ══════════════════ */
+initCosts();
+newGame();
+sceneLoop();
+</script>
+</body>
+</html>
