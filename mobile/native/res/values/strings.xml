@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FDA</string>
+    <string name="leave_title">Leave the trail?</string>
+    <string name="leave_body">Your playthrough will be discarded.</string>
+    <string name="leave_yes">Leave</string>
+    <string name="leave_no">Stay</string>
+</resources>
