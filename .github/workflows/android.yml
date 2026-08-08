@@ -36,6 +36,8 @@ jobs:
   capacitor:
     name: Capacitor APK
     runs-on: ubuntu-latest
+    permissions:
+      contents: write        # only used by the manual apk-drop step below
     steps:
       - uses: actions/checkout@v4
 
@@ -80,6 +82,31 @@ jobs:
           name: fda-capacitor-debug-apk
           path: mobile/android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+
+      # Actions artifacts can only be downloaded by an authenticated API client,
+      # which makes them awkward to reach from some environments. On a MANUAL run
+      # only, also force-push the APK to a single-commit `apk-drop` branch, which
+      # any plain `git fetch` can reach. Never fires on push or pull_request, and
+      # the branch is disposable — delete it when you are done with it.
+      - name: Publish APK to the apk-drop branch (manual runs only)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/drop
+          cp mobile/android/app/build/outputs/apk/debug/app-debug.apk \
+             /tmp/drop/fda-capacitor-debug.apk
+          cd /tmp/drop
+          sha256sum fda-capacitor-debug.apk > SHA256SUMS
+          git init -q -b apk-drop
+          git config user.name  "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -q -m "APK drop from ${GITHUB_SHA}"
+          git push -q --force \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" apk-drop
+          echo "pushed apk-drop:"; cat SHA256SUMS
 
   native:
     name: Native APK (no Google SDK)
