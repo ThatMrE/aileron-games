@@ -21,6 +21,12 @@ on:
       - 'mobile/**'
       - '.github/workflows/android.yml'
   workflow_dispatch:
+    inputs:
+      action:
+        description: 'build = just build. drop-apk = also push the APK to the apk-drop branch. delete-apk-drop = remove that branch.'
+        type: choice
+        default: build
+        options: [build, drop-apk, delete-apk-drop]
 
 permissions:
   contents: read
@@ -33,8 +39,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Removes the disposable apk-drop branch. Lives here rather than being done by
+  # hand because ref deletion needs a token with contents:write, which the runner
+  # has and a local clone may not.
+  cleanup:
+    name: Delete apk-drop branch
+    if: github.event_name == 'workflow_dispatch' && inputs.action == 'delete-apk-drop'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Delete the branch if it exists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/apk-drop" >/dev/null 2>&1; then
+            gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/apk-drop"
+            echo "deleted apk-drop"
+          else
+            echo "apk-drop does not exist; nothing to do"
+          fi
+
   capacitor:
     name: Capacitor APK
+    # an ordinary build is not wanted when the request was just to clean up
+    if: github.event_name != 'workflow_dispatch' || inputs.action != 'delete-apk-drop'
     runs-on: ubuntu-latest
     permissions:
       contents: write        # only used by the manual apk-drop step below
@@ -84,12 +114,13 @@ jobs:
           if-no-files-found: error
 
       # Actions artifacts can only be downloaded by an authenticated API client,
-      # which makes them awkward to reach from some environments. On a MANUAL run
-      # only, also force-push the APK to a single-commit `apk-drop` branch, which
-      # any plain `git fetch` can reach. Never fires on push or pull_request, and
-      # the branch is disposable — delete it when you are done with it.
-      - name: Publish APK to the apk-drop branch (manual runs only)
-        if: github.event_name == 'workflow_dispatch'
+      # which makes them awkward to reach from some environments. When explicitly
+      # asked (workflow_dispatch with action=drop-apk), also force-push the APK to
+      # a single-commit `apk-drop` branch, which any plain `git fetch` can reach.
+      # Never fires on push or pull_request, and never on an ordinary manual build.
+      # Clean up afterwards with action=delete-apk-drop.
+      - name: Publish APK to the apk-drop branch
+        if: github.event_name == 'workflow_dispatch' && inputs.action == 'drop-apk'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -110,6 +141,7 @@ jobs:
 
   native:
     name: Native APK (no Google SDK)
+    if: github.event_name != 'workflow_dispatch' || inputs.action != 'delete-apk-drop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
