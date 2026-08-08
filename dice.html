@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>God Does Not Play Dice &mdash; A Standard Model Card Duel | Aileron Games</title>
+  <meta name="description" content="God Does Not Play Dice: collide quarks and leptons at real Feynman vertices, harvest gauge bosons, assemble hadrons, and spend hidden variables to overrule quantum probability. Formerly HIGGS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #00e5ff;
+      --cyan-dim: #0099cc;
+      --purple: #7c3aed;
+      --pink: #f0abfc;
+      --gold: #ffd166;
+      --orange: #ff9f43;
+      --violet: #a78bfa;
+      --green: #4ade80;
+      --red: #ff6b6b;
+      --dark: #050812;
+      --dark2: #090d1f;
+      --dark3: #0d1230;
+      --text: #e8f0ff;
+      --muted: rgba(232,240,255,0.55);
+      --border: rgba(0,229,255,0.15);
+      --card-bg: rgba(0,229,255,0.03);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      background: var(--dark); color: var(--text);
+      font-family:'Inter',sans-serif; overflow-x:hidden;
+      -webkit-font-smoothing:antialiased; min-height:100vh;
+    }
+    a { color:inherit; text-decoration:none; }
+    body::before {
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+      background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 5%,  rgba(0,229,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(240,171,252,0.3) 0%, transparent 100%),
+        radial-gradient(2px 2px at 30% 55%, rgba(0,229,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 45%, rgba(240,171,252,0.2) 0%, transparent 100%);
+    }
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1rem 3rem; background:rgba(5,8,18,0.9);
+      backdrop-filter:blur(12px); border-bottom:1px solid var(--border);
+    }
+    .nav-logo { font-family:'Orbitron',monospace; font-size:1.05rem; font-weight:700; color:var(--cyan); letter-spacing:0.08em; text-shadow:0 0 20px rgba(0,229,255,0.5); }
+    .nav-links { display:flex; align-items:center; gap:1.6rem; list-style:none; }
+    .nav-links a { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); font-family:'Space Mono',monospace; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--cyan); }
+
+    .g-hero { padding:6.5rem 1.5rem 1rem; text-align:center; position:relative; z-index:1; }
+    .g-eyebrow { font-family:'Space Mono',monospace; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--cyan); margin-bottom:0.6rem; }
+    .g-hero h1 { font-family:'Orbitron',monospace; font-size:clamp(1.5rem,4.5vw,2.8rem); font-weight:900; letter-spacing:0.06em; text-shadow:0 0 50px rgba(0,229,255,0.3); }
+    .g-hero h1 span { color:var(--cyan); }
+    .g-tagline { font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; margin-top:0.4rem; }
+
+    .btn {
+      display:inline-block; padding:0.65rem 1.4rem; font-family:'Space Mono',monospace;
+      font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+      cursor:pointer; border:none; transition:all 0.2s; background:transparent; color:var(--cyan);
+    }
+    .btn-cyan { background:var(--cyan); color:var(--dark); box-shadow:0 0 20px rgba(0,229,255,0.3); }
+    .btn-cyan:hover:not(:disabled){ box-shadow:0 0 34px rgba(0,229,255,0.55); transform:translateY(-1px); }
+    .btn-outline { border:1px solid rgba(0,229,255,0.4); }
+    .btn-outline:hover:not(:disabled){ border-color:var(--cyan); background:rgba(0,229,255,0.06); }
+    .btn-gold { border:1px solid rgba(255,209,102,0.5); color:var(--gold); }
+    .btn-gold:hover:not(:disabled){ background:rgba(255,209,102,0.08); }
+    .btn:disabled { opacity:0.3; cursor:not-allowed; }
+
+    .board { position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:1.2rem 1.2rem 4rem; }
+
+    .hud { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .hud-chip { font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.05em; padding:0.45rem 0.85rem; border:1px solid var(--border); background:var(--card-bg); border-radius:3px; color:var(--muted); }
+    .hud-chip b { color:var(--cyan); }
+    .hud-chip.ai b { color:var(--pink); }
+    .hv { color:var(--gold); }
+
+    .lane { border:1px solid var(--border); background:rgba(9,13,31,0.6); border-radius:6px; padding:0.8rem 1rem; margin-bottom:0.9rem; }
+    .lane-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.55rem; }
+    .lane-title { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+    .lane-title.you { color:var(--cyan); }
+    .lane-title.mid { color:var(--gold); }
+    .lane-row { display:flex; flex-wrap:wrap; gap:0.55rem; min-height:70px; align-items:center; }
+    .empty-hint { font-family:'Space Mono',monospace; font-size:0.66rem; color:rgba(232,240,255,0.28); letter-spacing:0.05em; }
+
+    /* ── PARTICLE CARD (SVG) ── */
+    .pcard { cursor:pointer; transition:transform 0.13s, filter 0.13s; border-radius:7px; position:relative; }
+    .pcard:hover { transform:translateY(-3px); }
+    .pcard.sel { filter:drop-shadow(0 0 8px var(--cyan)); transform:translateY(-4px); }
+    .pcard.target { filter:drop-shadow(0 0 8px var(--gold)); }
+    .pcard.target::after {
+      content:'⇣ collide'; position:absolute; top:-1.1rem; left:50%; transform:translateX(-50%);
+      font-family:'Space Mono',monospace; font-size:0.55rem; color:var(--gold); white-space:nowrap;
+    }
+    .pcard svg { display:block; }
+
+    /* ── CHAMBER / OUTCOME SHEET ── */
+    .chamber { border:1px solid rgba(0,229,255,0.3); background:linear-gradient(135deg, rgba(13,18,48,0.7), rgba(9,13,31,0.7)); border-radius:6px; padding:0.9rem 1rem; margin-bottom:0.9rem; }
+    .chamber-title { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--cyan); margin-bottom:0.6rem; text-align:center; }
+    .chamber-hint { font-family:'Space Mono',monospace; font-size:0.66rem; color:rgba(232,240,255,0.35); text-align:center; letter-spacing:0.04em; padding:0.4rem 0; line-height:1.7; }
+    .outcome-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.6rem; padding:0.55rem 0.8rem; border:1px solid var(--border); border-radius:5px; background:rgba(0,229,255,0.02); margin-bottom:0.45rem; }
+    .oc-name { font-family:'Orbitron',monospace; font-size:0.85rem; }
+    .oc-meta { display:flex; gap:0.8rem; align-items:center; font-family:'Space Mono',monospace; font-size:0.62rem; }
+    .oc-prob { color:var(--green); font-weight:700; }
+    .oc-pts { color:var(--gold); }
+    .oc-fx { color:var(--muted); max-width:340px; }
+    .oc-pick { font-size:0.58rem; padding:0.35rem 0.7rem; }
+    .prob-bar { height:4px; background:rgba(0,229,255,0.1); border-radius:2px; width:70px; overflow:hidden; }
+    .prob-fill { height:100%; background:var(--green); }
+
+    .controls { display:flex; flex-wrap:wrap; gap:0.55rem; justify-content:center; margin:0.8rem 0; }
+
+    /* ── LOG ── */
+    .log-box { border:1px solid var(--border); background:rgba(5,8,18,0.75); border-radius:6px; padding:0.7rem 0.85rem; height:170px; overflow-y:auto; font-family:'Space Mono',monospace; font-size:0.66rem; line-height:1.6; }
+    .log-line { color:var(--muted); margin-bottom:0.12rem; }
+    .log-line.you { color:var(--cyan); }
+    .log-line.ai  { color:var(--pink); }
+    .log-line.ok  { color:var(--green); }
+    .log-line.fx  { color:var(--gold); }
+    .log-line.sys { color:rgba(232,240,255,0.35); }
+    .log-line.win { color:#fff; font-weight:700; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+    .section-label { font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin:1rem 0 0.45rem; }
+
+    /* ── FEYNMAN ANIMATION OVERLAY ── */
+    .feyn-overlay {
+      position:fixed; inset:0; z-index:400; display:none;
+      align-items:center; justify-content:center;
+      background:rgba(5,8,18,0.82); backdrop-filter:blur(4px);
+    }
+    .feyn-overlay.show { display:flex; }
+    .feyn-box { background:var(--dark2); border:1px solid rgba(0,229,255,0.3); border-radius:10px; padding:1.2rem 1.5rem; text-align:center; box-shadow:0 0 60px rgba(0,229,255,0.15); }
+    .feyn-caption { font-family:'Orbitron',monospace; font-size:1rem; color:var(--text); margin-top:0.4rem; letter-spacing:0.04em; min-height:1.4rem; }
+    .feyn-sub { font-family:'Space Mono',monospace; font-size:0.62rem; color:var(--muted); letter-spacing:0.08em; margin-top:0.25rem; }
+    @keyframes feynDraw { to { stroke-dashoffset:0; } }
+    @keyframes feynFade { from { opacity:0; } to { opacity:1; } }
+    .feyn-line { stroke-dasharray:600; stroke-dashoffset:600; animation:feynDraw 0.55s ease forwards; }
+    .feyn-line.out { animation-delay:0.55s; }
+    .feyn-label { opacity:0; animation:feynFade 0.3s ease forwards; }
+    .feyn-label.in { animation-delay:0.1s; }
+    .feyn-label.out { animation-delay:0.95s; }
+
+    /* ── MAHJONG WALL (collision reference) ── */
+    .wall { border:1px solid var(--border); border-radius:6px; background:rgba(9,13,31,0.6); margin-bottom:0.9rem; overflow:hidden; }
+    .wall-head { display:flex; justify-content:space-between; align-items:center; padding:0.7rem 1rem; cursor:pointer; }
+    .wall-head:hover { background:rgba(0,229,255,0.04); }
+    .wall-body { display:none; padding:0 1rem 1rem; }
+    .wall.open .wall-body { display:block; }
+    .wall-group { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--cyan); margin:0.9rem 0 0.45rem; }
+    .tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:0.45rem; }
+    .tile { border:1px solid var(--border); border-radius:5px; padding:0.5rem 0.65rem; background:rgba(0,229,255,0.02); font-size:0.72rem; }
+    .tile-f { font-family:'Orbitron',monospace; font-size:0.78rem; margin-bottom:0.25rem; }
+    .tile-d { font-family:'Space Mono',monospace; font-size:0.58rem; color:var(--muted); line-height:1.55; }
+    .tile-d .pr { color:var(--green); }
+    .tile-d .pt { color:var(--gold); }
+    .tile.forbid { border-color:rgba(255,107,107,0.3); }
+    .tile.forbid .tile-f { color:var(--red); }
+
+    /* ── OVERLAYS ── */
+    .overlay { position:fixed; inset:0; z-index:300; background:rgba(5,8,18,0.92); backdrop-filter:blur(6px); display:none; align-items:center; justify-content:center; padding:2rem 1rem; }
+    .overlay.show { display:flex; }
+    .modal { max-width:760px; width:100%; max-height:86vh; overflow-y:auto; background:var(--dark2); border:1px solid var(--border); border-radius:8px; padding:1.8rem 2rem; }
+    .modal h2 { font-family:'Orbitron',monospace; font-size:1.25rem; color:var(--cyan); margin-bottom:0.9rem; letter-spacing:0.04em; }
+    .modal h3 { font-family:'Orbitron',monospace; font-size:0.82rem; color:var(--pink); margin:1.1rem 0 0.45rem; letter-spacing:0.04em; }
+    .modal p, .modal li { color:var(--muted); font-size:0.88rem; line-height:1.7; }
+    .modal ul, .modal ol { margin:0.35rem 0 0.35rem 1.2rem; }
+    .modal code { font-family:'Space Mono',monospace; background:rgba(0,229,255,0.08); color:var(--cyan); padding:0.05rem 0.35rem; border-radius:3px; font-size:0.8rem; }
+    .modal .win-head { color:var(--green); }
+    .modal-close { margin-top:1.3rem; text-align:center; }
+
+    .toss-banner {
+      font-family:'Space Mono',monospace; font-size:0.66rem; letter-spacing:0.1em;
+      color:var(--gold); text-align:center; margin:0.4rem 0 0.8rem;
+    }
+
+    .footer-mini { text-align:center; padding:1.8rem 1rem; position:relative; z-index:1; font-family:'Space Mono',monospace; font-size:0.62rem; color:rgba(232,240,255,0.3); letter-spacing:0.06em; line-height:1.9; }
+    .footer-mini a { color:var(--cyan); }
+
+    @media (max-width:820px){
+      nav { padding:0.85rem 1rem; }
+      .nav-links { gap:0.9rem; }
+      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display:none; }
+      .two-col { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">&#9652; AILERON</a>
+    <ul class="nav-links">
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="#" onclick="openRules();return false;">How to Play</a></li>
+      <li><a href="dice-rules.html">Design &amp; Rules</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="g-hero">
+    <p class="g-eyebrow">&#9652; Aileron Games &mdash; formerly HIGGS</p>
+    <h1>GOD DOES NOT <span>PLAY DICE</span></h1>
+    <p class="g-tagline">A Standard-Model card duel &middot; Einstein said it. The universe disagreed. Spend hidden variables and settle it.</p>
+  </header>
+
+  <main class="board">
+    <div class="hud" id="hud"></div>
+    <div class="toss-banner" id="tossBanner"></div>
+
+    <!-- Opponent hand (face down) -->
+    <div class="lane">
+      <div class="lane-head">
+        <span class="lane-title" style="color:var(--pink)">&#x1F916; Copenhagen AI &mdash; hand</span>
+        <span class="lane-title" id="aiInfo"></span>
+      </div>
+      <div class="lane-row" id="aiHand"></div>
+    </div>
+
+    <!-- Shared collider -->
+    <div class="lane" style="border-color:rgba(255,209,102,0.3);">
+      <div class="lane-head">
+        <span class="lane-title mid">&#x269B;&#xFE0F; The Collider &mdash; shared beamline (anyone may collide with anything here)</span>
+        <span class="lane-title" id="colInfo"></span>
+      </div>
+      <div class="lane-row" id="collider"></div>
+    </div>
+
+    <!-- Chamber: outcome sheet -->
+    <div class="chamber">
+      <div class="chamber-title">Collision Chamber</div>
+      <div id="chamberBody"></div>
+    </div>
+
+    <div class="controls" id="controls"></div>
+
+    <!-- Your hand -->
+    <div class="lane">
+      <div class="lane-head">
+        <span class="lane-title you">&#x1F0CF; Your hand &mdash; click a card, then a collider target</span>
+        <span class="lane-title" id="youInfo"></span>
+      </div>
+      <div class="lane-row" id="youHand"></div>
+    </div>
+
+    <!-- Mahjong wall -->
+    <div class="wall" id="wall">
+      <div class="wall-head" onclick="document.getElementById('wall').classList.toggle('open')">
+        <span class="lane-title mid">&#x1F004; The Wall of Diagrams &mdash; every legal collision &amp; its odds</span>
+        <span class="lane-title">tap to open/close</span>
+      </div>
+      <div class="wall-body" id="wallBody"></div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <p class="section-label">Score piles</p>
+        <div class="lane" style="margin-bottom:0.5rem;"><div class="lane-head"><span class="lane-title you">Your hadrons</span></div><div id="youScorePile" style="font-family:'Orbitron',monospace;font-size:0.85rem;line-height:2;color:var(--text);">&mdash;</div></div>
+        <div class="lane"><div class="lane-head"><span class="lane-title" style="color:var(--pink)">AI hadrons</span></div><div id="aiScorePile" style="font-family:'Orbitron',monospace;font-size:0.85rem;line-height:2;color:var(--text);">&mdash;</div></div>
+      </div>
+      <div>
+        <p class="section-label">Interaction log</p>
+        <div class="log-box" id="log"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer-mini">
+    GOD DOES NOT PLAY DICE &mdash; every card, vertex &amp; probability is drawn from the Standard Model (compressed for play).<br>
+    <a href="dice-rules.html">Full rules, card list &amp; design notes &rarr;</a>
+  </div>
+
+  <!-- Feynman animation overlay -->
+  <div class="feyn-overlay" id="feynOverlay">
+    <div class="feyn-box">
+      <div id="feynSvg"></div>
+      <div class="feyn-caption" id="feynCaption"></div>
+      <div class="feyn-sub" id="feynSub"></div>
+    </div>
+  </div>
+
+  <!-- Rules / win overlay -->
+  <div class="overlay" id="overlay"><div class="modal" id="modalBody"></div></div>
+
+<script>
+/* ==============================================================
+   GOD DOES NOT PLAY DICE  (formerly HIGGS)
+   A Standard-Model card duel.
+   Fermion cards collide at real Feynman vertices; gauge bosons
+   trigger effects; hadrons score; hidden variables let you choose
+   an outcome instead of rolling — the title is the mechanic.
+   ============================================================== */
+var HEADLESS = false;
+
+/* ---------- PARTICLE DATABASE (PDG values, abbreviated) ---------- */
+const OL = "̅"; // combining overline
+const P = {
+  u:   {sym:"u",      nm:"up",        type:"q",  flav:"u", chg: 2/3, mass:"2.2 MeV",  gen:1, tier:0},
+  d:   {sym:"d",      nm:"down",      type:"q",  flav:"d", chg:-1/3, mass:"4.7 MeV",  gen:1, tier:0},
+  s:   {sym:"s",      nm:"strange",   type:"q",  flav:"s", chg:-1/3, mass:"95 MeV",   gen:2, tier:1},
+  c:   {sym:"c",      nm:"charm",     type:"q",  flav:"c", chg: 2/3, mass:"1.27 GeV", gen:2, tier:2},
+  b:   {sym:"b",      nm:"bottom",    type:"q",  flav:"b", chg:-1/3, mass:"4.18 GeV", gen:3, tier:3},
+  ubar:{sym:"u"+OL,   nm:"anti-up",   type:"aq", flav:"u", chg:-2/3, mass:"2.2 MeV",  gen:1, tier:0},
+  dbar:{sym:"d"+OL,   nm:"anti-down", type:"aq", flav:"d", chg: 1/3, mass:"4.7 MeV",  gen:1, tier:0},
+  sbar:{sym:"s"+OL,   nm:"anti-strange",type:"aq",flav:"s",chg: 1/3, mass:"95 MeV",   gen:2, tier:1},
+  cbar:{sym:"c"+OL,   nm:"anti-charm",type:"aq", flav:"c", chg:-2/3, mass:"1.27 GeV", gen:2, tier:2},
+  bbar:{sym:"b"+OL,   nm:"anti-bottom",type:"aq",flav:"b", chg: 1/3, mass:"4.18 GeV", gen:3, tier:3},
+  "e-":{sym:"e⁻",nm:"electron",  type:"l",  flav:"e", chg:-1,   mass:"511 keV",  gen:1, tier:0},
+  "e+":{sym:"e⁺",nm:"positron",  type:"al", flav:"e", chg: 1,   mass:"511 keV",  gen:1, tier:0},
+  "mu-":{sym:"μ⁻",nm:"muon",type:"l",  flav:"mu",chg:-1,   mass:"106 MeV",  gen:2, tier:1},
+  "mu+":{sym:"μ⁺",nm:"anti-muon",type:"al",flav:"mu",chg:1,mass:"106 MeV",  gen:2, tier:1}
+};
+// Note: NO top quark. It decays in 5×10⁻²⁵ s — before it can hadronize.
+const isQ  = k => P[k].type==="q";
+const isAQ = k => P[k].type==="aq";
+const isL  = k => P[k].type==="l" || P[k].type==="al";
+const matter = k => P[k].type==="q" || P[k].type==="l";
+
+/* 60-card deck: generation-weighted fermions */
+function deckList(){
+  const spec = { u:8, d:8, ubar:6, dbar:6, s:4, sbar:3, c:4, cbar:3, b:3, bbar:3, "e-":4, "e+":4, "mu-":2, "mu+":2 };
+  const out=[];
+  for(const k in spec) for(let i=0;i<spec[k];i++) out.push(k);
+  return out;
+}
+/* QCD color assignment (gauge freedom: which quark is "red" is arbitrary,
+   so we assign colors at shuffle — a real feature of the theory). */
+const QCOL  = ["#ff5a5a","#4ade80","#5aa2ff"];         // r g b
+const AQCOL = ["#67e8f9","#f0abfc","#ffe066"];         // anti-colors (cyan magenta yellow)
+
+/* ---------- COLLISION TABLE (the physics) ----------
+   Every legal pair yields outcomes with probabilities.
+   Forces: gluon=strong, photon=EM, W=weak charged, Z=weak neutral.
+   (Gravity is NOT in the Standard Model — hence not in the deck.)   */
+const BOSON = {
+  g:     {sym:"g",       nm:"gluon",  force:"strong",       fx:"Confinement: take a random card from your opponent's hand. The gluon stays in the collider (fusion fuel)."},
+  gamma: {sym:"γ",  nm:"photon", force:"electromagnetic", fx:"Repulsion: a random opponent card is knocked to the bottom of the deck."},
+  "W+":  {sym:"W⁺", nm:"W boson",force:"weak (charged)", fx:"Flavor exchange: swap one card of your choice for a random opponent card."},
+  "W-":  {sym:"W⁻", nm:"W boson",force:"weak (charged)", fx:"Flavor exchange: swap one card of your choice for a random opponent card."},
+  Z:     {sym:"Z",       nm:"Z boson",force:"weak (neutral)", fx:"Measurement: gain 1 hidden variable and glimpse your opponent's hand."}
+};
+const MESON = { // key: sorted flavor pair (quark+antiquark, different flavors)
+  "d,u":["π",2], "s,u":["K",3], "d,s":["K",3],
+  "c,u":["D",4], "c,d":["D",4], "c,s":["Dₛ",4],
+  "b,u":["B",5], "b,d":["B",5], "b,s":["Bₛ",5], "b,c":["Bᴄ",6]
+};
+const BARYON_NAMES = {
+  "d,u,u":"p", "d,d,u":"n", "u,u,s":"Σ⁺", "d,u,s":"Λ⁰", "d,d,s":"Σ⁻",
+  "s,s,u":"Ξ⁰", "d,s,s":"Ξ⁻", "s,s,s":"Ω⁻",
+  "c,d,u":"Λᴄ", "b,d,u":"Λᵇ", "c,c,c":"Ωᴄᴄᴄ", "b,b,b":"Ωᵇᵇᵇ"
+};
+function chargeSup(q){ if(Math.abs(q-1)<0.01)return "⁺"; if(Math.abs(q+1)<0.01)return "⁻"; if(Math.abs(q)<0.01)return "⁰"; return ""; }
+function mesonOf(k1,k2){ // one quark + one antiquark, different flavors
+  const f = [P[k1].flav,P[k2].flav].sort().join(",");
+  const m = MESON[f]; if(!m) return null;
+  const q = P[k1].chg + P[k2].chg;
+  return {name:m[0]+chargeSup(q), pts:m[1], charge:q};
+}
+function baryonOf(flavs){ // 3 matter flavors (or 3 anti)
+  const key = flavs.slice().sort().join(",");
+  const tiers = flavs.map(f=>({u:0,d:0,s:1,c:2,b:3}[f]));
+  let pts = 6 + tiers.reduce((a,b)=>a+b,0);
+  let tok = 0;
+  if(key==="s,s,s"){ pts+=1; tok=1; }                       // Ω⁻ discovery bonus
+  if(Math.min.apply(null,tiers)>=2){ pts+=2; tok=1; }       // triple-heavy exotics
+  const name = BARYON_NAMES[key] || ("["+flavs.sort().join("")+"]");
+  return {name, pts, tok};
+}
+
+/* collideOptions(handKey, stack) → {outcomes:[...]} | {illegal:"reason"}
+   stack: {type:'single'|'di'|'gluon', keys:[...], anti?:bool}                 */
+function collideOptions(hk, st){
+  if(st.type==="gluon") return {illegal:"Gluons only interact via FUSE (needs two)."};
+  if(st.type==="di"){
+    const anti = st.anti;
+    if((anti && isAQ(hk)) || (!anti && isQ(hk))){
+      const flavs = st.keys.map(k=>P[k].flav).concat([P[hk].flav]);
+      const b = baryonOf(flavs);
+      return {outcomes:[{p:100, kind:"baryon", name:(anti?b.name+OL:b.name), pts:b.pts, tok:b.tok}], det:true};
+    }
+    return {illegal:"A diquark binds only with a third "+(anti?"antiquark":"quark")+"."};
+  }
+  const tk = st.keys[0];
+  // lepton pairs
+  if(isL(hk) || isL(tk)){
+    if(isL(hk)&&isL(tk)){
+      if(P[hk].flav!==P[tk].flav) return {illegal:"Lepton flavor is conserved: e and μ lines never meet at a vertex."};
+      if(P[hk].type===P[tk].type) return {illegal:"Same-charge leptons repel — no annihilation vertex."};
+      return {outcomes:[ {p:55,kind:"boson",b:"gamma"}, {p:45,kind:"boson",b:"Z"} ]};
+    }
+    return {illegal:"No low-energy quark–lepton vertex in this game (that's deep inelastic scattering — expansion pack)."};
+  }
+  // quark-quark / anti-anti → diquark
+  if(isQ(hk)&&isQ(tk))  return {outcomes:[{p:100,kind:"di"}], det:true};
+  if(isAQ(hk)&&isAQ(tk))return {outcomes:[{p:100,kind:"di"}], det:true};
+  // quark + antiquark
+  const qk = isQ(hk)?hk:tk, ak = isQ(hk)?tk:hk;
+  if(P[qk].flav===P[ak].flav){ // same-flavor annihilation
+    const f=P[qk].flav;
+    if(f==="c") return {outcomes:[ {p:35,kind:"boson",b:"g"},{p:15,kind:"boson",b:"gamma"},{p:15,kind:"boson",b:"Z"},{p:35,kind:"onium",name:"J/ψ",pts:4,tok:1} ]};
+    if(f==="b") return {outcomes:[ {p:30,kind:"boson",b:"g"},{p:15,kind:"boson",b:"gamma"},{p:15,kind:"boson",b:"Z"},{p:40,kind:"onium",name:"Υ",pts:5,tok:1} ]};
+    return {outcomes:[ {p:55,kind:"boson",b:"g"},{p:25,kind:"boson",b:"gamma"},{p:20,kind:"boson",b:"Z"} ]};
+  }
+  const m = mesonOf(qk,ak);
+  if(!m) return {illegal:"No open channel for this pair."};
+  if(Math.abs(m.charge)>0.5){
+    const w = m.charge>0?"W+":"W-";
+    return {outcomes:[ {p:75,kind:"meson",name:m.name,pts:m.pts}, {p:25,kind:"boson",b:w} ]};
+  }
+  // Neutral cross-flavor pairs CANNOT annihilate to a Z — no flavor-changing
+  // neutral currents in the Standard Model (GIM mechanism). They can only hadronize.
+  return {outcomes:[ {p:100,kind:"meson",name:m.name,pts:m.pts} ], det:true};
+}
+/* Gluon fusion (an action, not a card): needs 2 gluons in the collider. */
+const FUSE = {outcomes:[ {p:30,kind:"higgs",pts:20}, {p:70,kind:"pair"} ], tokCost:3};
+
+/* ---------- GAME STATE ---------- */
+const TARGET = 20;
+let G;
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function mkCard(k){
+  const p=P[k];
+  let col=null;
+  if(p.type==="q") col=QCOL[Math.floor(Math.random()*3)];
+  if(p.type==="aq")col=AQCOL[Math.floor(Math.random()*3)];
+  return {k, col};
+}
+function newGame(){
+  const deck = shuffle(deckList()).map(mkCard);
+  G = {
+    deck, discard:[], removed:[],
+    stacks:[],                 // shared collider
+    you:{hand:[],score:0,pile:[],tok:0},
+    ai: {hand:[],score:0,pile:[],tok:0},
+    turn:null, over:false, winner:null, lastRound:false, lastTurns:0,
+    sel:null,                  // selected hand index
+    pending:null,              // {handIdx, stackIdx, opts} awaiting roll/choice
+    log:[]
+  };
+  for(let i=0;i<6;i++){ G.you.hand.push(G.deck.pop()); G.ai.hand.push(G.deck.pop()); }
+  reseed();
+  const heads = Math.random()<0.5;
+  G.turn = heads ? "you" : "ai";
+  (heads?G.you:G.ai).tok += 1;   // the opener gets a hidden variable: the shared collider favors the reactive seat
+  G.toss = heads ? "Heads — you open the beam and pocket a hidden variable." :
+                   "Tails — the AI opens the beam and pockets a hidden variable.";
+  logMsg("sys","— A new run. First to "+TARGET+" points, or detect the Higgs. —");
+  logMsg("sys",G.toss);
+  render();
+  if(G.turn==="ai" && !HEADLESS) setTimeout(aiAct, 800);
+}
+function reseed(){
+  const hasFermion = G.stacks.some(s=>s.type!=="gluon");
+  if(hasFermion) return;
+  if(G.deck.length===0){ endByDeck(); return; }
+  const c = G.deck.pop();
+  G.stacks.push({type:"single", keys:[c.k], cards:[c]});
+  logMsg("sys","The beam injects "+P[c.k].sym+" into the collider.");
+  if(G.deck.length===0) endByDeck();
+}
+function logMsg(kind,text){ G.log.push({kind,text}); if(G.log.length>140) G.log.shift(); }
+function pl(who){ return who==="you"?G.you:G.ai; }
+function opp(who){ return who==="you"?G.ai:G.you; }
+function roll(outcomes){
+  let r=Math.random()*100;
+  for(const o of outcomes){ if((r-=o.p)<0) return o; }
+  return outcomes[outcomes.length-1];
+}
+
+/* ---------- ACTIONS (each is one full turn) ---------- */
+function endTurn(){
+  if(G.over) return;
+  if(G.lastRound){ G.lastTurns--; if(G.lastTurns<=0){ finishGame(); return; } }
+  G.turn = G.turn==="you"?"ai":"you";
+  G.sel=null; G.pending=null;
+  render();
+  if(G.turn==="ai" && !G.over && !HEADLESS) setTimeout(aiAct, 750);
+}
+function actDraw(who){
+  const p=pl(who);
+  let n=0;
+  for(let i=0;i<2;i++){
+    if(G.deck.length===0){ endByDeck(); break; }
+    if(p.hand.length>=8) break;
+    p.hand.push(G.deck.pop()); n++;
+  }
+  logMsg(who,(who==="you"?"You draw ":"AI draws ")+n+" card"+(n===1?"":"s")+".");
+  if(G.deck.length===0) endByDeck();
+  endTurn();
+}
+function actSalvage(who){
+  const p=pl(who);
+  if(G.discard.length===0 || p.hand.length>=8) return false;
+  const c=G.discard.pop();
+  p.hand.push(c);
+  logMsg(who,(who==="you"?"You salvage ":"AI salvages ")+P[c.k].sym+" from the debris.");
+  endTurn(); return true;
+}
+function actJettison(who, idx){
+  const p=pl(who);
+  if(!p.hand[idx]) return false;
+  const c=p.hand.splice(idx,1)[0];
+  G.discard.push(c);
+  logMsg(who,(who==="you"?"You jettison ":"AI jettisons ")+P[c.k].sym+" into the debris (beam dump).");
+  endTurn(); return true;
+}
+function actCollide(who, handIdx, stackIdx, fixedIdx){
+  const p=pl(who);
+  const card=p.hand[handIdx], st=G.stacks[stackIdx];
+  if(!card||!st) return false;
+  const co=collideOptions(card.k, st);
+  if(co.illegal) return false;
+  let oc;
+  if(fixedIdx!=null && !co.det){
+    if(p.tok<1) return false;
+    p.tok--; oc=co.outcomes[fixedIdx];
+    logMsg("fx",(who==="you"?"You spend":"AI spends")+" a hidden variable — no dice. Outcome chosen: "+ocLabel(oc)+".");
+  } else {
+    oc=roll(co.outcomes);
+  }
+  p.hand.splice(handIdx,1);
+  applyOutcome(who, oc, card, st, stackIdx);
+  if(!G.over) endTurn();
+  return true;
+}
+function actFuse(who, useTok){
+  const p=pl(who);
+  const gi=G.stacks.map((s,i)=>s.type==="gluon"?i:-1).filter(i=>i>=0);
+  if(gi.length<2) return false;
+  let oc;
+  if(useTok && p.tok>=FUSE.tokCost){
+    p.tok-=FUSE.tokCost; oc=FUSE.outcomes[0];
+    logMsg("fx",(who==="you"?"You spend":"AI spends")+" 3 hidden variables — Einstein's gambit. The Higgs is chosen, not rolled.");
+  } else oc=roll(FUSE.outcomes);
+  // consume two gluons
+  G.stacks.splice(gi[1],1); G.stacks.splice(gi[0],1);
+  if(oc.kind==="higgs"){
+    p.score+=20; p.pile.push({name:"H",pts:20});
+    logMsg("win","★ g + g → H — the Higgs boson! +20 to "+(who==="you"?"you":"the AI")+".");
+    animate(["g","g"],{kind:"higgs"},"g + g → H","Gluon fusion — the boson that gives mass");
+    finishGame();
+  } else {
+    const c1=mkCard("c"), c2=mkCard("cbar");
+    if(p.hand.length<8) p.hand.push(c1); else G.discard.push(c1);
+    if(p.hand.length<8) p.hand.push(c2); else G.discard.push(c2);
+    logMsg(who,(who==="you"?"You fuse":"AI fuses")+" gluons → c c̅ pair production. Both cards to hand.");
+    animate(["g","g"],{kind:"pair"},"g + g → c c̅","Pair production");
+    reseed();
+    endTurn();
+  }
+  return true;
+}
+function ocLabel(oc){
+  if(oc.kind==="boson") return BOSON[oc.b].sym+" ("+BOSON[oc.b].nm+")";
+  if(oc.kind==="meson"||oc.kind==="onium"||oc.kind==="baryon") return oc.name+" +"+oc.pts;
+  if(oc.kind==="di") return "diquark";
+  if(oc.kind==="higgs") return "H";
+  return "?";
+}
+function applyOutcome(who, oc, card, st, stackIdx){
+  const p=pl(who), o=opp(who), whoNm=who==="you"?"You":"AI";
+  const inSyms=[card.k, st.type==="di"?"di:"+st.keys.map(k=>P[k].sym).join(""):st.keys[0]];
+  if(oc.kind==="di"){
+    G.stacks[stackIdx]={type:"di", anti:isAQ(card.k), keys:[st.keys[0],card.k], cards:[st.cards[0],card]};
+    logMsg(who,whoNm+" bind"+(who==="you"?"":"s")+" "+P[st.keys[0]].sym+"+"+P[card.k].sym+" into a diquark. One more completes a baryon — for anyone.");
+    animate(inSyms,{kind:"di"},P[st.keys[0]].sym+" + "+P[card.k].sym+" → diquark","Strong force — gluon binding");
+    return;
+  }
+  if(oc.kind==="meson"||oc.kind==="onium"||oc.kind==="baryon"){
+    p.score+=oc.pts; p.pile.push({name:oc.name,pts:oc.pts});
+    if(oc.tok){ p.tok+=oc.tok; logMsg("fx",whoNm+" gain"+(who==="you"?"":"s")+" a hidden variable ("+oc.name+")."); }
+    G.removed.push(card, ...st.cards);
+    G.stacks.splice(stackIdx,1);
+    logMsg("ok","✔ "+whoNm+": "+ocLabel(oc)+" pts — "+(oc.kind==="baryon"?"baryon assembled":oc.kind==="onium"?"bound state":"hadronization")+".");
+    animate(inSyms,oc,collFormula(card,st,oc),oc.kind==="baryon"?"Confinement — three quarks, one hadron":"Hadronization");
+    reseed();
+    checkWin();
+    return;
+  }
+  if(oc.kind==="boson"){
+    G.discard.push(card, ...st.cards);
+    G.stacks.splice(stackIdx,1);
+    const B=BOSON[oc.b];
+    logMsg(who,whoNm+" annihilate"+(who==="you"?"":"s")+": "+collFormula(card,st,oc)+".");
+    animate(inSyms,oc,collFormula(card,st,oc),B.force+" force");
+    // effects
+    if(oc.b==="g"){
+      G.stacks.push({type:"gluon", keys:["g"], cards:[]});
+      if(o.hand.length){ const i=Math.floor(Math.random()*o.hand.length); const t=o.hand.splice(i,1)[0];
+        if(p.hand.length<8){ p.hand.push(t); logMsg("fx","Confinement drags "+P[t.k].sym+" out of "+(who==="you"?"the AI's":"your")+" hand!"); }
+        else G.discard.push(t);
+      }
+    } else if(oc.b==="gamma"){
+      if(o.hand.length){ const i=Math.floor(Math.random()*o.hand.length); const t=o.hand.splice(i,1)[0];
+        G.deck.unshift(t); logMsg("fx","Repulsion knocks "+P[t.k].sym+" from "+(who==="you"?"the AI's":"your")+" hand to the bottom of the deck."); }
+    } else if(oc.b==="W+"||oc.b==="W-"){
+      if(p.hand.length&&o.hand.length){
+        let gi2=0; // give lowest-tier card
+        p.hand.forEach((c,i)=>{ if(P[c.k].tier<P[p.hand[gi2].k].tier) gi2=i; });
+        const give=p.hand.splice(gi2,1)[0];
+        const ti=Math.floor(Math.random()*o.hand.length);
+        const take=o.hand.splice(ti,1)[0];
+        p.hand.push(take); o.hand.push(give);
+        logMsg("fx","Flavor exchange: "+P[give.k].sym+" ⇄ "+P[take.k].sym+".");
+      }
+    } else if(oc.b==="Z"){
+      p.tok+=1;
+      logMsg("fx","Neutral-current measurement: "+whoNm.toLowerCase()+" gain"+(who==="you"?"":"s")+" a hidden variable"+(who==="you"?" and glimpse the AI's hand":"")+".");
+      if(who==="you" && !HEADLESS) G.peek=true;
+    }
+    reseed();
+  }
+}
+function collFormula(card,st,oc){
+  const a=P[card.k].sym;
+  const b=st.type==="di" ? "("+st.keys.map(k=>P[k].sym).join("")+")" : P[st.keys[0]].sym;
+  return a+" + "+b+" → "+(oc.kind==="boson"?BOSON[oc.b].sym:oc.name||"?");
+}
+function checkWin(){
+  if(G.you.score>=TARGET||G.ai.score>=TARGET) finishGame();
+}
+function endByDeck(){
+  if(G.lastRound||G.over) return;
+  G.lastRound=true; G.lastTurns=2;
+  logMsg("sys","— The beam dumps: deck exhausted. One more turn each. —");
+}
+function finishGame(){
+  if(G.over) return;
+  G.over=true;
+  G.winner = G.you.score>G.ai.score ? "you" : (G.ai.score>G.you.score ? "ai" : "tie");
+  logMsg("win", G.winner==="tie" ? "— Superposition: a perfect tie. —" :
+    "★ "+(G.winner==="you"?"YOU WIN":"THE COPENHAGEN AI WINS")+" — "+G.you.score+" : "+G.ai.score+" ★");
+  render();
+  if(!HEADLESS) setTimeout(()=>showWin(), 1600);
+}
+
+/* ---------- AI (the Copenhagen interpretation plays itself) ---------- */
+function aiLegalCollides(){
+  const out=[];
+  G.ai.hand.forEach((c,hi)=>{
+    G.stacks.forEach((s,si)=>{
+      const co=collideOptions(c.k,s);
+      if(!co.illegal) out.push({hi,si,co,card:c,st:s});
+    });
+  });
+  return out;
+}
+function ocValue(oc, who){
+  const o=opp(who);
+  if(oc.kind==="meson"||oc.kind==="onium"||oc.kind==="baryon") return oc.pts + (oc.tok?1.5:0);
+  if(oc.kind==="di") return 1;
+  if(oc.kind==="boson"){
+    if(oc.b==="g") return 1.6 + (o.hand.length>3?0.8:0);
+    if(oc.b==="gamma") return 1.4;
+    if(oc.b==="Z") return 2.4;
+    return 1.1; // W
+  }
+  return 0;
+}
+function aiAct(){
+  if(G.over||G.turn!=="ai") return;
+  const ai=G.ai;
+  // 1) fuse: guaranteed Higgs if it can, else roll when 2 gluons sit there
+  const gl=G.stacks.filter(s=>s.type==="gluon").length;
+  if(gl>=2){
+    if(ai.tok>=FUSE.tokCost){ actFuse("ai",true); return; }
+    if(actFuse("ai",false)) return;
+  }
+  // 2) best collide by EV; complete-baryon shortcut is naturally highest EV
+  const moves=aiLegalCollides();
+  let best=null,bestEv=-1;
+  for(const m of moves){
+    let ev=0;
+    for(const oc of m.co.outcomes) ev += (oc.p/100)*ocValue(oc,"ai");
+    // diquark setup bonus if the third quark is already in hand
+    if(m.co.outcomes[0].kind==="di"){
+      const anti=isAQ(m.card.k);
+      const third=ai.hand.some((c,i)=>i!==m.hi && ((anti&&isAQ(c.k))||(!anti&&isQ(c.k))));
+      if(third) ev+=2.2;
+    }
+    if(ev>bestEv){ bestEv=ev; best=m; }
+  }
+  if(best && bestEv>=1.8){
+    // spend a hidden variable to lock a big uncertain outcome
+    let fixed=null;
+    if(ai.tok>0 && !best.co.det){
+      let bi=-1,bv=-1;
+      best.co.outcomes.forEach((oc,i)=>{ const v=ocValue(oc,"ai"); if(v>bv){bv=v;bi=i;} });
+      if(bv>=4 && best.co.outcomes[bi].p<70) fixed=bi;
+    }
+    actCollide("ai",best.hi,best.si,fixed); return;
+  }
+  // 3) salvage a heavy card
+  if(G.discard.length && ai.hand.length<8){
+    const top=G.discard[G.discard.length-1];
+    if(P[top.k].tier>=2){ actSalvage("ai"); return; }
+  }
+  // 4) draw
+  if(G.deck.length>0 && ai.hand.length<8){ actDraw("ai"); return; }
+  // 5) forced: any move at all
+  if(best){ actCollide("ai",best.hi,best.si,null); return; }
+  if(actSalvage("ai")) return;
+  // 6) hand-locked (full hand, nothing collides): beam-dump the weakest card
+  if(ai.hand.length){
+    let ji=0; ai.hand.forEach((c,i)=>{ if(P[c.k].tier<P[ai.hand[ji].k].tier) ji=i; });
+    if(actJettison("ai",ji)) return;
+  }
+  actDraw("ai");
+}
+
+/* ==============================================================
+   RENDERING
+   ============================================================== */
+function cardSVG(c, small){
+  const p=P[c.k];
+  const w=small?66:92, h=small?92:128;
+  const stroke = p.type==="q" ? "rgba(0,229,255,0.55)" : p.type==="aq" ? "rgba(0,229,255,0.4)" : "rgba(240,171,252,0.6)";
+  const dash = p.type==="aq"||p.type==="al" ? ' stroke-dasharray="5,3"' : "";
+  const orb = c.col
+    ? '<circle cx="'+(w/2)+'" cy="'+(h*0.30)+'" r="'+(small?9:13)+'" fill="'+c.col+'" opacity="0.9"/>'+
+      '<circle cx="'+(w/2)+'" cy="'+(h*0.30)+'" r="'+(small?14:20)+'" fill="'+c.col+'" opacity="0.16"/>'
+    : '<circle cx="'+(w/2)+'" cy="'+(h*0.30)+'" r="'+(small?5:7)+'" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.8"/>';
+  const chg = p.chg>0 ? "+"+fract(p.chg) : fract(p.chg);
+  const pips = "●".repeat(p.gen)+"○".repeat(3-p.gen);
+  return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">'+
+    '<rect x="1.5" y="1.5" width="'+(w-3)+'" height="'+(h-3)+'" rx="7" fill="rgba(5,8,18,0.92)" stroke="'+stroke+'" stroke-width="1.5"'+dash+'/>'+
+    orb+
+    '<text x="'+(w/2)+'" y="'+(h*0.36)+'" text-anchor="middle" font-family="Orbitron,monospace" font-weight="700" font-size="'+(small?15:21)+'" fill="#e8f0ff">'+esc(p.sym)+'</text>'+
+    '<text x="'+(w/2)+'" y="'+(h*0.56)+'" text-anchor="middle" font-family="Space Mono,monospace" font-size="'+(small?6.5:8)+'" fill="rgba(232,240,255,0.6)">'+esc(p.nm)+'</text>'+
+    '<text x="'+(w/2)+'" y="'+(h*0.70)+'" text-anchor="middle" font-family="Space Mono,monospace" font-size="'+(small?6.5:8)+'" fill="#ffd166">'+chg+' e</text>'+
+    '<text x="'+(w/2)+'" y="'+(h*0.82)+'" text-anchor="middle" font-family="Space Mono,monospace" font-size="'+(small?6:7.5)+'" fill="rgba(232,240,255,0.45)">'+p.mass+'</text>'+
+    '<text x="'+(w/2)+'" y="'+(h*0.93)+'" text-anchor="middle" font-family="Space Mono,monospace" font-size="'+(small?6:7.5)+'" fill="rgba(0,229,255,0.55)">'+pips+'</text>'+
+    '</svg>';
+}
+function fract(v){
+  const a=Math.abs(v);
+  if(Math.abs(a-2/3)<0.01) return (v<0?"-":"")+"⅔";
+  if(Math.abs(a-1/3)<0.01) return (v<0?"-":"")+"⅓";
+  return (v<0?"-":"")+Math.round(a);
+}
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+function stackHTML(s, i){
+  const target = G.sel!=null && G.turn==="you" && !G.over && !collideOptions(G.you.hand[G.sel].k, s).illegal;
+  if(s.type==="gluon"){
+    return '<div class="pcard'+(target?' target':'')+'" onclick="clickStack('+i+')" title="gluon — fusion fuel">'+
+      '<svg width="66" height="92" viewBox="0 0 66 92"><rect x="1.5" y="1.5" width="63" height="89" rx="7" fill="rgba(5,8,18,0.92)" stroke="rgba(255,209,102,0.6)" stroke-width="1.5"/>'+
+      coilPath(10,34,56,34,"#ffd166",4)+
+      '<text x="33" y="60" text-anchor="middle" font-family="Orbitron,monospace" font-weight="700" font-size="15" fill="#ffd166">g</text>'+
+      '<text x="33" y="76" text-anchor="middle" font-family="Space Mono,monospace" font-size="6.5" fill="rgba(232,240,255,0.5)">gluon</text></svg></div>';
+  }
+  if(s.type==="di"){
+    return '<div class="pcard'+(target?' target':'')+'" onclick="clickStack('+i+')" title="diquark — one more quark makes a baryon" style="display:flex;">'+
+      '<div style="margin-right:-34px;">'+cardSVG(s.cards[0],true)+'</div>'+cardSVG(s.cards[1],true)+'</div>';
+  }
+  return '<div class="pcard'+(target?' target':'')+'" onclick="clickStack('+i+')">'+cardSVG(s.cards[0],true)+'</div>';
+}
+function render(){
+  if(HEADLESS||typeof document==="undefined") return;
+  const y=G.you,a=G.ai;
+  document.getElementById("hud").innerHTML =
+    '<div class="hud-chip"><b>YOU</b> '+y.score+' pts &middot; <span class="hv">'+y.tok+' hidden var'+(y.tok===1?'':'s')+'</span></div>'+
+    '<div class="hud-chip">'+(G.over?'RUN COMPLETE':(G.turn==="you"?'&#x25B6; YOUR TURN':'&#x231B; AI TURN'))+' &middot; first to '+TARGET+'</div>'+
+    '<div class="hud-chip ai"><b>AI</b> '+a.score+' pts &middot; <span class="hv">'+a.tok+' hv</span></div>'+
+    '<div class="hud-chip">deck '+G.deck.length+' &middot; debris '+G.discard.length+'</div>';
+  document.getElementById("tossBanner").textContent = G.toss||"";
+  document.getElementById("aiInfo").textContent = a.hand.length+" cards";
+  document.getElementById("youInfo").textContent = y.hand.length+"/8 cards";
+  document.getElementById("colInfo").textContent = G.stacks.length+" object"+(G.stacks.length===1?"":"s");
+  document.getElementById("aiHand").innerHTML = a.hand.map(c=>
+    G.peek ? '<div class="pcard">'+cardSVG(c,true)+'</div>'
+           : '<svg width="66" height="92" viewBox="0 0 66 92"><rect x="1.5" y="1.5" width="63" height="89" rx="7" fill="rgba(13,18,48,0.9)" stroke="rgba(240,171,252,0.3)" stroke-width="1.5"/><text x="33" y="52" text-anchor="middle" font-family="Orbitron,monospace" font-size="18" fill="rgba(240,171,252,0.4)">?</text></svg>'
+  ).join("") || '<span class="empty-hint">empty</span>';
+  G.peek=false;
+  document.getElementById("collider").innerHTML = G.stacks.map((s,i)=>stackHTML(s,i)).join("") || '<span class="empty-hint">awaiting beam…</span>';
+  document.getElementById("youHand").innerHTML = y.hand.map((c,i)=>
+    '<div class="pcard'+(G.sel===i?' sel':'')+'" onclick="clickHand('+i+')">'+cardSVG(c,false)+'</div>'
+  ).join("") || '<span class="empty-hint">empty hand — draw or salvage</span>';
+  renderChamber(); renderControls(); renderPiles(); renderWall();
+  const lg=document.getElementById("log");
+  lg.innerHTML=G.log.map(l=>'<div class="log-line '+l.kind+'">'+l.text+'</div>').join("");
+  lg.scrollTop=lg.scrollHeight;
+}
+function renderPiles(){
+  const fmt=p=>p.pile.length? p.pile.map(x=>x.name+'<span style="color:var(--gold);font-size:0.7rem;"> '+x.pts+'</span>').join(' &nbsp; ') : '&mdash;';
+  document.getElementById("youScorePile").innerHTML=fmt(G.you);
+  document.getElementById("aiScorePile").innerHTML=fmt(G.ai);
+}
+function renderChamber(){
+  const el=document.getElementById("chamberBody");
+  if(G.over){ el.innerHTML='<div class="chamber-hint">Run complete — '+G.you.score+' : '+G.ai.score+'. Press NEW RUN.</div>'; return; }
+  if(G.turn!=="you"){ el.innerHTML='<div class="chamber-hint">The Copenhagen AI is collapsing its wavefunction…</div>'; return; }
+  if(!G.pending){
+    el.innerHTML='<div class="chamber-hint">One action per turn: <b>collide</b> (card &rarr; collider target), <b>draw 2</b>, <b>salvage</b> the debris, or <b>fuse</b> two gluons.<br>'+
+      'Collisions always produce <i>something</i> — the dice only decide <i>what</i>. Unless you spend a <span style="color:var(--gold)">hidden variable</span> and choose.</div>';
+    return;
+  }
+  const {handIdx,stackIdx,opts}=G.pending;
+  const card=G.you.hand[handIdx], st=G.stacks[stackIdx];
+  const canFix=!opts.det && G.you.tok>0;
+  el.innerHTML =
+    '<div class="chamber-hint" style="padding-bottom:0.6rem;">'+esc(P[card.k].sym)+' &rarr; '+(st.type==="di"?"diquark":st.type==="gluon"?"gluon":esc(P[st.keys[0]].sym))+' &mdash; possible outcomes:</div>'+
+    opts.outcomes.map((oc,i)=>{
+      const fx = oc.kind==="boson"?BOSON[oc.b].fx : oc.kind==="di"?"Bound state parks in the collider — a third quark (anyone's) completes the baryon." : "";
+      return '<div class="outcome-row">'+
+        '<span class="oc-name">'+ocLabel(oc)+'</span>'+
+        '<span class="oc-meta">'+
+          '<span class="prob-bar"><span class="prob-fill" style="width:'+oc.p+'%"></span></span>'+
+          '<span class="oc-prob">'+oc.p+'%</span>'+
+          (fx?'<span class="oc-fx">'+fx+'</span>':'')+
+          (canFix?'<button class="btn btn-gold oc-pick" onclick="confirmCollide('+i+')">choose (1 hv)</button>':'')+
+        '</span></div>';
+    }).join("")+
+    '<div style="text-align:center;margin-top:0.6rem;">'+
+      '<button class="btn btn-cyan" onclick="confirmCollide(null)">'+(opts.det?'Resolve':'⚄ Roll the dice')+'</button> '+
+      '<button class="btn btn-outline" onclick="G.pending=null;G.sel=null;render()">Cancel</button></div>';
+}
+function renderControls(){
+  const c=document.getElementById("controls");
+  if(G.over){
+    c.innerHTML='<button class="btn btn-cyan" onclick="newGame()">&#x21BB; New Run</button>'+
+      '<button class="btn btn-outline" onclick="openRules()">How to Play</button>';
+    return;
+  }
+  const my=G.turn==="you"&&!G.pending;
+  const gl=G.stacks.filter(s=>s.type==="gluon").length;
+  c.innerHTML =
+    '<button class="btn btn-cyan" onclick="actDraw(\'you\')" '+(my&&G.deck.length&&G.you.hand.length<8?'':'disabled')+'>Draw 2</button>'+
+    '<button class="btn btn-outline" onclick="actSalvage(\'you\')" '+(my&&G.discard.length&&G.you.hand.length<8?'':'disabled')+'>Salvage debris'+(G.discard.length?' ('+P[G.discard[G.discard.length-1].k].sym+')':'')+'</button>'+
+    '<button class="btn btn-gold" onclick="tryFuse()" '+(my&&gl>=2?'':'disabled')+'>Fuse gluons '+(gl>=2?'('+gl+' g)':'')+'</button>'+
+    '<button class="btn btn-outline" onclick="actJettison(\'you\',G.sel)" '+(my&&G.sel!=null?'':'disabled')+'>Jettison selected</button>'+
+    '<button class="btn btn-outline" onclick="openRules()">Rules</button>'+
+    '<button class="btn btn-outline" onclick="newGame()">New Run</button>';
+}
+function clickHand(i){
+  if(G.over||G.turn!=="you"||G.pending) return;
+  G.sel = G.sel===i?null:i;
+  render();
+}
+function clickStack(i){
+  if(G.over||G.turn!=="you"||G.sel==null||G.pending) return;
+  const co=collideOptions(G.you.hand[G.sel].k, G.stacks[i]);
+  if(co.illegal){ logMsg("sys","⊘ "+co.illegal); render(); return; }
+  G.pending={handIdx:G.sel, stackIdx:i, opts:co};
+  render();
+}
+function confirmCollide(fixedIdx){
+  const pd=G.pending; if(!pd) return;
+  G.pending=null; G.sel=null;
+  actCollide("you", pd.handIdx, pd.stackIdx, fixedIdx);
+}
+function tryFuse(){
+  if(G.over||G.turn!=="you") return;
+  if(G.you.tok>=FUSE.tokCost){
+    const el=document.getElementById("chamberBody");
+    el.innerHTML='<div class="chamber-hint">g + g fusion: <span class="oc-prob">30%</span> Higgs (+20, ends the run) / 70% c c̅ pair to hand.</div>'+
+      '<div style="text-align:center;margin-top:0.5rem;">'+
+      '<button class="btn btn-cyan" onclick="actFuse(\'you\',false)">⚄ Roll it</button> '+
+      '<button class="btn btn-gold" onclick="actFuse(\'you\',true)">Einstein’s gambit — 3 hv, guaranteed H</button> '+
+      '<button class="btn btn-outline" onclick="render()">Cancel</button></div>';
+  } else actFuse("you",false);
+}
+
+/* ---------- FEYNMAN ANIMATION (proper line conventions) ----------
+   fermion: solid line with arrow (reversed for antiparticles)
+   photon/W/Z: sine wave · gluon: coil · Higgs: dashed · hadron: bundled lines */
+function wavyPath(x1,y,x2,color,amp){
+  const n=6, dx=(x2-x1)/n; let d="M "+x1+" "+y;
+  for(let i=0;i<n;i++){ const s=i%2?1:-1; d+=" q "+(dx/2)+" "+(s*amp)+" "+dx+" 0"; }
+  return '<path class="feyn-line out" d="'+d+'" fill="none" stroke="'+color+'" stroke-width="2.4"/>';
+}
+function coilPath(x1,y,x2,color,r){
+  const n=Math.max(3,Math.floor((x2-x1)/(r*2.2))); const dx=(x2-x1)/n; let d="M "+x1+" "+y;
+  for(let i=0;i<n;i++) d+=" a "+r+" "+r+" 0 1 1 "+dx+" 0";
+  return '<path class="feyn-line out" d="'+d+'" fill="none" stroke="'+color+'" stroke-width="2"/>';
+}
+function fermLine(x1,y1,x2,y2,rev,cls){
+  const mx=(x1+x2)/2, my=(y1+y2)/2;
+  const ang=Math.atan2(y2-y1,x2-x1)+(rev?Math.PI:0);
+  const a1x=mx-7*Math.cos(ang-0.45), a1y=my-7*Math.sin(ang-0.45);
+  const a2x=mx-7*Math.cos(ang+0.45), a2y=my-7*Math.sin(ang+0.45);
+  return '<path class="feyn-line '+(cls||"")+'" d="M '+x1+' '+y1+' L '+x2+' '+y2+'" stroke="#e8f0ff" stroke-width="2.2" fill="none"/>'+
+    '<path class="feyn-label '+(cls||"in")+'" d="M '+a1x+' '+a1y+' L '+mx+' '+my+' L '+a2x+' '+a2y+'" stroke="#e8f0ff" stroke-width="2" fill="none"/>';
+}
+function animate(inKeys, oc, caption, sub){
+  if(HEADLESS||typeof document==="undefined") return;
+  const W=520,H=210,vx=200,vy=H/2;
+  const symOf=k=>k.startsWith("di:")?k.slice(3):(P[k]?P[k].sym:k);
+  const revA=P[inKeys[0]]&&!matter(inKeys[0]);
+  const revB=P[inKeys[1]]&&!matter(inKeys[1]);
+  let svg='<svg width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">';
+  svg+=fermLine(30,30,vx,vy,revA,"")+fermLine(30,H-30,vx,vy,revB,"");
+  svg+='<text class="feyn-label in" x="18" y="26" font-family="Orbitron" font-size="15" fill="#00e5ff">'+esc(symOf(inKeys[0]))+'</text>';
+  svg+='<text class="feyn-label in" x="18" y="'+(H-12)+'" font-family="Orbitron" font-size="15" fill="#00e5ff">'+esc(symOf(inKeys[1]))+'</text>';
+  svg+='<circle class="feyn-label in" cx="'+vx+'" cy="'+vy+'" r="4" fill="#ffd166"/>';
+  let outLabel="", outCol="#ffd166";
+  if(oc.kind==="boson"){
+    const b=oc.b;
+    if(b==="g"){ svg+=coilPath(vx,vy,W-40,"#ffd166",5); outLabel="g"; }
+    else { outCol = b==="gamma"?"#ffd166":(b==="Z"?"#a78bfa":"#ff9f43");
+           svg+=wavyPath(vx,vy,W-40,outCol,9); outLabel=BOSON[b].sym; }
+  } else if(oc.kind==="higgs"){
+    svg+='<path class="feyn-line out" d="M '+vx+' '+vy+' L '+(W-40)+' '+vy+'" stroke="#fff" stroke-width="2.6" stroke-dasharray="9,7" fill="none"/>';
+    outLabel="H"; outCol="#fff";
+  } else if(oc.kind==="pair"){
+    svg+=fermLine(vx,vy,W-40,30,false,"out")+fermLine(vx,vy,W-40,H-30,true,"out");
+    outLabel="c c̅"; outCol="#00e5ff";
+  } else { // hadron / diquark: bundled parallel lines
+    const n=oc.kind==="baryon"?3:2;
+    for(let i=0;i<n;i++){
+      const off=(i-(n-1)/2)*7;
+      svg+='<path class="feyn-line out" d="M '+vx+' '+vy+' L '+(W-40)+' '+(vy+off)+'" stroke="#4ade80" stroke-width="2" fill="none"/>';
+    }
+    outLabel=oc.kind==="di"?"qq":oc.name; outCol="#4ade80";
+  }
+  svg+='<text class="feyn-label out" x="'+(W-34)+'" y="'+(vy+5)+'" font-family="Orbitron" font-size="16" fill="'+outCol+'">'+esc(outLabel)+'</text>';
+  svg+='</svg>';
+  document.getElementById("feynSvg").innerHTML=svg;
+  document.getElementById("feynCaption").textContent=caption;
+  document.getElementById("feynSub").textContent=sub||"";
+  const ov=document.getElementById("feynOverlay");
+  ov.classList.add("show");
+  clearTimeout(animate._t);
+  animate._t=setTimeout(()=>{ ov.classList.remove("show"); render(); },1500);
+}
+document.addEventListener&&document.addEventListener("click",e=>{
+  if(e.target.id==="feynOverlay") e.target.classList.remove("show");
+  if(e.target.id==="overlay") e.target.classList.remove("show");
+});
+
+/* ---------- MAHJONG WALL ---------- */
+function renderWall(){
+  const el=document.getElementById("wallBody");
+  if(!el||el.dataset.done) return;
+  el.dataset.done=1;
+  const t=(f,d,forbid)=>'<div class="tile'+(forbid?' forbid':'')+'"><div class="tile-f">'+f+'</div><div class="tile-d">'+d+'</div></div>';
+  el.innerHTML =
+    '<div class="wall-group">Annihilation (same flavor) — boson factory</div><div class="tiles">'+
+    t("q + q̅ → g | γ | Z","<span class='pr'>55/25/20%</span> — u,d,s pairs")+
+    t("c + c̅ → g|γ|Z | J/ψ","<span class='pr'>35/15/15/35%</span> — J/ψ <span class='pt'>4 pts +1 hv</span>")+
+    t("b + b̅ → g|γ|Z | Υ","<span class='pr'>30/15/15/40%</span> — Υ <span class='pt'>5 pts +1 hv</span>")+
+    t("e⁻ + e⁺ → γ | Z","<span class='pr'>55/45%</span> — same for μ⁻μ⁺")+
+    '</div><div class="wall-group">Hadronization (different flavors) — mesons</div><div class="tiles">'+
+    t("u + d̅ → π⁺ | W⁺","<span class='pr'>75/25%</span> — π <span class='pt'>2 pts</span>; charged pairs risk a W")+
+    t("u/d + s̅ → K | W","<span class='pr'>75–100%</span> — K <span class='pt'>3 pts</span>; neutral pairs always hadronize")+
+    t("c + u̅/d̅/s̅ → D | W","<span class='pr'>75–100%</span> — D <span class='pt'>4 pts</span>")+
+    t("b + u̅/d̅/s̅ → B | W","<span class='pr'>75–100%</span> — B <span class='pt'>5 pts</span> &middot; Bᴄ <span class='pt'>6</span>")+
+    '</div><div class="wall-group">Baryon assembly — the strong force always binds</div><div class="tiles">'+
+    t("q + q → diquark","<span class='pr'>100%</span> — parks in the collider; anyone may finish it")+
+    t("diquark + q → baryon","<span class='pr'>100%</span> — p/n <span class='pt'>6</span>, Σ/Λ <span class='pt'>7</span>, Ξ <span class='pt'>8</span>, Ω⁻ <span class='pt'>10 +1 hv</span>")+
+    t("3 antiquarks → antibaryon","same table — antimatter pays the same")+
+    '</div><div class="wall-group">Gluon fusion — the endgame</div><div class="tiles">'+
+    t("g + g → H | c c̅","<span class='pr'>30%</span> Higgs <span class='pt'>+20, ends run</span> / <span class='pr'>70%</span> pair to hand")+
+    t("Einstein’s gambit","spend <span class='pt'>3 hidden variables</span>: skip the dice, take the Higgs")+
+    '</div><div class="wall-group">Forbidden vertices (real conservation laws)</div><div class="tiles">'+
+    t("e + μ","lepton flavor is conserved — no vertex",1)+
+    t("quark + lepton","no low-energy channel here",1)+
+    t("q + q̅′ → Z","no flavor-changing neutral currents (the GIM mechanism) — neutral cross-flavor pairs can only hadronize",1)+
+    t("q̅ + diquark","color cannot close — baryons need 3 matching quarks",1)+
+    t("t (top quark)","not in the deck: decays in 5×10⁻²⁵ s, before it can hadronize",1)+
+    t("graviton","gravity is not in the Standard Model — there is no card for it",1)+
+    '</div>';
+}
+
+/* ---------- RULES / WIN ---------- */
+function openRules(){
+  document.getElementById("modalBody").innerHTML=RULES_HTML;
+  document.getElementById("overlay").classList.add("show");
+}
+function closeOverlay(){ document.getElementById("overlay").classList.remove("show"); }
+function showWin(){
+  const w=G.winner;
+  document.getElementById("modalBody").innerHTML =
+    '<h2 class="'+(w==="you"?"win-head":"")+'">'+(w==="tie"?"⚛️ SUPERPOSITION":(w==="you"?"★ DETERMINISM WINS":"☠ THE DICE WIN"))+'</h2>'+
+    '<p>Final score '+G.you.score+' : '+G.ai.score+'. '+(w==="you"
+      ?"You bent probability to your will — Einstein sends his regards."
+      :w==="ai"?"The Copenhagen interpretation collapses in its own favor. Bohr smiles.":"Neither player collapsed the advantage.")+'</p>'+
+    '<p style="font-size:0.8rem;color:rgba(232,240,255,0.45)">Every collision you resolved was a real Standard-Model vertex; every forbidden play was a real conservation law.</p>'+
+    '<div class="modal-close"><button class="btn btn-cyan" onclick="closeOverlay();newGame()">↻ Play Again</button> '+
+    '<button class="btn btn-outline" onclick="closeOverlay()">Review Board</button></div>';
+  document.getElementById("overlay").classList.add("show");
+}
+const RULES_HTML = `
+  <h2>⚄ God Does Not Play Dice — How to Play</h2>
+  <p><b>Einstein hated that quantum mechanics runs on probability. This game is that argument.</b> Every collision is a dice roll over real Feynman-vertex outcomes — but <span style="color:var(--gold)">hidden variables</span> let you overrule the dice and <i>choose</i>. First to <b>20 points</b> of hadrons wins; detecting the <b>Higgs</b> (+20) ends the run on the spot.</p>
+  <h3>Your turn — exactly one action</h3>
+  <ul>
+    <li><b>Collide</b> — play a fermion card from your hand onto anything in the shared collider. Legal pairs and odds are on the Wall of Diagrams.</li>
+    <li><b>Draw 2</b> — refuel (hand max 8).</li>
+    <li><b>Salvage</b> — take the top card of the debris (discard) pile.</li>
+    <li><b>Fuse</b> — if two gluons sit in the collider: 30% Higgs, 70% c c̅ pair production.</li>
+    <li><b>Jettison</b> — beam-dump a card from your hand into the debris (the escape valve when nothing collides).</li>
+  </ul>
+  <h3>Collisions never fizzle</h3>
+  <p>Every legal collision produces <i>something</i>. The dice only decide <i>what</i>: annihilations yield a random gauge boson; hadronization usually gives the meson but sometimes a W or Z sneaks out. Spend <b>1 hidden variable</b> before rolling to pick the outcome yourself. You earn hidden variables from <b>Z-boson measurements</b> and famous discoveries (J/ψ, Υ, Ω⁻).</p>
+  <h3>The four gauge bosons (real forces, real effects)</h3>
+  <ul>
+    <li><b>g gluon — strong:</b> confinement drags a random card out of your opponent's hand, and the gluon stays as fusion fuel.</li>
+    <li><b>γ photon — electromagnetic:</b> repulsion knocks a random opponent card to the bottom of the deck.</li>
+    <li><b>W± — weak (charged):</b> flavor exchange — swap a card of yours for a random one of theirs.</li>
+    <li><b>Z — weak (neutral):</b> a measurement — +1 hidden variable and a glimpse of their hand.</li>
+  </ul>
+  <p style="font-size:0.8rem;color:rgba(232,240,255,0.45)">(Gravity isn't here because gravity isn't in the Standard Model. There is no graviton card. That's the joke and also the physics.)</p>
+  <h3>Scoring</h3>
+  <p>Mesons 2–6 pts by mass tier (π &lt; K &lt; D &lt; B). Baryons: two quarks make a <b>diquark</b> that parks in the shared collider — <i>anyone</i> may complete it — and the third quark scores 6–12 pts (proton 6 &hellip; Ω⁻ 10). Scored cards leave the game, so the deck runs down: deck out = one last turn each, highest score wins.</p>
+  <div class="modal-close"><button class="btn btn-cyan" onclick="closeOverlay()">⚄ Roll</button></div>
+`;
+
+/* ---------- BOOT ---------- */
+if(typeof document!=="undefined" && !HEADLESS){ newGame(); }
+</script>
+</body>
+</html>
