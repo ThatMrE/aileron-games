@@ -1,0 +1,108 @@
+name: Android
+
+# Builds both Android APKs. This exists because the Capacitor build needs
+# Android Gradle Plugin 8.x and androidx, which Google publishes ONLY to its own
+# Maven repository — so it cannot be built in any environment that can't reach
+# dl.google.com. GitHub-hosted runners can, and they ship the Android SDK
+# preinstalled, so this is where the Capacitor APK actually gets built.
+#
+# Scoped to the paths that can affect an APK, so ordinary website edits don't
+# spend CI minutes.
+
+on:
+  push:
+    paths:
+      - 'fda.html'
+      - 'mobile/**'
+      - '.github/workflows/android.yml'
+  pull_request:
+    paths:
+      - 'fda.html'
+      - 'mobile/**'
+      - '.github/workflows/android.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capacitor:
+    name: Capacitor APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'          # AGP 8.x requires JDK 17+
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - name: Install dependencies
+        working-directory: mobile
+        run: npm ci
+
+      - name: Build web payload and sync into the Android project
+        working-directory: mobile
+        run: npm run sync
+
+      # The generated payload must never reach for the network at runtime.
+      # build-www.mjs already asserts this; re-assert here so CI fails loudly
+      # if that check is ever weakened.
+      - name: Assert the bundle is offline-clean
+        working-directory: mobile
+        run: |
+          if grep -qE '<(link|script|img)[^>]+https?://' www/index.html; then
+            echo "::error::a remote resource survived into the offline bundle"
+            grep -nE '<(link|script|img)[^>]+https?://' www/index.html
+            exit 1
+          fi
+          echo "no remote resources in www/index.html"
+
+      - name: assembleDebug
+        working-directory: mobile/android
+        run: ./gradlew --no-daemon assembleDebug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fda-capacitor-debug-apk
+          path: mobile/android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+  native:
+    name: Native APK (no Google SDK)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Deliberately uses only Debian packages, which is the whole point of this
+      # path: it proves the APK can be produced without reaching dl.google.com.
+      - name: Install the Debian Android toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            aapt android-sdk-build-tools android-sdk-platform-23 \
+            apksigner zipalign dalvik-exchange
+
+      - name: Build APK
+        run: bash mobile/native/build.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fda-native-debug-apk
+          path: mobile/native/build/fda-debug.apk
+          if-no-files-found: error
