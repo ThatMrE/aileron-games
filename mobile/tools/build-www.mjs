@@ -107,13 +107,25 @@ const MOBILE_JS = `
   }
 
   /* Hardware back button.
-     Priority: close an open overlay first; otherwise ask before quitting,
-     because leaving mid-run silently discards the playthrough. */
+     One contract, two shells. The native Java shell calls __androidBack()
+     through evaluateJavascript and acts on the returned string; the Capacitor
+     shell calls the same function from its backButton listener. Keeping the
+     decision in one place stops the two shells drifting apart.
+     Priority: close an open overlay first; otherwise report that the app
+     should quit, so the shell can confirm — leaving mid-run discards the
+     playthrough. */
+  window.__androidBack = function () {
+    if (document.querySelector('.ov.show')) {
+      if (window.closeOv) window.closeOv();
+      return 'closed';
+    }
+    return 'exit';
+  };
+
   var App = plugin('App');
   if (App && App.addListener) {
     App.addListener('backButton', function () {
-      var open = document.querySelector('.ov.show');
-      if (open) { if (window.closeOv) window.closeOv(); return; }
+      if (window.__androidBack() === 'closed') return;
       if (confirm('Leave the trail?')) { App.exitApp && App.exitApp(); }
     });
   }

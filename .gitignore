@@ -22,3 +22,4 @@ mobile/www/index.html
 *.keystore
 *.jks
 mobile/android/keystore.properties
+mobile/native/build/

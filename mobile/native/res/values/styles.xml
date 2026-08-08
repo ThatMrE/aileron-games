@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark, no action bar. The window background matches the game background
+         so there is no white flash between launch and first paint. -->
+    <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/game_bg</item>
+        <item name="android:colorBackground">@color/game_bg</item>
+        <item name="android:statusBarColor">@color/nav_bg</item>
+        <item name="android:navigationBarColor">@color/game_bg</item>
+    </style>
+</resources>

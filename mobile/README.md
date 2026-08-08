@@ -1,15 +1,38 @@
 # FDA: Forever Doesn't Allow — Android app
 
-An Android wrapper around the game in `../fda.html`, using [Capacitor](https://capacitorjs.com/).
-The whole game ships **inside the APK** — no network at all, including the fonts.
+An Android wrapper around the game in `../fda.html`. The whole game ships
+**inside the APK** — no network at all, including the fonts.
 
-> **Not built here.** The APK in this repo has never been compiled, because the
-> environment it was authored in cannot reach `dl.google.com` and therefore has
-> no Android SDK. Everything below is complete and the web payload is verified
-> offline (see *What was verified*), but the Gradle build itself is unrun. Treat
-> the first `assembleDebug` as the real smoke test.
+## Two build paths
+
+| | `native/` | `mobile/` (Capacitor) |
+|---|---|---|
+| Needs Google's SDK? | **No** — Debian/Ubuntu packages only | Yes (`dl.google.com`) |
+| Built and verified here? | **Yes** — signed APK produced | No, never compiled |
+| Plugin ecosystem | None (plain WebView) | Full Capacitor plugins |
+| Play Store ready | Needs work | Closer (bump `targetSdk`) |
+
+**Start with [`native/`](native/README.md)** — `cd native && ./build.sh` produces
+a real, signed, installable APK, and that is the path actually exercised here.
+
+Use the Capacitor project below when you want the plugin ecosystem or are
+heading for the Play Store, on a machine that can reach Google's Maven.
+
+> **Why two?** Capacitor 6 requires Android Gradle Plugin 8.x, which Google
+> publishes **only** to its own Maven repository. Maven Central's newest AGP is
+> 2.3.0, from 2017. In an environment that cannot reach `dl.google.com` the
+> Gradle build is simply impossible — but a plain `aapt2` + `javac` + `dx` +
+> `apksigner` pipeline still works, so that is what `native/` does.
 
 ---
+
+## The Capacitor build
+
+> **Not built here.** This path has never been compiled, because the environment
+> it was authored in cannot reach `dl.google.com` and therefore has no Android
+> SDK or AGP. Everything below is complete and the web payload is verified
+> offline (see *What was verified*), but the Gradle build itself is unrun. Treat
+> the first `assembleDebug` as the real smoke test.
 
 ## Build it
 
@@ -154,11 +177,16 @@ request aborted**, i.e. hard offline:
 - Menu tap targets measured at 66px (≥48dp required).
 - Gravesite persistence across runs via `localStorage`.
 
+Additionally, for the `native/` path, an APK was actually built and inspected —
+signatures, dex integrity, contents, and a full playthrough of the payload
+extracted back out of the finished APK. See [`native/README.md`](native/README.md).
+
 **Not verified** — needs the Android SDK and a device:
 
-- The Gradle build itself. It has never been run.
+- **The Capacitor Gradle build.** It has never been run.
 - The Capacitor plugin bridge at runtime: status bar colour, splash hide, the
   hardware back button, and Custom Tabs link opening. The shim is written
   defensively (every plugin call is presence-checked, so a missing plugin
   degrades rather than throws) but it has not executed on a device.
 - Icon and splash rendering on a real launcher.
+- Neither APK has been installed on physical hardware.
