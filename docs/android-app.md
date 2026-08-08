@@ -1,6 +1,20 @@
 # God Does Not Play Dice — Android App
 
-The game ships as a **PWA** (Progressive Web App), which gives two Android delivery paths.
+The game ships as a **PWA** (Progressive Web App) plus a prebuilt native APK, giving three Android delivery paths.
+
+## Path 0 — Download the APK (prebuilt, sideload)
+
+**https://aileron.games/GodDoesNotPlayDice.apk** (33 KB). On the phone: download, open,
+allow "install unknown apps" for the browser when prompted. It's a thin WebView shell
+(`android/` in this repo) around the live game, so every fix shipped to the site reaches
+the app instantly; offline play is handled by the game's own service worker.
+
+Built entirely from Ubuntu-packaged Android tools (`aapt`, `apksigner`, `zipalign`,
+`dalvik-exchange`, `android-sdk-platform-23`) via [`android/build.sh`](../android/build.sh) —
+compiled against API 23 (only ancient WebView APIs are used), `targetSdk 34`, signed
+v1+v2+v3. The signing key is a throwaway **sideload** key kept out of the repo: replacing
+the APK later with a different key requires uninstall/reinstall, and a Play Store release
+should be signed with your own key via Path 2 below.
 
 ## Path 1 — Install directly from the site (works today, no store, no build)
 
