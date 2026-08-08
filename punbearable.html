@@ -7,6 +7,16 @@
   <meta name="description" content="Pun Bearable is a card-based wordplay party game where you race the clock to make puns. Fail, and the card is your shame. Least points wins. An Aileron Games title.">
   <meta property="og:title" content="Pun Bearable — A Punishing Wordplay Card Game">
   <meta property="og:description" content="10 seconds. One pun. Or the card is your shame. It's like golf — the more points you have, the worse you are.">
+  <!-- PWA / installable app (also drives the Android TWA) -->
+  <link rel="manifest" href="/pun-bearable.webmanifest">
+  <meta name="theme-color" content="#050812">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pun Bearable">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/app-icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/app-icons/icon-512.png">
+  <link rel="apple-touch-icon" href="/assets/app-icons/apple-touch-icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
@@ -1253,6 +1263,13 @@
 
       document.getElementById('dealBtn').addEventListener('click', deal);
     })();
+
+    // ── Service worker: offline app shell for the installed app ──
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () { /* offline caching is best-effort */ });
+      });
+    }
   </script>
 
 </body>

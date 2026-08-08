@@ -1,0 +1,23 @@
+# Signing keys — NEVER commit these
+*.keystore
+*.jks
+*.keystore.*
+android.keystore
+
+# Build artifacts
+*.apk
+*.aab
+app-release-*.apk
+app-release-*.aab
+
+# Bubblewrap / Gradle generated project (regenerated from twa-manifest.json)
+/app/
+/gradle/
+/gradlew
+/gradlew.bat
+/build.gradle
+/settings.gradle
+/gradle.properties
+/store_icon.png
+/.gradle/
+/build/

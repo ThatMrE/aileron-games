@@ -1,0 +1,47 @@
+{
+  "packageId": "games.aileron.punbearable",
+  "host": "aileron.games",
+  "name": "Pun Bearable",
+  "launcherName": "Pun Bearable",
+  "display": "standalone",
+  "orientation": "portrait",
+  "themeColor": "#050812",
+  "themeColorDark": "#050812",
+  "navigationColor": "#050812",
+  "navigationColorDark": "#050812",
+  "navigationDividerColor": "#050812",
+  "navigationDividerColorDark": "#050812",
+  "backgroundColor": "#050812",
+  "enableNotifications": false,
+  "startUrl": "/punbearable.html",
+  "iconUrl": "https://aileron.games/assets/app-icons/icon-512.png",
+  "maskableIconUrl": "https://aileron.games/assets/app-icons/icon-maskable-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Play a round",
+      "shortName": "Play",
+      "url": "/punbearable.html#play",
+      "chosenIconUrl": "https://aileron.games/assets/app-icons/icon-192.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://aileron.games/pun-bearable.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://aileron.games/",
+  "minSdkVersion": 21,
+  "orientationLockEnabled": true
+}
