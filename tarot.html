@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wetware Arcana &mdash; A Biopunk Tarot Deck Generator | Aileron Games</title>
+<meta name="description" content="Wetware Arcana is a biopunk tarot deck generator: 78 cards of gene-editing, wet lab and body-horror archetypes, with procedurally generated SVG art. Every seed grows a different strain of the deck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cyan:#00e5ff; --purple:#7c3aed; --pink:#f0abfc;
+    --dark:#050812; --dark2:#090d1f; --dark3:#0d1230;
+    --text:#e8f0ff; --muted:rgba(232,240,255,0.55);
+    --border:rgba(0,229,255,0.15); --card-bg:rgba(0,229,255,0.03);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--dark);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 8% 12%, rgba(0,229,255,.5) 0, transparent 100%),
+      radial-gradient(1px 1px at 24% 34%, rgba(255,255,255,.35) 0, transparent 100%),
+      radial-gradient(1px 1px at 47% 8%, rgba(240,171,252,.35) 0, transparent 100%),
+      radial-gradient(1px 1px at 72% 22%, rgba(0,229,255,.4) 0, transparent 100%),
+      radial-gradient(1px 1px at 88% 58%, rgba(255,255,255,.3) 0, transparent 100%),
+      radial-gradient(2px 2px at 33% 71%, rgba(124,58,237,.25) 0, transparent 100%);}
+
+  nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem 1.6rem;background:rgba(5,8,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav-logo{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--cyan);letter-spacing:.08em;text-shadow:0 0 20px rgba(0,229,255,.5)}
+  .nav-links{display:flex;gap:1.4rem;list-style:none;align-items:center}
+  .nav-links a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Space Mono',monospace}
+  .nav-links a:hover{color:var(--cyan)}
+
+  .wrap{position:relative;z-index:1;max-width:1220px;margin:0 auto;padding:0 1.25rem 5rem}
+
+  header.hero{text-align:center;padding:3.5rem 1rem 2rem}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+  header.hero h1{font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(2.1rem,6.5vw,4.4rem);line-height:1.02;letter-spacing:.03em;text-shadow:0 0 60px rgba(0,229,255,.25)}
+  header.hero h1 span{color:var(--cyan)}
+  header.hero .sub{font-family:'Orbitron',monospace;font-size:clamp(.8rem,2vw,1.05rem);letter-spacing:.14em;color:var(--muted);margin:.9rem 0 1.1rem}
+  header.hero .lede{max-width:640px;margin:0 auto;color:var(--muted);line-height:1.75;font-size:.98rem}
+
+  /* ── console ── */
+  .console{border:1px solid var(--border);background:linear-gradient(180deg,rgba(0,229,255,.045),rgba(124,58,237,.03));
+    padding:1.1rem 1.15rem;display:grid;gap:.9rem;grid-template-columns:1fr;margin-top:1.6rem;border-radius:6px}
+  @media(min-width:820px){.console{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) auto;align-items:end}}
+  .field{display:flex;flex-direction:column;gap:.4rem;min-width:0}
+  .field label{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+  .field input,.field select{width:100%;background:rgba(5,8,18,.85);border:1px solid rgba(0,229,255,.28);color:var(--text);
+    font-family:'Space Mono',monospace;font-size:.85rem;padding:.6rem .7rem;border-radius:3px}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 2px rgba(0,229,255,.12)}
+  .btnrow{display:flex;gap:.5rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.62rem 1.15rem;font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(0,229,255,.4);background:transparent;color:var(--cyan);border-radius:3px;transition:.18s}
+  .btn:hover{background:rgba(0,229,255,.08);border-color:var(--cyan)}
+  .btn-cyan{background:var(--cyan);color:var(--dark);border-color:var(--cyan);box-shadow:0 0 22px rgba(0,229,255,.3)}
+  .btn-cyan:hover{background:#5ff0ff;box-shadow:0 0 34px rgba(0,229,255,.55)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .strainline{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.13em;color:var(--muted);
+    margin-top:.85rem;display:flex;gap:1.1rem;flex-wrap:wrap;justify-content:center;text-transform:uppercase}
+  .strainline b{color:var(--cyan);font-weight:700}
+
+  /* ── tabs ── */
+  .tabs{display:flex;gap:.35rem;justify-content:center;margin:2.4rem 0 1.6rem;flex-wrap:wrap}
+  .tab{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:.55rem 1.1rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;background:transparent;border-radius:3px}
+  .tab[aria-selected="true"]{color:var(--dark);background:var(--cyan);border-color:var(--cyan);font-weight:700}
+  .panel[hidden]{display:none}
+
+  .sec-title{font-family:'Orbitron',monospace;font-size:1.25rem;letter-spacing:.05em;margin-bottom:.4rem}
+  .sec-note{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:70ch}
+
+  /* ── spread ── */
+  .spread-picker{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 1.3rem}
+  .chip{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:.45rem .85rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;background:transparent;border-radius:99px}
+  .chip:hover{border-color:rgba(0,229,255,.45);color:var(--text)}
+  .chip[aria-pressed="true"]{background:rgba(0,229,255,.12);border-color:var(--cyan);color:var(--cyan)}
+
+  .table{display:grid;gap:1.5rem 1rem;grid-template-columns:repeat(auto-fit,minmax(150px,190px));justify-content:center;margin:2rem 0}
+  .slot{display:flex;flex-direction:column;align-items:center;gap:.55rem}
+  .slot .pos{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);text-align:center;min-height:1.5em}
+  .slot .cap{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted);text-align:center;line-height:1.5}
+  .slot .cap em{color:var(--pink);font-style:normal}
+
+  .cardbox{width:100%;max-width:190px;aspect-ratio:320/520;perspective:1200px;cursor:pointer;background:none;border:0;padding:0}
+  .flipper{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.25,1)}
+  .cardbox.revealed .flipper{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.55)}
+  .face svg{display:block;width:100%;height:100%}
+  .face.front{transform:rotateY(180deg)}
+  .face.front.rev svg{transform:rotate(180deg)}
+  .cardbox:focus-visible{outline:2px solid var(--cyan);outline-offset:6px}
+  .dealing{animation:deal .5s backwards}
+  @keyframes deal{from{opacity:0;transform:translateY(-26px) scale(.9)}to{opacity:1}}
+
+  .report{border:1px solid var(--border);background:var(--card-bg);padding:1.4rem;margin-top:1rem;border-radius:6px}
+  .report h3{font-family:'Orbitron',monospace;font-size:.95rem;letter-spacing:.08em;color:var(--cyan);margin-bottom:.9rem}
+  .report ol{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+  .report li{border-left:2px solid rgba(0,229,255,.25);padding-left:.9rem}
+  .report .rpos{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+  .report .rname{font-family:'Orbitron',monospace;font-size:.9rem;margin:.15rem 0 .3rem}
+  .report .rname i{font-style:normal;color:var(--pink);font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.1em}
+  .report p{color:var(--muted);font-size:.9rem;line-height:1.65}
+  .report .mut{color:#ff9bb0;font-size:.8rem;margin-top:.35rem;font-family:'Space Mono',monospace}
+  .synth{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(0,229,255,.12);color:var(--text);font-size:.92rem;line-height:1.75}
+
+  /* ── gallery ── */
+  .filters{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0 1.4rem}
+  .gallery{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+  .gcard{background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;gap:.4rem;align-items:center}
+  .gcard .shell{width:100%;aspect-ratio:320/520;border-radius:9px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.5);transition:transform .2s,box-shadow .2s}
+  .gcard:hover .shell{transform:translateY(-5px);box-shadow:0 18px 34px rgba(0,0,0,.65)}
+  .gcard svg{display:block;width:100%;height:100%}
+  .gcard .lbl{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.06em;color:var(--muted);text-align:center;line-height:1.4}
+  .gcard:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+
+  /* ── modal ── */
+  dialog::backdrop{background:rgba(2,4,10,.86);backdrop-filter:blur(4px)}
+  dialog{border:1px solid var(--border);background:var(--dark2);color:var(--text);max-width:min(920px,94vw);width:100%;
+    max-height:92vh;overflow:auto;padding:0;border-radius:10px;position:fixed;inset:0;margin:auto}
+  .m-grid{display:grid;gap:1.5rem;padding:1.5rem;grid-template-columns:1fr}
+  @media(min-width:720px){.m-grid{grid-template-columns:270px 1fr}}
+  .m-art{width:100%;max-width:270px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+  .m-art svg{display:block;width:100%;height:auto}
+  .m-body h2{font-family:'Orbitron',monospace;font-size:1.4rem;line-height:1.2}
+  .m-kicker{font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:.35rem}
+  .m-trad{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--muted);margin:.4rem 0 1rem;letter-spacing:.06em}
+  .m-def{margin-bottom:.9rem}
+  .m-def h4{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:.3rem}
+  .m-def p{color:var(--muted);font-size:.92rem;line-height:1.7}
+  .m-keys{display:flex;gap:.35rem;flex-wrap:wrap;margin:.2rem 0 1rem}
+  .m-keys span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--border);padding:.25rem .55rem;border-radius:99px;color:var(--muted)}
+  .m-close{position:absolute;top:.6rem;right:.75rem;font-family:'Space Mono',monospace;font-size:1.1rem;color:var(--muted);background:none;border:0;cursor:pointer}
+  .m-close:hover{color:var(--cyan)}
+
+  footer{border-top:1px solid var(--border);padding:2.2rem 1.5rem;text-align:center;position:relative;z-index:1}
+  footer .fl{font-family:'Orbitron',monospace;font-size:.8rem;color:var(--cyan);letter-spacing:.08em}
+  footer p{font-family:'Space Mono',monospace;font-size:.64rem;color:rgba(232,240,255,.28);margin-top:.6rem;letter-spacing:.05em}
+
+  .disclaim{font-family:'Space Mono',monospace;font-size:.64rem;color:rgba(232,240,255,.3);text-align:center;margin-top:2rem;letter-spacing:.06em}
+
+  @media(max-width:620px){
+    nav{padding:.75rem 1rem}
+    .nav-links{gap:1rem}
+    .nav-links li.opt{display:none}
+    .table{grid-template-columns:repeat(auto-fit,minmax(150px,220px))}
+  }
+
+  @media print{
+    nav,.console,.tabs,.filters,.btnrow,footer,header.hero .lede,.disclaim{display:none!important}
+    body{background:#fff}
+    .gallery{grid-template-columns:repeat(4,1fr)}
+    .panel[hidden]{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">&#9652; AILERON</a>
+  <ul class="nav-links">
+    <li><a href="index.html#games">Games</a></li>
+    <li class="opt"><a href="dna-chess.html">DNA Chess</a></li>
+    <li class="opt"><a href="weji.html">Weji</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">&#9652; Aileron Games &mdash; Generative Deck</p>
+    <h1>Wetware<br><span>Arcana</span></h1>
+    <p class="sub">A Biopunk Tarot Deck Generator</p>
+    <p class="lede">
+      Seventy-eight cards of the old arcana, re-cultured in a wet lab. The Magician is a
+      <strong style="color:var(--cyan)">Splicer</strong>; Death is <strong style="color:var(--cyan)">Apoptosis</strong>;
+      the four suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different
+      <em>strain</em> of the deck &mdash; new palette, new procedurally drawn art, new mutations
+      in the print run. Nothing here is loaded from a server; the whole deck is generated in your browser.
+    </p>
+
+    <div class="console">
+      <div class="field">
+        <label for="seed">Strain seed</label>
+        <input id="seed" type="text" spellcheck="false" autocomplete="off" placeholder="type anything&hellip;">
+      </div>
+      <div class="field">
+        <label for="palette">Culture medium</label>
+        <select id="palette"></select>
+      </div>
+      <div class="btnrow">
+        <button class="btn btn-cyan" id="reseed">&#x2622; Mutate seed</button>
+        <button class="btn" id="copylink">Copy link</button>
+      </div>
+    </div>
+    <p class="strainline" id="strainline"></p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-read" aria-controls="panel-read" aria-selected="true">Draw a reading</button>
+    <button class="tab" role="tab" id="tab-deck" aria-controls="panel-deck" aria-selected="false">The full deck</button>
+    <button class="tab" role="tab" id="tab-codex" aria-controls="panel-codex" aria-selected="false">Codex</button>
+  </div>
+
+  <section class="panel" id="panel-read" role="tabpanel" aria-labelledby="tab-read">
+    <h2 class="sec-title">Assay</h2>
+    <p class="sec-note">Pick a spread, then deal. Cards land face down &mdash; click one to flip it, or reveal the whole panel at once. Reversals are on by default; a reversed card is the same organism under different conditions.</p>
+    <div class="spread-picker" id="spreads"></div>
+    <div class="btnrow">
+      <button class="btn btn-cyan" id="deal">&#x1F0CF; Shuffle &amp; deal</button>
+      <button class="btn" id="revealall">Reveal all</button>
+      <button class="btn" id="copyread">Copy reading</button>
+      <label class="chip" style="display:inline-flex;align-items:center;gap:.5rem;cursor:pointer">
+        <input type="checkbox" id="allowrev" checked style="accent-color:var(--cyan)"> Reversals
+      </label>
+    </div>
+    <div class="table" id="table"></div>
+    <div class="report" id="report" hidden></div>
+  </section>
+
+  <section class="panel" id="panel-deck" role="tabpanel" aria-labelledby="tab-deck" hidden>
+    <h2 class="sec-title">Print run &mdash; 78 cards</h2>
+    <p class="sec-note">The whole deck as this seed grew it. Click any card for its full reading, both orientations, and a download.</p>
+    <div class="filters" id="filters"></div>
+    <div class="btnrow" style="margin-bottom:1.2rem">
+      <button class="btn" id="printdeck">Print sheet</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section class="panel" id="panel-codex" role="tabpanel" aria-labelledby="tab-codex" hidden>
+    <h2 class="sec-title">Codex</h2>
+    <div id="codex"></div>
+  </section>
+
+  <p class="disclaim">Wetware Arcana is a generative art toy. It is not divination, and it is definitely not medical advice.</p>
+</div>
+
+<dialog id="modal">
+  <button class="m-close" id="m-close" aria-label="Close">&#10005;</button>
+  <div class="m-grid">
+    <div>
+      <div class="m-art" id="m-art"></div>
+      <div class="btnrow" style="margin-top:.9rem;justify-content:center">
+        <button class="btn" id="m-flip">Flip</button>
+        <button class="btn" id="m-png">PNG</button>
+        <button class="btn" id="m-svg">SVG</button>
+      </div>
+    </div>
+    <div class="m-body" id="m-body"></div>
+  </div>
+</dialog>
+
+<footer>
+  <span class="fl">&#9652; AILERON GAMES</span>
+  <p>Wetware Arcana &mdash; generated locally, seed and all. &copy; 2025 Aileron Studios</p>
+</footer>
+
+<script>
+/* ============================================================
+   WETWARE ARCANA — a biopunk tarot deck generator
+   Everything (art, palettes, mutations) derives from one seed.
+   ============================================================ */
+"use strict";
+
+/* ---------- seeded RNG ---------- */
+function hashStr(s){
+  let h = 2166136261 >>> 0;
+  for(let i=0;i<s.length;i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function mulberry32(a){
+  return function(){
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function RNG(seedStr){
+  const r = mulberry32(hashStr(seedStr));
+  const f = () => r();
+  f.range = (a,b) => a + (b-a)*r();
+  f.int = (a,b) => Math.floor(a + (b-a+1)*r());
+  f.pick = arr => arr[Math.floor(r()*arr.length)];
+  f.chance = p => r() < p;
+  f.sign = () => (r() < .5 ? -1 : 1);
+  return f;
+}
+const N = (n,d=2)=>{ const p=Math.pow(10,d); return Math.round(n*p)/p; };
+
+/* ---------- culture media (palettes) ---------- */
+const MEDIA = [
+  { id:'wildtype',  name:'Wild Type',     bg:'#03110f', bg2:'#062b26', ink:'#7ffbe0', a1:'#00e5ff', a2:'#9dff6b', glow:'#00ffc8', paper:'#041a17' },
+  { id:'hemorrhage',name:'Hemorrhage',    bg:'#12030a', bg2:'#33061a', ink:'#ffb3c7', a1:'#ff2d6f', a2:'#ff8a3d', glow:'#ff3b6b', paper:'#1b0410' },
+  { id:'chloroplast',name:'Chloroplast',  bg:'#0a1002', bg2:'#1d3005', ink:'#dcff9b', a1:'#a3ff12', a2:'#ffe066', glow:'#b6ff2e', paper:'#0f1804' },
+  { id:'cryogen',   name:'Cryogen',       bg:'#040b1a', bg2:'#0b1e3d', ink:'#cfe6ff', a1:'#6fd6ff', a2:'#b79bff', glow:'#8fd8ff', paper:'#06101f' },
+  { id:'sepsis',    name:'Sepsis',        bg:'#140b02', bg2:'#33200a', ink:'#ffd9a3', a1:'#ffab2e', a2:'#e2593b', glow:'#ffb54d', paper:'#1a0e03' },
+  { id:'anaerobe',  name:'Anaerobe',      bg:'#0a0414', bg2:'#1e0a35', ink:'#e6ccff', a1:'#b06bff', a2:'#ff6bd6', glow:'#c084ff', paper:'#0d0519' },
+  { id:'halophile', name:'Halophile',     bg:'#100612', bg2:'#2c0d2a', ink:'#ffd0e8', a1:'#ff5ea8', a2:'#7ce7ff', glow:'#ff7ab8', paper:'#160817' },
+  { id:'agar',      name:'Nutrient Agar', bg:'#0d0f06', bg2:'#262a10', ink:'#f2edc9', a1:'#e8d44d', a2:'#8fbf5a', glow:'#f0e07a', paper:'#12140a' }
+];
+
+/* ---------- MAJOR ARCANA ---------- */
+const MAJORS = [
+{rn:'0',    name:'The Unsequenced',  trad:'The Fool',            motif:'blank',   keys:['raw potential','naivety','open reading frame'],
+ up:'A genome nobody has read yet. Everything is possible because nothing has been characterised. Step onto the plate.',
+ rev:'An untested organism released anyway. Not innocence &mdash; negligence wearing innocence as a lab coat.'},
+{rn:'I',    name:'The Splicer',      trad:'The Magician',        motif:'splice',  keys:['will made material','craft','the edit'],
+ up:'You have the enzymes, the guide, the target and the nerve. Intention becomes sequence at your hands.',
+ rev:'Off&#8209;target effects. The cut landed, just not where you aimed, and the cell is already copying it.'},
+{rn:'II',   name:'The Ribosome',     trad:'The High Priestess',  motif:'ribo',    keys:['translation','held knowledge','listening'],
+ up:'The message already exists; your only job is to read it faithfully, codon by codon, without improvising.',
+ rev:'A misread frame. Something was translated that should have stayed a transcript.'},
+{rn:'III',  name:'The Bioreactor',   trad:'The Empress',         motif:'vessel',  keys:['abundance','fertile medium','growth'],
+ up:'Warm, stirred, fed, and doubling. This is the season where anything you inoculate takes hold.',
+ rev:'Contamination in a rich medium. Whatever got in is growing faster than what you meant to grow.'},
+{rn:'IV',   name:'The Patent Holder',trad:'The Emperor',         motif:'vault',   keys:['ownership','structure','enforcement'],
+ up:'Order imposed and defensible. Boundaries, claims, and a structure strong enough to build inside.',
+ rev:'Life locked behind a licence. The claim outlived the invention and is now only a fence.'},
+{rn:'V',    name:'The Ethics Board', trad:'The Hierophant',      motif:'panel',   keys:['protocol','sanction','doctrine'],
+ up:'The received way of doing things exists for a reason. Get the approval; the protocol will protect you.',
+ rev:'A rubber stamp, or a basement lab. Either the review is theatre or you have stopped attending it.'},
+{rn:'VI',   name:'The Chimera',      trad:'The Lovers',          motif:'chimera', keys:['union','merger','choice of self'],
+ up:'Two lineages agreeing to become one organism. A real choice about what you are willing to be made of.',
+ rev:'Graft&#8209;versus&#8209;host. The union holds on paper while the tissues quietly attack each other.'},
+{rn:'VII',  name:'The Vector',       trad:'The Chariot',         motif:'capsid',  keys:['delivery','momentum','payload'],
+ up:'A payload built to arrive. Focus and armour, moving fast toward a target it can actually enter.',
+ rev:'A runaway release. Great delivery, no containment, and no way to recall what you sent.'},
+{rn:'VIII', name:'The Immune System',trad:'Strength',            motif:'macro',   keys:['measured force','tolerance','self'],
+ up:'Enormous violence held under exquisite control, and the harder discipline of recognising your own.',
+ rev:'Autoimmunity. The strength is intact and pointed inward; a cytokine storm reads as conviction.'},
+{rn:'IX',   name:'The Cleanroom',    trad:'The Hermit',          motif:'sterile', keys:['isolation','clarity','sterile focus'],
+ up:'Positive pressure, one lamp, no other bodies. Withdraw far enough to hear your own signal.',
+ rev:'Sealed too long. Sterility became a personality, and nothing can reach you to grow.'},
+{rn:'X',    name:'The Centrifuge',   trad:'Wheel of Fortune',    motif:'rotor',   keys:['cycles','sorting','luck'],
+ up:'The rotor spins and everything separates by what it is made of. Your turn is coming around.',
+ rev:'An unbalanced load. The wheel is still turning; it is just tearing itself out of the housing.'},
+{rn:'XI',   name:'The Proofreader',  trad:'Justice',             motif:'proof',   keys:['error correction','consequence','truth'],
+ up:'The polymerase pauses, excises, replaces. Fix the mismatch now, while it is still one base.',
+ rev:'An error left in the template. It will be faithfully copied into everything that follows.'},
+{rn:'XII',  name:'Cryostasis',       trad:'The Hanged Man',      motif:'cryo',    keys:['suspension','new angle','paused time'],
+ up:'Willingly on hold. Metabolism near zero, perspective inverted, nothing lost while you wait.',
+ rev:'Freezer burn. This stopped being patience some time ago and became a very cold excuse.'},
+{rn:'XIII', name:'Apoptosis',        trad:'Death',               motif:'apop',    keys:['programmed ending','clean death','renewal'],
+ up:'A death the organism chose, executed neatly, packaged for recycling. Let this part end properly.',
+ rev:'Necrosis. Refusing the clean ending only guarantees the messy one, and it takes the neighbours.'},
+{rn:'XIV',  name:'Homeostasis',      trad:'Temperance',          motif:'titrate', keys:['balance','dose','feedback'],
+ up:'The dose makes the poison. Small corrections, applied often, in both directions.',
+ rev:'Dysregulation. Feedback inverted into a loop that overshoots every time it tries to help.'},
+{rn:'XV',   name:'The Dependency',   trad:'The Devil',           motif:'tether',  keys:['engineered need','appetite','the leash'],
+ up:'An auxotroph on a feed line: you were built to need this, and the need is doing your thinking.',
+ rev:'The line is cut. Withdrawal, kill switch disarmed, the first hungry hours of being free.'},
+{rn:'XVI',  name:'Lysis',            trad:'The Tower',           motif:'shatter', keys:['rupture','containment failure','revelation'],
+ up:'The membrane fails all at once and the contents become public. What survives was never the shell.',
+ rev:'A slow leak. Same collapse, drawn out long enough that everyone can pretend not to smell it.'},
+{rn:'XVII', name:'The Extremophile', trad:'The Star',            motif:'extremo', keys:['hope','survival','guidance'],
+ up:'Life at the vent, in the brine, under the ice. Proof that the conditions do not get to decide.',
+ rev:'Enduring a medium that should have been left. Survival mistaken for a life.'},
+{rn:'XVIII',name:'The Prion',        trad:'The Moon',            motif:'spiral',  keys:['distortion','contagious belief','misfold'],
+ up:'A wrong shape that teaches the right shapes to be wrong. Trust nothing that spreads only by contact.',
+ rev:'The misfold is finally imaged and named. The dream loses its grip once it has a diagram.'},
+{rn:'XIX',  name:'The Chloroplast',  trad:'The Sun',             motif:'burst',   keys:['clarity','energy','open joy'],
+ up:'Light converted directly into life. Nothing hidden, nothing rate&#8209;limiting; use the daylight.',
+ rev:'Photobleaching. Too much light for too long, and the pigment that made you productive is gone.'},
+{rn:'XX',   name:'The Sequencer',    trad:'Judgement',           motif:'readout', keys:['reckoning','the record','legibility'],
+ up:'The run finishes and the record is legible at last. Read the whole trace before you answer.',
+ rev:'A verdict called off bad data. Confident base calls, terrible quality scores.'},
+{rn:'XXI',  name:'The Biosphere',    trad:'The World',           motif:'loop',    keys:['completion','closed loop','wholeness'],
+ up:'Every output is somebody’s input. The cycle closes and the system can finally run unattended.',
+ rev:'An open loop. Impressive throughput, and a waste stream with nowhere in the world to go.'}
+];
+
+/* ---------- SUITS ---------- */
+const SUITS = [
+ {id:'plasmids', name:'Plasmids',  trad:'Wands',     element:'Fire',  glyph:'ring',
+  blurb:'Will, drive, replication. What copies itself and spreads.'},
+ {id:'cultures', name:'Cultures',  trad:'Cups',      element:'Water', glyph:'flask',
+  blurb:'Feeling, relationship, medium. What you grow things in.'},
+ {id:'nucleases',name:'Nucleases', trad:'Swords',    element:'Air',   glyph:'blade',
+  blurb:'Mind, conflict, precision. What cuts, and where.'},
+ {id:'organs',   name:'Organs',    trad:'Pentacles', element:'Earth', glyph:'organ',
+  blurb:'Body, labour, property. What can be owned, sold and worn out.'}
+];
+const RANKS = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Spore','Vector','Matrix','Architect'];
+const TRAD_RANKS = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Page','Knight','Queen','King'];
+
+/* ---------- MINOR ARCANA meanings: [upright, reversed] per rank ---------- */
+const MINORS = {
+plasmids:[
+ ['A bare origin of replication: one idea with everything it needs to copy itself.','A construct with no promoter. The ambition is cloned and completely silent.'],
+ ['Two compatible origins in one host &mdash; a merger of drives, planned on the bench.','Incompatibility group clash. Two futures fighting over the same cell.'],
+ ['Colonies on the plate at last. The first transformation that actually took.','Low efficiency. Enormous effort in, nothing growing overnight.'],
+ ['Stable maintenance: the construct holds without selection pressure.','Complacency. Drop the antibiotic and the insert quietly walks out.'],
+ ['Selection. The plate is lethal and only the resistant are still here.','Competition with no prize. Everybody died on the same antibiotic.'],
+ ['The colony everyone picks. Recognition, and a very clean streak.','Credit collected by the lab that did not do the cloning.'],
+ ['Holding your niche against invading strains. Vigilance pays here.','Overrun. You cannot personally defend every plate in the incubator.'],
+ ['Conjugation at speed &mdash; by morning the idea is in every cell in the flask.','Transfer blocked. The spread stalls at the membrane and momentum dies.'],
+ ['Nine resistance genes carried at once: guarded, exhausted, still standing.','Burden collapse. Put the plasmid down or be cured by force.'],
+ ['Total success and total metabolic load. The payload is crushing its host.','Curing the strain. Choosing to be smaller and alive.'],
+ ['A fresh construct arrives in the post. Beginner luck, honest curiosity.','Unverified sequence. Excitement running several days ahead of the data.'],
+ ['Delivery in motion: doors kicked open, payload already inside.','Reckless release. You infected the room you meant to persuade.'],
+ ['The strain everyone requests. Generative, warm, endlessly copied.','Giving every construct away until nothing in the freezer is yours.'],
+ ['Command of the whole expression system. You decide what gets made.','Tyranny of the promoter: forcing expression until the host dies of you.']
+],
+cultures:[
+ ['A fresh flask of sterile medium. An offered feeling, uncontaminated.','The medium spoiled before inoculation. The offer arrives already sour.'],
+ ['Co&#8209;culture. Two organisms agreeing to share one medium.','One partner overgrows. The relationship quietly becomes a monoculture.'],
+ ['A thriving consortium, cross&#8209;feeding: friends, celebration, mutual supply.','Contamination at the party. Somebody brought mould and nobody says so.'],
+ ['Confluence. Nothing new grows and you have stopped noticing the medium.','Passaged at last. Fresh flask, restored appetite, room to divide again.'],
+ ['Three flasks crashed, two still cloudy. Grief, counted honestly, with survivors.','Salvaging the surviving culture. The loss is metabolised into something usable.'],
+ ['A strain from your childhood incubator, still viable. Kindness across time.','Living on an old passage. Nostalgia will not stay sterile forever.'],
+ ['Seven promising flasks, none characterised. Fantasy outpacing assay.','One culture chosen, the rest autoclaved. Clarity, and a little mourning.'],
+ ['Walking away from a culture you fed for months, while it is still alive.','Returning to the incubator you swore you were done with.'],
+ ['The flask you wanted, cloudy and perfect. Private, unembarrassed satisfaction.','You got the growth and lost the reason you ever wanted it.'],
+ ['A closed ecosystem where everything feeds everything. Belonging.','Harmony maintained by supplements nobody is allowed to mention.'],
+ ['An unexpected feeling seeded into fresh medium. Something wants to grow.','Sentiment with no substrate. Lovely, and it will not take.'],
+ ['Carrying your heart across the lab in an open flask. Romantic, exposed.','Feelings delivered at speed to entirely the wrong host.'],
+ ['The incubator itself: holding others at temperature while they grow.','Absorbing everyone else’s culture until your own is overgrown.'],
+ ['Designing the medium so that other people can flourish in it.','Controlling the medium in order to control who is allowed to thrive.']
+],
+nucleases:[
+ ['A perfect guide RNA. Clarity sharp enough to cut exactly where you aim.','Off&#8209;target from the very first cut. A brilliant idea in the wrong locus.'],
+ ['Two guides, one genome, no decision. A blindfolded stalemate.','Forced to cut with the blindfold still on. The standoff resolves badly.'],
+ ['A triple&#8209;strand break straight through something you loved.','Repair beginning. The scar will hold, and it will always be visible.'],
+ ['The genome resting between edits. Enforced quiet; annealing is work too.','Rushed back into the reaction before anything had time to anneal.'],
+ ['Winning the argument by shredding the template. A hollow, total victory.','Counting the lesions and withdrawing with what dignity is left.'],
+ ['Moving the whole construct to gentler conditions. Transit toward calm.','Carrying the same lesions into the new host and blaming the host.'],
+ ['Taking the excised fragment quietly. Strategy, or theft &mdash; you know which.','Caught holding the fragment. The lab notebook remembers everything.'],
+ ['Bound inside your own restriction sites. The trap is self&#8209;engineered.','Finding the one uncut site and slipping out through it.'],
+ ['Three in the morning, replaying every off&#8209;target you might have made.','The fear is named out loud and immediately loses processivity.'],
+ ['Fully digested. The ending already happened; you can stop cutting now.','One fragment survives. Recovery, slow and unbeautiful, begins.'],
+ ['A sharp new mind asking genuinely dangerous questions.','Cleverness with no containment. Gossip operating as a nuclease.'],
+ ['The blade delivered at speed: decisive, effective, impossible to recall.','Cutting first and sequencing never.'],
+ ['Precision bought with loss. Honesty that does not try to comfort you.','Cruelty rebranded as candour, and defended as a personality.'],
+ ['Judgement with the entire editing suite at hand, and the restraint to use little of it.','Editing everyone’s genome except the one you actually live in.']
+],
+organs:[
+ ['A viable graft, offered. Health, money, a genuinely material beginning.','Rejection at the first crossmatch. The offer was never compatible.'],
+ ['Two grafts juggled on a single perfusion pump.','Both fail. You cannot perfuse everything from one pump forever.'],
+ ['Surgeon, engineer and technician in one theatre. Craft, properly staffed.','Nobody scrubbed in. The work is done badly by whoever was nearest.'],
+ ['Organs held in a locked freezer. Security, and a very tight grip.','Circulation restored. The assets are allowed to move again.'],
+ ['Outside the clinic in the cold, uninsured, watching the lights.','A door opens. Help was one corridor away the whole night.'],
+ ['A donor with terms. Real generosity, and the power folded inside it.','Charity engineered to keep the recipient permanently dependent.'],
+ ['Six months on the pump and still no answer about whether it takes.','Pulling the graft early. Impatience with a tissue that keeps its own clock.'],
+ ['The thousandth suture. Mastery assembled out of pure repetition.','Repetition without learning. A technician who stopped asking why.'],
+ ['Your own body, tuned and self&#8209;owned. Comfort that you actually earned.','Luxury that turns out to be leased from somebody else.'],
+ ['A lineage of healthy tissue. Inheritance, legacy, good family stock.','Inherited disease as inheritance. The family line arrives as a liability.'],
+ ['An apprentice at the bench, learning the body as a material.','Study with no practice. Theory that has never touched tissue.'],
+ ['The courier with the cooler: dependable, relentless, entirely unglamorous.','Grinding out delivery targets that nobody will remember, least of all you.'],
+ ['The body as home. Abundance, care, practical and unshowy wealth.','Comfort hoarded. Nurture that refuses to leave the house.'],
+ ['Ownership of the entire supply chain of the body.','Wealth counted in other people’s organs.']
+]
+};
+
+/* ---------- deck assembly ---------- */
+function buildDeck(){
+  const deck = [];
+  MAJORS.forEach((m,i)=>{
+    deck.push({ id:'M'+i, arcana:'major', idx:i, rn:m.rn, name:m.name, trad:m.trad,
+      motif:m.motif, keys:m.keys, up:m.up, rev:m.rev, suit:null, rank:null });
+  });
+  SUITS.forEach(s=>{
+    RANKS.forEach((rank,ri)=>{
+      const m = MINORS[s.id][ri];
+      deck.push({ id:s.id[0].toUpperCase()+ri, arcana:'minor', idx:ri, rn:'',
+        name: rank + ' of ' + s.name,
+        trad: TRAD_RANKS[ri] + ' of ' + s.trad,
+        motif:'suit', keys:[s.element, s.name, ri<10 ? 'numbered' : 'court'],
+        up:m[0], rev:m[1], suit:s, rank:rank, court: ri>=10 ? ri-10 : -1 });
+    });
+  });
+  return deck;
+}
+const DECK = buildDeck();
+
+/* ---------- per-seed strain identity ---------- */
+const MUT_PHRASES = [
+ 'a frameshift in the border ornament','one pip printed in the wrong reading frame',
+ 'the ink cultured from a contaminated batch','a duplicated motif nobody caught at press',
+ 'a silent substitution in the card number','the plate was left out overnight and something grew',
+ 'an inversion: this card prints itself mirrored','a truncated legend, stop codon early',
+ 'the varnish reacted with the pigment','a transposon jumped in from the card before it'
+];
+const GENUS = ['Aureo','Necro','Xeno','Pyro','Halo','Myco','Thermo','Cryo','Litho','Pseudo','Hyper','Archaeo'];
+const SPEC  = ['bacter','coccus','myces','phage','spira','plasma','vibrio','globus','ferrum','sapiens'];
+
+function strainFor(seed){
+  const r = RNG('strain|'+seed);
+  const medium = MEDIA[r.int(0,MEDIA.length-1)];
+  const name = r.pick(GENUS) + r.pick(SPEC) + ' ' +
+    String.fromCharCode(65+r.int(0,25)) + String.fromCharCode(65+r.int(0,25)) + '-' + r.int(2,97);
+  const lot = 'LOT ' + r.int(1000,9999) + '-' + r.pick(['Δ','Ω','Σ','Φ','Ψ','Ξ']);
+  const passage = 'P' + r.int(2,88);
+  // 3–8 mutated cards in this print run
+  const nMut = r.int(3,8);
+  const muts = {};
+  for(let i=0;i<nMut;i++){
+    const c = DECK[r.int(0,DECK.length-1)];
+    muts[c.id] = r.pick(MUT_PHRASES);
+  }
+  return { seed, medium, name, lot, passage, muts };
+}
+
+/* ============================================================
+   ART ENGINE — every motif is drawn into a 272 x 320 window
+   ============================================================ */
+const AW = 272, AH = 320, ACX = 136, ACY = 160;
+
+function mid(a,b){ return [N((a[0]+b[0])/2), N((a[1]+b[1])/2)]; }
+function polar(cx,cy,rad,a){ return [N(cx+rad*Math.cos(a)), N(cy+rad*Math.sin(a))]; }
+function smoothClosed(pts){
+  let d = 'M' + mid(pts[pts.length-1], pts[0]).join(',');
+  for(let i=0;i<pts.length;i++){
+    const p = pts[i], q = pts[(i+1)%pts.length], m = mid(p,q);
+    d += ' Q' + p[0] + ',' + p[1] + ' ' + m[0] + ',' + m[1];
+  }
+  return d + ' Z';
+}
+function blob(cx,cy,rad,n,jit,r){
+  const pts = [];
+  for(let i=0;i<n;i++){
+    const a = i/n*Math.PI*2;
+    pts.push(polar(cx,cy,rad*(1 + r.range(-jit,jit)), a));
+  }
+  return smoothClosed(pts);
+}
+function line(x1,y1,x2,y2,st,w,extra){
+  return '<line x1="'+N(x1)+'" y1="'+N(y1)+'" x2="'+N(x2)+'" y2="'+N(y2)+'" stroke="'+st+'" stroke-width="'+(w||1)+'"'+(extra||'')+'/>';
+}
+function circ(cx,cy,rad,attrs){ return '<circle cx="'+N(cx)+'" cy="'+N(cy)+'" r="'+N(rad)+'" '+attrs+'/>'; }
+function path(d,attrs){ return '<path d="'+d+'" '+attrs+'/>'; }
+const S  = (P,w) => 'fill="none" stroke="'+P.ink+'" stroke-width="'+(w||1.4)+'" stroke-linecap="round" stroke-linejoin="round"';
+const S1 = (P,w) => 'fill="none" stroke="'+P.a1+'" stroke-width="'+(w||1.4)+'" stroke-linecap="round" stroke-linejoin="round"';
+const S2 = (P,w) => 'fill="none" stroke="'+P.a2+'" stroke-width="'+(w||1.4)+'" stroke-linecap="round" stroke-linejoin="round"';
+
+/* ---- helix, used by several motifs ---- */
+function helixStrands(r,P,o){
+  o = o || {};
+  const x = o.x!==undefined?o.x:ACX, top = o.top||34, bot = o.bot||286;
+  const amp = o.amp || r.range(30,42), turns = o.turns || r.range(1.6,2.4);
+  const gap = o.gap || 0;   // fractional position of a break, 0 = none
+  let a = 'M', b = 'M', out = '';
+  const steps = 60;
+  for(let i=0;i<=steps;i++){
+    const t = i/steps, y = top + (bot-top)*t, ph = t*Math.PI*2*turns;
+    a += (i?'L':'') + N(x + amp*Math.sin(ph)) + ',' + N(y);
+    b += (i?'L':'') + N(x + amp*Math.sin(ph+Math.PI)) + ',' + N(y);
+  }
+  out += path(a, S(P,1.7)) + path(b, S1(P,1.7));
+  const rungs = o.rungs || 15;
+  for(let i=1;i<rungs;i++){
+    const t = i/rungs, y = top + (bot-top)*t, ph = t*Math.PI*2*turns;
+    if(gap && Math.abs(t-gap) < .07) continue;
+    const x1 = x + amp*Math.sin(ph), x2 = x + amp*Math.sin(ph+Math.PI);
+    const bad = o.mismatch && Math.abs(t-o.mismatch) < .04;
+    out += line(x1,y,x2,y, bad?P.a2:P.ink, bad?2.6:1, ' opacity="'+(bad?1:.6)+'"');
+    if(bad) out += circ((x1+x2)/2, y, 5, 'fill="none" stroke="'+P.a2+'" stroke-width="1.4"');
+  }
+  return out;
+}
+
+const MOTIFS = {
+  blank(r,P){
+    let s = helixStrands(r,P,{x:ACX-52, amp:20, turns:1.8, rungs:12});
+    s += path('M'+(ACX-24)+',34 L'+(ACX-24)+',286', 'stroke="'+P.a1+'" stroke-width="1" stroke-dasharray="3 6" opacity=".5"');
+    for(let i=0;i<160;i++){
+      const x = r.range(ACX-14, AW-14), y = r.range(30,290);
+      const w = r.range(1,4);
+      s += '<rect x="'+N(x)+'" y="'+N(y)+'" width="'+N(w)+'" height="1.2" fill="'+P.ink+'" opacity="'+N(r.range(.06,.5))+'"/>';
+    }
+    s += '<text x="'+(AW-20)+'" y="292" text-anchor="end" font-family="monospace" font-size="9" fill="'+P.a1+'" opacity=".7">NNNNNNNN</text>';
+    return s;
+  },
+  splice(r,P){
+    let s = helixStrands(r,P,{gap:.5, turns:2});
+    const y = 34 + (286-34)*.5;
+    for(const dir of [-1,1]){
+      const x0 = ACX + dir*118, x1 = ACX + dir*52;
+      s += path('M'+x0+','+(y-30)+' L'+N(x1)+','+N(y-9)+' L'+N(x1+dir*10)+','+N(y), S1(P,2));
+      s += path('M'+x0+','+(y+30)+' L'+N(x1)+','+N(y+9)+' L'+N(x1+dir*10)+','+N(y), S1(P,2));
+      s += circ(x0, y-30, 3, 'fill="'+P.a1+'"') + circ(x0, y+30, 3, 'fill="'+P.a1+'"');
+    }
+    s += circ(ACX, y, 13, 'fill="none" stroke="'+P.a2+'" stroke-width="1.4" stroke-dasharray="2 4"');
+    return s;
+  },
+  ribo(r,P){
+    let d = 'M0,'+ACY;
+    for(let x=0;x<=AW;x+=8) d += ' L'+x+','+N(ACY + 16*Math.sin(x/26));
+    let s = path(d, S(P,1.5)) ;
+    for(let x=6;x<AW;x+=16) s += circ(x, ACY + 16*Math.sin(x/26), 2.2, 'fill="'+P.ink+'" opacity=".55"');
+    s += path(blob(ACX-6, ACY-16, 34, 12, .16, r), 'fill="'+P.bg2+'" stroke="'+P.a1+'" stroke-width="1.8"');
+    s += path(blob(ACX+2, ACY+22, 24, 11, .18, r), 'fill="'+P.bg2+'" stroke="'+P.a1+'" stroke-width="1.6"');
+    let pep = 'M'+(ACX+24)+','+(ACY-40);
+    let px = ACX+24, py = ACY-40;
+    for(let i=0;i<11;i++){
+      px += r.range(-16,20); py -= r.range(4,14);
+      px = Math.max(30, Math.min(AW-30, px)); py = Math.max(24, py);
+      pep += ' L'+N(px)+','+N(py);
+      s += circ(px,py, r.range(3,5.5), 'fill="none" stroke="'+P.a2+'" stroke-width="1.3"');
+    }
+    return path(pep, S2(P,1.1)) + s;
+  },
+  vessel(r,P){
+    const x0 = ACX-72, x1 = ACX+72, top = 46, bot = 276, lv = 120;
+    let s = path('M'+x0+','+top+' L'+x0+','+(bot-24)+' Q'+x0+','+bot+' '+(x0+24)+','+bot+
+                 ' L'+(x1-24)+','+bot+' Q'+x1+','+bot+' '+x1+','+(bot-24)+' L'+x1+','+top, S(P,2));
+    s += path('M'+x0+','+lv+' L'+x1+','+lv, S1(P,1.6));
+    s += '<path d="M'+x0+','+lv+' L'+x0+','+(bot-24)+' Q'+x0+','+bot+' '+(x0+24)+','+bot+' L'+(x1-24)+','+bot+
+         ' Q'+x1+','+bot+' '+x1+','+(bot-24)+' L'+x1+','+lv+' Z" fill="'+P.a1+'" opacity=".10"/>';
+    for(let i=0;i<26;i++){
+      s += circ(r.range(x0+10,x1-10), r.range(lv+12,bot-10), r.range(1.5,6),
+        'fill="none" stroke="'+P.a1+'" stroke-width="1" opacity="'+N(r.range(.3,.9))+'"');
+    }
+    s += line(ACX,top-14,ACX,lv+70,P.ink,2.4);
+    for(const dy of [40,68]) s += path('M'+(ACX-26)+','+(lv+dy)+' Q'+ACX+','+(lv+dy+12)+' '+(ACX+26)+','+(lv+dy), S(P,2));
+    s += '<rect x="'+(ACX-20)+'" y="'+(top-24)+'" width="40" height="14" fill="none" stroke="'+P.ink+'" stroke-width="1.4"/>';
+    for(let i=0;i<7;i++) s += circ(r.range(x0+16,x1-16), r.range(lv-40,lv-6), r.range(2,4), 'fill="'+P.a2+'" opacity=".5"');
+    return s;
+  },
+  vault(r,P){
+    const w = 92;
+    let s = '<rect x="'+(ACX-w)+'" y="'+(ACY-104)+'" width="'+(w*2)+'" height="208" fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2"/>';
+    for(let i=1;i<5;i++){
+      s += line(ACX-w, ACY-104+i*41.6, ACX+w, ACY-104+i*41.6, P.ink, .6, ' opacity=".25"');
+      s += line(ACX-w+i*36.8, ACY-104, ACX-w+i*36.8, ACY+104, P.ink, .6, ' opacity=".25"');
+    }
+    s += circ(ACX,ACY,46,'fill="none" stroke="'+P.a1+'" stroke-width="2"');
+    s += circ(ACX,ACY,34,'fill="none" stroke="'+P.a1+'" stroke-width="1" stroke-dasharray="4 5"');
+    for(let i=0;i<8;i++){
+      const a = i/8*Math.PI*2 + r.range(0,.4);
+      const p1 = polar(ACX,ACY,46,a), p2 = polar(ACX,ACY,58,a);
+      s += line(p1[0],p1[1],p2[0],p2[1],P.a1,2.2);
+    }
+    const cy = ACY;
+    s += path('M'+(ACX-16)+','+(cy-20)+' Q'+ACX+','+cy+' '+(ACX-16)+','+(cy+20), S2(P,2.4));
+    s += path('M'+(ACX+16)+','+(cy-20)+' Q'+ACX+','+cy+' '+(ACX+16)+','+(cy+20), S2(P,2.4));
+    s += '<text x="'+ACX+'" y="'+(ACY+90)+'" text-anchor="middle" font-family="monospace" font-size="9" fill="'+P.a1+'" opacity=".8">US '+r.int(6000000,9999999)+' B2</text>';
+    return s;
+  },
+  panel(r,P){
+    let s = '';
+    const xs = [ACX-84, ACX, ACX+84], ys = [ACY-26, ACY-46, ACY-26];
+    for(let i=0;i<3;i++){
+      const x = xs[i], y = ys[i], rr = i===1?42:34;
+      s += path('M'+(x-rr)+','+(y+rr*1.5)+' L'+(x-rr)+','+y+' Q'+x+','+(y-rr*1.3)+' '+(x+rr)+','+y+' L'+(x+rr)+','+(y+rr*1.5), S(P,1.6));
+      s += path('M'+(x-rr*0.8)+','+y+' Q'+x+','+(y-rr*0.7)+' '+(x+rr*0.8)+','+y+' Q'+x+','+(y+rr*0.7)+' '+(x-rr*0.8)+','+y+' Z', S1(P,1.6));
+      s += circ(x,y,rr*0.3,'fill="'+P.a2+'" opacity=".8"');
+      s += circ(x,y,rr*0.13,'fill="'+P.bg+'"');
+    }
+    for(let i=0;i<5;i++) s += line(ACX-104, 240+i*11, ACX+104, 240+i*11, P.ink, 1, ' opacity="'+N(.5-i*.08)+'"');
+    s += '<rect x="'+(ACX-38)+'" y="'+266+'" width="76" height="18" fill="none" stroke="'+P.a1+'" stroke-width="1.2"/>';
+    s += '<text x="'+ACX+'" y="'+279+'" text-anchor="middle" font-family="monospace" font-size="9" fill="'+P.a1+'">APPROVED</text>';
+    return s;
+  },
+  chimera(r,P){
+    let s = '';
+    for(const dir of [-1,1]){
+      const cx = ACX + dir*38;
+      s += path(blob(cx, ACY-10, 46, 13, .2, r), 'fill="'+(dir<0?P.bg2:'none')+'" stroke="'+(dir<0?P.ink:P.a1)+'" stroke-width="1.8" opacity=".95"');
+      for(let i=0;i<5;i++){
+        const a = (dir<0? Math.PI*0.6 : -Math.PI*0.4) + i*dir*0.28;
+        const p1 = polar(cx, ACY-10, 44, a), p2 = polar(cx, ACY-10, 44+r.range(14,30), a);
+        s += line(p1[0],p1[1],p2[0],p2[1], dir<0?P.ink:P.a1, 1.4);
+      }
+      s += circ(cx - dir*12, ACY-22, 6, 'fill="none" stroke="'+P.a2+'" stroke-width="1.4"');
+    }
+    s += path('M'+ACX+',86 L'+ACX+',234','stroke="'+P.a2+'" stroke-width="1.2" stroke-dasharray="5 5" fill="none"');
+    for(let i=0;i<9;i++){
+      const y = 96 + i*16;
+      s += line(ACX-7, y, ACX+7, y+6, P.a2, 1.6, ' opacity=".85"');
+    }
+    return s;
+  },
+  capsid(r,P){
+    const cy = ACY-56, rr = 54;
+    let pts = [];
+    for(let i=0;i<6;i++) pts.push(polar(ACX,cy,rr, -Math.PI/2 + i*Math.PI/3));
+    let s = path('M'+pts.map(p=>p.join(',')).join(' L')+' Z','fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2"');
+    for(let i=0;i<6;i++) s += line(ACX,cy,pts[i][0],pts[i][1],P.ink,.8,' opacity=".45"');
+    for(let i=0;i<6;i++) s += line(mid(pts[i],pts[(i+1)%6])[0],mid(pts[i],pts[(i+1)%6])[1],
+      mid(pts[(i+2)%6],pts[(i+3)%6])[0],mid(pts[(i+2)%6],pts[(i+3)%6])[1],P.a1,.7,' opacity=".4"');
+    s += circ(ACX,cy,16,'fill="'+P.a1+'" opacity=".18"');
+    s += '<rect x="'+(ACX-13)+'" y="'+(cy+rr-2)+'" width="26" height="76" fill="none" stroke="'+P.ink+'" stroke-width="1.8"/>';
+    for(let i=1;i<7;i++) s += line(ACX-13, cy+rr-2+i*10.8, ACX+13, cy+rr-2+i*10.8, P.ink, .8, ' opacity=".5"');
+    const by = cy+rr+76;
+    s += line(ACX-26, by, ACX+26, by, P.a1, 2.6);
+    for(let i=0;i<6;i++){
+      const x = ACX-26 + i*10.4, k = r.range(16,30);
+      s += path('M'+N(x)+','+by+' Q'+N(x+r.range(-14,14))+','+N(by+k*.6)+' '+N(x+r.range(-22,22))+','+N(by+k), S1(P,1.3));
+    }
+    return s;
+  },
+  macro(r,P){
+    let s = path(blob(ACX-8, ACY, 78, 16, .22, r), 'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2"');
+    s += path('M'+(ACX+52)+','+(ACY-46)+' Q'+(ACX+96)+','+ACY+' '+(ACX+52)+','+(ACY+46), S(P,2));
+    for(let i=0;i<3;i++){
+      const a = -0.5 + i*0.5;
+      const p = polar(ACX-8, ACY, 74, a+Math.PI);
+      s += path('M'+p[0]+','+p[1]+' q'+N(r.range(-26,-10))+','+N(r.range(-16,16))+' '+N(r.range(-34,-18))+','+N(r.range(-10,10)), S(P,2));
+    }
+    s += circ(ACX-20, ACY-12, 22, 'fill="none" stroke="'+P.a1+'" stroke-width="1.4" stroke-dasharray="3 4"');
+    s += circ(ACX+74, ACY, 11, 'fill="'+P.a2+'" opacity=".55"');
+    s += circ(ACX+74, ACY, 11, 'fill="none" stroke="'+P.a2+'" stroke-width="1.4"');
+    for(let i=0;i<9;i++) s += circ(r.range(ACX-70,ACX+40), r.range(ACY-50,ACY+52), r.range(2,5),'fill="none" stroke="'+P.ink+'" stroke-width="1" opacity=".5"');
+    return s;
+  },
+  sterile(r,P){
+    let s = '<rect x="26" y="30" width="'+(AW-52)+'" height="260" fill="none" stroke="'+P.ink+'" stroke-width="1.2" opacity=".6"/>';
+    s += '<path d="M'+(ACX-22)+',36 L'+(ACX+22)+',36 L'+(ACX+72)+',252 L'+(ACX-72)+',252 Z" fill="'+P.a1+'" opacity=".10"/>';
+    s += figure(r,P,ACX,196,1,-1);
+    s += circ(ACX, 44, 10, 'fill="'+P.a2+'" opacity=".9"');
+    for(let i=0;i<5;i++) s += line(ACX-40+i*20, 268, ACX-46+i*20, 282, P.ink, 1, ' opacity=".4"');
+    s += '<text x="'+ACX+'" y="'+22+'" text-anchor="middle" font-family="monospace" font-size="8" fill="'+P.a1+'" opacity=".8">ISO 5 &#183; POSITIVE PRESSURE</text>';
+    return s;
+  },
+  rotor(r,P){
+    let s = circ(ACX,ACY,96,'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2"');
+    s += circ(ACX,ACY,18,'fill="none" stroke="'+P.a1+'" stroke-width="2"');
+    const n = 8, off = r.range(0,1);
+    for(let i=0;i<n;i++){
+      const a = off + i/n*Math.PI*2;
+      const p = polar(ACX,ACY,62,a);
+      s += '<g transform="translate('+p[0]+','+p[1]+') rotate('+N(a*180/Math.PI+90)+')">'+
+        '<rect x="-8" y="-24" width="16" height="48" rx="8" fill="none" stroke="'+P.ink+'" stroke-width="1.5"/>'+
+        '<rect x="-6" y="2" width="12" height="20" rx="6" fill="'+P.a1+'" opacity=".55"/></g>';
+      s += line(polar(ACX,ACY,20,a)[0],polar(ACX,ACY,20,a)[1],polar(ACX,ACY,44,a)[0],polar(ACX,ACY,44,a)[1],P.ink,1,' opacity=".5"');
+    }
+    for(let i=0;i<3;i++){
+      const rr = 104+i*8;
+      s += path('M'+polar(ACX,ACY,rr,-.9).join(',')+' A'+rr+','+rr+' 0 0 1 '+polar(ACX,ACY,rr,.5).join(','), S2(P,1.2));
+    }
+    return s;
+  },
+  proof(r,P){
+    let s = helixStrands(r,P,{mismatch:r.range(.35,.65), turns:1.8});
+    s += line(24, 34, 24, 286, P.a1, 1, ' opacity=".5"');
+    s += line(AW-24, 34, AW-24, 286, P.a1, 1, ' opacity=".5"');
+    for(let i=0;i<=10;i++){ const y = 34 + i*25.2; s += line(20,y,28,y,P.a1,1,' opacity=".5"') + line(AW-28,y,AW-20,y,P.a1,1,' opacity=".5"'); }
+    return s;
+  },
+  cryo(r,P){
+    let s = '<rect x="'+(ACX-64)+'" y="34" width="128" height="252" rx="64" fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2"/>';
+    s += '<g opacity=".9" transform="translate(0,-6) rotate(180 '+ACX+' '+ACY+')">'+figure(r,P,ACX,ACY+62,1.05,-1)+'</g>';
+    for(let i=0;i<28;i++){
+      const x = r.range(ACX-58,ACX+58), y = r.range(44,278), l = r.range(4,13), a = r.range(0,Math.PI);
+      s += line(x-Math.cos(a)*l, y-Math.sin(a)*l, x+Math.cos(a)*l, y+Math.sin(a)*l, P.a1, 1, ' opacity="'+N(r.range(.25,.75))+'"');
+    }
+    s += '<text x="'+ACX+'" y="24" text-anchor="middle" font-family="monospace" font-size="9" fill="'+P.a1+'">&#8722;196 &#176;C</text>';
+    return s;
+  },
+  apop(r,P){
+    let s = path(blob(ACX, ACY, 62, 14, .12, r), 'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="2" stroke-dasharray="7 5"');
+    s += path(blob(ACX, ACY, 26, 10, .2, r), 'fill="none" stroke="'+P.a2+'" stroke-width="1.6"');
+    for(let i=0;i<7;i++){
+      const a = i/7*Math.PI*2 + r.range(0,.5), d = r.range(88,124);
+      const p = polar(ACX,ACY,d,a);
+      s += path(blob(p[0],p[1], r.range(8,17), 9, .2, r), 'fill="'+P.bg2+'" stroke="'+P.a1+'" stroke-width="1.4"');
+      s += line(polar(ACX,ACY,66,a)[0],polar(ACX,ACY,66,a)[1],polar(ACX,ACY,d-18,a)[0],polar(ACX,ACY,d-18,a)[1],P.a1,.8,' opacity=".35" stroke-dasharray="2 4"');
+    }
+    for(let i=0;i<6;i++){ const a=r.range(0,6.28); s += line(polar(ACX,ACY,8,a)[0],polar(ACX,ACY,8,a)[1],polar(ACX,ACY,24,a)[0],polar(ACX,ACY,24,a)[1],P.a2,1.2); }
+    return s;
+  },
+  titrate(r,P){
+    let s = '<rect x="'+(ACX-11)+'" y="28" width="22" height="120" fill="none" stroke="'+P.ink+'" stroke-width="1.6"/>';
+    for(let i=1;i<9;i++) s += line(ACX-11, 28+i*13, ACX-3, 28+i*13, P.ink, .8, ' opacity=".55"');
+    s += '<rect x="'+(ACX-11)+'" y="70" width="22" height="78" fill="'+P.a2+'" opacity=".25"/>';
+    s += path('M'+(ACX-11)+',148 L'+ACX+',166 L'+(ACX+11)+',148 Z', 'fill="none" stroke="'+P.ink+'" stroke-width="1.6"');
+    for(let i=0;i<3;i++) s += circ(ACX, 178+i*18, 3.2-i*.5, 'fill="'+P.a2+'" opacity="'+N(.9-i*.25)+'"');
+    s += path('M'+(ACX-56)+',236 L'+(ACX-44)+',286 L'+(ACX+44)+',286 L'+(ACX+56)+',236', S(P,2));
+    s += path('M'+(ACX-49)+',262 L'+(ACX+49)+',262', S1(P,1.4));
+    s += '<path d="M'+(ACX-49)+',262 L'+(ACX-44)+',286 L'+(ACX+44)+',286 L'+(ACX+49)+',262 Z" fill="'+P.a1+'" opacity=".16"/>';
+    let d = 'M'+(ACX-96)+',214';
+    for(let i=0;i<=40;i++){ const t=i/40; d += ' L'+N(ACX-96+t*60)+','+N(214 - 44/(1+Math.exp(-(t-.5)*14))); }
+    s += path(d, S2(P,1.4));
+    return s;
+  },
+  tether(r,P){
+    let s = figure(r,P,ACX,244,1.05,-1);
+    s += '<rect x="'+(ACX+58)+'" y="40" width="42" height="60" rx="8" fill="'+P.a2+'" opacity=".2" stroke="'+P.a2+'" stroke-width="1.4"/>';
+    s += '<rect x="'+(ACX-100)+'" y="40" width="42" height="60" rx="8" fill="'+P.a1+'" opacity=".2" stroke="'+P.a1+'" stroke-width="1.4"/>';
+    for(const dir of [-1,1]){
+      const bx = ACX + dir*79;
+      s += path('M'+bx+',100 Q'+N(bx)+','+N(150+r.range(0,20))+' '+N(ACX+dir*16)+','+N(176), S1(P,2));
+      s += circ(ACX+dir*16, 176, 3.6, 'fill="'+P.a2+'"');
+    }
+    s += '<text x="'+ACX+'" y="24" text-anchor="middle" font-family="monospace" font-size="8" fill="'+P.a1+'" opacity=".8">AUXOTROPH &#183; DO NOT DISCONNECT</text>';
+    return s;
+  },
+  shatter(r,P){
+    let s = path(blob(ACX,ACY,58,14,.1,r), 'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="1.6" opacity=".8"');
+    for(let i=0;i<14;i++){
+      const a = i/14*Math.PI*2 + r.range(-.12,.12);
+      const p1 = polar(ACX,ACY,r.range(10,26),a), p2 = polar(ACX,ACY,r.range(96,140),a);
+      s += path('M'+p1.join(',')+' L'+polar(ACX,ACY,58,a+r.range(-.06,.06)).join(',')+' L'+p2.join(','), S1(P,r.range(.8,2)));
+      const f = polar(ACX,ACY,r.range(74,132),a+r.range(-.2,.2));
+      s += path('M'+f[0]+','+f[1]+' l'+N(r.range(-12,12))+','+N(r.range(-10,10))+' l'+N(r.range(-10,10))+','+N(r.range(4,14))+' Z',
+        'fill="'+P.a2+'" opacity="'+N(r.range(.25,.7))+'"');
+    }
+    s += circ(ACX,ACY,r.range(8,14),'fill="'+P.a2+'" opacity=".9"');
+    return s;
+  },
+  extremo(r,P){
+    let s = '';
+    for(let i=0;i<70;i++) s += circ(r.range(8,AW-8), r.range(14,150), r.range(.6,1.9), 'fill="'+P.ink+'" opacity="'+N(r.range(.15,.85))+'"');
+    const st = [ACX, 74];
+    for(let i=0;i<8;i++){ const a=i/8*Math.PI*2; const l=(i%2?9:22);
+      s += line(st[0],st[1],polar(st[0],st[1],l,a)[0],polar(st[0],st[1],l,a)[1],P.a2,1.6); }
+    s += circ(st[0],st[1],5,'fill="'+P.a2+'"');
+    const bx = ACX, by = 224;
+    s += path(blob(bx,by,44,12,.14,r), 'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="1.8"');
+    for(let i=0;i<4;i++){
+      for(const dir of [-1,1]){
+        const px = bx + dir*(14+i*9), py = by + 34 - i*4;
+        s += path('M'+N(px)+','+N(by+18)+' L'+N(px+dir*6)+','+N(py), S(P,2.2));
+        s += circ(px+dir*6, py, 2.6, 'fill="'+P.a1+'"');
+      }
+    }
+    s += circ(bx-14, by-12, 4, 'fill="none" stroke="'+P.a1+'" stroke-width="1.3"');
+    s += circ(bx+14, by-12, 4, 'fill="none" stroke="'+P.a1+'" stroke-width="1.3"');
+    for(let i=0;i<20;i++) s += circ(r.range(20,AW-20), r.range(268,292), r.range(1,4),'fill="'+P.a1+'" opacity=".35"');
+    return s;
+  },
+  spiral(r,P){
+    let d = 'M'+ACX+','+ACY, s = '';
+    const turns = r.range(3.6,5.2);
+    for(let i=0;i<=260;i++){
+      const t = i/260, a = t*Math.PI*2*turns, rr = t*104;
+      d += ' L'+N(ACX+rr*Math.cos(a))+','+N(ACY+rr*Math.sin(a)*.86);
+    }
+    s += path(d, S(P,1.6));
+    for(let i=0;i<9;i++){
+      const a = r.range(0,6.28), rr = r.range(30,104);
+      const p = polar(ACX,ACY,rr,a);
+      s += path('M'+p[0]+','+N(p[1]*.9+ACY*.1)+' q'+N(r.range(-18,18))+','+N(r.range(-14,14))+' '+N(r.range(-24,24))+','+N(r.range(-18,18)), S2(P,2));
+    }
+    s += circ(ACX,ACY,6,'fill="'+P.a2+'"');
+    return s;
+  },
+  burst(r,P){
+    let s = '';
+    const n = 20;
+    for(let i=0;i<n;i++){
+      const a = i/n*Math.PI*2;
+      const l = (i%2 ? r.range(96,120) : r.range(60,78));
+      s += line(polar(ACX,ACY,40,a)[0],polar(ACX,ACY,40,a)[1],polar(ACX,ACY,l,a)[0],polar(ACX,ACY,l,a)[1],
+        i%2?P.a2:P.a1, i%2?1.6:2.4, ' opacity=".9"');
+    }
+    s += circ(ACX,ACY,40,'fill="'+P.a1+'" opacity=".16" stroke="'+P.ink+'" stroke-width="2"');
+    for(let i=0;i<6;i++){
+      const y = ACY-24+i*10;
+      s += path('M'+(ACX-26)+','+y+' Q'+ACX+','+N(y+r.range(-5,5))+' '+(ACX+26)+','+y, S(P,1.5));
+    }
+    return s;
+  },
+  readout(r,P){
+    let s = '';
+    for(let i=0;i<6;i++) s += line(16, 60+i*38, AW-16, 60+i*38, P.ink, .6, ' opacity=".18"');
+    const cols = [P.a1,P.a2,P.ink,P.glow], bases = ['A','C','G','T'];
+    let x = 20;
+    while(x < AW-24){
+      const k = r.int(0,3), h = r.range(26,80), w = r.range(9,17);
+      s += path('M'+N(x)+',250 Q'+N(x+w/2)+','+N(250-h*1.5)+' '+N(x+w)+',250', 'fill="none" stroke="'+cols[k]+'" stroke-width="1.7"');
+      s += '<text x="'+N(x+w/2)+'" y="266" text-anchor="middle" font-family="monospace" font-size="8" fill="'+cols[k]+'" opacity=".85">'+bases[k]+'</text>';
+      x += w + r.range(1,5);
+    }
+    s += line(16,250,AW-16,250,P.ink,1.2);
+    s += '<text x="16" y="44" font-family="monospace" font-size="9" fill="'+P.a1+'" opacity=".8">Q'+r.int(20,41)+' &#183; '+r.int(120,320)+' bp</text>';
+    return s;
+  },
+  loop(r,P){
+    const rr = 92;
+    let s = circ(ACX,ACY,rr,'fill="none" stroke="'+P.ink+'" stroke-width="2" opacity=".8"');
+    const n = 12;
+    for(let i=0;i<n;i++){
+      const a = i/n*Math.PI*2, p = polar(ACX,ACY,rr,a);
+      s += path(blob(p[0],p[1], r.range(9,15), 8, .22, r), 'fill="'+P.bg2+'" stroke="'+(i%3?P.a1:P.a2)+'" stroke-width="1.4"');
+      const a2 = (i+.5)/n*Math.PI*2;
+      const q1 = polar(ACX,ACY,rr-14,a2), q2 = polar(ACX,ACY,rr-30,a2);
+      s += line(q1[0],q1[1],q2[0],q2[1],P.ink,.9,' opacity=".45"');
+    }
+    s += circ(ACX,ACY,44,'fill="none" stroke="'+P.a1+'" stroke-width="1.2" stroke-dasharray="3 5"');
+    s += circ(ACX,ACY,22,'fill="'+P.a1+'" opacity=".14"');
+    const ah = polar(ACX,ACY,rr,-.25);
+    s += path('M'+N(ah[0]-6)+','+N(ah[1]-8)+' L'+N(ah[0]+7)+','+N(ah[1])+' L'+N(ah[0]-6)+','+N(ah[1]+8)+' Z','fill="'+P.a2+'"');
+    return s;
+  }
+};
+
+/* ---- humanoid silhouette used by several motifs & the courts ---- */
+function figure(r,P,x,baseY,scale,dir){
+  const s0 = scale||1;
+  const hy = baseY - 118*s0;
+  let s = '';
+  s += path('M'+N(x-34*s0)+','+baseY+' Q'+N(x-30*s0)+','+N(baseY-84*s0)+' '+N(x)+','+N(baseY-92*s0)+
+            ' Q'+N(x+30*s0)+','+N(baseY-84*s0)+' '+N(x+34*s0)+','+baseY+' Z',
+            'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="1.8"');
+  s += '<ellipse cx="'+N(x)+'" cy="'+N(hy+16*s0)+'" rx="'+N(21*s0)+'" ry="'+N(25*s0)+'" fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="1.8"/>';
+  s += '<rect x="'+N(x-14*s0)+'" y="'+N(hy+10*s0)+'" width="'+N(28*s0)+'" height="'+N(15*s0)+'" rx="'+N(7*s0)+'" fill="none" stroke="'+P.a1+'" stroke-width="1.4"/>';
+  s += circ(x-7*s0, hy+17*s0, 2.4*s0, 'fill="'+P.a1+'"') + circ(x+7*s0, hy+17*s0, 2.4*s0, 'fill="'+P.a1+'"');
+  for(let i=0;i<4;i++) s += line(x-24*s0, baseY-64*s0+i*15*s0, x+24*s0, baseY-58*s0+i*15*s0, P.ink, .8, ' opacity=".3"');
+  return s;
+}
+
+/* ---- suit glyphs ---- */
+const GLYPHS = {
+  ring(x,y,s,P,r){
+    let o = circ(x,y,16*s,'fill="none" stroke="'+P.ink+'" stroke-width="'+(2.2*s)+'"');
+    o += circ(x,y,11*s,'fill="none" stroke="'+P.a1+'" stroke-width="'+(1.2*s)+'" stroke-dasharray="'+(3*s)+' '+(3*s)+'"');
+    for(let i=0;i<3;i++){
+      const a = (r? r.range(0,6.28) : i*2.1) + i*2.1;
+      const p1 = polar(x,y,13*s,a), p2 = polar(x,y,20*s,a);
+      o += line(p1[0],p1[1],p2[0],p2[1],P.a2,1.6*s);
+    }
+    return o;
+  },
+  flask(x,y,s,P){
+    let o = path('M'+N(x-7*s)+','+N(y-18*s)+' L'+N(x-7*s)+','+N(y-4*s)+' L'+N(x-15*s)+','+N(y+16*s)+
+      ' Q'+N(x-16*s)+','+N(y+21*s)+' '+N(x-10*s)+','+N(y+21*s)+' L'+N(x+10*s)+','+N(y+21*s)+
+      ' Q'+N(x+16*s)+','+N(y+21*s)+' '+N(x+15*s)+','+N(y+16*s)+' L'+N(x+7*s)+','+N(y-4*s)+' L'+N(x+7*s)+','+N(y-18*s),
+      'fill="none" stroke="'+P.ink+'" stroke-width="'+(1.9*s)+'" stroke-linejoin="round"');
+    o += path('M'+N(x-12*s)+','+N(y+8*s)+' L'+N(x+12*s)+','+N(y+8*s)+' L'+N(x+14*s)+','+N(y+16*s)+
+      ' Q'+N(x+16*s)+','+N(y+21*s)+' '+N(x+10*s)+','+N(y+21*s)+' L'+N(x-10*s)+','+N(y+21*s)+
+      ' Q'+N(x-16*s)+','+N(y+21*s)+' '+N(x-14*s)+','+N(y+16*s)+' Z','fill="'+P.a1+'" opacity=".45"');
+    o += line(x-9*s, y-18*s, x+9*s, y-18*s, P.a2, 2.1*s);
+    return o;
+  },
+  blade(x,y,s,P){
+    let o = path('M'+N(x)+','+N(y-22*s)+' L'+N(x+8*s)+','+N(y+4*s)+' L'+N(x)+','+N(y+14*s)+
+      ' L'+N(x-8*s)+','+N(y+4*s)+' Z','fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="'+(1.8*s)+'"');
+    o += line(x, y-18*s, x, y+10*s, P.a1, 1.1*s, ' opacity=".8"');
+    o += path('M'+N(x-13*s)+','+N(y+14*s)+' L'+N(x+13*s)+','+N(y+14*s)+'','stroke="'+P.a2+'" stroke-width="'+(2*s)+'" fill="none"');
+    o += circ(x, y+21*s, 5*s, 'fill="none" stroke="'+P.a2+'" stroke-width="'+(1.6*s)+'"');
+    return o;
+  },
+  organ(x,y,s,P,r){
+    const rr = RNG('organ'+x+y);
+    let o = path(blob(x,y,17*s,10,.18,r||rr),'fill="'+P.bg2+'" stroke="'+P.ink+'" stroke-width="'+(1.8*s)+'"');
+    o += path('M'+N(x-9*s)+','+N(y+9*s)+' Q'+N(x)+','+N(y-2*s)+' '+N(x+3*s)+','+N(y-11*s),'fill="none" stroke="'+P.a2+'" stroke-width="'+(1.5*s)+'"');
+    o += path('M'+N(x-1*s)+','+N(y+2*s)+' L'+N(x+9*s)+','+N(y+6*s),'fill="none" stroke="'+P.a2+'" stroke-width="'+(1.2*s)+'"');
+    o += path('M'+N(x-1*s)+','+N(y-2*s)+' L'+N(x-10*s)+','+N(y-6*s),'fill="none" stroke="'+P.a2+'" stroke-width="'+(1.2*s)+'"');
+    o += path('M'+N(x+2*s)+','+N(y-6*s)+' L'+N(x+10*s)+','+N(y-9*s),'fill="none" stroke="'+P.a2+'" stroke-width="'+(1*s)+'"');
+    o += path('M'+N(x-5*s)+','+N(y+5*s)+' L'+N(x-12*s)+','+N(y+3*s),'fill="none" stroke="'+P.a2+'" stroke-width="'+(1*s)+'"');
+    o += path('M'+N(x-11*s)+','+N(y+2*s)+' Q'+N(x-4*s)+','+N(y+13*s)+' '+N(x+6*s)+','+N(y+11*s),'fill="none" stroke="'+P.a1+'" stroke-width="'+(1*s)+'" opacity=".7"');
+    return o;
+  }
+};
+
+const PIPS = {
+ 2:[[.5,.24],[.5,.76]],
+ 3:[[.5,.18],[.3,.62],[.7,.62]],
+ 4:[[.3,.26],[.7,.26],[.3,.74],[.7,.74]],
+ 5:[[.3,.22],[.7,.22],[.5,.5],[.3,.78],[.7,.78]],
+ 6:[[.3,.2],[.7,.2],[.3,.5],[.7,.5],[.3,.8],[.7,.8]],
+ 7:[[.5,.12],[.3,.33],[.7,.33],[.3,.57],[.7,.57],[.3,.83],[.7,.83]],
+ 8:[[.3,.16],[.7,.16],[.3,.38],[.7,.38],[.3,.62],[.7,.62],[.3,.84],[.7,.84]],
+ 9:[[.3,.14],[.7,.14],[.3,.36],[.7,.36],[.5,.5],[.3,.64],[.7,.64],[.3,.86],[.7,.86]],
+ 10:[[.3,.12],[.7,.12],[.5,.26],[.3,.4],[.7,.4],[.3,.6],[.7,.6],[.5,.74],[.3,.88],[.7,.88]]
+};
+const COURT_LABEL = ['SPORE','VECTOR','MATRIX','ARCHITECT'];
+
+function suitArt(card,r,P){
+  const g = GLYPHS[card.suit.glyph];
+  const i = card.idx;
+  let s = '';
+  if(i === 0){                                   // Ace
+    s += circ(ACX,ACY,84,'fill="none" stroke="'+P.a1+'" stroke-width="1" opacity=".35"');
+    s += circ(ACX,ACY,64,'fill="none" stroke="'+P.a1+'" stroke-width="1" stroke-dasharray="3 6" opacity=".5"');
+    for(let k=0;k<24;k++){ const a=k/24*Math.PI*2;
+      s += line(polar(ACX,ACY,88,a)[0],polar(ACX,ACY,88,a)[1],polar(ACX,ACY,96,a)[0],polar(ACX,ACY,96,a)[1],P.a1,1,' opacity=".4"'); }
+    s += g(ACX,ACY,2.7,P,r);
+  } else if(i < 10){                             // numbered
+    const pips = PIPS[i+1];
+    const n = pips.length;
+    const gs = n <= 3 ? 1.85 : n <= 5 ? 1.5 : n <= 7 ? 1.28 : 1.06;
+    pips.forEach((p,k)=>{
+      const x = 26 + p[0]*(AW-52), y = 24 + p[1]*(AH-48);
+      s += '<g opacity="'+N(r.range(.82,1))+'" transform="rotate('+N(r.range(-6,6))+' '+N(x)+' '+N(y)+')">'+ g(x,y,gs,P,r) +'</g>';
+    });
+    for(let k=0;k<pips.length-1;k++){
+      const a = pips[k], b = pips[k+1];
+      s = line(26+a[0]*(AW-52), 24+a[1]*(AH-48), 26+b[0]*(AW-52), 24+b[1]*(AH-48), P.ink, .6, ' opacity=".16"') + s;
+    }
+  } else {                                       // courts
+    const c = card.court;
+    s += circ(ACX, 118, 74, 'fill="'+P.a1+'" opacity=".07"');
+    if(c===0){ for(let k=0;k<10;k++){ const a=k/10*Math.PI*2;
+        s += circ(polar(ACX,132,86,a)[0],polar(ACX,132,86,a)[1], 3, 'fill="'+P.a2+'" opacity=".5"'); } }
+    if(c===1){ for(let k=0;k<5;k++) s += path('M'+N(30+k*4)+','+N(60+k*10)+' L'+N(AW-30-k*4)+','+N(48+k*10),
+        'stroke="'+P.a1+'" stroke-width="1" opacity=".2" fill="none"'); }
+    if(c===2){ s += circ(ACX,150,96,'fill="none" stroke="'+P.a2+'" stroke-width="1" stroke-dasharray="2 7" opacity=".6"'); }
+    if(c===3){ s += '<rect x="30" y="40" width="'+(AW-60)+'" height="230" fill="none" stroke="'+P.a2+'" stroke-width="1" opacity=".45"/>'; }
+    s += figure(r,P,ACX,272,1.28,-1);
+    // headpiece by rank
+    const hy = 272 - 118*1.28 + 16*1.28;
+    if(c===0) s += path('M'+(ACX-16)+','+N(hy-24)+' Q'+ACX+','+N(hy-44)+' '+(ACX+16)+','+N(hy-24), S2(P,2));
+    if(c===1){ s += path('M'+(ACX-22)+','+N(hy-22)+' L'+ACX+','+N(hy-48)+' L'+(ACX+22)+','+N(hy-22), S2(P,2.2));
+               s += line(ACX,hy-48,ACX,hy-62,P.a2,2.2); }
+    if(c===2){ for(let k=-2;k<=2;k++) s += line(ACX+k*9, hy-22, ACX+k*13, hy-40+Math.abs(k)*7, P.a2, 2);
+               s += path('M'+(ACX-26)+','+N(hy-22)+' L'+(ACX+26)+','+N(hy-22), S2(P,2)); }
+    if(c===3){ s += '<rect x="'+(ACX-24)+'" y="'+N(hy-42)+'" width="48" height="16" fill="none" stroke="'+P.a2+'" stroke-width="2"/>';
+               for(let k=0;k<3;k++) s += line(ACX-16+k*16, hy-42, ACX-16+k*16, hy-56, P.a2, 2); }
+    s += '<g opacity=".95">'+ g(ACX, 214, 1.45, P, r) +'</g>';
+    s += '<text x="'+ACX+'" y="'+300+'" text-anchor="middle" font-family="monospace" font-size="9" fill="'+P.a1+'" opacity=".75" letter-spacing="2">'+COURT_LABEL[c]+'</text>';
+  }
+  return s;
+}
+
+/* ============================================================
+   CARD RENDERER
+   ============================================================ */
+const CW = 320, CH = 520;
+let UID = 0;
+
+function esc(s){ return String(s).replace(/&(?!#?\w+;)/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function plain(s){ return String(s).replace(/&#8209;/g,'-').replace(/&mdash;/g,'—').replace(/&nbsp;/g,' ')
+  .replace(/&#183;/g,'·').replace(/&amp;/g,'&').replace(/&[a-z]+;/g,''); }
+
+function fitName(name){
+  const words = plain(name).split(' ');
+  if(words.length === 1) return [words[0]];
+  let best = null;
+  for(let i=1;i<words.length;i++){
+    const a = words.slice(0,i).join(' '), b = words.slice(i).join(' ');
+    const score = Math.abs(a.length - b.length) + Math.max(a.length,b.length);
+    if(!best || score < best.score) best = {score, lines:[a,b]};
+  }
+  if(plain(name).length <= 15) return [plain(name)];
+  return best.lines;
+}
+
+function renderCard(card, strain){
+  const P = strain.medium;
+  const uid = 'w' + (UID++);
+  const r = RNG(strain.seed + '|' + card.id);
+  const mutated = !!strain.muts[card.id];
+
+  const art = card.arcana === 'major' ? MOTIFS[card.motif](r,P) : suitArt(card,r,P);
+
+  const nameLines = fitName(card.name);
+  const nameSize = nameLines.length > 1 ? (Math.max.apply(null, nameLines.map(l=>l.length)) > 13 ? 17 : 19) : 22;
+  const nameY = nameLines.length > 1 ? 426 : 433;
+
+  const topLeft = card.arcana === 'major' ? card.rn : String(card.idx + 1 <= 10 ? card.idx + 1 : '').trim();
+  const topRight = card.arcana === 'major' ? 'ARCANUM' : plain(card.suit.name).toUpperCase();
+
+  let bars = '';
+  for(let i=0, x=26; x < CW-26; i++){
+    const w = r.range(1,4.2);
+    bars += '<rect x="'+N(x)+'" y="484" width="'+N(w)+'" height="14" fill="'+P.ink+'" opacity="'+N(r.range(.25,.9))+'"/>';
+    x += w + r.range(1.4,3.6);
+  }
+
+  let glitch = '';
+  if(mutated){
+    for(let i=0;i<3;i++){
+      const y = r.range(70,380), h = r.range(3,10);
+      glitch += '<rect x="24" y="'+N(y)+'" width="272" height="'+N(h)+'" fill="'+P.a2+'" opacity=".5"/>';
+      glitch += '<rect x="'+N(r.range(24,120))+'" y="'+N(y+h)+'" width="'+N(r.range(30,150))+'" height="'+N(r.range(1,3))+'" fill="'+P.glow+'" opacity=".7"/>';
+    }
+    glitch += '<g transform="rotate(-13 62 108)"><rect x="26" y="94" width="72" height="18" fill="none" stroke="'+P.a2+'" stroke-width="1.6"/>'+
+      '<text x="62" y="107" text-anchor="middle" font-family="monospace" font-size="10" fill="'+P.a2+'" letter-spacing="2">MUT</text></g>';
+  }
+
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+CW+' '+CH+'" role="img" aria-label="'+esc(plain(card.name))+'">'+
+   '<defs>'+
+    '<linearGradient id="bg'+uid+'" x1="0" y1="0" x2="0.6" y2="1">'+
+      '<stop offset="0" stop-color="'+P.bg2+'"/><stop offset="1" stop-color="'+P.bg+'"/></linearGradient>'+
+    '<radialGradient id="aw'+uid+'" cx="0.5" cy="0.42" r="0.75">'+
+      '<stop offset="0" stop-color="'+P.paper+'"/><stop offset="1" stop-color="'+P.bg+'"/></radialGradient>'+
+    '<filter id="gl'+uid+'" x="-30%" y="-30%" width="160%" height="160%">'+
+      '<feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+
+    '<clipPath id="cl'+uid+'"><rect x="24" y="66" width="272" height="320" rx="6"/></clipPath>'+
+    '<pattern id="gr'+uid+'" width="16" height="16" patternUnits="userSpaceOnUse">'+
+      '<path d="M16 0 L0 0 0 16" fill="none" stroke="'+P.ink+'" stroke-width="0.4" opacity="0.14"/></pattern>'+
+   '</defs>'+
+   '<rect width="'+CW+'" height="'+CH+'" rx="18" fill="url(#bg'+uid+')"/>'+
+   '<rect x="9" y="9" width="'+(CW-18)+'" height="'+(CH-18)+'" rx="12" fill="none" stroke="'+P.ink+'" stroke-width="1.1" opacity=".55"/>'+
+   '<rect x="14.5" y="14.5" width="'+(CW-29)+'" height="'+(CH-29)+'" rx="9" fill="none" stroke="'+P.a1+'" stroke-width="0.6" opacity=".4"/>'+
+   ['0 0','1 0','0 1','1 1'].map(c=>{
+      const [fx,fy] = c.split(' ').map(Number);
+      const x = fx ? CW-18 : 18, y = fy ? CH-18 : 18, sx = fx?-1:1, sy = fy?-1:1;
+      return '<path d="M'+x+','+(y+sy*22)+' L'+x+','+y+' L'+(x+sx*22)+','+y+'" fill="none" stroke="'+P.a2+'" stroke-width="1.6"/>';
+   }).join('')+
+   '<text x="26" y="46" font-family="Orbitron, monospace" font-size="15" font-weight="700" fill="'+P.a1+'" letter-spacing="1">'+esc(topLeft)+'</text>'+
+   '<text x="'+(CW-26)+'" y="46" text-anchor="end" font-family="monospace" font-size="9" fill="'+P.ink+'" opacity=".7" letter-spacing="2.4">'+esc(topRight)+'</text>'+
+   '<line x1="26" y1="55" x2="'+(CW-26)+'" y2="55" stroke="'+P.ink+'" stroke-width="0.8" opacity=".4"/>'+
+   '<rect x="24" y="66" width="272" height="320" rx="6" fill="url(#aw'+uid+')" stroke="'+P.ink+'" stroke-width="1" opacity="1"/>'+
+   '<g clip-path="url(#cl'+uid+')">'+
+     '<rect x="24" y="66" width="272" height="320" fill="url(#gr'+uid+')"/>'+
+     '<g transform="translate(24,66)" filter="url(#gl'+uid+')">'+ art +'</g>'+
+     glitch +
+   '</g>'+
+   '<rect x="24" y="66" width="272" height="320" rx="6" fill="none" stroke="'+P.a1+'" stroke-width="1" opacity=".55"/>'+
+   '<line x1="26" y1="400" x2="'+(CW-26)+'" y2="400" stroke="'+P.a2+'" stroke-width="0.9" opacity=".7"/>'+
+   nameLines.map((l,i)=>'<text x="'+(CW/2)+'" y="'+(nameY + i*23)+'" text-anchor="middle" font-family="Orbitron, monospace" '+
+      'font-size="'+nameSize+'" font-weight="700" fill="'+P.ink+'" letter-spacing="1">'+esc(l.toUpperCase())+'</text>').join('')+
+   '<text x="'+(CW/2)+'" y="472" text-anchor="middle" font-family="monospace" font-size="9" fill="'+P.a1+'" opacity=".8" letter-spacing="1.6">'+
+      esc(plain(card.trad).toUpperCase())+'</text>'+
+   bars +
+   '<text x="26" y="510" font-family="monospace" font-size="7.5" fill="'+P.ink+'" opacity=".55" letter-spacing="1">'+esc(strain.lot)+'</text>'+
+   '<text x="'+(CW-26)+'" y="510" text-anchor="end" font-family="monospace" font-size="7.5" fill="'+P.ink+'" opacity=".55" letter-spacing="1">'+
+      esc(plain(strain.name).toUpperCase())+'</text>'+
+   '</svg>';
+}
+
+function renderBack(strain){
+  const P = strain.medium;
+  const uid = 'b' + (UID++);
+  const r = RNG(strain.seed + '|back');
+  let cells = '';
+  for(let y=-20;y<CH+20;y+=44){
+    for(let x=-20;x<CW+20;x+=44){
+      const off = ((y/44)|0) % 2 ? 22 : 0;
+      cells += '<g transform="translate('+(x+off)+','+y+')">'+
+        '<path d="M0,-13 L11,-6.5 L11,6.5 L0,13 L-11,6.5 L-11,-6.5 Z" fill="none" stroke="'+P.ink+'" stroke-width="0.8" opacity=".35"/>'+
+        '<circle r="3" fill="'+P.a1+'" opacity=".28"/></g>';
+    }
+  }
+  let hx = '';
+  for(let i=0;i<=48;i++){
+    const t=i/48, y=100+t*320, ph=t*Math.PI*2*2.1;
+    hx += (i?'L':'M')+N(CW/2+34*Math.sin(ph))+','+N(y);
+  }
+  let hx2 = '';
+  for(let i=0;i<=48;i++){
+    const t=i/48, y=100+t*320, ph=t*Math.PI*2*2.1+Math.PI;
+    hx2 += (i?'L':'M')+N(CW/2+34*Math.sin(ph))+','+N(y);
+  }
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+CW+' '+CH+'" role="img" aria-label="Card back">'+
+   '<defs><linearGradient id="bb'+uid+'" x1="0" y1="0" x2="1" y2="1">'+
+     '<stop offset="0" stop-color="'+P.bg2+'"/><stop offset="1" stop-color="'+P.bg+'"/></linearGradient>'+
+     '<clipPath id="bc'+uid+'"><rect width="'+CW+'" height="'+CH+'" rx="18"/></clipPath></defs>'+
+   '<rect width="'+CW+'" height="'+CH+'" rx="18" fill="url(#bb'+uid+')"/>'+
+   '<g clip-path="url(#bc'+uid+')" opacity=".9">'+cells+'</g>'+
+   '<rect x="16" y="16" width="'+(CW-32)+'" height="'+(CH-32)+'" rx="10" fill="none" stroke="'+P.a1+'" stroke-width="1.4" opacity=".7"/>'+
+   '<rect x="24" y="24" width="'+(CW-48)+'" height="'+(CH-48)+'" rx="7" fill="none" stroke="'+P.ink+'" stroke-width="0.7" opacity=".45"/>'+
+   '<path d="'+hx+'" fill="none" stroke="'+P.ink+'" stroke-width="2" opacity=".85"/>'+
+   '<path d="'+hx2+'" fill="none" stroke="'+P.a1+'" stroke-width="2" opacity=".85"/>'+
+   '<circle cx="'+(CW/2)+'" cy="260" r="70" fill="none" stroke="'+P.a2+'" stroke-width="1" opacity=".5"/>'+
+   '<text x="'+(CW/2)+'" y="70" text-anchor="middle" font-family="Orbitron, monospace" font-size="13" font-weight="700" fill="'+P.a1+'" letter-spacing="4">WETWARE</text>'+
+   '<text x="'+(CW/2)+'" y="462" text-anchor="middle" font-family="Orbitron, monospace" font-size="13" font-weight="700" fill="'+P.a1+'" letter-spacing="4">ARCANA</text>'+
+   '<text x="'+(CW/2)+'" y="486" text-anchor="middle" font-family="monospace" font-size="8" fill="'+P.ink+'" opacity=".6" letter-spacing="2">'+esc(strain.passage)+' &#183; '+esc(plain(strain.name).toUpperCase())+'</text>'+
+   '</svg>';
+}
+
+/* ============================================================
+   SPREADS
+   ============================================================ */
+const SPREADS = [
+ {id:'single', name:'Single assay', pos:[
+   {t:'Readout', d:'the one thing this culture is telling you today'}]},
+ {id:'dogma', name:'Central dogma (3)', pos:[
+   {t:'Genotype', d:'what you actually are underneath'},
+   {t:'Phenotype', d:'what is currently expressed and visible'},
+   {t:'Expression', d:'what conditions will bring out next'}]},
+ {id:'pathway', name:'Pathway (5)', pos:[
+   {t:'Substrate', d:'the raw material of the situation'},
+   {t:'Catalyst', d:'what will speed this up'},
+   {t:'Inhibitor', d:'what is slowing it, and why'},
+   {t:'Product', d:'what the reaction is actually making'},
+   {t:'Byproduct', d:'the cost nobody has budgeted for'}]},
+ {id:'panel', name:'Full panel (7)', pos:[
+   {t:'Specimen', d:'you, as the sample presents'},
+   {t:'Pressure', d:'the selection acting on you'},
+   {t:'Origin', d:'where this lineage started'},
+   {t:'Recent passage', d:'what just happened'},
+   {t:'Next passage', d:'the near future'},
+   {t:'Medium', d:'the environment and the people in it'},
+   {t:'Prognosis', d:'where this is trending, absent intervention'}]},
+ {id:'genome', name:'Whole genome (10)', pos:[
+   {t:'Locus', d:'the heart of the matter'},
+   {t:'Crossing', d:'what cuts across it'},
+   {t:'Root', d:'the buried cause'},
+   {t:'Upstream', d:'what is passing out of influence'},
+   {t:'Crown', d:'what you believe you want'},
+   {t:'Downstream', d:'what is arriving next'},
+   {t:'Self', d:'how you are behaving in this'},
+   {t:'Environment', d:'how it looks from outside'},
+   {t:'Hopes &amp; fears', d:'the thing you will not say out loud'},
+   {t:'Outcome', d:'the culture at the end of the run'}]}
+];
+
+/* ============================================================
+   STATE + UI
+   ============================================================ */
+const $ = id => document.getElementById(id);
+const state = { seed:'', strain:null, spread:SPREADS[1], draw:[], reversals:true, filter:'all', modalCard:null, modalRev:false };
+
+function randomSeed(){
+  const a = ['crispr','ferment','graft','codon','plasmid','viral','tissue','clone','marrow','enzyme','vector','strain','culture','wetware','mycelium','apoptic'];
+  const b = ['bloom','static','vigil','harvest','drift','fever','lattice','choir','engine','orchard','ruin','signal'];
+  const r = RNG(String(Math.random()) + Date.now());
+  return r.pick(a) + '-' + r.pick(b) + '-' + r.int(100,999);
+}
+
+function setSeed(seed, opts){
+  opts = opts || {};
+  state.seed = seed;
+  state.strain = strainFor(seed);
+  if(opts.medium) state.strain.medium = opts.medium;
+  $('seed').value = seed;
+  $('palette').value = opts.medium ? opts.medium.id : 'auto';
+  const s = state.strain;
+  $('strainline').innerHTML =
+    'Strain <b>' + esc(s.name) + '</b>' +
+    '<span>Medium <b>' + esc(s.medium.name) + '</b></span>' +
+    '<span>' + esc(s.lot) + ' &#183; passage ' + esc(s.passage) + '</span>' +
+    '<span><b>' + Object.keys(s.muts).length + '</b> mutated card' + (Object.keys(s.muts).length===1?'':'s') + ' in this run</span>';
+  if(location.hash.slice(1) !== encodeURIComponent(seed)) history.replaceState(null,'','#'+encodeURIComponent(seed));
+  renderGallery();
+  if(state.draw.length) renderTable(true);
+}
+
+/* ---------- reading ---------- */
+function deal(){
+  const spread = state.spread;
+  const r = RNG(state.seed + '|draw|' + Date.now() + '|' + Math.random());
+  const bag = DECK.slice();
+  for(let i=bag.length-1;i>0;i--){ const j = r.int(0,i); const t = bag[i]; bag[i] = bag[j]; bag[j] = t; }
+  state.draw = bag.slice(0, spread.pos.length).map((c,i)=>({
+    card:c, reversed: state.reversals && r.chance(.32), revealed:false, pos:spread.pos[i]
+  }));
+  renderTable();
+  $('report').hidden = true;
+}
+
+function renderTable(keepRevealed){
+  const t = $('table');
+  t.innerHTML = '';
+  if(!state.draw.length){
+    t.innerHTML = '<p class="sec-note" style="grid-column:1/-1;text-align:center">No cards on the bench. Press <b>Shuffle &amp; deal</b>.</p>';
+    return;
+  }
+  state.draw.forEach((d,i)=>{
+    if(!keepRevealed) d.revealed = false;
+    const slot = document.createElement('div');
+    slot.className = 'slot';
+    slot.innerHTML =
+      '<div class="pos">' + d.pos.t + '</div>' +
+      '<button class="cardbox' + (d.revealed?' revealed':'') + ' dealing" style="animation-delay:' + (i*0.07) + 's" aria-label="' +
+        esc(plain(d.pos.t)) + ' — reveal card">' +
+        '<div class="flipper">' +
+          '<div class="face back">' + renderBack(state.strain) + '</div>' +
+          '<div class="face front' + (d.reversed?' rev':'') + '">' + renderCard(d.card, state.strain) + '</div>' +
+        '</div></button>' +
+      '<div class="cap">' + (d.revealed ? esc(plain(d.card.name)) + (d.reversed?' <em>rev</em>':'') : '&#183;&#183;&#183;') + '</div>';
+    const btn = slot.querySelector('.cardbox');
+    btn.addEventListener('click', ()=>{
+      if(!d.revealed){ d.revealed = true; btn.classList.add('revealed');
+        slot.querySelector('.cap').innerHTML = esc(plain(d.card.name)) + (d.reversed?' <em>rev</em>':'');
+        maybeReport();
+      } else { openModal(d.card, d.reversed); }
+    });
+    t.appendChild(slot);
+  });
+}
+
+function maybeReport(){
+  if(state.draw.every(d=>d.revealed)) renderReport();
+}
+function revealAll(){
+  if(!state.draw.length) deal();
+  state.draw.forEach(d=>d.revealed = true);
+  renderTable(true);
+  renderReport();
+}
+
+function synthesize(){
+  const counts = {major:0, plasmids:0, cultures:0, nucleases:0, organs:0};
+  let rev = 0;
+  state.draw.forEach(d=>{
+    if(d.card.arcana === 'major') counts.major++; else counts[d.card.suit.id]++;
+    if(d.reversed) rev++;
+  });
+  const n = state.draw.length;
+  const out = [];
+  if(counts.major/n >= .5) out.push('The majors dominate this panel: whatever is happening is structural, not a matter of technique.');
+  else if(counts.major === 0) out.push('Not a single major arcanum. This is bench work &mdash; ordinary, fixable, and yours to do.');
+  const suitNames = {plasmids:'Plasmids (drive and spread)', cultures:'Cultures (feeling and relationship)',
+    nucleases:'Nucleases (mind and conflict)', organs:'Organs (body and material cost)'};
+  let top = null;
+  ['plasmids','cultures','nucleases','organs'].forEach(k=>{ if(!top || counts[k] > counts[top]) top = k; });
+  if(counts[top] >= Math.max(2, Math.ceil(n*0.34))) out.push('The reading runs heavy in <b>' + suitNames[top] + '</b>.');
+  if(rev === 0 && n > 1) out.push('Nothing reversed &mdash; every card is expressing in its intended direction.');
+  else if(rev/n >= .5) out.push('More than half the panel is reversed. The organisms are right; the conditions are wrong.');
+  const mut = state.draw.filter(d=>state.strain.muts[d.card.id]).length;
+  if(mut) out.push('<b>' + mut + '</b> card' + (mut===1?' carries':'s carry') + ' a print mutation from this run. Read the defect as part of the message, or do not &mdash; it is your deck.');
+  return out.join(' ');
+}
+
+function renderReport(){
+  const rep = $('report');
+  rep.hidden = false;
+  rep.innerHTML = '<h3>Lab report &mdash; ' + esc(state.spread.name) + '</h3><ol>' +
+    state.draw.map(d=>{
+      const m = state.strain.muts[d.card.id];
+      return '<li>' +
+        '<div class="rpos">' + d.pos.t + ' &mdash; <span style="color:var(--muted);text-transform:none;letter-spacing:0">' + d.pos.d + '</span></div>' +
+        '<div class="rname">' + esc(plain(d.card.name)) + ' <i>' + (d.reversed?'REVERSED':'UPRIGHT') + '</i></div>' +
+        '<p>' + (d.reversed ? d.card.rev : d.card.up) + '</p>' +
+        (m ? '<p class="mut">Print mutation: ' + m + '.</p>' : '') +
+      '</li>';
+    }).join('') + '</ol><div class="synth">' + synthesize() + '</div>';
+}
+
+function readingText(){
+  if(!state.draw.length) return '';
+  const L = ['WETWARE ARCANA — ' + plain(state.spread.name),
+             'Strain ' + plain(state.strain.name) + ' · ' + state.strain.medium.name + ' · ' + state.strain.lot,
+             'Seed: ' + state.seed, ''];
+  state.draw.forEach(d=>{
+    L.push(plain(d.pos.t).toUpperCase() + ' (' + plain(d.pos.d) + ')');
+    L.push('  ' + plain(d.card.name) + ' — ' + (d.reversed?'reversed':'upright'));
+    L.push('  ' + plain(d.reversed ? d.card.rev : d.card.up));
+    const m = state.strain.muts[d.card.id];
+    if(m) L.push('  Print mutation: ' + plain(m) + '.');
+    L.push('');
+  });
+  L.push(plain(synthesize().replace(/<[^>]+>/g,'')));
+  L.push('', location.href);
+  return L.join('\n');
+}
+
+/* ---------- gallery ---------- */
+function filteredDeck(){
+  if(state.filter === 'all') return DECK;
+  if(state.filter === 'major') return DECK.filter(c=>c.arcana==='major');
+  return DECK.filter(c=>c.suit && c.suit.id === state.filter);
+}
+function renderGallery(){
+  const g = $('gallery');
+  g.innerHTML = '';
+  filteredDeck().forEach(c=>{
+    const b = document.createElement('button');
+    b.className = 'gcard';
+    b.innerHTML = '<span class="shell">' + renderCard(c, state.strain) + '</span>' +
+      '<span class="lbl">' + esc(plain(c.name)) + (state.strain.muts[c.id] ? ' <b style="color:#ff9bb0">&#9888;</b>' : '') + '</span>';
+    b.addEventListener('click', ()=>openModal(c,false));
+    g.appendChild(b);
+  });
+}
+
+/* ---------- modal ---------- */
+function openModal(card, reversed){
+  state.modalCard = card; state.modalRev = !!reversed;
+  paintModal();
+  $('modal').showModal();
+}
+function paintModal(){
+  const c = state.modalCard, m = state.strain.muts[c.id];
+  $('m-art').innerHTML = renderCard(c, state.strain);
+  $('m-art').firstChild.style.transform = state.modalRev ? 'rotate(180deg)' : '';
+  $('m-body').innerHTML =
+    '<div class="m-kicker">' + (c.arcana === 'major' ? 'Major arcanum ' + c.rn : plain(c.suit.name) + ' &#183; ' + c.suit.element) + '</div>' +
+    '<h2>' + esc(plain(c.name)) + '</h2>' +
+    '<div class="m-trad">Traditionally: ' + esc(plain(c.trad)) + '</div>' +
+    '<div class="m-keys">' + c.keys.map(k=>'<span>' + esc(k) + '</span>').join('') + '</div>' +
+    '<div class="m-def"><h4>Upright</h4><p>' + c.up + '</p></div>' +
+    '<div class="m-def"><h4>Reversed</h4><p>' + c.rev + '</p></div>' +
+    (m ? '<div class="m-def"><h4 style="color:#ff9bb0">Print mutation &mdash; this run only</h4><p style="color:#ff9bb0">' + m + '.</p></div>' : '') +
+    (c.arcana === 'minor' ? '<p class="m-trad" style="margin-top:1rem">' + c.suit.blurb + '</p>' : '');
+}
+
+function downloadBlob(blob, filename){
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; document.body.appendChild(a); a.click();
+  a.remove(); setTimeout(()=>URL.revokeObjectURL(url), 4000);
+}
+function cardFilename(c, ext){
+  return 'wetware-arcana-' + plain(c.name).toLowerCase().replace(/[^a-z0-9]+/g,'-') + '-' + state.seed.replace(/[^a-z0-9]+/gi,'') + '.' + ext;
+}
+function exportSVG(){
+  const svg = renderCard(state.modalCard, state.strain);
+  downloadBlob(new Blob([svg], {type:'image/svg+xml'}), cardFilename(state.modalCard,'svg'));
+}
+function exportPNG(){
+  const svg = renderCard(state.modalCard, state.strain);
+  const img = new Image();
+  const blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  img.onload = function(){
+    const scale = 3, cv = document.createElement('canvas');
+    cv.width = CW*scale; cv.height = CH*scale;
+    const ctx = cv.getContext('2d');
+    ctx.scale(scale,scale);
+    ctx.drawImage(img,0,0,CW,CH);
+    URL.revokeObjectURL(url);
+    cv.toBlob(b => downloadBlob(b, cardFilename(state.modalCard,'png')));
+  };
+  img.onerror = function(){ URL.revokeObjectURL(url); alert('Could not rasterise this card — the SVG download still works.'); };
+  img.src = url;
+}
+
+/* ---------- codex ---------- */
+function renderCodex(){
+  $('codex').innerHTML =
+    '<p class="sec-note">Wetware Arcana keeps the skeleton of a Rider&ndash;Waite deck &mdash; 22 major arcana, four suits of fourteen &mdash; and re-cultures every card in a biopunk lab. Nothing is random in the deck itself: the archetypes are fixed. What the seed changes is the <em>print run</em>.</p>' +
+    '<div style="display:grid;gap:1.2rem;margin-top:1.6rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' +
+    SUITS.map(s=>'<div style="border:1px solid var(--border);background:var(--card-bg);padding:1.1rem;border-radius:6px">' +
+      '<div class="m-kicker">' + s.element + ' &#183; was ' + s.trad + '</div>' +
+      '<h3 style="font-family:Orbitron,monospace;font-size:1.05rem;margin:.2rem 0 .5rem">' + s.name + '</h3>' +
+      '<p class="sec-note" style="font-size:.85rem">' + s.blurb + '</p></div>').join('') +
+    '</div>' +
+    '<h3 style="font-family:Orbitron,monospace;font-size:1rem;margin:2rem 0 .6rem">The ranks</h3>' +
+    '<p class="sec-note">Ace through Ten as usual. The court is <b>Spore</b> (page &mdash; the novice, the first news), <b>Vector</b> (knight &mdash; delivery and momentum), <b>Matrix</b> (queen &mdash; the medium that holds and grows others) and <b>Architect</b> (king &mdash; the one who designs the system everyone lives inside).</p>' +
+    '<h3 style="font-family:Orbitron,monospace;font-size:1rem;margin:2rem 0 .6rem">What the seed controls</h3>' +
+    '<ul class="sec-note" style="list-style:disc;padding-left:1.2rem;display:flex;flex-direction:column;gap:.4rem">' +
+      '<li><b>Culture medium</b> &mdash; the eight palettes the deck can be printed in (or pick one by hand).</li>' +
+      '<li><b>Art</b> &mdash; every motif is drawn from scratch as SVG, and the seed sets counts, angles, jitter and noise. No two seeds draw the same helix.</li>' +
+      '<li><b>Strain identity</b> &mdash; the organism name, lot number and passage stamped on every card.</li>' +
+      '<li><b>Print mutations</b> &mdash; three to eight cards per run come out defective, and the defect is printed on them. A mutated card reads differently, and only in your deck.</li>' +
+    '</ul>' +
+    '<h3 style="font-family:Orbitron,monospace;font-size:1rem;margin:2rem 0 .6rem">Majors, at a glance</h3>' +
+    '<div style="display:grid;gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:.5rem">' +
+    MAJORS.map(m=>'<div style="display:flex;gap:.6rem;align-items:baseline;border-bottom:1px solid rgba(0,229,255,.08);padding:.45rem 0">' +
+      '<span style="font-family:Space Mono,monospace;font-size:.62rem;color:var(--cyan);min-width:2.6em">' + m.rn + '</span>' +
+      '<span style="font-size:.86rem;font-weight:600">' + m.name + '</span>' +
+      '<span style="margin-left:auto;font-family:Space Mono,monospace;font-size:.6rem;color:var(--muted);text-align:right">' + m.trad + '</span></div>').join('') +
+    '</div>';
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+(function init(){
+  // palette select
+  const sel = $('palette');
+  sel.innerHTML = '<option value="auto">Auto (from seed)</option>' +
+    MEDIA.map(m=>'<option value="' + m.id + '">' + m.name + '</option>').join('');
+
+  // spread chips
+  $('spreads').innerHTML = SPREADS.map(s=>'<button class="chip" data-s="' + s.id + '" aria-pressed="' +
+    (s.id===state.spread.id) + '">' + s.name + '</button>').join('');
+  $('spreads').addEventListener('click', e=>{
+    const b = e.target.closest('.chip'); if(!b) return;
+    state.spread = SPREADS.find(s=>s.id === b.dataset.s);
+    [...$('spreads').children].forEach(c=>c.setAttribute('aria-pressed', c===b));
+    deal();
+  });
+
+  // filters
+  const filters = [['all','Everything'],['major','Major arcana']].concat(SUITS.map(s=>[s.id,s.name]));
+  $('filters').innerHTML = filters.map(f=>'<button class="chip" data-f="' + f[0] + '" aria-pressed="' +
+    (f[0]===state.filter) + '">' + f[1] + '</button>').join('');
+  $('filters').addEventListener('click', e=>{
+    const b = e.target.closest('.chip'); if(!b) return;
+    state.filter = b.dataset.f;
+    [...$('filters').children].forEach(c=>c.setAttribute('aria-pressed', c===b));
+    renderGallery();
+  });
+
+  // tabs
+  const tabs = [['tab-read','panel-read'],['tab-deck','panel-deck'],['tab-codex','panel-codex']];
+  tabs.forEach(([tid,pid])=>{
+    $(tid).addEventListener('click', ()=>{
+      tabs.forEach(([t,p])=>{ $(t).setAttribute('aria-selected', t===tid); $(p).hidden = (p!==pid); });
+      const bar = document.querySelector('.tabs');
+      if(bar.getBoundingClientRect().top < 0 || bar.getBoundingClientRect().top > 220){
+        bar.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  // console
+  $('seed').addEventListener('change', ()=>{
+    const v = $('seed').value.trim() || randomSeed();
+    setSeed(v, { medium: sel.value==='auto' ? null : MEDIA.find(m=>m.id===sel.value) });
+  });
+  sel.addEventListener('change', ()=>{
+    setSeed(state.seed, { medium: sel.value==='auto' ? null : MEDIA.find(m=>m.id===sel.value) });
+  });
+  $('reseed').addEventListener('click', ()=>{
+    setSeed(randomSeed(), { medium: sel.value==='auto' ? null : MEDIA.find(m=>m.id===sel.value) });
+    if(state.draw.length) deal();
+  });
+  $('copylink').addEventListener('click', async ()=>{
+    try { await navigator.clipboard.writeText(location.href); $('copylink').textContent = 'Copied'; }
+    catch(e){ $('copylink').textContent = 'Copy failed'; }
+    setTimeout(()=>{ $('copylink').textContent = 'Copy link'; }, 1600);
+  });
+
+  // reading controls
+  $('deal').addEventListener('click', deal);
+  $('revealall').addEventListener('click', revealAll);
+  $('allowrev').addEventListener('change', e=>{ state.reversals = e.target.checked; });
+  $('copyread').addEventListener('click', async ()=>{
+    if(!state.draw.length) return;
+    try { await navigator.clipboard.writeText(readingText()); $('copyread').textContent = 'Copied'; }
+    catch(e){ $('copyread').textContent = 'Copy failed'; }
+    setTimeout(()=>{ $('copyread').textContent = 'Copy reading'; }, 1600);
+  });
+  $('printdeck').addEventListener('click', ()=>window.print());
+
+  // modal
+  $('m-close').addEventListener('click', ()=>$('modal').close());
+  $('modal').addEventListener('click', e=>{ if(e.target.id === 'modal') $('modal').close(); });
+  $('m-flip').addEventListener('click', ()=>{ state.modalRev = !state.modalRev; paintModal(); });
+  $('m-png').addEventListener('click', exportPNG);
+  $('m-svg').addEventListener('click', exportSVG);
+
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape') return;
+    if(e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    if(e.key === ' ' && !$('panel-read').hidden){ e.preventDefault(); deal(); }
+  });
+
+  renderCodex();
+  const fromHash = decodeURIComponent(location.hash.slice(1) || '');
+  setSeed(fromHash || randomSeed());
+  renderTable();
+})();
+</script>
+</body>
+</html>
