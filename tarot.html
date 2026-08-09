@@ -75,13 +75,24 @@
   .sec-note{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:70ch}
 
   /* ── spread ── */
-  .spread-picker{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 1.3rem}
+  .spread-picker{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin:1.1rem 0 1.3rem}
+  .grouplab{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(232,240,255,.3);margin-left:.4rem;padding-right:.1rem}
+  .grouplab:first-child{margin-left:0}
+  .chip small{display:block;font-size:.55rem;letter-spacing:.06em;opacity:.55;text-transform:none;margin-top:.1rem}
   .chip{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
     padding:.45rem .85rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;background:transparent;border-radius:99px}
   .chip:hover{border-color:rgba(0,229,255,.45);color:var(--text)}
   .chip[aria-pressed="true"]{background:rgba(0,229,255,.12);border-color:var(--cyan);color:var(--cyan)}
 
   .table{display:grid;gap:1.5rem 1rem;grid-template-columns:repeat(auto-fit,minmax(150px,190px));justify-content:center;margin:2rem 0}
+  /* laid-out spreads keep their geometry on wide screens and fall back to the
+     flowing grid below the breakpoint, where a horseshoe would just be a mess */
+  @media(min-width:900px){
+    .table.laid{grid-template-columns:repeat(var(--cols),minmax(0,1fr));justify-content:stretch;gap:1.4rem .9rem}
+    .table.laid .slot{grid-column:var(--c);grid-row:var(--r)}
+    .table.laid .cardbox{max-width:var(--cardmax,190px)}
+  }
   .slot{display:flex;flex-direction:column;align-items:center;gap:.55rem}
   .slot .pos{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);text-align:center;min-height:1.5em}
   .slot .cap{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted);text-align:center;line-height:1.5}
@@ -95,8 +106,54 @@
   .face.front{transform:rotateY(180deg)}
   .face.front.rev svg{transform:rotate(180deg)}
   .cardbox:focus-visible{outline:2px solid var(--cyan);outline-offset:6px}
-  .dealing{animation:deal .5s backwards}
-  @keyframes deal{from{opacity:0;transform:translateY(-26px) scale(.9)}to{opacity:1}}
+
+  /* ── draw animation: inoculate → bloom → grow ─────────────────────────
+     A droplet falls into the empty slot, a colony blooms where it lands,
+     and the card grows out of the bloom. On reveal, a gel-electrophoresis
+     scan line runs down the face. --d staggers each slot in the spread. */
+  .drop,.bloom{position:absolute;left:50%;top:50%;pointer-events:none;border-radius:50%}
+  .drop{width:14px;height:14px;margin:-7px 0 0 -7px;z-index:4;opacity:0;
+    background:radial-gradient(circle at 34% 30%, #fff, var(--cyan) 45%, rgba(0,229,255,0) 72%);
+    box-shadow:0 0 16px 3px rgba(0,229,255,.75)}
+  .bloom{width:40px;height:40px;margin:-20px 0 0 -20px;z-index:3;opacity:0;
+    border:1.5px solid var(--cyan);box-shadow:0 0 22px rgba(0,229,255,.5) inset,0 0 18px rgba(0,229,255,.35)}
+  .bloom::after{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid var(--pink);opacity:.55}
+  .cardbox.dealing{animation:culture-grow .74s cubic-bezier(.16,.9,.3,1.06) var(--d,0s) both}
+  .cardbox.dealing .drop{animation:inoculate .52s cubic-bezier(.6,0,.9,.5) var(--d,0s) both}
+  .cardbox.dealing .bloom{animation:colony-bloom .8s cubic-bezier(.1,.7,.3,1) calc(var(--d,0s) + .4s) both}
+  @keyframes inoculate{
+    0%{transform:translateY(-190px) scaleY(1.5) scaleX(.7);opacity:0}
+    22%{opacity:1}
+    82%{transform:translateY(0) scaleY(1.35) scaleX(.78);opacity:1}
+    100%{transform:translateY(6px) scale(.35);opacity:0}}
+  @keyframes colony-bloom{
+    0%{transform:scale(.12);opacity:0}
+    18%{opacity:.95}
+    100%{transform:scale(3.4);opacity:0}}
+  @keyframes culture-grow{
+    0%{opacity:0;transform:scale(.18) rotate(-4deg)}
+    52%{opacity:0}
+    64%{opacity:1;transform:scale(1.06) rotate(1deg)}
+    100%{opacity:1;transform:scale(1) rotate(0)}}
+
+  .scan{position:absolute;inset:0;border-radius:12px;overflow:hidden;pointer-events:none;z-index:6;opacity:0}
+  .cardbox.scanning .scan{opacity:1}
+  .cardbox.scanning .scan::before{content:'';position:absolute;left:-8%;right:-8%;height:40%;top:-44%;
+    background:linear-gradient(180deg,transparent,rgba(0,229,255,.06) 34%,rgba(0,229,255,.4) 62%,
+      rgba(255,255,255,.72) 73%,rgba(240,171,252,.32) 82%,transparent);
+    animation:gel-run .95s cubic-bezier(.42,0,.5,1) forwards}
+  .cardbox.scanning .scan::after{content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(180deg,rgba(0,229,255,.16) 0 1px,transparent 1px 8px);
+    animation:gel-bands .95s ease-out forwards}
+  @keyframes gel-run{from{top:-44%}to{top:104%}}
+  @keyframes gel-bands{0%{opacity:.85}70%{opacity:.25}100%{opacity:0}}
+
+  @media(prefers-reduced-motion:reduce){
+    .flipper{transition:none}
+    .drop,.bloom,.scan{display:none}
+    .cardbox.dealing{animation:fade-in .3s var(--d,0s) both}
+    @keyframes fade-in{from{opacity:0}to{opacity:1}}
+  }
 
   .report{border:1px solid var(--border);background:var(--card-bg);padding:1.4rem;margin-top:1rem;border-radius:6px}
   .report h3{font-family:'Orbitron',monospace;font-size:.95rem;letter-spacing:.08em;color:var(--cyan);margin-bottom:.9rem}
@@ -1156,19 +1213,48 @@ function renderBack(strain){
    SPREADS
    ============================================================ */
 const SPREADS = [
- {id:'single', name:'Single assay', pos:[
+ /* ---- quick ---- */
+ {id:'single', group:'Quick', name:'Single assay (1)', trad:'One-card draw', pos:[
    {t:'Readout', d:'the one thing this culture is telling you today'}]},
- {id:'dogma', name:'Central dogma (3)', pos:[
+
+ {id:'titration', group:'Quick', name:'Yes / no titration (3)', trad:'Yes-or-no draw', verdict:true, pos:[
+   {t:'First read', d:'the initial titration'},
+   {t:'Confirm', d:'the confirmatory read'},
+   {t:'Tiebreaker', d:'the deciding well'}]},
+
+ {id:'dogma', group:'Quick', name:'Central dogma (3)', trad:'Situation / action / outcome', pos:[
    {t:'Genotype', d:'what you actually are underneath'},
    {t:'Phenotype', d:'what is currently expressed and visible'},
    {t:'Expression', d:'what conditions will bring out next'}]},
- {id:'pathway', name:'Pathway (5)', pos:[
+
+ {id:'lineage', group:'Quick', name:'Lineage (3)', trad:'Past / present / future', pos:[
+   {t:'Parent culture', d:'what you were passaged from'},
+   {t:'Current passage', d:'where the culture is right now'},
+   {t:'Next passage', d:'what it grows into from here'}]},
+
+ {id:'soma', group:'Quick', name:'Soma (3)', trad:'Mind / body / spirit', pos:[
+   {t:'Cortex', d:'what you are thinking about it'},
+   {t:'Soma', d:'what your body already knows about it'},
+   {t:'Genome', d:'what it touches in who you fundamentally are'}]},
+
+ /* ---- structured ---- */
+ {id:'pathway', group:'Structured', name:'Pathway (5)', trad:'Five-card cross',
+  cols:3, cells:[[1,2],[2,1],[3,2],[2,2],[2,3]], pos:[
    {t:'Substrate', d:'the raw material of the situation'},
    {t:'Catalyst', d:'what will speed this up'},
    {t:'Inhibitor', d:'what is slowing it, and why'},
    {t:'Product', d:'what the reaction is actually making'},
    {t:'Byproduct', d:'the cost nobody has budgeted for'}]},
- {id:'panel', name:'Full panel (7)', pos:[
+
+ {id:'contaminant', group:'Structured', name:'Contaminant (5)', trad:'Shadow work', pos:[
+   {t:'The contaminant', d:'what is growing in here that you did not inoculate'},
+   {t:'Point of entry', d:'how it got past the filter'},
+   {t:'Carbon source', d:'what in you keeps feeding it'},
+   {t:'Protection', d:'what it has been shielding you from having to face'},
+   {t:'Decontamination', d:'what actually clears the plate'}]},
+
+ {id:'panel', group:'Structured', name:'Full panel (7)', trad:'Horseshoe',
+  cols:7, cells:[[1,3],[2,2],[3,1],[4,1],[5,1],[6,2],[7,3]], pos:[
    {t:'Specimen', d:'you, as the sample presents'},
    {t:'Pressure', d:'the selection acting on you'},
    {t:'Origin', d:'where this lineage started'},
@@ -1176,7 +1262,50 @@ const SPREADS = [
    {t:'Next passage', d:'the near future'},
    {t:'Medium', d:'the environment and the people in it'},
    {t:'Prognosis', d:'where this is trending, absent intervention'}]},
- {id:'genome', name:'Whole genome (10)', pos:[
+
+ {id:'coculture', group:'Structured', name:'Co-culture (7)', trad:'Relationship spread',
+  cols:3, cells:[[1,2],[3,2],[2,2],[1,1],[3,1],[2,1],[2,3]], pos:[
+   {t:'You', d:'you, in this particular flask'},
+   {t:'Them', d:'them, as they actually are here'},
+   {t:'Shared medium', d:'the thing the two of you are both living in'},
+   {t:'You contribute', d:'what you are putting into the medium'},
+   {t:'They contribute', d:'what they are putting into it'},
+   {t:'What it needs', d:'the missing nutrient'},
+   {t:'Growth', d:'what this co-culture becomes if nothing changes'}]},
+
+ {id:'selection', group:'Structured', name:'Selection (7)', trad:'Two-path decision',
+  cols:3, cells:[[2,4],[1,3],[1,2],[1,1],[3,3],[3,2],[3,1]], pos:[
+   {t:'The plate', d:'the decision as it actually stands'},
+   {t:'Branch A &mdash; first step', d:'what taking this path looks like immediately'},
+   {t:'Branch A &mdash; cost', d:'what it charges you'},
+   {t:'Branch A &mdash; endpoint', d:'where it leaves you'},
+   {t:'Branch B &mdash; first step', d:'what taking this one looks like immediately'},
+   {t:'Branch B &mdash; cost', d:'what it charges you'},
+   {t:'Branch B &mdash; endpoint', d:'where it leaves you'}]},
+
+ {id:'systems', group:'Structured', name:'Systems scan (7)', trad:'Chakra / body scan',
+  cols:7, cells:[[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1]], pos:[
+   {t:'Cortex', d:'what you are thinking'},
+   {t:'Larynx', d:'what you are saying, and what you are not'},
+   {t:'Heart', d:'what you are feeling'},
+   {t:'Gut', d:'what you can actually stomach'},
+   {t:'Immune', d:'what you are defending against'},
+   {t:'Skeleton', d:'what is holding you up'},
+   {t:'Nerve', d:'what you are transmitting to everyone around you'}]},
+
+ {id:'week', group:'Structured', name:'Seven-day culture (7)', trad:'Week ahead',
+  cols:7, cells:[[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1]], pos:[
+   {t:'Day one', d:'the condition the week is inoculated with'},
+   {t:'Day two', d:'early growth'},
+   {t:'Day three', d:'what shows up mid-week'},
+   {t:'Day four', d:'the midpoint reading'},
+   {t:'Day five', d:'what the week is really about'},
+   {t:'Day six', d:'the turn'},
+   {t:'Day seven', d:'what you are left holding'}]},
+
+ /* ---- deep ---- */
+ {id:'genome', group:'Deep', name:'Whole genome (10)', trad:'Celtic cross',
+  cols:5, cells:[[2,2],[3,2],[2,3],[1,2],[2,1],[4,2],[5,4],[5,3],[5,2],[5,1]], pos:[
    {t:'Locus', d:'the heart of the matter'},
    {t:'Crossing', d:'what cuts across it'},
    {t:'Root', d:'the buried cause'},
@@ -1186,8 +1315,13 @@ const SPREADS = [
    {t:'Self', d:'how you are behaving in this'},
    {t:'Environment', d:'how it looks from outside'},
    {t:'Hopes &amp; fears', d:'the thing you will not say out loud'},
-   {t:'Outcome', d:'the culture at the end of the run'}]}
+   {t:'Outcome', d:'the culture at the end of the run'}]},
+
+ {id:'year', group:'Deep', name:'Twelve passages (12)', trad:'Year ahead wheel', compact:'146px',
+  cols:5, cells:[[3,1],[4,1],[5,2],[5,3],[5,4],[4,5],[3,5],[2,5],[1,4],[1,3],[1,2],[2,1]],
+  pos:Array.from({length:12},(_,i)=>({t:'Month '+(i+1), d:'the dominant condition in month '+(i+1)}))}
 ];
+const SPREAD_GROUPS = ['Quick','Structured','Deep'];
 
 /* ============================================================
    STATE + UI
@@ -1235,7 +1369,12 @@ function deal(){
 
 function renderTable(keepRevealed){
   const t = $('table');
+  const sp = state.spread;
   t.innerHTML = '';
+  t.className = 'table' + (sp.cells ? ' laid' : '');
+  t.style.cssText = sp.cells
+    ? '--cols:' + sp.cols + (sp.compact ? ';--cardmax:' + sp.compact : '')
+    : '';
   if(!state.draw.length){
     t.innerHTML = '<p class="sec-note" style="grid-column:1/-1;text-align:center">No cards on the bench. Press <b>Shuffle &amp; deal</b>.</p>';
     return;
@@ -1244,21 +1383,22 @@ function renderTable(keepRevealed){
     if(!keepRevealed) d.revealed = false;
     const slot = document.createElement('div');
     slot.className = 'slot';
+    if(sp.cells && sp.cells[i]) slot.style.cssText = '--c:' + sp.cells[i][0] + ';--r:' + sp.cells[i][1];
     slot.innerHTML =
       '<div class="pos">' + d.pos.t + '</div>' +
-      '<button class="cardbox' + (d.revealed?' revealed':'') + ' dealing" style="animation-delay:' + (i*0.07) + 's" aria-label="' +
+      '<button class="cardbox' + (d.revealed?' revealed':'') + ' dealing" style="--d:' + (i*0.085) + 's" aria-label="' +
         esc(plain(d.pos.t)) + ' — reveal card">' +
+        '<span class="drop"></span><span class="bloom"></span>' +
         '<div class="flipper">' +
           '<div class="face back">' + renderBack(state.strain) + '</div>' +
           '<div class="face front' + (d.reversed?' rev':'') + '">' + renderCard(d.card, state.strain) + '</div>' +
-        '</div></button>' +
+        '</div>' +
+        '<span class="scan"></span></button>' +
       '<div class="cap">' + (d.revealed ? esc(plain(d.card.name)) + (d.reversed?' <em>rev</em>':'') : '&#183;&#183;&#183;') + '</div>';
     const btn = slot.querySelector('.cardbox');
     btn.addEventListener('click', ()=>{
-      if(!d.revealed){ d.revealed = true; btn.classList.add('revealed');
-        slot.querySelector('.cap').innerHTML = esc(plain(d.card.name)) + (d.reversed?' <em>rev</em>':'');
-        maybeReport();
-      } else { openModal(d.card, d.reversed); }
+      if(!d.revealed){ flipUp(d, btn); maybeReport(); }
+      else { openModal(d.card, d.reversed); }
     });
     t.appendChild(slot);
   });
@@ -1267,11 +1407,31 @@ function renderTable(keepRevealed){
 function maybeReport(){
   if(state.draw.every(d=>d.revealed)) renderReport();
 }
+
+/* flip one card face up and run the gel scan as the front comes round */
+function flipUp(d, btn){
+  d.revealed = true;
+  btn.classList.add('revealed');
+  const cap = btn.parentElement.querySelector('.cap');
+  if(cap) cap.innerHTML = esc(plain(d.card.name)) + (d.reversed?' <em>rev</em>':'');
+  setTimeout(()=>{
+    btn.classList.add('scanning');
+    setTimeout(()=>btn.classList.remove('scanning'), 980);
+  }, 330);
+}
+
 function revealAll(){
-  if(!state.draw.length) deal();
-  state.draw.forEach(d=>d.revealed = true);
-  renderTable(true);
-  renderReport();
+  if(!state.draw.length){ deal(); return; }
+  const boxes = [...$('table').querySelectorAll('.cardbox')];
+  let k = 0;
+  state.draw.forEach((d,i)=>{
+    if(d.revealed || !boxes[i]) return;
+    setTimeout(()=>{
+      flipUp(d, boxes[i]);
+      if(state.draw.every(x=>x.revealed)) renderReport();
+    }, (k++) * 130);
+  });
+  if(state.draw.every(d=>d.revealed)) renderReport();
 }
 
 function synthesize(){
@@ -1283,6 +1443,16 @@ function synthesize(){
   });
   const n = state.draw.length;
   const out = [];
+  if(state.spread.verdict){
+    const up = n - rev;
+    const verdicts = [
+      'The answer is <b>no</b>. All three wells read reversed; there is nothing ambiguous here.',
+      'The answer is <b>no, but</b>. One well reads upright — a real caveat, not a loophole.',
+      'The answer is <b>yes, but</b>. Two upright against one reversed: go, with the reversed card as your condition.',
+      'The answer is <b>yes</b>. Three upright reads, no hedging available.'
+    ];
+    out.push(verdicts[up]);
+  }
   if(counts.major/n >= .5) out.push('The majors dominate this panel: whatever is happening is structural, not a matter of technique.');
   else if(counts.major === 0) out.push('Not a single major arcanum. This is bench work &mdash; ordinary, fixable, and yours to do.');
   const suitNames = {plasmids:'Plasmids (drive and spread)', cultures:'Cultures (feeling and relationship)',
@@ -1290,7 +1460,8 @@ function synthesize(){
   let top = null;
   ['plasmids','cultures','nucleases','organs'].forEach(k=>{ if(!top || counts[k] > counts[top]) top = k; });
   if(counts[top] >= Math.max(2, Math.ceil(n*0.34))) out.push('The reading runs heavy in <b>' + suitNames[top] + '</b>.');
-  if(rev === 0 && n > 1) out.push('Nothing reversed &mdash; every card is expressing in its intended direction.');
+  if(state.spread.verdict){ /* the verdict line already accounts for orientation */ }
+  else if(rev === 0 && n > 1) out.push('Nothing reversed &mdash; every card is expressing in its intended direction.');
   else if(rev/n >= .5) out.push('More than half the panel is reversed. The organisms are right; the conditions are wrong.');
   const mut = state.draw.filter(d=>state.strain.muts[d.card.id]).length;
   if(mut) out.push('<b>' + mut + '</b> card' + (mut===1?' carries':'s carry') + ' a print mutation from this run. Read the defect as part of the message, or do not &mdash; it is your deck.');
@@ -1420,6 +1591,14 @@ function renderCodex(){
       '<li><b>Strain identity</b> &mdash; the organism name, lot number and passage stamped on every card.</li>' +
       '<li><b>Print mutations</b> &mdash; three to eight cards per run come out defective, and the defect is printed on them. A mutated card reads differently, and only in your deck.</li>' +
     '</ul>' +
+    '<h3 style="font-family:Orbitron,monospace;font-size:1rem;margin:2rem 0 .6rem">The spreads</h3>' +
+    '<p class="sec-note">Fourteen layouts, all of them standard tarot spreads under a lab coat. The ones whose shape carries meaning &mdash; the cross, the horseshoe, the celtic cross, the year wheel &mdash; are dealt in that shape on a wide screen and fall back to a plain grid on a narrow one.</p>' +
+    '<div style="display:grid;gap:.2rem 2.4rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:.9rem">' +
+    SPREADS.map(s=>'<div style="display:flex;gap:.6rem;align-items:baseline;border-bottom:1px solid rgba(0,229,255,.08);padding:.45rem 0">' +
+      '<span style="font-family:Space Mono,monospace;font-size:.62rem;color:var(--cyan);min-width:5.4em">' + s.group + '</span>' +
+      '<span style="font-size:.86rem;font-weight:600">' + s.name + '</span>' +
+      '<span style="margin-left:auto;font-family:Space Mono,monospace;font-size:.6rem;color:var(--muted);text-align:right">' + s.trad + '</span></div>').join('') +
+    '</div>' +
     '<h3 style="font-family:Orbitron,monospace;font-size:1rem;margin:2rem 0 .6rem">Majors, at a glance</h3>' +
     '<div style="display:grid;gap:.2rem 2.4rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:.5rem">' +
     MAJORS.map(m=>'<div style="display:flex;gap:.6rem;align-items:baseline;border-bottom:1px solid rgba(0,229,255,.08);padding:.45rem 0">' +
@@ -1439,12 +1618,18 @@ function renderCodex(){
     MEDIA.map(m=>'<option value="' + m.id + '">' + m.name + '</option>').join('');
 
   // spread chips
-  $('spreads').innerHTML = SPREADS.map(s=>'<button class="chip" data-s="' + s.id + '" aria-pressed="' +
-    (s.id===state.spread.id) + '">' + s.name + '</button>').join('');
+  $('spreads').innerHTML = SPREAD_GROUPS.map(g=>
+    '<span class="grouplab">' + g + '</span>' +
+    SPREADS.filter(s=>s.group === g).map(s=>
+      '<button class="chip" data-s="' + s.id + '" aria-pressed="' + (s.id===state.spread.id) + '" ' +
+      'title="' + esc(plain(s.trad)) + '">' + s.name + '<small>' + s.trad + '</small></button>').join('')
+  ).join('');
   $('spreads').addEventListener('click', e=>{
     const b = e.target.closest('.chip'); if(!b) return;
     state.spread = SPREADS.find(s=>s.id === b.dataset.s);
-    [...$('spreads').children].forEach(c=>c.setAttribute('aria-pressed', c===b));
+    $('spreads').querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed', c===b));
+    // a yes/no read is meaningless without reversals — turn them on visibly
+    if(state.spread.verdict && !state.reversals){ state.reversals = true; $('allowrev').checked = true; }
     deal();
   });
 

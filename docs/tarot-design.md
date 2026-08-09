@@ -103,10 +103,44 @@ SVGs never collides — and so a single exported card is self-contained.
 
 ## Interface
 
-- **Assay** — five spreads: Single assay (1), Central dogma (3: genotype / phenotype /
-  expression), Pathway (5: substrate / catalyst / inhibitor / product / byproduct),
-  Full panel (7) and Whole genome (10, a celtic-cross by another name). Cards deal face
-  down and flip on click; `Space` deals a new hand.
+- **Assay** — fourteen spreads in three groups. Every one is a standard tarot spread
+  under a lab coat, and each chip shows what it is traditionally called.
+
+  | Group | Spread | Traditionally |
+  |-------|--------|---------------|
+  | Quick | Single assay (1) | one-card draw |
+  | Quick | Yes / no titration (3) | yes-or-no draw |
+  | Quick | Central dogma (3) | situation / action / outcome |
+  | Quick | Lineage (3) | past / present / future |
+  | Quick | Soma (3) | mind / body / spirit |
+  | Structured | Pathway (5) | five-card cross |
+  | Structured | Contaminant (5) | shadow work |
+  | Structured | Full panel (7) | horseshoe |
+  | Structured | Co-culture (7) | relationship spread |
+  | Structured | Selection (7) | two-path decision |
+  | Structured | Systems scan (7) | chakra / body scan |
+  | Structured | Seven-day culture (7) | week ahead |
+  | Deep | Whole genome (10) | celtic cross |
+  | Deep | Twelve passages (12) | year-ahead wheel |
+
+  Spreads whose shape carries meaning declare a grid: `cols` plus one `[col, row]`
+  cell per position. The cross is a cross, the horseshoe is an arc, the celtic cross
+  has its staff, and the year is a twelve-card ring around an empty centre. Below
+  900px the geometry is dropped and everything falls back to the flowing grid — a
+  horseshoe on a phone is just a mess. The yes/no titration reads orientation rather
+  than meaning, so selecting it switches reversals on (visibly, via the checkbox)
+  rather than silently answering off a stacked deck.
+
+  Cards deal face down and flip on click; `Space` deals a new hand.
+
+- **Draw animation** — dealing runs an inoculation sequence per slot, staggered 85ms
+  apart: a luminous droplet falls into the empty slot, a colony blooms where it lands
+  (a cyan ring with a pink lysis halo), and the card grows out of the bloom with a
+  slight overshoot. Revealing a card runs a gel-electrophoresis scan — a bright band
+  sweeping down the face over fine horizontal bands — timed to start 330ms into the
+  flip, as the front comes round. All of it is CSS keyframes on four extra elements
+  per slot, and all of it collapses to a plain fade under
+  `prefers-reduced-motion: reduce`.
 - **Lab report** — position, card, orientation, meaning, plus any print mutation. A
   synthesis line reads the shape of the spread itself: majors-heavy vs. bench work,
   dominant suit, proportion reversed.
