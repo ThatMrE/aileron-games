@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aileron Games &mdash; Science. Play. Discovery.</title>
-  <meta name="description" content="Aileron Games is a nerdy studio making science-educational games — real particle physics, biology, and geometry you learn by playing. Where curiosity meets competition.">
+  <meta name="description" content="Aileron Games is a nerdy studio making scientific games and novel interfaces — real particle physics, molecular biology, geometry, generative decks, and the machinery of drug approval, all learned by playing. Where curiosity meets competition.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
@@ -253,6 +253,30 @@
       transform: translateY(-3px);
     }
     .game-card:hover::before { opacity: 1; }
+
+    /* Pun Bearable install chip (sibling overlay so the card stays a link) */
+    .game-card-wrap { position: relative; display: flex; }
+    .game-card-wrap .game-card { flex: 1; }
+    .install-chip {
+      position: absolute;
+      top: 14px; right: 14px;
+      z-index: 3;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a1204;
+      background: #ffb454;
+      border: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(255,180,84,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .install-chip:hover { transform: translateY(-1px); box-shadow: 0 0 26px rgba(255,180,84,0.65); }
+    .install-chip:active { transform: translateY(0); }
 
     .game-icon { font-size: 2.2rem; margin-bottom: 1rem; }
 
@@ -522,6 +546,7 @@
       <li><a href="#games">Games</a></li>
       <li><a href="dice.html">Play Dice</a></li>
       <li><a href="#play">Play DNA Chess</a></li>
+      <li><a href="tarot.html">Tarot</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="mailto:hello@aileron.games" class="btn btn-cyan" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Contact</a></li>
     </ul>
@@ -568,12 +593,15 @@
           <p>An emoji Ouija board. Ask a question and the spirits guide the planchette to spell your answer in three emoji. Playable online.</p>
         </a>
 
-        <a href="punbearable.html" class="game-card">
-          <div class="game-icon">&#x1F43B;</div>
-          <h3>Pun Bearable</h3>
-          <span class="game-status status-active">Play Now</span>
-          <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="punbearable.html" class="game-card">
+            <div class="game-icon">&#x1F43B;</div>
+            <h3>Pun Bearable</h3>
+            <span class="game-status status-active">Play Now</span>
+            <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
+          </a>
+          <button type="button" id="installBtn" class="install-chip">&#x1F4F2; Install app</button>
+        </div>
 
         <a class="game-card" href="dna-chess.html" style="display:block">
           <div class="game-icon">&#x1F9EC;</div>
@@ -588,6 +616,13 @@
           <h3>GeomeTree</h3>
           <span class="game-status status-active">Play Now</span>
           <p>Geometry as evolution: trace each form from a single line up through the polygons and Platonic solids to the dodecahedron. Stack shapes to grow your tree. <span style="color:var(--cyan);">Play now &rarr;</span></p>
+        </a>
+
+        <a href="tarot.html" class="game-card" style="display:block;">
+          <div class="game-icon">&#x1F0CF;</div>
+          <h3>Wetware Arcana</h3>
+          <span class="game-status status-active">Play Now</span>
+          <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; the Magician is a Splicer, Death is Apoptosis, and the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different strain, with procedurally drawn art and mutations in the print run. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
         </a>
 
         <a href="fda.html" class="game-card" style="display:block;">
@@ -628,7 +663,7 @@
           An <strong style="color:var(--text)">aileron</strong> is the flap on an aircraft wing that makes it roll &mdash; the real aerodynamics behind &ldquo;<em>do a barrel roll</em>.&rdquo; We named the studio after it because that&rsquo;s exactly what our games do: hide real, working science inside something you just want to play.
         </p>
         <p style="font-size:1rem; color:var(--muted); line-height:1.8; margin-bottom:1rem;">
-          We&rsquo;re a small, unapologetically nerdy studio making <strong style="color:var(--text)">scientific games and novel interfaces</strong>. Every game turns a scientific concept into a <em>mechanic</em> &mdash; so you learn it by playing, not by studying. God Does Not Play Dice is genuine particle physics as a card duel. DNA Chess runs the Central Dogma of molecular biology. GeomeTree grows from a single line up to the Platonic solids. Weji and Pun Bearable are playful experiments in what a game interface can even be.
+          We&rsquo;re a small, unapologetically nerdy studio making <strong style="color:var(--text)">scientific games and novel interfaces</strong>. Every game turns a scientific concept into a <em>mechanic</em> &mdash; so you learn it by playing, not by studying. God Does Not Play Dice is genuine particle physics as a card duel. DNA Chess runs the Central Dogma of molecular biology. GeomeTree grows from a single line up to the Platonic solids. Wetware Arcana grows a whole 78-card tarot deck out of a single seed. Weji and Pun Bearable are playful experiments in what a game interface can even be.
         </p>
         <p style="font-size:1rem; color:var(--muted); line-height:1.8;">
           Powered by curiosity. Every game is playable in your browser, right now, free.
@@ -636,7 +671,7 @@
 
         <div class="stat-row">
           <div class="stat-box">
-            <div class="stat-num">6</div>
+            <div class="stat-num">7</div>
             <div class="stat-label">Games You Can Play</div>
           </div>
           <div class="stat-box">
@@ -673,9 +708,13 @@
               <span style="color:var(--text); font-weight:600;">Pun Bearable</span>
               <span style="color:var(--muted); font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-align:right;">Wordplay</span>
             </a>
-            <a href="fda.html" style="display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0.7rem 0; font-size:0.9rem;">
+            <a href="fda.html" style="display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0.7rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.9rem;">
               <span style="color:var(--text); font-weight:600;">FDA: Forever Doesn&rsquo;t Allow</span>
               <span style="color:var(--muted); font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-align:right;">Drug regulation</span>
+            </a>
+            <a href="tarot.html" style="display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0.7rem 0; font-size:0.9rem;">
+              <span style="color:var(--text); font-weight:600;">Wetware Arcana</span>
+              <span style="color:var(--muted); font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-align:right;">Generative art</span>
             </a>
           </div>
           <p style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid rgba(0,229,255,0.08); font-size:0.82rem; color:var(--muted); line-height:1.6;">
@@ -711,6 +750,7 @@
       <li><a href="#games">Games</a></li>
       <li><a href="dice.html">Play Dice</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="tarot.html">Wetware Arcana</a></li>
       <li><a href="polygenik.html">Polygenik</a></li>
       <li><a href="mailto:hello@aileron.games">Contact</a></li>
     </ul>
@@ -725,6 +765,30 @@
         if(f){ f.style.height = Math.max(560, Math.min(1400, e.data.h)) + 'px'; }
       }
     });
+
+    // Pun Bearable "Install app" chip: native install prompt when the browser
+    // offers it, otherwise open the installable game page.
+    (function(){
+      var btn = document.getElementById('installBtn');
+      if(!btn){ return; }
+      function isStandalone(){
+        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      }
+      if(isStandalone()){ btn.style.display = 'none'; return; }
+      var deferred = null;
+      window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
+      window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
+      btn.addEventListener('click', function(){
+        if(deferred){
+          deferred.prompt();
+          deferred.userChoice.then(function(){ deferred = null; });
+        } else {
+          // No install prompt on this page/browser — go to the game page,
+          // which carries the manifest + service worker and can install there.
+          window.location.href = 'punbearable.html?install=1';
+        }
+      });
+    })();
   </script>
 </body>
 </html>

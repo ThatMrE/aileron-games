@@ -1,0 +1,56 @@
+{
+  "name": "Pun Bearable",
+  "short_name": "Pun Bearable",
+  "description": "A card-based wordplay party game — beat the 10-second clock with a pun, or the card is your shame. An Aileron Games title.",
+  "id": "/punbearable.html",
+  "start_url": "/punbearable.html?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050812",
+  "theme_color": "#050812",
+  "categories": ["games", "entertainment"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/assets/app-icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/app-icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/app-icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/app-icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Play a round",
+      "short_name": "Play",
+      "description": "Deal a random topic and beat the clock",
+      "url": "/punbearable.html?utm_source=pwa#play",
+      "icons": [{ "src": "/assets/app-icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "The deck",
+      "short_name": "Deck",
+      "description": "Browse all 40 topic cards",
+      "url": "/punbearable.html?utm_source=pwa#deck"
+    }
+  ]
+}

@@ -7,6 +7,16 @@
   <meta name="description" content="Pun Bearable is a card-based wordplay party game where you race the clock to make puns. Fail, and the card is your shame. Least points wins. An Aileron Games title.">
   <meta property="og:title" content="Pun Bearable — A Punishing Wordplay Card Game">
   <meta property="og:description" content="10 seconds. One pun. Or the card is your shame. It's like golf — the more points you have, the worse you are.">
+  <!-- PWA / installable app (also drives the Android TWA) -->
+  <link rel="manifest" href="/pun-bearable.webmanifest">
+  <meta name="theme-color" content="#050812">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pun Bearable">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/app-icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/app-icons/icon-512.png">
+  <link rel="apple-touch-icon" href="/assets/app-icons/apple-touch-icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
@@ -187,6 +197,11 @@
     }
 
     .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    #pbInstallBtn.pulse { animation: installPulse 1.1s ease-in-out 4; }
+    @keyframes installPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,180,84,0); }
+      50% { box-shadow: 0 0 26px 2px rgba(255,180,84,0.7); border-color: var(--honey); }
+    }
 
     /* countdown chip */
     .countdown {
@@ -767,6 +782,7 @@
     <div class="hero-actions">
       <a href="#play" class="btn btn-honey">Play a Round</a>
       <a href="#how" class="btn btn-outline">How to Play &rarr;</a>
+      <button type="button" id="pbInstallBtn" class="btn btn-outline" style="display:none; cursor:pointer;">&#x1F4F2; Install App</button>
     </div>
     <div class="countdown" aria-hidden="true">
       <span>Clock&rsquo;s ticking</span>
@@ -1252,6 +1268,42 @@
       }
 
       document.getElementById('dealBtn').addEventListener('click', deal);
+    })();
+
+    // ── Service worker: offline app shell for the installed app ──
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/punbearable-sw.js', { scope: '/punbearable.html' }).catch(function () { /* offline caching is best-effort */ });
+      });
+    }
+
+    // ── Install App button (fires the native install prompt) ──
+    (function () {
+      var btn = document.getElementById('pbInstallBtn');
+      if (!btn) { return; }
+      function isStandalone() {
+        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      }
+      if (isStandalone()) { return; } // already installed — leave it hidden
+      var cameToInstall = /[?&]install=1\b/.test(location.search);
+      var deferred = null;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferred = e;
+        btn.style.display = '';
+        if (cameToInstall) {
+          btn.classList.add('pulse');
+          try { btn.scrollIntoView({ block: 'center' }); } catch (err) {}
+        }
+      });
+      window.addEventListener('appinstalled', function () { btn.style.display = 'none'; });
+      btn.addEventListener('click', function () {
+        btn.classList.remove('pulse');
+        if (deferred) {
+          deferred.prompt();
+          deferred.userChoice.then(function () { deferred = null; btn.style.display = 'none'; });
+        }
+      });
     })();
   </script>
 
