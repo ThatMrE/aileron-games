@@ -150,6 +150,68 @@
 
     .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+    /* ── hero game slider ───────────────────────────────────────────── */
+    .hero-slider { width: 100%; max-width: 820px; position: relative; margin: 0.5rem 0 2.4rem; }
+    .slider-viewport {
+      overflow: hidden; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.045), rgba(124,58,237,0.035));
+      position: relative;
+    }
+    .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+    .hslide {
+      flex: 0 0 100%; display: flex; gap: 1.5rem; align-items: center; text-align: left;
+      padding: 1.9rem 2rem 2.1rem; min-height: 196px; color: inherit;
+    }
+    .hslide-icon { font-size: 3rem; line-height: 1; flex-shrink: 0; filter: drop-shadow(0 0 18px rgba(0,229,255,0.35)); }
+    .hslide-body, .hslide-kicker, .hslide-title, .hslide-desc, .hslide-cta { display: block; }
+    .hslide-kicker {
+      font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cyan); margin-bottom: 0.45rem;
+    }
+    .hslide-title {
+      font-family: 'Orbitron', monospace; font-size: clamp(1.05rem, 2.6vw, 1.55rem);
+      font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; transition: color 0.2s;
+    }
+    .hslide:hover .hslide-title, .hslide:focus-visible .hslide-title { color: var(--cyan); }
+    .hslide-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.85rem; }
+    .hslide-cta {
+      font-family: 'Space Mono', monospace; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan);
+    }
+    .hslide:focus-visible { outline: 2px solid var(--cyan); outline-offset: -4px; }
+
+    .slider-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(0,229,255,0.1); }
+    .slider-progress i { display: block; height: 100%; width: 0; background: var(--cyan); box-shadow: 0 0 8px rgba(0,229,255,0.8); }
+    .slider-progress i.run { animation: sliderbar linear forwards; animation-duration: var(--int, 6s); }
+    .slider-progress i.paused { animation-play-state: paused; }
+    @keyframes sliderbar { from { width: 0; } to { width: 100%; } }
+
+    .slider-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%); width: 38px; height: 38px;
+      border-radius: 50%; border: 1px solid var(--border); background: rgba(5,8,18,0.85);
+      color: var(--cyan); font-size: 1.15rem; line-height: 1; cursor: pointer;
+      display: grid; place-items: center; z-index: 3; transition: 0.18s;
+    }
+    .slider-arrow:hover { border-color: var(--cyan); background: rgba(0,229,255,0.14); }
+    .slider-arrow.prev { left: -19px; } .slider-arrow.next { right: -19px; }
+    .slider-dots { display: flex; gap: 0.55rem; justify-content: center; margin-top: 1rem; }
+    .slider-dots button {
+      width: 9px; height: 9px; padding: 0; border-radius: 50%; cursor: pointer;
+      border: 1px solid rgba(0,229,255,0.45); background: transparent; transition: 0.2s;
+    }
+    .slider-dots button[aria-current="true"] { background: var(--cyan); box-shadow: 0 0 10px rgba(0,229,255,0.7); transform: scale(1.3); }
+
+    @media (max-width: 700px) {
+      /* arrows move inside the card on narrow screens, so the slide needs
+         horizontal clearance or the description runs underneath them */
+      .hslide { flex-direction: column; text-align: center; align-items: center; padding: 1.6rem 3.4rem 1.9rem; }
+      .slider-arrow.prev { left: 6px; } .slider-arrow.next { right: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .slider-track { transition: none; }
+      .slider-progress { display: none; }
+    }
+
     .btn {
       display: inline-block;
       padding: 0.9rem 2.25rem;
@@ -557,16 +619,93 @@
     <p class="hero-eyebrow">&#9652; Aileron Studios &mdash; Scientific Games &amp; Novel Interfaces</p>
     <h1><span>Science.</span><br>Play.<br>Discovery.</h1>
     <p class="hero-tagline">Where Curiosity Meets Competition</p>
-    <p class="hero-desc">
-      Aileron Games is a nerdy little studio making scientific games and novel interfaces.
-      Real particle physics, molecular biology, geometry &mdash; and the real machinery of drug approval &mdash;
-      turned into games you can play in your browser right now, starting with
-      <strong style="color:var(--cyan)">God Does Not Play Dice</strong>, our Feynman-diagram card duel.
-    </p>
+
+    <!-- auto-rotating featured-game slider -->
+    <div class="hero-slider" id="heroSlider" role="group" aria-roledescription="carousel" aria-label="Featured games">
+      <div class="slider-viewport">
+        <div class="slider-track" id="sliderTrack">
+
+          <a class="hslide" href="dice.html" role="group" aria-roledescription="slide" aria-label="1 of 7: God Does Not Play Dice">
+            <span class="hslide-icon" aria-hidden="true">&#x2684;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Particle physics &middot; Playable now</span>
+              <span class="hslide-title">God Does Not Play Dice</span>
+              <span class="hslide-desc">Einstein vs. quantum mechanics as a card duel. Collide quarks at real Feynman vertices, harvest gauge bosons, and spend hidden variables to overrule probability itself.</span>
+              <span class="hslide-cta">Play the duel &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="tarot.html" role="group" aria-roledescription="slide" aria-label="2 of 7: Wetware Arcana">
+            <span class="hslide-icon" aria-hidden="true">&#x1F0CF;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Generative art &middot; New</span>
+              <span class="hslide-title">Wetware Arcana</span>
+              <span class="hslide-desc">A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab, and every seed grows a different strain &mdash; new palette, new procedurally drawn art, new mutations in the print run.</span>
+              <span class="hslide-cta">Draw a card &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="dna-chess.html" role="group" aria-roledescription="slide" aria-label="3 of 7: DNA Chess">
+            <span class="hslide-icon" aria-hidden="true">&#x1F9EC;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Molecular biology &middot; Playable prototype</span>
+              <span class="hslide-title">DNA Chess</span>
+              <span class="hslide-desc">Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Hot-seat or vs AI.</span>
+              <span class="hslide-cta">Play the prototype &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="geometree.html" role="group" aria-roledescription="slide" aria-label="4 of 7: GeomeTree">
+            <span class="hslide-icon" aria-hidden="true">&#x1F333;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Geometry &amp; solids &middot; Playable now</span>
+              <span class="hslide-title">GeomeTree</span>
+              <span class="hslide-desc">Geometry as evolution: trace each form from a single line up through the polygons and Platonic solids to the dodecahedron. Stack shapes to grow your tree.</span>
+              <span class="hslide-cta">Grow a tree &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="fda.html" role="group" aria-roledescription="slide" aria-label="5 of 7: FDA: Forever Doesn&rsquo;t Allow">
+            <span class="hslide-icon" aria-hidden="true">&#x1F48A;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Drug regulation &middot; Playable now</span>
+              <span class="hslide-title">FDA: Forever Doesn&rsquo;t Allow</span>
+              <span class="hslide-desc">An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient. Every catch-22 is a cited federal regulation, and the ending is a real person&rsquo;s real timeline.</span>
+              <span class="hslide-cta">Walk the trail &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="weji.html" role="group" aria-roledescription="slide" aria-label="6 of 7: Weji">
+            <span class="hslide-icon" aria-hidden="true">&#x1F52E;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Novel interface &middot; Playable now</span>
+              <span class="hslide-title">Weji</span>
+              <span class="hslide-desc">An emoji Ouija board. Ask a question and the spirits guide the planchette across the board to spell your answer out in three emoji.</span>
+              <span class="hslide-cta">Ask the board &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="punbearable.html" role="group" aria-roledescription="slide" aria-label="7 of 7: Pun Bearable">
+            <span class="hslide-icon" aria-hidden="true">&#x1F43B;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">Wordplay &middot; Playable now</span>
+              <span class="hslide-title">Pun Bearable</span>
+              <span class="hslide-desc">A pun-fuelled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly.</span>
+              <span class="hslide-cta">Play a round &rarr;</span>
+            </span>
+          </a>
+
+        </div>
+        <div class="slider-progress" aria-hidden="true"><i id="sliderBar"></i></div>
+      </div>
+      <button type="button" class="slider-arrow prev" id="sliderPrev" aria-label="Previous game">&#8249;</button>
+      <button type="button" class="slider-arrow next" id="sliderNext" aria-label="Next game">&#8250;</button>
+      <div class="slider-dots" id="sliderDots" aria-label="Choose a featured game"></div>
+    </div>
+
     <div class="hero-actions">
-      <a href="dice.html" class="btn btn-cyan">&#x2684; Play God Does Not Play Dice</a>
-      <a href="dna-chess.html" class="btn btn-outline">&#9654; Play DNA Chess</a>
-      <a href="#games" class="btn btn-outline">Explore Our Games</a>
+      <a href="#games" class="btn btn-cyan">Explore All Seven Games</a>
+      <a href="#about" class="btn btn-outline">About the Studio</a>
     </div>
   </section>
 
@@ -648,6 +787,23 @@
         </div>
         <p style="text-align:center; margin-top:1.5rem;">
           <a href="dna-chess.html" class="btn btn-cyan">Open full screen &amp; read the design &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRAW NOW — WETWARE ARCANA (embedded) -->
+  <div id="draw" class="games-band" style="border-top:1px solid var(--border);">
+    <div class="section">
+      <p class="section-eyebrow">&#x1F0CF; Draw Now &mdash; No Download</p>
+      <h2 class="section-title">Wetware Arcana, <span>dealt live</span></h2>
+      <p class="section-body">A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; the Magician is a Splicer, Justice is the Proofreader, Death is Apoptosis. Every seed grows a different <em>strain</em> of the deck: new palette, new procedurally drawn art, new mutations in the print run. Pick a spread and deal, right here.</p>
+      <div style="max-width:1120px; margin:2rem auto 0;">
+        <div style="border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45); background:#050812;">
+          <iframe id="tarot-frame" src="tarot.html?embed=1" title="Wetware Arcana &mdash; biopunk tarot deck generator" loading="lazy" style="width:100%; height:820px; border:0; display:block;"></iframe>
+        </div>
+        <p style="text-align:center; margin-top:1.5rem;">
+          <a href="tarot.html" class="btn btn-cyan">Open the full deck &amp; all 14 spreads &rarr;</a>
         </p>
       </div>
     </div>
@@ -758,11 +914,90 @@
   </footer>
 
   <script>
+    // ── hero game slider: auto-rotates, pauses on hover/focus/hidden tab ──
+    (function(){
+      var track = document.getElementById('sliderTrack');
+      if(!track) return;
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.hslide'));
+      var dotsBox = document.getElementById('sliderDots');
+      var bar = document.getElementById('sliderBar');
+      var root = document.getElementById('heroSlider');
+      var n = slides.length, idx = 0, timer = null, paused = false;
+      var INTERVAL = 6000;
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var dots = slides.map(function(s, i){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', s.getAttribute('aria-label'));
+        b.addEventListener('click', function(){ go(i); restart(); });
+        dotsBox.appendChild(b);
+        return b;
+      });
+
+      function go(k){
+        idx = (k + n) % n;
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        slides.forEach(function(s, j){
+          s.setAttribute('aria-hidden', j !== idx ? 'true' : 'false');
+          s.tabIndex = j === idx ? 0 : -1;
+        });
+        dots.forEach(function(d, j){
+          if(j === idx) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+        });
+        runBar();
+      }
+      function runBar(){
+        if(reduced || !bar) return;
+        bar.className = '';
+        void bar.offsetWidth;               // restart the CSS animation
+        bar.style.setProperty('--int', (INTERVAL/1000) + 's');
+        bar.className = 'run' + (paused ? ' paused' : '');
+      }
+      function start(){ if(reduced) return; stop(); timer = setInterval(function(){ go(idx + 1); }, INTERVAL); }
+      function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+      function restart(){ if(!paused) start(); }
+      function pause(){ paused = true; stop(); if(bar) bar.classList.add('paused'); }
+      function resume(){ paused = false; if(bar) bar.classList.remove('paused'); start(); }
+
+      document.getElementById('sliderPrev').addEventListener('click', function(){ go(idx - 1); restart(); });
+      document.getElementById('sliderNext').addEventListener('click', function(){ go(idx + 1); restart(); });
+
+      root.addEventListener('mouseenter', pause);
+      root.addEventListener('mouseleave', resume);
+      root.addEventListener('focusin', pause);
+      root.addEventListener('focusout', function(e){ if(!root.contains(e.relatedTarget)) resume(); });
+      document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : restart(); });
+
+      root.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); go(idx - 1); restart(); }
+        if(e.key === 'ArrowRight'){ e.preventDefault(); go(idx + 1); restart(); }
+      });
+
+      // touch swipe
+      var x0 = null;
+      track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; pause(); }, {passive:true});
+      track.addEventListener('touchend', function(e){
+        if(x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if(Math.abs(dx) > 45) go(idx + (dx < 0 ? 1 : -1));
+        x0 = null; resume();
+      }, {passive:true});
+
+      go(0);
+      start();
+    })();
+
     // auto-size the embedded DNA Chess board to its content
     window.addEventListener('message', function(e){
       if(e && e.data && e.data.dnachess === 'height'){
         var f = document.getElementById('dnachess-frame');
         if(f){ f.style.height = Math.max(560, Math.min(1400, e.data.h)) + 'px'; }
+      }
+      // auto-size the embedded Wetware Arcana bench to its content
+      if(e && e.data && e.data.wetware === 'height'){
+        var t = document.getElementById('tarot-frame');
+        if(t){ t.style.height = Math.max(620, Math.min(1800, e.data.h)) + 'px'; }
       }
     });
 
