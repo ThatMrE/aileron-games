@@ -75,10 +75,10 @@
   .sec-note{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:70ch}
 
   /* ── spread ── */
-  .spread-picker{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;margin:1.1rem 0 1.3rem}
+  .spread-picker{display:flex;flex-direction:column;gap:.55rem;align-items:flex-start;margin:1.1rem 0 1.3rem}
+  .spread-group{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
   .grouplab{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
-    color:rgba(232,240,255,.3);margin-left:.4rem;padding-right:.1rem}
-  .grouplab:first-child{margin-left:0}
+    color:rgba(232,240,255,.32);min-width:5.6em}
   .chip small{display:block;font-size:.55rem;letter-spacing:.06em;opacity:.55;text-transform:none;margin-top:.1rem}
   .chip{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
     padding:.45rem .85rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;background:transparent;border-radius:99px}
@@ -202,6 +202,21 @@
 
   .disclaim{font-family:'Space Mono',monospace;font-size:.64rem;color:rgba(232,240,255,.3);text-align:center;margin-top:2rem;letter-spacing:.06em}
 
+  /* ── embed mode — the homepage iframe shows only the reading bench ── */
+  html.embed body::before{display:none}
+  html.embed nav, html.embed footer, html.embed .tabs, html.embed .disclaim,
+  html.embed header.hero .eyebrow, html.embed header.hero h1,
+  html.embed header.hero .sub, html.embed header.hero .lede,
+  html.embed #panel-read .sec-title, html.embed #panel-read .sec-note,
+  html.embed #panel-deck, html.embed #panel-codex{display:none}
+  html.embed body{background:transparent}
+  html.embed header.hero{padding:0}
+  html.embed .wrap{padding:1rem 1.1rem 1.4rem;max-width:1120px}
+  html.embed .console{margin-top:0}
+  html.embed .strainline{margin-bottom:.4rem}
+  html.embed .spread-picker{margin:.9rem 0 1rem}
+  html.embed .table{margin:1.5rem 0 0}
+
   @media(max-width:620px){
     nav{padding:.75rem 1rem}
     .nav-links{gap:1rem}
@@ -216,6 +231,7 @@
     .panel[hidden]{display:none}
   }
 </style>
+<script>if(/[?&]embed/.test(location.search))document.documentElement.classList.add('embed');</script>
 </head>
 <body>
 
@@ -1327,7 +1343,8 @@ const SPREAD_GROUPS = ['Quick','Structured','Deep'];
    STATE + UI
    ============================================================ */
 const $ = id => document.getElementById(id);
-const state = { seed:'', strain:null, spread:SPREADS[1], draw:[], reversals:true, filter:'all', modalCard:null, modalRev:false };
+const state = { seed:'', strain:null, spread:SPREADS.find(s=>s.id==='dogma'),
+  draw:[], reversals:true, filter:'all', modalCard:null, modalRev:false };
 
 function randomSeed(){
   const a = ['crispr','ferment','graft','codon','plasmid','viral','tissue','clone','marrow','enzyme','vector','strain','culture','wetware','mycelium','apoptic'];
@@ -1619,10 +1636,11 @@ function renderCodex(){
 
   // spread chips
   $('spreads').innerHTML = SPREAD_GROUPS.map(g=>
-    '<span class="grouplab">' + g + '</span>' +
+    '<div class="spread-group"><span class="grouplab">' + g + '</span>' +
     SPREADS.filter(s=>s.group === g).map(s=>
       '<button class="chip" data-s="' + s.id + '" aria-pressed="' + (s.id===state.spread.id) + '" ' +
-      'title="' + esc(plain(s.trad)) + '">' + s.name + '<small>' + s.trad + '</small></button>').join('')
+      'title="' + esc(plain(s.trad)) + '">' + s.name + '<small>' + s.trad + '</small></button>').join('') +
+    '</div>'
   ).join('');
   $('spreads').addEventListener('click', e=>{
     const b = e.target.closest('.chip'); if(!b) return;
@@ -1703,6 +1721,17 @@ function renderCodex(){
   const fromHash = decodeURIComponent(location.hash.slice(1) || '');
   setSeed(fromHash || randomSeed());
   renderTable();
+
+  // embed mode: deal straight away and keep the homepage iframe sized to content
+  if(document.documentElement.classList.contains('embed')){
+    const post = ()=>{ try{ parent.postMessage({ wetware:'height',
+      h: Math.ceil(document.body.scrollHeight) + 8 }, '*'); }catch(e){} };
+    window.addEventListener('load', post);
+    window.addEventListener('resize', post);
+    try{ new ResizeObserver(post).observe(document.querySelector('.wrap')); }catch(e){}
+    deal();
+    setTimeout(post, 200); setTimeout(post, 900);
+  }
 })();
 </script>
 </body>
