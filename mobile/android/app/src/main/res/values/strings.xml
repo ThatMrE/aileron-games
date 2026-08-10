@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FDA: Forever Doesn\'t Allow</string>
+    <string name="title_activity_main">FDA: Forever Doesn\'t Allow</string>
+    <string name="package_name">games.aileron.fda</string>
+    <string name="custom_url_scheme">games.aileron.fda</string>
+</resources>

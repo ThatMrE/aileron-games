@@ -1,0 +1,25 @@
+# Node
+node_modules/
+
+# Capacitor / Android build output
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/app/build/
+mobile/android/local.properties
+mobile/android/capacitor-cordova-android-plugins/
+mobile/android/app/src/main/assets/public/
+mobile/android/app/src/main/assets/capacitor.config.json
+mobile/android/app/src/main/assets/capacitor.plugins.json
+
+# Generated from fda.html by `npm run build` — never hand-edited, so not tracked.
+# (mobile/www/fonts/fonts.css IS tracked: it is a vendored binary payload that
+#  needs network access to regenerate.)
+mobile/www/index.html
+
+# Signing material must never be committed
+*.apk
+*.aab
+*.keystore
+*.jks
+mobile/android/keystore.properties
+mobile/native/build/
