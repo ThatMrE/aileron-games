@@ -52,7 +52,7 @@ From `android-weji/`:
 ### Signing a release
 
 Create an **upload keystore once** (keep it safe and secret — losing it means
-you can't update the app):
+you cannot update the app):
 
 ```bash
 keytool -genkeypair -v -keystore weji-upload.jks \
@@ -80,9 +80,9 @@ manages the final release signing key.
 2. Upload `app-release.aab` to a testing track first (Internal testing).
 3. Fill the store listing. Assets in `store-assets/`:
    - `play-store-icon-512.png` — 512×512 app icon.
-   - You'll also need a feature graphic (1024×500) and a few phone
+   - You also need a feature graphic (1024×500) and a few phone
      screenshots — grab those from the running app / the site's gallery.
-4. Complete the Data safety form (the app collects nothing itself; it loads a
+4. Complete the Data safety form. The app collects nothing itself, it loads a
    website), content rating, and target audience, then roll out.
 
 ## Bumping the version
@@ -97,5 +97,5 @@ need a new build when the native shell or version metadata changes.
   not a Trusted Web Activity. (If you later prefer a TWA — which uses Chrome
   and removes the WebView entirely — that path needs a
   `/.well-known/assetlinks.json` on aileron.games with your signing SHA-256.)
-- The wrapper only allows `*.aileron.games` inside the WebView; external links
+- The wrapper allows only `*.aileron.games` inside the WebView. External links
   open in the user's real browser.
