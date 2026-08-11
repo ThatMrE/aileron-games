@@ -754,7 +754,10 @@
           <h3>DNA Chess</h3>
           <span class="game-status status-active">&#9654; Playable Prototype</span>
           <p>Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Now playable in the browser &mdash; hot-seat or vs AI.</p>
-          <p style="margin-top:0.75rem; color:var(--cyan); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em;">&#9654; PLAY THE PROTOTYPE &rarr;</p>
+          <p style="margin-top:0.75rem; display:flex; gap:0.7rem; align-items:center; flex-wrap:wrap;">
+            <span style="color:var(--cyan); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em;">&#9654; PLAY THE PROTOTYPE &rarr;</span>
+            <span class="mini-install" data-install="dna-chess.html?install=1" role="button" tabindex="0" aria-label="Install DNA Chess on Android" style="font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan); border:1px solid rgba(0,229,255,0.45); border-radius:20px; padding:3px 10px; background:rgba(0,229,255,0.07);">&#128241; INSTALL</span>
+          </p>
         </a>
 
         <a href="geometree.html" class="game-card" style="display:block;">
@@ -977,6 +980,19 @@
         }
       });
     })();
+  </script>
+  <script>
+    // "Install" pill on the DNA Chess card → go straight to the game's install flow,
+    // without triggering the card's play link. Capture phase so it runs first.
+    document.addEventListener('click', function(e){
+      var t = e.target.closest && e.target.closest('[data-install]');
+      if(t){ e.preventDefault(); e.stopPropagation(); window.location.href = t.getAttribute('data-install'); }
+    }, true);
+    document.addEventListener('keydown', function(e){
+      if((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-install]')){
+        e.preventDefault(); window.location.href = e.target.getAttribute('data-install');
+      }
+    }, true);
   </script>
 </body>
 </html>
