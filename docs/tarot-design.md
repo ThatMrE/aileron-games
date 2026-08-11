@@ -149,6 +149,49 @@ SVGs never collides — and so a single exported card is self-contained.
 - **Export** — any card as SVG, or as a 3× PNG rasterised through canvas.
 - **Permalink** — the seed lives in the URL hash, so a deck is a link.
 
+## Installing it on Android
+
+Wetware Arcana is a PWA, so it installs to an Android home screen in one tap
+with no store involved. The pieces follow the same pattern as Weji and Pun
+Bearable:
+
+| File | Role |
+|------|------|
+| `tarot.webmanifest` | `id`/`start_url`/`scope` all `/tarot.html`, standalone display, deck-dark theme, plus two shortcuts (Draw, Deck) |
+| `tarot-sw.js` | service worker at scope `/tarot.html`, cache `tarot-v1` |
+| `icons/tarot-*.png` | 192 / 512 in `any` and `maskable`, plus apple-touch and favicon |
+
+**The one-click button.** The Wetware Arcana card on the homepage carries an
+`Install app` chip. The homepage has no manifest of its own, so in most
+browsers `beforeinstallprompt` never fires there — the chip's real job is to
+route to `tarot.html?install=1`. The tarot page carries the manifest and the
+worker, so the prompt fires there; `?install=1` reveals the in-page
+`Install app` button, pulses it and scrolls it into view. Where the browser
+*does* offer the prompt on the homepage, the chip fires it directly.
+
+Everything is namespaced. The worker's scope is `/tarot.html` so it coexists
+with `dice-sw.js` at `/`, and its cleanup only deletes `tarot-` caches, so it
+can never evict a neighbouring app's cache.
+
+Embed mode (`?embed=1`) registers no worker and hides the install button, so an
+embedded copy never offers to install an app from inside a frame. The homepage
+no longer embeds any game — it links out only — but the mode is still supported
+for embedding the reading bench elsewhere.
+
+**Offline.** Because the deck is generated in the page — no card art or data is
+ever fetched — precaching the document and icons is enough for the installed
+app to work completely offline: new seeds, new art, all 14 spreads, exports.
+Verified by loading the app, going offline, reloading, and dealing a spread.
+
+The app shell is network-first, so a redeployed deck reaches installed users on
+their next online launch rather than being pinned to the version they installed.
+
+**Not included:** a Play Store build. That needs a TWA wrapper (see
+`docs/ANDROID.md`, the `android/` and `android-weji/` scaffolds, and a
+`games.aileron.tarot` entry in `.well-known/assetlinks.json` with a real
+signing fingerprint). The PWA route above is what makes the website button
+one-click; the store is a separate distribution decision.
+
 ## Deliberate non-features
 
 No server, no storage, no analytics. No "your fortune" framing — the page says outright
