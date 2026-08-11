@@ -148,6 +148,9 @@
   /* danger: pulsing frame when you're one mutation from cancer */
   @keyframes dangerpulse{0%,100%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 0 rgba(160,40,30,0)}50%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 7px rgba(160,40,30,.4)}}
   .board-frame.danger{animation:dangerpulse 1.3s ease-in-out infinite}
+  /* click layer + chess-style hover indicator on legal destinations */
+  #board .hit{fill:transparent;cursor:pointer}
+  #board .hit.legal:hover{fill:rgba(244,233,201,0.14);stroke:#f7ecdf;stroke-width:3}
   .danger-strip{background:linear-gradient(90deg,#8a2f24,#a5432f);color:#f6e7e2;font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.78rem;font-weight:700;padding:8px 11px;border-radius:8px;margin-bottom:8px;letter-spacing:.02em}
   .op-strip{background:linear-gradient(90deg,#4a7a3a,#5e7a4e);color:#f2f6ea;font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.78rem;font-weight:700;padding:8px 11px;border-radius:8px;margin-bottom:8px}
 
@@ -216,9 +219,9 @@
   <div class="board-layout">
     <div>
       <div class="board-frame">
-        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h&nbsp;&nbsp;i&nbsp;&nbsp;j</span><span>OPPONENT&nbsp;GENOME</span></div>
+        <div class="filekey"><span style="opacity:.55">&#9651; opponent</span><span>OPPONENT&nbsp;GENOME</span></div>
         <svg id="board" viewBox="0 0 680 680" role="img" aria-label="DNA Chess board"></svg>
-        <div class="filekey"><span>a&nbsp;&nbsp;b&nbsp;&nbsp;c&nbsp;&nbsp;d&nbsp;&nbsp;e&nbsp;&nbsp;f&nbsp;&nbsp;g&nbsp;&nbsp;h&nbsp;&nbsp;i&nbsp;&nbsp;j</span><span>YOUR&nbsp;GENOME</span></div>
+        <div class="filekey"><span style="opacity:.55">&#9651; you</span><span>YOUR&nbsp;GENOME</span></div>
       </div>
     </div>
 
@@ -466,7 +469,7 @@ function initGame(vsAI){
   add(2,5,'nuclease','B'); add(1,7,'helicase','B'); add(1,2,'ligase','B');
   [[1,6],[1,5],[2,6],[1,4],[1,3],[2,3]].forEach(([r,c])=>add(r,c,'rna','B'));
   G={pieces:P,turn:'A',sel:null,over:null,vsAI:!!vsAI,diff:AI_DIFF,actions:ACTIONS_PER_TURN,kinaseUsed:false,
-     log:[],fulllog:[],history:[],turnCount:1,stats:{mut:{A:0,B:0},build:{A:0,B:0},repair:{A:0,B:0},express:{A:0,B:0}}};
+     log:[],fulllog:[],history:[],turnCount:1,lastMove:null,stats:{mut:{A:0,B:0},build:{A:0,B:0},repair:{A:0,B:0},express:{A:0,B:0}}};
   G.prompt=defaultPrompt();
   recomputeSilence(); render();
 }
@@ -544,7 +547,7 @@ function transCost(rna,type){return Math.max(1,COST[type]-(ter(rna.r,rna.c)==='r
 function logMove(s){G.log.unshift(s);if(G.log.length>8)G.log.pop();G.fulllog.push(s);}
 
 /* ---- history / undo (snapshot before every action) ---- */
-function snap(){return{pieces:G.pieces.map(p=>({...p})),turn:G.turn,actions:G.actions,kinaseUsed:G.kinaseUsed,over:G.over,turnCount:G.turnCount,stats:JSON.parse(JSON.stringify(G.stats)),log:[...G.log],fulllog:[...G.fulllog]};}
+function snap(){return{pieces:G.pieces.map(p=>({...p})),turn:G.turn,actions:G.actions,kinaseUsed:G.kinaseUsed,over:G.over,turnCount:G.turnCount,lastMove:G.lastMove,stats:JSON.parse(JSON.stringify(G.stats)),log:[...G.log],fulllog:[...G.fulllog]};}
 function pushHistory(){G.history.push(snap());if(G.history.length>250)G.history.shift();}
 function undo(){
   if(!G.history.length)return;
@@ -552,23 +555,24 @@ function undo(){
   if(G.vsAI){do{s=G.history.pop();}while(G.history.length&&s.turn!=='A');}   // rewind past AI moves to your last decision
   else{s=G.history.pop();}
   G.pieces=s.pieces.map(p=>({...p}));G.turn=s.turn;G.actions=s.actions;G.kinaseUsed=s.kinaseUsed;G.over=s.over;
-  G.turnCount=s.turnCount;G.stats=JSON.parse(JSON.stringify(s.stats));G.log=[...s.log];G.fulllog=[...s.fulllog];
+  G.turnCount=s.turnCount;G.lastMove=s.lastMove;G.stats=JSON.parse(JSON.stringify(s.stats));G.log=[...s.log];G.fulllog=[...s.fulllog];
   G.sel=null;G.prompt=G.over?'':actionPrompt();recomputeSilence();render();
 }
 
 /* ---- actions (snapshot, mutate state, then spend an action) ---- */
 function endAction(extra){G.actions-=1;if(extra)G.actions+=extra;finishAction();}
 function trapIfGolgi(p){if(ter(p.r,p.c)==='golgi'){p.trap=2;logMove(`${G.turn}: ${label(p)} caught in Golgi (1 turn)`);}}
-function doExpress(g){pushHistory();G.stats.express[G.turn]++;logMove(`${G.turn}: express ${sq(g.r,g.c)} → RNA`);G.pieces.push({id:nextId(),r:g.r+fwd(g.side),c:g.c,type:'rna',side:g.side,state:null,trap:0});G.sel=null;endAction();}
-function doMove(p,r,c){pushHistory();const o=at(r,c);if(o&&o.type==='rna'&&o.side!==p.side){G.pieces=G.pieces.filter(x=>x!==o);logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)} × RNA`);}else logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)}`);p.r=r;p.c=c;trapIfGolgi(p);G.sel=null;endAction();}
-function doMutate(p,g){pushHistory();g.state='mutated';G.stats.mut[G.turn]++;logMove(`${G.turn}: Nuclease mutates ${sq(g.r,g.c)} ⚠`);G.fx={r:g.r,c:g.c};beep(170,0.18,0.11);G.sel=null;endAction();setTimeout(()=>{G.fx=null;if(G&&!G.over)render();},600);}
-function doRepair(p,g){pushHistory();g.state='healthy';G.stats.repair[G.turn]++;logMove(`${G.turn}: Ligase repairs ${sq(g.r,g.c)}`);G.sel=null;endAction();}
-function doPush(p,tgt,dir){pushHistory();const or=tgt.r,oc=tgt.c;tgt.r=or+dir[0];tgt.c=oc+dir[1];p.r=or;p.c=oc;logMove(`${G.turn}: Helicase shoves ${label(tgt)} → ${sq(tgt.r,tgt.c)}`);if(ter(tgt.r,tgt.c)==='golgi'){tgt.trap=2;logMove(`  ${label(tgt)} shoved into Golgi!`);}G.sel=null;endAction();}
+function doExpress(g){pushHistory();G.stats.express[G.turn]++;logMove(`${G.turn}: express ${sq(g.r,g.c)} → RNA`);G.lastMove={from:{r:g.r,c:g.c},to:{r:g.r+fwd(g.side),c:g.c}};G.pieces.push({id:nextId(),r:g.r+fwd(g.side),c:g.c,type:'rna',side:g.side,state:null,trap:0});G.sel=null;endAction();}
+function doMove(p,r,c){pushHistory();const fr={r:p.r,c:p.c};const o=at(r,c);if(o&&o.type==='rna'&&o.side!==p.side){G.pieces=G.pieces.filter(x=>x!==o);logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)} × RNA`);}else logMove(`${G.turn}: ${label(p)} ${sq(p.r,p.c)}→${sq(r,c)}`);p.r=r;p.c=c;G.lastMove={from:fr,to:{r,c}};trapIfGolgi(p);G.sel=null;endAction();}
+function doMutate(p,g){pushHistory();g.state='mutated';G.stats.mut[G.turn]++;logMove(`${G.turn}: Nuclease mutates ${sq(g.r,g.c)} ⚠`);G.lastMove={from:{r:p.r,c:p.c},to:{r:g.r,c:g.c}};G.fx={r:g.r,c:g.c};beep(170,0.18,0.11);G.sel=null;endAction();setTimeout(()=>{G.fx=null;if(G&&!G.over)render();},600);}
+function doRepair(p,g){pushHistory();g.state='healthy';G.stats.repair[G.turn]++;logMove(`${G.turn}: Ligase repairs ${sq(g.r,g.c)}`);G.lastMove={from:{r:p.r,c:p.c},to:{r:g.r,c:g.c}};G.sel=null;endAction();}
+function doPush(p,tgt,dir){pushHistory();const or=tgt.r,oc=tgt.c;tgt.r=or+dir[0];tgt.c=oc+dir[1];p.r=or;p.c=oc;logMove(`${G.turn}: Helicase shoves ${label(tgt)} → ${sq(tgt.r,tgt.c)}`);G.lastMove={from:{r:or,c:oc},to:{r:tgt.r,c:tgt.c}};if(ter(tgt.r,tgt.c)==='golgi'){tgt.trap=2;logMove(`  ${label(tgt)} shoved into Golgi!`);}G.sel=null;endAction();}
 function doActivate(p,tgt){pushHistory();logMove(`${G.turn}: Kinase activates ${label(tgt)} (+1 action)`);G.kinaseUsed=true;G.sel=tgt.id;endAction(2);}   // spend 1, grant 2 = net +1
 function doTranslate(rna,type){pushHistory();const need=transCost(rna,type);const comp=connectedRNA(rna);if(comp.length<need){G.history.pop();return;}
   const consume=[rna];for(const x of comp){if(consume.length>=need)break;if(x!==rna)consume.push(x);}
   const ids=new Set(consume.map(x=>x.id));G.pieces=G.pieces.filter(x=>!ids.has(x.id));
   G.pieces.push({id:nextId(),r:rna.r,c:rna.c,type,side:G.turn,state:null,trap:0});G.stats.build[G.turn]++;
+  G.lastMove={from:{r:rna.r,c:rna.c},to:{r:rna.r,c:rna.c}};
   logMove(`${G.turn}: translate ${need} RNA → ${LABEL[type]}${ter(rna.r,rna.c)==='ribosome'?' (ribosome −1)':''}`);G.sel=null;endAction();}
 
 function checkWin(){if(mutCount('A')>=WIN)return 'A';if(mutCount('B')>=WIN)return 'B';return null;}
@@ -700,27 +704,40 @@ function render(){
   const sel=G.sel!=null?byId(G.sel):null;
   const t=sel?targetsFor(sel):{moves:[],caps:[],mutates:[],repairs:[],pushes:[],activates:[]};
   const ctr=m=>[m.c*CELL+CELL/2,m.r*CELL+CELL/2];
-  let svg='';
+  const cellRect=(r,c,fill)=>`<rect x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}" fill="${fill}"/>`;
+  const legalKeys=new Set();
+  [...t.moves,...t.caps,...t.mutates,...t.repairs,...t.activates,...t.pushes].forEach(m=>legalKeys.add(m.r+','+m.c));
+  let svg='<defs><radialGradient id="chk" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c22f22" stop-opacity="0.55"/><stop offset="62%" stop-color="#c22f22" stop-opacity="0.16"/><stop offset="100%" stop-color="#c22f22" stop-opacity="0"/></radialGradient></defs>';
+  // board tiles
   for(let r=0;r<N;r++)for(let c=0;c<N;c++){const x=c*CELL,y=r*CELL;let fill=(r+c)%2===0?'#c9b487':'#bda676';if(r===0||r===LAST)fill=(r+c)%2===0?'#b39a68':'#a88f5f';svg+=`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${fill}"/>`;}
   // organelle terrain
   for(const key in TERRAIN){const [r,c]=key.split(',').map(Number);const x=c*CELL,y=r*CELL;const ty=TERRAIN[key];
     const tint={ribosome:'#b89a5f',golgi:'#b07f88',er:'#7f97a8'}[ty];
     svg+=`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${tint}" opacity="0.5"/>`+terrainGlyph(ty,x,y);}
+  // chess-style square highlights: last move (from/to), then selected square
+  if(G.lastMove){if(G.lastMove.from)svg+=cellRect(G.lastMove.from.r,G.lastMove.from.c,'rgba(181,146,63,0.32)');if(G.lastMove.to)svg+=cellRect(G.lastMove.to.r,G.lastMove.to.c,'rgba(181,146,63,0.46)');}
+  if(sel)svg+=cellRect(sel.r,sel.c,'rgba(122,139,63,0.5)')+`<rect x="${sel.c*CELL+1.5}" y="${sel.r*CELL+1.5}" width="${CELL-3}" height="${CELL-3}" fill="none" stroke="#54622c" stroke-width="2.5"/>`;
+  // "check": a red radial under any gene an enemy Nuclease is poised to mutate next (like a king in check)
+  if(!G.over){const attacked=g=>KING.some(([dr,dc])=>{const o=at(g.r+dr,g.c+dc);return o&&o.type==='nuclease'&&o.side!==g.side&&o.trap<=0;});
+    for(const g of G.pieces)if(g.type==='dna'&&g.state!=='mutated'&&attacked(g))svg+=cellRect(g.r,g.c,'url(#chk)');}
+  // nuclear-membrane lines
   svg+=`<line x1="0" y1="${CELL}" x2="${BP}" y2="${CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
   svg+=`<line x1="0" y1="${LAST*CELL}" x2="${BP}" y2="${LAST*CELL}" stroke="#7a6a45" stroke-width="2" stroke-dasharray="3 5" opacity=".5"/>`;
-  for(const m of t.moves){const [x,y]=ctr(m);svg+=`<circle cx="${x}" cy="${y}" r="${CELL*0.15}" fill="#f4e9c9" opacity=".85"/><circle cx="${x}" cy="${y}" r="${CELL*0.15}" fill="none" stroke="#7a6a45" stroke-width="1" opacity=".5"/>`;}
+  // legal-move DOTS on empty squares (chess "move here" indicator)
+  for(const m of t.moves){const [x,y]=ctr(m);svg+=`<circle cx="${x}" cy="${y}" r="${CELL*0.17}" fill="#2b2416" opacity="0.30"/>`;}
+  // pieces
   for(const p of G.pieces){
-    const x=p.c*CELL,y=p.r*CELL,ring=SIDE[p.side],isSel=sel===p;
+    const x=p.c*CELL,y=p.r*CELL,ring=SIDE[p.side];
     svg+=`<g transform="translate(${x},${y})">`;
     svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="${ring}" opacity="0.13"/><circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.44}" fill="none" stroke="${ring}" stroke-width="2.5" opacity="0.55"/>`;
     svg+=`<circle cx="${CELL*0.14}" cy="${CELL*0.14}" r="5" fill="${ring}" stroke="#2b2416" stroke-width="1"/>`;
     svg+=molSVG(CELL,p.type,(p.id*97)+(p.type.length*13),p.state==='mutated');
     if(p.type==='dna'&&p.state==='silenced'){svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.42}" fill="#3b352a" opacity="0.4"/><text x="${CELL/2}" y="${CELL*0.62}" text-anchor="middle" font-size="${CELL*0.34}" fill="#f4e9c9" opacity=".85">✕</text>`;}
     if(p.trap>0)svg+=`<circle cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.47}" fill="none" stroke="#6e3f48" stroke-width="3" stroke-dasharray="4 4"/>`;
-    if(isSel)svg+=`<circle class="selring" cx="${CELL/2}" cy="${CELL/2}" r="${CELL*0.46}"/>`;
     svg+=`</g>`;
   }
-  const ring2=(m,col)=>{const [x,y]=ctr(m);return `<circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="${col}" stroke-width="5"/><circle cx="${x}" cy="${y}" r="${CELL*0.46}" fill="none" stroke="#f4e9c9" stroke-width="1.4"/>`;};
+  // capture/action RINGS on target pieces (chess "capture here" indicator), colour-coded by action
+  const ring2=(m,col)=>{const [x,y]=ctr(m);return `<circle cx="${x}" cy="${y}" r="${CELL*0.455}" fill="none" stroke="${col}" stroke-width="${CELL*0.075}" opacity="0.92"/><circle cx="${x}" cy="${y}" r="${CELL*0.455}" fill="none" stroke="#f7ecdf" stroke-width="1.4" opacity="0.85"/>`;};
   for(const m of t.caps) svg+=ring2(m,'#8a2f24');
   for(const m of t.mutates) svg+=ring2(m,'#8a2f24');
   for(const m of t.repairs) svg+=ring2(m,'#4a7a3a');
@@ -729,7 +746,11 @@ function render(){
   if(G.fx){const x=G.fx.c*CELL+CELL/2,y=G.fx.r*CELL+CELL/2;
     svg+=`<circle cx="${x}" cy="${y}" r="${CELL*0.2}" fill="#c7502f" opacity="0.5"><animate attributeName="r" from="${CELL*0.2}" to="${CELL*0.6}" dur="0.55s" fill="freeze"/><animate attributeName="opacity" from="0.55" to="0" dur="0.55s" fill="freeze"/></circle>`+
       `<circle cx="${x}" cy="${y}" r="${CELL*0.2}" fill="none" stroke="#8a2f24" stroke-width="5"><animate attributeName="r" from="${CELL*0.2}" to="${CELL*0.62}" dur="0.55s" fill="freeze"/><animate attributeName="opacity" from="0.95" to="0" dur="0.55s" fill="freeze"/></circle>`;}
-  for(let r=0;r<N;r++)for(let c=0;c<N;c++){svg+=`<rect class="hit" data-r="${r}" data-c="${c}" x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}" fill="transparent" style="cursor:pointer"/>`;}
+  // embedded coordinates (Lichess-style): rank numbers down the left, file letters along the bottom
+  for(let r=0;r<N;r++)svg+=`<text x="3" y="${r*CELL+13}" font-size="11" font-family="'Space Mono',ui-monospace,monospace" fill="#4a3f28" opacity="0.7">${N-r}</text>`;
+  for(let c=0;c<N;c++)svg+=`<text x="${c*CELL+CELL-3}" y="${BP-4}" text-anchor="end" font-size="11" font-family="'Space Mono',ui-monospace,monospace" fill="#4a3f28" opacity="0.7">${String.fromCharCode(97+c)}</text>`;
+  // click layer — mark legal destinations so CSS can show a hover indicator
+  for(let r=0;r<N;r++)for(let c=0;c<N;c++){const cls='hit'+(legalKeys.has(r+','+c)?' legal':'');svg+=`<rect class="${cls}" data-r="${r}" data-c="${c}" x="${c*CELL}" y="${r*CELL}" width="${CELL}" height="${CELL}"/>`;}
   board.innerHTML=svg;
   board.querySelectorAll('.hit').forEach(el=>el.addEventListener('click',()=>onCell(+el.dataset.r,+el.dataset.c)));
   const frame=board.closest('.board-frame'); if(frame)frame.classList.toggle('danger',!G.over&&mutCount('A')===WIN-1);
@@ -834,6 +855,7 @@ const HOWTO=`<div class="modal">
   <div class="orow"><span class="sw" style="background:#b89a5f"></span><span><b>Ribosome</b> — translate a cluster here for 1 less RNA.</span></div>
   <div class="orow"><span class="sw" style="background:#7f97a8"></span><span><b>ER</b> — a molecule that starts here moves farther.</span></div>
   <div class="orow"><span class="sw" style="background:#b07f88"></span><span><b>Golgi</b> — landing here traps a piece for a turn (shove enemies in!).</span></div>
+  <p style="color:var(--ink-soft);font-size:.84rem;margin-top:10px;border-top:1px dashed var(--line);padding-top:9px">Board cues (like an online chess board): a <b>dot</b> = you can move there · a <b>ring</b> around a molecule = you can act on it (mutate / degrade / repair / shove) · a <b>red glow</b> on a gene = a Nuclease is poised to mutate it (in "check"). Your last move and selected square stay highlighted.</p>
   <button class="btn-go" id="howto-close">Got it — let's play</button></div>`;
 function showHowto(){if(document.getElementById('howto-modal'))return;
   const d=document.createElement('div');d.className='modal-backdrop';d.id='howto-modal';d.innerHTML=HOWTO;
