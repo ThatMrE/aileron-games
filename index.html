@@ -777,12 +777,15 @@
           <p>Geometry as evolution: trace each form from a single line up through the polygons and Platonic solids to the dodecahedron. Stack shapes to grow your tree. <span style="color:var(--cyan);">Play now &rarr;</span></p>
         </a>
 
-        <a href="fda.html" class="game-card" style="display:block;">
-          <div class="game-icon">&#x1F48A;</div>
-          <h3>FDA: Forever Doesn&rsquo;t Allow</h3>
-          <span class="game-status status-active">Play Now</span>
-          <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Every catch-22 is a cited federal regulation. No score, no win state, and the ending is a real person&rsquo;s real timeline. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="fda.html" class="game-card">
+            <div class="game-icon">&#x1F48A;</div>
+            <h3>FDA: Forever Doesn&rsquo;t Allow</h3>
+            <span class="game-status status-active">Play Now</span>
+            <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Your starting hand is dealt from real distributions and every fork is a roll against a published probability. About one run in twenty reaches treatment &mdash; and not by playing well. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
+          </a>
+          <button type="button" id="installFdaBtn" class="install-chip">&#x1F4F2; Install app</button>
+        </div>
 
       </div>
     </div>
@@ -996,6 +999,7 @@
       }
       wireInstallChip('installBtn', 'install.html');
       wireInstallChip('installTarotBtn', 'tarot.html?install=1');
+      wireInstallChip('installFdaBtn', 'fda.html?install=1');
     })();
   </script>
   <script>

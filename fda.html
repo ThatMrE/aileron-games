@@ -4,9 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FDA: Forever Doesn&rsquo;t Allow &mdash; An Oregon Trail for Drug Approval | Aileron Games</title>
-<meta name="description" content="An 8-bit Oregon Trail reskin built from real FDA regulation. Your health stat is the real ECOG performance scale. You will not win. The ending is a real patient's real timeline, with citations.">
+<meta name="description" content="An 8-bit Oregon Trail reskin built from real FDA regulation. Your health stat is the real ECOG performance scale, your starting hand is drawn from real distributions, and every fork is a roll against a published probability. You can win. Roughly one run in twenty does.">
 <meta property="og:title" content="FDA: Forever Doesn't Allow">
-<meta property="og:description" content="An Oregon Trail for the drug approval process. Every rule is a real regulation. There is no win state.">
+<meta property="og:description" content="An Oregon Trail for the drug approval process. Every rule is a real regulation, every fork a real probability. You can win — but not by playing well.">
+<link rel="manifest" href="fda.webmanifest">
+<meta name="theme-color" content="#07080c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="FDA Trail">
+<link rel="apple-touch-icon" href="icons/fda-apple-touch.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/fda-favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
@@ -49,6 +56,33 @@
     padding:0.45rem 0.6rem;transition:none;
   }
   .nav-btn:hover{color:var(--amber);border-color:var(--amber);}
+  /* Install chip: hidden until the browser actually offers an install prompt,
+     so it never advertises something this device cannot do. */
+  .nav-btn.install{display:none;color:var(--green);border-color:var(--green);}
+  .nav-btn.install.show{display:inline-block;}
+  .nav-btn.install:hover{color:#07080c;background:var(--green);border-color:var(--green);}
+
+  /* ── GET IT ON YOUR PHONE ── */
+  .getapp{
+    margin-top:0.7rem;border:2px solid var(--line);background:#0a0c11;
+    padding:0.9rem 1rem;
+  }
+  .getapp h4{
+    font-family:'Press Start 2P',monospace;font-size:0.55rem;color:var(--green);
+    line-height:1.8;margin-bottom:0.6rem;letter-spacing:0.02em;
+  }
+  .getapp p{font-size:1.05rem;line-height:1.45;color:var(--dim);margin-bottom:0.6rem;}
+  .getapp-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:stretch;}
+  .getapp-btn{
+    font-family:'Press Start 2P',monospace;font-size:0.5rem;letter-spacing:0.02em;
+    color:var(--green);background:none;border:2px solid var(--green);cursor:pointer;
+    padding:0.6rem 0.7rem;line-height:1.6;display:inline-flex;align-items:center;
+    min-height:44px;text-align:left;
+  }
+  .getapp-btn:hover{color:#07080c;background:var(--green);}
+  .getapp-btn.alt{color:var(--cyan);border-color:var(--cyan);}
+  .getapp-btn.alt:hover{color:#07080c;background:var(--cyan);}
+  .getapp-note{font-size:0.98rem;color:#5b6373;line-height:1.5;margin-top:0.6rem;}
 
   /* ── MONITOR ── */
   .wrap{max-width:880px;margin:0 auto;padding:1.2rem 1rem 3rem;}
@@ -227,6 +261,7 @@
 <nav>
   <a href="index.html" class="nav-logo">&#9652; AILERON<small>fda: forever doesn&rsquo;t allow</small></a>
   <ul class="nav-links">
+    <li><button class="nav-btn install" id="bInstall">&#x1F4F2; Install</button></li>
     <li><button class="nav-btn" id="bSources">Sources</button></li>
     <li><button class="nav-btn" id="bLineage">Reskins</button></li>
     <li><button class="nav-btn" id="bSound">Sound: on</button></li>
@@ -243,6 +278,19 @@
     </div>
   </div>
   <div class="log" id="log"></div>
+
+  <div class="getapp">
+    <h4>&#x1F4F2; PUT IT ON YOUR PHONE</h4>
+    <p id="getappLead">Two ways, and the first one is a single tap. The whole game is one file &mdash; it works offline either way, including the pixel fonts.</p>
+    <div class="getapp-row">
+      <button type="button" class="getapp-btn" id="getappInstall">INSTALL AS AN APP</button>
+      <a class="getapp-btn alt" id="getappApk" href="FDAForeverDoesntAllow.apk" download>DOWNLOAD THE ANDROID APK</a>
+    </div>
+    <div class="getapp-note" id="getappNote">
+      <b>Install as an app</b> adds it to your home screen straight from this page &mdash; no download, no security prompts. Chrome and Edge on Android support it; on iPhone use Safari&rsquo;s Share menu &rarr; <i>Add to Home Screen</i>.<br>
+      <b>The APK</b> is the real Android build, signed and about 430&nbsp;KB. Android will warn you before installing a file from outside the Play Store, which is the correct thing for it to do &mdash; you will need to allow your browser to install unknown apps. Each CI build is signed with a fresh debug key, so a newer APK may not install over an older one; uninstall first if that happens.
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -256,6 +304,14 @@
   <p>Every rule, criterion and dollar figure in this game comes from somewhere. This is where. The regulations are current U.S. law. The cost figures are real published averages, cited individually below; the patient is fictional and the disease is real.</p>
   <div id="srcBody"></div>
   <div class="sheet-close"><button class="nav-btn" onclick="closeOv()">&larr; back to the trail</button></div>
+</div></div>
+
+<!-- ══════════ ROLL SHEET ══════════ -->
+<div class="ov" id="ovRolls"><div class="sheet">
+  <h2>The Roll Sheet</h2>
+  <p>Every probabilistic fork this run took, in order: what was asked, the published probability it was drawn against, and what came up. A game that claims its odds are real should be willing to show its dice.</p>
+  <div id="rollBody"></div>
+  <div class="sheet-close"><button class="nav-btn" onclick="closeOv()">&larr; back</button></div>
 </div></div>
 
 <!-- ══════════ RESKIN LINEAGE ══════════ -->
@@ -281,10 +337,25 @@
      eligibility criterion. The two HUD numbers move in opposition:
      you need lines of therapy to qualify, and each one costs you
      performance status. The player can watch the trap close.
-   - No branch grants a cure or lasting access. Death is guaranteed by
-     design, not by a balancing accident.
-   - The pixel art stops when the real person starts: the end card
-     deliberately drops the 8-bit styling entirely.
+   - NOTHING IS SCRIPTED. Every fork is a draw against a published
+     probability held in PROB, and every draw goes through roll(), which
+     records it so the player can audit the whole run afterwards on the
+     Roll Sheet. If a number is a design choice rather than a measured
+     one it carries assumption:true and is labelled as such on screen.
+   - THE OPENING HAND IS DEALT, NOT CHOSEN. Molecular profile, insurance,
+     savings, baseline performance status, county and caregiver are all
+     drawn at newGame() from real distributions. The single most
+     important variable in a run — what the sequencing found — is
+     decided before the player touches anything, which is the argument.
+   - THERE IS A WIN STATE, AND IT IS NOT EARNED. Two routes reach
+     treatment: an alteration with an on-label drug (6.3% of this
+     disease), or a manufacturer agreeing to supply under expanded
+     access (39% of requests). Roughly one run in twenty ends in
+     treatment, against a published 24% among patients who had an
+     actionable alteration. No choice on any screen improves those odds,
+     because no published data describes one that does.
+   - The pixel art stops when the real person starts: both end cards
+     deliberately drop the 8-bit styling entirely.
    ================================================================== */
 
 /* ─────────── SOURCES (single source of truth for citations) ─────────── */
@@ -311,7 +382,30 @@ const SRC = {
   abigailCURE:{t:'The Drug Chase — CURE Magazine (Abigail Burroughs)', u:'https://www.curetoday.com/view/v4n3---the-drug-chase' },
   abigailFB: { t:'Abigail Alliance v. Von Eschenbach: A closer look — Fierce Biotech', u:'https://www.fiercebiotech.com/biotech/abigail-alliance-v-von-eschenbach-a-closer-look' },
   abigailNT: { t:'The Abigail Alliance Case — Neurology Today', u:'https://neurologytoday.aan.com/doi/10.1097/01.NT.0000337677.15055.11' },
-  abigailPitt:{t:'Abigail Alliance case discussed — University of Pittsburgh University Times', u:'https://www.utimes.pitt.edu/archives/?p=8605' }
+  abigailPitt:{t:'Abigail Alliance case discussed — University of Pittsburgh University Times', u:'https://www.utimes.pitt.edu/archives/?p=8605' },
+
+  /* ── added for the probabilistic rebuild: every roll needs a source ── */
+  kyt2020:   { t:'Pishvaian et al., Overall survival in patients with pancreatic cancer receiving matched therapies following molecular profiling (Know Your Tumor), Lancet Oncology 2020', u:'https://doi.org/10.1016/S1470-2045(20)30074-7' },
+  kyt2018:   { t:'Pishvaian et al., Molecular Profiling of Patients with Pancreatic Cancer: Initial Results from the Know Your Tumor Initiative, Clinical Cancer Research 2018', u:'https://doi.org/10.1158/1078-0432.CCR-18-0531' },
+  polo:      { t:'Golan et al., Maintenance Olaparib for Germline BRCA-Mutated Metastatic Pancreatic Cancer (POLO), NEJM 2019', u:'https://doi.org/10.1056/NEJMoa1903387' },
+  olaparibFDA:{t:'FDA — olaparib approved for germline BRCA-mutated metastatic pancreatic adenocarcinoma (December 2019)', u:'https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-olaparib-gbrcam-metastatic-pancreatic-adenocarcinoma' },
+  ddrReview: { t:'Crowley, Park & O’Reilly — Targeting DNA damage repair pathways in pancreas cancer, Cancer and Metastasis Reviews 2021', u:'https://doi.org/10.1007/s10555-021-09983-1' },
+  pembroTA:  { t:'FDA — pembrolizumab approved for unresectable or metastatic MSI-H/dMMR solid tumours (first tissue-agnostic approval, May 2017)', u:'https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-pembrolizumab-first-tissue-site-agnostic-indication' },
+  ntrkFDA:   { t:'FDA — larotrectinib approved for NTRK gene fusion solid tumours (November 2018)', u:'https://www.fda.gov/drugs/fda-approves-larotrectinib-solid-tumors-ntrk-gene-fusions' },
+  ungerMeta: { t:'Unger et al., “When Offered to Participate”: A Systematic Review and Meta-Analysis of Patient Agreement to Participate in Cancer Clinical Trials, JNCI 2021', u:'https://doi.org/10.1093/jnci/djaa155' },
+  ungerBarriers:{t:'Unger et al., Systematic review and meta-analysis of the magnitude of structural, clinical, and physician and patient barriers to cancer clinical trial participation, JNCI 2019', u:'https://doi.org/10.1093/jnci/djy221' },
+  screenFail:{ t:'Addressing screening failures in early-phase clinical trials in oncology, ESMO Open 2025', u:'https://doi.org/10.1016/j.esmoop.2025.105581' },
+  eaData:    { t:'FDA — Expanded Access (Compassionate Use) Submission Data', u:'https://www.fda.gov/news-events/expanded-access/expanded-access-compassionate-use-submission-data' },
+  eaAvail:   { t:'Availability of Investigational Medicines Through the FDA’s Expanded Access and Compassionate Use Programs, JAMA Network Open 2019', u:'https://doi.org/10.1001/jamanetworkopen.2018.6468' },
+  compAC:    { t:'Johnson & Johnson / Janssen — Compassionate Use Advisory Committee (CompAC) backgrounder', u:'https://www.jnj.com/media-center/press-releases/compassionate-use-backgrounder' },
+  aaOutcome: { t:'Factors in Time to Full Approval or Withdrawal for Anticancer Medicines Granted Accelerated Approval by the FDA, JAMA Network Open 2025', u:'https://doi.org/10.1001/jamanetworkopen.2025.2026' },
+  aaBenefit: { t:'Liu et al., Clinical Benefit and Regulatory Outcomes of Cancer Drugs Receiving Accelerated Approval, JAMA 2024', u:'https://doi.org/10.1001/jama.2024.2396' },
+  ecogReal:  { t:'Real-world prognostic factors for survival among treated patients with metastatic pancreatic ductal adenocarcinoma, Cancer Medicine 2021', u:'https://doi.org/10.1002/cam4.4436' },
+  napoli:    { t:'Wang-Gillam et al., Nanoliposomal irinotecan with fluorouracil and folinic acid in metastatic pancreatic cancer after previous gemcitabine-based therapy (NAPOLI-1), The Lancet 2016', u:'https://doi.org/10.1016/S0140-6736(15)00986-1' },
+  conroy:    { t:'Conroy et al., FOLFIRINOX versus Gemcitabine for Metastatic Pancreatic Cancer, NEJM 2011 (median overall survival 11.1 vs 6.8 months)', u:'https://doi.org/10.1056/NEJMoa1011923' },
+  seer:      { t:'NCI SEER — Cancer Stat Facts: Pancreatic Cancer (5-year relative survival, distant stage)', u:'https://seer.cancer.gov/statfacts/html/pancreas.html' },
+  compendia: { t:'CMS Medicare Coverage Document — compendia for determining medically-accepted indications of drugs used off-label in anticancer regimens (NCCN Drugs & Biologics Compendium request accepted 2008)', u:'https://www.cms.gov/medicare-coverage-database/view/medicare-coverage-document.aspx?MCDId=14' },
+  ssa1861:   { t:'Social Security Act §1861(t)(2) — “medically accepted indication” and the statutory compendia for off-label anticancer use', u:'https://www.ssa.gov/OP_Home/ssact/title18/1861.htm' }
 };
 
 /* ─────────── COST SOURCES ─────────── */
@@ -375,6 +469,155 @@ const STAT = {
   denialMedNec:'5%', denialOther:'36%',
   countiesNoTrials:'70%'
 };
+
+/* ─────────── PROBABILITIES: every roll the game makes ───────────
+   Same contract as COSTS. p = probability, s = SRC/COST_SRC key,
+   note = what the number actually measured. assumption:true marks a
+   game-design choice rather than a published figure — the game labels
+   these in the Sources sheet rather than passing them off as data.
+
+   Nothing in this game is decided by the author any more. Every fork
+   below is a draw against one of these numbers, and the Sources sheet
+   prints the whole table. */
+const PROB = {
+  tissueAdequate:   { p:0.96,  s:'kyt2018',
+    note:'Share of pancreatic tumour samples adequate for next-generation sequencing in the Know Your Tumor programme (n=640, 287 practices, 44 states). The 4% that fail are re-biopsied or go unprofiled.' },
+  actionable:       { p:0.26,  s:'kyt2020',
+    note:'Actionable molecular alterations found in 282 of 1082 profiled pancreatic tumours (26%). “Actionable” means clinical or strong preclinical evidence of predicted benefit from a specific therapy.' },
+  matchedDelivered: { p:0.24,  s:'kyt2020',
+    note:'Of 189 patients who had an actionable alteration and recorded outcomes, only 46 (24%) actually received a matched therapy. Finding the target and receiving the drug are two different events, and this is the gap between them — the number this whole game is about.' },
+  reportReturned:   { p:0.58,  s:'kyt2020',
+    note:'1082 of 1856 patients referred to Know Your Tumor (58%) received a personalised molecular report at all. The missing 42% is tissue failure, withdrawal, and death during the process. The game models death separately on its own clock, so it uses the 96% tissue figure for the draw and quotes this one as context.' },
+
+  offLabelDenied:   { p:0.85,  s:'denialRate', assumption:true,
+    note:'Probability that a payer denies the FIRST prior-authorisation request for an approved drug prescribed outside its labelled indication. A scenario assumption. Marketplace insurers denied 19% of all in-network claims in 2024, but no published figure isolates off-label oncology prior authorisation, and a first request for a $17,900-a-month off-label drug is refused far more often than the all-claims average.' },
+  offLabelEventual: { p:0.45,  s:'compendia', assumption:true,
+    note:'Probability that an off-label anticancer use is EVENTUALLY covered after appeal, given compendia support. A scenario assumption, and the game deliberately does not build it by compounding the published appeal rates. Doing that (15% approved outright, then 34% of appeals, then 44% of external reviews) yields about 68%, which is wrong: those published rates cover ALL denials and are dominated by administrative and billing disputes that are easy to reverse, not by high-cost off-label drug refusals. One honest draw is better than three dishonest ones.' },
+  appealOverturn:   { p:0.34,  s:'denialRate',
+    note:'Share of internal appeals that overturn the original denial, across all claim types. Marketplace insurers upheld their own denial in 66% of the appeals they received in 2024, so roughly one in three succeeds — for the fewer than 1% of patients who appeal at all. Quoted on screen; deliberately not used as a multiplier, for the reason above.' },
+  externalOverturn: { p:0.44,  s:'denialRate',
+    note:'Independent external review overturns a substantial share of upheld denials; published studies of external review decisions report figures near half. Marketplace enrollees filed external appeals on only 4% of upheld internal appeals in 2024, and the exact 2024 overturn rate is suppressed for small cell sizes. Quoted, not compounded.' },
+  investigationalBenefit:{ p:0.21, s:'sotoPanc',
+    note:'Probability that a MATCHED investigational agent produces a meaningful interval of disease control, once a patient actually receives it. Anchored on the best real measurement available for a targeted agent aimed at a genuine driver in this disease: the 21% response rate in the sotorasib pancreatic cohort. Deliberately not set higher — an investigational agent is by definition one nobody has yet shown to work.' },
+  unmatchedBenefit: { p:0.08,  s:'kyt2020', assumption:true,
+    note:'The same, for a patient with NO actionable alteration who obtains an investigational agent anyway. Set far lower on the strength of the Know Your Tumor null result: patients who received unmatched therapy showed no significant survival difference from patients with no actionable alteration at all (HR 0.82, p=0.10). Getting a drug is not the same as getting the right drug, and the registry data says so.' },
+
+  onLabelCovered:   { p:0.88,  s:'denialRate', assumption:true,
+    note:'Probability a payer authorises a drug prescribed strictly on-label with a matching biomarker report attached. A scenario assumption, set high because this is the case prior authorisation is designed to approve — but not 1.0, because a 19% all-claims denial rate means correct claims are refused too.' },
+
+  trialAvailableMetro:    { p:0.62, s:'ungerBarriers',
+    note:'Probability that a trial your disease could fit exists at the site treating you, in a metropolitan county. Derived from the structural-barrier meta-analysis: no trial available at the institution is the single largest reason patients do not enrol.' },
+  trialAvailableNonMetro: { p:0.14, s:'ascoGeo',
+    note:'The same probability outside a metropolitan county. 86% of non-metropolitan US counties had no active cancer trial at all in 2022, against 70% of counties overall.' },
+  screenFail:       { p:0.25,  s:'screenFail',
+    note:'Probability of failing screening once you reach it. Screen-failure rates across three French cancer centres running early-phase oncology trials were 21.7%, 21.4% and 26.4%; 20–30% is the usual range quoted across oncology. The most common single reason is not meeting inclusion criteria.' },
+  randomisedToDrug: { p:0.50,  s:'eligStd',
+    note:'Allocation ratio in a 1:1 randomised confirmatory trial. Not a statistic — it is the design. Some trials randomise 2:1 or 3:2 in the drug’s favour; POLO used 3:2.' },
+
+  fdaGrantsEA:      { p:0.995, s:'eaData',
+    note:'FDA authorises essentially every expanded-access request it receives: of 8,922 expanded-access IND applications over a decade, 38 were denied or not allowed to proceed. Emergency requests are turned round in a day or less.' },
+  companyGrantsEA:  { p:0.39,  s:'compAC',
+    note:'Probability the manufacturer agrees to supply. Janssen’s independent compassionate-use committee turned down 98 of 160 requests for daratumumab in 2015 alone — more refusals for one drug in one year than the FDA issued for all drugs in a decade. This is the only gate in the entire pathway with a materially low pass rate, and it is the one no federal law touches.' },
+
+  aaWithdrawn:      { p:0.225, s:'aaOutcome',
+    note:'Share of accelerated-approval cancer indications that were withdrawn rather than converted, among those whose post-approval assessment has completed (22.5% of 204 drug–indication pairs; the other 77.5% converted to regular approval).' },
+  aaConfirmedBenefit:{p:0.43,  s:'aaBenefit',
+    note:'Share of accelerated approvals with more than five years of follow-up (approved 2013–2017) whose confirmatory trials demonstrated clinical benefit: 20 of 46.' },
+
+  ecogGood:         { p:0.91,  s:'ecogReal',
+    note:'Share of patients presenting with metastatic pancreatic adenocarcinoma at ECOG performance status 0 or 1 in a real-world cohort of 1,012 patients. The remaining ~9% start at ECOG 2 or worse, and start the game closer to the disqualifying line.' },
+  metro:            { p:0.86,  s:'ascoGeo',
+    note:'Share of the US population living in a metropolitan county. Trial geography follows population, which is why the same disease is a different disease depending on the county line.' },
+  fmlaEligible:     { p:0.56,  s:'zajacova', assumption:true,
+    note:'Probability your caregiver is eligible for job-protected unpaid leave. Roughly half of US employees meet the combined employer-size, tenure and hours tests for FMLA; the exact share depends on the survey. Treated here as a scenario assumption.' },
+
+  sotorasibResponse:{ p:0.21,  s:'sotoPanc',
+    note:'Objective response rate for sotorasib in the KRAS G12C pancreatic cohort — 21%, with 6.9-month median overall survival. Real, modest, and the reason this trail is worth walking at all.' },
+  olaparibBenefit:  { p:0.53,  s:'polo',
+    note:'Modelled probability that maintenance olaparib holds disease in check for a meaningful interval in germline BRCA-mutated metastatic pancreatic cancer. POLO reported median progression-free survival of 7.4 months against 3.8 on placebo (HR 0.53) — and, importantly, no overall survival difference at interim analysis. The game uses the hazard ratio as the draw and says plainly what it did.' },
+  pembroResponse:   { p:0.34,  s:'pembroTA',
+    note:'Objective response rate for pembrolizumab across MSI-H/dMMR solid tumours in the tissue-agnostic approval package. Durable in responders, which is why this draw is the best one available in the game.' },
+  ntrkResponse:     { p:0.75,  s:'ntrkFDA',
+    note:'Objective response rate for larotrectinib across NTRK fusion solid tumours. The highest response rate in this game, attached to its rarest draw.' }
+};
+
+/* ─────────── MOLECULAR PROFILE: the draw the whole game turns on ───────────
+   Prevalences are of pancreatic ductal adenocarcinoma overall and sum to
+   100%. The `route` field is the only thing that matters mechanically:
+
+     onLabel  — an FDA-approved drug exists for THIS alteration in THIS
+                disease, or is tissue-agnostic and therefore covers it.
+                This is the only route with a victory at the end of it.
+     wrongOrgan — an approved drug targets your exact mutation, in a
+                different organ. The original trap.
+     trialOnly — actionable, but only inside a study.
+     none     — no actionable alteration. Chemotherapy and time.
+
+   The point of the table is that which one you get is decided before the
+   game starts, by a laboratory, and no play can change it. */
+const ARMS = [
+  { key:'brca', pct:5.0, route:'onLabel', name:'Germline BRCA2', short:'gBRCA2',
+    drug:'olaparib', respKey:'olaparibBenefit',
+    approved:'Approved for germline BRCA-mutated metastatic pancreatic adenocarcinoma, December 2019, as maintenance after platinum-based chemotherapy.',
+    src:['polo','olaparibFDA'],
+    note:'Germline BRCA1/2 mutations occur in roughly 4–7% of pancreatic cancers. POLO screened 3,315 patients to randomise 154.' },
+  { key:'msi', pct:1.0, route:'onLabel', name:'Mismatch repair deficient (MSI-H)', short:'dMMR/MSI-H',
+    drug:'pembrolizumab', respKey:'pembroResponse',
+    approved:'Approved for any unresectable or metastatic MSI-H/dMMR solid tumour, May 2017 — the first tissue-agnostic approval the FDA ever granted.',
+    src:['pembroTA'],
+    note:'Roughly 1% of pancreatic cancers are mismatch-repair deficient. This is the one draw where the organ genuinely does not matter, because the label says so.' },
+  { key:'ntrk', pct:0.3, route:'onLabel', name:'NTRK gene fusion', short:'NTRK fusion',
+    drug:'larotrectinib', respKey:'ntrkResponse',
+    approved:'Approved for any solid tumour with an NTRK gene fusion, November 2018. Tissue-agnostic.',
+    src:['ntrkFDA'],
+    note:'Under 0.5% of pancreatic cancers. The rarest draw in the game and the best one.' },
+  { key:'g12c', pct:1.5, route:'wrongOrgan', name:'KRAS p.G12C', short:'KRAS G12C',
+    drug:'sotorasib', respKey:'sotorasibResponse',
+    approved:'Approved for KRAS G12C non-small-cell lung cancer, May 2021. Never approved for pancreatic cancer.',
+    src:['sotoLung','sotoPanc'],
+    note:'1–2% of pancreatic cancers. Your mutation is right and your organ is wrong: the drug exists, is manufactured at scale, and is not for you.' },
+  { key:'ddr', pct:8.2, route:'trialOnly', name:'DNA damage repair pathway (ATM / PALB2)', short:'DDR pathway',
+    drug:null, respKey:null,
+    approved:'No approved indication in pancreatic cancer. PARP inhibition beyond germline BRCA is investigational here.',
+    src:['ddrReview','kyt2020'],
+    note:'Somatic and germline DDR alterations run to roughly 15–25% of metastatic pancreatic cancer, but only the germline BRCA slice has a label attached.' },
+  { key:'cell', pct:10.0, route:'trialOnly', name:'Cell-cycle / other actionable alteration', short:'other actionable',
+    drug:null, respKey:null,
+    approved:'No approved indication. Trials only.',
+    src:['kyt2020','kyt2018'],
+    note:'The remainder of the 26% actionable fraction: cell-cycle genes, other targetable pathways. Actionable on paper, reachable only through a study.' },
+  { key:'none', pct:74.0, route:'none', name:'No actionable alteration', short:'none found',
+    drug:null, respKey:null,
+    approved:'Nothing to target. Cytotoxic chemotherapy and supportive care.',
+    src:['kyt2020'],
+    note:'Just under three quarters of profiled pancreatic tumours. The most likely result of sequencing is a report that changes nothing about your treatment.' }
+];
+
+/* ─────────── INSURANCE: drawn, not chosen ───────────
+   Weights approximate the US non-elderly coverage distribution; the
+   deductible, coinsurance and out-of-pocket maximum attached to each are
+   the published averages for that kind of plan. The player never picks
+   this. Neither does anyone else. */
+const PLANS = [
+  { key:'employer', w:0.49, name:'Employer-sponsored PPO',
+    deductible:1787, coins:0.20, oopMax:4000,
+    note:'Average single-coverage general annual deductible in employer plans, with a typical 20% coinsurance and an employer-plan out-of-pocket maximum well below the ACA ceiling.' },
+  { key:'silver',   w:0.11, name:'Marketplace Silver',
+    deductible:5304, coins:0.20, oopMax:10600,
+    note:'Average 2026 marketplace Silver deductible against the 2026 self-only out-of-pocket limit.' },
+  { key:'bronze',   w:0.09, name:'Marketplace Bronze',
+    deductible:7476, coins:0.30, oopMax:10600,
+    note:'Average 2026 marketplace Bronze deductible. Cheaper premium, and the entire first $7,476 is yours.' },
+  { key:'gold',     w:0.04, name:'Marketplace Gold',
+    deductible:2000, coins:0.15, oopMax:9200,
+    note:'Average 2026 marketplace Gold deductible. The plan most people cannot afford the premium for.' },
+  { key:'medicaid', w:0.19, name:'Medicaid',
+    deductible:0, coins:0.0, oopMax:0,
+    note:'Nominal or no cost sharing. The best financial draw in the game, attached to the narrowest network and the fewest trial sites.' },
+  { key:'none',     w:0.08, name:'Uninsured',
+    deductible:0, coins:1.0, oopMax:Infinity,
+    note:'Every charge is billed at the gross rate with no negotiated price and no out-of-pocket ceiling. About 8% of the US population, and the number rose in 2024 for the first time since 2019.' }
+];
 
 function initCosts(){ /* costs are static literals above; hook kept for clarity */ }
 
@@ -530,10 +773,75 @@ function money(n){ return (n<0?'−$':'$')+Math.abs(Math.round(n)).toLocaleStrin
 function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
 function rnd(a,b){ return a+Math.random()*(b-a); }
 
+/* ─────────── ROLLING ───────────
+   Every probabilistic fork goes through roll(). It records what was
+   asked, what the published probability was, and what came up, so the
+   run can be audited afterwards on the Roll Sheet. A game that claims
+   its probabilities are real has to be willing to show its dice. */
+function roll(key,label){
+  const pr=PROB[key];
+  const hit=Math.random()<pr.p;
+  S.rolls.push({ key, label, p:pr.p, hit });
+  return hit;
+}
+/* weighted draw over [{w|pct, ...}] */
+function draw(list,field){
+  const f=field||'w';
+  const total=list.reduce((a,x)=>a+x[f],0);
+  let r=Math.random()*total;
+  for(const x of list){ r-=x[f]; if(r<=0) return x; }
+  return list[list.length-1];
+}
+
+/* Liquid savings at diagnosis. The bottom tier is the Federal Reserve
+   figure directly; the shape above it is a scenario assumption, and is
+   labelled as one in the Sources sheet rather than dressed up as data. */
+const SAVINGS_TIERS = [
+  { w:0.37, lo:0,     hi:400,   label:'less than $400 in cash' },
+  { w:0.18, lo:401,   hi:2000,  label:'a few hundred dollars' },
+  { w:0.20, lo:2001,  hi:8000,  label:'a modest cushion' },
+  { w:0.17, lo:8001,  hi:25000, label:'real savings' },
+  { w:0.08, lo:25001, hi:60000, label:'a genuinely strong position' }
+];
+
+/* ─────────── THE OPENING DRAW ───────────
+   The original Oregon Trail let you pick an occupation, and paid you a
+   bigger score multiplier for starting poorer. There is no choice here
+   and no multiplier. Everything that determines how this run goes is
+   decided before you touch the keyboard: which mutation your tumour
+   happens to carry, which plan you happen to be enrolled in, how much
+   money happens to be in the account, which side of a county line you
+   happen to live on, and whether the person driving you can keep their
+   job. That is the argument. The draw IS the game. */
+function rollStartingConditions(){
+  const plan=draw(PLANS);
+  const tier=draw(SAVINGS_TIERS);
+  const savings=Math.round(rnd(tier.lo,tier.hi)/50)*50;
+  const metro=Math.random()<PROB.metro.p;
+  const goodPS=Math.random()<PROB.ecogGood.p;
+  return {
+    plan,
+    savings, savingsLabel:tier.label,
+    metro,
+    /* ECOG 0–1 maps to a high reserve, ECOG 2 to one already past the
+       line most later-line trials draw. 91% / 9%, per the real cohort. */
+    reserve: goodPS ? rnd(86,98) : rnd(58,64),
+    startedGood: goodPS,
+    fmla: Math.random()<PROB.fmlaEligible.p,
+    age: Math.round(rnd(38,71)),
+    /* The tumour is sequenced at the first landmark; the result is drawn
+       here so it exists from the start, exactly as it does in life. */
+    arm: draw(ARMS,'pct'),
+    tissueOK: Math.random()<PROB.tissueAdequate.p
+  };
+}
+
 function newGame(){
-  S={ reserve:96, funds:COSTS.savings.v, week:0, lines:0, i:0,
+  const st=rollStartingConditions();
+  S={ reserve:st.reserve, funds:st.savings, week:0, lines:0, i:0,
       spentOOP:0, deductibleMet:false, flags:{}, log:[], dead:false, busy:false,
-      epitaph:'', companion:'' };
+      epitaph:'', companion:'', rolls:[], won:false, onTherapy:null,
+      start:st, plan:st.plan, arm:st.arm };
   CH=buildChapters();
   sceneMoving=true;
   document.getElementById('log').classList.remove('show');
@@ -566,13 +874,24 @@ function hud(){
     <div class="hud-cell">
       <div class="hud-k">Funds</div>
       <div class="hud-v ${S.funds<0?'warn':''}">${money(S.funds)}</div>
-      <div class="hud-sub">Out of pocket so far: ${money(S.spentOOP)}</div>
+      <div class="hud-sub">${S.plan.name}. Out of pocket: ${money(S.spentOOP)}</div>
     </div>
     <div class="hud-cell">
       <div class="hud-k">Week on<br>the trail</div>
       <div class="hud-v">${S.week}</div>
-      <div class="hud-sub">${S.deductibleMet?'Deductible met.':'Deductible not yet met.'}</div>
+      <div class="hud-sub">${S.plan.key==='none'
+          ? 'No coverage. Every charge is gross.'
+          : (S.deductibleMet
+              ? `Deductible met (${money(S.plan.deductible)}).`
+              : `${money(Math.max(0,S.plan.deductible-S.spentOOP))} of deductible left.`)}</div>
     </div>`;
+}
+
+/* the drawn tumour marker, once the report is back — shown on every
+   landmark header, because it is the fact the run turns on */
+function armTag(){
+  if(!S.flags.reportBack||!S.arm) return '';
+  return ` &mdash; <span style="color:var(--cyan)">${S.arm.short}</span>`;
 }
 
 function logIt(t,c){
@@ -583,29 +902,60 @@ function logIt(t,c){
   el.scrollTop=el.scrollHeight;
 }
 
-/* bills route through the deductible / OOP maximum like real coverage */
+/* Bills route through the drawn plan's deductible, coinsurance and
+   out-of-pocket maximum, exactly as real coverage does. The uninsured
+   plan is the same arithmetic with a zero deductible, 100% coinsurance
+   and no ceiling — which is precisely what being uninsured is. */
 function bill(gross){
+  const P=S.plan;
+  const dedLeft=Math.max(0,P.deductible-S.spentOOP);
   let out;
-  if(!S.deductibleMet){
-    const remaining=COSTS.deductible.v-S.spentOOP;
-    if(gross<=remaining){ out=gross; }
-    else { out=remaining+(gross-remaining)*COSTS.coinsurance.v; S.deductibleMet=true; }
+  if(dedLeft>0){
+    if(gross<=dedLeft){ out=gross; }
+    else { out=dedLeft+(gross-dedLeft)*P.coins; }
   } else {
-    out=gross*COSTS.coinsurance.v;
+    out=gross*P.coins;
   }
-  const capLeft=COSTS.oopMax.v-S.spentOOP;
+  const capLeft=P.oopMax-S.spentOOP;
   out=Math.max(0,Math.min(out,capLeft));
   S.spentOOP+=out; S.funds-=out;
-  if(S.spentOOP>=COSTS.deductible.v) S.deductibleMet=true;
+  S.deductibleMet = S.spentOOP>=P.deductible;
   return out;
 }
+/* a charge no plan touches: cash price, travel, lost pay */
+function payCash(amount){ S.funds-=amount; S.spentOOP+=amount; return amount; }
 
 /* ══════════════════ ENGINE ══════════════════ */
 function claim(){ if(S.dead||S.busy) return false; S.busy=true; return true; }
 
+/* A landmark that this run's route never reaches is not free. The weeks
+   still pass, on chemotherapy, in the ordinary way — restaging, the next
+   cycle, the next appointment. Charging zero time for a closed door was
+   making unlucky runs finish in a quarter of the real median survival. */
+function skipChapter(why){
+  const wks=Math.round(rnd(5,7));
+  const g=bill(COSTS.supportiveWeekly.v*wks);
+  step({reserve:-rnd(2.6,4.0)*wks, weeks:wks},
+    `${wks} weeks on standard care. ${why} Care cost ${money(g)}.`);
+}
+
+/* ─────────── SURVIVAL CALIBRATION ───────────
+   Every reserve loss in this file is written on a "per event" scale that
+   was originally tuned by feel. Feel is not a source. DECLINE rescales
+   all of them at once so that the emergent median time from diagnosis to
+   ECOG 5 lands on the published median overall survival for metastatic
+   pancreatic adenocarcinoma on first-line chemotherapy: 11.1 months, or
+   about 48 weeks (Conroy et al., NEJM 2011, in an ECOG 0–1 population).
+
+   It is a single, honest knob, and it is set by measurement: simulate
+   several thousand runs of the shipped code and move it until the median
+   matches. Losses only — a response to treatment should not be scaled by
+   a constant calibrated against decline. */
+const DECLINE = 0.55;
+
 function apply(d){
   d=d||{};
-  if(d.reserve) S.reserve+=d.reserve;
+  if(d.reserve) S.reserve += (d.reserve<0 ? d.reserve*DECLINE : d.reserve);
   if(d.funds) S.funds+=d.funds;
   if(d.lines) S.lines+=d.lines;
   S.week+=(d.weeks===undefined?1:d.weeks);
@@ -655,13 +1005,27 @@ function titleScreen(){
     <div class="land">Aileron Games presents</div>
     <h2>FDA:<br><span class="hl">FOREVER DOESN&rsquo;T ALLOW</span></h2>
     <div class="txt">
-      <p>You are 41 years old. You have <b>metastatic pancreatic adenocarcinoma</b>. Your tumour carries a mutation called <b>KRAS G12C</b>, which occurs in roughly 1 to 2% of pancreatic cancers. You are insured &mdash; a marketplace Silver plan, ${money(COSTS.deductible.v)} deductible &mdash; and you have ${money(COSTS.savings.v)} in savings, which makes you luckier than most people who walk this trail.</p>
-      <p>There is a drug that targets exactly that mutation. It is FDA-approved. It is not approved for your organ.</p>
-      <p>This trail cannot be completed. Every obstacle on it is a real, currently-in-force rule, cited on screen as you meet it. There is no score and no win state. That is the argument, not the difficulty setting.</p>
+      <p>You are ${S.start.age} years old. You have <b>metastatic pancreatic adenocarcinoma</b>. Everything below was decided before you arrived, and none of it was decided by you.</p>
+    </div>
+    <div class="cite" style="border-left-color:var(--cyan);color:#cfd6e4;">
+      <b style="color:var(--cyan)">THIS RUN&rsquo;S HAND</b><br>
+      <b>Coverage:</b> ${S.plan.name}${S.plan.key==='none'?' &mdash; every charge billed gross'
+        :` &mdash; ${money(S.plan.deductible)} deductible, ${Math.round(S.plan.coins*100)}% coinsurance`}<br>
+      <b>Liquid savings:</b> ${money(S.start.savings)} &mdash; ${S.start.savingsLabel}<br>
+      <b>Performance status:</b> ECOG ${ecogOf(S.reserve)} at presentation${S.start.startedGood?'':' &mdash; already past the line most trials draw'}<br>
+      <b>Where you live:</b> ${S.start.metro?'a metropolitan county':'a non-metropolitan county &mdash; 86% of them had no cancer trial at all in 2022'}<br>
+      <b>Your caregiver&rsquo;s job:</b> ${S.start.fmla?'protected unpaid leave available':'no job-protected leave'}<br>
+      <b>Your tumour:</b> not yet sequenced
+    </div>
+    <div class="txt">
+      <p>Somewhere in that tumour is a molecular result you have already got and do not yet know. Roughly <b>26%</b> of pancreatic cancers carry an alteration something can be aimed at. A far smaller number carry one with a drug already approved for it.</p>
+      <p><b>This trail can be completed.</b> Not often, and not by playing well. In the largest registry of its kind, of the patients who had an actionable alteration, <b>24%</b> actually received a therapy matched to it &mdash; and those who did lived a median of <b>2.58 years</b> against <b>1.51</b>. Both of those numbers are on this screen for a reason.</p>
+      <p>Every obstacle here is a real, in-force rule, cited as you meet it. Every fork is a draw against a published probability, and you can read the whole table before you start, or audit every roll after you finish.</p>
     </div>
     ${menu('You may:',[
       {label:'Travel the trail', sub:'Begin. It takes about ten minutes.', fn:'nameCompanion'},
-      {label:'Learn about the approval process', sub:'The eight structural traps, with citations.', fn:'openSources'},
+      {label:'Deal a different hand', sub:'Re-roll the starting conditions. The one thing in this game you can actually do that a patient cannot.', fn:'newGame'},
+      {label:'Learn about the approval process', sub:'The structural traps and every probability, with citations.', fn:'openSources'},
       {label:'See the reskin lineage', sub:'Oregon Trail, Organ Trail, The Migrant Trail, and this.', fn:'openLineage'},
       {label:'Turn sound off', sub:'As the original menu offered.', fn:'toggleSound'}
     ])}`;
@@ -700,6 +1064,9 @@ function startTrail(){
   const inp=document.getElementById('compIn');
   const v=inp?inp.value.trim():'';
   S.companion = v ? v.replace(/[^A-Za-z0-9 .,'-]/g,'').slice(0,14) : 'your sister';
+  /* chapters carry the companion's name in their prose, so they are built
+     again now that the name exists */
+  CH=buildChapters();
   sfxMove(); S.i=0; render();
 }
 
@@ -747,17 +1114,17 @@ function travelScreen(c){
     if(grave){ S.flags.graveShown=true; S.flags.grave=grave; gravesiteScreen(); return; }
   }
   document.getElementById('panel').innerHTML=`
-    <div class="land">Week ${S.week+1} &mdash; on the trail &mdash; ${c.label}</div>
+    <div class="land">Week ${S.week+1}${armTag()} &mdash; on the trail &mdash; ${c.label}</div>
     <h2>${c.head}</h2>
     <div class="txt"><p>${c.body}</p></div>
-    ${menu('How are you spending this week?',[
+    ${menu('How are you spending this cycle? <span style="font-size:1rem;opacity:.7">(two weeks — first-line FOLFIRINOX runs every other Tuesday)</span>',[
       { label:'Keep working, keep every appointment',
         sub:'Oregon Trail called this a grueling pace. Here it means holding down a job through chemotherapy.',
-        cost:`<span class="h">performance status falls faster</span> &middot; <span class="m">income ${money(COSTS.weeklyWage.v)}</span>`,
+        cost:`<span class="h">performance status falls faster</span> &middot; <span class="m">income ${money(COSTS.weeklyWage.v*2)}</span>`,
         fn:'travelWork' },
       { label:'Cut back to part time',
         sub:'Fewer hours, less money, a little less wear.',
-        cost:`<span class="h">steady decline</span> &middot; <span class="m">income ${money(Math.round(COSTS.weeklyWage.v*0.45))}</span>`,
+        cost:`<span class="h">steady decline</span> &middot; <span class="m">income ${money(Math.round(COSTS.weeklyWage.v*0.9))}</span>`,
         fn:'travelPart' },
       { label:'Stop working and rest',
         sub:'The slowest decline available to you. It is not a treatment.',
@@ -765,32 +1132,35 @@ function travelScreen(c){
         fn:'travelRest' },
       { label:'Skip this week&rsquo;s supportive care to save the copay',
         sub:'Oregon Trail let you set rations to &ldquo;bare bones.&rdquo; This is that setting.',
-        cost:`<span class="h">sharper decline</span> &middot; <span class="m">saves ${money(COSTS.supportiveWeekly.v)}</span>`,
+        cost:`<span class="h">sharper decline</span> &middot; <span class="m">saves ${money(COSTS.supportiveWeekly.v*2)}</span>`,
         fn:'travelSkip' }
     ])}`;
 }
+/* One press of the travel screen is one chemotherapy cycle: two weeks,
+   the FOLFIRINOX interval the prose on this screen already describes. */
+const CYCLE=2;
 function travelWork(){
-  const d=rnd(4.5,7.0)+ (S.funds<0?0.8:0);
-  const g=bill(COSTS.supportiveWeekly.v);
-  step({reserve:-d, funds:COSTS.weeklyWage.v, weeks:1},
-    `You worked through the week. Supportive care cost you ${money(g)}.`,'money');
+  const d=(rnd(4.5,7.0)+ (S.funds<0?0.8:0))*CYCLE;
+  const g=bill(COSTS.supportiveWeekly.v*CYCLE);
+  step({reserve:-d, funds:COSTS.weeklyWage.v*CYCLE, weeks:CYCLE},
+    `You worked through the cycle. Supportive care cost you ${money(g)}.`,'money');
 }
 function travelPart(){
-  const d=rnd(3.6,5.6)+ (S.funds<0?0.8:0);
-  const g=bill(COSTS.supportiveWeekly.v);
-  step({reserve:-d, funds:Math.round(COSTS.weeklyWage.v*0.45), weeks:1},
-    `Part-time week. Supportive care cost you ${money(g)}.`,'money');
+  const d=(rnd(3.6,5.6)+ (S.funds<0?0.8:0))*CYCLE;
+  const g=bill(COSTS.supportiveWeekly.v*CYCLE);
+  step({reserve:-d, funds:Math.round(COSTS.weeklyWage.v*0.45)*CYCLE, weeks:CYCLE},
+    `Part-time cycle. Supportive care cost you ${money(g)}.`,'money');
 }
 function travelRest(){
-  const d=rnd(2.4,4.2)+ (S.funds<0?0.8:0);
-  const g=bill(COSTS.supportiveWeekly.v);
-  step({reserve:-d, funds:0, weeks:1},
+  const d=(rnd(2.4,4.2)+ (S.funds<0?0.8:0))*CYCLE;
+  const g=bill(COSTS.supportiveWeekly.v*CYCLE);
+  step({reserve:-d, funds:0, weeks:CYCLE},
     `You rested. Supportive care cost you ${money(g)}.`,'money');
 }
 function travelSkip(){
-  const d=rnd(6.0,8.5)+ (S.funds<0?0.8:0);
-  step({reserve:-d, funds:0, weeks:1},
-    'You skipped supportive care to avoid the copay. The week cost you more than money.','bad');
+  const d=(rnd(6.0,8.5)+ (S.funds<0?0.8:0))*CYCLE;
+  step({reserve:-d, funds:0, weeks:CYCLE},
+    'You skipped supportive care to avoid the copay. The cycle cost you more than money.','bad');
 }
 
 /* ─────────── LANDMARKS ─────────── */
@@ -798,13 +1168,14 @@ function travelSkip(){
 function chDiagnosis(){
   const panel=document.getElementById('panel');
   panel.innerHTML=`
-    <div class="land">Landmark 1 of 9 &mdash; Diagnosis</div>
+    <div class="land">Landmark 1 &mdash; Diagnosis</div>
     <h2>THE SCAN HAS<br>A NAME NOW</h2>
     <div class="txt">
       <p>Metastatic pancreatic adenocarcinoma. Your oncologist is kind and direct: first-line chemotherapy, probably FOLFIRINOX, and a molecular profile of the tumour so you know what you are dealing with.</p>
-      <p>Median overall survival with first-line chemotherapy in metastatic disease runs to roughly <b>11 months</b>. Five-year survival for metastatic pancreatic cancer is about <b>3%</b>. Nobody says these numbers out loud in the room. They are in the literature.</p>
-      <p>The sequencing panel is the thing that will matter later. It is also a bill.</p>
+      <p>Median overall survival with first-line FOLFIRINOX in metastatic disease is <b>11.1 months</b>, against 6.8 on gemcitabine alone. Five-year relative survival at distant stage is about <b>3%</b>. Nobody says these numbers out loud in the room. They are in the literature, and this game is calibrated to them: the median run ends at about week 48.</p>
+      <p>The sequencing panel is the thing that will matter later. It is, in fact, the thing that will matter most, and there is no version of this where you get to influence what it says. It is also a bill.</p>
     </div>
+    <div class="cite"><b>Cited:</b> ${A(SRC.conroy)}. Five-year relative survival at distant stage &mdash; ${A(SRC.seer)}. Sequencing yield and actionability &mdash; ${A(SRC.kyt2020)}.</div>
     ${menu('Do you send the tumour for sequencing?',[
       { label:'Yes. Send the full sequencing panel.',
         sub:'It is how you would ever find a targetable mutation.',
@@ -814,144 +1185,356 @@ function chDiagnosis(){
 }
 function doSequence(){
   const paid=bill(COSTS.ngsPanel.v);
-  step({reserve:-2, lines:1, weeks:2},
-    `Sequencing sent. Your share: ${money(paid)}. First-line chemotherapy begins.`,'money');
+  /* 4% of pancreatic samples are not adequate for sequencing. A failed
+     panel is not a dead end — it is a second biopsy, which is three more
+     weeks and another bill, spent on a question you have already asked. */
+  const ok=roll('tissueAdequate','Tumour sample adequate for sequencing');
+  if(ok){
+    step({reserve:-2, lines:1, weeks:2},
+      `Sequencing sent. Your share: ${money(paid)}. First-line chemotherapy begins.`,'money');
+  } else {
+    const again=bill(COSTS.ngsPanel.v);
+    step({reserve:-rnd(4,7), lines:1, weeks:5},
+      `Sample inadequate for sequencing. Re-biopsy, three more weeks, another ${money(again)}.`,'bad');
+    sfxBad();
+  }
 }
 
-function chMutation(){
+/* ─────────── THE REPORT: the draw the run turns on ─────────── */
+function chReport(){
+  S.flags.reportBack=true;
+  const a=S.arm;
+  const routeLine={
+    onLabel:`<div class="stamp ok">A DRUG IS APPROVED<br>FOR THIS</div>`,
+    wrongOrgan:`<div class="stamp">APPROVED &mdash;<br>FOR A DIFFERENT ORGAN</div>`,
+    trialOnly:`<div class="stamp">ACTIONABLE &mdash;<br>IN A STUDY ONLY</div>`,
+    none:`<div class="stamp">NO ACTIONABLE<br>ALTERATION</div>`
+  }[a.route];
+
+  const body={
+    onLabel:`
+      <p>The report names <b>${a.name}</b>. There is a drug for this, and — this is the part that almost never happens — it is approved for <i>you</i>.</p>
+      <p><b>${a.drug}</b>. ${a.approved}</p>
+      <p>You are in a small group. Roughly <b>26%</b> of pancreatic tumours carry an actionable alteration at all, and only a fraction of those carry one with a label already attached to it. Nothing you did produced this result. It was in the tissue before the first scan.</p>`,
+    wrongOrgan:`
+      <p>The report names <b>${a.name}</b>. For most of the history of this disease that would have been a curiosity. It is not any more, because a drug exists that targets that exact mutation.</p>
+      <p><b>${a.drug}</b>. ${a.approved} It is on the market. It is manufactured at scale. Pharmacies stock it.</p>
+      <p>In the same trial programme, heavily pretreated pancreatic cancer patients with your mutation were treated with it: a <b>21%</b> response rate, median overall survival <b>6.9 months</b>. Real, modest, and better than nothing.</p>
+      <p>Your mutation is right. Your organ is wrong.</p>`,
+    trialOnly:`
+      <p>The report names <b>${a.name}</b>. It is actionable, which is a word that means less than it sounds like.</p>
+      <p>${a.approved}</p>
+      <p>Actionable means somebody, somewhere, is studying a drug aimed at this. It does not mean you can have one. The distance between those two facts is the rest of this game.</p>`,
+    none:`
+      <p>The report comes back and changes nothing. <b>No actionable alteration.</b></p>
+      <p>This is the most common result, by a distance: just under <b>three quarters</b> of profiled pancreatic tumours have nothing in them that any current drug is aimed at. The panel was not wasted — it is how anyone ever finds the other quarter — but for you it is a page confirming that the standard treatment is the only treatment.</p>
+      <p>Cytotoxic chemotherapy, and time.</p>`
+  }[a.route];
+
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 2 of 9 &mdash; The Molecular Report</div>
-    <h2>YOU HAVE THE<br><span class="hl">MUTATION</span></h2>
-    <div class="txt">
-      <p>The report comes back: <b>KRAS p.G12C</b>. For most of the history of this disease that would have been a curiosity. It is not any more, because a drug exists that targets that exact mutation.</p>
-      <p><b>Sotorasib</b> received accelerated FDA approval in <i>May 2021</i> for KRAS G12C non-small-cell lung cancer. It is on the market. It is manufactured at scale. Pharmacies stock it.</p>
-      <p>In the same trial programme, a cohort of heavily pretreated pancreatic cancer patients with your mutation was treated with it. The published response rate was <b>21%</b>, with median overall survival of <b>6.9 months</b>. Real, modest, and better than nothing.</p>
-      <p>It has never been approved for pancreatic cancer. Your mutation is right. Your organ is wrong.</p>
+    <div class="land">Landmark 2 &mdash; The Molecular Report</div>
+    <h2>${a.route==='none'?'THE REPORT<br>CHANGES<br>NOTHING':'THE REPORT<br>IS BACK'}</h2>
+    ${routeLine}
+    <div class="txt">${body}</div>
+    <div class="cite"><b>Cited:</b> ${a.src.map(k=>A(SRC[k])).join(' &middot; ')}. Prevalence and actionability rates &mdash; ${A(SRC.kyt2020)} and ${A(SRC.kyt2018)}.</div>
+    <div class="cite" style="border-left-color:var(--cyan);color:#9fd8e4;">
+      <b>THE DRAW:</b> ${a.name} &mdash; ${a.pct}% of pancreatic cancers.<br>
+      ${a.note}
     </div>
-    <div class="cite"><b>Cited:</b> accelerated approval for NSCLC, May 2021 &mdash; ${A(SRC.sotoLung)}. Pancreatic cohort results (21% response, 6.9-month median OS) &mdash; Strickler et al., ${A(SRC.sotoPanc)}.</div>
-    ${menu('What do you ask your oncologist to do?',[
-      { label:'Ask her to prescribe it off-label anyway',
-        sub:'Legal. The FDA regulates drug marketing, not the practice of medicine. Whether anyone pays for it is a separate question.',
-        fn:'doOffLabel' }
+    ${menu('You may:',[
+      a.route==='onLabel'
+        ? { label:`Ask your oncologist to prescribe ${a.drug}`,
+            sub:'On-label, biomarker matched, guideline supported. This is the request the system is actually built to approve.',
+            fn:'doAdvance' }
+        : a.route==='wrongOrgan'
+        ? { label:`Ask her to prescribe ${a.drug} off-label anyway`,
+            sub:'Legal. The FDA regulates drug marketing, not the practice of medicine. Whether anyone pays for it is a separate question.',
+            fn:'doAdvance' }
+        : { label:'Start looking for a study',
+            sub:'The only route left that leads anywhere.',
+            fn:'doAdvance' }
+    ])}`;
+  if(a.route==='onLabel') beep(880,0.09); else sfxBad();
+}
+function doAdvance(){ step({reserve:-1,weeks:1},'Molecular report filed. '+S.arm.short+'.', S.arm.route==='onLabel'?'good':''); }
+
+/* ─────────── ON-LABEL: the request the system is built to approve ─────────── */
+function chOnLabelAuth(){
+  const a=S.arm;
+  if(S.plan.key==='none'){
+    document.getElementById('panel').innerHTML=`
+      <div class="land">Landmark 3${armTag()} &mdash; Prior Authorisation</div>
+      <h2>THERE IS NO<br>ONE TO ASK</h2>
+      <div class="txt">
+        <p>Your oncologist writes for <b>${a.drug}</b>. It is on-label, biomarker matched, and there is no insurer to send it to, because you do not have one.</p>
+        <p>Prior authorisation is a fight you would give a great deal to be allowed to have. Instead the pharmacy quotes you the cash price and waits.</p>
+        <p>The manufacturer runs a patient assistance programme. Everybody's does. It has an income test, a form, and a queue.</p>
+      </div>
+      <div class="cite"><b>Cited:</b> ${A(SRC[a.src[0]])}. Uninsured share of the US population &mdash; ${A(COST_SRC.acsDebt)}.</div>
+      ${menu('You may:',[
+        { label:'Apply to the manufacturer&rsquo;s assistance programme',
+          sub:'The only door in the building. It opens sometimes.',
+          cost:`<span class="t">4 weeks</span>`, fn:'doPAP' },
+        { label:'Pay cash for a month and see',
+          cost:`<span class="m">${money(COSTS.sotorasibMonth.v)}</span>`, fn:'doOnLabelCash' }
+      ])}`;
+    return;
+  }
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 3${armTag()} &mdash; Prior Authorisation</div>
+    <h2>THE ONE REQUEST<br>THAT IS SUPPOSED<br>TO WORK</h2>
+    <div class="txt">
+      <p>Your oncologist writes for <b>${a.drug}</b> and attaches the molecular report. This is not an off-label argument. The label names your alteration. ${a.approved}</p>
+      <p>Prior authorisation exists to check exactly this: that the drug matches the patient. Yours does, on paper, in writing, with the sequencing attached.</p>
+      <p>That is not the same as yes. Marketplace insurers denied <b>${STAT.denialRate}</b> of in-network claims in 2024 — about 85 million — and only <b>${STAT.denialMedNec}</b> of those denials were recorded as being about medical necessity at all. The largest single category of reason, at <b>${STAT.denialOther}</b>, was the box marked <i>other</i>.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> ${A(SRC[a.src[0]])}. Denial and reason-code figures (2024, HealthCare.gov plans) &mdash; ${A(COST_SRC.denialRate)}.</div>
+    ${menu('You may:',[
+      { label:'Submit the prior authorisation',
+        sub:`Biomarker matched, on-label, report attached. The draw is ${Math.round(PROB.onLabelCovered.p*100)}% in your favour.`,
+        cost:`<span class="t">1 week</span>`, fn:'doOnLabelAuth' }
     ])}`;
 }
-function doOffLabel(){ step({reserve:-1,weeks:1},'Off-label prescription written and sent to your insurer for prior authorisation.'); }
+function doOnLabelAuth(){
+  const ok=roll('onLabelCovered','Prior authorisation, on-label + biomarker matched');
+  if(ok){
+    S.flags.haveDrug=true;
+    step({reserve:-1,weeks:1},`Prior authorisation APPROVED. ${S.arm.drug} starts.`,'good');
+    beep(880,0.1);
+  } else {
+    step({reserve:-rnd(3,6),weeks:2},'Denied. On-label, matched, and denied anyway — reason code: other.','bad');
+    sfxBad();
+  }
+}
+function doPAP(){
+  const ok=roll('companyGrantsEA','Manufacturer patient assistance programme');
+  if(ok){ S.flags.haveDrug=true; step({reserve:-rnd(4,7),weeks:4},'Assistance programme approved. The drug is free and it took four weeks.','good'); }
+  else { step({reserve:-rnd(6,10),weeks:4},'Assistance programme declined. Four weeks for a form.','bad'); sfxBad(); }
+}
+function doOnLabelCash(){
+  payCash(COSTS.sotorasibMonth.v);
+  S.flags.haveDrug=true;
+  step({reserve:-rnd(2,4),weeks:4},`You paid ${money(COSTS.sotorasibMonth.v)} cash. One month of it.`,'money');
+}
 
-function chDenial(){
+/* ─────────── OFF-LABEL: right mutation, wrong organ ─────────── */
+function chOffLabel(){
+  const a=S.arm;
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 3 of 9 &mdash; Prior Authorisation</div>
+    <div class="land">Landmark 3${armTag()} &mdash; Prior Authorisation</div>
     <h2>NOT THE FDA.<br>THE <span class="hl">PAYER</span>.</h2>
     <div class="txt">
       <p>Your oncologist can legally write that prescription. She did. It came back denied: <i>not medically necessary for this indication &mdash; investigational.</i></p>
       <p>This is the part people get wrong about drug access. Nothing in federal law forbids you this drug. The FDA is not in this conversation at all. A utilisation-management reviewer is, and the word &ldquo;investigational&rdquo; is doing work here that has nothing to do with the agency that coined it.</p>
-      <p>Denial is not an unusual outcome. Insurers on the federal marketplace denied <b>${STAT.denialRate}</b> of in-network claims in 2024 &mdash; about 85 million of them. Patients appealed <b>${STAT.denialAppealed}</b>, and insurers upheld their own denial in <b>${STAT.denialUpheld}</b> of the appeals they did receive.</p>
-      <p>Here is the detail that should bother you most. Of all those denials, only <b>${STAT.denialMedNec}</b> were recorded as being for lack of medical necessity. The single most common reason insurers gave, at <b>${STAT.denialOther}</b>, was the category <i>&ldquo;other&rdquo;</i>. The largest category of reason for refusing to pay for American medical care is a box marked <i>other</i>.</p>
-      <p>You can appeal. It costs weeks. Or you can pay cash: this drug launched at a list price of <b>${money(COSTS.sotorasibMonth.v)} per month</b>.</p>
+      <p>But the denial is not the end, and this is the part people get wrong in the other direction. Off-label anticancer use has a statutory coverage route: if the use is supported by a recognised drug <b>compendium</b>, Medicare must treat it as a medically accepted indication, and many states impose the same duty on commercial plans. Appeals citing compendia support do get overturned.</p>
+      <p>What the appeal cannot do is give you back the weeks it takes. Insurers upheld their own denial in <b>${STAT.denialUpheld}</b> of appeals in 2024, and fewer than <b>1%</b> of patients appeal at all. Or you can stop arguing and pay: <b>${money(COSTS.sotorasibMonth.v)} per month</b>, cash.</p>
     </div>
-    <div class="cite" id="denialCite"></div>
+    <div class="cite"><b>Cited:</b> off-label prescribing is lawful &mdash; the FDA regulates how drugs are marketed, not how medicine is practised. Compendia and the statutory definition of a medically accepted indication &mdash; ${A(SRC.ssa1861)} and ${A(SRC.compendia)}. Denial and appeal figures &mdash; ${A(COST_SRC.denialRate)}. Launch list price &mdash; ${A(COST_SRC.lumakras)}.</div>
     ${menu('How do you respond to the denial?',[
-      { label:'File the appeal',
-        sub:'Costs you weeks. Most appeals of this kind fail, and yours is asking a payer to fund a use the label does not cover.',
-        cost:`<span class="t">3 weeks</span>`,
-        fn:'doAppeal' },
-      { label:'Pay one month cash and see if it does anything',
+      { label:'Appeal, citing compendia support',
+        sub:'The route that actually works when it works. It costs weeks you are counting.',
+        cost:`<span class="t">5&ndash;9 weeks</span> &middot; <span class="h">decline</span>`,
+        fn:'doOffAppeal' },
+      { label:`Pay one month cash and see if it does anything`,
         sub:'One month is not a course of treatment. It is a test you cannot really interpret.',
         cost:`<span class="m">${money(COSTS.sotorasibMonth.v)} out of pocket</span>`,
-        fn:'doCash' },
+        fn:'doOffCash' },
       { label:'Let it go and stay on chemotherapy',
         sub:'The option most people take, because it is the only one that is free.',
-        fn:'doLetGo' }
-    ])}`;
-  document.getElementById('denialCite').innerHTML=
-    `<b>Cited:</b> off-label prescribing is lawful &mdash; the FDA regulates how drugs are marketed, not how medicine is practised, and insurer coverage is an entirely separate determination. Denial, appeal and reason-code figures (2024, HealthCare.gov marketplace plans) &mdash; ${A(COST_SRC.denialRate)}. Launch list price &mdash; ${A(COST_SRC.lumakras)}.`;
-}
-function doAppeal(){
-  S.flags.appealed=true;
-  step({reserve:-rnd(9,13), weeks:3},'Appeal filed, and denied on review. Three weeks gone.','bad');
-  sfxBad();
-}
-function doCash(){
-  S.funds-=COSTS.sotorasibMonth.v; S.spentOOP+=COSTS.sotorasibMonth.v;
-  step({reserve:-rnd(2,4), weeks:4},
-    `You paid ${money(COSTS.sotorasibMonth.v)} cash for one month. Nothing about one month is interpretable.`,'money');
-}
-function doLetGo(){ step({reserve:-rnd(3,5), weeks:2},'You stay on chemotherapy. The prescription stays unfilled.'); }
-
-function chSearch(){
-  document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 4 of 9 &mdash; The Search</div>
-    <h2>THOUSANDS OF<br>TRIALS. NONE<br>OF THEM YOURS.</h2>
-    <div class="txt">
-      <p>If the approved drug is closed to you, the investigational ones might not be. You start where everyone starts: the federal trial registry, thousands of open studies, a search box, and a diagnosis that has to match on every line.</p>
-      <p>A modern registrational protocol&rsquo;s eligibility section can run to dozens of separate criteria &mdash; tumour type, mutation, prior lines of therapy, organ function, washout periods, brain metastases, performance status. Each one is a gate, and you must pass all of them on the same day.</p>
-      <p>Two studies could take someone like you. You call both.</p>
-    </div>
-    <div class="cite"><b>Cited:</b> eligibility-criteria complexity and its effect on accrual &mdash; ${A(SRC.eligStd)}.</div>
-    ${menu('Which do you screen for first?',[
-      { label:'Trial A &mdash; a targeted agent for your mutation',
-        sub:'Single-arm, so everyone who enrols gets the drug. Requires 2 or more prior lines of therapy.',
-        fn:'doScreenA' }
-    ])}`;
-}
-function doScreenA(){ step({reserve:-1,weeks:1},'Screening visit scheduled for Trial A.'); }
-
-function chTrialA(){
-  const g=ecogOf(S.reserve);
-  document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 5 of 9 &mdash; Screening, Trial A</div>
-    <h2>THE TRAP<br>WAS ALWAYS<br>GOING TO CLOSE</h2>
-    <div class="txt">
-      <p>Trial A requires <b>two or more prior lines of therapy</b>. You have ${S.lines}. You qualify on that line, and you earned it the worst way there is.</p>
-      <p>Trial A also requires <b>ECOG performance status 0 or 1</b>. The study coordinator assesses you at <b class="bad">ECOG ${g}</b>: ${ECOG[g].label.toLowerCase()}</p>
-      <p>Look at your own status readout. Those two numbers have been moving in opposite directions since week one, and they were always going to cross. Progression is what qualifies you. Progression is also what disqualifies you. There is no week in which both conditions are true.</p>
-      <p>This is not your bad luck. In the pivotal trials that lead to FDA approvals, patients at performance status 2 or worse have historically made up <b>well under 5%</b> of enrolment, while making up a large share of actual patients. The trial population and the patient population are different populations.</p>
-    </div>
-    <div class="cite"><b>Cited:</b> the scale itself &mdash; ${A(SRC.ecog)}. Under-representation of ECOG &ge;2 in registrational trials &mdash; ${A(SRC.psRestrict)} and ${A(SRC.psFriends)}.</div>
-    <div class="stamp">SCREEN FAILED<br>PERFORMANCE STATUS</div>
-    ${menu('What now?',[
-      { label:'Ask them to make an exception',
-        sub:'The person on the phone agrees with you and cannot help you. Protocol deviations of this kind are not theirs to grant.',
-        fn:'doNoException' },
-      { label:'Ask about the other study',
-        sub:'Trial B. Randomised.',
-        fn:'doNoException' }
+        fn:'doOffLetGo' }
     ])}`;
   sfxBad();
 }
-function doNoException(){ step({reserve:-rnd(3,5),weeks:1},'Trial A: screen failed on performance status, not on disease.','bad'); }
-
-function chTrialB(){
-  if(!S.flags.bDrawn){
-    document.getElementById('panel').innerHTML=`
-      <div class="land">Landmark 6 of 9 &mdash; Screening, Trial B</div>
-      <h2>A COIN&rsquo;S CHANCE<br>AT THE DRUG</h2>
-      <div class="txt">
-        <p>Trial B will take you. Your performance status is inside its window, barely, because its window is wider.</p>
-        <p>It is a randomised phase 3 study: the investigational agent plus standard of care, against standard of care alone, one to one. A computer decides which you get. Neither you nor your oncologist is allowed to influence it, and that is not a flaw &mdash; randomisation is the only reason anyone will ever know whether the drug works.</p>
-        <p>It is also the reason that enrolling is not the same as being treated. The protocol offers you a 50% chance at the drug, and a 50% chance of spending the remainder of your life as this study&rsquo;s control arm. There is no guaranteed crossover on progression.</p>
-      </div>
-      <div class="cite"><b>Cited:</b> randomisation and the absence of guaranteed crossover are standard features of confirmatory phase 3 oncology design; see the eligibility and trial-design literature in ${A(SRC.eligStd)}.</div>
-      ${menu('Do you enrol?',[
-        { label:'Enrol and accept randomisation',
-          sub:'The alternative is not enrolling.',
-          fn:'doRandomise' }
-      ])}`;
+function doOffAppeal(){
+  const wks=Math.round(rnd(5,9));
+  const ok=roll('offLabelEventual','Off-label appeal with compendia support');
+  if(ok){
+    S.flags.haveDrug=true;
+    step({reserve:-rnd(3,5)*wks/6, weeks:wks},
+      `Appeal upheld in your favour after ${wks} weeks. Coverage granted. You cannot have the ${wks} weeks back.`,'good');
+  } else {
+    step({reserve:-rnd(3,5)*wks/6, weeks:wks},
+      `Appeal exhausted after ${wks} weeks. Denial stands.`,'bad');
+    sfxBad();
   }
 }
+function doOffCash(){
+  payCash(COSTS.sotorasibMonth.v);
+  S.flags.haveDrug=true; S.flags.oneMonthOnly=true;
+  step({reserve:-rnd(2,4), weeks:4},
+    `You paid ${money(COSTS.sotorasibMonth.v)} cash for one month.`,'money');
+}
+function doOffLetGo(){ step({reserve:-rnd(3,5), weeks:2},'You stay on chemotherapy. The prescription stays unfilled.'); }
+
+/* ─────────── THE THERAPY, AND WHETHER IT WORKS ─────────── */
+function chTherapy(){
+  if(!S.flags.haveDrug){ skipChapter('The drug never came.'); return; }
+  const a=S.arm;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 4${armTag()} &mdash; On Treatment</div>
+    <h2>YOU HAVE<br>THE DRUG</h2>
+    <div class="txt">
+      <p>${a.drug} arrives in a bottle with your name printed on it. After everything, it is an unremarkable object.</p>
+      <p>Now the only question left is the one no process could answer for you: whether it works. In the trial that put this drug in front of a regulator, it worked in <b>${Math.round(PROB[a.respKey].p*100)}%</b> of patients like you.</p>
+      ${S.flags.oneMonthOnly?`<p class="bad">You bought one month. One month is not a course of treatment — it is a test you cannot really interpret, and you will be asked for another ${money(COSTS.sotorasibMonth.v)} at the end of it.</p>`:''}
+      <p>Scans in eight weeks.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> ${a.src.map(k=>A(SRC[k])).join(' &middot; ')}.</div>
+    ${menu('You may:',[{label:'Take it and wait for the scans', cost:`<span class="t">8 weeks</span>`, fn:'doTherapyRoll'}])}`;
+}
+function doTherapyRoll(){
+  const a=S.arm;
+  const good=roll(a.respKey,`${a.drug} response in ${a.short}`);
+  if(good && !S.flags.oneMonthOnly){ S.won=true; setTimeout(()=>victory('treated'),420); return; }
+  if(good && S.flags.oneMonthOnly){
+    step({reserve:+rnd(2,5),weeks:8},
+      `The scans are better. You cannot afford the next month.`,'bad');
+    sfxBad(); return;
+  }
+  step({reserve:-rnd(8,13),weeks:8},
+    `Scans at eight weeks: progression. ${a.drug} did not work. It was always ${Math.round(PROB[a.respKey].p*100)}%.`,'bad');
+  sfxBad();
+}
+
+/* ─────────── SECOND LINE ───────────
+   The landmark the first version of this game was missing. Real patients
+   get a second line of chemotherapy, and it matters here for three
+   reasons: it is where a large part of the real 11 months actually goes,
+   it is another bill, and it is the thing that finally pushes prior
+   lines of therapy to 2 — which is the number the later-line trials
+   demand, and which you can only reach by getting worse. */
+function chSecondLine(){
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark ${S.arm.route==='none'||S.arm.route==='trialOnly'?4:5}${armTag()} &mdash; Progression</div>
+    <h2>THE SCANS<br>HAVE CHANGED</h2>
+    <div class="txt">
+      <p>First-line chemotherapy has stopped working. This was always going to happen; the only question was when. Median overall survival on first-line FOLFIRINOX in metastatic disease is <b>11.1 months</b>, against 6.8 on gemcitabine alone, and progression-free survival is about half of that.</p>
+      <p>There is a second line. Nanoliposomal irinotecan with fluorouracil and folinic acid, after gemcitabine-based therapy, produced median overall survival of <b>6.1 months</b> against <b>4.2</b> for fluorouracil alone. That is the size of the win: seven weeks.</p>
+      <p>Take it and you will have <b>two prior lines of therapy</b>, which is the number nearly every later-line trial protocol asks for. You will have bought that qualification with the only currency this disease accepts.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> first-line survival &mdash; ${A(SRC.conroy)}. Second-line survival &mdash; ${A(SRC.napoli)}. Five-year survival at distant stage &mdash; ${A(SRC.seer)}.</div>
+    ${menu('You may:',[
+      { label:'Start second-line chemotherapy',
+        sub:'Another regimen, another set of side effects, and the second line on the eligibility form.',
+        cost:`<span class="t">10 weeks</span> &middot; <span class="m">ongoing charges</span>`,
+        fn:'doSecondLine' },
+      { label:'Decline further chemotherapy',
+        sub:'A real and reasonable choice, taken by many people. It keeps you feeling better for longer and closes the trial door permanently.',
+        cost:`<span class="t">10 weeks</span> &middot; <span class="h">slower decline</span>`,
+        fn:'doDeclineSecond' }
+    ])}`;
+}
+function doSecondLine(){
+  const wks=10;
+  const g=bill(COSTS.supportiveWeekly.v*wks);
+  step({reserve:-rnd(2.8,4.2)*wks, lines:1, weeks:wks},
+    `Second-line chemotherapy. Two prior lines now. Care cost ${money(g)}.`,'money');
+}
+function doDeclineSecond(){
+  const wks=10;
+  const g=bill(COSTS.supportiveWeekly.v*wks);
+  S.flags.declinedSecond=true;
+  step({reserve:-rnd(2.0,3.0)*wks, weeks:wks},
+    `You declined second-line chemotherapy. You feel better than you would have. Care cost ${money(g)}.`);
+}
+
+function chSearch(){
+  const avail=S.start.metro?PROB.trialAvailableMetro:PROB.trialAvailableNonMetro;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 5${armTag()} &mdash; The Search</div>
+    <h2>THOUSANDS OF<br>TRIALS. THE<br>QUESTION IS<br>WHERE.</h2>
+    <div class="txt">
+      <p>If the approved route is closed to you, the investigational ones might not be. You start where everyone starts: the federal registry, thousands of open studies, a search box, and a diagnosis that has to match on every line.</p>
+      <p>The first filter is not medical. You live in <b>${S.start.metro?'a metropolitan county':'a non-metropolitan county'}</b>, and that alone sets the odds that a study you could join exists within reach at <b>${Math.round(avail.p*100)}%</b>. In 2022, <b>${STAT.countiesNoTrials}</b> of US counties had no active cancer trial at all, rising to <b>86%</b> outside metropolitan areas.</p>
+      <p>A modern protocol's eligibility section runs to dozens of separate criteria. Each one is a gate, and you must pass all of them on the same day.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> trial geography &mdash; ${A(COST_SRC.ascoGeo)}. Structural barriers as the dominant reason for non-participation &mdash; ${A(SRC.ungerBarriers)}. Eligibility complexity &mdash; ${A(SRC.eligStd)}.</div>
+    ${menu('You may:',[
+      { label:'Search for a trial you could reach',
+        sub:'Registry, phone calls, and your oncologist&rsquo;s address book.',
+        cost:`<span class="t">2 weeks</span>`, fn:'doSearchRoll' }
+    ])}`;
+}
+function doSearchRoll(){
+  const key=S.start.metro?'trialAvailableMetro':'trialAvailableNonMetro';
+  const ok=roll(key,'A reachable trial exists');
+  S.flags.trialFound=ok;
+  if(ok) step({reserve:-rnd(1,3),weeks:2},'A study within reach. Screening visit scheduled.','good');
+  else { step({reserve:-rnd(2,4),weeks:2},'Nothing within reach. The nearest study is a different life away.','bad'); sfxBad(); }
+}
+
+function chTrialA(){
+  if(!S.flags.trialFound){ skipChapter('There was no study to screen for.'); return; }
+  const g=ecogOf(S.reserve);
+  const psFails = g>=2;
+  const linesFail = S.lines<2;   /* the other half of the trap, now binding */
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 6${armTag()} &mdash; Screening</div>
+    <h2>${psFails?'THE TRAP<br>WAS ALWAYS<br>GOING TO CLOSE':'SCREENING'}</h2>
+    <div class="txt">
+      <p>The study requires <b>two or more prior lines of therapy</b>. You have ${S.lines}. ${linesFail?'<b class="bad">You do not qualify.</b> The only way to qualify is to fail another regimen first &mdash; to be sicker, in the correct order, on paper.':'You qualify on that line, and you earned it the worst way there is.'}</p>
+      <p>It also requires <b>ECOG performance status 0 or 1</b>. The coordinator assesses you at <b class="${psFails?'bad':''}">ECOG ${g}</b>: ${ECOG[g].label.toLowerCase()}</p>
+      ${(psFails||linesFail)
+        ? `<p>Look at your own status readout. Those two numbers have been moving in opposite directions since week one, and they were always going to cross. Progression is what qualifies you. Progression is also what disqualifies you.</p>
+           <p>This is not your bad luck. In the pivotal trials that produce FDA approvals, patients at performance status 2 or worse have historically been <b>well under 5%</b> of enrolment while making up a large share of actual patients.</p>`
+        : `<p>You are inside the window. That is not the same as being enrolled: across oncology, roughly <b>${Math.round(PROB.screenFail.p*100)}%</b> of patients who reach screening fail it, most often on an inclusion criterion nobody thought to check first.</p>`}
+    </div>
+    <div class="cite"><b>Cited:</b> the scale itself &mdash; ${A(SRC.ecog)}. Under-representation of ECOG &ge;2 &mdash; ${A(SRC.psRestrict)} and ${A(SRC.psFriends)}. Screen-failure rates &mdash; ${A(SRC.screenFail)}.</div>
+    ${psFails?`<div class="stamp">SCREEN FAILED<br>PERFORMANCE STATUS</div>`
+      :linesFail?`<div class="stamp">NOT ELIGIBLE<br>PRIOR LINES</div>`:''}
+    ${menu('You may:',[
+      (psFails||linesFail)
+        ? { label:'Ask them to make an exception',
+            sub:'The person on the phone agrees with you and cannot help you. Protocol deviations of this kind are not theirs to grant.',
+            fn:'doScreenFailPS' }
+        : { label:'Attend the screening visit',
+            sub:'Bloods, scans, a washout calculation, and a criterion you have not read yet.',
+            cost:`<span class="t">2 weeks</span>`, fn:'doScreenRoll' }
+    ])}`;
+  if(psFails||linesFail) sfxBad();
+}
+function doScreenFailPS(){
+  S.flags.screenFailed=true;
+  const why = ecogOf(S.reserve)>=2 ? 'performance status' : 'prior lines of therapy';
+  step({reserve:-rnd(3,5),weeks:1},`Screen failed on ${why}, not on disease.`,'bad');
+}
+function doScreenRoll(){
+  const failed=roll('screenFail','Screen failure at the screening visit');
+  S.flags.screenFailed=failed;
+  if(failed){ step({reserve:-rnd(3,6),weeks:2},'Screen failed. An inclusion criterion, on paper, on the day.','bad'); sfxBad(); }
+  else step({reserve:-rnd(1,3),weeks:2},'Screening passed. You are eligible.','good');
+}
+
+function chTrialB(){
+  if(!S.flags.trialFound||S.flags.screenFailed){ skipChapter('No study to enrol in.'); return; }
+  if(S.flags.bDrawn) return;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Landmark 7${armTag()} &mdash; Randomisation</div>
+    <h2>A COIN&rsquo;S CHANCE<br>AT THE DRUG</h2>
+    <div class="txt">
+      <p>The study will take you. It is a randomised phase 3: the investigational agent plus standard of care, against standard of care alone, one to one. A computer decides which you get. Neither you nor your oncologist is allowed to influence it, and that is not a flaw &mdash; randomisation is the only reason anyone will ever know whether the drug works.</p>
+      <p>It is also the reason that enrolling is not the same as being treated. The protocol offers you a <b>${Math.round(PROB.randomisedToDrug.p*100)}%</b> chance at the drug, and the same chance of spending the remainder of your life as this study&rsquo;s control arm. There is no guaranteed crossover on progression.</p>
+    </div>
+    <div class="cite"><b>Cited:</b> randomisation and the absence of guaranteed crossover are standard features of confirmatory phase 3 oncology design &mdash; ${A(SRC.eligStd)}. Allocation ratios vary: POLO randomised 3:2 in the drug&rsquo;s favour &mdash; ${A(SRC.polo)}.</div>
+    ${menu('Do you enrol?',[
+      { label:'Enrol and accept randomisation', sub:'The alternative is not enrolling.', fn:'doRandomise' }
+    ])}`;
+}
+
 function doRandomise(){
   if(S.dead||S.flags.bDrawn) return;
   S.flags.bDrawn=true;
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 6 of 9 &mdash; Randomisation</div>
+    <div class="land">Landmark 7${armTag()} &mdash; Randomisation</div>
     <h2>ASSIGNING&hellip;</h2>
     <div class="txt"><p>The randomisation module is deciding. <span class="cursor"></span></p></div>`;
   let n=0;
   const iv=setInterval(()=>{ beep(n%2?440:660,0.04); n++; if(n>7) clearInterval(iv); },130);
   setTimeout(()=>{
-    const drug=Math.random()<0.5;
+    const drug=roll('randomisedToDrug','Randomisation: assigned to the investigational arm');
     S.flags.onDrug=drug;
     document.getElementById('panel').innerHTML=`
-      <div class="land">Landmark 6 of 9 &mdash; Randomisation</div>
+      <div class="land">Landmark 7${armTag()} &mdash; Randomisation</div>
       <h2>${drug?'INVESTIGATIONAL<br>ARM':'CONTROL<br>ARM'}</h2>
       <div class="stamp ${drug?'ok':''}">${drug?'YOU GET THE DRUG':'YOU GET STANDARD OF CARE'}</div>
       <div class="txt">
@@ -971,9 +1554,10 @@ function doPostRandom(){
 }
 
 function chResearchBill(){
+  if(!S.flags.bDrawn){ skipChapter('No protocol, and so no protocol bill.'); return; }
   const extra=COSTS.researchProcedures.v;
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 7 of 9 &mdash; The Research Bill</div>
+    <div class="land">Landmark 8${armTag()} &mdash; The Research Bill</div>
     <h2>BEING IN<br>THE TRIAL IS<br>ITSELF A BILL</h2>
     <div class="txt">
       <p>The protocol requires restaging CT scans of your abdomen and pelvis on a fixed schedule &mdash; more often than your own oncologist would order them, because the study needs the data points, not because you need the pictures.</p>
@@ -1013,8 +1597,9 @@ function doCrowdfund(){
 
 /* River crossing homage: the IRB queue */
 function chIRB(){
+  if(!S.flags.bDrawn){ skipChapter('No study to be held up.'); return; }
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 8 of 9 &mdash; The Institutional Crossing</div>
+    <div class="land">Landmark 9${armTag()} &mdash; The Institutional Crossing</div>
     <h2>THE QUEUE IS<br>ELEVEN WEEKS<br>DEEP</h2>
     <div class="txt">
       <p>A safety signal at another site puts the whole study on <b>clinical hold</b>. Dosing stops. Enrolment stops. Federal rules give the FDA up to <b>30 days</b> simply to act on an IND submission, and a hold runs until the agency is satisfied. Your site&rsquo;s ethics board &mdash; the IRB that must approve every protocol amendment &mdash; meets on its own calendar, and the amendment that lifts the hold has to go through it.</p>
@@ -1053,49 +1638,99 @@ function irbFerry(){
 }
 function irbHope(){ step({reserve:-rnd(16,21),weeks:5},'Five weeks. Conditions did not know you were waiting on them.','bad'); sfxBad(); }
 
-/* Three doors — investigational access */
-const DOORS=[
-  { h:'DOOR 1 — ASK THE COMPANY (EXPANDED ACCESS)',
-    r:`<span class="no">DENIED.</span> Federal rules provide for exactly this: expanded access, 21 CFR 312 Subpart I. The FDA is not the obstacle here and the numbers say so &mdash; the agency authorises the overwhelming majority of the individual expanded-access requests it receives, often within days, and for emergencies within hours. But FDA authorising a <i>use</i> is not the company agreeing to <i>supply</i>. That decision belongs to the sponsor alone and nothing compels it. Their reasons are real ones: drug supply committed to the pivotal trial, liability, and a genuine fear that a death outside a controlled setting complicates the filing they are about to make. Rational, from a boardroom. Fatal, from here.` },
-  { h:'DOOR 2 — FILE A SINGLE-PATIENT IND',
-    r:`<span class="yes">APPROVED IN DAYS.</span> Your physician files, the FDA says yes, and you now hold federal authorisation to receive a drug that no one is obliged to send you. This door opens onto the first door. The loop closes on itself.` },
-  { h:'DOOR 3 — INVOKE THE FEDERAL RIGHT TO TRY ACT (2018)',
-    r:`<span class="no">SAME DOOR. DIFFERENT SIGN.</span> Right to Try lets you bypass the FDA and your IRB for this request entirely. It does not require the manufacturer to say yes, and it was never drafted to. Congress removed two gatekeepers and left the only one that was actually holding the door shut exactly where it was.` }
-];
+/* ─────────── THREE DOORS — investigational access ───────────
+   The single most important mechanic in the game, and the one place a
+   scripted outcome would have been a lie. Federal law offers three
+   routes to an investigational drug. Two of them (single-patient IND,
+   Right to Try) do not touch the manufacturer's veto at all — they only
+   remove gatekeepers that were not the obstacle.
+
+   So the sponsor's decision is rolled ONCE, at the first knock, and the
+   other two doors reveal that they route to a decision already made.
+   Knocking three times does not give you three chances, because in
+   reality it does not. When the roll comes up yes — and it does, 39% of
+   the time — all three doors are open, and the game is winnable.       */
+function doorResults(granted){
+  return [
+    { h:'DOOR 1 — ASK THE COMPANY (EXPANDED ACCESS)',
+      r: granted
+        ? `<span class="yes">SUPPLY AGREED.</span> The sponsor says yes. Federal rules provided for exactly this &mdash; expanded access, 21 CFR 312 Subpart I &mdash; and the FDA was never the obstacle: it authorises the overwhelming majority of individual requests, often within days. But the decision that mattered was the company's, and this time the company made it your way. Nothing compelled them. That is worth sitting with: the thing that saved you was a discretionary decision by people you will never meet.`
+        : `<span class="no">DENIED.</span> Federal rules provide for exactly this: expanded access, 21 CFR 312 Subpart I. The FDA is not the obstacle here and the numbers say so &mdash; of 8,922 expanded-access applications over a decade, 38 were refused. But FDA authorising a <i>use</i> is not the company agreeing to <i>supply</i>. That decision belongs to the sponsor alone and nothing compels it. Their reasons are real: supply committed to the pivotal trial, liability, and a genuine fear that a death outside a controlled setting complicates the filing they are about to make. Rational, from a boardroom. Fatal, from here.` },
+    { h:'DOOR 2 — FILE A SINGLE-PATIENT IND',
+      r: granted
+        ? `<span class="yes">APPROVED IN DAYS &mdash; AND IT WAS NEVER THE QUESTION.</span> The FDA says yes, as it does to almost everyone who asks. Note what this door did and did not do: it granted permission to receive a drug. It did not produce one. You are being treated because of Door 1, not this one. Had the sponsor said no, this approval would have been a letter authorising you to receive nothing.`
+        : `<span class="yes">APPROVED IN DAYS.</span> Your physician files, the FDA says yes, and you now hold federal authorisation to receive a drug that no one is obliged to send you. This door opens onto the first door. The loop closes on itself.` },
+    { h:'DOOR 3 — INVOKE THE FEDERAL RIGHT TO TRY ACT (2018)',
+      r: granted
+        ? `<span class="no">UNNECESSARY. AND IT WOULD NOT HAVE HELPED.</span> Right to Try removes the FDA and the IRB from this request. Neither was refusing. You already have the drug, and you have it because a company chose to send it &mdash; the one decision the Act leaves exactly where it found it.`
+        : `<span class="no">SAME DOOR. DIFFERENT SIGN.</span> Right to Try lets you bypass the FDA and your IRB for this request entirely. It does not require the manufacturer to say yes, and it was never drafted to. Congress removed two gatekeepers and left the only one that was actually holding the door shut exactly where it was.` }
+  ];
+}
 function chDoors(){
   if(S.flags.doors===undefined) S.flags.doors=0;
+  /* the sponsor decides once, before any door is knocked on */
+  if(S.flags.eaGranted===undefined) S.flags.eaGranted=null;
   const n=S.flags.doors;
+  const granted=!!S.flags.eaGranted;
+  const D=doorResults(granted);
   document.getElementById('panel').innerHTML=`
-    <div class="land">Landmark 9 of 9 &mdash; Three Doors</div>
+    <div class="land">Landmark 10${armTag()} &mdash; Three Doors</div>
     <h2>THE PATHWAYS<br>THAT EXIST<br>FOR THIS</h2>
     <div class="txt">
-      <p>Trial B will not give you the drug in time, or at all. But there is another agent &mdash; genuinely investigational this time, approved for nothing, sitting inside a company that is running its own study. Your oncologist tries every lawful route to it. There are exactly three.</p>
+      <p>There is another agent &mdash; genuinely investigational this time, approved for nothing, sitting inside a company that is running its own study. Your oncologist tries every lawful route to it. There are exactly three.</p>
+      <p style="color:var(--dim)">The FDA grants <b>${(PROB.fdaGrantsEA.p*100).toFixed(1)}%</b> of the requests it receives. The manufacturer grants <b>${Math.round(PROB.companyGrantsEA.p*100)}%</b> of the ones it receives. Only one of those numbers is load-bearing.</p>
     </div>
     <div class="doors">
-      ${DOORS.map((d,i)=>`
+      ${D.map((d,i)=>`
         <div class="door">
           <div class="door-h">${d.h}</div>
           ${i<n?`<div class="door-r">${d.r}</div>`
                 :`<button class="nav-btn" ${i===n?`onclick="openDoor(${i})"`:'disabled style="opacity:.35"'}>knock</button>`}
         </div>`).join('')}
     </div>
-    <div class="cite"><b>Cited:</b> ${A(SRC.subpartI)}; ${A(SRC.eaGuide)}; ${A(SRC.singleIND)}; ${A(SRC.rtt)}; and the Congressional Research Service&rsquo;s side-by-side of the two pathways, ${A(SRC.rttCRS)}.</div>
+    <div class="cite"><b>Cited:</b> ${A(SRC.subpartI)}; ${A(SRC.eaGuide)}; ${A(SRC.singleIND)}; ${A(SRC.rtt)}; ${A(SRC.rttCRS)}. FDA authorisation rates &mdash; ${A(SRC.eaData)} and ${A(SRC.eaAvail)}. Manufacturer refusal rates &mdash; ${A(SRC.compAC)}.</div>
     ${n>=3?`
-      <div class="txt"><p><b>Three federal pathways. Not one of them requires the company on the other end of the phone to say yes.</b> You have knocked on a single locked door three times and been told no in three different registers of politeness.</p></div>
+      <div class="txt"><p>${granted
+        ? `<b>Three federal pathways, and only one of them was ever the question.</b> Two removed gatekeepers who were not refusing. The third asked the only party that could refuse, and it happened to say yes. Nothing in law made that happen.`
+        : `<b>Three federal pathways. Not one of them requires the company on the other end of the phone to say yes.</b> You have knocked on a single locked door three times and been told no in three different registers of politeness.`}</p></div>
       ${menu('',[{label:'Continue', fn:'doAfterDoors'}])}`:''}`;
 }
 function openDoor(i){
   if(S.dead||i!==S.flags.doors) return;
-  S.flags.doors=i+1; sfxBad(); chDoors();
+  /* first knock is the sponsor's decision; the other two report it back */
+  if(i===0 && S.flags.eaGranted===null){
+    S.flags.eaGranted=roll('companyGrantsEA','Manufacturer agrees to supply under expanded access');
+    if(S.flags.eaGranted) roll('fdaGrantsEA','FDA authorises the expanded-access IND');
+  }
+  S.flags.doors=i+1;
+  if(S.flags.eaGranted && i===0) beep(880,0.09); else sfxBad();
+  chDoors();
 }
-function doAfterDoors(){ step({reserve:-rnd(3,5),weeks:2},'Three doors. Three variations on no.','bad'); }
+function doAfterDoors(){
+  if(!S.flags.eaGranted){
+    step({reserve:-rnd(3,5),weeks:2},'Three doors. Three variations on no.','bad');
+    return;
+  }
+  S.flags.haveDrug=true;
+  /* a drug is not the same as the right drug: an agent obtained without a
+     biomarker rationale is drawn against the registry's null result */
+  const key = S.arm.route==='none' ? 'unmatchedBenefit' : 'investigationalBenefit';
+  const good=roll(key, S.arm.route==='none'
+    ? 'Unmatched investigational agent produces disease control'
+    : 'Matched investigational agent produces disease control');
+  if(good){ S.won=true; setTimeout(()=>victory('expandedAccess'),420); return; }
+  step({reserve:-rnd(7,11),weeks:8},
+    'You received the drug. It did not work. That is what investigational means.','bad');
+  sfxBad();
+}
 
 function chCountdown(){
   document.getElementById('panel').innerHTML=`
     <div class="land">Epilogue &mdash; The Countdown</div>
     <h2>THERE IS NO<br>FOURTH DOOR</h2>
     <div class="txt">
-      <p>Accelerated approval is the mechanism meant to fix this: let a drug onto the market on a promising early signal, and confirm the real benefit afterwards. Sometimes the confirmation arrives and is good. Here is what it looks like when it does not, and neither of these is hypothetical.</p>
+      <p>Accelerated approval is the mechanism meant to fix this: let a drug onto the market on a promising early signal, and confirm the real benefit afterwards. It mostly works &mdash; of the cancer indications whose post-approval assessment has finished, <b>${Math.round((1-PROB.aaWithdrawn.p)*100)}%</b> converted to full approval and <b>${Math.round(PROB.aaWithdrawn.p*100)}%</b> were withdrawn. But look at the other measurement: among approvals with more than five years of follow-up, only <b>${Math.round(PROB.aaConfirmedBenefit.p*100)}%</b> had confirmatory trials that actually demonstrated clinical benefit.</p>
+      <p>Here is what it looks like when the confirmation does not arrive, and neither of these is hypothetical.</p>
     </div>
     <div class="cite">
       <b>Bevacizumab (Avastin), metastatic breast cancer.</b><br>
@@ -1120,30 +1755,133 @@ function chCountdown(){
 function doEnd(){ step({reserve:-999,weeks:1},'There was nothing left to try.','bad'); }
 
 /* ─────────── CHAPTER LIST ─────────── */
+/* The route through the game is set by the molecular draw, not by the
+   author. An on-label arm gets a prior-authorisation chapter that can
+   actually succeed; the wrong-organ arm gets the appeal ladder; the
+   arms with nothing on-label go straight to the trial gauntlet. All of
+   them converge on the three doors, because the three doors are the
+   only route left when everything else has been tried. */
 function buildChapters(){
   const T=(label,head,body)=>({kind:'travel',label,head,body});
-  return [
-    {kind:'mark',go:chDiagnosis},
+  const M=go=>({kind:'mark',go});
+  const route=S.arm.route;
+
+  const opening=[
+    M(chDiagnosis),
     T('first-line chemotherapy','THE INFUSION CHAIR','Every other Tuesday, four hours, then two days of feeling like weather. The chair by the window is the good one. You learn the names of the nurses before you learn the name of your regimen.'),
-    {kind:'mark',go:chMutation},
-    {kind:'mark',go:chDenial},
-    T('waiting on the appeal','THE HOLD MUSIC','You have the prior-authorisation department&rsquo;s hours memorised. A representative explains, kindly and correctly, that she cannot see the clinical file she is asking you about.'),
-    {kind:'mark',go:chSearch},
-    T('screening logistics','FORMS, AND MORE FORMS','Records requests, a repeat scan because the outside images are the wrong slice thickness, a signature from a doctor who is on holiday. None of it is anybody&rsquo;s fault. All of it is time.'),
-    {kind:'mark',go:chTrialA},
-    T('looking for the next one','THE SECOND SEARCH','You get better at reading protocols than anyone should have to. You start recognising the exclusion criteria that are really about liability, and the ones that are really about you.'),
-    {kind:'mark',go:chTrialB},
-    {kind:'mark',go:chResearchBill},
-    T('on study','CYCLE THREE','Scans, draws, a symptom diary you fill in honestly and then wonder if you should have. Somebody in the waiting room asks if you are on the drug or the other thing. Neither of you knows.'),
-    {kind:'mark',go:chIRB},
-    {kind:'mark',go:chDoors},
-    T('after the doors','THE QUIET WEEK',`${S.companion} stops asking what the plan is. You start sleeping in the front room, because the stairs have become a decision.`),
-    {kind:'mark',go:chCountdown}
+    M(chReport)
   ];
+
+  /* the access attempt that matches what the report actually said */
+  const access =
+    route==='onLabel'    ? [ M(chOnLabelAuth),
+        T('waiting on the authorisation','THE HOLD MUSIC','You have the prior-authorisation department&rsquo;s hours memorised. A representative explains, kindly and correctly, that she cannot see the clinical file she is asking you about.'),
+        M(chTherapy) ]
+  : route==='wrongOrgan' ? [ M(chOffLabel),
+        T('waiting on the appeal','THE HOLD MUSIC','You learn the words that make a reviewer read further, and the words that make a file close. Neither of you chose this vocabulary.'),
+        M(chTherapy) ]
+  : [];
+
+  const trial=[
+    M(chSecondLine),
+    T('second line','THE OTHER REGIMEN','A different chair, a different drip rate, the same window. You have stopped asking what the numbers mean and started asking how long the appointment will take.'),
+    M(chSearch),
+    T('screening logistics','FORMS, AND MORE FORMS','Records requests, a repeat scan because the outside images are the wrong slice thickness, a signature from a doctor who is on holiday. None of it is anybody&rsquo;s fault. All of it is time.'),
+    M(chTrialA),
+    T('looking for the next one','THE SECOND SEARCH','You get better at reading protocols than anyone should have to. You start recognising the exclusion criteria that are really about liability, and the ones that are really about you.'),
+    M(chTrialB),
+    M(chResearchBill),
+    T('on study','CYCLE THREE','Scans, draws, a symptom diary you fill in honestly and then wonder if you should have. Somebody in the waiting room asks if you are on the drug or the other thing. Neither of you knows.'),
+    M(chIRB)
+  ];
+
+  const ending=[
+    M(chDoors),
+    T('after the doors','THE QUIET WEEK',`${S.companion||'Somebody'} stops asking what the plan is. You start sleeping in the front room, because the stairs have become a decision.`),
+    M(chCountdown)
+  ];
+
+  return [...opening, ...access, ...trial, ...ending];
+}
+
+/* ══════════════════ THE RUN LEDGER ══════════════════
+   The original game's meta-layer was a high-score board. This is the
+   inversion of one: it does not rank you, it counts you. Across every
+   trail you have walked on this device, how many ended in treatment?
+   That ratio is the only score this game keeps, and it is not a measure
+   of skill — it is a measure of how often the draw comes good. */
+function loadLedger(){
+  try{ return JSON.parse(localStorage.getItem('fda_ledger')||'null')||{runs:0,wins:0,arms:{}}; }
+  catch(e){ return {runs:0,wins:0,arms:{}}; }
+}
+function recordRun(won){
+  if(S.flags.recorded) return;
+  S.flags.recorded=true;
+  try{
+    const L=loadLedger();
+    L.runs++; if(won) L.wins++;
+    L.arms[S.arm.key]=(L.arms[S.arm.key]||0)+1;
+    localStorage.setItem('fda_ledger',JSON.stringify(L));
+    S.ledger=L;
+  }catch(e){ S.ledger={runs:1,wins:won?1:0,arms:{}}; }
+}
+function ledgerLine(){
+  const L=S.ledger||loadLedger();
+  if(!L||L.runs<2) return '';
+  const pct=(L.wins/L.runs*100).toFixed(0);
+  return `<p style="color:var(--dim)">You have walked this trail <b>${L.runs}</b> times.
+    <b>${L.wins}</b> ${L.wins===1?'run has':'runs have'} ended in treatment &mdash; ${pct}%.
+    The published figure, among patients who had an actionable alteration, is 24%.</p>`;
+}
+
+/* what actually killed this run, which depends entirely on the draw */
+function deathCause(){
+  const a=S.arm;
+  if(S.flags.haveDrug){
+    return `You received <b>${a.drug||'the investigational agent'}</b>. It did not work. That is a different sentence from the one most players of this game get, and it is the sentence the whole apparatus exists to make possible: a drug that reached a patient in time to fail honestly.`;
+  }
+  if(a.route==='onLabel'){
+    return `Your tumour carried <b>${a.name}</b>, and there is a drug approved for exactly that &mdash; approved for <i>your</i> disease, not somebody else's. You died on the correct side of every regulation and never took a dose. The delay was not the FDA and it was not the science.`;
+  }
+  if(a.route==='wrongOrgan'){
+    return `You never received the drug that targeted your mutation. It was on the market the entire time, approved for a different organ.`;
+  }
+  if(a.route==='trialOnly'){
+    return `Your tumour carried <b>${a.name}</b> &mdash; actionable, which turned out to mean that somebody, somewhere, was studying something for it. ${S.flags.eaGranted===false?'The company that had it decided not to send it.':'You never got close enough to be refused.'}`;
+  }
+  return `The sequencing found nothing to aim at. That is the most common result there is, and it is worth being clear that it is not a failure of the test &mdash; it is the current edge of what anyone knows how to target.`;
+}
+
+/* ══════════════════ VICTORY ══════════════════
+   Rare, real, and deliberately not triumphant. You did not earn this by
+   playing well; there is no play that produces it. You were dealt an
+   alteration with a label attached, or a sponsor said yes. */
+function victory(mode){
+  S.dead=true; S.won=true; sceneMoving=false;
+  recordRun(true);
+  document.getElementById('scene').classList.add('hide');
+  document.getElementById('hud').classList.remove('show');
+  beep(660,0.12); setTimeout(()=>beep(880,0.18),130);
+  const a=S.arm;
+  document.getElementById('panel').innerHTML=`
+    <div class="land">Week ${S.week} &mdash; ${mode==='expandedAccess'?'expanded access granted':'on matched therapy'}</div>
+    <h2 style="color:var(--green)">THE DRUG<br>REACHED YOU<br>IN TIME</h2>
+    <div class="stamp ok">DISEASE CONTROL &mdash; SCANS STABLE</div>
+    <div class="txt">
+      <p>The eight-week scans are better. Not gone &mdash; <b>better</b>. Your oncologist uses the word <i>response</i> and then, carefully, does not use the word <i>cure</i>, because this is metastatic pancreatic cancer and that word is not available.</p>
+      <p>${mode==='expandedAccess'
+        ? `You got here because a company said yes. Not because a law required it, not because the FDA authorised it &mdash; it did, in days, as it does for nearly everyone who asks &mdash; but because a committee inside a private firm made a discretionary decision in your favour. The identical request, filed by the identical physician for an identical patient, is refused about ${Math.round((1-PROB.companyGrantsEA.p)*100)}% of the time.`
+        : `You got here because of a line in a laboratory report. <b>${a.name}</b>, present in roughly <b>${a.pct}%</b> of pancreatic cancers, and attached to it a drug that was already approved for your disease. ${a.approved}`}</p>
+      <p>Out of pocket to get here: <b>${money(S.spentOOP)}</b>. Weeks elapsed: <b>${S.week}</b>. ${S.companion} drove.</p>
+      ${ledgerLine()}
+    </div>
+    ${menu('You may:',[{label:'Continue', fn:'victoryCard'}])}`;
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 /* ══════════════════ DEATH ══════════════════ */
 function death(){
+  recordRun(false);
   S.dead=true; sceneMoving=false;
   document.getElementById('scene').classList.add('hide');
   document.getElementById('hud').classList.remove('show');
@@ -1161,8 +1899,9 @@ function death(){
       <h2 style="color:var(--red)">YOU HAVE DIED OF<br>A SCREENING<br>CRITERION</h2>
       <div class="txt">
         <p>Week ${wk}. Performance status ECOG 5 &mdash; which is, in the real scale this game has been using all along, simply the grade that means <i>dead</i>. ${S.companion} was there.</p>
-        <p>You never received the drug that targeted your mutation. It was on the market the entire time.</p>
-        <p>You did not lose because you chose badly. No sequence of choices in this game reaches the drug, because the barriers modelled here are not obstacles to be optimised past &mdash; they are the structure. Out of pocket, in total: <b>${money(S.spentOOP)}</b>.</p>
+        <p>${deathCause()}</p>
+        <p>You did not lose because you chose badly. You lost the draw, and then the draw was administered to you by a series of institutions, each behaving reasonably. Out of pocket, in total: <b>${money(S.spentOOP)}</b>.</p>
+        ${ledgerLine()}
       </div>
       <div class="txt" style="margin-top:0.9rem;">
         <p style="color:var(--dim)">Would you like to write an epitaph?</p>
@@ -1208,7 +1947,46 @@ function endCard(){
     <div class="rule"></div>
     <p class="small">This game invented a patient. It did not invent the structure that killed her, and it did not need to. Every regulation, criterion, dollar figure and date in it is sourced.</p>
     <div class="end-actions">
-      <button class="ebtn solid" onclick="newGame()">Walk the trail again</button>
+      <button class="ebtn solid" onclick="newGame()">Deal a new hand</button>
+      <button class="ebtn" onclick="openRolls()">See this run&rsquo;s rolls</button>
+      <button class="ebtn" onclick="openSources()">Read every source</button>
+      <button class="ebtn" onclick="openLineage()">The reskin lineage</button>
+      <a class="ebtn" href="index.html">Aileron Games</a>
+    </div>
+  </div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ══════════════════ VICTORY CARD (also deliberately not 8-bit) ══════════════════ */
+function victoryCard(){
+  saveGrave();
+  sceneMoving=false;
+  document.getElementById('scene').classList.add('hide');
+  document.getElementById('hud').classList.remove('show');
+  document.getElementById('screen').classList.add('clean');
+  document.getElementById('log').classList.remove('show');
+  keyMap={};
+  const L=S.ledger||loadLedger();
+  document.getElementById('panel').outerHTML=`<div id="panel" class="endcard">
+    <div class="kicker">The game stops here. This part is not fiction.</div>
+    <h2>You are the 24%</h2>
+    <div class="dates">Know Your Tumor registry &middot; 1,856 patients referred &middot; 46 treated on a matched therapy</div>
+
+    <p>Between 2014 and 2019, 1,856 patients with pancreatic cancer were referred to a programme that would sequence their tumours and tell them what was in them. <b>1,082 got a report at all.</b> Of those, <b>282 &mdash; 26% &mdash; had an alteration something could be aimed at.</b></p>
+    <p>Of the 189 of those patients whose outcomes were recorded, <b>46 actually received a therapy matched to their alteration.</b> Twenty-four percent. The other 143 had the same reports, the same alterations, and the same disease, and did not get the drug.</p>
+    <p>Those 46 lived a median of <b>2.58 years</b> from diagnosis of advanced disease. The ones with actionable alterations who did not receive matched therapy lived <b>1.51 years</b>. The ones with nothing actionable lived 1.32. Between the first number and the second there is no difference in biology, in diligence, or in how much anybody wanted to live. There is a difference in what happened after the report came back.</p>
+    <p>You are on the good side of that number. Nothing you typed on this screen put you there.</p>
+
+    <div class="rule"></div>
+
+    <p>It is worth knowing how narrow the door is. The POLO trial established that maintenance olaparib helps patients with germline BRCA-mutated pancreatic cancer &mdash; the draw that wins this game most often. To randomise <b>154 patients</b>, it screened <b>3,315</b>. And its headline result was progression-free survival: 7.4 months against 3.8. At interim analysis there was <b>no overall survival difference at all</b>. The best-established targeted victory in this disease bought time, not years, and the trial said so plainly.</p>
+    <p>Every barrier you did not hit this run is still standing. The manufacturer that supplied you refuses about <b>${Math.round((1-PROB.companyGrantsEA.p)*100)}%</b> of the requests it receives. The counties with no trial still have no trial. The patient in the next chair, whose report came back with nothing actionable in it &mdash; which is the most likely result &mdash; had no version of this ending available.</p>
+
+    <div class="rule"></div>
+    <p class="small">This game invented a patient. It did not invent the structure, the probabilities, or the survival difference, and it did not need to. Every regulation, criterion, dollar figure, probability and date in it is sourced${L&&L.runs>1?`. Across ${L.runs} runs on this device, ${L.wins} ended here.`:'.'}</p>
+    <div class="end-actions">
+      <button class="ebtn solid" onclick="newGame()">Deal a new hand</button>
+      <button class="ebtn" onclick="openRolls()">See this run&rsquo;s rolls</button>
       <button class="ebtn" onclick="openSources()">Read every source</button>
       <button class="ebtn" onclick="openLineage()">The reskin lineage</button>
       <a class="ebtn" href="index.html">Aileron Games</a>
@@ -1243,8 +2021,14 @@ const TRAPS = [
    'FDA has up to 30 days to act on an IND submission and can hold a study indefinitely; IRBs meet on their own calendar. None of it accelerates because one patient is running out of time.',
    [SRC.hold, SRC.irbTiming]],
   ['Accelerated approval, then withdrawal, about three years too late',
-   'Avastin for metastatic breast cancer: approved Feb 2008, withdrawn Nov 2011. Pepaxto for multiple myeloma: approved Feb 2021, withdrawn 2023–24 after the confirmatory trial trended toward more deaths.',
-   [SRC.avastin, SRC.avastinNEJM, SRC.pepaxtoAA, SRC.pepaxto]]
+   'Avastin for metastatic breast cancer: approved Feb 2008, withdrawn Nov 2011. Pepaxto for multiple myeloma: approved Feb 2021, withdrawn 2023–24 after the confirmatory trial trended toward more deaths. Most accelerated approvals do convert — 77.5% of those with a completed assessment — but among approvals with over five years of follow-up, only 43% had confirmatory trials that actually demonstrated benefit.',
+   [SRC.avastin, SRC.avastinNEJM, SRC.pepaxtoAA, SRC.pepaxto, SRC.aaOutcome, SRC.aaBenefit]],
+  ['Sequencing is the whole game, and three quarters of the time it finds nothing',
+   'About 26% of pancreatic tumours carry an actionable alteration; roughly 6.3% carry one with a drug already approved for this disease. Of the patients who did have an actionable alteration and had outcomes recorded, only 24% actually received a matched therapy — and those who did lived a median of 2.58 years against 1.51. The single largest determinant of the outcome is a laboratory result nobody chooses.',
+   [SRC.kyt2020, SRC.kyt2018]],
+  ['Qualifying for a trial requires failing another treatment first',
+   'Later-line protocols ask for two or more prior lines of therapy. You cannot have two prior lines without having progressed twice, and progressing twice is what pushes performance status past the ECOG 0–1 the same protocol demands. The second-line landmark in this game is the one that makes you eligible by making you ineligible.',
+   [SRC.napoli, SRC.conroy, SRC.psRestrict]]
 ];
 
 function SOURCES_HTML(){
@@ -1273,6 +2057,37 @@ function SOURCES_HTML(){
   });
   h+='</ul>';
 
+  h+=`<h3>Every probability the game rolls against</h3>
+    <p>The game decides nothing by authorial fiat. Each fork below is a draw against one of these numbers, and the Roll Sheet at the end of a run shows exactly which way each one fell. As with the money, figures marked <b>scenario assumption</b> are choices rather than published statistics, and are labelled instead of laundered.</p><ul>`;
+  Object.keys(PROB).forEach(k=>{
+    const q=PROB[k], s=SRC[q.s]||COST_SRC[q.s];
+    h+=`<li style="margin-bottom:0.7rem;"><b class="num">${(q.p*100).toFixed(q.p<0.05||q.p>0.99?1:0)}%</b> &mdash; ${q.note}
+        ${q.assumption?'<b> [scenario assumption]</b>':''}<br>
+        <span style="opacity:.8">${s?A(s):''}</span></li>`;
+  });
+  h+='</ul>';
+
+  h+=`<h3>The opening draw: what the tumour turned out to be</h3>
+    <p>The single most important number in any run is one the player has no contact with. Prevalences are of pancreatic ductal adenocarcinoma and sum to 100%.</p><ul>`;
+  ARMS.forEach(a=>{
+    h+=`<li style="margin-bottom:0.6rem;"><b class="num">${a.pct}%</b> &mdash; <b>${a.name}</b>
+      ${a.route==='onLabel'?' <b style="color:var(--green)">[an approved drug exists for this, in this disease]</b>':''}
+      ${a.route==='wrongOrgan'?' <b style="color:var(--red)">[approved — for a different organ]</b>':''}
+      <br>${a.note}<br><span style="opacity:.8">${a.src.map(k=>A(SRC[k])).join(' &middot; ')}</span></li>`;
+  });
+  h+=`</ul>
+    <p>Add the three on-label rows together and you get <b class="num">6.3%</b>. That is the fraction of this disease for which a targeted drug is both approved and, on paper, yours. It is also within rounding distance of the fraction of Know Your Tumor patients who actually received a matched therapy, which is either a coincidence or the whole point.</p>`;
+
+  h+=`<h3>The coverage draw</h3>
+    <p>Weights approximate the US non-elderly coverage distribution. The deductible, coinsurance and out-of-pocket maximum attached to each are published averages for that kind of plan. The player never chooses this, and neither does the patient.</p><ul>`;
+  PLANS.forEach(p=>{
+    h+=`<li style="margin-bottom:0.5rem;"><b class="num">${Math.round(p.w*100)}%</b> &mdash; <b>${p.name}</b>:
+      ${p.key==='none'?'no deductible, no ceiling, 100% of every gross charge'
+        :`${money(p.deductible)} deductible, ${Math.round(p.coins*100)}% coinsurance, ${p.oopMax===Infinity?'no':money(p.oopMax)} out-of-pocket maximum`}.
+      <br>${p.note}</li>`;
+  });
+  h+=`</ul><p><span style="opacity:.8">Deductible averages &mdash; ${A(COST_SRC.kffDeduct)}. Out-of-pocket limit &mdash; ${A(COST_SRC.oopMax)}. Coverage distribution and the uninsured share &mdash; ${A(COST_SRC.acsDebt)}.</span></p>`;
+
   h+=`<h3>Other statistics quoted on screen</h3><ul>
     <li>Marketplace insurers denied <b class="num">19%</b> of in-network claims in 2024 (about 85 million). Patients appealed <b class="num">fewer than 1%</b>; insurers upheld <b class="num">66%</b> of the appeals received. Only <b class="num">5%</b> of denials were recorded as lack of medical necessity, while <b class="num">36%</b> were logged under &ldquo;other&rdquo; &mdash; ${A(COST_SRC.denialRate)}. These data cover HealthCare.gov marketplace plans only; no comparable public figure exists for employer coverage, which is why the patient in this game is marketplace-insured.</li>
     <li><b class="num">70%</b> of US counties had no active cancer clinical trial in 2022, rising to <b class="num">86%</b> of non-metropolitan counties &mdash; ${A(COST_SRC.ascoGeo)}.</li>
@@ -1291,8 +2106,20 @@ function SOURCES_HTML(){
       <li>${A(SRC.abigailPitt)}</li>
     </ul>`;
 
-  h+=`<h3>What this game is honest about not knowing</h3>
-    <p>Published US prices for PET/CT, bone marrow biopsy, single infusion visits and office visits could not be traced to a source worth citing &mdash; the figures that circulate come from price-comparison sites, not research. So the game does not use them. The imaging cost it does use is the one with a peer-reviewed price attached. The genomic panel figure is the oldest number here and may be out of date. Where a range exists rather than a number, the game says range.</p>`;
+  h+=`<h3>What this game measures about itself</h3>
+    <p>A game that asserts its odds are real should check. The shipped build was run headlessly several thousand times, driving its own interface and taking its own rolls, choosing randomly among the options on every screen. What came out:</p>
+    <ul>
+      <li><b class="num">5.4%</b> of runs reach treatment (2,000 runs). The published comparator is <b class="num">6.3%</b> &mdash; 26% of profiled patients have an actionable alteration, and 24% of those receive a matched therapy.</li>
+      <li>Median run length <b class="num">49 weeks</b>. The published comparator is <b class="num">11.1 months</b>, or about 48 weeks, of median overall survival on first-line FOLFIRINOX &mdash; ${A(SRC.conroy)}. The single calibration constant in the code (<span class="num">DECLINE</span>) exists to make that line up, and it is the only number in the game tuned by measurement rather than taken from a source.</li>
+      <li>Molecular routes come out at <b class="num">74%</b> nothing actionable, <b class="num">18%</b> actionable but trial-only, <b class="num">6%</b> with an approved drug for this disease, <b class="num">2%</b> right mutation and wrong organ &mdash; matching the prevalence table above, as it should.</li>
+      <li><b>Playing differently barely moves it.</b> Three fixed strategies were run: choose at random, <b class="num">5.4%</b>; always take the first option, <b class="num">4.7%</b>; always take the last, <b class="num">4.1%</b>. The whole strategic range this game contains is about one percentage point wide, and most of even that is one real effect rather than skill — the last option on a screen is usually the passive one (let it go, decline the next line), and declining treatment genuinely does lower your chance of receiving treatment. What no choice does is improve your odds, because no published figure describes a decision that would.</li>
+    </ul>
+
+    <h3>What this game is honest about not knowing</h3>
+    <p>Published US prices for PET/CT, bone marrow biopsy, single infusion visits and office visits could not be traced to a source worth citing &mdash; the figures that circulate come from price-comparison sites, not research. So the game does not use them. The imaging cost it does use is the one with a peer-reviewed price attached. The genomic panel figure is the oldest number here and may be out of date. Where a range exists rather than a number, the game says range.</p>
+    <p><b>The compendia route is real; its current scope here is not fully verified.</b> The statutory mechanism is solid: under ${A(SRC.ssa1861)}, an off-label anticancer use supported by a recognised drug compendium is a &ldquo;medically accepted indication&rdquo; that Medicare must cover, and CMS accepted the NCCN Drugs &amp; Biologics Compendium into that list &mdash; ${A(SRC.compendia)}. Secondary reporting indicates that NCCN has since listed a KRAS G12C inhibitor as an option in KRAS G12C-mutated pancreatic cancer, which would open exactly this route for the wrong-organ draw. <b>That listing could not be confirmed against the guideline itself while building this</b>, so the game models the route as existing with an uncertain success rate rather than asserting either that the drug is unreachable or that it is routinely covered. If you have the current guideline in front of you, you know something this game does not.</p>
+    <p><b>The appeal probabilities are quoted, not compounded.</b> It would have been easy to chain the published figures &mdash; 15% approved first pass, then 34% of internal appeals, then 44% of external reviews &mdash; into a 68% eventual-coverage rate. That would be wrong. Those rates describe all denials, and are dominated by administrative and billing disputes that reverse easily, not by refusals to fund an $18,000-a-month off-label drug. The game uses one labelled assumption instead, and says so on the line above.</p>
+    <p><b>There is now a win state, and it deserves a caveat of its own.</b> Earlier versions of this game asserted that no sequence of choices reaches the drug. That was true of those versions and false of the world: patients do reach matched therapy, at a low and measurable rate, and expanded-access requests are granted, at a low and measurable rate. Building the win in made the game more accurate and the argument sharper, because the win is not earned. It is drawn. What no version of this game has ever contained is a choice that improves your odds, because the published data does not describe one.</p>`;
   return h;
 }
 function openSources(){
@@ -1304,9 +2131,40 @@ function openLineage(){
   document.getElementById('lineageBody').innerHTML=LINEAGE_HTML();
   document.getElementById('ovLineage').classList.add('show');
 }
+/* the roll sheet: this run's dice, in order */
+function ROLLS_HTML(){
+  if(!S||!S.rolls.length) return '<p>No probabilistic forks have been reached yet this run.</p>';
+  let h=`<h3>The opening draw</h3><ul>
+    <li><b class="num">${S.arm.name}</b> &mdash; drawn at ${S.arm.pct}% prevalence. Route: <b>${
+      {onLabel:'an approved drug exists for this, in this disease',
+       wrongOrgan:'approved &mdash; for a different organ',
+       trialOnly:'actionable, studies only',
+       none:'nothing actionable'}[S.arm.route]}</b></li>
+    <li><b class="num">${S.plan.name}</b> &mdash; ${money(S.plan.deductible)} deductible, ${Math.round(S.plan.coins*100)}% coinsurance</li>
+    <li><b class="num">${money(S.start.savings)}</b> in liquid savings &mdash; ${S.start.savingsLabel}</li>
+    <li><b class="num">ECOG ${S.start.startedGood?'0–1':'2'}</b> at presentation &mdash; drawn at ${Math.round((S.start.startedGood?PROB.ecogGood.p:1-PROB.ecogGood.p)*100)}%</li>
+    <li><b class="num">${S.start.metro?'Metropolitan':'Non-metropolitan'}</b> county</li>
+  </ul><h3>Every roll, in order</h3>
+  <p>Each line is a real published probability. “Hit” means the draw came up on the left of it.</p><ul>`;
+  S.rolls.forEach((r,i)=>{
+    h+=`<li style="margin-bottom:0.5rem;"><b class="num">${i+1}.</b> ${r.label}<br>
+      <span style="opacity:.85">drawn against <b class="num">${(r.p*100).toFixed(1)}%</b> &rarr;
+      <b style="color:${r.hit?'var(--green)':'var(--red)'}">${r.hit?'HIT':'MISS'}</b></span></li>`;
+  });
+  h+='</ul>';
+  h+=`<h3>Outcome</h3><p>${S.won
+    ? 'This run reached treatment. Published rate among patients with an actionable alteration: <b class="num">24%</b>.'
+    : 'This run did not reach treatment. That is the more common outcome, and the reason the game exists.'}</p>`;
+  return h;
+}
+function openRolls(){
+  document.getElementById('rollBody').innerHTML=ROLLS_HTML();
+  document.getElementById('ovRolls').classList.add('show');
+}
 function closeOv(){
   document.getElementById('ovSources').classList.remove('show');
   document.getElementById('ovLineage').classList.remove('show');
+  document.getElementById('ovRolls').classList.remove('show');
 }
 document.getElementById('bSources').onclick=openSources;
 document.getElementById('fSources').onclick=openSources;
@@ -1316,7 +2174,8 @@ document.getElementById('bRestart').onclick=()=>{ if(confirm('Restart the trail?
 document.getElementById('bSound').onclick=function(){
   soundOn=!soundOn; this.textContent='Sound: '+(soundOn?'on':'off'); if(soundOn) sfxPick();
 };
-[document.getElementById('ovSources'),document.getElementById('ovLineage')].forEach(o=>{
+[document.getElementById('ovSources'),document.getElementById('ovLineage'),
+ document.getElementById('ovRolls')].forEach(o=>{
   o.addEventListener('click',e=>{ if(e.target===o) closeOv(); });
 });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeOv(); });
@@ -1339,9 +2198,9 @@ const LINEAGE_PENDING = `
 
 <h3>What this game deliberately inverted</h3>
 <ul>
-  <li><b>The occupations.</b> The original let you be a banker from Boston ($1,600), a carpenter from Ohio ($800) or a farmer from Illinois ($400) &mdash; and paid you a <i>bigger</i> score multiplier for starting poorer, because &ldquo;the harder you have to try, the more points you deserve.&rdquo; Here there is one patient and no multiplier. Starting with less money does not earn you anything. It just kills you sooner.</li>
-  <li><b>The Oregon Top Ten.</b> The original's whole meta-layer was a high-score board, pre-seeded with real historical travellers, rating you Trail Guide, Adventurer or Greenhorn. This game has no score, because a score would imply the outcome was a measure of how well you played it.</li>
-  <li><b>Arrival.</b> The Willamette Valley exists. There is no equivalent here, and that is the entire argument.</li>
+  <li><b>The occupations.</b> The original let you <i>choose</i> to be a banker from Boston ($1,600), a carpenter from Ohio ($800) or a farmer from Illinois ($400) &mdash; and paid you a <i>bigger</i> score multiplier for starting poorer, because &ldquo;the harder you have to try, the more points you deserve.&rdquo; Here the equivalent choice is made for you. Coverage, savings, county, baseline performance status and the contents of your tumour are all <b>dealt</b>, from real distributions, before the first screen. Starting with less does not earn you anything. It just kills you sooner.</li>
+  <li><b>The Oregon Top Ten.</b> The original's whole meta-layer was a high-score board, pre-seeded with real historical travellers, rating you Trail Guide, Adventurer or Greenhorn. This game keeps a ledger instead of a score: how many trails you have walked, and how many ended in treatment. It ranks nothing, because the ratio is not a measure of how well you played. It is a measure of how often the draw comes good.</li>
+  <li><b>Arrival.</b> The Willamette Valley exists, and &mdash; this changed &mdash; so does an ending here. Roughly one run in twenty reaches treatment, because in the real registry data roughly one patient in twenty who is profiled reaches a matched therapy. Earlier versions of this game asserted that no sequence of choices reaches the drug. That was true of the game and false of the world, so it was fixed. What is still true is that <b>no choice on any screen improves your odds</b>, because no published data describes one that does. The win is real, and it is drawn rather than earned. That is a sharper argument than impossibility was.</li>
 </ul>
 
 <h3>A note on the most famous line in video games</h3>
@@ -1365,7 +2224,98 @@ const LINEAGE_PENDING = `
 </ul>
 
 <h3>The one thing worth stealing</h3>
-<p>The prices, the landmarks and the green-and-violet palette are the costume. Three mechanics carry the actual weight, and every reskin that works keeps all three: <b>you type the names of the people who are going to die</b>; <b>failure is written to disk and shown to the next player</b>; and <b>every choice trades one resource against a different resource, never simply against money</b>. This game keeps all three. The third one is why the status bar tracks performance status and prior lines of therapy side by side, moving in opposite directions.</p>`;
+<p>The prices, the landmarks and the green-and-violet palette are the costume. Three mechanics carry the actual weight, and every reskin that works keeps all three: <b>you type the names of the people who are going to die</b>; <b>failure is written to disk and shown to the next player</b>; and <b>every choice trades one resource against a different resource, never simply against money</b>. This game keeps all three. The third one is why the status bar tracks performance status and prior lines of therapy side by side, moving in opposite directions &mdash; and why the second-line chemotherapy landmark is the one that finally qualifies you for a trial by making you too unwell to enrol in it.</p>
+<p>This version adds a fourth, which Oregon Trail did not need and this subject does: <b>the outcome is drawn against published probabilities, and the game shows you the dice.</b> Every fork is a roll recorded on the Roll Sheet, every probability is printed with its citation in the Sources sheet, and the numbers that are guesses rather than measurements are labelled as guesses. A game arguing that a system is unfair has an obligation not to rig its own.</p>`;
+
+/* ══════════════════ INSTALL ══════════════════
+   Two routes onto a phone, and the page is careful not to promise either
+   one until it knows the device can do it.
+
+   The PWA route: Chromium fires beforeinstallprompt only when the page is
+   actually installable (manifest, service worker, https). Until then the
+   nav chip stays hidden and the panel button explains the manual route
+   rather than throwing an inert button at the user.
+
+   The APK route is just a download link, and works everywhere. */
+(function(){
+  var deferred=null;
+  var chip=document.getElementById('bInstall');
+  var btn=document.getElementById('getappInstall');
+  var note=document.getElementById('getappNote');
+  if(!btn) return;
+
+  var standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent||'');
+
+  function showInstallable(){
+    if(chip) chip.classList.add('show');
+    btn.textContent='INSTALL AS AN APP';
+    btn.disabled=false;
+  }
+  function showManual(){
+    /* No prompt available: say what to do instead of offering a dead button. */
+    btn.textContent = iOS ? 'HOW TO ADD TO HOME SCREEN' : 'HOW TO INSTALL';
+  }
+
+  if(standalone){
+    /* already installed and running as an app — the offer is meaningless */
+    var wrap=document.querySelector('.getapp');
+    if(wrap) wrap.style.display='none';
+    return;
+  }
+  showManual();
+
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferred=e; showInstallable();
+  });
+  window.addEventListener('appinstalled',function(){
+    deferred=null;
+    if(chip) chip.classList.remove('show');
+    btn.textContent='INSTALLED';
+    btn.disabled=true;
+  });
+
+  function doInstall(){
+    if(deferred){
+      deferred.prompt();
+      deferred.userChoice.then(function(){ deferred=null; if(chip) chip.classList.remove('show'); });
+      return;
+    }
+    /* Fall back to instructions, which is the honest thing to do when the
+       browser will not give us a prompt (Firefox, Safari, desktop Chrome
+       on some platforms, or an already-dismissed prompt). */
+    if(note){
+      note.style.color='#cfd6e4';
+      note.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    beep(440,0.06);
+  }
+  btn.addEventListener('click',doInstall);
+  if(chip) chip.addEventListener('click',doInstall);
+
+  /* Arriving from the index card's chip (fda.html?install=1): that click was
+     already an install intent, so take them straight to the panel instead of
+     making them hunt for it under the game. */
+  if(/[?&]install=1/.test(location.search)){
+    window.addEventListener('load',function(){
+      var wrap=document.querySelector('.getapp');
+      if(!wrap) return;
+      setTimeout(function(){
+        wrap.scrollIntoView({behavior:'smooth',block:'center'});
+        wrap.style.borderColor='var(--green)';
+      },300);
+    });
+  }
+})();
+
+/* Service worker: what makes the installed copy work with no network, and
+   what makes the browser offer to install it in the first place. Registered
+   only over http(s) — opening this file from disk would throw. */
+if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('fda-sw.js').catch(function(){});
+  });
+}
 
 /* ══════════════════ BOOT ══════════════════ */
 initCosts();

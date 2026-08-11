@@ -1,0 +1,26 @@
+{
+  "name": "FDA: Forever Doesn't Allow",
+  "short_name": "FDA Trail",
+  "id": "/fda.html",
+  "start_url": "/fda.html?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07080c",
+  "theme_color": "#07080c",
+  "description": "An 8-bit Oregon Trail reskin built from real FDA regulation. Your health stat is the real ECOG performance scale, your starting hand is drawn from real distributions, and every fork is a roll against a published probability. Roughly one run in twenty reaches treatment.",
+  "categories": ["games", "education", "medical"],
+  "icons": [
+    { "src": "/icons/fda-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/fda-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/fda-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/fda-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Deal a new hand",
+      "url": "/fda.html?source=pwa",
+      "icons": [{ "src": "/icons/fda-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

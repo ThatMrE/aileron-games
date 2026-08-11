@@ -16,8 +16,14 @@ mobile/android/app/src/main/assets/capacitor.plugins.json
 #  needs network access to regenerate.)
 mobile/www/index.html
 
-# Signing material must never be committed
+# Build output and signing material must never be committed.
+# The exceptions are the two release APKs the website itself serves as
+# downloads — they are deliberately tracked so Netlify publishes them, and
+# they are named individually so no other build output can slip in behind
+# them. Keys are never excepted.
 *.apk
+!/GodDoesNotPlayDice.apk
+!/FDAForeverDoesntAllow.apk
 *.aab
 *.keystore
 *.jks

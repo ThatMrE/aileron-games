@@ -151,7 +151,28 @@ const MOBILE_JS = `
 sub('mobile css', '</head>', MOBILE_CSS + '\n</head>');
 sub('mobile js', '</body>', MOBILE_JS + '\n</body>');
 
-/* 4 ─ the WebView has no address bar, so the page title is never seen; but
+/* 4 ─ strip the PWA plumbing. Inside the APK this is already an installed
+      app: the web manifest and its icons are not bundled (so the link would
+      404), and the service worker cannot register from file:// anyway. */
+sub('web manifest link',
+  /\n?<link rel="manifest"[^>]*>/,
+  '');
+sub('web app icons',
+  /\n?<link rel="apple-touch-icon"[^>]*>\n?<link rel="icon"[^>]*>/,
+  '');
+
+/* 5 ─ and the nav install chip. It is inert here (beforeinstallprompt never
+      fires in a WebView, so it would stay hidden) but shipping a dead
+      control in the DOM of an installed app is sloppy. */
+sub('install chip',
+  /\n?\s*<li><button class="nav-btn install"[^>]*>[\s\S]*?<\/button><\/li>/,
+  '');
+
+sub('install panel',
+  /\n?  <div class="getapp">[\s\S]*?\n  <\/div>\n/,
+  '\n');
+
+/* 6 ─ the WebView has no address bar, so the page title is never seen; but
       keep it meaningful for the PWA/browser case. */
 sub('title',
   /<title>[\s\S]*?<\/title>/,
