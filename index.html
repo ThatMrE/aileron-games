@@ -971,9 +971,9 @@
           deferred.prompt();
           deferred.userChoice.then(function(){ deferred = null; });
         } else {
-          // No install prompt on this page/browser — go to the game page,
-          // which carries the manifest + service worker and can install there.
-          window.location.href = 'punbearable.html?install=1';
+          // No install prompt on this page/browser — send to the dedicated
+          // one-tap install page (handles the prompt + platform instructions).
+          window.location.href = 'install.html';
         }
       });
     })();
