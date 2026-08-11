@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;600;700;900&family=Pirata+One&family=UnifrakturCook:wght@700&family=Orbitron:wght@700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Stained-wood palette */
@@ -107,12 +107,12 @@
     /* ── Masthead ── */
     header { text-align: center; margin-bottom: 2rem; }
     .brand {
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: clamp(3rem, 12vw, 6rem);
-      letter-spacing: 0.12em;
+      font-family: 'Pirata One', 'Grenze Gotisch', serif;
+      font-weight: 400;
+      font-size: clamp(3.4rem, 13vw, 7rem);
+      letter-spacing: 0.04em;
       color: var(--gold);
-      text-shadow: 0 2px 0 #3a2413, 0 0 34px rgba(201,151,79,0.45);
+      text-shadow: 0 2px 0 #3a2413, 0 3px 2px rgba(0,0,0,0.6), 0 0 44px rgba(201,151,79,0.5);
       line-height: 1;
     }
     .kicker {
@@ -146,7 +146,7 @@
     .ask input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,151,79,0.15); }
 
     .ask button {
-      font-family: 'Cinzel', serif;
+      font-family: 'Grenze Gotisch', serif;
       font-weight: 700;
       font-size: 0.9rem;
       letter-spacing: 0.08em;
@@ -204,9 +204,9 @@
     }
     .board-top .engrave { color: rgba(28,17,9,0.7); text-shadow: 0 1px 0 rgba(255,255,255,0.12); }
     .board-word {
-      font-family: 'Cinzel', serif; font-weight: 900;
-      font-size: clamp(1.6rem, 5vw, 2.6rem);
-      letter-spacing: 0.35em; text-indent: 0.35em;
+      font-family: 'UnifrakturCook', 'Grenze Gotisch', serif; font-weight: 700;
+      font-size: clamp(1.9rem, 5.5vw, 3rem);
+      letter-spacing: 0.12em; text-indent: 0.12em;
       color: transparent;
       background: linear-gradient(180deg, rgba(28,17,9,0.85), rgba(28,17,9,0.55));
       -webkit-background-clip: text; background-clip: text;
@@ -220,9 +220,9 @@
       position: relative; z-index: 2;
     }
     .verdict {
-      font-family: 'Cinzel', serif; font-weight: 700;
-      font-size: clamp(1rem, 3vw, 1.5rem); letter-spacing: 0.14em;
-      color: rgba(28,17,9,0.7); text-shadow: 0 1px 0 rgba(255,255,255,0.14);
+      font-family: 'UnifrakturCook', 'Grenze Gotisch', serif; font-weight: 700;
+      font-size: clamp(1.2rem, 3.4vw, 1.8rem); letter-spacing: 0.06em;
+      color: rgba(28,17,9,0.72); text-shadow: 0 1px 0 rgba(255,255,255,0.14);
     }
 
     /* emoji grids */
@@ -265,10 +265,10 @@
     }
     .hands .cell { aspect-ratio: auto; padding: 0.4rem 0; font-size: clamp(1.8rem, 6vw, 3rem); }
     .goodbye {
-      text-align: center; font-family: 'Cinzel', serif; font-weight: 700;
-      letter-spacing: 0.4em; text-indent: 0.4em;
-      font-size: clamp(0.8rem, 2.4vw, 1.2rem);
-      color: rgba(28,17,9,0.7); text-shadow: 0 1px 0 rgba(255,255,255,0.14);
+      text-align: center; font-family: 'UnifrakturCook', 'Grenze Gotisch', serif; font-weight: 700;
+      letter-spacing: 0.14em; text-indent: 0.14em;
+      font-size: clamp(1rem, 3vw, 1.6rem);
+      color: rgba(28,17,9,0.72); text-shadow: 0 1px 0 rgba(255,255,255,0.14);
     }
 
     /* ── The planchette ── */
@@ -288,7 +288,10 @@
     #planchette .lens { fill: rgba(20,12,8,0.18); stroke: var(--ghost-edge); stroke-width: 5; }
     /* gentle hover bob while resting */
     #planchette.resting { animation: bob 2.6s ease-in-out infinite alternate; }
-    @keyframes bob { from { filter: drop-shadow(0 8px 10px rgba(0,0,0,0.5)); } to { filter: drop-shadow(0 16px 20px rgba(0,0,0,0.6)); } }
+    @keyframes bob {
+      from { filter: drop-shadow(0 8px 10px rgba(0,0,0,0.5)) drop-shadow(0 0 6px rgba(180,205,255,0.15)); }
+      to   { filter: drop-shadow(0 16px 20px rgba(0,0,0,0.6)) drop-shadow(0 0 16px rgba(180,205,255,0.32)); }
+    }
 
     /* ── Result panel ── */
     .result {
@@ -307,7 +310,7 @@
       color: var(--muted); margin-top: 0.5rem;
     }
     .result-reading {
-      font-family: 'Cinzel', serif; font-size: clamp(1.05rem, 2.6vw, 1.4rem);
+      font-family: 'Grenze Gotisch', serif; font-size: clamp(1.05rem, 2.6vw, 1.4rem);
       line-height: 1.5; color: var(--gold); margin-top: 0.9rem;
       text-shadow: 0 0 24px rgba(201,151,79,0.25);
     }
@@ -336,7 +339,7 @@
       margin-bottom: 0.7rem;
     }
     .cta h2 {
-      font-family: 'Cinzel', serif; font-weight: 900;
+      font-family: 'Grenze Gotisch', serif; font-weight: 900;
       font-size: clamp(1.5rem, 4.5vw, 2.3rem); letter-spacing: 0.04em;
       color: var(--gold); text-shadow: 0 0 30px rgba(201,151,79,0.3);
       line-height: 1.2;
@@ -348,7 +351,7 @@
     .cta-btn {
       display: inline-flex; align-items: center; gap: 0.6rem;
       margin-top: 1.6rem;
-      font-family: 'Cinzel', serif; font-weight: 700;
+      font-family: 'Grenze Gotisch', serif; font-weight: 700;
       font-size: clamp(0.95rem, 2.4vw, 1.1rem); letter-spacing: 0.05em;
       padding: 0.95rem 2rem; border-radius: 8px;
       color: #1c1109; cursor: pointer; text-decoration: none;
@@ -359,6 +362,7 @@
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
     .cta-btn:active { transform: translateY(0); }
+    .cta-btn[hidden] { display: none; }
     .cta-note {
       min-height: 1.2em; margin-top: 0.9rem;
       font-family: 'Space Mono', monospace; font-size: 0.72rem;
@@ -372,7 +376,7 @@
     .gallery-head { text-align: center; margin-bottom: 1.6rem; }
     .gallery-head .cta-eyebrow { margin-bottom: 0.5rem; }
     .gallery-head h2 {
-      font-family: 'Cinzel', serif; font-weight: 900;
+      font-family: 'Grenze Gotisch', serif; font-weight: 900;
       font-size: clamp(1.4rem, 4vw, 2.1rem); letter-spacing: 0.04em;
       color: var(--gold); text-shadow: 0 0 26px rgba(201,151,79,0.25);
     }
@@ -416,7 +420,7 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.7);
     }
     .lightbox figcaption {
-      margin-top: 0.9rem; font-family: 'Cinzel', serif; color: var(--gold);
+      margin-top: 0.9rem; font-family: 'Grenze Gotisch', serif; color: var(--gold);
       font-size: clamp(0.95rem, 2.4vw, 1.2rem); letter-spacing: 0.03em;
     }
     .lightbox-close {
@@ -443,9 +447,300 @@
     @media (max-width: 620px) {
       .grid.general, .grid.faces { grid-template-columns: repeat(4, 1fr); }
     }
+
+    /* ══════════════════════════════════════════════════════════════
+       OCCULT SCENERY & GOTHIC ORNAMENT
+       ══════════════════════════════════════════════════════════════ */
+    .svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+    /* Fixed atmosphere layer behind all content */
+    .crypt { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+
+    /* Gibbous moon with a soft corona */
+    .crypt .moon {
+      position: absolute; top: 5vh; left: 68%;
+      width: clamp(150px, 22vw, 280px); aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle at 40% 38%, #f7edcf 0%, #ddc99a 46%, #b49a68 64%, rgba(160,140,95,0.25) 78%, transparent 82%);
+      box-shadow: 0 0 90px 30px rgba(230,208,150,0.16), inset -18px -14px 40px rgba(70,55,30,0.5);
+      opacity: 0.55; filter: saturate(0.85);
+    }
+
+    /* Gothic quatrefoil damask, very faint, tiled */
+    .crypt .damask {
+      position: absolute; inset: -40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23e6b877' stroke-width='1.2'%3E%3Ccircle cx='40' cy='23' r='13'/%3E%3Ccircle cx='40' cy='57' r='13'/%3E%3Ccircle cx='23' cy='40' r='13'/%3E%3Ccircle cx='57' cy='40' r='13'/%3E%3Cpath d='M40 31 L49 40 L40 49 L31 40 Z'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23e6b877' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 74px 74px; opacity: 0.045;
+    }
+
+    /* Darkening vignette to frame the page */
+    .crypt .vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(130% 105% at 50% 24%, transparent 42%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* Graveyard silhouette anchored to the bottom, lifted by a horizon fog */
+    .crypt .graveyard { position: absolute; left: 0; right: 0; bottom: 0; width: 100%;
+      height: clamp(240px, 40vh, 420px);
+      background: radial-gradient(120% 90% at 50% 100%, rgba(120,96,150,0.16), rgba(60,44,80,0.08) 40%, transparent 70%); }
+    .crypt .graveyard svg { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Drifting ghosts */
+    .ghost { position: fixed; z-index: 0; pointer-events: none; bottom: -140px;
+      width: clamp(52px, 8vw, 92px); color: var(--ghost);
+      filter: drop-shadow(0 0 20px rgba(244,236,216,0.22)); opacity: 0; }
+    .ghost svg { width: 100%; height: auto; display: block; }
+    .ghost.g1 { left: 7%;  animation: rise1 30s linear infinite; }
+    .ghost.g2 { left: 48%; width: clamp(38px,6vw,66px); animation: rise2 42s linear infinite 6s; }
+    .ghost.g3 { right: 9%; width: clamp(44px,7vw,78px); animation: rise3 36s linear infinite 14s; }
+    @keyframes rise1 { 0%{transform:translateY(0) translateX(0) scale(1);opacity:0} 12%{opacity:.55}
+      50%{transform:translateY(-58vh) translateX(28px) scale(1.02);opacity:.6}
+      88%{opacity:.35} 100%{transform:translateY(-116vh) translateX(-6px) scale(1);opacity:0} }
+    @keyframes rise2 { 0%{transform:translateY(0) translateX(0);opacity:0} 14%{opacity:.5}
+      50%{transform:translateY(-60vh) translateX(-34px);opacity:.5}
+      86%{opacity:.3} 100%{transform:translateY(-120vh) translateX(10px);opacity:0} }
+    @keyframes rise3 { 0%{transform:translateY(0) translateX(0);opacity:0} 12%{opacity:.5}
+      50%{transform:translateY(-62vh) translateX(24px);opacity:.55}
+      88%{opacity:.3} 100%{transform:translateY(-118vh) translateX(-14px);opacity:0} }
+    @media (prefers-reduced-motion: reduce) { .ghost { display: none; } }
+
+    /* Gold filigree corners on the board */
+    .board .corner { position: absolute; width: clamp(34px, 6vw, 54px); height: clamp(34px, 6vw, 54px);
+      z-index: 3; pointer-events: none; color: var(--gold); opacity: 0.85; }
+    .board .corner.tl { top: 5px; left: 5px; }
+    .board .corner.tr { top: 5px; right: 5px; transform: scaleX(-1); }
+    .board .corner.bl { bottom: 5px; left: 5px; transform: scaleY(-1); }
+    .board .corner.br { bottom: 5px; right: 5px; transform: scale(-1,-1); }
+
+    /* Ornamental section divider with a bat crest */
+    .divider { display: flex; align-items: center; justify-content: center; gap: 0.9rem;
+      max-width: 540px; margin: 3.4rem auto 0.4rem; color: var(--gold); }
+    .divider::before, .divider::after { content: ''; height: 1px; flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(230,184,119,0.55)); }
+    .divider::after { transform: scaleX(-1); }
+    .divider .crest { width: 34px; height: 34px; color: var(--gold);
+      filter: drop-shadow(0 0 8px rgba(230,184,119,0.45)); flex: none; }
+    .divider .crest svg { width: 100%; height: 100%; display: block; }
+
+    /* Gothic glow on the big display headers */
+    .cta h2, .gallery-head h2 { text-transform: none; }
+    .brand { position: relative; }
+
+    /* Panels get a hairline gold inner frame + parchment corner ticks */
+    .cta, .gallery-wrap .gallery { position: relative; }
+    .cta::before {
+      content: ''; position: absolute; inset: 8px; border-radius: 12px;
+      border: 1px solid rgba(230,184,119,0.18); pointer-events: none;
+    }
+
+    /* ── EXTRA SPOOK: bats, cobwebs, drifting fog, candle-flicker ── */
+    .crypt .fog {
+      position: absolute; inset: -12% -30%;
+      background:
+        radial-gradient(50% 40% at 28% 62%, rgba(184,168,198,0.05), transparent 70%),
+        radial-gradient(46% 34% at 72% 48%, rgba(150,140,172,0.045), transparent 70%),
+        radial-gradient(40% 30% at 52% 30%, rgba(120,110,140,0.04), transparent 72%);
+      animation: fogdrift 44s ease-in-out infinite alternate;
+    }
+    @keyframes fogdrift { from { transform: translateX(-4%); } to { transform: translateX(6%); } }
+
+    /* Cobwebs strung in the top corners */
+    .web { position: fixed; top: 0; z-index: 0; pointer-events: none;
+      color: rgba(232,222,202,0.11);
+      width: clamp(78px, 13vw, 168px); height: clamp(78px, 13vw, 168px); }
+    .web svg { width: 100%; height: 100%; display: block; }
+    .web.wl { left: 0; }
+    .web.wr { right: 0; transform: scaleX(-1); }
+
+    /* Bats crossing the night sky */
+    .bat { position: fixed; z-index: 0; pointer-events: none; color: #06040b;
+      width: clamp(26px, 4vw, 46px); top: 12vh; left: -60px; opacity: 0; }
+    .bat svg { width: 100%; height: auto; display: block; transform-origin: 50% 40%;
+      animation: flap 0.26s ease-in-out infinite alternate; }
+    .bat.b1 { top: 13vh; animation: fly1 24s linear infinite 2s; }
+    .bat.b2 { top: 21vh; width: clamp(20px, 3vw, 34px); animation: fly2 30s linear infinite 10s; }
+    .bat.b3 { top: 8vh;  width: clamp(30px, 4.6vw, 52px); animation: fly3 36s linear infinite 17s; }
+    @keyframes flap { from { transform: scaleY(0.62); } to { transform: scaleY(1.06); } }
+    @keyframes fly1 { 0%{transform:translate(0,0);opacity:0} 7%{opacity:.9}
+      35%{transform:translate(38vw,-5vh)} 65%{transform:translate(66vw,3vh)}
+      93%{opacity:.7} 100%{transform:translate(112vw,-2vh);opacity:0} }
+    @keyframes fly2 { 0%{transform:translate(0,0);opacity:0} 8%{opacity:.85}
+      50%{transform:translate(56vw,6vh)} 92%{opacity:.6} 100%{transform:translate(112vw,-4vh);opacity:0} }
+    @keyframes fly3 { 0%{transform:translate(0,0);opacity:0} 6%{opacity:.8}
+      40%{transform:translate(44vw,4vh)} 72%{transform:translate(72vw,-4vh)}
+      94%{opacity:.6} 100%{transform:translate(112vw,2vh);opacity:0} }
+    @media (prefers-reduced-motion: reduce) { .bat, .crypt .fog { animation: none; } .bat { display: none; } }
+
+    /* Candle-flicker on the wordmark */
+    .brand { animation: flicker 5s linear infinite; }
+    @keyframes flicker {
+      0%,100% { opacity: 1;   text-shadow: 0 2px 0 #3a2413, 0 3px 2px rgba(0,0,0,0.6), 0 0 44px rgba(201,151,79,0.5); }
+      8%  { opacity: .86; text-shadow: 0 2px 0 #3a2413, 0 0 20px rgba(201,151,79,0.32); }
+      10% { opacity: 1; }
+      24% { opacity: .95; }
+      41% { opacity: 1;   text-shadow: 0 2px 0 #3a2413, 0 3px 2px rgba(0,0,0,0.6), 0 0 62px rgba(201,151,79,0.62); }
+      44% { opacity: .9; }
+      70% { opacity: 1; }
+      74% { opacity: .82; text-shadow: 0 2px 0 #3a2413, 0 0 16px rgba(201,151,79,0.28); }
+      77% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) { .brand { animation: none; } }
+
+    /* ── Kickstarter Halloween launch module ── */
+    .countdown { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap;
+      margin: 1.6rem 0 0.4rem; }
+    .cd-unit { min-width: 66px; padding: 0.7rem 0.5rem; border-radius: 10px;
+      background: rgba(12,7,5,0.6); border: 1px solid rgba(230,184,119,0.28);
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.4); }
+    .cd-num { display: block; font-family: 'Grenze Gotisch', serif; font-weight: 900;
+      color: var(--gold); font-size: clamp(1.6rem, 6vw, 2.4rem); line-height: 1;
+      text-shadow: 0 0 18px rgba(201,151,79,0.4); font-variant-numeric: tabular-nums; }
+    .cd-lbl { display: block; margin-top: 0.25rem; font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .cd-when { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em;
+      color: rgba(239,224,200,0.55); margin-top: 0.35rem; }
+
+    .notify { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;
+      max-width: 460px; margin: 1.4rem auto 0; }
+    .notify .hp { position: absolute; left: -9999px; }
+    .notify input[type=email] {
+      flex: 1 1 220px; background: rgba(20,12,8,0.85); border: 1px solid rgba(201,151,79,0.4);
+      color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.98rem;
+      padding: 0.8rem 1rem; border-radius: 8px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; }
+    .notify input[type=email]::placeholder { color: rgba(239,224,200,0.4); }
+    .notify input[type=email]:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,151,79,0.15); }
+    .notify button {
+      font-family: 'Grenze Gotisch', serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
+      padding: 0.8rem 1.3rem; border-radius: 8px; color: #1c1109; cursor: pointer; white-space: nowrap;
+      background: linear-gradient(180deg, var(--gold), #b9843f); border: 1px solid #d8a75a;
+      box-shadow: 0 6px 20px rgba(201,151,79,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+      transition: transform 0.12s, box-shadow 0.2s; }
+    .notify button:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
+
+    /* ── "Install on Android" card ── */
+    .install-card {
+      max-width: 680px; margin: 3rem auto 0;
+      display: flex; gap: 1.2rem; align-items: center; text-align: left;
+      background: radial-gradient(120% 160% at 12% -30%, rgba(201,151,79,0.15), transparent 60%), rgba(20,12,8,0.62);
+      border: 1px solid rgba(201,151,79,0.3); border-radius: 16px;
+      padding: 1.5rem 1.6rem; box-shadow: 0 20px 44px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .install-card[hidden] { display: none; }
+    .install-emoji { font-size: 2.7rem; line-height: 1; flex: none; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.5)); }
+    .install-body { flex: 1 1 auto; }
+    .install-body .cta-eyebrow { margin-bottom: 0.3rem; }
+    .install-body h2 {
+      font-family: 'Grenze Gotisch', serif; font-weight: 900; line-height: 1.1;
+      font-size: clamp(1.3rem, 3.6vw, 1.9rem); color: var(--gold);
+      text-shadow: 0 0 24px rgba(201,151,79,0.25);
+    }
+    .install-body p { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin: 0.5rem 0 0; max-width: 48ch; }
+    .install-body .cta-btn { margin-top: 1rem; }
+    .install-hint { margin-top: 0.7rem; font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.05em; color: rgba(239,224,200,0.55); line-height: 1.5; }
+    .install-hint b { color: var(--ink); font-weight: 700; }
+    @media (max-width: 560px) {
+      .install-card { flex-direction: column; text-align: center; }
+      .install-body p { margin-left: auto; margin-right: auto; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- ══ reusable gothic vector art ══ -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-fil" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+          <path d="M10 10 H52"/>
+          <path d="M10 10 V52"/>
+          <path d="M10 10 C10 40 30 47 49 36 C30 51 10 43 14 20"/>
+          <path d="M23 23 C35 25 41 35 39 49"/>
+        </g>
+        <circle cx="10" cy="10" r="3.6" fill="currentColor"/>
+      </symbol>
+      <symbol id="ic-ghost" viewBox="0 0 100 130">
+        <path fill="currentColor" d="M50 6 C27 6 15 27 15 52 V112 c0 6 6 7 10 2 c4 -6 9 -6 13 0 c4 6 10 6 14 0 c4 -6 9 -6 13 0 c4 5 10 4 10 -2 V52 C85 27 73 6 50 6 Z"/>
+        <circle cx="38" cy="50" r="6" fill="#1c110a"/>
+        <circle cx="62" cy="50" r="6" fill="#1c110a"/>
+        <ellipse cx="50" cy="70" rx="6.5" ry="9" fill="#1c110a"/>
+      </symbol>
+      <symbol id="ic-crest" viewBox="0 0 60 60">
+        <path fill="currentColor" d="M30 7 C17 7 10 16 10 27 c0 6 3 11 7 14 v6 c0 2 2 3 4 3 h18 c2 0 4 -1 4 -3 v-6 c4 -3 7 -8 7 -14 C50 16 43 7 30 7 Z"/>
+        <circle cx="22" cy="28" r="4.6" fill="#0c0705"/>
+        <circle cx="38" cy="28" r="4.6" fill="#0c0705"/>
+        <path d="M30 34 l-3 6 h6 Z" fill="#0c0705"/>
+        <g stroke="#0c0705" stroke-width="1.7" stroke-linecap="round"><path d="M24 47 v4"/><path d="M30 47 v5"/><path d="M36 47 v4"/></g>
+      </symbol>
+      <symbol id="ic-bat" viewBox="0 0 64 32">
+        <path fill="currentColor" d="M32 6 c1.6 0 3 1.8 3.4 4.4 C38 6 42 5 44 8 c.7 -2.6 3.4 -2.8 4.4 -.5 C50 5 54 6 55 9.5 c-2.4 -.3 -3.6 1.2 -3.4 3.6 C48 11 44.6 12.4 42 16 c-2.2 -3 -5.6 -3.8 -10 -3.8 s-7.8 .8 -10 3.8 c-2.6 -3.6 -6 -5 -9.6 -2.9 .2 -2.4 -1 -3.9 -3.4 -3.6 C10 6 14 5 15.6 7.5 16.6 5.2 19.3 5.4 20 8 c2 -3 6 -2 8.6 2.4 C29 7.8 30.4 6 32 6 Z"/>
+      </symbol>
+      <symbol id="ic-web" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+          <path d="M1 1 L99 7 M1 1 L72 30 M1 1 L45 45 M1 1 L30 72 M1 1 L7 99"/>
+          <path d="M22 4 Q17 17 4 22"/>
+          <path d="M44 7 Q35 35 7 44"/>
+          <path d="M68 11 Q53 53 11 68"/>
+          <path d="M92 16 Q72 72 16 92"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ══ fixed graveyard atmosphere ══ -->
+  <div class="crypt" aria-hidden="true">
+    <div class="moon"></div>
+    <div class="damask"></div>
+    <div class="fog"></div>
+    <div class="vignette"></div>
+    <div class="graveyard">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <!-- rolling ground -->
+        <path fill="#07040c" d="M0 400 V300 C130 286 230 308 350 301 C480 293 540 273 670 281 C810 290 910 314 1050 301 C1115 295 1165 301 1200 297 V400 Z"/>
+        <g fill="#07040c">
+          <!-- mausoleum -->
+          <path d="M556 301 V250 l44 -28 l44 28 v51 Z"/>
+          <rect x="590" y="266" width="20" height="35"/>
+          <!-- rounded headstones -->
+          <path d="M120 301 h58 v-64 a29 29 0 0 0 -58 0 Z"/>
+          <path d="M958 301 h62 v-78 a31 31 0 0 0 -62 0 Z"/>
+          <path d="M726 301 h48 v-46 a24 24 0 0 0 -48 0 Z"/>
+          <!-- cross graves -->
+          <g><rect x="236" y="238" width="16" height="63"/><rect x="222" y="252" width="44" height="13"/></g>
+          <g transform="rotate(7 1108 301)"><rect x="1100" y="230" width="15" height="71"/><rect x="1087" y="246" width="41" height="12"/></g>
+          <!-- leaning slab -->
+          <path transform="rotate(-8 372 301)" d="M340 301 h64 v-52 a32 18 0 0 0 -64 0 Z"/>
+          <!-- wrought-iron fence -->
+          <rect x="410" y="286" width="300" height="5"/>
+          <path d="M418 292 h6 v-30 l-3 -8 l-3 8 Z M446 292 h6 v-30 l-3 -8 l-3 8 Z M474 292 h6 v-30 l-3 -8 l-3 8 Z M502 292 h6 v-30 l-3 -8 l-3 8 Z M614 292 h6 v-30 l-3 -8 l-3 8 Z M642 292 h6 v-30 l-3 -8 l-3 8 Z M670 292 h6 v-30 l-3 -8 l-3 8 Z M698 292 h6 v-30 l-3 -8 l-3 8 Z"/>
+        </g>
+        <!-- bare crooked tree -->
+        <g stroke="#07040c" fill="none" stroke-width="10" stroke-linecap="round">
+          <path d="M96 301 C90 250 80 220 72 188"/>
+          <path d="M78 232 C62 224 52 214 46 199"/>
+          <path d="M74 208 C90 199 100 188 104 172" stroke-width="7"/>
+          <path d="M72 188 C66 173 68 156 77 146" stroke-width="7"/>
+          <path d="M75 164 C88 156 96 145 98 132" stroke-width="5"/>
+          <path d="M60 214 C48 210 40 202 36 192" stroke-width="6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- drifting spirits -->
+  <div class="ghost g1"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
+  <div class="ghost g2"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
+  <div class="ghost g3"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
+
+  <!-- cobwebbed corners -->
+  <div class="web wl" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#ic-web"/></svg></div>
+  <div class="web wr" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#ic-web"/></svg></div>
+
+  <!-- a colony of bats crossing the night -->
+  <div class="bat b1" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
+  <div class="bat b2" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
+  <div class="bat b3" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
+
   <div class="wrap">
 
     <nav class="site-nav">
@@ -472,6 +767,11 @@
 
     <div class="board-shell">
       <div class="board" id="board">
+
+        <svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#ic-fil"/></svg>
+        <svg class="corner tr" viewBox="0 0 100 100" aria-hidden="true"><use href="#ic-fil"/></svg>
+        <svg class="corner bl" viewBox="0 0 100 100" aria-hidden="true"><use href="#ic-fil"/></svg>
+        <svg class="corner br" viewBox="0 0 100 100" aria-hidden="true"><use href="#ic-fil"/></svg>
 
         <div class="board-top">
           <span class="engrave">Global Game Jam</span>
@@ -523,13 +823,44 @@
 
     <div class="status" id="status"></div>
 
-    <section class="cta">
-      <div class="cta-eyebrow">&#127775; Help make Weji real</div>
-      <h2>Back Weji on Kickstarter</h2>
-      <p>Loved your reading? The real, laser-cut wooden Weji board is coming to Kickstarter. Be the first to summon one for your table.</p>
-      <a class="cta-btn" id="kickstarterBtn" href="#" role="button">Support the Kickstarter</a>
-      <div class="cta-note" id="ctaNote"></div>
+    <section class="install-card" id="installCard" hidden>
+      <div class="install-emoji" aria-hidden="true">&#128241;</div>
+      <div class="install-body">
+        <div class="cta-eyebrow">&#128123; Take the board with you</div>
+        <h2>Install the Weji app</h2>
+        <p>Add Weji to your Android home screen &mdash; full-screen, offline, and free. No app store required.</p>
+        <button class="cta-btn" id="installBtnMain" type="button" hidden>&#128242; Install on Android</button>
+        <div class="install-hint" id="installHint"></div>
+      </div>
     </section>
+
+    <div class="divider"><span class="crest"><svg viewBox="0 0 60 60"><use href="#ic-crest"/></svg></span></div>
+
+    <section class="cta launch">
+      <div class="cta-eyebrow">&#127875; Rising this Halloween on Kickstarter</div>
+      <h2>Summon the Weji Board</h2>
+      <p>The real laser-cut, stained-wood board &mdash; with its hand-painted planchette &mdash; claws its way onto Kickstarter this October. Join the s&eacute;ance early and be first through the veil.</p>
+
+      <div class="countdown" id="countdown" role="timer" aria-label="Time until the Kickstarter launches">
+        <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Hrs</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Sec</span></div>
+      </div>
+      <div class="cd-when" id="cdWhen"></div>
+
+      <form class="notify" id="notifyForm" name="weji-launch" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="weji-launch">
+        <p class="hp" hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+        <input type="email" id="notifyEmail" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Email for launch notification">
+        <button type="submit">Haunt my inbox &#128231;</button>
+      </form>
+
+      <a class="cta-btn" id="kickstarterBtn" href="#" role="button" hidden>Back Weji on Kickstarter</a>
+      <div class="cta-note" id="ctaNote">One message when the campaign wakes. No spam from beyond.</div>
+    </section>
+
+    <div class="divider"><span class="crest"><svg viewBox="0 0 60 60"><use href="#ic-crest"/></svg></span></div>
 
     <div class="gallery-wrap">
       <div class="gallery-head">
@@ -826,24 +1157,72 @@
       if (picked) moveTo(picked);
     });
 
-    /* ── Kickstarter CTA ──
-       Drop the live campaign URL into KICKSTARTER_URL when it goes up.
-       Empty string = link pending: the button shows a "coming soon" note. */
+    /* ── Kickstarter Halloween launch ──────────────────────────────
+       LAUNCH_DATE  — when the campaign goes live (edit to your slot).
+       KICKSTARTER_URL — set on launch day; hides countdown/form and
+                         reveals the "Back Weji" button.
+       PRELAUNCH_URL   — optional Kickstarter "coming soon" page; if set
+                         before launch, shows a "Follow on Kickstarter" link. */
+    const LAUNCH_DATE     = new Date('2026-10-01T13:00:00Z'); // ~9:00am ET, Oct 1
     const KICKSTARTER_URL = '';
-    const ksBtn = document.getElementById('kickstarterBtn');
-    const ctaNote = document.getElementById('ctaNote');
+    const PRELAUNCH_URL    = '';
+
+    const ksBtn      = document.getElementById('kickstarterBtn');
+    const ctaNote    = document.getElementById('ctaNote');
+    const notifyForm = document.getElementById('notifyForm');
+    const countdownEl = document.getElementById('countdown');
+    const cdWhen     = document.getElementById('cdWhen');
+    const cdEls = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'),
+                    m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
+    const pad = (n) => String(n).padStart(2, '0');
 
     if (KICKSTARTER_URL) {
-      ksBtn.href = KICKSTARTER_URL;
-      ksBtn.target = '_blank';
-      ksBtn.rel = 'noopener';
+      // Campaign is LIVE — swap to the backing button.
+      countdownEl.style.display = 'none';
+      cdWhen.style.display = 'none';
+      notifyForm.style.display = 'none';
+      ksBtn.hidden = false;
+      ksBtn.href = KICKSTARTER_URL; ksBtn.target = '_blank'; ksBtn.rel = 'noopener';
+      ctaNote.textContent = 'The campaign is live — thank you for summoning us.';
     } else {
-      ctaNote.textContent = 'Campaign launching soon — link coming.';
-      ksBtn.addEventListener('click', (e) => {
+      // PRE-LAUNCH — run the countdown.
+      cdWhen.textContent = 'Kickstarter goes live ' +
+        LAUNCH_DATE.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }) + '.';
+      if (PRELAUNCH_URL) {
+        ksBtn.hidden = false;
+        ksBtn.textContent = 'Follow on Kickstarter →';
+        ksBtn.href = PRELAUNCH_URL; ksBtn.target = '_blank'; ksBtn.rel = 'noopener';
+      }
+      function tick() {
+        let diff = Math.max(0, LAUNCH_DATE.getTime() - Date.now());
+        const dd = Math.floor(diff / 86400000); diff -= dd * 86400000;
+        const hh = Math.floor(diff / 3600000);  diff -= hh * 3600000;
+        const mm = Math.floor(diff / 60000);     diff -= mm * 60000;
+        const ss = Math.floor(diff / 1000);
+        cdEls.d.textContent = dd; cdEls.h.textContent = pad(hh);
+        cdEls.m.textContent = pad(mm); cdEls.s.textContent = pad(ss);
+        if (LAUNCH_DATE.getTime() - Date.now() <= 0) {
+          cdWhen.textContent = 'The veil has lifted — the campaign is live!';
+        }
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      // Email capture (Netlify Forms). AJAX submit with a graceful fallback.
+      notifyForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        ctaNote.textContent = 'Not live yet — the spirits are still counting the votes. Check back soon!';
+        const data = new FormData(notifyForm);
+        if (!(data.get('email') || '').toString().trim()) return;
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data).toString()
+          });
+        } catch (_) { /* preview without Netlify still confirms below */ }
+        notifyForm.innerHTML = '';
+        ctaNote.textContent = '🕯️ The spirits have your name. We will summon you at launch.';
         ctaNote.classList.add('flash');
-        setTimeout(() => ctaNote.classList.remove('flash'), 1200);
       });
     }
 
@@ -889,25 +1268,64 @@
       });
     }
 
-    // Android/Chrome custom install button
-    const installBtn = document.getElementById('installBtn');
+    // ── Add-to-home-screen: one-click install (nav button + install card) ──
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) && !window.MSStream;
+    const isAndroid = /Android/i.test(ua);
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+
+    const navInstallBtn = document.getElementById('installBtn');
+    const installCard   = document.getElementById('installCard');
+    const installBtnMain = document.getElementById('installBtnMain');
+    const installHint   = document.getElementById('installHint');
     let deferredPrompt = null;
+
+    // Android/Chromium: the browser says we can install → offer a one-tap button.
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installBtn.classList.add('show');
+      if (isStandalone) return;
+      navInstallBtn.classList.add('show');
+      installBtnMain.hidden = false;
+      installCard.hidden = false;
+      installHint.textContent = 'One tap — works offline, no app store, about 1 MB.';
     });
-    installBtn.addEventListener('click', async () => {
+
+    async function doInstall() {
       if (!deferredPrompt) return;
       deferredPrompt.prompt();
       await deferredPrompt.userChoice;
       deferredPrompt = null;
-      installBtn.classList.remove('show');
-    });
+      navInstallBtn.classList.remove('show');
+    }
+    navInstallBtn.addEventListener('click', doInstall);
+    installBtnMain.addEventListener('click', doInstall);
+
     window.addEventListener('appinstalled', () => {
       deferredPrompt = null;
-      installBtn.classList.remove('show');
+      navInstallBtn.classList.remove('show');
+      installBtnMain.hidden = true;
+      installCard.hidden = false;
+      installHint.textContent = '👻 Installed — find Weji on your home screen.';
+      setTimeout(() => { installCard.hidden = true; }, 6000);
     });
+
+    // If no native prompt is available, show manual steps on mobile (iOS always;
+    // Android as a fallback when the event doesn't fire).
+    if (!isStandalone) {
+      setTimeout(() => {
+        if (deferredPrompt) return;                 // native button already shown
+        if (isIOS) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'On iPhone/iPad: tap <b>Share</b> &#x2191; then <b>Add to Home Screen</b>.';
+        } else if (isAndroid) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'In Chrome: tap the <b>&#8942; menu</b>, then <b>Install app</b> / <b>Add to Home screen</b>.';
+        }
+        // desktop without prompt: leave the card hidden
+      }, 1400);
+    }
   </script>
 </body>
 </html>
