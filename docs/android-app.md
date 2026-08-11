@@ -7,14 +7,14 @@ The game ships as a **PWA** (Progressive Web App) plus a prebuilt native APK, gi
 **https://aileron.games/GodDoesNotPlayDice.apk** (33 KB). On the phone: download, open,
 allow "install unknown apps" for the browser when prompted. It's a thin WebView shell
 (`android/` in this repo) around the live game, so every fix shipped to the site reaches
-the app instantly; offline play is handled by the game's own service worker.
+the app instantly. The game's own service worker handles offline play.
 
 Built entirely from Ubuntu-packaged Android tools (`aapt`, `apksigner`, `zipalign`,
 `dalvik-exchange`, `android-sdk-platform-23`) via [`android/build.sh`](../android/build.sh) —
-compiled against API 23 (only ancient WebView APIs are used), `targetSdk 34`, signed
+compiled against API 23 (it calls only the oldest WebView APIs), `targetSdk 34`, signed
 v1+v2+v3. The signing key is a throwaway **sideload** key kept out of the repo: replacing
 the APK later with a different key requires uninstall/reinstall, and a Play Store release
-should be signed with your own key via Path 2 below.
+needs your own signing key, through Path 2 below.
 
 ## Path 1 — Install directly from the site (works today, no store, no build)
 
@@ -60,4 +60,4 @@ TWA still runs — it just shows a browser address bar.
 > the app. A TWA reuses the live, always-up-to-date site rather than freezing a copy
 > in an APK — ship a fix to aileron.games and every install has it instantly.
 > (This repo's build environment has no Android SDK and no network route to
-> Google's SDK servers, so the APK/AAB must be built locally with the steps above.)
+> Google's SDK servers, so you must build the APK or AAB locally with the steps above.)
