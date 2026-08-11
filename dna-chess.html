@@ -18,7 +18,7 @@
 (function(){var s=location.search;
   var standalone=window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches;
   window.__IFRAME_EMBED__=/[?&]embed/.test(s);
-  if(window.__IFRAME_EMBED__||/[?&](app|source=pwa)/.test(s)||standalone)document.documentElement.classList.add('embed');
+  if(window.__IFRAME_EMBED__||/[?&](app|source=(pwa|apk))/.test(s)||standalone)document.documentElement.classList.add('embed');
 })();
 </script>
 <style>
@@ -476,7 +476,9 @@ const TERRAIN={};
 const ter=(r,c)=>(G&&G.mode==='core')?null:(TERRAIN[r+','+c]||null);   // Core mode = flat board
 
 let AI_DIFF='normal';   // 'easy' | 'normal' | 'hard'
-let GAME_MODE='advanced';   // 'core' (1 action, 3 enzymes, flat board, no silencing/Kinase) | 'advanced' (full v0.3)
+// 'core' (1 action, 3 enzymes, flat board — the default on-ramp) | 'advanced' (full v0.3).
+// First-time players get Core; a returning player's last choice is remembered.
+let GAME_MODE=(function(){try{return localStorage.getItem('dnachess_mode')||'core';}catch(e){return 'core';}})();
 const CORE_PROTEINS=['nuclease','helicase','ligase'];
 const isCore=()=>G&&G.mode==='core';
 const aptFor=mode=>mode==='core'?1:ACTIONS_PER_TURN;
@@ -856,7 +858,7 @@ function renderPanel(sel){
   q('#help2').addEventListener('click',showHowto);
   if(q('#resetrec'))q('#resetrec').addEventListener('click',e=>{e.preventDefault();resetRecord();});
   const ds=q('#diff');if(ds){ds.value=AI_DIFF;ds.addEventListener('change',()=>{AI_DIFF=ds.value;if(G.vsAI){G.diff=ds.value;}render();});}
-  const ms=q('#mode');if(ms){ms.value=G.mode;ms.addEventListener('change',()=>{GAME_MODE=ms.value;initGame(G.vsAI);});}
+  const ms=q('#mode');if(ms){ms.value=G.mode;ms.addEventListener('change',()=>{GAME_MODE=ms.value;try{localStorage.setItem('dnachess_mode',ms.value);}catch(e){}initGame(G.vsAI);});}
   el.querySelectorAll('button[data-tp]').forEach(b=>b.addEventListener('click',()=>{const s=G.sel!=null?byId(G.sel):null;if(s&&s.type==='rna')doTranslate(s,b.dataset.tp);}));
 }
 
@@ -902,6 +904,7 @@ function showHowto(){if(document.getElementById('howto-modal'))return;
 window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:initGame,undo:()=>undo(),howto:showHowto,
   setDiff:d=>{AI_DIFF=d;if(G)G.diff=d;},setMode:m=>{GAME_MODE=m;initGame(G?G.vsAI:false);},targets:(r,c)=>{const p=at(r,c);return p?targetsFor(p):null;},ter:(r,c)=>ter(r,c)};
 const _hb=document.getElementById('howto-btn');if(_hb)_hb.addEventListener('click',showHowto);
+const _mp=(location.search.match(/[?&]mode=(core|advanced)/)||[])[1];if(_mp)GAME_MODE=_mp;   // URL override, e.g. ?mode=advanced
 initGame(false);
 // show the how-to on first visit everywhere EXCEPT inside the homepage iframe (app/standalone still show it)
 if(!window.__IFRAME_EMBED__){try{if(!localStorage.getItem('dnachess_seen'))setTimeout(showHowto,300);}catch(e){}}
