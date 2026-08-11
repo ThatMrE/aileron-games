@@ -63,7 +63,8 @@ ruleset** that defers the advanced systems.
 ## 4. Recommendation — a "Core" game, with the rest as opt-in modules
 
 Keep the full v0.3 as **Advanced**; add a **Core DNA Chess** that a chess player
-picks up in five minutes:
+picks up in five minutes. **(This is now built — a Core / Advanced toggle in the
+board panel; it defaults to Advanced.)**
 
 **Core (teach in 5 min)**
 - 10 genes, **win at 6** mutations. ✅ keep
@@ -117,5 +118,6 @@ cheapest 80% of "make it feel like chess." The Core ruleset above is the other
 ---
 
 *Companion to `dna-chess-design.md` (v0.1 spec) and `dna-chess-playtest-01.md`
-(break analysis). The playable board is the full/Advanced v0.3; "Core" is a
-proposed mode, not yet built.*
+(break analysis). The playable board ships both modes: **Core** (1 action, three
+enzymes, flat board, no silencing/Kinase) and **Advanced** (full v0.3),
+switchable from the panel.*
