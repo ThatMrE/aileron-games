@@ -92,14 +92,16 @@ The game is abstract (molecular pieces on a board). Answer honestly; expected ou
 
 ## Privacy policy (required by Google Play)
 
-Play requires a hosted privacy-policy URL. Suggested: **https://aileron.games/privacy**
-Minimal text that matches the app's behavior:
+Play requires a hosted privacy-policy URL. **Live at: https://aileron.games/privacy**
+(served by `privacy.html`; also linked from the homepage footer). Paste that URL
+into the Play Console listing. The page states, in full:
 
 ```
-DNA Chess does not collect, store, or share any personal data. The app loads
-the DNA Chess game from aileron.games and saves only your game preferences and
-score tally locally on your device. No accounts, no analytics, no advertising.
-Contact: hello@aileron.games
+Aileron Games does not collect, store, or share any personal data. Our games and
+apps have no accounts, no analytics, no advertising, and no third-party trackers.
+The DNA Chess app loads the game from aileron.games and saves only your game
+preferences and score tally locally on your device. It requests the INTERNET
+permission solely to load the game. Contact: hello@aileron.games
 ```
 
 ## Release notes (What's new — v1.0.0)
@@ -111,7 +113,7 @@ mode for the full game, pass-and-play or vs a 3-level AI. Works offline.
 
 ## Still to supply before publishing
 
-- Host the privacy policy at the URL above.
+- ~~Host the privacy policy~~ ✅ live at https://aileron.games/privacy.
 - A **feature graphic** is included; a promo video is optional.
 - Take/replace screenshots any time from the live app (these were captured from
   aileron.games/dna-chess.html).

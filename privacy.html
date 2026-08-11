@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy &mdash; Aileron Games</title>
+  <meta name="description" content="Aileron Games collects nothing about you. Our games and apps store only your local game state on your own device — no accounts, no analytics, no ads.">
+  <meta name="theme-color" content="#050812">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #00e5ff;
+      --cyan-dim: #0099cc;
+      --purple: #7c3aed;
+      --pink: #f0abfc;
+      --dark: #050812;
+      --dark2: #090d1f;
+      --dark3: #0d1230;
+      --text: #e8f0ff;
+      --muted: rgba(232,240,255,0.55);
+      --faint: rgba(232,240,255,0.32);
+      --border: rgba(0,229,255,0.15);
+      --card-bg: rgba(0,229,255,0.03);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* star field (matches homepage) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 5%,  rgba(0,229,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(0,229,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(240,171,252,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 85%, rgba(0,229,255,0.3) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(5,8,18,0.85);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 15px rgba(0,229,255,0.4);
+    }
+    .back {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--cyan); }
+
+    /* ── DOC ── */
+    main {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.75rem 5rem;
+    }
+    .eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.9rem;
+    }
+    h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.9rem, 6vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+    .updated {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--faint);
+      margin-top: 1rem;
+    }
+
+    .lede {
+      font-size: 1.12rem;
+      color: var(--text);
+      margin-top: 2rem;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      background: var(--card-bg);
+      border-radius: 4px;
+    }
+    .lede b { color: var(--cyan); font-weight: 600; }
+
+    h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-top: 2.75rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    p { color: var(--muted); margin-top: 0.85rem; }
+    p strong { color: var(--text); font-weight: 600; }
+
+    ul { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.7rem; }
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: var(--muted);
+    }
+    li::before {
+      content: '\25B8';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cyan);
+      font-size: 0.85em;
+    }
+    li strong { color: var(--text); font-weight: 600; }
+
+    a.link { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+    a.link:hover { color: var(--pink); }
+
+    .contact {
+      margin-top: 2.75rem;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 4px;
+    }
+    .contact h2 { border: 0; margin: 0 0 0.4rem; padding: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(5,8,18,0.95);
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 15px rgba(0,229,255,0.4);
+    }
+    .footer-copy {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: rgba(232,240,255,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.9rem 1.25rem; }
+      main { padding: 2.75rem 1.25rem 3.5rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="brand">&#9652; AILERON GAMES</a>
+    <a href="index.html" class="back">&larr; Home</a>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 11 August 2026</p>
+
+    <p class="lede">
+      Aileron Games collects <b>nothing</b> about you. Our games and apps have no
+      accounts, no analytics, no advertising, and no third-party trackers.
+      Anything a game remembers &mdash; your settings, your win/loss tally, whether
+      you&rsquo;ve seen a how-to &mdash; lives only in your own browser, on your own
+      device, and never reaches us.
+    </p>
+
+    <h2>Who this covers</h2>
+    <p>
+      This policy applies to the <strong>aileron.games</strong> website, every game
+      hosted on it (including DNA Chess, Pun Bearable, Wetware Arcana, Polygenik and
+      the rest), and our Android apps, which are thin wrappers that load those same
+      games from this site.
+    </p>
+
+    <h2>What we collect</h2>
+    <p>
+      Nothing personal. We do not ask for your name, email, or any account. We run
+      no analytics or advertising SDKs and set no tracking cookies. We do not build
+      a profile of you and we have no server that receives your gameplay.
+    </p>
+
+    <h2>What stays on your device</h2>
+    <p>
+      To make the games playable, they save a small amount of state locally &mdash;
+      using your browser&rsquo;s own storage (<code>localStorage</code>) &mdash; such as:
+    </p>
+    <ul>
+      <li><strong>Preferences</strong> &mdash; e.g. game mode, difficulty, and sound settings.</li>
+      <li><strong>Your score tally</strong> &mdash; wins and losses recorded on this device.</li>
+      <li><strong>Progress flags</strong> &mdash; e.g. whether you&rsquo;ve already seen a how-to overlay.</li>
+    </ul>
+    <p>
+      This data never leaves your device and is not visible to us. You can erase it
+      any time by clearing your browser&rsquo;s site data (or the app&rsquo;s storage),
+      or by uninstalling the app.
+    </p>
+
+    <h2>Network &amp; hosting</h2>
+    <p>
+      The site is served as static files by our hosting provider (Netlify), which,
+      like any web host, processes standard technical request data (such as your IP
+      address) to deliver pages and protect the service. We do not receive or store
+      that data ourselves. Some pages load web fonts from Google Fonts; games are
+      built to run offline once loaded and do not otherwise call out to third parties.
+    </p>
+
+    <h2>Our Android apps</h2>
+    <p>
+      Our Android apps are simple <strong>WebView</strong> shells that open the
+      corresponding game from aileron.games. They request the <strong>INTERNET</strong>
+      permission solely to load the game, store the same local game state described
+      above, and collect no data themselves. They contain no ads, no analytics, and
+      no in-app purchases.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Our games are suitable for a general audience and collect no personal
+      information from anyone, including children.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this policy changes, we&rsquo;ll update the date at the top of this page.
+      Because we collect nothing, changes will typically be clarifications rather
+      than new data practices.
+    </p>
+
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>
+        Questions about privacy? Email
+        <a class="link" href="mailto:hello@aileron.games">hello@aileron.games</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-logo">&#9652; AILERON GAMES</span>
+    <span class="footer-copy">&copy; 2026 Aileron Studios</span>
+  </footer>
+</body>
+</html>
