@@ -338,6 +338,9 @@
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .install-chip:hover { transform: translateY(-1px); box-shadow: 0 0 26px rgba(255,180,84,0.65); }
+    /* Wetware Arcana's chip wears the deck's cyan rather than Pun Bearable's amber */
+    .install-chip-cyan { color: #04140a; background: #9dff6b; }
+    .install-chip-cyan:hover { box-shadow: 0 0 26px rgba(157,255,107,0.65); }
     .install-chip:active { transform: translateY(0); }
 
     .game-icon { font-size: 2.2rem; margin-bottom: 1rem; }
@@ -718,12 +721,15 @@
 
       <div class="games-grid">
 
-        <a href="tarot.html" class="game-card" style="display:block;">
-          <div class="game-icon">&#x1F0CF;</div>
-          <h3>Wetware Arcana</h3>
-          <span class="game-status status-active">New &middot; Play Now</span>
-          <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; Death is Apoptosis, the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different deck. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="tarot.html" class="game-card">
+            <div class="game-icon">&#x1F0CF;</div>
+            <h3>Wetware Arcana</h3>
+            <span class="game-status status-active">New &middot; Play Now</span>
+            <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; Death is Apoptosis, the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different deck. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
+          </a>
+          <button type="button" id="installTarotBtn" class="install-chip install-chip-cyan">&#x1F4F2; Install app</button>
+        </div>
 
         <a href="dice.html" class="game-card" style="display:block;">
           <div class="game-icon">&#x2684;</div>
@@ -1001,28 +1007,33 @@
       }
     });
 
-    // Pun Bearable "Install app" chip: native install prompt when the browser
-    // offers it, otherwise open the installable game page.
+    // "Install app" chips: fire the native install prompt when the browser
+    // offers it here, otherwise open the game page, which carries that app's
+    // manifest + service worker and can install from there.
+    // The homepage itself has no manifest, so in practice most browsers take
+    // the fallback path — the chip's real job is to route to the right page.
     (function(){
-      var btn = document.getElementById('installBtn');
-      if(!btn){ return; }
       function isStandalone(){
         return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       }
-      if(isStandalone()){ btn.style.display = 'none'; return; }
-      var deferred = null;
-      window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
-      window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
-      btn.addEventListener('click', function(){
-        if(deferred){
-          deferred.prompt();
-          deferred.userChoice.then(function(){ deferred = null; });
-        } else {
-          // No install prompt on this page/browser — go to the game page,
-          // which carries the manifest + service worker and can install there.
-          window.location.href = 'punbearable.html?install=1';
-        }
-      });
+      function wireInstallChip(id, page){
+        var btn = document.getElementById(id);
+        if(!btn){ return; }
+        if(isStandalone()){ btn.style.display = 'none'; return; }
+        var deferred = null;
+        window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
+        window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
+        btn.addEventListener('click', function(){
+          if(deferred){
+            deferred.prompt();
+            deferred.userChoice.then(function(){ deferred = null; });
+          } else {
+            window.location.href = page + '?install=1';
+          }
+        });
+      }
+      wireInstallChip('installBtn', 'punbearable.html');
+      wireInstallChip('installTarotBtn', 'tarot.html');
     })();
   </script>
 </body>
