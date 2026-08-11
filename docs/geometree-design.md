@@ -1,10 +1,11 @@
-# GeomeTree — Game Design Document (v0.2)
+# GeomeTree — Game Design Document (v0.3)
 
 > **One-line pitch:** A learning game where geometry *evolves*. You build each
 > form by tracing its edges — from a single line, up through the polygons and
 > all five Platonic solids, to a dodecahedron — and every form you complete grows
 > a branch of your geometry tree, in a synesthetic, audio-reactive build inspired
-> by *Tetris Effect*.
+> by *Tetris Effect*. Finish a form and it **unrolls flat and replays your path
+> for points** — up to 1000 per stage.
 
 ---
 
@@ -30,6 +31,9 @@
    form owns a **hue zone** — the palette journeys cyan → violet as you evolve —
    and the whole soundtrack climbs in key form by form, so finishing the tree
    *feels* like an ascent.
+6. **Completing a form is a payoff, not just a checkmark.** On success the shape
+   **unrolls into 2D** and the game **replays the exact path you drew**, vertex by
+   vertex, tallying points — rewarding speed and clean, non-repetitive tracing.
 
 ---
 
@@ -91,6 +95,25 @@ tree crowns.
   completion arpeggiates a major chord with a low bloom. The musical key climbs
   form by form (G3 → G4 across the ten), and audio initialises on the first click
   (respecting autoplay) — a **Sound** toggle mutes it.
+
+### Score reveal (unroll + path replay)
+On completion the game runs a short reveal, then shows the score with the **Grow →**
+button (click/tap or Enter/Space skips straight to the score):
+- **Unroll to 2D.** The completed wireframe animates flat: every vertex eases onto
+  an even circle laid out in the vertices' angular order. This guarantees a clean,
+  overlap-free 2D figure for any form (a 3D solid "unrolls" into a flat ring of its
+  vertices; a polygon barely moves, since it is already circular).
+- **Path replay.** A glowing marker retraces the **exact order the player drew the
+  edges**, lighting each vertex as it arrives and sparking a burst + a soft
+  pentatonic tick — literally "drawing the path the player took from vertex to
+  vertex."
+- **Scoring — 1000 points per stage.** As the path replays, a **base of 500**
+  accrues (each vertex is a share of points). Then a **time bonus of up to 500** is
+  added — the faster you traced (par ≈ 1 second per edge), the higher — and **50
+  points are deducted per repeated-edge attempt** (clicking to redraw an edge
+  already drawn). `stage = clamp(500 + timeBonus − 50·repeats, 0, 1000)`. Stage
+  scores sum into a running total shown in the tree panel and on the victory
+  screen, persisted to `localStorage`.
 
 ### 3D forms
 - Solids render as **depth-shaded wireframes** — nearer edges brighter and

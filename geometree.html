@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeomeTree &mdash; Grow Geometry, from a Line to a Dodecahedron</title>
-  <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Trace each form's edges — from a single line up through the polygons and all five Platonic solids to the dodecahedron — in a synesthetic, audio-reactive build. Grow your geometry tree.">
+  <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Trace each form's edges — from a single line up through the polygons and all five Platonic solids to the dodecahedron — then watch it unroll into 2D and score your path. A synesthetic, audio-reactive build.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -127,17 +127,21 @@
 
     /* completion banner */
     .complete-banner{
-      position:absolute;left:50%;bottom:1rem;transform:translateX(-50%) translateY(140%);
+      position:absolute;left:50%;bottom:1rem;transform:translateX(-50%) translateY(150%);
       display:flex;align-items:center;gap:0.9rem;flex-wrap:wrap;justify-content:center;
-      background:rgba(5,10,22,0.9);border:1px solid rgba(0,229,255,0.4);
+      background:rgba(5,10,22,0.92);border:1px solid rgba(0,229,255,0.4);
       backdrop-filter:blur(8px);border-radius:12px;padding:0.7rem 1rem;
       box-shadow:0 12px 34px rgba(0,0,0,0.5);
-      transition:transform .45s cubic-bezier(.2,.9,.3,1.3);max-width:92%;
+      transition:transform .45s cubic-bezier(.2,.9,.3,1.3);max-width:94%;
     }
     .complete-banner.show{transform:translateX(-50%) translateY(0);}
     .cb-tick{
       font-family:'Orbitron',monospace;font-weight:700;font-size:0.85rem;color:var(--lime);
       text-shadow:0 0 16px rgba(124,255,178,0.5);white-space:nowrap;
+    }
+    .cb-score{
+      font-family:'Orbitron',monospace;font-weight:700;font-size:0.82rem;color:var(--lime);
+      text-shadow:0 0 14px rgba(124,255,178,0.45);
     }
     .cb-fact{font-size:0.78rem;color:var(--muted);max-width:340px;line-height:1.45;}
 
@@ -194,9 +198,11 @@
     }
     .tree-sub{
       font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;
-      text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;
+      text-transform:uppercase;color:var(--muted);margin-bottom:0.15rem;
     }
+    .tree-sub.pts{color:var(--lime);margin-bottom:0.9rem;}
     .tree-sub b{color:var(--cyan);}
+    .tree-sub.pts b{color:var(--lime);}
     .tree{display:flex;flex-direction:column-reverse;gap:0;position:relative;}
     .node{
       display:flex;align-items:center;gap:0.7rem;padding:0.32rem 0.2rem;position:relative;
@@ -250,6 +256,8 @@
     .victory h3{font-family:'Orbitron',monospace;font-weight:900;font-size:1.35rem;color:var(--cyan);
       text-shadow:0 0 30px rgba(0,229,255,0.4);margin-bottom:0.5rem;letter-spacing:0.03em;}
     .victory p{color:var(--muted);font-size:0.9rem;line-height:1.65;max-width:460px;margin:0 auto 1.1rem;}
+    .vic-score{font-family:'Orbitron',monospace;font-weight:700;font-size:1.05rem;color:var(--lime);
+      text-shadow:0 0 18px rgba(124,255,178,0.4);margin:-0.4rem auto 1.1rem;}
 
     footer{
       margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--border);
@@ -322,6 +330,7 @@
           <canvas id="stage" width="760" height="560"></canvas>
           <div class="complete-banner" id="banner">
             <span class="cb-tick" id="bannerTick">&#10003; Complete</span>
+            <span class="cb-score" id="bannerScore"></span>
             <span class="cb-fact" id="bannerFact"></span>
             <button class="btn btn-cyan" id="growBtn">Grow &rarr;</button>
           </div>
@@ -343,11 +352,12 @@
         <p class="howto">
           <b>How to play:</b> click a glowing vertex, then click a neighbour to draw the edge between them.
           Trace every edge to complete the form and grow your tree. On 3D solids, <b>drag</b> to rotate.
-          <b>Sound is on</b> &mdash; each edge you draw plays the next note of a rising scale.
+          Each form scores up to <b>1000</b> &mdash; trace faster for a higher score, and repeating an edge costs points.
         </p>
 
         <div class="victory" id="victory">
           <h3>&#127793; Your GeomeTree is complete</h3>
+          <p class="vic-score" id="vicScore"></p>
           <p>From a single line you evolved all the way to the dodecahedron &mdash; the crown of the five
              Platonic solids and Plato&rsquo;s emblem for the cosmos. Ten forms, one growing tree.</p>
           <button class="btn btn-cyan" id="replayBtn">Plant a new seed &#8635;</button>
@@ -358,6 +368,7 @@
       <aside class="tree-panel">
         <h2>Your GeomeTree</h2>
         <p class="tree-sub">Grown: <b id="grownCount">0</b> / 10</p>
+        <p class="tree-sub pts">Points: <b id="scoreTotal">0</b></p>
         <div class="tree" id="tree"></div>
         <div class="tree-foot">
           <span>&#9652; from a line &rarr; the cosmos</span>
@@ -376,8 +387,8 @@
     <span class="x" id="introX">&times;</span>
     <div class="it-t">&#9652; Trace the form</div>
     <p>Click a glowing <b>vertex</b>, then a neighbour, to draw an <b>edge</b>. Connect every edge to complete
-       the shape and grow your geometry tree &mdash; from a single line, through all five Platonic solids, to a
-       dodecahedron. Sound&rsquo;s on: every edge is a note.</p>
+       the shape &mdash; then watch it unroll flat and score your path. Trace faster for more points; repeating an
+       edge costs you. From a line, through all five Platonic solids, to a dodecahedron.</p>
   </div>
 
 <script>
@@ -385,6 +396,7 @@
   "use strict";
   const PHI = (1 + Math.sqrt(5)) / 2;
   const INV = 1 / PHI;
+  const ease3 = t => 1 - Math.pow(1-Math.max(0,Math.min(1,t)), 3);
 
   /* ---------- geometry builders ---------- */
   function regPoly(n){                       // regular n-gon, apex-up (first vertex at visual top)
@@ -514,16 +526,33 @@
   const embed = document.documentElement.classList.contains('embed');
   const BEAT = 666.67;           // ~90 BPM visual pulse
 
+  // scoring / reveal
+  let formStartT = 0;            // time of first click on the current form (0 = not started)
+  let edgeSeq = [];              // edges in the order the player drew them: [a,b]
+  let repeats = 0;              // repeated-edge attempts (penalised)
+  let totalScore = 0;           // running total across stages
+  let reveal = null;            // active score-reveal animation
+
   /* ---------- persistence ---------- */
   const SAVE = 'geometree_progress_v1';
+  const SCORE = 'geometree_score_v1';
   function loadProgress(){
     if(embed) return 0;
     try{ const n = parseInt(localStorage.getItem(SAVE)||'0',10); return isNaN(n)?0:Math.max(0,Math.min(LEVELS.length,n)); }
     catch(e){ return 0; }
   }
-  function saveProgress(n){
-    if(embed) return;
-    try{ localStorage.setItem(SAVE, String(n)); }catch(e){}
+  function saveProgress(n){ if(embed) return; try{ localStorage.setItem(SAVE, String(n)); }catch(e){} }
+  function loadScore(){ if(embed) return 0; try{ const n=parseInt(localStorage.getItem(SCORE)||'0',10); return isNaN(n)?0:Math.max(0,n); }catch(e){ return 0; } }
+  function saveScore(n){ if(embed) return; try{ localStorage.setItem(SCORE, String(n)); }catch(e){} }
+
+  /* ---------- scoring ---------- */
+  const STAGE_MAX = 1000, BASE_PTS = 500, TIME_MAX = 500, REPEAT_PENALTY = 50;
+  function computeScore(elapsedSec, edges, reps){
+    const target = Math.max(3, edges * 1.0);                                 // "par" pace, ~1s per edge
+    const timeBonus = Math.min(TIME_MAX, Math.round(TIME_MAX * target / Math.max(target, elapsedSec||0.001)));
+    const penalty = REPEAT_PENALTY * reps;
+    const stage = Math.max(0, Math.min(STAGE_MAX, BASE_PTS + timeBonus - penalty));
+    return { base:BASE_PTS, timeBonus, penalty, stage };
   }
 
   /* ---------- audio: a rising, synesthetic soundtrack ---------- */
@@ -551,10 +580,9 @@
   }
   function rootFor(i){ return 196 * Math.pow(2, i/(LEVELS.length-1)); }   // G3 → G4 across the journey
   const PENTA = [0,2,4,7,9];                                              // major pentatonic — never dissonant
-  function playEdgeNote(k){                                              // k = how many edges placed so far
-    const root = rootFor(cur);
-    const semis = PENTA[k % PENTA.length] + 12*Math.floor(k/PENTA.length);
-    const f = root * Math.pow(2, semis/12);
+  function scaleFreq(i, k){ const semis = PENTA[k % PENTA.length] + 12*Math.floor(k/PENTA.length); return rootFor(i) * Math.pow(2, semis/12); }
+  function playEdgeNote(k){
+    const f = scaleFreq(cur, k);
     tone(f, 0.30, 'triangle', 0.07);
     tone(f*2, 0.18, 'sine', 0.022);
   }
@@ -592,11 +620,38 @@
         max:0.8+Math.random()*0.9,hue:hue-34+Math.random()*68,size:1.5+Math.random()*3});
     }
   }
+  function renderParticles(dt){
+    if(!particles.length) return;
+    ctx.globalCompositeOperation = 'lighter';
+    for(let i=particles.length-1;i>=0;i--){
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.vx *= 0.99; p.vy *= 0.99;
+      p.life -= dt/p.max;
+      if(p.life <= 0){ particles.splice(i,1); continue; }
+      ctx.beginPath();
+      ctx.fillStyle = 'hsla('+p.hue+',100%,66%,'+Math.max(0,p.life)+')';
+      ctx.arc(p.x, p.y, p.size*(0.35+0.65*p.life), 0, Math.PI*2); ctx.fill();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
   const motes = [];
   function initMotes(){
     motes.length=0;
     for(let i=0;i<26;i++) motes.push({x:Math.random(),y:Math.random(),
       vy:0.015+Math.random()*0.035,size:0.6+Math.random()*1.7,tw:Math.random()*Math.PI*2});
+  }
+
+  // even flat ring for the "unroll" — vertices spread onto a circle in their angular order (no overlaps)
+  function flatRing(pts){
+    const N=pts.length, cx=W/2, cy=H/2, R=Math.min(W,H)*0.36;
+    const idx=pts.map((p,i)=>({i, a:Math.atan2(p.sy-cy, p.sx-cx)}));
+    idx.sort((u,v)=>u.a-v.a);
+    const out=new Array(N);
+    idx.forEach((o,rank)=>{
+      const ang = -Math.PI/2 + 2*Math.PI*(N>1?rank/N:0);
+      out[o.i] = {sx: cx + R*Math.cos(ang), sy: cy + R*Math.sin(ang)};
+    });
+    return out;
   }
 
   /* ---------- projection ---------- */
@@ -648,11 +703,11 @@
     lastNow = now;
     curHue = hueFor(cur);
     const breath = 0.5 + 0.5*Math.sin(now/1600);
-    const bp = (now % BEAT)/BEAT, thump = Math.pow(1-bp, 3);   // per-beat accent
+    const bp = (now % BEAT)/BEAT, thump = Math.pow(1-bp, 3);
 
     ctx.clearRect(0,0,W,H);
 
-    // ── ambient nebula: hue-tinted glow that breathes and pulses with the beat ──
+    // ── ambient nebula ──
     {
       const glowR = Math.min(W,H)*(0.34 + 0.05*breath + 0.03*thump);
       const g = ctx.createRadialGradient(W/2,H/2,0, W/2,H/2, glowR);
@@ -660,8 +715,7 @@
       g.addColorStop(1, 'hsla('+curHue+',100%,42%,0)');
       ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
     }
-
-    // ── drifting motes (atmosphere) ──
+    // ── drifting motes ──
     ctx.globalCompositeOperation = 'lighter';
     for(const m of motes){
       m.y -= m.vy*dt;
@@ -672,6 +726,9 @@
       ctx.arc(m.x*W, m.y*H, m.size, 0, Math.PI*2); ctx.fill();
     }
     ctx.globalCompositeOperation = 'source-over';
+
+    // ── score reveal takes over once a form is complete ──
+    if(reveal){ drawReveal(now, dt); requestAnimationFrame(draw); return; }
 
     // rotation logic for 3D
     if(L.d3){
@@ -690,16 +747,6 @@
     }
 
     PTS = screenPoints(L);
-
-    // completion fill for polygons
-    if(completed && !L.d3 && L.verts.length >= 3){
-      const prog = Math.min(1,(now-completeT0)/700);
-      ctx.beginPath();
-      PTS.forEach((p,i)=> i===0 ? ctx.moveTo(p.sx,p.sy) : ctx.lineTo(p.sx,p.sy));
-      ctx.closePath();
-      ctx.fillStyle = 'hsla('+curHue+',100%,60%,'+(0.12*prog)+')';
-      ctx.fill();
-    }
 
     // ghost (unplaced) target edges
     for(const [i,j] of L.edges){
@@ -721,26 +768,24 @@
     ctx.setLineDash([]);
 
     // placed edges (depth-shaded, hue-journeyed, additive glow)
-    const flash = completed ? Math.max(0, 1-(now-completeT0)/600) : 0;
     for(const kk of placed){
       const [i,j] = kk.split('-').map(Number);
       const a=PTS[i], b=PTS[j];
       const d = (a.depth+b.depth)/2;
       const alpha = L.d3 ? (0.4 + 0.6*d) : 1;
-      const lw = (L.d3 ? (1.6 + 2.2*d) : 3) + flash*2 + thump*0.5;
-      const light = 60 + 35*flash + 6*thump;
+      const lw = (L.d3 ? (1.6 + 2.2*d) : 3) + thump*0.5;
       ctx.beginPath();
       ctx.lineCap='round';
       ctx.shadowColor = 'hsla('+curHue+',100%,55%,0.75)';
-      ctx.shadowBlur = (L.d3 ? 6+8*d : 12) + flash*18 + thump*4;
-      ctx.strokeStyle = 'hsla('+curHue+',100%,'+Math.min(96,light)+'%,'+alpha+')';
+      ctx.shadowBlur = (L.d3 ? 6+8*d : 12) + thump*4;
+      ctx.strokeStyle = 'hsla('+curHue+',100%,'+(60+6*thump)+'%,'+alpha+')';
       ctx.lineWidth = lw;
       ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
     }
     ctx.shadowBlur = 0;
 
     // rubber band from selected vertex to pointer
-    if(selected>=0 && pointer.x>-900 && !completed){
+    if(selected>=0 && pointer.x>-900){
       const a = PTS[selected];
       ctx.beginPath();
       ctx.setLineDash([3,6]);
@@ -769,38 +814,96 @@
       ctx.shadowBlur=0;
     });
 
-    // ── particles (bursts + completion shower), additive ──
-    if(particles.length){
-      ctx.globalCompositeOperation = 'lighter';
-      for(let i=particles.length-1;i>=0;i--){
-        const p = particles[i];
-        p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.vx *= 0.99; p.vy *= 0.99;
-        p.life -= dt/p.max;
-        if(p.life <= 0){ particles.splice(i,1); continue; }
-        ctx.beginPath();
-        ctx.fillStyle = 'hsla('+p.hue+',100%,66%,'+Math.max(0,p.life)+')';
-        ctx.arc(p.x, p.y, p.size*(0.35+0.65*p.life), 0, Math.PI*2); ctx.fill();
-      }
-      ctx.globalCompositeOperation = 'source-over';
-    }
-
-    // completion burst ring + full-canvas hue wash
-    if(completed){
-      const prog = (now-completeT0)/900;
-      if(prog<1){
-        const R = 30 + prog*Math.min(W,H)*0.5;
-        ctx.beginPath();
-        ctx.strokeStyle = 'hsla('+curHue+',100%,66%,'+(0.5*(1-prog))+')';
-        ctx.lineWidth = 3*(1-prog)+0.5;
-        ctx.arc(W/2,H/2,R,0,Math.PI*2); ctx.stroke();
-        ctx.globalCompositeOperation = 'lighter';
-        ctx.fillStyle = 'hsla('+curHue+',100%,60%,'+(0.16*(1-prog))+')';
-        ctx.fillRect(0,0,W,H);
-        ctx.globalCompositeOperation = 'source-over';
-      }
-    }
-
+    renderParticles(dt);
     requestAnimationFrame(draw);
+  }
+
+  /* ---------- the score reveal: unroll to 2D + redraw the player's path + tally ---------- */
+  function drawReveal(now, dt){
+    const L = LEVELS[cur];
+    const t = now - reveal.startT0;
+    const D1 = reveal.d3 ? 750 : 250, D2 = reveal.pathDur;
+    let flatProg, pathProg;
+    if(t < D1){ flatProg = ease3(t/D1); pathProg = 0; }
+    else if(t < D1+D2){ flatProg = 1; pathProg = (t-D1)/D2; }
+    else { flatProg = 1; pathProg = 1; if(!reveal.finalized) finalizeReveal(); }
+
+    // interpolated vertex positions (3D/2D form → flat ring)
+    const P = reveal.start.map((s,i)=>({
+      sx: s.sx + (reveal.flat[i].sx - s.sx)*flatProg,
+      sy: s.sy + (reveal.flat[i].sy - s.sy)*flatProg
+    }));
+
+    // faint full wireframe of the (flattened) shape
+    ctx.setLineDash([]); ctx.lineWidth = 1.4; ctx.strokeStyle = 'hsla('+curHue+',55%,72%,0.16)';
+    for(const [i,j] of L.edges){ ctx.beginPath(); ctx.moveTo(P[i].sx,P[i].sy); ctx.lineTo(P[j].sx,P[j].sy); ctx.stroke(); }
+
+    // redraw the player's path in the exact order they drew it
+    const E = reveal.seq.length, fe = pathProg*E, done = Math.floor(fe), et = fe-done;
+    ctx.lineCap = 'round';
+    const litNow = [];
+    for(let e=0; e<E && e<=done; e++){
+      const [a,b] = reveal.seq[e];
+      const full = e < done;
+      const bx = full ? P[b].sx : P[a].sx + (P[b].sx-P[a].sx)*et;
+      const by = full ? P[b].sy : P[a].sy + (P[b].sy-P[a].sy)*et;
+      ctx.beginPath();
+      ctx.strokeStyle = 'hsla('+curHue+',100%,68%,0.95)';
+      ctx.shadowColor = 'hsla('+curHue+',100%,55%,0.85)'; ctx.shadowBlur = 10; ctx.lineWidth = 3.2;
+      ctx.moveTo(P[a].sx,P[a].sy); ctx.lineTo(bx,by); ctx.stroke(); ctx.shadowBlur = 0;
+      if(!reveal.lit.has(a)){ reveal.lit.add(a); litNow.push(P[a]); }
+      if(full && !reveal.lit.has(b)){ reveal.lit.add(b); litNow.push(P[b]); }
+      if(!full){                                              // travelling marker head
+        ctx.beginPath(); ctx.fillStyle = '#fff';
+        ctx.shadowColor = 'hsla('+curHue+',100%,72%,1)'; ctx.shadowBlur = 16;
+        ctx.arc(bx,by,4.6,0,Math.PI*2); ctx.fill(); ctx.shadowBlur = 0;
+      }
+    }
+    for(const p of litNow) spawnBurst(p.sx,p.sy,curHue,8,0.8);
+    if(litNow.length){ const k=reveal.lit.size; tone(scaleFreq(cur,k), 0.14, 'sine', 0.035); }
+
+    // vertices (points counting up)
+    for(let i=0;i<P.length;i++){
+      const on = reveal.lit.has(i);
+      ctx.beginPath();
+      ctx.fillStyle = on ? 'hsl('+curHue+',100%,76%)' : 'hsla('+curHue+',70%,70%,0.4)';
+      ctx.shadowColor = 'hsla('+curHue+',100%,60%,'+(on?0.85:0.3)+')'; ctx.shadowBlur = on?12:4;
+      ctx.arc(P[i].sx,P[i].sy, on?4.8:3, 0, Math.PI*2); ctx.fill(); ctx.shadowBlur = 0;
+    }
+
+    renderParticles(dt);
+
+    // big score readout
+    let shown;
+    if(!reveal.finalized) shown = reveal.base * pathProg;
+    else { const ft = Math.min(1,(now-reveal.finalizeT)/700); shown = reveal.base + (reveal.stage-reveal.base)*ease3(ft); }
+    ctx.save();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.shadowColor = 'hsla('+curHue+',100%,55%,0.9)'; ctx.shadowBlur = 18;
+    ctx.fillStyle = 'hsla('+curHue+',100%,80%,0.97)';
+    ctx.font = '700 '+Math.round(Math.min(W,H)*0.12)+'px Orbitron, "Space Mono", monospace';
+    ctx.fillText(String(Math.round(shown)), W/2, H*0.15);
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = 'rgba(232,240,255,0.55)';
+    ctx.font = '700 11px "Space Mono", monospace';
+    ctx.fillText('POINTS  ·  '+L.name.toUpperCase()+(reveal.finalized ? ('   ·   '+reveal.stage+' / 1000') : ''),
+                 W/2, H*0.15 + Math.round(Math.min(W,H)*0.085));
+    ctx.restore();
+  }
+
+  function finalizeReveal(){
+    if(reveal.finalized) return;
+    reveal.finalized = true; reveal.finalizeT = performance.now();
+    totalScore += reveal.stage; saveScore(totalScore);
+    const el = document.getElementById('scoreTotal'); if(el) el.textContent = totalScore;
+    const L = LEVELS[cur];
+    document.getElementById('bannerTick').innerHTML = '&#10003; '+L.name+' complete';
+    document.getElementById('bannerScore').innerHTML =
+      '&#9733; '+reveal.stage+' / 1000 &nbsp;<span style="color:rgba(232,240,255,0.5);font-weight:400;">path +'
+      +reveal.base+' · time +'+reveal.timeBonus+(reveal.penalty? ' · repeats &minus;'+reveal.penalty : '')+'</span>';
+    document.getElementById('bannerFact').innerHTML = L.fact;
+    document.getElementById('growBtn').textContent = (cur===LEVELS.length-1) ? 'Finish →' : 'Grow →';
+    document.getElementById('banner').classList.add('show');
   }
 
   /* ---------- hit testing ---------- */
@@ -821,8 +924,9 @@
   }
   canvas.addEventListener('pointerdown', ev=>{
     ev.preventDefault();
-    canvas.setPointerCapture(ev.pointerId);
     resumeAudio();
+    if(reveal && !reveal.finalized){ finalizeReveal(); return; }   // click to skip the reveal
+    canvas.setPointerCapture(ev.pointerId);
     const p = localXY(ev);
     down = {x:p.x, y:p.y, moved:false, t:performance.now()};
     pointer.x=p.x; pointer.y=p.y; pointer.active=true;
@@ -858,12 +962,16 @@
   canvas.addEventListener('pointerleave', ()=>{ if(!down){ hoverV=-1; pointer.x=-999; } });
 
   function handleVertexClick(v){
-    if(selected<0){ selected=v; tone(rootFor(cur),0.08,'sine',0.03); return; }
+    if(selected<0){
+      if(placed.size===0 && !formStartT) formStartT = performance.now();   // start the clock on first pick
+      selected=v; tone(rootFor(cur),0.08,'sine',0.03); return;
+    }
     if(selected===v){ selected=-1; return; }
     const k = key(selected,v);
     if(isTarget(selected,v) && !placed.has(k)){
       const a=PTS[selected], b=PTS[v];
       placed.add(k);
+      edgeSeq.push([selected, v]);                     // record trace order for the reveal
       playEdgeNote(placed.size-1);                     // rising pentatonic as you trace
       if(a && b){ spawnBurst((a.sx+b.sx)/2,(a.sy+b.sy)/2, curHue, 14, 1.2); }
       selected = -1;                // one edge at a time — clear so no vertex auto-repeats
@@ -871,7 +979,7 @@
       updateEdgeCount();
       if(placed.size === LEVELS[cur].edges.length) onComplete();
     } else {
-      // not a valid neighbour (or already drawn) — restart trace from here
+      if(isTarget(selected,v) && placed.has(k)) repeats++;   // repeated edge → point penalty
       tone(150,0.10,'sawtooth',0.04);
       selected = v;
     }
@@ -887,11 +995,20 @@
     if(cur+1 > doneCount){ doneCount = cur+1; saveProgress(doneCount); }
     markTree();
     const L = LEVELS[cur];
-    document.getElementById('bannerTick').innerHTML = '&#10003; '+L.name+' complete';
-    document.getElementById('bannerFact').innerHTML = L.fact;
-    const isLast = cur === LEVELS.length-1;
-    document.getElementById('growBtn').textContent = isLast ? 'Finish →' : 'Grow →';
-    setTimeout(()=>document.getElementById('banner').classList.add('show'), 420);
+    const elapsed = formStartT ? (completeT0 - formStartT)/1000 : 0;
+    const sc = computeScore(elapsed, L.edges.length, repeats);
+    const startPts = PTS.map(p=>({sx:p.sx, sy:p.sy}));
+    reveal = {
+      startT0: performance.now(),
+      d3: L.d3,
+      start: startPts,
+      flat: flatRing(startPts),
+      seq: edgeSeq.slice(),
+      base: sc.base, timeBonus: sc.timeBonus, penalty: sc.penalty, stage: sc.stage,
+      lit: new Set(),
+      finalized: false,
+      pathDur: Math.min(2400, Math.max(650, edgeSeq.length*130))
+    };
   }
   document.getElementById('growBtn').addEventListener('click', ()=>{
     document.getElementById('banner').classList.remove('show');
@@ -902,6 +1019,8 @@
 
   function showVictory(){
     spawnShower(curHue); playChord();
+    const vs = document.getElementById('vicScore');
+    if(vs) vs.textContent = 'Final score: '+totalScore+' / '+(LEVELS.length*STAGE_MAX);
     document.getElementById('victory').classList.add('show');
     document.getElementById('victory').scrollIntoView({behavior:'smooth', block:'center'});
   }
@@ -913,10 +1032,12 @@
     selected=-1; hoverV=-1; completed=false; hintEdge=null;
     userDragged=false;
     particles.length = 0;
+    formStartT = 0; edgeSeq = []; repeats = 0; reveal = null;
     rot = {x:-0.42, y:0.7}; drawRot={x:-0.42,y:0.7};
     introT0 = performance.now();
     document.getElementById('victory').classList.remove('show');
     document.getElementById('banner').classList.remove('show');
+    document.getElementById('bannerScore').innerHTML = '';
     const L = LEVELS[i];
     document.getElementById('lvStep').textContent = 'Form '+(i+1)+' / '+LEVELS.length;
     document.getElementById('lvName').textContent = L.name;
@@ -940,7 +1061,9 @@
   document.getElementById('resetBtn').addEventListener('click', ()=>{
     placed = new Set(); selected=-1; completed=false; hintEdge=null;
     particles.length = 0;
+    formStartT = 0; edgeSeq = []; repeats = 0; reveal = null;
     document.getElementById('banner').classList.remove('show');
+    document.getElementById('bannerScore').innerHTML = '';
     updateEdgeCount();
   });
   const spinBtn = document.getElementById('spinBtn');
@@ -958,17 +1081,22 @@
     syncSoundBtn();
     if(soundOn){ resumeAudio(); tone(rootFor(cur),0.14,'triangle',0.07); }
   });
+  function resetScore(){ totalScore = 0; saveScore(0); const el=document.getElementById('scoreTotal'); if(el) el.textContent = 0; }
   document.getElementById('replayBtn').addEventListener('click', ()=>{
-    doneCount = 0; saveProgress(0); loadLevel(0);
+    doneCount = 0; saveProgress(0); resetScore(); loadLevel(0);
     window.scrollTo({top:0, behavior:'smooth'});
   });
   document.getElementById('resetProgress').addEventListener('click', ()=>{
-    doneCount = 0; saveProgress(0); loadLevel(0);
+    doneCount = 0; saveProgress(0); resetScore(); loadLevel(0);
   });
   window.addEventListener('keydown', e=>{
     if(e.key==='h'||e.key==='H') document.getElementById('hintBtn').click();
     if(e.key==='r'||e.key==='R') document.getElementById('resetBtn').click();
-    if((e.key==='Enter'||e.key===' ') && completed){ e.preventDefault(); document.getElementById('growBtn').click(); }
+    if((e.key==='Enter'||e.key===' ') && completed){
+      e.preventDefault();
+      if(reveal && !reveal.finalized) finalizeReveal();
+      else document.getElementById('growBtn').click();
+    }
   });
 
   /* ---------- tree panel ---------- */
@@ -994,7 +1122,6 @@
     const tc = c.getContext('2d');
     const w=c.width, h=c.height;
     tc.clearRect(0,0,w,h);
-    // fixed pleasant rotation for 3D thumbnails
     const rx=-0.5, ry=0.6;
     let maxR=0;
     for(const v of L.verts){ const r=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); if(r>maxR)maxR=r; }
@@ -1046,12 +1173,13 @@
     buildTree();
     syncSoundBtn();
     doneCount = loadProgress();
+    totalScore = loadScore();
+    const se = document.getElementById('scoreTotal'); if(se) se.textContent = totalScore;
     const start = Math.min(doneCount, LEVELS.length-1);
     loadLevel(start);
-    if(doneCount >= LEVELS.length){ /* all done previously */ markTree(); }
+    if(doneCount >= LEVELS.length){ markTree(); }
     maybeIntro();
     requestAnimationFrame(draw);
-    // report height to a parent iframe (embed mode on the homepage)
     if(embed) reportHeight();
   }
   let ro;
