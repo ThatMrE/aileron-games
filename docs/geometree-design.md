@@ -1,4 +1,34 @@
-# GeomeTree — Game Design Document (v0.3)
+# GeomeTree — Game Design Document (v0.4)
+
+## 0. Narrative frame — a Flatland RPG
+
+The mechanics sit inside a story, told RPG-style through text. You are a
+two-dimensional creature (a nod to *Flatland*) who lives in the **World-Tree**,
+a structure whose branches thread every dimension and whose leaves are all that
+lives. The Tree is **dying** — a rot spreads dimension to dimension — and only
+building **form** can heal it. Each stage is a branch / a dimension you restore.
+
+- **Prologue** (typewriter story modal on first play): the premise above.
+- **Per-stage narration**: every form shows a chapter label and a short in-character
+  beat in a dedicated story panel, above the (kept) geometry "field note".
+- **Act transitions** (full-screen story beats): **II · Flatland** (the triangle
+  closes and the plane returns), **III · The Ascent** (folding a point *up* into
+  depth — 3D), **IV · The Rot** (the enemies: *imaginary planes* that breed rot in
+  Euclidean space; from here, building is battle). The crown hints at the 4th
+  dimension and time.
+- **Epilogue**: the rot breaks, and the one thing worth saving — the **seed, a
+  single point** — is carried down and replanted, looping the game (the replay
+  button is "Replant the seed").
+
+Acts map onto the ten forms: I Awakening (line) · II Flatland (triangle→hexagon) ·
+III The Ascent (tetra→octa) · IV The Rot (icosahedron) · V The Crown
+(dodecahedron). Deeper mechanics the story sets up — non-regular polygons, true
+4D shapes, enemy battles, time-skills — are seeded in the narration as the road
+ahead, ready to become real stages.
+
+---
+
+# GeomeTree — Game Design Document (earlier notes, v0.3)
 
 > **One-line pitch:** A learning game where geometry *evolves*. You build each
 > form by tracing its edges — from a single line, up through the polygons and
