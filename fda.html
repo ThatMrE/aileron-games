@@ -7,6 +7,13 @@
 <meta name="description" content="An 8-bit Oregon Trail reskin built from real FDA regulation. Your health stat is the real ECOG performance scale, your starting hand is drawn from real distributions, and every fork is a roll against a published probability. You can win. Roughly one run in twenty does.">
 <meta property="og:title" content="FDA: Forever Doesn't Allow">
 <meta property="og:description" content="An Oregon Trail for the drug approval process. Every rule is a real regulation, every fork a real probability. You can win — but not by playing well.">
+<link rel="manifest" href="fda.webmanifest">
+<meta name="theme-color" content="#07080c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="FDA Trail">
+<link rel="apple-touch-icon" href="icons/fda-apple-touch.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/fda-favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
@@ -49,6 +56,33 @@
     padding:0.45rem 0.6rem;transition:none;
   }
   .nav-btn:hover{color:var(--amber);border-color:var(--amber);}
+  /* Install chip: hidden until the browser actually offers an install prompt,
+     so it never advertises something this device cannot do. */
+  .nav-btn.install{display:none;color:var(--green);border-color:var(--green);}
+  .nav-btn.install.show{display:inline-block;}
+  .nav-btn.install:hover{color:#07080c;background:var(--green);border-color:var(--green);}
+
+  /* ── GET IT ON YOUR PHONE ── */
+  .getapp{
+    margin-top:0.7rem;border:2px solid var(--line);background:#0a0c11;
+    padding:0.9rem 1rem;
+  }
+  .getapp h4{
+    font-family:'Press Start 2P',monospace;font-size:0.55rem;color:var(--green);
+    line-height:1.8;margin-bottom:0.6rem;letter-spacing:0.02em;
+  }
+  .getapp p{font-size:1.05rem;line-height:1.45;color:var(--dim);margin-bottom:0.6rem;}
+  .getapp-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:stretch;}
+  .getapp-btn{
+    font-family:'Press Start 2P',monospace;font-size:0.5rem;letter-spacing:0.02em;
+    color:var(--green);background:none;border:2px solid var(--green);cursor:pointer;
+    padding:0.6rem 0.7rem;line-height:1.6;display:inline-flex;align-items:center;
+    min-height:44px;text-align:left;
+  }
+  .getapp-btn:hover{color:#07080c;background:var(--green);}
+  .getapp-btn.alt{color:var(--cyan);border-color:var(--cyan);}
+  .getapp-btn.alt:hover{color:#07080c;background:var(--cyan);}
+  .getapp-note{font-size:0.98rem;color:#5b6373;line-height:1.5;margin-top:0.6rem;}
 
   /* ── MONITOR ── */
   .wrap{max-width:880px;margin:0 auto;padding:1.2rem 1rem 3rem;}
@@ -227,6 +261,7 @@
 <nav>
   <a href="index.html" class="nav-logo">&#9652; AILERON<small>fda: forever doesn&rsquo;t allow</small></a>
   <ul class="nav-links">
+    <li><button class="nav-btn install" id="bInstall">&#x1F4F2; Install</button></li>
     <li><button class="nav-btn" id="bSources">Sources</button></li>
     <li><button class="nav-btn" id="bLineage">Reskins</button></li>
     <li><button class="nav-btn" id="bSound">Sound: on</button></li>
@@ -243,6 +278,19 @@
     </div>
   </div>
   <div class="log" id="log"></div>
+
+  <div class="getapp">
+    <h4>&#x1F4F2; PUT IT ON YOUR PHONE</h4>
+    <p id="getappLead">Two ways, and the first one is a single tap. The whole game is one file &mdash; it works offline either way, including the pixel fonts.</p>
+    <div class="getapp-row">
+      <button type="button" class="getapp-btn" id="getappInstall">INSTALL AS AN APP</button>
+      <a class="getapp-btn alt" id="getappApk" href="FDAForeverDoesntAllow.apk" download>DOWNLOAD THE ANDROID APK</a>
+    </div>
+    <div class="getapp-note" id="getappNote">
+      <b>Install as an app</b> adds it to your home screen straight from this page &mdash; no download, no security prompts. Chrome and Edge on Android support it; on iPhone use Safari&rsquo;s Share menu &rarr; <i>Add to Home Screen</i>.<br>
+      <b>The APK</b> is the real Android build, signed and about 430&nbsp;KB. Android will warn you before installing a file from outside the Play Store, which is the correct thing for it to do &mdash; you will need to allow your browser to install unknown apps. Each CI build is signed with a fresh debug key, so a newer APK may not install over an older one; uninstall first if that happens.
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -2178,6 +2226,96 @@ const LINEAGE_PENDING = `
 <h3>The one thing worth stealing</h3>
 <p>The prices, the landmarks and the green-and-violet palette are the costume. Three mechanics carry the actual weight, and every reskin that works keeps all three: <b>you type the names of the people who are going to die</b>; <b>failure is written to disk and shown to the next player</b>; and <b>every choice trades one resource against a different resource, never simply against money</b>. This game keeps all three. The third one is why the status bar tracks performance status and prior lines of therapy side by side, moving in opposite directions &mdash; and why the second-line chemotherapy landmark is the one that finally qualifies you for a trial by making you too unwell to enrol in it.</p>
 <p>This version adds a fourth, which Oregon Trail did not need and this subject does: <b>the outcome is drawn against published probabilities, and the game shows you the dice.</b> Every fork is a roll recorded on the Roll Sheet, every probability is printed with its citation in the Sources sheet, and the numbers that are guesses rather than measurements are labelled as guesses. A game arguing that a system is unfair has an obligation not to rig its own.</p>`;
+
+/* ══════════════════ INSTALL ══════════════════
+   Two routes onto a phone, and the page is careful not to promise either
+   one until it knows the device can do it.
+
+   The PWA route: Chromium fires beforeinstallprompt only when the page is
+   actually installable (manifest, service worker, https). Until then the
+   nav chip stays hidden and the panel button explains the manual route
+   rather than throwing an inert button at the user.
+
+   The APK route is just a download link, and works everywhere. */
+(function(){
+  var deferred=null;
+  var chip=document.getElementById('bInstall');
+  var btn=document.getElementById('getappInstall');
+  var note=document.getElementById('getappNote');
+  if(!btn) return;
+
+  var standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent||'');
+
+  function showInstallable(){
+    if(chip) chip.classList.add('show');
+    btn.textContent='INSTALL AS AN APP';
+    btn.disabled=false;
+  }
+  function showManual(){
+    /* No prompt available: say what to do instead of offering a dead button. */
+    btn.textContent = iOS ? 'HOW TO ADD TO HOME SCREEN' : 'HOW TO INSTALL';
+  }
+
+  if(standalone){
+    /* already installed and running as an app — the offer is meaningless */
+    var wrap=document.querySelector('.getapp');
+    if(wrap) wrap.style.display='none';
+    return;
+  }
+  showManual();
+
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferred=e; showInstallable();
+  });
+  window.addEventListener('appinstalled',function(){
+    deferred=null;
+    if(chip) chip.classList.remove('show');
+    btn.textContent='INSTALLED';
+    btn.disabled=true;
+  });
+
+  function doInstall(){
+    if(deferred){
+      deferred.prompt();
+      deferred.userChoice.then(function(){ deferred=null; if(chip) chip.classList.remove('show'); });
+      return;
+    }
+    /* Fall back to instructions, which is the honest thing to do when the
+       browser will not give us a prompt (Firefox, Safari, desktop Chrome
+       on some platforms, or an already-dismissed prompt). */
+    if(note){
+      note.style.color='#cfd6e4';
+      note.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    beep(440,0.06);
+  }
+  btn.addEventListener('click',doInstall);
+  if(chip) chip.addEventListener('click',doInstall);
+
+  /* Arriving from the index card's chip (fda.html?install=1): that click was
+     already an install intent, so take them straight to the panel instead of
+     making them hunt for it under the game. */
+  if(/[?&]install=1/.test(location.search)){
+    window.addEventListener('load',function(){
+      var wrap=document.querySelector('.getapp');
+      if(!wrap) return;
+      setTimeout(function(){
+        wrap.scrollIntoView({behavior:'smooth',block:'center'});
+        wrap.style.borderColor='var(--green)';
+      },300);
+    });
+  }
+})();
+
+/* Service worker: what makes the installed copy work with no network, and
+   what makes the browser offer to install it in the first place. Registered
+   only over http(s) — opening this file from disk would throw. */
+if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('fda-sw.js').catch(function(){});
+  });
+}
 
 /* ══════════════════ BOOT ══════════════════ */
 initCosts();

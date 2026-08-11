@@ -739,7 +739,7 @@
             <span class="game-status status-active">Play Now</span>
             <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
           </a>
-          <button type="button" id="installBtn" class="install-chip">&#x1F4F2; Install app</button>
+          <button type="button" id="installBtn" class="install-chip" data-install-url="punbearable.html?install=1">&#x1F4F2; Install app</button>
         </div>
 
         <a class="game-card" href="dna-chess.html" style="display:block">
@@ -764,12 +764,15 @@
           <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; the Magician is a Splicer, Death is Apoptosis, and the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different strain, with procedurally drawn art and mutations in the print run. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
         </a>
 
-        <a href="fda.html" class="game-card" style="display:block;">
-          <div class="game-icon">&#x1F48A;</div>
-          <h3>FDA: Forever Doesn&rsquo;t Allow</h3>
-          <span class="game-status status-active">Play Now</span>
-          <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Every catch-22 is a cited federal regulation. No score, no win state, and the ending is a real person&rsquo;s real timeline. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="fda.html" class="game-card">
+            <div class="game-icon">&#x1F48A;</div>
+            <h3>FDA: Forever Doesn&rsquo;t Allow</h3>
+            <span class="game-status status-active">Play Now</span>
+            <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Your starting hand is dealt from real distributions and every fork is a roll against a published probability. About one run in twenty reaches treatment &mdash; and not by playing well. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
+          </a>
+          <button type="button" class="install-chip" data-install-url="fda.html?install=1">&#x1F4F2; Install app</button>
+        </div>
 
       </div>
     </div>
@@ -1001,27 +1004,35 @@
       }
     });
 
-    // Pun Bearable "Install app" chip: native install prompt when the browser
-    // offers it, otherwise open the installable game page.
+    // "Install app" chips. Each chip names the page that can actually install
+    // it via data-install-url, because this index carries no manifest of its
+    // own — the install has to happen on the game's own page, and a chip that
+    // installed whichever app the index happened to point at would be worse
+    // than no chip at all.
     (function(){
-      var btn = document.getElementById('installBtn');
-      if(!btn){ return; }
+      var chips = document.querySelectorAll('.install-chip');
+      if(!chips.length){ return; }
       function isStandalone(){
         return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       }
-      if(isStandalone()){ btn.style.display = 'none'; return; }
       var deferred = null;
       window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
-      window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
-      btn.addEventListener('click', function(){
-        if(deferred){
-          deferred.prompt();
-          deferred.userChoice.then(function(){ deferred = null; });
-        } else {
-          // No install prompt on this page/browser — go to the game page,
-          // which carries the manifest + service worker and can install there.
-          window.location.href = 'punbearable.html?install=1';
-        }
+      window.addEventListener('appinstalled', function(){
+        Array.prototype.forEach.call(chips, function(c){ c.style.display = 'none'; });
+      });
+      Array.prototype.forEach.call(chips, function(btn){
+        if(isStandalone()){ btn.style.display = 'none'; return; }
+        btn.addEventListener('click', function(){
+          var url = btn.getAttribute('data-install-url');
+          if(deferred && !url){
+            deferred.prompt();
+            deferred.userChoice.then(function(){ deferred = null; });
+          } else {
+            // Go to the game page, which carries the manifest + service
+            // worker and can install the right app.
+            window.location.href = url || 'index.html';
+          }
+        });
       });
     })();
   </script>

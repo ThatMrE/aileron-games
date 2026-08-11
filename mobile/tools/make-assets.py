@@ -160,4 +160,33 @@ if os.path.exists(stale_fg):
     os.remove(stale_fg)
     print('removed template drawable-v24/ic_launcher_foreground.xml (Android robot)')
 
+# ── web (PWA) icons ────────────────────────────────────────────────────
+# The site installs fda.html as a progressive web app, which needs the same
+# artwork again at web sizes. Generated from the identical composition above
+# rather than exported by hand, so the launcher icon and the home-screen icon
+# can never drift apart.
+WEB = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'icons'))
+
+def save_web(img, name):
+    os.makedirs(WEB, exist_ok=True)
+    img.save(os.path.join(WEB, name))
+    return f'../../icons/{name}'
+
+def web_icon(size, maskable):
+    # maskable icons get cropped to a circle by the launcher, so the artwork
+    # has to sit inside the middle 80% — the "safe zone" in the spec.
+    fill = 0.62 if maskable else 0.86
+    factor = max(1, int(size * fill) // art_bg.width)
+    sprite = art_bg.resize((art_bg.width * factor, art_bg.height * factor), Image.NEAREST)
+    canvas = Image.new('RGBA', (size, size), BG)
+    canvas.paste(sprite, ((size - sprite.width) // 2, (size - sprite.height) // 2), sprite)
+    return canvas
+
+for size in (192, 512):
+    written.append(save_web(web_icon(size, False), f'fda-{size}.png'))
+    written.append(save_web(web_icon(size, True), f'fda-{size}-maskable.png'))
+# iOS home-screen icon: no maskable concept, always square, never transparent
+written.append(save_web(web_icon(180, False), 'fda-apple-touch.png'))
+written.append(save_web(web_icon(32, False), 'fda-favicon-32.png'))
+
 print(f'wrote {len(written)} asset files')

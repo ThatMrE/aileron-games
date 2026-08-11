@@ -1,2 +1,23 @@
 [build]
   publish = "."
+
+# Android package downloads. Without an explicit type these are served as
+# application/octet-stream, which mostly works but leaves some browsers
+# guessing; naming it means the download lands as an installable package.
+[[headers]]
+  for = "/*.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+
+# A service worker may only control pages at or below its own path, and a
+# stale one is worse than none — always revalidate.
+[[headers]]
+  for = "/*-sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/*.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
