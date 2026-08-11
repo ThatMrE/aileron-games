@@ -343,6 +343,10 @@
     .install-chip-cyan:hover { box-shadow: 0 0 26px rgba(157,255,107,0.65); }
     .install-chip:active { transform: translateY(0); }
 
+    /* small inline "Install" pill (DNA Chess card + hero slide) */
+    .mini-install { display: inline-block; text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+    .mini-install:hover, .mini-install:focus-visible { background: rgba(0,229,255,0.18) !important; border-color: var(--cyan) !important; color: #fff !important; outline: none; }
+
     .game-icon { font-size: 2.2rem; margin-bottom: 1rem; }
 
     .game-card h3 {
@@ -654,7 +658,7 @@
               <span class="hslide-kicker">Molecular biology &middot; Playable prototype</span>
               <span class="hslide-title">DNA Chess</span>
               <span class="hslide-desc">Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Hot-seat or vs AI.</span>
-              <span class="hslide-cta">Play the prototype &rarr;</span>
+              <span class="hslide-cta">Play the prototype &rarr;<span class="mini-install" data-install="dna-chess.html?install=1" role="button" tabindex="0" aria-label="Install DNA Chess on Android" style="margin-left:0.7rem; font-size:0.6rem; letter-spacing:0.08em; color:var(--cyan); border:1px solid rgba(0,229,255,0.45); border-radius:20px; padding:3px 10px; background:rgba(0,229,255,0.07);">&#128241; Install</span></span>
             </span>
           </a>
 
