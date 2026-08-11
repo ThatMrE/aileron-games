@@ -20,9 +20,16 @@ building **form** can heal it. Each stage is a branch / a dimension you restore.
   single point** — is carried down and replanted, looping the game (the replay
   button is "Replant the seed").
 
-Acts map onto the **eleven** forms: I Awakening (line) · II Flatland
-(triangle→hexagon) · III The Ascent (tetra→octa) · IV The Rot (icosahedron) ·
-V The Crown (dodecahedron) · VI The Fourth Dimension (tesseract).
+Acts map onto the **thirteen** forms: I Awakening (line) · II Flatland
+(triangle→hexagon) → **II The Crooked** (irregular pentagon, concave dart) ·
+III The Ascent (tetra→octa) · IV The Rot (icosahedron) · V The Crown
+(dodecahedron) · VI The Fourth Dimension (tesseract).
+
+### The Crooked — non-regular polygons (irregular pentagon, concave dart)
+Between the regular 2-D shapes and the ascent to 3-D, the rot *warps* two branches:
+an **irregular** (scalene) pentagon — same rules, no symmetry — and a **concave
+dart** with a reflex angle that dents inward. They teach that a polygon need not be
+regular, and that every solid ahead is built only from *convex* faces.
 
 ### The Rot — enemy encounter (icosahedron, dodecahedron, tesseract)
 On these high branches the enemies are real: **imaginary planes** (red shards)
@@ -33,16 +40,25 @@ strike telegraphs (a shard brightens and reaches toward the shape), and the
 interval tightens act by act (4.0s → 3.6s → 3.2s), so it stays winnable while
 pressuring your time score. Completing the form banishes the planes.
 
-### The 4th dimension — the tesseract (form 11)
+### Time-skills — fighting the Rot through time
+On the Rot stages the Tree grants two **temporal skills** (the "highest levels use
+skills that move through time"), shown in a skill bar:
+- **Rewind** (`Z`) — instantly restores every edge the Rot has corrupted (turning
+  back time on the decay); 8-second cooldown, a cyan time-ripple. It can even seal
+  the form outright.
+- **Freeze** (`F`) — halts the Rot for 5 seconds (the imaginary planes hold, tinted
+  cyan, and stop striking); 12-second cooldown.
+Corrupted edges are tracked so Rewind knows what to restore; manually redrawing a
+corrupted edge also repairs it. The skills make the encounter a real push-pull
+rather than a race.
+
+### The 4th dimension — the tesseract (final form)
 The finale is a genuine 4-D stage: the **tesseract** (16 vertices, 32 edges) is
 stored in 4-D coordinates and projected **4-D → 3-D → 2-D** — rotating through the
 `xw` and `zw` planes each frame so it folds inside-out (the classic cube-in-a-cube
 shadow), then through the normal 3-D view you can drag. You trace the shadow of a
 four-dimensional object. It is also the fiercest Rot encounter, at the source of
 the blight, and where the seed is finally recovered.
-
-Still seeded in the narration for later: **non-regular polygons** and
-**time-skills**.
 
 ---
 
