@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DNA Chess &mdash; Aileron Games</title>
 <meta name="description" content="DNA Chess: run the Central Dogma as a war machine and give your opponent cancer. Interactive board and pieces in the style of David Goodsell's Machinery of Life.">
+<!-- PWA: installable Android/iOS app (namespaced so it coexists with the site's other apps) -->
+<link rel="manifest" href="/dna-chess.webmanifest">
+<meta name="theme-color" content="#b39a68">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DNA Chess">
+<link rel="apple-touch-icon" href="/icons/dnachess-apple-touch.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/dnachess-favicon-32.png">
+<script>
+(function(){var s=location.search;
+  var standalone=window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches;
+  window.__IFRAME_EMBED__=/[?&]embed/.test(s);
+  if(window.__IFRAME_EMBED__||/[?&](app|source=pwa)/.test(s)||standalone)document.documentElement.classList.add('embed');
+})();
+</script>
 <style>
   :root{
     /* Goodsell cytoplasm palette */
@@ -144,6 +160,9 @@
   .modal .sw{width:15px;height:15px;border-radius:3px;flex:0 0 auto;margin-top:2px}
   .modal .btn-go{margin-top:16px;width:100%;font-family:"Trebuchet MS",system-ui,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.04em;padding:11px;border-radius:8px;border:none;cursor:pointer;background:var(--accent);color:#f4efdf}
   .helpbtn{font-family:"Trebuchet MS",system-ui,sans-serif;font-size:.7rem;padding:5px 10px;border-radius:20px;border:1px solid var(--line);background:#efe6cf;color:var(--ink);cursor:pointer}
+  .installbtn{display:none;font-family:"Trebuchet MS",system-ui,sans-serif;font-weight:700;font-size:.72rem;padding:6px 13px;border-radius:20px;border:1px solid #4a5a24;background:linear-gradient(180deg,#8fa356,#6f8b3f);color:#f4efdf;cursor:pointer;box-shadow:0 2px 8px rgba(90,110,40,.35)}
+  .installbtn.show{display:inline-block}
+  .installbtn:hover{filter:brightness(1.06)}
 
   /* danger: pulsing frame when you're one mutation from cancer */
   @keyframes dangerpulse{0%,100%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 0 rgba(160,40,30,0)}50%{box-shadow:0 18px 40px rgba(43,36,22,.28), 0 0 0 7px rgba(160,40,30,.4)}}
@@ -163,12 +182,12 @@
 </style>
 </head>
 <body>
-<script>if(/[?&]embed/.test(location.search))document.documentElement.classList.add('embed');</script>
 <div class="wrap">
 
   <div class="topbar">
     <div class="brand">&#9652; Aileron <span>Games</span></div>
-    <div style="display:flex;gap:14px;align-items:center">
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+      <button class="installbtn" id="installBtn" type="button" aria-label="Install the DNA Chess app">&#128241; Install app</button>
       <button class="helpbtn" id="howto-btn">? How to play</button>
       <a href="index.html">&larr; Back to the library</a>
     </div>
@@ -760,7 +779,7 @@ function render(){
   board.querySelectorAll('.hit').forEach(el=>el.addEventListener('click',()=>onCell(+el.dataset.r,+el.dataset.c)));
   const frame=board.closest('.board-frame'); if(frame)frame.classList.toggle('danger',!G.over&&mutCount('A')===WIN-1);
   renderPanel(sel);
-  if(embedMode()) postEmbedHeight();
+  if(window.__IFRAME_EMBED__) postEmbedHeight();
 }
 function embedMode(){return document.documentElement.classList.contains('embed');}
 function postEmbedHeight(){try{const h=document.querySelector('.wrap').scrollHeight+10;parent.postMessage({dnachess:'height',h},'*');}catch(e){}}
@@ -884,9 +903,10 @@ window.__dnachess={cell:(r,c)=>onCell(r,c),state:()=>G,at:(r,c)=>at(r,c),init:in
   setDiff:d=>{AI_DIFF=d;if(G)G.diff=d;},setMode:m=>{GAME_MODE=m;initGame(G?G.vsAI:false);},targets:(r,c)=>{const p=at(r,c);return p?targetsFor(p):null;},ter:(r,c)=>ter(r,c)};
 const _hb=document.getElementById('howto-btn');if(_hb)_hb.addEventListener('click',showHowto);
 initGame(false);
-if(!document.documentElement.classList.contains('embed')){try{if(!localStorage.getItem('dnachess_seen'))setTimeout(showHowto,300);}catch(e){}}
-// embed auto-height: report content height to the homepage iframe
-if(embedMode()){
+// show the how-to on first visit everywhere EXCEPT inside the homepage iframe (app/standalone still show it)
+if(!window.__IFRAME_EMBED__){try{if(!localStorage.getItem('dnachess_seen'))setTimeout(showHowto,300);}catch(e){}}
+// embed auto-height: report content height only to the homepage iframe (not in the standalone app)
+if(window.__IFRAME_EMBED__){
   const p=()=>postEmbedHeight();
   window.addEventListener('load',p); window.addEventListener('resize',p);
   try{new ResizeObserver(p).observe(document.querySelector('.wrap'));}catch(e){}
@@ -928,6 +948,30 @@ genes.forEach((g,i)=>{
   seg.textContent=mutated?'MUT':'ok';
   wm.appendChild(seg);
 });
+</script>
+<script>
+/* ── PWA: service worker + one-click install ── */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('/dna-chess-sw.js',{scope:'/dna-chess.html'}).catch(function(){});
+  });
+}
+(function(){
+  var btn=document.getElementById('installBtn'); if(!btn) return;
+  function standalone(){return (window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone===true;}
+  if(standalone()){ btn.classList.remove('show'); return; }              // already installed → hide
+  var deferred=null, auto=/[?&]install=1/.test(location.search);          // homepage deep-link → auto-offer
+  function doPrompt(){ if(!deferred) return; deferred.prompt(); deferred.userChoice.then(function(){ deferred=null; btn.classList.remove('show'); }); }
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferred=e; btn.classList.add('show');
+    if(auto){ auto=false; doPrompt(); }
+  });
+  btn.addEventListener('click',function(){
+    if(deferred){ doPrompt(); }
+    else { alert('To install DNA Chess:\n\n• Android (Chrome): tap ⋮ → “Add to Home screen”.\n• iPhone (Safari): tap Share → “Add to Home Screen”.\n\nThe game then opens full-screen like an app and works offline.'); }
+  });
+  window.addEventListener('appinstalled',function(){ deferred=null; btn.classList.remove('show'); });
+})();
 </script>
 </body>
 </html>
