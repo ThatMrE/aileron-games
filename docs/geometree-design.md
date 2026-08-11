@@ -20,11 +20,29 @@ building **form** can heal it. Each stage is a branch / a dimension you restore.
   single point** — is carried down and replanted, looping the game (the replay
   button is "Replant the seed").
 
-Acts map onto the ten forms: I Awakening (line) · II Flatland (triangle→hexagon) ·
-III The Ascent (tetra→octa) · IV The Rot (icosahedron) · V The Crown
-(dodecahedron). Deeper mechanics the story sets up — non-regular polygons, true
-4D shapes, enemy battles, time-skills — are seeded in the narration as the road
-ahead, ready to become real stages.
+Acts map onto the **eleven** forms: I Awakening (line) · II Flatland
+(triangle→hexagon) · III The Ascent (tetra→octa) · IV The Rot (icosahedron) ·
+V The Crown (dodecahedron) · VI The Fourth Dimension (tesseract).
+
+### The Rot — enemy encounter (icosahedron, dodecahedron, tesseract)
+On these high branches the enemies are real: **imaginary planes** (red shards)
+drift around the form and, on a timer, **strike a placed edge and un-draw it**
+(a red flash, a corruption counter, a "⚠ The Rot" badge). You cannot kill what is
+imaginary — you *out-build* it: complete the form before it comes apart. The
+strike telegraphs (a shard brightens and reaches toward the shape), and the
+interval tightens act by act (4.0s → 3.6s → 3.2s), so it stays winnable while
+pressuring your time score. Completing the form banishes the planes.
+
+### The 4th dimension — the tesseract (form 11)
+The finale is a genuine 4-D stage: the **tesseract** (16 vertices, 32 edges) is
+stored in 4-D coordinates and projected **4-D → 3-D → 2-D** — rotating through the
+`xw` and `zw` planes each frame so it folds inside-out (the classic cube-in-a-cube
+shadow), then through the normal 3-D view you can drag. You trace the shadow of a
+four-dimensional object. It is also the fiercest Rot encounter, at the source of
+the blight, and where the seed is finally recovered.
+
+Still seeded in the narration for later: **non-regular polygons** and
+**time-skills**.
 
 ---
 

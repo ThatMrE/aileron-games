@@ -115,6 +115,13 @@
     }
     .edgecount{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--muted);}
     .edgecount b{color:var(--cyan);}
+    .rot-warn{
+      font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;
+      text-transform:uppercase;color:#ff5a6a;border:1px solid rgba(255,90,106,0.5);
+      background:rgba(255,90,106,0.1);padding:0.15rem 0.5rem;border-radius:3px;position:relative;top:-2px;
+      align-items:center;animation:rotpulse 1.1s ease-in-out infinite;
+    }
+    @keyframes rotpulse{0%,100%{box-shadow:0 0 6px rgba(255,90,106,0.25);}50%{box-shadow:0 0 16px rgba(255,90,106,0.7);}}
 
     .stage-frame{
       position:relative;border:1px solid var(--border);border-radius:14px;overflow:hidden;
@@ -349,9 +356,10 @@
       <div class="stage-col">
         <div class="levelbar">
           <div class="lb-left">
-            <span class="lv-step" id="lvStep">Form 1 / 10</span>
+            <span class="lv-step" id="lvStep">Form 1 / 11</span>
             <span class="lv-name" id="lvName">Line</span>
             <span class="lv-dim" id="lvDim">1D</span>
+            <span class="rot-warn" id="rotWarn" style="display:none;"></span>
           </div>
           <span class="edgecount"><b id="edgeDone">0</b> / <span id="edgeTotal">1</span> edges</span>
         </div>
@@ -402,7 +410,7 @@
       <!-- TREE -->
       <aside class="tree-panel">
         <h2>The World-Tree</h2>
-        <p class="tree-sub">Branches restored: <b id="grownCount">0</b> / 10</p>
+        <p class="tree-sub">Branches restored: <b id="grownCount">0</b> / 11</p>
         <p class="tree-sub pts">Points: <b id="scoreTotal">0</b></p>
         <div class="tree" id="tree"></div>
         <div class="tree-foot">
@@ -489,6 +497,26 @@
     for(const a of[-1,1])for(const b of[-1,1])v.push([a*PHI, 0, b*INV]);
     return v;
   })();
+  // 4D: the tesseract (hypercube) — 16 vertices, 32 edges
+  const tesseractV = (()=>{const v=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])for(const w of[-1,1])v.push([x,y,z,w]);return v;})();
+  function hypercubeEdges(verts){                 // connect vertices differing in exactly one coordinate
+    const e=[];
+    for(let i=0;i<verts.length;i++) for(let j=i+1;j<verts.length;j++){
+      let diff=0; for(let k=0;k<verts[i].length;k++) if(verts[i][k]!==verts[j][k]) diff++;
+      if(diff===1) e.push([i,j]);
+    }
+    return e;
+  }
+  // rotate a 4D point through two planes, then perspective-project 4D → 3D
+  function project4to3(v, a){
+    let x=v[0], y=v[1], z=v[2], w=v[3];
+    const ca=Math.cos(a), sa=Math.sin(a);              // x–w plane
+    let x1=x*ca - w*sa, w1=x*sa + w*ca;
+    const cb=Math.cos(a*0.7), sb=Math.sin(a*0.7);      // z–w plane (second frequency)
+    let z1=z*cb - w1*sb, w2=z*sb + w1*cb;
+    const d=3.0, s=d/(d - w2*0.9);                      // 4D → 3D perspective (nearer in w = larger)
+    return [x1*s, y*s, z1*s];
+  }
 
   /* ---------- the evolution ladder (each form is a branch / a dimension) ---------- */
   const LEVELS = [
@@ -524,14 +552,18 @@
       verts:octaV, edges:autoEdges(octaV),
       story:'Where the Keep had faces, set corners; where corners, faces &mdash; and its mirror-twin rises. The Tree loves symmetry, and symmetry is the one thing the rot cannot abide.',
       fact:'8 triangular faces meeting at 6 points &mdash; the cube&rsquo;s <b>dual twin</b>. Swap every face of a cube for a corner and this is what you get.' },
-    { name:'Icosahedron', dim:'3D', d3:true, chapter:'IV &middot; The Rot',
+    { name:'Icosahedron', dim:'3D', d3:true, chapter:'IV &middot; The Rot', rot:{interval:4000,count:1},
       verts:icosaV, edges:autoEdges(icosaV),
-      story:'You find them at last: <b>imaginary planes</b> &mdash; surfaces that should not be, standing square to reason itself. Everything they touch turns to rot. Twenty faces will hold the line: let no edge fall.',
+      story:'You find them at last: <b>imaginary planes</b> &mdash; surfaces that should not be, standing square to reason itself. They lash out and <b>rot the edges you have drawn</b>. Out-build them: raise all twenty faces at once, and the planes are banished.',
       fact:'20 triangular faces, 12 corners, 30 edges &mdash; the <b>most faces of any Platonic solid</b>, and the <b>dual of the dodecahedron</b> you build next. Many virus shells take exactly this shape.' },
-    { name:'Dodecahedron', dim:'3D', d3:true, chapter:'V &middot; The Crown',
+    { name:'Dodecahedron', dim:'3D', d3:true, chapter:'V &middot; The Crown', rot:{interval:3600,count:1},
       verts:dodecaV, edges:autoEdges(dodecaV),
-      story:'The crown, and the last perfect solid &mdash; twelve pentagons, the shape Plato gave the cosmos. Here the branches brush the fourth dimension and time runs thin; you feel moves not yet made. Finish it, and the rot breaks.',
+      story:'The crown, and the last perfect solid &mdash; twelve pentagons, the shape Plato gave the cosmos. The rot claws harder here. Hold the crown against it &mdash; and feel, just past depth, a door begin to open.',
       fact:'The crown, and the <b>last of the five Platonic solids</b>: 12 pentagons, 20 corners, 30 edges. Plato tied it to the cosmos itself &mdash; the whole tree grows toward this single form.' },
+    { name:'Tesseract', dim:'4D', d3:true, d4:true, chapter:'VI &middot; The Fourth Dimension', rot:{interval:3200,count:1},
+      verts:tesseractV, edges:hypercubeEdges(tesseractV),
+      story:'A cube of cubes, its shadow folding through itself along a direction beyond depth. Here, at the source of the rot, you build the impossible &mdash; and reach the seed the Tree has hidden inside four dimensions.',
+      fact:'The <b>tesseract</b> (4-cube): 16 corners, <b>32 edges</b>, 8 cubic cells. You see only its shadow &mdash; a cube nested in a cube, turning inside-out as it rotates through the fourth dimension.' },
   ];
 
   // story beats shown as full-screen narration at act transitions
@@ -540,7 +572,8 @@
   const BEATS = {
     1: { act:'II &middot; Flatland', text:'The third edge closes and the plane unfurls around you. You are two-dimensional again &mdash; home &mdash; but home is rotting. Every shape you raise here is a branch pulled back from the dark.' },
     5: { act:'III &middot; The Ascent', text:'The plane is not enough. You reach along a direction that did not exist a breath ago and pull a point up into it. <b>Depth.</b> You are three-dimensional now, and the high branches &mdash; and what nests in them &mdash; open above you.' },
-    8: { act:'IV &middot; The Rot', text:'You feel them before you see them: <b>imaginary planes</b>, angled off every real direction at once, breeding rot in clean Euclidean space. This high in the Tree they are strong. From here, building is battle.' }
+    8: { act:'IV &middot; The Rot', text:'You feel them before you see them: <b>imaginary planes</b>, angled off every real direction at once. They will <b>strike the edges you draw and rot them away</b>. You cannot kill what is imaginary &mdash; you can only out-build it. Complete the form before it comes apart.' },
+    10:{ act:'VI &middot; The Fourth Dimension', text:'Depth is not the end. A direction beyond it opens &mdash; you cannot point at it, only turn through it. The <b>tesseract</b>: a cube of cubes, its shadow folding through itself. Here, at the source, the rot is strongest. Build the impossible, and reach the seed.' }
   };
   const EPILOGUE = 'The rot recoils. Light climbs the branches, dimension by dimension, and the World-Tree stands whole. But every tree is mortal &mdash; even this one. So you carry down the one thing worth saving: the <b>seed</b>, a single point with every dimension folded inside it. You press it into fresh dark and let go. Length, then width, then depth &mdash; a new edge, waking in the black. Begin again.';
 
@@ -594,6 +627,13 @@
   let booting = true;           // suppress story beats during the initial restore
   const beatsShown = new Set();  // act-transition beats already played this journey
   let typer = null;             // active typewriter interval
+  let rot4 = 0.6, drawRot4 = 0.6;   // 4D rotation angle (tesseract), and its displayed value
+  // ── the Rot: enemy encounter ──
+  let rotTimer = 0;             // ms since last strike
+  let rotCount = 0;             // edges corrupted this form
+  let rotActive = false;        // encounter running on this form
+  let rotFlash = 0;             // red screen flash on a strike (0..1)
+  const rotEnemies = [];        // drifting imaginary planes
 
   /* ---------- persistence ---------- */
   const SAVE = 'geometree_progress_v1';
@@ -729,9 +769,11 @@
     return {x:x, y:y, z:0};
   }
   function screenPoints(level){
-    const rp = level.verts.map(v => project(v, level.d3));
+    const base = level.d4 ? level.verts.map(v => project4to3(v, drawRot4)) : level.verts;
+    const rp = base.map(v => project(v, level.d3));
     let maxR = 0;
-    for(const v of level.verts){ const r=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); if(r>maxR)maxR=r; }
+    if(level.d4){ maxR = 2.5; }                        // fixed so the hypercube never clips or "breathes"
+    else for(const v of level.verts){ const r=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); if(r>maxR)maxR=r; }
     const margin = 46;
     const scale = (Math.min(W,H)*0.5 - margin) / (maxR||1);
     const cx = W/2, cy = H/2;
@@ -741,7 +783,7 @@
     return rp.map(p => ({
       sx: cx + p.x*scale,
       sy: cy - p.y*scale,
-      depth: level.d3 ? (p.z - zmin)/zr : 1   // 0 = far, 1 = near
+      depth: (level.d3 || level.d4) ? (p.z - zmin)/zr : 1   // 0 = far, 1 = near
     }));
   }
 
@@ -792,7 +834,7 @@
     // ── score reveal takes over once a form is complete ──
     if(reveal){ drawReveal(now, dt); requestAnimationFrame(draw); return; }
 
-    // rotation logic for 3D
+    // rotation logic for 3D (and the 4D angle for the tesseract)
     if(L.d3){
       const introDur = 1500;
       const t = (now - introT0)/introDur;
@@ -800,15 +842,21 @@
         const e = 1 - Math.pow(1-t, 3);            // easeOutCubic
         drawRot.x = rot.x;
         drawRot.y = rot.y - (1-e)*Math.PI*2;        // one full reveal turn, easing to rest
+        if(L.d4) drawRot4 = rot4 - (1-e)*Math.PI*2; // and one turn through the 4th dimension
       } else if(autoSpin && !pointer.active && !completed){
-        rot.y += 0.006;
+        rot.y += L.d4 ? 0.004 : 0.006;
         drawRot.x = rot.x; drawRot.y = rot.y;
+        if(L.d4){ rot4 += 0.006; drawRot4 = rot4; } // gentle 4D drift = the tesseract folds through itself
       } else {
         drawRot.x = rot.x; drawRot.y = rot.y;
+        if(L.d4) drawRot4 = rot4;
       }
     }
 
     PTS = screenPoints(L);
+
+    // ── the Rot: enemy encounter ──
+    if(rotActive && L.rot){ updateRot(now, dt, L); renderEnemies(now, L); }
 
     // ghost (unplaced) target edges
     for(const [i,j] of L.edges){
@@ -877,7 +925,71 @@
     });
 
     renderParticles(dt);
+
+    // red flash when the Rot strikes
+    if(rotFlash > 0){
+      rotFlash = Math.max(0, rotFlash - dt*2.2);
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = 'hsla(357,100%,50%,'+(0.18*rotFlash)+')';
+      ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation = 'source-over';
+    }
     requestAnimationFrame(draw);
+  }
+
+  /* ---------- the Rot: imaginary planes that corrupt your edges ---------- */
+  function initRotEnemies(){
+    rotEnemies.length = 0;
+    for(let i=0;i<3;i++) rotEnemies.push({
+      ang: Math.random()*Math.PI*2, rad: 0.40+Math.random()*0.06,
+      spin: (Math.random()<0.5?-1:1)*(0.15+Math.random()*0.25),
+      phase: Math.random()*6, size: 14+Math.random()*10
+    });
+  }
+  function updateRot(now, dt, L){
+    for(const en of rotEnemies){ en.ang += en.spin*dt; en.phase += dt; }
+    if(placed.size === 0){ rotTimer = 0; return; }              // countdown starts once you have edges
+    if(completed || reveal || smEl.classList.contains('show')) return;  // pause during reveal / story
+    rotTimer += dt*1000;
+    if(rotTimer >= L.rot.interval){ rotTimer = 0; rotStrike(L); }
+  }
+  function rotStrike(L){
+    if(!placed.size) return;
+    const arr = [...placed];
+    const kk = arr[(Math.random()*arr.length)|0];
+    placed.delete(kk);
+    edgeSeq = edgeSeq.filter(e => key(e[0],e[1]) !== kk);
+    rotCount++; rotFlash = 1;
+    const [i,j] = kk.split('-').map(Number);
+    if(PTS[i] && PTS[j]) spawnBurst((PTS[i].sx+PTS[j].sx)/2, (PTS[i].sy+PTS[j].sy)/2, 357, 20, 1.8);
+    tone(90,0.28,'sawtooth',0.06); tone(60,0.34,'square',0.05);
+    updateEdgeCount(); updateRotWarn();
+  }
+  function renderEnemies(now, L){
+    const telegraph = (!completed && !reveal && placed.size>0) ? Math.min(1, rotTimer/L.rot.interval) : 0;
+    const R = Math.min(W,H);
+    ctx.globalCompositeOperation = 'lighter';
+    for(const en of rotEnemies){
+      const ex = W/2 + Math.cos(en.ang)*R*en.rad, ey = H/2 + Math.sin(en.ang)*R*en.rad*0.7;
+      const a = 0.10 + 0.30*telegraph + 0.05*Math.sin(now/300 + en.phase);
+      const s = en.size*(1 + 0.2*telegraph);
+      if(telegraph > 0.6){                                       // menace line toward the shape as a strike nears
+        ctx.beginPath(); ctx.strokeStyle = 'hsla(357,100%,55%,'+(0.25*(telegraph-0.6)/0.4)+')';
+        ctx.lineWidth = 1; ctx.moveTo(ex,ey); ctx.lineTo(W/2,H/2); ctx.stroke();
+      }
+      ctx.save(); ctx.translate(ex,ey); ctx.rotate(en.ang*1.7 + en.phase);
+      ctx.fillStyle = 'hsla(357,90%,55%,'+a+')';
+      ctx.shadowColor = 'hsla(357,100%,50%,0.6)'; ctx.shadowBlur = 12*telegraph + 4;
+      ctx.beginPath(); ctx.moveTo(-s,-s*0.5); ctx.lineTo(s*0.7,-s); ctx.lineTo(s,s*0.5); ctx.lineTo(-s*0.7,s); ctx.closePath();
+      ctx.fill(); ctx.restore();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.shadowBlur = 0;
+  }
+  function updateRotWarn(){
+    const el = document.getElementById('rotWarn'); if(!el) return;
+    if(rotActive && !completed){ el.style.display='inline-flex'; el.innerHTML = '&#9888; The Rot'+(rotCount? ' &middot; '+rotCount+' corrupted' : ''); }
+    else el.style.display='none';
   }
 
   /* ---------- the score reveal: unroll to 2D + redraw the player's path + tally ---------- */
@@ -1052,6 +1164,7 @@
     completed = true;
     completeT0 = performance.now();
     selected=-1; hoverV=-1;
+    rotActive = false; rotEnemies.length = 0; updateRotWarn();   // the Rot is banished
     spawnShower(curHue);
     playChord();
     if(cur+1 > doneCount){ doneCount = cur+1; saveProgress(doneCount); }
@@ -1099,11 +1212,15 @@
     particles.length = 0;
     formStartT = 0; edgeSeq = []; repeats = 0; reveal = null;
     rot = {x:-0.42, y:0.7}; drawRot={x:-0.42,y:0.7};
+    rot4 = 0.6; drawRot4 = 0.6;
     introT0 = performance.now();
     document.getElementById('victory').classList.remove('show');
     document.getElementById('banner').classList.remove('show');
     document.getElementById('bannerScore').innerHTML = '';
     const L = LEVELS[i];
+    rotActive = !!L.rot; rotTimer = 0; rotCount = 0; rotFlash = 0;
+    rotEnemies.length = 0; if(L.rot) initRotEnemies();
+    updateRotWarn();
     document.getElementById('lvStep').textContent = 'Form '+(i+1)+' / '+LEVELS.length;
     document.getElementById('lvName').textContent = L.name;
     document.getElementById('lvDim').textContent = L.dim;
@@ -1130,6 +1247,10 @@
     placed = new Set(); selected=-1; completed=false; hintEdge=null;
     particles.length = 0;
     formStartT = 0; edgeSeq = []; repeats = 0; reveal = null;
+    const L = LEVELS[cur];
+    rotActive = !!L.rot; rotTimer = 0; rotCount = 0; rotFlash = 0;
+    rotEnemies.length = 0; if(L.rot) initRotEnemies();
+    updateRotWarn();
     document.getElementById('banner').classList.remove('show');
     document.getElementById('bannerScore').innerHTML = '';
     updateEdgeCount();
