@@ -66,10 +66,14 @@ tree crowns.
 - Each level presents the target form's **vertices** as glowing dots and its
   **edges** as faint dashed ghosts.
 - **Click a vertex, then a neighbouring vertex** → the edge between them lights
-  up. After a successful edge the second vertex stays selected, so you can
-  *walk* around a polygon, tracing edge after edge.
+  up. Each edge is drawn **one at a time**: after a successful edge the selection
+  clears, so no vertex auto-repeats as the start of the next edge — you pick a
+  vertex, then a neighbour, for every edge. A vertex can never connect to itself,
+  and an edge can never be drawn twice. (Solids still require passing *through* a
+  vertex more than once across separate edges — the tetra…dodeca have no
+  single-stroke path — but each individual edge is its own deliberate act.)
 - Clicking a non-adjacent vertex (no target edge, or one already drawn) simply
-  re-anchors the trace — mistakes cost nothing.
+  re-anchors the trace to that vertex — mistakes cost nothing.
 - Complete **every** target edge → the form blooms (a burst ring, a particle
   shower, a colour wash and a resolving chord) and a **Grow →** button advances
   you up the tree.

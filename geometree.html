@@ -866,7 +866,7 @@
       placed.add(k);
       playEdgeNote(placed.size-1);                     // rising pentatonic as you trace
       if(a && b){ spawnBurst((a.sx+b.sx)/2,(a.sy+b.sy)/2, curHue, 14, 1.2); }
-      selected = v;                 // chain along the trace
+      selected = -1;                // one edge at a time — clear so no vertex auto-repeats
       hintEdge = null;
       updateEdgeCount();
       if(placed.size === LEVELS[cur].edges.length) onComplete();
