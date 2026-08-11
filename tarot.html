@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wetware Arcana &mdash; A Biopunk Tarot Deck Generator | Aileron Games</title>
 <meta name="description" content="Wetware Arcana is a biopunk tarot deck generator: 78 cards of gene-editing, wet lab and body-horror archetypes, with procedurally generated SVG art. Every seed grows a different strain of the deck.">
+<!-- PWA: installable Android/iOS app (namespaced so it coexists with the site's other apps) -->
+<link rel="manifest" href="/tarot.webmanifest">
+<meta name="theme-color" content="#050812">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Wetware Arcana">
+<link rel="apple-touch-icon" href="/icons/tarot-apple-touch.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/tarot-favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -59,6 +68,12 @@
   .btn-cyan{background:var(--cyan);color:var(--dark);border-color:var(--cyan);box-shadow:0 0 22px rgba(0,229,255,.3)}
   .btn-cyan:hover{background:#5ff0ff;box-shadow:0 0 34px rgba(0,229,255,.55)}
   .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn-install{background:#9dff6b;color:#04140a;border-color:#9dff6b;box-shadow:0 0 20px rgba(157,255,107,.35)}
+  .btn-install:hover{background:#b6ff8f;border-color:#b6ff8f;box-shadow:0 0 30px rgba(157,255,107,.6)}
+  .btn-install.pulse{animation:installpulse 1.5s ease-in-out 3}
+  @keyframes installpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  @media(prefers-reduced-motion:reduce){.btn-install.pulse{animation:none}}
+  html.embed .btn-install{display:none}
 
   .strainline{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.13em;color:var(--muted);
     margin-top:.85rem;display:flex;gap:1.1rem;flex-wrap:wrap;justify-content:center;text-transform:uppercase}
@@ -202,7 +217,7 @@
 
   .disclaim{font-family:'Space Mono',monospace;font-size:.64rem;color:rgba(232,240,255,.3);text-align:center;margin-top:2rem;letter-spacing:.06em}
 
-  /* ── embed mode — the homepage iframe shows only the reading bench ── */
+  /* ── embed mode — an embedded copy shows only the reading bench ── */
   html.embed body::before{display:none}
   html.embed nav, html.embed footer, html.embed .tabs, html.embed .disclaim,
   html.embed header.hero .eyebrow, html.embed header.hero h1,
@@ -271,6 +286,7 @@
       <div class="btnrow">
         <button class="btn btn-cyan" id="reseed">&#x2622; Mutate seed</button>
         <button class="btn" id="copylink">Copy link</button>
+        <button class="btn btn-install" id="installBtn" type="button" hidden>&#x1F4F2; Install app</button>
       </div>
     </div>
     <p class="strainline" id="strainline"></p>
@@ -1722,7 +1738,7 @@ function renderCodex(){
   setSeed(fromHash || randomSeed());
   renderTable();
 
-  // embed mode: deal straight away and keep the homepage iframe sized to content
+  // embed mode: deal straight away and keep the host iframe sized to content
   if(document.documentElement.classList.contains('embed')){
     const post = ()=>{ try{ parent.postMessage({ wetware:'height',
       h: Math.ceil(document.body.scrollHeight) + 8 }, '*'); }catch(e){} };
@@ -1731,6 +1747,41 @@ function renderCodex(){
     try{ new ResizeObserver(post).observe(document.querySelector('.wrap')); }catch(e){}
     deal();
     setTimeout(post, 200); setTimeout(post, 900);
+  }
+
+  /* ---------- PWA: service worker + one-click install ----------
+     Skipped entirely in embed mode: an embedded copy should not register
+     a worker or offer to install the app from inside a frame. */
+  if(!document.documentElement.classList.contains('embed')){
+    if('serviceWorker' in navigator){
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('/tarot-sw.js', { scope: '/tarot.html' }).catch(function(){});
+      });
+    }
+    var installBtn = $('installBtn');
+    var standalone = window.matchMedia('(display-mode: standalone)').matches ||
+                     window.navigator.standalone === true;
+    if(installBtn && !standalone){
+      // arrived from the homepage "Install app" chip
+      var cameToInstall = /[?&]install=1\b/.test(location.search);
+      var deferredPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e){
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.hidden = false;
+        if(cameToInstall){
+          installBtn.classList.add('pulse');
+          try{ installBtn.scrollIntoView({ block:'center', behavior:'smooth' }); }catch(err){}
+        }
+      });
+      window.addEventListener('appinstalled', function(){ installBtn.hidden = true; });
+      installBtn.addEventListener('click', function(){
+        installBtn.classList.remove('pulse');
+        if(!deferredPrompt) return;
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function(){ deferredPrompt = null; installBtn.hidden = true; });
+      });
+    }
   }
 })();
 </script>

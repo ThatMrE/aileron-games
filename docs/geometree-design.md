@@ -1,10 +1,75 @@
-# GeomeTree — Game Design Document (v0.2)
+# GeomeTree — Game Design Document (v0.4)
+
+## 0. Narrative frame — a Flatland RPG
+
+The mechanics sit inside a story, told RPG-style through text. You are a
+two-dimensional creature (a nod to *Flatland*) who lives in the **World-Tree**,
+a structure whose branches thread every dimension and whose leaves are all that
+lives. The Tree is **dying** — a rot spreads dimension to dimension — and only
+building **form** can heal it. Each stage is a branch / a dimension you restore.
+
+- **Prologue** (typewriter story modal on first play): the premise above.
+- **Per-stage narration**: every form shows a chapter label and a short in-character
+  beat in a dedicated story panel, above the (kept) geometry "field note".
+- **Act transitions** (full-screen story beats): **II · Flatland** (the triangle
+  closes and the plane returns), **III · The Ascent** (folding a point *up* into
+  depth — 3D), **IV · The Rot** (the enemies: *imaginary planes* that breed rot in
+  Euclidean space; from here, building is battle). The crown hints at the 4th
+  dimension and time.
+- **Epilogue**: the rot breaks, and the one thing worth saving — the **seed, a
+  single point** — is carried down and replanted, looping the game (the replay
+  button is "Replant the seed").
+
+Acts map onto the **thirteen** forms: I Awakening (line) · II Flatland
+(triangle→hexagon) → **II The Crooked** (irregular pentagon, concave dart) ·
+III The Ascent (tetra→octa) · IV The Rot (icosahedron) · V The Crown
+(dodecahedron) · VI The Fourth Dimension (tesseract).
+
+### The Crooked — non-regular polygons (irregular pentagon, concave dart)
+Between the regular 2-D shapes and the ascent to 3-D, the rot *warps* two branches:
+an **irregular** (scalene) pentagon — same rules, no symmetry — and a **concave
+dart** with a reflex angle that dents inward. They teach that a polygon need not be
+regular, and that every solid ahead is built only from *convex* faces.
+
+### The Rot — enemy encounter (icosahedron, dodecahedron, tesseract)
+On these high branches the enemies are real: **imaginary planes** (red shards)
+drift around the form and, on a timer, **strike a placed edge and un-draw it**
+(a red flash, a corruption counter, a "⚠ The Rot" badge). You cannot kill what is
+imaginary — you *out-build* it: complete the form before it comes apart. The
+strike telegraphs (a shard brightens and reaches toward the shape), and the
+interval tightens act by act (4.0s → 3.6s → 3.2s), so it stays winnable while
+pressuring your time score. Completing the form banishes the planes.
+
+### Time-skills — fighting the Rot through time
+On the Rot stages the Tree grants two **temporal skills** (the "highest levels use
+skills that move through time"), shown in a skill bar:
+- **Rewind** (`Z`) — instantly restores every edge the Rot has corrupted (turning
+  back time on the decay); 8-second cooldown, a cyan time-ripple. It can even seal
+  the form outright.
+- **Freeze** (`F`) — halts the Rot for 5 seconds (the imaginary planes hold, tinted
+  cyan, and stop striking); 12-second cooldown.
+Corrupted edges are tracked so Rewind knows what to restore; manually redrawing a
+corrupted edge also repairs it. The skills make the encounter a real push-pull
+rather than a race.
+
+### The 4th dimension — the tesseract (final form)
+The finale is a genuine 4-D stage: the **tesseract** (16 vertices, 32 edges) is
+stored in 4-D coordinates and projected **4-D → 3-D → 2-D** — rotating through the
+`xw` and `zw` planes each frame so it folds inside-out (the classic cube-in-a-cube
+shadow), then through the normal 3-D view you can drag. You trace the shadow of a
+four-dimensional object. It is also the fiercest Rot encounter, at the source of
+the blight, and where the seed is finally recovered.
+
+---
+
+# GeomeTree — Game Design Document (earlier notes, v0.3)
 
 > **One-line pitch:** A learning game where geometry *evolves*. You build each
 > form by tracing its edges — from a single line, up through the polygons and
 > all five Platonic solids, to a dodecahedron — and every form you complete grows
 > a branch of your geometry tree, in a synesthetic, audio-reactive build inspired
-> by *Tetris Effect*.
+> by *Tetris Effect*. Finish a form and it **unrolls flat and replays your path
+> for points** — up to 1000 per stage.
 
 ---
 
@@ -30,6 +95,9 @@
    form owns a **hue zone** — the palette journeys cyan → violet as you evolve —
    and the whole soundtrack climbs in key form by form, so finishing the tree
    *feels* like an ascent.
+6. **Completing a form is a payoff, not just a checkmark.** On success the shape
+   **unrolls into 2D** and the game **replays the exact path you drew**, vertex by
+   vertex, tallying points — rewarding speed and clean, non-repetitive tracing.
 
 ---
 
@@ -91,6 +159,25 @@ tree crowns.
   completion arpeggiates a major chord with a low bloom. The musical key climbs
   form by form (G3 → G4 across the ten), and audio initialises on the first click
   (respecting autoplay) — a **Sound** toggle mutes it.
+
+### Score reveal (unroll + path replay)
+On completion the game runs a short reveal, then shows the score with the **Grow →**
+button (click/tap or Enter/Space skips straight to the score):
+- **Unroll to 2D.** The completed wireframe animates flat: every vertex eases onto
+  an even circle laid out in the vertices' angular order. This guarantees a clean,
+  overlap-free 2D figure for any form (a 3D solid "unrolls" into a flat ring of its
+  vertices; a polygon barely moves, since it is already circular).
+- **Path replay.** A glowing marker retraces the **exact order the player drew the
+  edges**, lighting each vertex as it arrives and sparking a burst + a soft
+  pentatonic tick — literally "drawing the path the player took from vertex to
+  vertex."
+- **Scoring — 1000 points per stage.** As the path replays, a **base of 500**
+  accrues (each vertex is a share of points). Then a **time bonus of up to 500** is
+  added — the faster you traced (par ≈ 1 second per edge), the higher — and **50
+  points are deducted per repeated-edge attempt** (clicking to redraw an edge
+  already drawn). `stage = clamp(500 + timeBonus − 50·repeats, 0, 1000)`. Stage
+  scores sum into a running total shown in the tree panel and on the victory
+  screen, persisted to `localStorage`.
 
 ### 3D forms
 - Solids render as **depth-shaded wireframes** — nearer edges brighter and

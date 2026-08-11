@@ -1,0 +1,36 @@
+{
+  "name": "Wetware Arcana — Biopunk Tarot",
+  "short_name": "Wetware Arcana",
+  "description": "A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab, with procedurally drawn art — every seed grows a different deck. An Aileron Games title.",
+  "id": "/tarot.html",
+  "start_url": "/tarot.html?source=pwa",
+  "scope": "/tarot.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050812",
+  "theme_color": "#050812",
+  "categories": ["games", "entertainment", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/icons/tarot-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/tarot-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/tarot-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/tarot-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Draw a reading",
+      "short_name": "Draw",
+      "description": "Deal a fresh spread from this seed",
+      "url": "/tarot.html?source=pwa#draw",
+      "icons": [{ "src": "/icons/tarot-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "The full deck",
+      "short_name": "Deck",
+      "description": "Browse all 78 cards in this print run",
+      "url": "/tarot.html?source=pwa#deck"
+    }
+  ]
+}

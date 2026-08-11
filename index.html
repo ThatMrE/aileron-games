@@ -338,7 +338,14 @@
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .install-chip:hover { transform: translateY(-1px); box-shadow: 0 0 26px rgba(255,180,84,0.65); }
+    /* Wetware Arcana's chip wears the deck's cyan rather than Pun Bearable's amber */
+    .install-chip-cyan { color: #04140a; background: #9dff6b; }
+    .install-chip-cyan:hover { box-shadow: 0 0 26px rgba(157,255,107,0.65); }
     .install-chip:active { transform: translateY(0); }
+
+    /* small inline "Install" pill (DNA Chess card + hero slide) */
+    .mini-install { display: inline-block; text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+    .mini-install:hover, .mini-install:focus-visible { background: rgba(0,229,255,0.18) !important; border-color: var(--cyan) !important; color: #fff !important; outline: none; }
 
     .game-icon { font-size: 2.2rem; margin-bottom: 1rem; }
 
@@ -651,7 +658,7 @@
               <span class="hslide-kicker">Molecular biology &middot; Playable prototype</span>
               <span class="hslide-title">DNA Chess</span>
               <span class="hslide-desc">Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Hot-seat or vs AI.</span>
-              <span class="hslide-cta">Play the prototype &rarr;</span>
+              <span class="hslide-cta">Play the prototype &rarr;<span class="mini-install" data-install="dna-chess.html?install=1" role="button" tabindex="0" aria-label="Install DNA Chess on Android" style="margin-left:0.7rem; font-size:0.6rem; letter-spacing:0.08em; color:var(--cyan); border:1px solid rgba(0,229,255,0.45); border-radius:20px; padding:3px 10px; background:rgba(0,229,255,0.07);">&#128241; Install</span></span>
             </span>
           </a>
 
@@ -718,12 +725,15 @@
 
       <div class="games-grid">
 
-        <a href="tarot.html" class="game-card" style="display:block;">
-          <div class="game-icon">&#x1F0CF;</div>
-          <h3>Wetware Arcana</h3>
-          <span class="game-status status-active">New &middot; Play Now</span>
-          <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; Death is Apoptosis, the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different deck. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="tarot.html" class="game-card">
+            <div class="game-icon">&#x1F0CF;</div>
+            <h3>Wetware Arcana</h3>
+            <span class="game-status status-active">New &middot; Play Now</span>
+            <p>A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; Death is Apoptosis, the suits are Plasmids, Cultures, Nucleases and Organs. Every seed grows a different deck. <span style="color:var(--cyan);">Draw a card &rarr;</span></p>
+          </a>
+          <button type="button" id="installTarotBtn" class="install-chip install-chip-cyan">&#x1F4F2; Install app</button>
+        </div>
 
         <a href="dice.html" class="game-card" style="display:block;">
           <div class="game-icon">&#x2684;</div>
@@ -746,7 +756,7 @@
             <span class="game-status status-active">Play Now</span>
             <p>A pun-fueled card game where your wits are the only weapon. Think you can bear the wordplay? Prepare to suffer &mdash; brilliantly. <span style="color:var(--cyan);">Play a round &rarr;</span></p>
           </a>
-          <button type="button" id="installBtn" class="install-chip" data-install-url="install.html">&#x1F4F2; Install app</button>
+          <button type="button" id="installBtn" class="install-chip">&#x1F4F2; Install app</button>
         </div>
 
         <a class="game-card" href="dna-chess.html" style="display:block">
@@ -754,7 +764,10 @@
           <h3>DNA Chess</h3>
           <span class="game-status status-active">&#9654; Playable Prototype</span>
           <p>Run the Central Dogma as a war machine: transcribe RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Now playable in the browser &mdash; hot-seat or vs AI.</p>
-          <p style="margin-top:0.75rem; color:var(--cyan); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em;">&#9654; PLAY THE PROTOTYPE &rarr;</p>
+          <p style="margin-top:0.75rem; display:flex; gap:0.7rem; align-items:center; flex-wrap:wrap;">
+            <span style="color:var(--cyan); font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em;">&#9654; PLAY THE PROTOTYPE &rarr;</span>
+            <span class="mini-install" data-install="dna-chess.html?install=1" role="button" tabindex="0" aria-label="Install DNA Chess on Android" style="font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--cyan); border:1px solid rgba(0,229,255,0.45); border-radius:20px; padding:3px 10px; background:rgba(0,229,255,0.07);">&#128241; INSTALL</span>
+          </p>
         </a>
 
         <a href="geometree.html" class="game-card" style="display:block;">
@@ -771,7 +784,7 @@
             <span class="game-status status-active">Play Now</span>
             <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Your starting hand is dealt from real distributions and every fork is a roll against a published probability. About one run in twenty reaches treatment &mdash; and not by playing well. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
           </a>
-          <button type="button" class="install-chip" data-install-url="fda.html?install=1">&#x1F4F2; Install app</button>
+          <button type="button" id="installFdaBtn" class="install-chip">&#x1F4F2; Install app</button>
         </div>
 
       </div>
@@ -957,36 +970,49 @@
       start();
     })();
 
-    // "Install app" chips. Each chip names the page that can actually install
-    // it via data-install-url, because this index carries no manifest of its
-    // own — the install has to happen on a page that does, and a chip firing
-    // whichever prompt the index happened to offer would install the wrong app.
+    // "Install app" chips: fire the native install prompt when the browser
+    // offers it here, otherwise open that app's install destination — the
+    // dedicated install page for Pun Bearable, the game page itself for
+    // Wetware Arcana. The homepage carries no manifest of its own, so in
+    // practice most browsers take the fallback path; the chip's real job is
+    // to route to the right place.
     (function(){
-      var chips = document.querySelectorAll('.install-chip');
-      if(!chips.length){ return; }
       function isStandalone(){
         return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       }
-      var deferred = null;
-      window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
-      window.addEventListener('appinstalled', function(){
-        Array.prototype.forEach.call(chips, function(c){ c.style.display = 'none'; });
-      });
-      Array.prototype.forEach.call(chips, function(btn){
+      function wireInstallChip(id, href){
+        var btn = document.getElementById(id);
+        if(!btn){ return; }
         if(isStandalone()){ btn.style.display = 'none'; return; }
+        var deferred = null;
+        window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; });
+        window.addEventListener('appinstalled', function(){ btn.style.display = 'none'; });
         btn.addEventListener('click', function(){
-          var url = btn.getAttribute('data-install-url');
-          if(deferred && !url){
+          if(deferred){
             deferred.prompt();
             deferred.userChoice.then(function(){ deferred = null; });
           } else {
-            // Go to the page that carries this game's manifest and can
-            // install it — a dedicated install page, or the game itself.
-            window.location.href = url || 'install.html';
+            window.location.href = href;
           }
         });
-      });
+      }
+      wireInstallChip('installBtn', 'install.html');
+      wireInstallChip('installTarotBtn', 'tarot.html?install=1');
+      wireInstallChip('installFdaBtn', 'fda.html?install=1');
     })();
+  </script>
+  <script>
+    // "Install" pill on the DNA Chess card → go straight to the game's install flow,
+    // without triggering the card's play link. Capture phase so it runs first.
+    document.addEventListener('click', function(e){
+      var t = e.target.closest && e.target.closest('[data-install]');
+      if(t){ e.preventDefault(); e.stopPropagation(); window.location.href = t.getAttribute('data-install'); }
+    }, true);
+    document.addEventListener('keydown', function(e){
+      if((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-install]')){
+        e.preventDefault(); window.location.href = e.target.getAttribute('data-install');
+      }
+    }, true);
   </script>
 </body>
 </html>

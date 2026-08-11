@@ -1,0 +1,19 @@
+{
+  "name": "DNA Chess",
+  "short_name": "DNA Chess",
+  "description": "Run the Central Dogma as a war machine — express RNA, build protein enzymes, and mutate your opponent's genome until they get cancer. A molecular strategy game in the style of David Goodsell's Machinery of Life.",
+  "id": "/dna-chess.html",
+  "start_url": "/dna-chess.html?source=pwa",
+  "scope": "/dna-chess.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#cdbb90",
+  "theme_color": "#b39a68",
+  "categories": ["games", "education", "entertainment"],
+  "icons": [
+    { "src": "/icons/dnachess-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/dnachess-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/dnachess-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/dnachess-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
