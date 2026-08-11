@@ -616,6 +616,33 @@
       box-shadow: 0 6px 20px rgba(201,151,79,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
       transition: transform 0.12s, box-shadow 0.2s; }
     .notify button:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
+
+    /* ── "Install on Android" card ── */
+    .install-card {
+      max-width: 680px; margin: 3rem auto 0;
+      display: flex; gap: 1.2rem; align-items: center; text-align: left;
+      background: radial-gradient(120% 160% at 12% -30%, rgba(201,151,79,0.15), transparent 60%), rgba(20,12,8,0.62);
+      border: 1px solid rgba(201,151,79,0.3); border-radius: 16px;
+      padding: 1.5rem 1.6rem; box-shadow: 0 20px 44px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .install-card[hidden] { display: none; }
+    .install-emoji { font-size: 2.7rem; line-height: 1; flex: none; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.5)); }
+    .install-body { flex: 1 1 auto; }
+    .install-body .cta-eyebrow { margin-bottom: 0.3rem; }
+    .install-body h2 {
+      font-family: 'Grenze Gotisch', serif; font-weight: 900; line-height: 1.1;
+      font-size: clamp(1.3rem, 3.6vw, 1.9rem); color: var(--gold);
+      text-shadow: 0 0 24px rgba(201,151,79,0.25);
+    }
+    .install-body p { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin: 0.5rem 0 0; max-width: 48ch; }
+    .install-body .cta-btn { margin-top: 1rem; }
+    .install-hint { margin-top: 0.7rem; font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.05em; color: rgba(239,224,200,0.55); line-height: 1.5; }
+    .install-hint b { color: var(--ink); font-weight: 700; }
+    @media (max-width: 560px) {
+      .install-card { flex-direction: column; text-align: center; }
+      .install-body p { margin-left: auto; margin-right: auto; }
+    }
   </style>
 </head>
 <body>
@@ -795,6 +822,17 @@
     </div>
 
     <div class="status" id="status"></div>
+
+    <section class="install-card" id="installCard" hidden>
+      <div class="install-emoji" aria-hidden="true">&#128241;</div>
+      <div class="install-body">
+        <div class="cta-eyebrow">&#128123; Take the board with you</div>
+        <h2>Install the Weji app</h2>
+        <p>Add Weji to your Android home screen &mdash; full-screen, offline, and free. No app store required.</p>
+        <button class="cta-btn" id="installBtnMain" type="button" hidden>&#128242; Install on Android</button>
+        <div class="install-hint" id="installHint"></div>
+      </div>
+    </section>
 
     <div class="divider"><span class="crest"><svg viewBox="0 0 60 60"><use href="#ic-crest"/></svg></span></div>
 
@@ -1230,25 +1268,64 @@
       });
     }
 
-    // Android/Chrome custom install button
-    const installBtn = document.getElementById('installBtn');
+    // ── Add-to-home-screen: one-click install (nav button + install card) ──
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) && !window.MSStream;
+    const isAndroid = /Android/i.test(ua);
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+
+    const navInstallBtn = document.getElementById('installBtn');
+    const installCard   = document.getElementById('installCard');
+    const installBtnMain = document.getElementById('installBtnMain');
+    const installHint   = document.getElementById('installHint');
     let deferredPrompt = null;
+
+    // Android/Chromium: the browser says we can install → offer a one-tap button.
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installBtn.classList.add('show');
+      if (isStandalone) return;
+      navInstallBtn.classList.add('show');
+      installBtnMain.hidden = false;
+      installCard.hidden = false;
+      installHint.textContent = 'One tap — works offline, no app store, about 1 MB.';
     });
-    installBtn.addEventListener('click', async () => {
+
+    async function doInstall() {
       if (!deferredPrompt) return;
       deferredPrompt.prompt();
       await deferredPrompt.userChoice;
       deferredPrompt = null;
-      installBtn.classList.remove('show');
-    });
+      navInstallBtn.classList.remove('show');
+    }
+    navInstallBtn.addEventListener('click', doInstall);
+    installBtnMain.addEventListener('click', doInstall);
+
     window.addEventListener('appinstalled', () => {
       deferredPrompt = null;
-      installBtn.classList.remove('show');
+      navInstallBtn.classList.remove('show');
+      installBtnMain.hidden = true;
+      installCard.hidden = false;
+      installHint.textContent = '👻 Installed — find Weji on your home screen.';
+      setTimeout(() => { installCard.hidden = true; }, 6000);
     });
+
+    // If no native prompt is available, show manual steps on mobile (iOS always;
+    // Android as a fallback when the event doesn't fire).
+    if (!isStandalone) {
+      setTimeout(() => {
+        if (deferredPrompt) return;                 // native button already shown
+        if (isIOS) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'On iPhone/iPad: tap <b>Share</b> &#x2191; then <b>Add to Home Screen</b>.';
+        } else if (isAndroid) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'In Chrome: tap the <b>&#8942; menu</b>, then <b>Install app</b> / <b>Add to Home screen</b>.';
+        }
+        // desktop without prompt: leave the card hidden
+      }, 1400);
+    }
   </script>
 </body>
 </html>
