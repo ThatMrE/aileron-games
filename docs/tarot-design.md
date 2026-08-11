@@ -173,6 +173,11 @@ Everything is namespaced. The worker's scope is `/tarot.html` so it coexists
 with `dice-sw.js` at `/`, and its cleanup only deletes `tarot-` caches, so it
 can never evict a neighbouring app's cache.
 
+Embed mode (`?embed=1`) registers no worker and hides the install button, so an
+embedded copy never offers to install an app from inside a frame. The homepage
+no longer embeds any game — it links out only — but the mode is still supported
+for embedding the reading bench elsewhere.
+
 **Offline.** Because the deck is generated in the page — no card art or data is
 ever fetched — precaching the document and icons is enough for the installed
 app to work completely offline: new seeds, new art, all 14 spreads, exports.

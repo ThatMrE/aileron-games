@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install Pun Bearable — the app</title>
+  <meta name="description" content="Install Pun Bearable on your phone in one tap. Free, works offline, no app store needed.">
+  <link rel="manifest" href="/pun-bearable.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Pun Bearable">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/app-icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/app-icons/apple-touch-icon-180.png">
+  <style>
+    :root{
+      --bg:#000; --fg:#fff; --muted:rgba(255,255,255,.62); --faint:rgba(255,255,255,.4);
+      --line:rgba(255,255,255,.2); --line2:rgba(255,255,255,.32);
+      --sans:'Helvetica Neue',Helvetica,Arial,'Roboto',sans-serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    body{background:#000;color:#fff;font-family:var(--sans);-webkit-font-smoothing:antialiased;
+      min-height:100vh;display:flex;flex-direction:column;letter-spacing:-.01em;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .top{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;border-bottom:1px solid var(--line)}
+    .logo{font-weight:800;font-size:1rem;letter-spacing:-.02em}
+    .logo small{display:block;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-top:1px}
+    .back{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .back:hover{color:#fff}
+
+    main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:3rem 1.5rem 4rem;max-width:560px;margin:0 auto;width:100%}
+    .appicon{width:104px;height:104px;border-radius:22px;border:1px solid var(--line);margin-bottom:1.75rem}
+    h1{font-size:clamp(2rem,8vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+    .sub{color:var(--muted);margin-top:1rem;font-size:1.02rem;max-width:36ch}
+
+    .cta{margin-top:2.25rem;width:100%;max-width:360px}
+    .btn-install{
+      width:100%;display:flex;align-items:center;justify-content:center;gap:.6rem;
+      font-family:var(--sans);font-size:.95rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+      padding:1.15rem 1.5rem;border:2px solid #fff;background:#fff;color:#000;cursor:pointer;transition:.15s;border-radius:0}
+    .btn-install:hover{background:#000;color:#fff}
+    .btn-install:disabled{opacity:.5;cursor:default}
+    .btn-install:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .hint{margin-top:.9rem;font-size:.78rem;color:var(--faint);letter-spacing:.02em;min-height:1.2em}
+
+    /* step-by-step fallback panel */
+    .steps{margin-top:1.75rem;width:100%;max-width:420px;text-align:left;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:1.1rem 1.25rem;display:none}
+    .steps.show{display:block}
+    .steps h2{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+    .steps ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:.6rem}
+    .steps li{counter-increment:s;position:relative;padding-left:2rem;font-size:.9rem;color:#fff;line-height:1.5}
+    .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:1.4rem;height:1.4rem;border:1px solid var(--line2);
+      display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;font-family:var(--sans)}
+    .steps li b{font-weight:800}
+    kbd{font-family:var(--sans);font-weight:800;border:1px solid var(--line2);padding:0 .3rem;border-radius:3px;font-size:.85em}
+
+    /* what you get */
+    .feats{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);width:100%;max-width:460px}
+    .feat{background:#000;padding:1rem .75rem}
+    .feat .fi{font-size:1.4rem}
+    .feat .ft{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.4rem;line-height:1.3}
+
+    .success{display:none;margin-top:1.5rem;border:2px solid #fff;padding:1rem 1.25rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .success.show{display:block}
+
+    footer{padding:1.5rem;text-align:center;border-top:1px solid var(--line)}
+    footer p{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+    .alt{margin-top:1.25rem;font-size:.8rem;color:var(--muted)}
+    .alt a{text-decoration:underline;text-underline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a href="index.html" class="logo">&#9650; AILERON<small>Pun Bearable</small></a>
+    <a href="punbearable.html" class="back">&larr; Play in browser</a>
+  </div>
+
+  <main>
+    <img class="appicon" src="/assets/app-icons/icon-512.png" alt="Pun Bearable app icon">
+    <h1>Install<br>Pun Bearable</h1>
+    <p class="sub">The wordplay party game, on your home screen. Free, works offline, no app store needed.</p>
+
+    <div class="cta">
+      <button type="button" id="installNow" class="btn-install">
+        <span aria-hidden="true">&#x1F4F2;</span><span id="btnLabel">Install app</span>
+      </button>
+      <p class="hint" id="hint">Preparing&hellip;</p>
+    </div>
+
+    <div class="success" id="success">&#x2713; Installed — check your home screen.</div>
+
+    <section class="steps" id="steps" aria-live="polite">
+      <h2 id="stepsTitle">How to install</h2>
+      <ol id="stepsList"></ol>
+    </section>
+
+    <div class="feats">
+      <div class="feat"><div class="fi">&#x1F4F6;</div><div class="ft">Works<br>offline</div></div>
+      <div class="feat"><div class="fi">&#x1F3E0;</div><div class="ft">Home-screen<br>icon</div></div>
+      <div class="feat"><div class="fi">&#x26F6;</div><div class="ft">Full-screen<br>no browser bar</div></div>
+    </div>
+
+    <p class="alt">Prefer the Play Store version? It&rsquo;s on the way &mdash; <a href="punbearable.html">play instantly in your browser</a> meanwhile.</p>
+  </main>
+
+  <footer><p>&#9650; Aileron Games &middot; Pun Bearable</p></footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('installNow');
+      var label = document.getElementById('btnLabel');
+      var hint = document.getElementById('hint');
+      var steps = document.getElementById('steps');
+      var stepsTitle = document.getElementById('stepsTitle');
+      var stepsList = document.getElementById('stepsList');
+      var success = document.getElementById('success');
+
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+      var isChromiumAndroid = isAndroid && /Chrome|CriOS|SamsungBrowser|Edg/i.test(ua);
+      function standalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
+
+      var deferred = null;
+
+      // Register a service worker for THIS page so the browser considers it installable.
+      // Scoped to /install.html so it coexists with the game's and siblings' workers.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/punbearable-sw.js', { scope: '/install.html' }).catch(function(){});
+      }
+
+      function setLabel(t){ label.textContent = t; }
+      function setHint(t){ hint.innerHTML = t; }
+      function showSteps(title, items){
+        stepsTitle.textContent = title;
+        stepsList.innerHTML = '';
+        items.forEach(function(html){ var li=document.createElement('li'); li.innerHTML=html; stepsList.appendChild(li); });
+        steps.classList.add('show');
+      }
+      function done(){
+        success.classList.add('show');
+        steps.classList.remove('show');
+        btn.disabled = true; setLabel('Installed'); setHint('You&rsquo;re all set.');
+      }
+
+      if (standalone()) { done(); return; }
+
+      // Adapt the initial label/hint to the platform.
+      if (isAndroid) { setLabel('Install on Android'); }
+      setHint(isChromiumAndroid ? 'One tap to add it to your home screen.' :
+              isIOS ? 'Tap the button for the two-second setup.' :
+              'Best on an Android phone in Chrome.');
+
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        deferred = e;
+        setLabel(isAndroid ? 'Install on Android' : 'Install app');
+        setHint('Ready &mdash; tap to install.');
+        steps.classList.remove('show');
+      });
+
+      window.addEventListener('appinstalled', function () { deferred = null; done(); });
+
+      var ANDROID_STEPS = [
+        'Tap the <b>&#8942; menu</b> (top-right of Chrome).',
+        'Choose <b>Add to Home screen</b> (or <b>Install app</b>).',
+        'Tap <b>Install</b> &mdash; Pun Bearable appears on your home screen.'
+      ];
+      var IOS_STEPS = [
+        'Tap the <b>Share</b> button (the box with an up-arrow).',
+        'Scroll down and tap <b>Add to Home Screen</b>.',
+        'Tap <b>Add</b> &mdash; the bear icon appears on your home screen.'
+      ];
+      var DESKTOP_STEPS = [
+        'Open <b>aileron.games/install</b> on your <b>Android phone</b> in Chrome.',
+        'Tap the big <b>Install</b> button there.',
+        'Or click the <b>install icon</b> in your desktop browser&rsquo;s address bar.'
+      ];
+
+      btn.addEventListener('click', function () {
+        if (standalone()) { done(); return; }
+        if (deferred) {
+          deferred.prompt();
+          deferred.userChoice.then(function (choice) {
+            if (choice && choice.outcome === 'accepted') { done(); }
+            else { setHint('No problem &mdash; tap Install whenever you&rsquo;re ready.'); }
+            deferred = null;
+          });
+          return;
+        }
+        // No native prompt available yet — show exact manual steps for the platform.
+        if (isIOS) { showSteps('Add to your iPhone', IOS_STEPS); setHint('Two taps in Safari&rsquo;s Share menu.'); }
+        else if (isChromiumAndroid) { showSteps('Add to your Android home screen', ANDROID_STEPS); setHint('Your browser will offer a one-tap install shortly &mdash; or use these steps now.'); }
+        else if (isAndroid) { showSteps('Open in Chrome to install', ANDROID_STEPS); setHint('Install works best in Chrome for Android.'); }
+        else { showSteps('Install on your phone', DESKTOP_STEPS); setHint('The one-tap install lives on your phone.'); }
+      });
+    })();
+  </script>
+</body>
+</html>

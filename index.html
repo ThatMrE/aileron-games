@@ -610,7 +610,7 @@
     <ul class="nav-links">
       <li><a href="#games">Games</a></li>
       <li><a href="dice.html">Play Dice</a></li>
-      <li><a href="#play">Play DNA Chess</a></li>
+      <li><a href="dna-chess.html">Play DNA Chess</a></li>
       <li><a href="tarot.html">Tarot</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="mailto:hello@aileron.games" class="btn btn-cyan" style="padding:0.45rem 1.25rem; font-size:0.72rem;">Contact</a></li>
@@ -777,40 +777,6 @@
           <p>An 8-bit <em>Oregon Trail</em> for the drug approval process &mdash; except you&rsquo;re the patient, not the company. Your health bar is the real ECOG performance scale, where grade 5 means dead. Every catch-22 is a cited federal regulation. No score, no win state, and the ending is a real person&rsquo;s real timeline. <span style="color:var(--cyan);">Walk the trail &rarr;</span></p>
         </a>
 
-      </div>
-    </div>
-  </div>
-
-  <!-- PLAY NOW — DNA CHESS (embedded) -->
-  <div id="play" class="games-band" style="border-top:1px solid var(--border);">
-    <div class="section">
-      <p class="section-eyebrow">&#9654; Play Now &mdash; No Download</p>
-      <h2 class="section-title">DNA Chess, <span>in your browser</span></h2>
-      <p class="section-body">A playable prototype. Run the Central Dogma &mdash; express RNA, translate protein enzymes, and mutate your opponent&rsquo;s genome until they get cancer. Hot-seat a friend or take on the AI, right here. Art after David Goodsell&rsquo;s <em>Machinery of Life</em>.</p>
-      <div style="max-width:1120px; margin:2rem auto 0;">
-        <div style="border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45); background:#cdbb90;">
-          <iframe id="dnachess-frame" src="dna-chess.html?embed=1" title="DNA Chess &mdash; playable prototype" loading="lazy" style="width:100%; height:800px; border:0; display:block;"></iframe>
-        </div>
-        <p style="text-align:center; margin-top:1.5rem;">
-          <a href="dna-chess.html" class="btn btn-cyan">Open full screen &amp; read the design &rarr;</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- DRAW NOW — WETWARE ARCANA (embedded) -->
-  <div id="draw" class="games-band" style="border-top:1px solid var(--border);">
-    <div class="section">
-      <p class="section-eyebrow">&#x1F0CF; Draw Now &mdash; No Download</p>
-      <h2 class="section-title">Wetware Arcana, <span>dealt live</span></h2>
-      <p class="section-body">A biopunk tarot deck generator. All 78 cards re-cultured in a wet lab &mdash; the Magician is a Splicer, Justice is the Proofreader, Death is Apoptosis. Every seed grows a different <em>strain</em> of the deck: new palette, new procedurally drawn art, new mutations in the print run. Pick a spread and deal, right here.</p>
-      <div style="max-width:1120px; margin:2rem auto 0;">
-        <div style="border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45); background:#050812;">
-          <iframe id="tarot-frame" src="tarot.html?embed=1" title="Wetware Arcana &mdash; biopunk tarot deck generator" loading="lazy" style="width:100%; height:820px; border:0; display:block;"></iframe>
-        </div>
-        <p style="text-align:center; margin-top:1.5rem;">
-          <a href="tarot.html" class="btn btn-cyan">Open the full deck &amp; all 14 spreads &rarr;</a>
-        </p>
       </div>
     </div>
   </div>
@@ -994,29 +960,17 @@
       start();
     })();
 
-    // auto-size the embedded DNA Chess board to its content
-    window.addEventListener('message', function(e){
-      if(e && e.data && e.data.dnachess === 'height'){
-        var f = document.getElementById('dnachess-frame');
-        if(f){ f.style.height = Math.max(560, Math.min(1400, e.data.h)) + 'px'; }
-      }
-      // auto-size the embedded Wetware Arcana bench to its content
-      if(e && e.data && e.data.wetware === 'height'){
-        var t = document.getElementById('tarot-frame');
-        if(t){ t.style.height = Math.max(620, Math.min(1800, e.data.h)) + 'px'; }
-      }
-    });
-
     // "Install app" chips: fire the native install prompt when the browser
-    // offers it here, otherwise open the game page, which carries that app's
-    // manifest + service worker and can install from there.
-    // The homepage itself has no manifest, so in practice most browsers take
-    // the fallback path — the chip's real job is to route to the right page.
+    // offers it here, otherwise open that app's install destination — the
+    // dedicated install page for Pun Bearable, the game page itself for
+    // Wetware Arcana. The homepage carries no manifest of its own, so in
+    // practice most browsers take the fallback path; the chip's real job is
+    // to route to the right place.
     (function(){
       function isStandalone(){
         return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       }
-      function wireInstallChip(id, page){
+      function wireInstallChip(id, href){
         var btn = document.getElementById(id);
         if(!btn){ return; }
         if(isStandalone()){ btn.style.display = 'none'; return; }
@@ -1028,12 +982,12 @@
             deferred.prompt();
             deferred.userChoice.then(function(){ deferred = null; });
           } else {
-            window.location.href = page + '?install=1';
+            window.location.href = href;
           }
         });
       }
-      wireInstallChip('installBtn', 'punbearable.html');
-      wireInstallChip('installTarotBtn', 'tarot.html');
+      wireInstallChip('installBtn', 'install.html');
+      wireInstallChip('installTarotBtn', 'tarot.html?install=1');
     })();
   </script>
 </body>

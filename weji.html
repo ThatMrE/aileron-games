@@ -288,7 +288,10 @@
     #planchette .lens { fill: rgba(20,12,8,0.18); stroke: var(--ghost-edge); stroke-width: 5; }
     /* gentle hover bob while resting */
     #planchette.resting { animation: bob 2.6s ease-in-out infinite alternate; }
-    @keyframes bob { from { filter: drop-shadow(0 8px 10px rgba(0,0,0,0.5)); } to { filter: drop-shadow(0 16px 20px rgba(0,0,0,0.6)); } }
+    @keyframes bob {
+      from { filter: drop-shadow(0 8px 10px rgba(0,0,0,0.5)) drop-shadow(0 0 6px rgba(180,205,255,0.15)); }
+      to   { filter: drop-shadow(0 16px 20px rgba(0,0,0,0.6)) drop-shadow(0 0 16px rgba(180,205,255,0.32)); }
+    }
 
     /* ── Result panel ── */
     .result {
@@ -359,6 +362,7 @@
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
     .cta-btn:active { transform: translateY(0); }
+    .cta-btn[hidden] { display: none; }
     .cta-note {
       min-height: 1.2em; margin-top: 0.9rem;
       font-family: 'Space Mono', monospace; font-size: 0.72rem;
@@ -527,6 +531,118 @@
       content: ''; position: absolute; inset: 8px; border-radius: 12px;
       border: 1px solid rgba(230,184,119,0.18); pointer-events: none;
     }
+
+    /* ── EXTRA SPOOK: bats, cobwebs, drifting fog, candle-flicker ── */
+    .crypt .fog {
+      position: absolute; inset: -12% -30%;
+      background:
+        radial-gradient(50% 40% at 28% 62%, rgba(184,168,198,0.05), transparent 70%),
+        radial-gradient(46% 34% at 72% 48%, rgba(150,140,172,0.045), transparent 70%),
+        radial-gradient(40% 30% at 52% 30%, rgba(120,110,140,0.04), transparent 72%);
+      animation: fogdrift 44s ease-in-out infinite alternate;
+    }
+    @keyframes fogdrift { from { transform: translateX(-4%); } to { transform: translateX(6%); } }
+
+    /* Cobwebs strung in the top corners */
+    .web { position: fixed; top: 0; z-index: 0; pointer-events: none;
+      color: rgba(232,222,202,0.11);
+      width: clamp(78px, 13vw, 168px); height: clamp(78px, 13vw, 168px); }
+    .web svg { width: 100%; height: 100%; display: block; }
+    .web.wl { left: 0; }
+    .web.wr { right: 0; transform: scaleX(-1); }
+
+    /* Bats crossing the night sky */
+    .bat { position: fixed; z-index: 0; pointer-events: none; color: #06040b;
+      width: clamp(26px, 4vw, 46px); top: 12vh; left: -60px; opacity: 0; }
+    .bat svg { width: 100%; height: auto; display: block; transform-origin: 50% 40%;
+      animation: flap 0.26s ease-in-out infinite alternate; }
+    .bat.b1 { top: 13vh; animation: fly1 24s linear infinite 2s; }
+    .bat.b2 { top: 21vh; width: clamp(20px, 3vw, 34px); animation: fly2 30s linear infinite 10s; }
+    .bat.b3 { top: 8vh;  width: clamp(30px, 4.6vw, 52px); animation: fly3 36s linear infinite 17s; }
+    @keyframes flap { from { transform: scaleY(0.62); } to { transform: scaleY(1.06); } }
+    @keyframes fly1 { 0%{transform:translate(0,0);opacity:0} 7%{opacity:.9}
+      35%{transform:translate(38vw,-5vh)} 65%{transform:translate(66vw,3vh)}
+      93%{opacity:.7} 100%{transform:translate(112vw,-2vh);opacity:0} }
+    @keyframes fly2 { 0%{transform:translate(0,0);opacity:0} 8%{opacity:.85}
+      50%{transform:translate(56vw,6vh)} 92%{opacity:.6} 100%{transform:translate(112vw,-4vh);opacity:0} }
+    @keyframes fly3 { 0%{transform:translate(0,0);opacity:0} 6%{opacity:.8}
+      40%{transform:translate(44vw,4vh)} 72%{transform:translate(72vw,-4vh)}
+      94%{opacity:.6} 100%{transform:translate(112vw,2vh);opacity:0} }
+    @media (prefers-reduced-motion: reduce) { .bat, .crypt .fog { animation: none; } .bat { display: none; } }
+
+    /* Candle-flicker on the wordmark */
+    .brand { animation: flicker 5s linear infinite; }
+    @keyframes flicker {
+      0%,100% { opacity: 1;   text-shadow: 0 2px 0 #3a2413, 0 3px 2px rgba(0,0,0,0.6), 0 0 44px rgba(201,151,79,0.5); }
+      8%  { opacity: .86; text-shadow: 0 2px 0 #3a2413, 0 0 20px rgba(201,151,79,0.32); }
+      10% { opacity: 1; }
+      24% { opacity: .95; }
+      41% { opacity: 1;   text-shadow: 0 2px 0 #3a2413, 0 3px 2px rgba(0,0,0,0.6), 0 0 62px rgba(201,151,79,0.62); }
+      44% { opacity: .9; }
+      70% { opacity: 1; }
+      74% { opacity: .82; text-shadow: 0 2px 0 #3a2413, 0 0 16px rgba(201,151,79,0.28); }
+      77% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) { .brand { animation: none; } }
+
+    /* ── Kickstarter Halloween launch module ── */
+    .countdown { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap;
+      margin: 1.6rem 0 0.4rem; }
+    .cd-unit { min-width: 66px; padding: 0.7rem 0.5rem; border-radius: 10px;
+      background: rgba(12,7,5,0.6); border: 1px solid rgba(230,184,119,0.28);
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.4); }
+    .cd-num { display: block; font-family: 'Grenze Gotisch', serif; font-weight: 900;
+      color: var(--gold); font-size: clamp(1.6rem, 6vw, 2.4rem); line-height: 1;
+      text-shadow: 0 0 18px rgba(201,151,79,0.4); font-variant-numeric: tabular-nums; }
+    .cd-lbl { display: block; margin-top: 0.25rem; font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .cd-when { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em;
+      color: rgba(239,224,200,0.55); margin-top: 0.35rem; }
+
+    .notify { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;
+      max-width: 460px; margin: 1.4rem auto 0; }
+    .notify .hp { position: absolute; left: -9999px; }
+    .notify input[type=email] {
+      flex: 1 1 220px; background: rgba(20,12,8,0.85); border: 1px solid rgba(201,151,79,0.4);
+      color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.98rem;
+      padding: 0.8rem 1rem; border-radius: 8px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; }
+    .notify input[type=email]::placeholder { color: rgba(239,224,200,0.4); }
+    .notify input[type=email]:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,151,79,0.15); }
+    .notify button {
+      font-family: 'Grenze Gotisch', serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
+      padding: 0.8rem 1.3rem; border-radius: 8px; color: #1c1109; cursor: pointer; white-space: nowrap;
+      background: linear-gradient(180deg, var(--gold), #b9843f); border: 1px solid #d8a75a;
+      box-shadow: 0 6px 20px rgba(201,151,79,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+      transition: transform 0.12s, box-shadow 0.2s; }
+    .notify button:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,79,0.5), inset 0 1px 0 rgba(255,255,255,0.35); }
+
+    /* ── "Install on Android" card ── */
+    .install-card {
+      max-width: 680px; margin: 3rem auto 0;
+      display: flex; gap: 1.2rem; align-items: center; text-align: left;
+      background: radial-gradient(120% 160% at 12% -30%, rgba(201,151,79,0.15), transparent 60%), rgba(20,12,8,0.62);
+      border: 1px solid rgba(201,151,79,0.3); border-radius: 16px;
+      padding: 1.5rem 1.6rem; box-shadow: 0 20px 44px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .install-card[hidden] { display: none; }
+    .install-emoji { font-size: 2.7rem; line-height: 1; flex: none; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.5)); }
+    .install-body { flex: 1 1 auto; }
+    .install-body .cta-eyebrow { margin-bottom: 0.3rem; }
+    .install-body h2 {
+      font-family: 'Grenze Gotisch', serif; font-weight: 900; line-height: 1.1;
+      font-size: clamp(1.3rem, 3.6vw, 1.9rem); color: var(--gold);
+      text-shadow: 0 0 24px rgba(201,151,79,0.25);
+    }
+    .install-body p { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin: 0.5rem 0 0; max-width: 48ch; }
+    .install-body .cta-btn { margin-top: 1rem; }
+    .install-hint { margin-top: 0.7rem; font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.05em; color: rgba(239,224,200,0.55); line-height: 1.5; }
+    .install-hint b { color: var(--ink); font-weight: 700; }
+    @media (max-width: 560px) {
+      .install-card { flex-direction: column; text-align: center; }
+      .install-body p { margin-left: auto; margin-right: auto; }
+    }
   </style>
 </head>
 <body>
@@ -556,6 +672,18 @@
         <path d="M30 34 l-3 6 h6 Z" fill="#0c0705"/>
         <g stroke="#0c0705" stroke-width="1.7" stroke-linecap="round"><path d="M24 47 v4"/><path d="M30 47 v5"/><path d="M36 47 v4"/></g>
       </symbol>
+      <symbol id="ic-bat" viewBox="0 0 64 32">
+        <path fill="currentColor" d="M32 6 c1.6 0 3 1.8 3.4 4.4 C38 6 42 5 44 8 c.7 -2.6 3.4 -2.8 4.4 -.5 C50 5 54 6 55 9.5 c-2.4 -.3 -3.6 1.2 -3.4 3.6 C48 11 44.6 12.4 42 16 c-2.2 -3 -5.6 -3.8 -10 -3.8 s-7.8 .8 -10 3.8 c-2.6 -3.6 -6 -5 -9.6 -2.9 .2 -2.4 -1 -3.9 -3.4 -3.6 C10 6 14 5 15.6 7.5 16.6 5.2 19.3 5.4 20 8 c2 -3 6 -2 8.6 2.4 C29 7.8 30.4 6 32 6 Z"/>
+      </symbol>
+      <symbol id="ic-web" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+          <path d="M1 1 L99 7 M1 1 L72 30 M1 1 L45 45 M1 1 L30 72 M1 1 L7 99"/>
+          <path d="M22 4 Q17 17 4 22"/>
+          <path d="M44 7 Q35 35 7 44"/>
+          <path d="M68 11 Q53 53 11 68"/>
+          <path d="M92 16 Q72 72 16 92"/>
+        </g>
+      </symbol>
     </defs>
   </svg>
 
@@ -563,6 +691,7 @@
   <div class="crypt" aria-hidden="true">
     <div class="moon"></div>
     <div class="damask"></div>
+    <div class="fog"></div>
     <div class="vignette"></div>
     <div class="graveyard">
       <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
@@ -602,6 +731,15 @@
   <div class="ghost g1"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
   <div class="ghost g2"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
   <div class="ghost g3"><svg viewBox="0 0 100 130"><use href="#ic-ghost"/></svg></div>
+
+  <!-- cobwebbed corners -->
+  <div class="web wl" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#ic-web"/></svg></div>
+  <div class="web wr" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#ic-web"/></svg></div>
+
+  <!-- a colony of bats crossing the night -->
+  <div class="bat b1" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
+  <div class="bat b2" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
+  <div class="bat b3" aria-hidden="true"><svg viewBox="0 0 64 32"><use href="#ic-bat"/></svg></div>
 
   <div class="wrap">
 
@@ -685,14 +823,41 @@
 
     <div class="status" id="status"></div>
 
+    <section class="install-card" id="installCard" hidden>
+      <div class="install-emoji" aria-hidden="true">&#128241;</div>
+      <div class="install-body">
+        <div class="cta-eyebrow">&#128123; Take the board with you</div>
+        <h2>Install the Weji app</h2>
+        <p>Add Weji to your Android home screen &mdash; full-screen, offline, and free. No app store required.</p>
+        <button class="cta-btn" id="installBtnMain" type="button" hidden>&#128242; Install on Android</button>
+        <div class="install-hint" id="installHint"></div>
+      </div>
+    </section>
+
     <div class="divider"><span class="crest"><svg viewBox="0 0 60 60"><use href="#ic-crest"/></svg></span></div>
 
-    <section class="cta">
-      <div class="cta-eyebrow">&#127775; Help make Weji real</div>
-      <h2>Back Weji on Kickstarter</h2>
-      <p>Loved your reading? The real, laser-cut wooden Weji board is coming to Kickstarter. Be the first to summon one for your table.</p>
-      <a class="cta-btn" id="kickstarterBtn" href="#" role="button">Support the Kickstarter</a>
-      <div class="cta-note" id="ctaNote"></div>
+    <section class="cta launch">
+      <div class="cta-eyebrow">&#127875; Rising this Halloween on Kickstarter</div>
+      <h2>Summon the Weji Board</h2>
+      <p>The real laser-cut, stained-wood board &mdash; with its hand-painted planchette &mdash; claws its way onto Kickstarter this October. Join the s&eacute;ance early and be first through the veil.</p>
+
+      <div class="countdown" id="countdown" role="timer" aria-label="Time until the Kickstarter launches">
+        <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Hrs</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Sec</span></div>
+      </div>
+      <div class="cd-when" id="cdWhen"></div>
+
+      <form class="notify" id="notifyForm" name="weji-launch" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="weji-launch">
+        <p class="hp" hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+        <input type="email" id="notifyEmail" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Email for launch notification">
+        <button type="submit">Haunt my inbox &#128231;</button>
+      </form>
+
+      <a class="cta-btn" id="kickstarterBtn" href="#" role="button" hidden>Back Weji on Kickstarter</a>
+      <div class="cta-note" id="ctaNote">One message when the campaign wakes. No spam from beyond.</div>
     </section>
 
     <div class="divider"><span class="crest"><svg viewBox="0 0 60 60"><use href="#ic-crest"/></svg></span></div>
@@ -992,24 +1157,72 @@
       if (picked) moveTo(picked);
     });
 
-    /* ── Kickstarter CTA ──
-       Drop the live campaign URL into KICKSTARTER_URL when it goes up.
-       Empty string = link pending: the button shows a "coming soon" note. */
+    /* ── Kickstarter Halloween launch ──────────────────────────────
+       LAUNCH_DATE  — when the campaign goes live (edit to your slot).
+       KICKSTARTER_URL — set on launch day; hides countdown/form and
+                         reveals the "Back Weji" button.
+       PRELAUNCH_URL   — optional Kickstarter "coming soon" page; if set
+                         before launch, shows a "Follow on Kickstarter" link. */
+    const LAUNCH_DATE     = new Date('2026-10-01T13:00:00Z'); // ~9:00am ET, Oct 1
     const KICKSTARTER_URL = '';
-    const ksBtn = document.getElementById('kickstarterBtn');
-    const ctaNote = document.getElementById('ctaNote');
+    const PRELAUNCH_URL    = '';
+
+    const ksBtn      = document.getElementById('kickstarterBtn');
+    const ctaNote    = document.getElementById('ctaNote');
+    const notifyForm = document.getElementById('notifyForm');
+    const countdownEl = document.getElementById('countdown');
+    const cdWhen     = document.getElementById('cdWhen');
+    const cdEls = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'),
+                    m: document.getElementById('cd-m'), s: document.getElementById('cd-s') };
+    const pad = (n) => String(n).padStart(2, '0');
 
     if (KICKSTARTER_URL) {
-      ksBtn.href = KICKSTARTER_URL;
-      ksBtn.target = '_blank';
-      ksBtn.rel = 'noopener';
+      // Campaign is LIVE — swap to the backing button.
+      countdownEl.style.display = 'none';
+      cdWhen.style.display = 'none';
+      notifyForm.style.display = 'none';
+      ksBtn.hidden = false;
+      ksBtn.href = KICKSTARTER_URL; ksBtn.target = '_blank'; ksBtn.rel = 'noopener';
+      ctaNote.textContent = 'The campaign is live — thank you for summoning us.';
     } else {
-      ctaNote.textContent = 'Campaign launching soon — link coming.';
-      ksBtn.addEventListener('click', (e) => {
+      // PRE-LAUNCH — run the countdown.
+      cdWhen.textContent = 'Kickstarter goes live ' +
+        LAUNCH_DATE.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }) + '.';
+      if (PRELAUNCH_URL) {
+        ksBtn.hidden = false;
+        ksBtn.textContent = 'Follow on Kickstarter →';
+        ksBtn.href = PRELAUNCH_URL; ksBtn.target = '_blank'; ksBtn.rel = 'noopener';
+      }
+      function tick() {
+        let diff = Math.max(0, LAUNCH_DATE.getTime() - Date.now());
+        const dd = Math.floor(diff / 86400000); diff -= dd * 86400000;
+        const hh = Math.floor(diff / 3600000);  diff -= hh * 3600000;
+        const mm = Math.floor(diff / 60000);     diff -= mm * 60000;
+        const ss = Math.floor(diff / 1000);
+        cdEls.d.textContent = dd; cdEls.h.textContent = pad(hh);
+        cdEls.m.textContent = pad(mm); cdEls.s.textContent = pad(ss);
+        if (LAUNCH_DATE.getTime() - Date.now() <= 0) {
+          cdWhen.textContent = 'The veil has lifted — the campaign is live!';
+        }
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      // Email capture (Netlify Forms). AJAX submit with a graceful fallback.
+      notifyForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        ctaNote.textContent = 'Not live yet — the spirits are still counting the votes. Check back soon!';
+        const data = new FormData(notifyForm);
+        if (!(data.get('email') || '').toString().trim()) return;
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data).toString()
+          });
+        } catch (_) { /* preview without Netlify still confirms below */ }
+        notifyForm.innerHTML = '';
+        ctaNote.textContent = '🕯️ The spirits have your name. We will summon you at launch.';
         ctaNote.classList.add('flash');
-        setTimeout(() => ctaNote.classList.remove('flash'), 1200);
       });
     }
 
@@ -1055,25 +1268,64 @@
       });
     }
 
-    // Android/Chrome custom install button
-    const installBtn = document.getElementById('installBtn');
+    // ── Add-to-home-screen: one-click install (nav button + install card) ──
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) && !window.MSStream;
+    const isAndroid = /Android/i.test(ua);
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.navigator.standalone === true;
+
+    const navInstallBtn = document.getElementById('installBtn');
+    const installCard   = document.getElementById('installCard');
+    const installBtnMain = document.getElementById('installBtnMain');
+    const installHint   = document.getElementById('installHint');
     let deferredPrompt = null;
+
+    // Android/Chromium: the browser says we can install → offer a one-tap button.
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      installBtn.classList.add('show');
+      if (isStandalone) return;
+      navInstallBtn.classList.add('show');
+      installBtnMain.hidden = false;
+      installCard.hidden = false;
+      installHint.textContent = 'One tap — works offline, no app store, about 1 MB.';
     });
-    installBtn.addEventListener('click', async () => {
+
+    async function doInstall() {
       if (!deferredPrompt) return;
       deferredPrompt.prompt();
       await deferredPrompt.userChoice;
       deferredPrompt = null;
-      installBtn.classList.remove('show');
-    });
+      navInstallBtn.classList.remove('show');
+    }
+    navInstallBtn.addEventListener('click', doInstall);
+    installBtnMain.addEventListener('click', doInstall);
+
     window.addEventListener('appinstalled', () => {
       deferredPrompt = null;
-      installBtn.classList.remove('show');
+      navInstallBtn.classList.remove('show');
+      installBtnMain.hidden = true;
+      installCard.hidden = false;
+      installHint.textContent = '👻 Installed — find Weji on your home screen.';
+      setTimeout(() => { installCard.hidden = true; }, 6000);
     });
+
+    // If no native prompt is available, show manual steps on mobile (iOS always;
+    // Android as a fallback when the event doesn't fire).
+    if (!isStandalone) {
+      setTimeout(() => {
+        if (deferredPrompt) return;                 // native button already shown
+        if (isIOS) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'On iPhone/iPad: tap <b>Share</b> &#x2191; then <b>Add to Home Screen</b>.';
+        } else if (isAndroid) {
+          installBtnMain.hidden = true; installCard.hidden = false;
+          installHint.innerHTML = 'In Chrome: tap the <b>&#8942; menu</b>, then <b>Install app</b> / <b>Add to Home screen</b>.';
+        }
+        // desktop without prompt: leave the card hidden
+      }, 1400);
+    }
   </script>
 </body>
 </html>

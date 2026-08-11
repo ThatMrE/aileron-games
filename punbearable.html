@@ -758,7 +758,7 @@
     <div class="hero-actions">
       <a href="#play" class="btn btn-honey">Play a Round</a>
       <a href="#how" class="btn btn-outline">How to Play &rarr;</a>
-      <button type="button" id="pbInstallBtn" class="btn btn-outline" style="display:none; cursor:pointer;">&#x1F4F2; Install App</button>
+      <button type="button" id="pbInstallBtn" class="btn btn-outline" style="cursor:pointer;">&#x1F4F2; Install App</button>
     </div>
     <div class="countdown" aria-hidden="true">
       <span>Clock&rsquo;s ticking</span>
@@ -1253,31 +1253,27 @@
       });
     }
 
-    // ── Install App button (fires the native install prompt) ──
+    // ── Install App button: one-tap native prompt when offered, else the
+    //    dedicated install page (which handles the prompt + platform steps). ──
     (function () {
       var btn = document.getElementById('pbInstallBtn');
       if (!btn) { return; }
       function isStandalone() {
         return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       }
-      if (isStandalone()) { return; } // already installed — leave it hidden
+      if (isStandalone()) { btn.style.display = 'none'; return; } // already installed
       var cameToInstall = /[?&]install=1\b/.test(location.search);
+      if (cameToInstall) { btn.classList.add('pulse'); try { btn.scrollIntoView({ block: 'center' }); } catch (e) {} }
       var deferred = null;
-      window.addEventListener('beforeinstallprompt', function (e) {
-        e.preventDefault();
-        deferred = e;
-        btn.style.display = '';
-        if (cameToInstall) {
-          btn.classList.add('pulse');
-          try { btn.scrollIntoView({ block: 'center' }); } catch (err) {}
-        }
-      });
+      window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
       window.addEventListener('appinstalled', function () { btn.style.display = 'none'; });
       btn.addEventListener('click', function () {
         btn.classList.remove('pulse');
         if (deferred) {
           deferred.prompt();
-          deferred.userChoice.then(function () { deferred = null; btn.style.display = 'none'; });
+          deferred.userChoice.then(function () { deferred = null; });
+        } else {
+          window.location.href = 'install.html';
         }
       });
     })();
