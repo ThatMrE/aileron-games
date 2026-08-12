@@ -340,17 +340,17 @@
         <select id="palette"></select>
       </div>
       <div class="btnrow">
-        <button class="btn btn-cyan" id="reseed">&#x2622; Mutate seed</button>
+        <button class="btn btn-cyan" id="reseed">&#x2622; Mutate</button>
         <button class="btn" id="copylink">Copy link</button>
-        <button class="btn btn-install" id="installBtn" type="button" hidden>&#x1F4F2; Install app</button>
+        <button class="btn btn-install" id="installBtn" type="button" hidden>&#x1F4F2; Install</button>
       </div>
     </div>
     <p class="strainline" id="strainline"></p>
   </header>
 
   <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tab-read" aria-controls="panel-read" aria-selected="true">Draw a reading</button>
-    <button class="tab" role="tab" id="tab-deck" aria-controls="panel-deck" aria-selected="false">The full deck</button>
+    <button class="tab" role="tab" id="tab-read" aria-controls="panel-read" aria-selected="true">Reading</button>
+    <button class="tab" role="tab" id="tab-deck" aria-controls="panel-deck" aria-selected="false">Deck</button>
     <button class="tab" role="tab" id="tab-codex" aria-controls="panel-codex" aria-selected="false">Codex</button>
   </div>
 
@@ -359,7 +359,7 @@
     <p class="sec-note">Pick a spread, then deal. Cards land face down &mdash; click one to flip it, or reveal the whole panel at once. Reversals are on by default. A reversed card is the same organism under different conditions.</p>
     <div class="spread-picker" id="spreads"></div>
     <div class="btnrow">
-      <button class="btn btn-cyan" id="deal">&#x1F0CF; Shuffle &amp; deal</button>
+      <button class="btn btn-cyan" id="deal">&#x1F0CF; Deal</button>
       <button class="btn" id="revealall">Reveal all</button>
       <button class="btn" id="copyread">Copy reading</button>
       <label class="chip" style="display:inline-flex;align-items:center;gap:.5rem;cursor:pointer">
@@ -1465,7 +1465,7 @@ function renderTable(keepRevealed){
     ? '--cols:' + sp.cols + (sp.compact ? ';--cardmax:' + sp.compact : '')
     : '';
   if(!state.draw.length){
-    t.innerHTML = '<p class="sec-note" style="grid-column:1/-1;text-align:center">No cards on the bench. Press <b>Shuffle &amp; deal</b>.</p>';
+    t.innerHTML = '<p class="sec-note" style="grid-column:1/-1;text-align:center">No cards on the bench. Press <b>Deal</b>.</p>';
     return;
   }
   state.draw.forEach((d,i)=>{
