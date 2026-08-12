@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>POLYGENIK — A Biotech Art Collective</title>
 <meta name="description" content="Polygenik is a biotech art collective. We stage the experiments culture is too polite to run — a Chinese Peptide Rave, a Celebrity Meat Tasting, and whatever's next. For research use only.">
 <meta name="theme-color" content="#0b0b0b">
@@ -46,7 +46,8 @@
     -webkit-font-smoothing:antialiased;
     line-height:1.5;
   }
-  a{color:inherit;text-decoration:none;}
+  a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+  button,.btn,.drop-row.linked,.nav-toggle,.nav-cta,.form button{-webkit-tap-highlight-color:transparent;}
   img{max-width:100%;display:block;}
   ::selection{background:var(--acid);color:var(--ink);}
 
@@ -363,6 +364,43 @@
     .form{flex-direction:column;}
     .form button{border-left:0;border-top:1px solid var(--ink);padding:0.9rem;}
   }
+  /* ── MOBILE READABILITY & TAP TARGETS ── */
+  @media (max-width:600px){
+    body{line-height:1.55;}
+    /* reading text ≥16px */
+    .hero-sub{font-size:1.1rem;}
+    .m-card h4{font-size:1.12rem;}
+    .m-card p{font-size:1rem;line-height:1.65;}
+    .feat-lede{font-size:1.08rem;}
+    .feat-body{font-size:1rem;line-height:1.7;}
+    .feat-list li{font-size:0.98rem;}
+    .lin-card h4{font-size:1.18rem;}
+    .lin-card p{font-size:1rem;}
+    .about p{font-size:1.05rem;line-height:1.7;}
+    .drop-main p{font-size:0.95rem;}
+    .stat .lbl{font-size:0.8rem;}
+    .fact{font-size:0.92rem;}
+    .fact .k{font-size:0.78rem;}
+    .foot-tag,.foot-links a{font-size:0.86rem;}
+    .signup p{font-size:0.95rem;}
+    /* controls / labels ≥15px, comfortable spacing */
+    .nav-links a{font-size:0.95rem;}
+    .btn{font-size:0.86rem;}
+    /* tap targets ≥44px, ≥12px gaps */
+    .btn{min-height:48px;padding:1rem 1.6rem;justify-content:center;}
+    .hero-actions,.feat-actions{gap:0.9rem;}
+    .nav-links.open{gap:0.4rem;padding:0.8rem clamp(1.1rem,4vw,3rem) 1.2rem;}
+    .nav-links.open a{display:flex;align-items:center;min-height:44px;width:100%;}
+    .nav-cta{padding:0.85rem 1rem;min-height:44px;display:inline-flex;align-items:center;}
+    .nav-toggle{min-height:44px;padding:0 0.2rem;font-size:0.8rem;}
+    .foot-links{gap:0.4rem 1.4rem;}
+    .foot-links a{display:inline-flex;align-items:center;min-height:40px;}
+    .form input{padding:1.05rem 1.1rem;font-size:1rem;}
+    .form button{min-height:48px;font-size:0.82rem;}
+    /* guard big display type against sideways overflow */
+    .hero h1,.sec-title,.signup h2,.feat-grid h2,.manifesto blockquote,.about h2{overflow-wrap:break-word;word-break:break-word;}
+    .drop-main h3,.lin-card h4{overflow-wrap:break-word;}
+  }
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:0.001ms!important;animation-iteration-count:1!important;}
     .ticker-track,.warn-tape .tt{animation:none;}
@@ -411,8 +449,8 @@
       then invite you to the after&#8209;party.
     </p>
     <div class="hero-actions">
-      <a href="#drops" class="btn btn-fill">View the Drops →</a>
-      <a href="#meat" class="btn btn-line">Celebrity Meat Tasting</a>
+      <a href="#drops" class="btn btn-fill">View Drops →</a>
+      <a href="#meat" class="btn btn-line">Celebrity Meat</a>
     </div>
     <div class="disclaimer-strip">
       <svg class="biohazard" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><circle cx="50" cy="50" r="9"/><path d="M50 6a30 30 0 0 1 26 15 22 22 0 0 0-18 18 15 15 0 0 0-16 0 22 22 0 0 0-18-18A30 30 0 0 1 50 6z"/><path d="M12 84a30 30 0 0 1-4-30 22 22 0 0 0 24 6 15 15 0 0 0 8 14 22 22 0 0 0-25 10 30 30 0 0 1-3 0z"/><path d="M88 84a30 30 0 0 1-27 10 22 22 0 0 0-1-25 15 15 0 0 0 8-14 22 22 0 0 0 24-6 30 30 0 0 1-4 35z"/></g></svg>
@@ -530,7 +568,7 @@
         </blockquote>
         <div class="feat-actions">
           <a href="https://www.nytimes.com/2026/01/03/business/chinese-peptides-silicon-valley.html" target="_blank" rel="noopener" class="btn btn-fill inv">Read the NYT piece →</a>
-          <a href="#join" class="btn ghost inv">Never miss the next one</a>
+          <a href="#join" class="btn ghost inv">Get notified</a>
         </div>
       </div>
       <div>

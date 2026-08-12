@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Weji &mdash; The Emoji Ouija Board</title>
   <meta name="description" content="Weji is an emoji Ouija board. Ask a question and the spirits spell out an answer in three emoji, guided by the planchette. Made in RVA.">
 
@@ -38,7 +38,17 @@
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    /* Touch feel: kill tap-highlight flash, block accidental selection on
+       controls/board chrome, and remove double-tap zoom delay. Invisible on
+       desktop — purely a mobile-touch refinement. */
+    button, a.brand-logo, a.nav-home, a.cta-btn, .lightbox-close, .cell {
+      -webkit-tap-highlight-color: transparent;
+    }
+    button, .cell, .board-top, .verdict-row, .goodbye {
+      -webkit-user-select: none; user-select: none;
+    }
 
     body {
       background:
@@ -179,6 +189,8 @@
         radial-gradient(120% 90% at 30% 10%, var(--wood-light), transparent 55%),
         radial-gradient(140% 120% at 80% 90%, var(--wood-dark), transparent 60%),
         linear-gradient(160deg, var(--wood-mid), var(--wood) 55%, var(--wood-dark));
+      /* remove double-tap zoom delay over the board; page can still scroll past it */
+      touch-action: manipulation;
       box-shadow:
         0 30px 60px rgba(0,0,0,0.55),
         inset 0 0 0 2px rgba(20,12,8,0.7),
@@ -643,6 +655,52 @@
       .install-card { flex-direction: column; text-align: center; }
       .install-body p { margin-left: auto; margin-right: auto; }
     }
+
+    /* ══ Phone tuning: big text, big taps, comfy spacing (reflow only) ══ */
+    @media (max-width: 600px) {
+      .wrap { padding: 2rem 1rem 4rem; }
+
+      /* Ask bar: stack full-width, large tap targets, 16px+ input (no iOS zoom) */
+      .ask { gap: 0.85rem; }
+      .ask input {
+        flex: 1 1 100%;
+        font-size: 1.05rem;
+        padding: 0.95rem 1.1rem;
+        min-height: 48px;
+      }
+      .ask button {
+        flex: 1 1 100%;
+        font-size: 1.1rem;
+        padding: 0.9rem 1.6rem;
+        min-height: 48px;
+      }
+
+      /* Nav install button: readable label, 44px tap target */
+      #installBtn {
+        font-size: 0.85rem;
+        padding: 0.65rem 1rem;
+        min-height: 44px;
+      }
+      .nav-right { gap: 0.75rem; }
+
+      /* Body copy stays ≥16px; small print nudged up for legibility */
+      .cta p, .install-body p { font-size: 1rem; }
+      .status, .result-q { font-size: 0.9rem; }
+      .result-hint, .install-hint, .cta-note { font-size: 0.82rem; }
+      .cd-lbl { font-size: 0.62rem; letter-spacing: 0.14em; }
+
+      /* Launch email capture: stack full-width, large taps */
+      .notify { gap: 0.75rem; }
+      .notify input[type=email] {
+        flex: 1 1 100%;
+        font-size: 1.02rem;
+        min-height: 48px;
+      }
+      .notify button { flex: 1 1 100%; min-height: 48px; font-size: 1.05rem; }
+
+      /* Panel action buttons comfortably tappable */
+      .cta-btn { min-height: 48px; }
+    }
   </style>
 </head>
 <body>
@@ -748,7 +806,7 @@
         <span class="tri" aria-hidden="true">&#9652;</span> Aileron
       </a>
       <div class="nav-right">
-        <button id="installBtn" type="button" aria-label="Install the Weji app">&#128241; Install app</button>
+        <button id="installBtn" type="button" aria-label="Install the Weji app">&#128241; Install</button>
         <a class="nav-home" href="index.html">&larr; Back to Aileron Games</a>
       </div>
     </nav>
@@ -761,7 +819,7 @@
         <input id="question" type="text" maxlength="140"
                placeholder="Ask the board a question&hellip;"
                aria-label="Your question for the board">
-        <button type="submit" id="askBtn">Consult the Board</button>
+        <button type="submit" id="askBtn" aria-label="Consult the board">&#128302; Consult</button>
       </form>
     </header>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Wetware Arcana &mdash; A Biopunk Tarot Deck Generator | Aileron Games</title>
 <meta name="description" content="Wetware Arcana is a biopunk tarot deck generator: 78 cards of gene-editing, wet lab and body-horror archetypes, with procedurally generated SVG art. Every seed grows a different strain of the deck.">
 <!-- PWA: installable Android/iOS app (namespaced so it coexists with the site's other apps) -->
@@ -113,7 +113,7 @@
   .slot .cap{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted);text-align:center;line-height:1.5}
   .slot .cap em{color:var(--pink);font-style:normal}
 
-  .cardbox{width:100%;max-width:190px;aspect-ratio:320/520;perspective:1200px;cursor:pointer;background:none;border:0;padding:0}
+  .cardbox{width:100%;max-width:190px;aspect-ratio:320/520;perspective:1200px;cursor:pointer;background:none;border:0;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   .flipper{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.25,1)}
   .cardbox.revealed .flipper{transform:rotateY(180deg)}
   .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.55)}
@@ -232,11 +232,67 @@
   html.embed .spread-picker{margin:.9rem 0 1rem}
   html.embed .table{margin:1.5rem 0 0}
 
+  /* ── touch feel (all viewports; no desktop layout impact) ── */
+  .btn,.tab,.chip,.gcard,.m-close,.nav-links a,.nav-logo{-webkit-tap-highlight-color:transparent}
+  .btn,.tab,.chip,.m-close{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+
   @media(max-width:620px){
     nav{padding:.75rem 1rem}
     .nav-links{gap:1rem}
     .nav-links li.opt{display:none}
     .table{grid-template-columns:repeat(auto-fit,minmax(150px,220px))}
+  }
+
+  /* ── mobile: larger text, 44px tap targets, comfortable spacing ── */
+  @media(max-width:600px){
+    /* safe-area padding for notched phones (viewport-fit=cover) */
+    nav{padding-left:max(1rem,env(safe-area-inset-left));padding-right:max(1rem,env(safe-area-inset-right))}
+    .wrap{padding-left:max(1.1rem,env(safe-area-inset-left));padding-right:max(1.1rem,env(safe-area-inset-right))}
+
+    /* body / flavor copy ≥16px */
+    header.hero{padding:2.6rem .6rem 1.6rem}
+    header.hero .lede{font-size:1rem;line-height:1.7}
+    .sec-note{font-size:1rem;line-height:1.65}
+    .report p,.synth,.m-def p,.m-trad{font-size:1rem;line-height:1.7}
+    .report .rname{font-size:1rem}
+
+    /* form console: 16px inputs (prevents iOS zoom-on-focus), readable labels */
+    .console{padding:1.1rem 1rem;gap:1.1rem}
+    .field{gap:.5rem}
+    .field label{font-size:.9rem}
+    .field input,.field select{font-size:16px;padding:.72rem .8rem;min-height:44px}
+
+    /* buttons ≥44px, ≥15px text, ≥12px gaps */
+    .btnrow{gap:.75rem}
+    .btn{font-size:.95rem;padding:.75rem 1.2rem;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+
+    /* tabs */
+    .tabs{gap:.6rem;margin:1.8rem 0 1.4rem}
+    .tab{font-size:.95rem;padding:.7rem 1.1rem;min-height:44px;display:inline-flex;align-items:center}
+
+    /* spread pickers + gallery filters */
+    .spread-picker{gap:.8rem}
+    .spread-group{gap:.6rem}
+    .grouplab{font-size:.72rem;min-width:100%;margin-bottom:-.1rem}
+    .filters{gap:.6rem}
+    .chip{font-size:.95rem;padding:.55rem 1rem;min-height:44px;display:inline-flex;flex-direction:column;justify-content:center}
+    .chip small{font-size:.72rem}
+
+    /* reversals toggle chip: keep the checkbox comfortably tappable */
+    #allowrev{width:20px;height:20px}
+
+    /* slot labels + captions readable */
+    .slot .pos{font-size:.74rem}
+    .slot .cap{font-size:.74rem}
+
+    /* card table fits narrow screens; page never scrolls sideways */
+    .table{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.4rem .8rem}
+
+    /* modal: roomy on phones, larger close target */
+    .m-grid{padding:1.1rem;gap:1.2rem}
+    .m-close{width:44px;height:44px;font-size:1.4rem;top:.3rem;right:.3rem;display:inline-flex;align-items:center;justify-content:center}
+    .m-body h2{font-size:1.25rem}
+    .m-def p{font-size:1rem}
   }
 
   @media print{
