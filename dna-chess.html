@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DNA Chess &mdash; Aileron Games</title>
 <meta name="description" content="DNA Chess: run the Central Dogma as a war machine and give your opponent cancer. Interactive board and pieces in the style of David Goodsell's Machinery of Life.">
 <!-- PWA: installable Android/iOS app (namespaced so it coexists with the site's other apps) -->
@@ -179,6 +179,60 @@
     .wrap{padding:0 14px 70px}
     .topbar{flex-wrap:wrap;gap:8px}
   }
+
+  /* touch feel: no tap flash, no accidental selection, no 300ms delay */
+  button,select,a,.helpbtn,.installbtn,.brand span,#board .hit,.cell-hit{-webkit-tap-highlight-color:transparent}
+  button,select{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+  #board{touch-action:manipulation}
+  img,svg{max-width:100%}
+
+  /* ===== MOBILE (phones ~360–430px) ===== */
+  @media (max-width:600px){
+    html,body{overflow-x:hidden}
+    .wrap{padding:0 14px 60px;max-width:100%}
+
+    /* rubric 2: legible body + label text (body ≥16px) */
+    .lede{font-size:1.1rem}
+    .section-note{font-size:1rem !important}
+    .eyebrow{font-size:0.82rem}
+    .dogma{font-size:0.95rem;gap:8px}
+    .panel ol,.panel ul{font-size:1rem}
+    .panel p{font-size:1rem !important}
+    .pcard p{font-size:1rem}
+    .pcard .stat{font-size:0.95rem}
+    .pcard .mol{font-size:0.8rem}
+    .caption{font-size:0.95rem}
+    footer{font-size:0.95rem}
+    .hint{font-size:0.92rem !important}
+    .inspector .row{font-size:1rem}
+    .win .big{font-size:1.2rem}
+
+    /* rubric 5: no horizontal overflow; board fills width */
+    .board-frame{padding:10px}
+    .board-frame svg{width:100%;height:auto}
+    .roster{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr}
+
+    /* rubric 3: topbar tap targets ≥44px, comfortable spacing */
+    .topbar{gap:10px}
+    .brand{font-size:0.9rem}
+    .helpbtn,.installbtn{font-size:15px;padding:11px 16px;min-height:44px;border-radius:24px}
+    .topbar a{font-size:15px;padding:9px 4px;display:inline-block}
+
+    /* rubric 3: inspector controls — big, spaced, wrapping */
+    .inspector{padding:16px}
+    #inspector div[style*="display:flex"]{flex-wrap:wrap !important}
+    #inspector div[style*="gap:6px"]{gap:12px !important}
+    #inspector button,#inspector select{min-height:44px !important;font-size:15px !important;padding:10px 12px !important}
+    #inspector button[data-tp]{font-size:15px !important;padding:11px 14px !important}
+    #inspector button#snd{min-width:48px}
+
+    /* how-to overlay: legible copy + big primary button */
+    .modal{padding:22px 20px}
+    .modal ol,.modal li,.modal .orow{font-size:1rem}
+    .modal p{font-size:1rem !important}
+    .modal .btn-go{font-size:1rem;padding:14px;min-height:48px}
+  }
 </style>
 </head>
 <body>
@@ -187,9 +241,9 @@
   <div class="topbar">
     <div class="brand">&#9652; Aileron <span>Games</span></div>
     <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-      <button class="installbtn" id="installBtn" type="button" aria-label="Install the DNA Chess app">&#128241; Install app</button>
-      <button class="helpbtn" id="howto-btn">? How to play</button>
-      <a href="index.html">&larr; Back to the library</a>
+      <button class="installbtn" id="installBtn" type="button" aria-label="Install the DNA Chess app">&#128241; Install</button>
+      <button class="helpbtn" id="howto-btn" aria-label="How to play">? How to play</button>
+      <a href="index.html" aria-label="Back to the library">&larr; Library</a>
     </div>
   </div>
 
@@ -217,22 +271,18 @@
   <!-- ================= BOARD ================= -->
   <h2><span class="n">01</span>Play the board <span style="font-size:.55em;color:var(--accent);font-family:'Trebuchet MS',sans-serif;letter-spacing:.1em">v0.3 · PLAYABLE</span></h2>
   <p class="section-note">
-    A 10&times;10 cell interior dotted with <b>organelles</b>. <b>This board is a fully playable
-    prototype</b> &mdash; grab a friend for hot-seat, or click <em>New&nbsp;·&nbsp;vs&nbsp;AI</em> in the panel to
-    play the opponent. Rendered in the style of David Goodsell's <em>Machinery of Life</em>.<br>
-    <b>How to play:</b> you get <b>two actions per turn</b>. Each action: click one of your
-    <b>genes</b> to express an RNA, or click a <b>molecule</b> then a highlighted square to move or act.
-    Build a Nuclease and edit <b>6 of the opponent's 10 genes</b> to give them cancer. Both sides start
-    with <b>6 RNA and 3 proteins</b>, so you're straight into the fight.
+    A 10&times;10 cell interior dotted with <b>organelles</b>, drawn after David Goodsell's
+    <em>Machinery of Life</em>. Fully playable &mdash; go hot-seat, or tap <em>New&nbsp;·&nbsp;AI</em> for the bot.<br>
+    <b>How to play:</b> <b>two actions per turn</b>. Each action: tap a <b>gene</b> to express an RNA, or
+    tap a <b>molecule</b> then a highlighted square to move or act. Build a Nuclease and mutate
+    <b>6 of the opponent's 10 genes</b> to give them cancer. Both sides open with <b>6 RNA + 3 proteins</b>.
   </p>
   <p class="section-note" style="margin-top:-10px;font-size:.9rem">
-    <b>Organelles</b> (the coloured tiles): <b style="color:#6e5a34">Ribosomes</b> make translating an RNA
-    cluster there cost 1 less; <b style="color:#3f5a6e">ER</b> tiles let a molecule that starts on one move
-    farther; <b style="color:#6e3f48">Golgi</b> tiles trap any piece that lands on them for a turn &mdash;
-    shove enemies into one with a Helicase.
-    This is <b>v0.3</b>: it folds in the fixes from the <a class="inline" href="docs/dna-chess-playtest-01.md">break analysis</a>
-    (regulated expression, king-adjacency Nuclease, RNA cap, unguarded-only repair) plus the faster
-    economy (2 actions, loaded start) and organelle terrain.
+    <b>Organelles</b> (coloured tiles): a <b style="color:#6e5a34">Ribosome</b> makes translating an RNA
+    cluster there cost 1 less; <b style="color:#3f5a6e">ER</b> lets a molecule that starts on it move
+    farther; a <b style="color:#6e3f48">Golgi</b> traps any piece that lands on it for a turn &mdash;
+    shove enemies in with a Helicase. <b>v0.3</b> folds in the
+    <a class="inline" href="docs/dna-chess-playtest-01.md">break-analysis</a> fixes plus a faster economy.
   </p>
 
   <div class="board-layout">
@@ -828,7 +878,7 @@ function renderPanel(sel){
   const undoOff=!G.history.length;
   const controls=`<div style="display:flex;gap:6px;margin-top:12px">
       <button id="undo" ${undoOff?'disabled':''} style="flex:1;${BTN};background:#e8dcbb;opacity:${undoOff?.5:1};cursor:${undoOff?'not-allowed':'pointer'}">↶ Undo</button>
-      ${G.over?'':`<button id="pass" style="flex:1;${BTN};background:#e8dcbb">Pass / end turn</button>`}</div>
+      ${G.over?'':`<button id="pass" aria-label="Pass / end turn" style="flex:1;${BTN};background:#e8dcbb">Pass</button>`}</div>
     <div style="display:flex;gap:6px;margin-top:6px;align-items:center">
       <span style="font-family:'Trebuchet MS',sans-serif;font-size:.64rem;letter-spacing:.08em;color:var(--ink-soft)">MODE</span>
       <select id="mode" title="Ruleset" style="${BTN};flex:1;background:#efe6cf;font-size:.68rem">

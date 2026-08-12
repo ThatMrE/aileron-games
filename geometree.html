@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>GeomeTree &mdash; Grow Geometry, from a Line to a Dodecahedron</title>
   <meta name="description" content="GeomeTree is a learning game about geometry as evolution. Trace each form's edges — from a single line up through the polygons and all five Platonic solids to the dodecahedron — then watch it unroll into 2D and score your path. A synesthetic, audio-reactive build.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,7 +89,7 @@
 
     /* game layout */
     .game{
-      display:grid;grid-template-columns:1fr 250px;gap:1.5rem;align-items:start;
+      display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:1.5rem;align-items:start;
       margin-top:0.6rem;
     }
     .stage-col{min-width:0;}
@@ -130,7 +130,7 @@
         linear-gradient(180deg,#070b18,#04060f);
       box-shadow:0 24px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(0,229,255,0.04);
     }
-    canvas#stage{display:block;width:100%;height:auto;touch-action:none;cursor:crosshair;}
+    canvas#stage{display:block;width:100%;max-width:100%;height:auto;touch-action:none;cursor:crosshair;}
 
     /* completion banner */
     .complete-banner{
@@ -156,6 +156,13 @@
       display:inline-block;padding:0.6rem 1.3rem;font-family:'Space Mono',monospace;
       font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
       cursor:pointer;transition:all .2s;border:none;border-radius:6px;
+    }
+    /* touch feel: no tap-flash, no accidental text selection on controls */
+    button,.btn,.ghostbtn,.skillbtn,.nav-home,.tree-foot a{
+      -webkit-tap-highlight-color:transparent;
+    }
+    button,.btn,.ghostbtn,.skillbtn{
+      -webkit-user-select:none;user-select:none;touch-action:manipulation;
     }
     .btn-cyan{background:var(--cyan);color:var(--dark);box-shadow:0 0 22px rgba(0,229,255,0.35);}
     .btn-cyan:hover{box-shadow:0 0 36px rgba(0,229,255,0.6);transform:translateY(-1px);}
@@ -339,13 +346,47 @@
     .story-card .sc-hint{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);}
 
     @media (max-width:820px){
-      .game{grid-template-columns:1fr;}
+      .game{grid-template-columns:minmax(0,1fr);}
       .tree-panel{position:static;order:2;}
       .tree{flex-direction:row;overflow-x:auto;gap:0.4rem;padding-bottom:0.4rem;}
       .node{flex-direction:column;text-align:center;gap:0.3rem;min-width:74px;padding:0.3rem;}
       .node::after{display:none;}
       .node .meta{text-align:center;}
       .tree-foot{flex-direction:column;align-items:flex-start;}
+    }
+
+    /* ── phones: single column, larger text, bigger tap targets ── */
+    @media (max-width:600px){
+      .wrap{padding:1.1rem 0.9rem 3rem;}
+      .topbar{flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;}
+
+      /* canvas already full-width via .game 1fr — keep it edge to edge */
+      .game{gap:1.1rem;}
+
+      /* readable body copy (≥16px) */
+      .story .narr{font-size:1rem;line-height:1.65;}
+      .blurb p{font-size:1rem;line-height:1.6;}
+      .howto{font-size:0.95rem;line-height:1.75;}
+      .cb-fact{font-size:0.9rem;}
+      .victory p{font-size:1rem;}
+
+      /* interactive + label text (≥15px) */
+      .lv-name{font-size:1.5rem;}
+      .lv-step{font-size:0.72rem;}
+      .edgecount{font-size:0.85rem;}
+      .blurb .lbl,.story .chapter,.sb-label,.tree-sub,.n-dim{font-size:0.7rem;}
+      .tree-panel h2{font-size:0.95rem;}
+      .node .n-name{font-size:0.82rem;}
+      .tree-foot{font-size:0.7rem;}
+
+      /* tap targets ≥44px with comfortable spacing */
+      .controls{gap:0.75rem;margin-top:1rem;}
+      .skillbar{gap:0.75rem;}
+      .btn{font-size:0.9rem;padding:0.8rem 1.5rem;min-height:44px;}
+      .ghostbtn{font-size:0.85rem;padding:0.7rem 1rem;min-height:44px;display:inline-flex;align-items:center;}
+      .skillbtn{font-size:0.85rem;padding:0.7rem 1rem;min-height:44px;display:inline-flex;align-items:center;}
+      .tree-foot a{padding:0.35rem 0;display:inline-block;}
+      .story-card{padding:1.5rem 1.25rem 1.2rem;}
     }
 
     /* embed mode: strip chrome so the homepage can iframe just the game */
@@ -361,7 +402,7 @@
 
     <div class="topbar">
       <a class="brand-logo" href="index.html"><span class="tri">&#9652;</span> Aileron Games</a>
-      <a class="nav-home" href="index.html">&larr; Back to the library</a>
+      <a class="nav-home" href="index.html">&larr; Library</a>
     </div>
 
     <header class="mast">
@@ -395,14 +436,14 @@
 
         <div class="controls">
           <button class="ghostbtn" id="hintBtn">&#128161; Hint</button>
-          <button class="ghostbtn" id="resetBtn">&#8635; Reset form</button>
+          <button class="ghostbtn" id="resetBtn" aria-label="Reset this form">&#8635; Reset</button>
           <button class="ghostbtn on" id="spinBtn" title="Toggle auto-spin for 3D forms">&#8635; Spin</button>
           <span class="spacer"></span>
           <button class="ghostbtn" id="soundBtn">&#128266; Sound</button>
         </div>
 
         <div class="skillbar" id="skillbar" style="display:none;">
-          <span class="sb-label">&#9201; Temporal skills</span>
+          <span class="sb-label">&#9201; Time</span>
           <button class="skillbtn" id="skRewind" title="Rewind — restore the edges the Rot corrupted (8s cooldown)">&#8630; Rewind</button>
           <button class="skillbtn" id="skFreeze" title="Freeze — halt the Rot for 5 seconds (12s cooldown)">&#10711; Freeze</button>
         </div>
@@ -418,9 +459,9 @@
         </div>
 
         <p class="howto">
-          <b>How to play:</b> click a glowing vertex, then click a neighbour to draw the edge between them.
+          <b>How to play:</b> tap a glowing vertex, then a neighbour to draw the edge between them.
           Trace every edge to complete the form and grow your tree. On 3D solids, <b>drag</b> to rotate.
-          Each form scores up to <b>1000</b> &mdash; trace faster for a higher score, and repeating an edge costs points.
+          Each form scores up to <b>1000</b> &mdash; trace faster to score higher; repeating an edge costs points.
         </p>
 
         <div class="victory" id="victory">

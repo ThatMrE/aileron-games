@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>God Does Not Play Dice &mdash; Rules, Cards &amp; Design Notes | Aileron Games</title>
   <meta name="description" content="Complete rulebook and design document for God Does Not Play Dice: the Standard-Model card duel. Card list, collision table, hidden-variable mechanic, and the design critique that shaped the rules.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{background:var(--dark);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7;}
-    a{color:var(--cyan);text-decoration:none;} a:hover{text-decoration:underline;}
+    a{color:var(--cyan);text-decoration:none;-webkit-tap-highlight-color:transparent;} a:hover{text-decoration:underline;}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:
       radial-gradient(1px 1px at 5% 10%,rgba(0,229,255,0.5) 0%,transparent 100%),
       radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,0.4) 0%,transparent 100%),
@@ -61,6 +61,30 @@
     .toc a{font-family:'Space Mono',monospace;font-size:0.78rem;}
     .footer-mini{text-align:center;padding:2rem 1rem;position:relative;z-index:1;font-family:'Space Mono',monospace;font-size:0.65rem;color:rgba(232,240,255,0.3);letter-spacing:0.06em;}
     @media(max-width:820px){nav{padding:0.9rem 1.1rem;}.nav-links{gap:1rem;}.nav-links li:not(:last-child){display:none;}.toc ul{columns:1;}}
+    @media(max-width:600px){
+      body{line-height:1.75;}
+      .wrap{padding:6.5rem 1.15rem 4rem;}
+      p{font-size:1rem;line-height:1.75;}
+      ul,ol{font-size:1rem;margin-left:1.2rem;}
+      li{margin-bottom:0.6rem;}
+      .lead{font-size:1.08rem;}
+      .subtitle{font-size:0.95rem;}
+      .callout{font-size:1rem;padding:1rem 1.1rem;}
+      h2{font-size:1.2rem;margin:2.4rem 0 0.9rem;}
+      h3{font-size:0.98rem;}
+      code{font-size:0.95rem;}
+      /* readable tables: bigger type, reflow within full width; .table-wrap scrolls if a row still can't fit */
+      table{font-size:0.92rem;}
+      th{font-size:0.68rem;}
+      td,th{padding:0.55rem 0.55rem;vertical-align:top;}
+      .toc a{font-size:0.95rem;}
+      .nav-links a{font-size:0.9rem;}
+      .nav-logo{font-size:1rem;}
+      /* tap targets */
+      .cta{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0.9rem 1.6rem;font-size:0.8rem;width:100%;text-align:center;}
+      .nav-links a{display:inline-flex;align-items:center;min-height:44px;}
+      p[style]{font-size:1rem;}
+    }
   </style>
 </head>
 <body>
@@ -80,7 +104,7 @@
 
     <p class="lead">Einstein insisted that <em>God does not play dice</em>. Quantum mechanics disagreed &mdash; and won. In this game every collision of quarks and leptons rolls dice over real Feynman-vertex outcomes&hellip; unless you spend <b>hidden variables</b> to overrule probability and choose. The title is the mechanic: you are Einstein, clawing determinism back from the quantum, one collision at a time.</p>
 
-    <p style="text-align:center;margin-bottom:2rem;"><a href="dice.html" class="cta">&#x2684; Play in your browser &rarr;</a></p>
+    <p style="text-align:center;margin-bottom:2rem;"><a href="dice.html" class="cta">&#x2684; Play now &rarr;</a></p>
 
     <div class="toc">
       <p class="eyebrow" style="margin-bottom:0.75rem;">Contents</p>
@@ -248,7 +272,7 @@
     <h2 id="balance">7. Balance Verification</h2>
     <div class="callout">2,000 AI-vs-AI games through the shipped engine: <b>0 stalls, 0 crashes</b> &middot; first seat wins <b>~50%</b> &middot; average game <b>~12 turns per player</b> (longest ~45) &middot; endings: <b>~92%</b> reach the 20-point target, ~7% deck out, ~1% end in a Higgs detection. Live playtesting added the <b>underdog measurement</b> (a hidden variable to the trailer whenever a scoring play opens a lead of 8+) to soften snowballs. Tuning levers: the 20-point target (15 for a faster game), the fuse odds, and hidden-variable income.</div>
 
-    <p style="margin-top:2.5rem;text-align:center;"><a href="dice.html" class="cta">&#x2684; Play God Does Not Play Dice &rarr;</a></p>
+    <p style="margin-top:2.5rem;text-align:center;"><a href="dice.html" class="cta">&#x2684; Play the game &rarr;</a></p>
   </div>
 
   <div class="footer-mini">
