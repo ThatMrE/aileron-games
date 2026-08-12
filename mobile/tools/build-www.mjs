@@ -32,7 +32,7 @@ function sub(label, find, replace) {
 /* 1 ─ viewport: cover the display cutout, and pin the scale. This is a
       pixel-art game on a fixed-size canvas; pinch-zoom only smears it. */
 sub('viewport',
-  '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+  '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
   '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">');
 
 /* 2 ─ fonts: the remote Google Fonts link cannot resolve offline. Swap it for
