@@ -342,6 +342,7 @@
     .install-chip-cyan { color: #04140a; background: #9dff6b; }
     .install-chip-cyan:hover { box-shadow: 0 0 26px rgba(157,255,107,0.65); }
     .install-chip:active { transform: translateY(0); }
+    a.install-chip { text-decoration: none; }
 
     /* small inline "Install" pill (DNA Chess card + hero slide) */
     .mini-install { display: inline-block; text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
@@ -797,12 +798,18 @@
           <button type="button" id="installFdaBtn" class="install-chip">&#x1F4F2; Install app</button>
         </div>
 
-        <a href="https://sociovia.netlify.app/" rel="noreferrer" class="game-card" style="display:block;">
-          <div class="game-icon">&#x1FAA9;</div>
-          <h3>Sociovia</h3>
-          <span class="game-status status-active">Play Now</span>
-          <p>Bar games for people who have not met yet. Join the bar WiFi, tap a table, and shout at the group two tables over. A colour and a symbol help you find each other across a loud room. Four games so far, and a fifth one runs underneath the rest of the evening. <span style="color:var(--cyan);">Find a table &rarr;</span></p>
-        </a>
+        <div class="game-card-wrap">
+          <a href="https://sociovia.netlify.app/" rel="noreferrer" class="game-card">
+            <div class="game-icon">&#x1FAA9;</div>
+            <h3>Sociovia</h3>
+            <span class="game-status status-active">Play Now</span>
+            <p>Bar games for people who have not met yet. Join the bar WiFi, tap a table, and shout at the group two tables over. A colour and a symbol help you find each other across a loud room. Four games so far, and a fifth one runs underneath the rest of the evening. <span style="color:var(--cyan);">Find a table &rarr;</span></p>
+          </a>
+          <!-- Not a web install like the others: this one downloads the APK, so
+               it is a plain link rather than a button the install script wires. -->
+          <a class="install-chip" href="https://github.com/ThatMrE/Spoon-Knife/releases/latest/download/sociovia.apk"
+             rel="noreferrer" aria-label="Download Sociovia for Android">&#x1F4F2; Android APK</a>
+        </div>
 
       </div>
     </div>
