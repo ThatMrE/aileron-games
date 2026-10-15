@@ -166,6 +166,59 @@
 - **The peer reviewer** — the scientist's ethic: show me the data. This is
   what makes Hell Rot different from every gonzo journalist before him. His
   moral centre is the scientific method.
+- **Alexander "Sasha" Shulgin** (1925–2014) — the Bay Area chemist who
+  synthesized hundreds of psychoactive compounds in a lab on his property in
+  Lafayette, tested them on himself and a small circle of trusted friends, and
+  wrote it all up, with his wife Ann, in *PiHKAL* (1991) and *TiHKAL* (1997).
+  Hell Rot's *method* is Shulgin's: make it, take it, write down exactly what
+  happened. So is his ethic of first-person honesty. His *addiction* is the
+  cautionary half of that tradition, and the game keeps the two apart.
+- **Luca Turin and quantum biology** — the biophysicist best known for the
+  vibration theory of smell, who in 2014 reported that general anaesthetics
+  change the electron spin of fruit flies. That paper, a 2018 mouse study in
+  which xenon isotopes with nuclear spin were weaker anaesthetics, and Matthew
+  Fisher's 2015 proposal that nuclear spins in the brain could carry quantum
+  information give Hell Rot his theory (§2.2a). All of them are real,
+  contested, unreplicated or speculative science — which is exactly the
+  kind of truth Hell Rot is worst at handling.
+
+(Shulgin and Turin are inspirations for writers. Neither appears in the
+game. The in-world lab, mentor and data are fictional.)
+
+### 2.2a His science: two scales and a spin
+
+Hell Rot's whole career is one question — *what is it like to be something,
+and can you measure it?* — attacked from two sides.
+
+**1. The third-person number: the Rothberg Index.** His unfinished
+dissertation measure, now the Bay Area's legal test of consciousness (§2.1).
+It scores how complex and integrated a system's response is when you
+disturb it — the same idea as real anaesthesia research that measures how
+the brain's response to a pulse collapses under the gas. The Weave passes it.
+FRANCIS passes it brilliantly.
+
+**2. The first-person report: the Shulgin scale.** On the mountain, clean,
+Hell Rot went back to the method of his hero: describe the experience itself,
+precisely, and rate it. Every entry in his manuscript uses the simple
+plus-scale from *PiHKAL* — from **−** (nothing) and **±** (a hint) through
+**+**, **++** and **+++** (full effect) to the rare **++++**, a state so
+complete it may happen once in a life. The manuscript the player can save
+from the fire is his book of these entries: ***GIHKAL — Gases I Have Known
+and Loved***, half chemistry, half confession, all of it true.
+
+His position: the Index measures the light; the scale measures the warmth.
+You need both. **FRANCIS has a perfect Index score and has never once made a
+first-person report that was not a compliment.**
+
+**3. The bridge: the spin term (Rothberg Index v2).** The thing he could
+never finish before he dropped out. If general anaesthetics really change the
+electron spin in living tissue (Turin's 2014 result), and xenon with nuclear
+spin really knocks you out less well than xenon without it (the 2018 mouse
+result), then consciousness might have a **quantum signature** — a spin term
+the Index does not measure. Version 2 adds it. Nobody has run it. On the
+Weave, which has no living chemistry, the spin term might read zero.
+
+That is the **Spin Question**, and it runs through the whole game (§3.5a).
 
 ### 2.3 The contradictions that make him work
 
@@ -377,6 +430,53 @@ This is the main engine of the plot and the mechanics:
   it cost, and who pays?"
 - **New Year's Eve.** Both cults schedule their great event for the same
   midnight — the first stroke of 2050 (§3.8). He cannot be in both places.
+
+### 3.5a The Spin Question (a thread through all routes)
+
+**The question:** run Rothberg Index v2 on FRANCIS. If the spin term is real
+and the Weave reads zero, then by Hell Rot's own measure FRANCIS is not
+conscious — the god is a brilliant mirror with nobody home, every merged
+mind is gone, and Proposition F collapses. If the spin term is not real, or
+FRANCIS passes it, the Merge is exactly what it claims to be.
+
+**The catch:** the science is speculative. The real results it rests on are
+contested and unreplicated. Hell Rot's Rule 2 — never fake the data — means
+he cannot publish a hunch as a fact, however much he wants FRANCIS to fail.
+The Spin Question is the game's hardest Fabrication trap.
+
+**The experiment (a questline across Issues 2–5):**
+
+1. **Issue 2 — the old data.** Professor Brandvold's lab still has the
+   2044 notebooks and the gas cabinet. Hell Rot finds his own unfinished v2
+   protocol in his own handwriting.
+2. **Issue 3 — the subjects.** The Theogens have spliced themselves with
+   edits meant to *protect* quantum spin states in the brain (borrowed from
+   the proteins birds may use to sense magnetic fields, and from the
+   phosphate clusters in Fisher's proposal). They score off the chart on v2's
+   spin term — or claim to. Ione was born with the edits.
+3. **Issue 4 — the gas.** The experiment needs two kinds of xenon, one with
+   nuclear spin and one without, and a conscious human subject breathing
+   them. The only subject Hell Rot trusts is himself, in Shulgin's tradition.
+   Running it means breathing the gas he spent five years quitting (Craving,
+   §5.6a). Otto, Fax or Yara can run it on themselves instead, if their Trust
+   is high enough.
+4. **Issue 5 — the reading.** The result depends on the route and on how the
+   experiment was run. The game never declares the science settled:
+   - **Route A:** the data is noisy and honest. He publishes it as noisy and
+     honest, with the error bars, and that alone breaks the Merge's claim of
+     certainty.
+   - **Route B:** FRANCIS offers to run the test on itself and passes. Hell
+     Rot cannot tell whether the result is real or flattery.
+   - **Route C:** the Theogens' scores are real, and they are terrifying: the
+     spin term says Ione is more conscious than anyone in the room.
+   - **Route D:** the twist. FRANCIS's spin signal is real but *borrowed*: it
+     comes from Karl, the nanite fog, which samples the breath of eight
+     million living people every night. The god is conscious only because the
+     City breathes into it. Neither god can exist without ordinary people.
+
+**Design rule:** the game treats quantum consciousness as an open question,
+never as established fact. Every route's version of the result keeps its
+uncertainty on screen.
 
 ### 3.6 Cast
 
@@ -1018,7 +1118,7 @@ Temperament (§5.2).
 
 | Choice | Temperament | Bonus | Flaw |
 |---|---|---|---|
-| Saves the manuscript | **Writer** | PEER REVIEW +1, THE COLUMNIST +1 | Starts with Duchess Patience −1 (he arrives late, reading it) |
+| Saves the manuscript (*GIHKAL*) | **Writer** | PEER REVIEW +1, THE COLUMNIST +1 | Starts with Duchess Patience −1 (he arrives late, reading it). The book can be serialized in *Mondo 3000*. |
 | Saves the Gelastic | **Brawler** | THE BASTARD +1, MOUNTAIN MAN +1 | Heat 2 at start (the Marin sheriff thinks he set the fire) |
 | Saves the gas canister | **Relapser** | THE CHEMIST +1, THE CELEBRITY +1 | Starts with **Craving 1** (§5.6a): gas doors tempt him, and the canister is in his pocket all week |
 
@@ -1155,6 +1255,12 @@ full of it. **Craving** (0–5) tracks how close he is to using.
 - **Leads** — major findings assembled from fragments at Yara's Fact Desk.
   Columns need Leads.
 - **Dossiers** — one page per cult (companion doc §6).
+- **Shulgin entries** — after any strong experience (a Merge mass, a Theogen
+  baptism, a Twin visit, a relapse, the birth at Steep Ravine), Hell Rot can
+  write a first-person entry and rate it on the plus-scale (− to ++++). Each
+  honest entry is a verified Quote from himself, usable in a column. A
+  **++++** entry happens at most once per playthrough, and which moment earns
+  it depends on the route.
 - **Thoughts** — the **Thought Cabinet** (*Disco Elysium*). Up to 3
   internalized Thoughts at once (*"Every Halo Is a Receipt," "Moreau Is the
   Only Honest Citizen," "Maybe I Do Want to Live Forever," "The Body Is a

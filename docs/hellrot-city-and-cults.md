@@ -57,6 +57,8 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar); Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the South City parks "the Cradle" |
 | 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove** |
 | 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → FRANCIS's first resurrection |
+| 1960s–2014 | **Alexander "Sasha" Shulgin**, "the Farm," Lafayette (East Bay) | Alexander & Ann Shulgin | A former Dow chemist who synthesized and self-tested hundreds of psychoactive compounds in a home lab, with a small circle of trusted friends, and published the syntheses and first-person reports in *PiHKAL* (1991) and *TiHKAL* (1997). The DEA raided the lab in 1994. | Not a cult — a method. First-person rigor about altered states. → Hell Rot's working method and his manuscript, *GIHKAL* |
+| 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014); Li et al. (2018); Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies; that xenon isotopes with nuclear spin are weaker anaesthetics in mice; and a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothberg Index v2 "spin term" and the Spin Question (main doc §3.5a); the Theogens' "spin-guard" splices |
 | 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap; Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
 | 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017; dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
 | 2010s–2020s | **AI-apocalypse subcultures** | — | Online communities that treat superintelligence as a near-religious matter. One splinter (the so-called "Zizians") faces murder charges for violence in 2022–2025. | **Not adapted** (active cases, real victims). General background only. |
@@ -700,6 +702,16 @@ Asilomar), §1 and §5 note the range.
 - [Roadside America — Doggie Diner heads](https://www.roadsideamerica.com/story/11504)
 - [Religion News Service — San Francisco's Hunky Jesus contest](https://religionnews.com/2025/04/17/san-franciscos-hunky-jesus-contest-stirs-up-controversy-community-and-courage/)
 - [USA Today via PressReader — "Running of the weird at Bay to Breakers"](https://www.pressreader.com/usa/usa-today-us-edition/20160518/281565174989206)
+
+**Shulgin and quantum biology**
+- [Alexander Shulgin — Wikipedia](https://en.wikipedia.org/wiki/Alexander_Shulgin)
+- [Berkeley Plaques — Alexander (Sasha) Shulgin](https://berkeleyplaques.org/?p=7039)
+- [Turin, Skoulakis & Horsfield (2014), "Electron spin changes during general anesthesia in Drosophila," PNAS — via PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4151765)
+- [Phys.org — Electron mechanism for anesthesia (2014)](https://phys.org/news/2014-08-electron-mechanism-anesthesia.html)
+- [Li et al. (2018), "Nuclear Spin Attenuates the Anesthetic Potency of Xenon Isotopes in Mice," Anesthesiology — PubMed](https://pubmed.ncbi.nlm.nih.gov/29642079/)
+- [Radical pairs may play a role in xenon-induced general anesthesia (Scientific Reports, 2021) — PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7973516/)
+- [Fisher (2015), "Quantum Cognition: The possibility of processing with nuclear spins in the brain" — arXiv](https://arxiv.org/pdf/1508.05929)
+- [Quantum effects in the brain: a review — arXiv](https://arxiv.org/pdf/1910.08423)
 
 **Tides and sea level**
 - [Bay Nature — King tides offer a glimpse of sea level rise](https://baynature.org/2023/01/19/science-nature/climate/this-weekends-king-tides-offer-a-glimpse-into-the-future-of-sea-level-rise/)
