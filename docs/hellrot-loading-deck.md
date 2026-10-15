@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 197 cards: 64 real
-> quotations, 6 redacted cards, 102 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 201 cards: 64 real
+> quotations, 6 redacted cards, 106 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -132,7 +132,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (102) and eye cards (25)
+## Part 2 — In-world cards (106) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (26)
 
@@ -254,7 +254,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W69 | "The lamp is lit for anyone the Halo cannot see." | Lantern shelter door | *The best people in this game wear blue robes and sleep four hours a night.* | Lantern, tender |
 | W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *The Emperor only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
 
-### 2G. The City, the week, the weather (18)
+### 2G. The City, the week, the weather (22)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -276,6 +276,10 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W86 | "Please do not carve messages into the Steep Ravine rocks. This means you, Theogens." | Park ranger sign | *They carved my paper into the rock. I'd rather they hadn't.* | Prologue, grim |
 | W87 | "1 January 2050, Aquatic Park, 8 a.m. Swim if you survived." | New Year's Plunge flyer | *I'll be there. Probably.* | Epilogue, tender |
 | W88 | "This card is a loading screen. While you wait, the City is deciding what you are." | *Mondo 3000* house ad | *Keep the receipt.* | weird |
+| W89 | "DROP. COVER. HOLD ON." | Emergency alert, 12:00:07 a.m., 1 January 2050 | *Every phone in the City, at once. The only time all year they agreed on anything.* | I5, grim |
+| W90 | "I AM JULIAN RIVET. I AM THE FOG. I AM SORRY." | Written on every window in the City, midnight | *Eight million people read it at the same time. Nobody will ever forget the handwriting.* | I5, Emperor, holy |
+| W91 | "The fire took the warehouse. The box survived. We begin again." | Auric Order minute book, entry for 18 April 1906 | *They read it aloud every meeting for 143 years. On New Year's Eve they found out what it meant.* | Order, I5, grim |
+| W92 | "MONDO 3000 — SPECIAL EDITION — THE CITY IS ON FIRE AND THE FOG IS A MAN." | Front page, printed 5:40 a.m., 1 January 2050 | *Paper. The only thing that still worked.* | House, I5 |
 
 ### 2H. The Eyes (25)
 

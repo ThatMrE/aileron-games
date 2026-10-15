@@ -261,8 +261,8 @@ secrets: one clue every few Runs, from a different housemate each time.
 | **Dr. Imogen Hale** | A sealed house is exactly what a Penitent would want | She did not join the Order's inner circle until 2046, two years after the purchase |
 | **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? (The City's conspiracy cranks also suspect him because of his surname. The House treats that theory with the contempt it deserves.) | His bank records from 2044 show he had just dropped out of his PhD, was broke, and was buying canned beans and nothing else, on the mountain, getting clean |
 
-**The proposed truth (Issue 4; writers' room to confirm):** the patron was
-also **Julian Rivet V** — his other hand. In public, through the Rivet
+**The truth (Issue 4):** the patron was also **Julian Rivet V** — his
+other hand. In public, through the Rivet
 accounts, he bankrolled the magazine as a weapon. In private, through the
 Lacuna Trust, he bought its writers a house the Twin he was building could
 never see into. He was a quiet longtermist (the Bundle's **L**), he knew the

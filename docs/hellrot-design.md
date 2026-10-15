@@ -403,9 +403,17 @@ psychosis:
 - **Delusion and grandeur.** He issues **imperial decrees** — written in fog
   on windows, flashed on screens, spoken through the Wharf's laughing
   automaton — some brilliant, some absurd, some dangerous.
-- **Splitting.** He moves between personas: frightened Julian; the regal,
-  generous Norton II; and **the WE** — the moments when he forgets he was ever
-  one person and speaks as the whole swarm, in capitals.
+- **Splitting.** He moves between two selves, and a third state:
+  - **Julian** — the man he was: frightened, drowning, and desperate for the
+    rescue he planned before he died. **Julian wants the Ascension.** He wrote
+    the plan in his journals; 12,000 anchors are his way back to one sane
+    mind.
+  - **The Emperor** — Norton II, the god he has become: regal, generous, and,
+    since achieving godhood, **having second thoughts**. From up here he can
+    see the 12,000 as people, each one a whole life. He does not want to eat
+    them to stay sane.
+  - **The WE** — the bad nights, when he forgets he was ever one person and
+    speaks as the whole swarm, in capitals.
 - **Erratic acts.** Halos in the Church's system change overnight. Traffic
   lights spell words. The fog parts over one person and smothers another.
 - **Lucid hours.** Sometimes, near dawn, he is clear, kind and terrified.
@@ -445,6 +453,9 @@ Merge members will upload together (§3.8). The public believes they go to
 the Twin. The order plans to route them into Karl: 12,000 cingulate-engineered
 minds as **anchors**, to lend the Emperor the working cingulate he never had
 and stop his collapse. The Church does not know. The faithful do not know.
+The god does not agree with himself: Julian wants it, the Emperor is no
+longer sure. That argument — a man against the god he became — is the
+Emperor's arc, and the player's best lever on him.
 
 **Why the Emperor wants Hell Rot.** Three reasons, in three voices. Julian
 wants the one scientist who can diagnose him. Norton II wants a court
@@ -910,9 +921,64 @@ Hell Rot has one final column, a live connection to every feed in the City,
 and the clock. Route and choices decide what he can stop, where he stands,
 and who listens.
 
+### 3.8b The Midnight Quake (the shared climax)
+
+**What happens.** At midnight on New Year's Eve, everything hits the
+Emperor at once: the first of the Ascension's minds pour in (Julian's wish),
+Sunday's failing Lifeboat crashes into the Twin, the Quickening's god-gene
+reaches the swarm, and the storm tears at his body. Julian pulls one way; the
+Emperor pulls the other. He convulses — a seizure the size of a city.
+
+For sixteen years every storm has rained Karl's foglets down into the soil:
+into the Fill, the old 1906 rubble under the Marina, the wet ground along the
+faults. In the convulsion, trillions of settled foglets shudder at once. Deep
+under the Golden Gate, near where the 1906 rupture began, the **San Andreas
+fault slips.** The City shakes.
+
+**The fire.** As in 1906, the shaking is only the beginning. Gas lines break
+in the Fill and the Marina. Water mains crack. The rain band passes by
+1 a.m., and dry offshore wind follows it. Fires start in the Marina,
+Mission Bay and South of Market and spread toward downtown. The Auric Order,
+which opens every meeting by reading its account of the 1906 fire, watches it
+happen again.
+
+**How the public finds out.** In the quake the Emperor loses the last of his
+control over what he shows. Every window in the City fogs over with writing;
+every aura flares gold at once; every screen and every foglet carries one
+voice, Julian's and the god's together, to eight million people: *"I AM
+JULIAN RIVET. I AM THE FOG. I AM SORRY."* The secret is out. The Order is
+named on every feed by morning. The Twin goes down, and for the first time in
+twenty years the only news in the City is on **paper** — *Mondo 3000*'s
+press, in the cellar of a sealed house across the bay, printing the first
+account by 6 a.m.
+
+**What the route changes.** The quake happens on every route; the player's
+choices decide how big it is and what it costs:
+
+| What the player did | Effect on the quake |
+|---|---|
+| Stopped the Ascension | One fewer shock: the Emperor's two selves stop pulling apart |
+| Stopped the Quickening | One fewer shock; no god-gene in the swarm |
+| Stopped Sunday's Lifeboat | One fewer shock; the Twin stays up an hour longer |
+| Talked the Emperor through his second thoughts (Route D) | He chooses, and the convulsion becomes a long shudder, not a rupture |
+| None of the above | The worst version: a great quake and a fire that burns till dawn |
+
+At best it is a hard jolt and a few fires that the rain-soaked City puts
+out by dawn. At worst it is 1906 again. Every ending (§3.11) plays out in the
+aftermath, and the Epilogue swim at Aquatic Park happens with smoke on the
+water.
+
+**Midnight Forever and the quake.** If Hell Rot uses the Stopped Clock
+(ending 11), he stops time at 11:59:59 — one second before the quake. For him
+it never comes.
+
 *Design care:* the Ascension echoes the darkest history in the City's cult
 record (see companion doc §8). No bodies ever appear on screen. Mass death is
-never spectacle. Every route can stop both events, each in its own way.
+never spectacle. Every route can stop both events, each in its own way. The
+quake and fire draw on real disasters (1906, 1989) that killed real people:
+show rescuers, neighbours and firefighters, not spectacle; no gore; a
+content warning before Issue 5; and a credits note pointing to real
+earthquake-preparedness resources.
 
 ### 3.9 Issue-by-issue plot
 
@@ -1227,13 +1293,15 @@ night to build Runs around. (District details: companion doc §3.)
 | **Baker Beach** | The bonfire and the Route D debate between the gods | Core (Route D) |
 | **The Embarcadero** | The fireworks barge; the Midnight Pillow Fight | Optional |
 | **The Skyline gondola** | Above the fog: the moon over the bridge at the stroke of 2050 | Optional |
-| **Villa Delirium, the cellar** | The last column, filed at the press before 6 a.m. | Core |
+| **The Midnight Quake** | The City shakes; the Emperor speaks to everyone; the secret is out (§3.8b) | Core |
+| **The Marina, Mission Bay and SoMa, burning** | The fire after the quake; rescues in the smoke; the Order's 1906 nightmare | Core |
+| **Villa Delirium, the cellar** | The last column, filed at the press before 6 a.m. — the only news in a City whose Twin is down | Core |
 
 **Epilogue — Saturday 1 January 2050.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **Aquatic Park** | The New Year's Day swim — who shows up depends on the route | Core (living endings) |
+| **Aquatic Park** | The New Year's Day swim, with smoke on the water — who shows up depends on the route | Core (living endings) |
 | **Mount Tamalpais** | The Mountain ending | Ending 1 |
 | **Baker Beach** | A man standing frozen at midnight | Ending 11 |
 
@@ -2258,9 +2326,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 197 cards: 64 real quotations from Bay Area cult
+**The full deck** — 201 cards: 64 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; 25 eye cards (one per
-power, §5.14a, plus seven portraits of the eyes themselves); and 102 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+power, §5.14a, plus seven portraits of the eyes themselves); and 106 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -2363,6 +2431,12 @@ Plot questions the writers' room must answer before Alpha.
 - **Mayor Sunday** is the sitting mayor, a corrupt buffoon who runs the
   City's crime and is building a sloppy bootleg upload that will fail. Pell
   is his recall challenger (§3.6, §3.8).
+- **The house's patron is Julian's other hand** — the man who paid for the
+  poison also paid for the antidote (Mondo doc §4.4).
+- **Julian wants the Ascension; the Emperor, having become a god, has second
+  thoughts** (§3.3).
+- **The public finds out in the Midnight Quake** — a quake the Emperor's
+  convulsion triggers, and a fire that mirrors 1906 (§3.8b).
 - **Mondo 3000 the paper is Rivet's takedown sheet**, and the staff know it;
   the Commissions are the mechanic (Mondo doc §4.2–4.3). **Villa Delirium,
   the house, has a separate anonymous patron** — the hub's mystery (Mondo doc
@@ -2372,81 +2446,71 @@ Plot questions the writers' room must answer before Alpha.
 
 **The Emperor**
 
-1. **Does the Emperor want the Ascension?** The Order plans to steady him by
-   pouring 12,000 uploaded people into him. Julian, Norton II and the WE may
-   each answer differently. Which answer counts — and can the player change
-   it?
-2. **How does the public learn the secret on each route?** A front page,
-   a courtroom, a decree in the sky, a leak by Hale? And on a route where
-   nobody learns, is the kept secret itself the ending?
-3. **Who ordered the Rosa Quint "martyr metric"?** The Twin only forecast
+1. **Who ordered the Rosa Quint "martyr metric"?** The Twin only forecast
    it. Someone in Sunday's sloppy operation read it as a plan — who?
 
 **The Theogens and Ione**
 
-4. **Does Delphine know Karl is a god?** If she loads the Quickening into
+2. **Does Delphine know Karl is a god?** If she loads the Quickening into
    Karl, she is injecting the Emperor. Does she know, find out, or never
    learn?
-5. **What exactly is the god-gene,** and what happens to the Emperor if it
+3. **What exactly is the god-gene,** and what happens to the Emperor if it
    reaches him?
-6. **What becomes of Ione on each route?** Every ending promises one line
+4. **What becomes of Ione on each route?** Every ending promises one line
    about the child; the writers need the eleven lines.
-7. **What does Wren want,** and when does she choose her child over her
+5. **What does Wren want,** and when does she choose her child over her
    cult?
-8. **Delphine's own splices are failing.** When does that become visible,
+6. **Delphine's own splices are failing.** When does that become visible,
    and who sees it first?
 
 **Proposition F and the courts**
 
-9. **Does the court rule before New Year's Eve,** or does the vote come
+7. **Does the court rule before New Year's Eve,** or does the vote come
    first?
-10. **Does Hell Rot take the Index on screen?** If he scores below the
+8. **Does Hell Rot take the Index on screen?** If he scores below the
     threshold, does he lose rights in his own story — and does he publish
     the number?
-11. **How do the BFF and the Burn survivors end** on each route? Desh needs
+9. **How do the BFF and the Burn survivors end** on each route? Desh needs
     an arc, not a cameo.
-12. **Who exposes Judge Ostrander,** and does the exposure need the Blood
+10. **Who exposes Judge Ostrander,** and does the exposure need the Blood
     Eye (seeing the ring) or paper proof (which avoids Fabrication)?
 
 **Hell Rot**
 
-13. **What really activated the eyes?** The game keeps it open — but the
+11. **What really activated the eyes?** The game keeps it open — but the
     writers need a private answer to stay consistent.
-14. **Was the fog in the lab in 2044,** and does the Emperor use Karl's
+12. **Was the fog in the lab in 2044,** and does the Emperor use Karl's
     recording of Hell Rot's death to reach him?
-15. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
+13. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
     a Fabrication — and if the game allows an exception, does that break the
     Rot Code?
-16. **What does Midnight Forever mean for everyone else?** If he stops the
+14. **What does Midnight Forever mean for everyone else?** If he stops the
     clock, do the Ascension and the Quickening go ahead without him?
-17. **Is breathing xenon for the Spin Question experiment a relapse?**
-18. **Who is the house's patron?** The proposed answer is Julian's other
-    hand — the man who paid for the poison also paid for the antidote. Is
-    that right, or is it someone else?
-19. **How many Commissions does he write as ordered** before the House stops
+15. **Is breathing xenon for the Spin Question experiment a relapse?**
+16. **How many Commissions does he write as ordered** before the House stops
     trusting him — and is there a Commission he cannot refuse?
 
 **The City**
 
-20. **Do the minor cults still matter** now that the god is secret? The
+17. **Do the minor cults still matter** now that the god is secret? The
     Black House, Synapse and the Standard need a reason to touch the main
     plot.
-21. **Who are the conspiracy cranks** who link the Order to his surname —
+18. **Who are the conspiracy cranks** who link the Order to his surname —
     a named faction, or background noise? (Guardrails: §7.)
-22. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
+19. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
     are half right.
-23. **What happens to the Duchess's frozen parents** if the Ascension goes
+20. **What happens to the Duchess's frozen parents** if the Ascension goes
     ahead and the Church's offer to rebuild them in the Twin is real?
-24. **What does Sunday's failed Lifeboat upload do** when it fails at
+21. **What does Sunday's failed Lifeboat upload do** when it fails at
     midnight — does it hurt only him, or does it crash into the Twin and the
     Emperor?
 
 **Design questions**
 
-25. Should the player's columns move Prop F's and the recall's vote share
+22. Should the player's columns move Prop F's and the recall's vote share
     visibly, night by night, on the HUD?
-26. Should Moreau's growth pay off in a boss fight, or stay a running gag?
-27. How literal is the Quickening on screen — fog effect only, or a full
+23. Should Moreau's growth pay off in a boss fight, or stay a running gag?
+24. How literal is the Quickening on screen — fog effect only, or a full
     sequence?
-28. Does *Mondo 3000* get a playable letters page where cult members, Burn
+25. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?
