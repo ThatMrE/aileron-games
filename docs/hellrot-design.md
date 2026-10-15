@@ -1099,6 +1099,10 @@ smallest.
 - **A Fabrication trap.** THE COLUMNIST wants the headline: *ANTICHRIST BORN
   IN MARIN.* It would sell out the press run and make the Church's year.
   Printing it as fact counts as Fabrication (§5.4).
+- **Junie knows the verses.** Raised by nuns, she is the one who
+  recognizes Revelation on the rock, the inverted Nativity and the three
+  inverted gifts — and the one who finds them hardest to laugh off. Her
+  trials of faith run through Ione's signs.
 - **The Nortonians** start writing decrees about *"THE CHILD OF THE GOLD"*
   on the Ferry Building clock face in Issue 2. Nobody believes them.
 - **The counter-sign: laughter.** Delphine spliced out her laughter reflex.
@@ -1193,7 +1197,7 @@ uncertainty on screen.
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
 | **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Born Theodora Nyquist, 50. Named herself "the Duchess" at 21 at a Dissonance Society event and never put the title down. Velvet and denim — the Order's cloth, without knowing it. Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). Her secret: she guessed years ago that the house's patron was Julian, and never asked (Mondo doc §4.4). |
-| **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
+| **Junie Vasquez** | Companion: protector | 32. Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her parents lost their Excelsior taquería and left her, as a teenager, to be raised and taught by nuns at a Catholic school. She learned old-school religion thoroughly and is an atheist. This week brings her **trials of faith**, and her temptation is the opposite of everyone else's: not eternal life, but **choosing death** (Mondo doc §5). Her **Trust** affects fights and one ending. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, 23: born Yara Nyquist, the daughter of the Duchess's younger brother, raised in a Bayes House. She took the name "Nyx" the day she left at 16 — the only irrational choice she has ever made, and she knows it. Fact-checker, co-writer, trained statistician, the player's skeptic. Her creed is the error bar: *"I'm not against numbers. I'm against anyone who forgets the error bars."* She read the Theogenesis papers at 15 and has never told him. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
@@ -2714,6 +2718,13 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   the game keeps them apart: Ione is not Hell Rot's child, no sign links the
   baby to his family or to Jewish people, and any character who tries to make
   that link is a crank the game shows as wrong and ugly.
+- **Junie and the pull toward death.** Junie's temptation is to choose
+  death over every offer of more life. It is written as a real, respected
+  theme, rooted in her faith and its loss — never romanticized, never
+  rewarded as a release, and never shown with method detail. The game
+  always leaves her a way back, her friends always notice, and the credits
+  list a real crisis helpline. Sensitivity readers with lived experience
+  review her arc.
 - **Christian imagery and the Antichrist.** The undertones around Ione
   (§3.4) borrow from Revelation, the Nativity and horror cinema. They are
   used as dread and irony, not as mockery of Christian faith. No real church
@@ -3049,6 +3060,10 @@ Plot questions the writers' room must answer before Alpha.
 - **Yara** is Yara Nyquist, 23, who took the name "Nyx" when she left the
   Bayes House. Her temptation is the Emperor's forecast team; her quest,
   *"Priors,"* is her family merging as a household (Mondo doc §5).
+- **Junie** is 32, raised by nuns after her parents lost their taquería, an
+  atheist with trials of faith. Her temptation is choosing death, not
+  eternal life; her choice is whether to change her body, mind and soul
+  (Mondo doc §5).
 - **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
   uses the recording to reach him (§3.3).
 - **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
