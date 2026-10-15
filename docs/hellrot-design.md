@@ -2409,9 +2409,22 @@ The Rot Code (§2.4) is enforced here:
 
 - Venom aimed **up** adds Venom and a little Vow.
 - Venom aimed **down** adds Venom, removes Vow, costs companion Trust.
-- **Fabrication.** Publishing a falsehood the Notebook knows to be false sets
-  `FABRICATION`. The first time, Yara confronts him and he can print a
-  retraction (big Readers loss, flag cleared). The second time locks ending 10.
+- **Fabrication.** Hell Rot **can** lie in print — the game never stops
+  him — but every printed lie harms him. Publishing a falsehood the
+  Notebook knows to be false sets `FABRICATION` and costs, every time:
+  **−1 maximum Clarity** (the lie takes a piece of his memory with it: he
+  starts to remember the lie instead of the truth), **Yara Trust −2**, and
+  a **Corrections** entry the day someone checks. The first time, Yara
+  confronts him and he can print a retraction (big Readers loss, flag
+  cleared, but the Clarity stays lost). The second time locks ending 10.
+- **Lies that save lives.** A printed lie can work. On New Year's Eve, a
+  false column — *"The Ascension is cancelled"*, *"The canisters are
+  empty"* — can send people home and save them. It still counts as a
+  Fabrication and still costs him in full. The honest alternative is
+  harder: lie out loud to save them (the Great Lie, §5.14a, is spoken and
+  shown, not printed), then confess it in the next column — *"I lied to you
+  at the Palace. Here is what I made you see, and why."* That costs Sainthood
+  and Helix, not Clarity, and it is never a Fabrication.
 
 ### 5.5 Showdowns: rhetorical combat
 
@@ -3340,6 +3353,10 @@ Plot questions the writers' room must answer before Alpha.
   plays out without him (§3.11).
 - **The Lifeboat** makes a garbled copy of Sunday in the Twin; Sunday
   survives with a brain injury; Coit Tower and its murals survive (§3.8b).
+- **He can lie in print, and it harms him.** Every printed lie costs −1
+  maximum Clarity and Yara's Trust, and two lock the Fabrication ending. A
+  lie that saves lives still counts. Lying out loud and confessing in print
+  is the honest road (§5.4).
 - **Tem** is 15. Her splice was a tiny dose of cingulate engineering from
   Hell Rot's third paper. In crowds she loses the line. She is the bridge's
   canary on New Year's Eve (§3.6b).
@@ -3435,9 +3452,6 @@ Plot questions the writers' room must answer before Alpha.
 
 **Hell Rot**
 
-13. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
-    a Fabrication — and if the game allows an exception, does that break the
-    Rot Code?
 16. **How many Commissions does he write as ordered** before the House stops
     trusting him — and is there a Commission he cannot refuse?
 
