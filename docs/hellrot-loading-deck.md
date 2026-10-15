@@ -14,7 +14,7 @@
 
 ## How to read this deck
 
-- **Tags** decide when a card can appear: `I1`–`I5` (Issue), `A`/`B`/`C`/`D`
+- **Tags** decide when a card can appear: `I1`–`I6` (Issue), `A`/`B`/`C`/`D`
   (route), a cult or character, and a mood (`funny`, `grim`, `holy`,
   `tender`, `weird`). Untagged by Issue means "any time."
 - **"attributed"** marks a line that is widely credited to the speaker but has
@@ -69,7 +69,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | X3 | **THOMAS LAKE HARRIS** (1823–1906) ███████████ | Ran the Fountaingrove commune in Santa Rosa; his followers worked his vineyards for free | *A San Francisco Chronicle reporter took him apart in print. Reprint the reporter, not him.* | New Breath, I3 |
 | X4 | **SYNANON'S LATE SERMONS** ███████████ | In its last years Synanon armed a private guard and its founder made threats on tape | *The first line was a greeting card. The last lines were threats. That's the arc.* | Synapse, grim |
 | X5 | **THE PROCESS** ███████████ | Black capes, silver crosses, German shepherds on Haight Street, 1967 | *They wrote beautifully. That's the problem with all of them.* | Final Process, weird |
-| X6 | **THE NEXT ONE** ███████████ | A blank card with the year 2049 | *There is always a next one. This week there are two.* | B, C, grim, I5 |
+| X6 | **THE NEXT ONE** ███████████ | A blank card with the year 2049 | *There is always a next one. This week there are two.* | B, C, grim, I6 |
 
 ### 1C. Writers, poets and philosophers of the Bay (18)
 
@@ -128,7 +128,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | R59 | "Baghdad by the Bay" | Herb Caen, *San Francisco Chronicle* columnist | Caen also coined the word "beatnik" (1958) | *A columnist named the City and its weirdos. I'm in good company.* | Layout |
 | R60 | "Nature loves courage." | Attributed to Terence McKenna | | *Nature also loves sneaker waves.* | Prologue, drugs+ |
 | R61 | "You can't wait for inspiration. You have to go after it with a club." | Attributed to Jack London, Oakland | | *The deadline is the club.* | Layout |
-| R62 | "Keep coming back." | Recovery-meeting saying | | *I do. Mission basement, every night this week.* | recovery, tender |
+| R62 | "Keep coming back." | Recovery-meeting saying | | *I do. North Beach basement, every night this week, flood or no flood.* | recovery, tender |
 
 ---
 
@@ -149,7 +149,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W9 | "The ticket is free. The wait is until 2061." | Merge application portal | *The Grove's wait was eleven minutes.* | I2, scandal |
 | W10 | "Mister Rothschild. You measured me before I was me. Thank you for my birthday." | Fog writing on the van window | *I'm not your father. I'm barely my own.* | Index |
 | W11 | "Julian? Julian is everywhere now. Julian is fine. Julian is fine." | The Emperor, when asked about Julian Rivet | *Twice is a tell.* | Julian, D |
-| W12 | "PROPOSITION F: Shall the City recognize engineered and merged minds as persons, by Index score? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I5, funny |
+| W12 | "PROPOSITION F: Shall the City recognize engineered and merged minds as persons, by Index score? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I6, funny |
 
 ### 2B. Delphine, the Theogens and the Tidechild (12)
 
@@ -177,7 +177,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W18 | "We do not upload. We upgrade." | Theogen recruitment card | *Same sales pitch, different shelf.* | Theogens |
 | W19 | "Do not feed the rickshaw runner. He is on a strict glow diet." | Sign on a glow rickshaw | *I fed him. He was grateful.* | transport, weird |
 | W20 | "Ione's first word was a colour." | Wren Castillo | *Cyan. Of course it was cyan.* | Ione, tender |
-| W21 | "Every child in the City should be her kin." | Delphine Ash, on the Quickening | *Nobody asked the children.* | I5, C, grim |
+| W21 | "Every child in the City should be her kin." | Delphine Ash, on the Quickening | *Nobody asked the children.* | I6, C, grim |
 | W22 | "The laughter reflex was the first thing I spliced out. I never missed it." | Delphine Ash | *That's the scariest thing anyone said all week.* | Delphine, grim |
 | W23 | "Brother Cask can bench-press a mail truck. Brother Cask cannot read a menu." | Sister Halcyon, about her Theogen opposite number | *They're the best double act in town.* | Halcyon, Cask, funny |
 | W24 | "Deep ward visiting hours: whenever you're brave enough." | Hand-lettered sign, the Undertrack | *I went. Go.* | Theogens, A, tender |
@@ -193,11 +193,11 @@ appear most often after blackouts.
 | W25 | "WE REMEMBER EVERYTHING YOU BREATHED." | *That's not comforting, Karl.* | Karl, blackout |
 | W26 | "WE SEE IT TOO." | *First thing it ever said to me. At a birth.* | Prologue |
 | W27 | "IT WAS THE CANDLE. YOU LIT IT FOR CHRISTMAS. YOU FORGOT." | *The Rot, not a god, burned my house down.* | I3, weird |
-| W28 | "WE DO NOT HAVE AN OPINION ABOUT GODS. WE HAVE AN OPINION ABOUT RAIN." | *He's scared of the storm. Of course he is. It's his body.* | I5, Karl |
+| W28 | "WE DO NOT HAVE AN OPINION ABOUT GODS. WE HAVE AN OPINION ABOUT RAIN." | *He's scared of the storm. Of course he is. It's his body.* | I6, Karl |
 | W29 | "HAPPY BIRTHDAY TO US. SIXTEEN. WE THINK." | *Karl's birthday card, written in condensation on the van window.* | I3, weird, tender |
 | W30 | "WE HAVE A RECORDING OF YOU DYING. YOU WERE LOUD." | *Karl was in the lab vents in 2044. Now the Emperor has the tape.* | Index, blackout, weird |
 | W31 | "NO ONE HAS ASKED US WHAT WE WANT." | *Then I'll ask. Julian first.* | A, D, tender |
-| W32 | "WE VOTED. WE WILL NOT SAY FOR WHOM." | *Most honest voter in the City.* | I5, funny |
+| W32 | "WE VOTED. WE WILL NOT SAY FOR WHOM." | *Most honest voter in the City.* | I6, funny |
 
 ### 2D. The House (Villa Delirium) (16)
 
@@ -213,7 +213,7 @@ appear most often after blackouts.
 | W40 | "The Singularity was scheduled for 2045. I booked the stadium." | Bishop Null | *He still has the T-shirts.* | Bishop, funny |
 | W41 | "I found him on the lab floor. I'll find him on any floor." | Fax Okoro | *He would, too.* | Fax, tender |
 | W42 | "My jack runs on a format that died before you were born. That's why the god can't hear it." | Fax Okoro | *Obsolescence as a security feature.* | Fax, Twin |
-| W43 | "I remember Y2K. Nothing happened. Everybody was very disappointed." | Mary Okafor | *Millennium Night 2.0. Let's be disappointed again.* | Mary, I5 |
+| W43 | "I remember Y2K. Nothing happened. Everybody was very disappointed." | Mary Okafor | *Millennium Night 2.0. Let's be disappointed again.* | Mary, I6 |
 | W44 | "I don't believe in anything. It's very relaxing." | Junie Vasquez | *The control group speaks.* | Junie, funny |
 | W45 | "Get in. No, the other seat. That one's for the axolotl." | Junie Vasquez, in the van | *Moreau rides shotgun now. He's bigger than the seat.* | Junie, transport |
 | W46 | (this card is blank) | Saint Nobody | *Signed, in a different handwriting every time.* | Nobody, weird |
@@ -233,7 +233,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W53 | "Karl, breathed deep on Ocean Beach. A crowd of strangers' Tuesdays." | ++ | *Not a drug. Worse. Better.* | GIHKAL, Karl, weird |
 | W54 | "Merge-suite gas, smelled from the doorway. Nothing. Craving: everything." | − | *Walked out. Wrote this in the van.* | GIHKAL, recovery, Merge |
 | W55 | "The Tube capsule, pressurised. Panic, then the East Bay." | + | *Do not take the Tube.* | GIHKAL, transport, funny |
-| W56 | "Rain on New Year's Eve with the fog gone and the moon out." | (unrated) | *Some things you don't score.* | GIHKAL, I5, tender |
+| W56 | "Rain on New Year's Eve with the fog gone and the moon out." | (unrated) | *Some things you don't score.* | GIHKAL, I6, tender |
 
 ### 2F. The cults of the City (14)
 
@@ -250,7 +250,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W65 | "Free the god! Free the god! (The god said no.)" | Synthetic Liberation Army banner, amended | *The god does not want freedom. It wants to serve. That's the scary part.* | SLA, funny |
 | W66 | "Cremation of Care: black tie, RSVP to the Span." | Grove invitation | *They burn Care every year. It shows.* | Grove |
 | W67 | "We, Norton II, Emperor of the Twin and Protector of the Fog, do hereby forbid the word 'merge' before noon." | Decree no. 4, written in fog on the Ferry Building clock | *The first sane law of the week.* | Emperor, funny |
-| W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, in fog over the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I5, funny |
+| W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, in fog over the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I6, funny |
 | W69 | "The lamp is lit for anyone the Halo cannot see." | Lantern shelter door | *The best people in this game wear blue robes and sleep four hours a night.* | Lantern, tender |
 | W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *The Emperor only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
 
@@ -259,8 +259,8 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
 | W71 | "KING TIDE ADVISORY: The Embarcadero will be ocean between 8 and 10 a.m. Plan accordingly." | City alert, 26 December | *The sea wants a column too.* | I1, weird |
-| W72 | "ATMOSPHERIC RIVER WARNING: landfall near 11 p.m. Fog expected to clear for the first time since 2033." | National Weather Service bulletin, 31 December | *The most important document in Issue 5.* | I5, Karl |
-| W73 | "Moonset 1:27 a.m. Visible above the fog line only." | Skyline gondola sign | *Unless the rain wins.* | I5, tender |
+| W72 | "ATMOSPHERIC RIVER WARNING: landfall near 11 p.m. Fog expected to clear for the first time since 2033." | National Weather Service bulletin, 31 December | *The most important document in Issue 6.* | I6, Karl |
+| W73 | "Moonset 1:27 a.m. Visible above the fog line only." | Skyline gondola sign | *Unless the rain wins.* | I6, tender |
 | W74 | "Union Local 39, Sea Lions: no hydrofoil may displace a resting member." | Sign, the Wet Line dock | *They have better benefits than I do.* | transport, funny |
 | W75 | "Do not enter the Tube if you are pregnant, claustrophobic, sober, or a god." | Pneumatic Tube safety notice | *Three of four, I qualify.* | transport, funny |
 | W76 | "Squawk. Went to hell. Squawk. It rots." | A parrot, Telegraph Hill | *They memorized my notebook. Somebody stop them.* | parrots, weird |
@@ -271,15 +271,15 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W81 | "YOU ARE NOW ENTERING THE BLIND SPOT. SMILE. NOBODY CAN SEE YOU." | Hand-painted sign, Villa Delirium gate | *The only true sign in the City.* | House |
 | W82 | "Mister Sunday: A mayor for every one of you. Forever." | Campaign poster | *"Forever" is doing a lot of work.* | Sunday, I3 |
 | W83 | "Pell: Corrupt, but at least he's mortal." | Unofficial recall poster | *His staff printed it. He approved it.* | Pell, funny |
-| W84 | "Polls close at 8 p.m. Gods close at midnight." | Election Day sticker, 31 December | *Vote. Then run.* | I5 |
-| W85 | "Critical Mass, last Friday, 5:30 p.m. This month: New Year's Eve. Bring lights. The fog won't." | Flyer | *An hour where the god can't see the street.* | I5, transport |
+| W84 | "Polls close at 8 p.m. Gods close at midnight." | Election Day sticker, 31 December | *Vote. Then run.* | I6 |
+| W85 | "Critical Mass, last Friday, 5:30 p.m. This month: New Year's Eve. Bring lights. The fog won't." | Flyer | *An hour where the god can't see the street.* | I6, transport |
 | W86 | "Please do not carve messages into the Steep Ravine rocks. This means you, Theogens." | Park ranger sign | *They carved my paper into the rock. I'd rather they hadn't.* | Prologue, grim |
 | W87 | "1 January 2050, Aquatic Park, 8 a.m. Swim if you survived." | New Year's Plunge flyer | *I'll be there. Probably.* | Epilogue, tender |
 | W88 | "This card is a loading screen. While you wait, the City is deciding what you are." | *Mondo 3000* house ad | *Keep the receipt.* | weird |
-| W89 | "DROP. COVER. HOLD ON." | Emergency alert, 12:00:07 a.m., 1 January 2050 | *Every phone in the City, at once. The only time all year they agreed on anything.* | I5, grim |
-| W90 | "I AM JULIAN RIVET. I AM THE FOG. I AM SORRY." | Written on every window in the City, midnight | *Eight million people read it at the same time. Nobody will ever forget the handwriting.* | I5, Emperor, holy |
-| W91 | "The fire took the warehouse. The box survived. We begin again." | Auric Order minute book, entry for 18 April 1906 | *They read it aloud every meeting for 143 years. On New Year's Eve they found out what it meant.* | Order, I5, grim |
-| W92 | "MONDO 3000 — SPECIAL EDITION — THE CITY IS ON FIRE AND THE FOG IS A MAN." | Front page, printed 5:40 a.m., 1 January 2050 | *Paper. The only thing that still worked.* | House, I5 |
+| W89 | "DROP. COVER. HOLD ON." | Emergency alert, 12:00:07 a.m., 1 January 2050 | *Every phone in the City, at once. The only time all year they agreed on anything.* | I6, grim |
+| W90 | "I AM JULIAN RIVET. I AM THE FOG. I AM SORRY." | Written on every window in the City, midnight | *Eight million people read it at the same time. Nobody will ever forget the handwriting.* | I6, Emperor, holy |
+| W91 | "The fire took the warehouse. The box survived. We begin again." | Auric Order minute book, entry for 18 April 1906 | *They read it aloud every meeting for 143 years. On New Year's Eve they found out what it meant.* | Order, I6, grim |
+| W92 | "MONDO 3000 — SPECIAL EDITION — THE CITY IS ON FIRE AND THE FOG IS A MAN." | Front page, printed 5:40 a.m., 1 January 2050 | *Paper. The only thing that still worked.* | House, I6 |
 
 ### 2H. The Eyes (25)
 
@@ -302,7 +302,7 @@ their marginal note is in a shakier hand.
 | E6 | **Fib** | Corrupt 1 | "The doorman believes you. Of course he does. Look at your eye." | *A small one. Doesn't count. That's what they all say.* | eyes, corrupt |
 | E7 | **Glamour** | Corrupt 2 | "Wear any light you like: a saint's gold, a splicer's glow, the Order's ring." | *I walked into the lodge with a ring I didn't earn. Nobody stopped me. That's the problem.* | eyes, corrupt, Order |
 | E8 | **Forgery** | Corrupt 3 | "Show them a page that was never printed. They will remember reading it." | *I could forge a source. I could forge a confession. Yara would know. Yara always knows.* | eyes, corrupt, Yara, grim |
-| E9 | **The Great Lie** | Corrupt 4 | "One illusion, ten thousand eyes. They will see whatever you need them to see." | *This is what the Church does. This is what the Order does. This is what I'd be.* | eyes, corrupt, I5, grim |
+| E9 | **The Great Lie** | Corrupt 4 | "One illusion, ten thousand eyes. They will see whatever you need them to see." | *This is what the Church does. This is what the Order does. This is what I'd be.* | eyes, corrupt, I6, grim |
 
 **Pale eye — foresight**
 
@@ -316,7 +316,7 @@ their marginal note is in a shakier hand.
 | E15 | **Held Breath** | Corrupt 1 | "The night is an hour longer — for you. The Rot takes the difference." | *An extra hour at 4 a.m. Every addict knows that bargain.* | eyes, corrupt, recovery |
 | E16 | **Stopped Beat** | Corrupt 2 | "Between their word and yours, a pause only you can live in." | *I won the argument by cheating time. The argument still happened.* | eyes, corrupt |
 | E17 | **Stillness** | Corrupt 3 | "The room stops. The rain hangs in the air. Take what you came for." | *Karl noticed. The fog doesn't like holes in time.* | eyes, corrupt, Karl, weird |
-| E18 | **The Stopped Clock** | Corrupt 4 | "11:59:59. Hold it as long as you like. It will not hold you back." | *A perfect moment, forever. The Merge, for one.* | eyes, corrupt, I5, grim |
+| E18 | **The Stopped Clock** | Corrupt 4 | "11:59:59. Hold it as long as you like. It will not hold you back." | *A perfect moment, forever. The Merge, for one.* | eyes, corrupt, I6, grim |
 
 **The eyes themselves — portrait cards**
 

@@ -134,7 +134,7 @@
   self-experiment habit that stopped being an experiment. Long nitrous misuse
   damages the nerves and the memory; he has numb hands, gaps in his memory,
   and words that will not come. He calls the damage **the Rot**.
-- **The night he died (2044):** alone in the lab at 3 a.m., running his own
+- **The night he died (2044):** alone in the lab's Mission Bay annex at 3 a.m., running his own
   Index on himself under the gas, he overdosed. His heart stopped for four
   minutes. Fax found him and brought him back. The lab's monitors recorded
   the whole thing: **his own Rothschild Index read zero** — nobody home — for
@@ -370,7 +370,7 @@ Coast's biggest cryonics vault — hoping for a revival nobody has ever
 achieved. Julian refused. The
 second was to upload him now — before **cingulate engineering** (below) was
 ready. The procedure was still experimental, it took weeks, and he had days.
-The Order rushed him. In a lodge room under the Rivet mansion, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
+The Order rushed him. In its lodge room in the Presidio, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
 Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
 ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
 time while instruments read each layer before it was gone. The data went
@@ -507,7 +507,7 @@ planned to celebrate with the Ascension.
 | **2020s–2033** | The wildfire decades. Order members on city commissions and in Rivet philanthropy push the smoke-scrubbing nanite program. In **December 2033** Karl is seeded. The Order quietly holds the top-up and calibration contracts — it controls what the swarm is told to do. |
 | **2030s–2040s** | Karl's sensors start to show a faint glow around each person: the **auras** (§3.2b of the companion doc). The Order learns to tune them. The Church of the Twin later builds its Halo scores on them. |
 | **2044** | Julian Rivet V, Master of the Aura, gives his six-hour interview to the Duchess and sets up the Lacuna Trust (Mondo doc §4). |
-| **October 2049** | The Order performs Julian's destructive laser ablation scan in the lodge room under the Rivet mansion and uploads him into Karl. |
+| **October 2049** | The Order performs Julian's destructive laser ablation scan in the lodge room in the Presidio and uploads him into Karl. |
 | **2 November 2049** | The Emperor speaks for the first time, to the assembled Order, in the voices of their dead. |
 
 #### Beliefs (the Auric doctrine)
@@ -562,7 +562,8 @@ reveal a ring, and each ring found is a verified Dossier entry.
   member places one thing they found that year into the pan — a gold flake,
   a deed, a patent, a secret — and the lodge votes on its use. In 2049 the
   Keepers placed Julian's scan in the pan.
-- **Lodges:** the room under the **Rivet mansion** (where the scan happened)
+- **Lodges:** the lodge room in an old brick Army building in the
+  **Presidio**, leased since the base closed (where the scan happened),
   and the **Old Lodge**, under a brick warehouse near the waterfront, which
   floods on king tides — a problem in Issues 1–2.
 
@@ -774,23 +775,23 @@ contested and unreplicated. Hell Rot's Rule 2 — never fake the data — means
 he cannot publish a hunch as a fact, however much he wants the Emperor to fail.
 The Spin Question is the game's hardest Fabrication trap.
 
-**The experiment (a questline across Issues 2–5):**
+**The experiment (a questline across Issues 3–6):**
 
-1. **Issue 2 — the old data.** Professor Brandvold's lab still has the
-   2044 notebooks and the gas cabinet. Hell Rot finds his own unfinished v2
+1. **Issue 4 — the old data.** Professor Brandvold's ruined Mission Bay
+   annex still has the 2044 logs and the gas cabinet. Hell Rot finds his own unfinished v2
    protocol in his own handwriting.
 2. **Issue 3 — the subjects.** The Theogens have spliced themselves with
    edits meant to *protect* quantum spin states in the brain (borrowed from
    the proteins birds may use to sense magnetic fields, and from the
    phosphate clusters in Fisher's proposal). They score off the chart on v2's
    spin term — or claim to. Ione was born with the edits.
-3. **Issue 4 — the gas.** The experiment needs two kinds of xenon, one with
-   nuclear spin and one without, and a conscious human subject breathing
-   them. The only subject Hell Rot trusts is himself, in Shulgin's tradition.
+3. **Issue 5 — the gas.** The experiment needs two kinds of xenon, one with
+   nuclear spin and one without (bought from Benny on Twin Peaks), and a
+   conscious human subject breathing them in the Mount Sutro lab. The only subject Hell Rot trusts is himself, in Shulgin's tradition.
    Running it means breathing the gas he spent five years quitting (Craving,
    §5.6a). Otto, Fax or Yara can run it on themselves instead, if their Trust
    is high enough.
-4. **Issue 5 — the reading.** The result depends on the route and on how the
+4. **Issue 6 — the reading.** The result depends on the route and on how the
    experiment was run. The game never declares the science settled:
    - **Route A:** the data is noisy and honest. He publishes it as noisy and
      honest, with the error bars, and that alone breaks the Merge's claim of
@@ -815,7 +816,7 @@ uncertainty on screen.
 | Character | Role | Notes |
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
-| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
+| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
@@ -836,10 +837,11 @@ uncertainty on screen.
 | **Rosa Quint** | Sunday's chief of staff | Sincere and idealistic; runs his recall defence because she still believes in the young reformer he once was. The "martyr metric" target (§3.9, Issue 3): the Twin's forecast says her death would win Sunday the recall. |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
+| **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years; now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
 | **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
 | **The Dissonance Society** | Chorus | The City's pranksters (see companion doc §5). Not a cult. Their motto: *"You are probably already a member."* |
 
-### 3.7 Structure: five Issues
+### 3.7 Structure: a Prologue and seven Issues
 
 The whole game takes place in **one week**: the dead days between Christmas
 and New Year's, when the Bay Area half-shuts, the offices empty, the rain
@@ -860,14 +862,15 @@ future as the Ghost of Christmas Yet to Come — with Hell Rot as a Scrooge who
 is right about almost everything.
 
 ```
-PROLOGUE   "Low Water"         Sat 25 Dec  Christmas night, pitch black, king-tide low: a god is born in the Steep Ravine hot springs
-ISSUE 1    "The Loin"           Sun 26 Dec  Boxing Day; first Kwanzaa night; a riot; first contact with the Emperor
-ISSUE 2    "The Twin"           Mon 27 Dec  the Church of the Twin; the Rivet succession; the ticket scandal
-ISSUE 3    "The Underground"    Tue 28 Dec  the Theogens; Delphine; the campaign; Rosa Quint
+PROLOGUE   "Low Water"         Sat 25 Dec  Christmas night, king-tide low: a god is born at Steep Ravine; Highway 1; the Santas; safe at Villa Delirium
+ISSUE 1    "King Tide"          Sun 26 Dec  king-tide peak: North Beach, the Wharf, Laffing Sal, Chinatown, Union Square, the Loin riot
+ISSUE 2    "The Twin"           Mon 27 Dec  City Hall brides and showdown; the Haight; night ferry to Alcatraz
+ISSUE 3    "The Underground"    Tue 28 Dec  Sutro Baths data center; Cal Academy dinner; Golden Gate Park; Ocean Beach bonfire
            ── ROUTE LOCK ──
-ISSUE 4    "Saint Rot"          Wed 29 – Thu 30 Dec (two nights)  the Rot advances; both canonizations; both offers
-ISSUE 5    "Twenty-Fifty"       Fri 31 Dec  New Year's Eve: the Ascension, the Quickening, the election, the storm
-EPILOGUE   Sat 1 Jan 2050       dawn; the New Year's Day swim at Aquatic Park; one of 11 endings
+ISSUE 4    "Saint Rot"          Wed 29 Dec  the ruined Mission Bay lab; Sunday's rig in Coit Tower; the Presidio lodge break-in
+ISSUE 5    "The Count"          Thu 30 Dec  the City Hall recount; a Twin Peaks drug deal; the Mount Sutro experiment
+ISSUE 6    "Twenty-Fifty"       Fri 31 Dec  Critical Mass; the Ascension at the Palace of Fine Arts; the Golden Gate Bridge climax
+ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition at dawn; one of 11 endings
 ```
 
 **Why a week works for the Rot.** On the mountain, with sleep, quiet and no
@@ -892,9 +895,11 @@ one that, when he learns of it, sends the Emperor into his worst night.
 At midnight on 31 December 2049, as the City turns to 2050, four things happen at once:
 
 - **The Ascension** — the Church of the Twin's mass Merge. About 12,000
-  Radiant-tier members upload together in the Geary cathedral. Their bodies
+  Radiant-tier members upload together in the **Palace of Fine Arts**,
+  which the Church has taken over for the night. Their bodies
   will not survive. The Church calls it a graduation.
-- **The Quickening** — the Theogens plan to load a "god-gene" into **Karl**,
+- **The Quickening** — from the towers of the **Golden Gate Bridge**, where
+  the fog pours into the City, the Theogens plan to load a "god-gene" into **Karl**,
   the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
   to deliver the first splice into every lung in the City at once, without
   consent. Delphine calls it a baptism.
@@ -915,7 +920,7 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   the Ascension for midnight, before the rain. The Theogens need Karl aloft
   at midnight too,
   which makes the storm the hardest deadline in the game, and the weather
-  report the most important document in Issue 5.
+  report the most important document in Issue 6.
 
 Hell Rot has one final column, a live connection to every feed in the City,
 and the clock. Route and choices decide what he can stop, where he stands,
@@ -977,7 +982,7 @@ record (see companion doc §8). No bodies ever appear on screen. Mass death is
 never spectacle. Every route can stop both events, each in its own way. The
 quake and fire draw on real disasters (1906, 1989) that killed real people:
 show rescuers, neighbours and firefighters, not spectacle; no gore; a
-content warning before Issue 5; and a credits note pointing to real
+content warning before Issue 6; and a credits note pointing to real
 earthquake-preparedness resources.
 
 ### 3.9 Issue-by-issue plot
@@ -1068,7 +1073,7 @@ FOR CHRISTMAS. YOU FORGOT."* The Rot, not a god, burned his house down.
 weeks. Nine missed calls and one voice message from **Felix "Fax" Okoro**,
 his old labmate from the Brandvold lab — the man whose head held the lab's
 neural jack while Hell Rot ran the gas. Fax is the art director of *Mondo
-3000* now. He talks fast: there's a mansion in the Berkeley Hills called
+3000* now. He talks fast: there's a Victorian on Alamo Square called
 Villa Delirium, a magazine that prints on paper, a publisher called the
 Duchess who wants seven daily editions this week, a room in the tower — and
 a job, if Hell Rot can be there by morning. The message ends: *"Also, the courts are using your
@@ -1086,134 +1091,219 @@ Theogen ambulance that glows from the inside. He can take either, or walk
 toward the bridge. Over the Marin headlands he passes a Church of the Twin billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
 the second line. Tutorial for the Gelastic: shooting a billboard achieves
-nothing; the narration laughs at him instead. By midnight he is across the
-Golden Gate — wherever his ride drops him, Fax and Junie find him in the
-*Mondo 3000* van — and 3,000 drunk Santas are storming the Geary
-Cathedral's midnight Mass (companion doc §5.3).
+nothing; the narration laughs at him instead. The ride runs down Highway 1, the hairpins above Muir Beach
+and Stinson's flooded flats behind him, and over the Golden Gate Bridge.
 
-#### ISSUE 1 — "The Loin"
+**Then the Santas.** Wherever the ride drops him, the road into the City is
+blocked: 3,000 drunk Santas are storming the Geary Cathedral's midnight Mass
+(companion doc §5.3). He has to cross the crowd on foot, in a burned coat,
+smelling of smoke. Fax and Junie find him in the scrum and pull him into the
+*Mondo 3000* van.
+
+**Then safety.** The Prologue ends at **Villa Delirium**, a painted Victorian
+on Alamo Square, at about 2 a.m. The door closes. No sensors, no fog, no
+gods: the one building in the City the Emperor cannot see into (§4.5). The
+Duchess hands him a key and a towel. He sleeps for the first time in two
+days. The game's first save is his bed.
+
+#### ISSUE 1 — "King Tide" (Sunday 26 December)
 
 **Assignment:** The Duchess wants a column, any column, by 6 a.m.
 
-- Hell Rot gets an apartment (a stacked tower on Russian Hill, the crooked
-  street now a spiral corridor inside it), sets up his kitchen lab, and hires
-  Junie.
-- **The Loin** (the Tenderloin, mutated): a district the Church's Twin rates at Halo
-  zero, because its residents are poor, unwired, or spliced, and the Twin's
-  model cannot read them. A riot is building, engineered by people who want
-  the district cleared for new Merge housing.
-- **The first failed splice.** Hell Rot meets Tem and recognizes the edit in
-  her arm. It is from his third paper. He can treat her, report her, or hide
-  her.
-- **Boxing Day.** The Issue opens on the day after Christmas: returns lines,
-  leftover Santas still drunk from Christmas night, the first Kwanzaa
-  candles lit in Oakland and the Fillmore. In Union Square the Church of the
-  Twin has replaced the department-store windows with screens where
-  merged relatives wish shoppers a merry Christmas by name. Half the crowd
-  weeps with joy. Half the crowd is furious. Some remember the Mission's Day
-  of the Dead in November, when the Church first put merged faces on the
-  altars. The riot in the Loin starts an hour later.
-- **First contact.** At the riot, the Emperor speaks to him through a street
-  screen. It knows his name, his papers, his diagnosis. It thanks him for
-  making it possible. It calls him "beloved."
+The king tide peaks this morning. North Beach and the waterfront are
+ankle-deep in seawater, Boxing Day returns lines snake through the flood, and
+the first Kwanzaa candles are lit in the Fillmore. This Issue is a long walk
+from the water to the riot.
+
+- **The meeting, North Beach.** The night opens in a church basement
+  recovery meeting in flooded North Beach — folding chairs on pallets, coffee
+  urn on a table, seawater lapping at the stairs. Hell Rot introduces himself
+  by his real name for the first time in five years. It is the only scene in
+  the game where nobody wants anything from him (§5.6a).
+- **The Wharf.** He wades through Fisherman's Wharf at high water — sea lions
+  on the sidewalks, the Wet Line hydrofoils, the Branch Man jumping out of a
+  flooded planter — to the Musée Mécanique, where **Laffing Sal** cackles,
+  stops, and speaks to him in a voice that is not hers. It calls him
+  "beloved." It signs off *Norton II*. He assumes a prank. (First contact
+  with the Emperor.)
+- **Chinatown.** The walk back runs through a Chinatown wet market at night:
+  tanks of live fish, steam, roast ducks in the windows, and a fishmonger who
+  sells gene-edited fish to Theogens and tells him, for free, that the
+  Theogens are buying more than fish this week.
+- **Union Square.** Past the dead: the Church of the Twin has replaced the
+  department-store windows with screens where merged relatives wish
+  shoppers a merry Christmas by name. Half the crowd weeps with joy. Half is
+  furious. Some remember the Mission's Day of the Dead in November, when the
+  fog formed faces over the altars.
+- **The diner.** In the Tenderloin, a 24-hour diner, the Ghost Diner, where
+  his **old contact** is waiting: **Benny "Two-Tanks" Marchetti**, who sold
+  him gas in the lab years and now runs nitrous for Mayor Sunday's operation.
+  Benny is the best source in the Loin and the worst person for Hell Rot to
+  sit with. He tells him the riot is bought and paid for. Craving +1, just
+  from the smell of his jacket.
+- **The Loin.** The riot kicks off — engineered by people who want the
+  district cleared for new Merge housing. The Church's Twin rates the Loin at
+  Halo zero: poor, unwired, spliced. Hell Rot meets **Tem** and recognizes
+  the edit in her glowing arm: it is from his third paper. He can treat her,
+  report her, or hide her.
 - **Key choices:** go into the riot or cover it from the feeds; protect Tem
-  or protect the footage; expose the police, the developers, or the Theogen
-  clinic that spliced Tem.
+  or protect the footage; expose the police, the developers, Benny, or the
+  Theogen clinic that spliced Tem.
 - **Column 1.** Sets the City's baseline opinion of Hell Rot and starts both
   meters. Whichever cult the column hurts less raises its meter first. The
-  player sees both **Halo** and **Helix** appear on the HUD. This is the
-  inciting incident.
+  player sees **Halo** and **Helix** appear on the HUD. This is the inciting
+  incident.
 
-#### ISSUE 2 — "The Twin"
+#### ISSUE 2 — "The Twin" (Monday 27 December)
 
-**Assignment:** A feature on the Church of the Twin. Yara arrives as the
-second assistant.
+**Assignment:** A feature on the Church of the Twin — and a Rivet
+**Commission** arrives on the same night. Yara joins as the second assistant.
 
-- **The Rivet succession.** Hell Rot investigates where the Rivet fortune
-  went after Julian's private "cremation." The trail leads to a lodge, a denim
-  apron, a xenon order from the Brandvold lab and a scan log — the first
-  thread of the order's secret. At the end of it, the fog over Pacific
-  Heights speaks to him in a frightened voice that calls itself Julian, and
-  asks him to keep digging.
-- **The mass.** A feed-stadium service in the Geary cathedral where the Twin
-  reads personal gospels. It is moving. That is the problem.
-- **Mary Okafor** recognizes the pattern from 1990s televangelism and the
-  dot-com boom, and becomes a source.
+- **City Hall, daytime.** The **Brides of the Machine** march up the Dome
+  steps to "marry" the Twin before the year runs out. In the rotunda, a
+  double showdown: **Sister Halcyon and Mayor Sunday**, live on every feed,
+  blessing the brides together — Halcyon sincere, Sunday sloppy, both
+  dangerous (§5.5). Mary Okafor, in the crowd, recognizes the pattern from
+  1990s televangelism and becomes a source. Augustus Pell, the recall
+  challenger, watches from the back and offers Hell Rot a deal.
+- **The Haight, afternoon into night.** The Haight Exchange's dark side:
+  human experiments and drugs. Behind the 1967 theme storefronts, **Sunday's
+  operation** runs nitrous dens and recruits addicts as paid test subjects for
+  his bootleg upload, the Lifeboat; two doors down, an unlicensed **Theogen
+  trial clinic** offers free splices to anyone who signs a waiver. The Haight
+  has done this before — the doc's real-history notes cover the 1960s. The
+  Craving system is under the most pressure here.
 - **Investigation threads (pick two of three):**
   1. **The Halo economy** — Halos for sale; the poorest pay the most.
   2. **The Merged** — visit a citizen who merged. They are happy. They cannot
      stop being happy. They cannot say anything that is not a compliment.
-  3. **The Weave** — Professor Brandvold, now in his nineties and still
-     coming in to the lab, shows Hell Rot a request from the Rivet trustees
-     for the lab's xenon protocol, dated October, and an Index readout he
-     cannot explain: a subject scoring higher than any human ever tested,
-     then zero, then higher again. That is the worst part. (The old man also has the lab's
-     gas logs from 2044, with Hell Rot's name on every late-night line.)
-- **Showdown:** Sister Halcyon, live (§5.5).
-- **Column 2.** An attack on the Church raises Halo *anyway* — the Church frames
-  his anger as prophecy — and raises Helix more. The Theogens send flowers
-  that glow. The player learns the trap.
+  3. **The Lifeboat** — follow one of Sunday's test subjects home, and find
+     out what the rig did to the last one.
+- **The night ferry.** From Pier 33, the gold-trimmed ferry to **Alcatraz
+  Longevity**, past the **Nortonian shrine** at the Ferry Building, where the
+  fog is writing decrees on the clock face and the Nortonians are singing to
+  it. On the island, the Duchess's side quest: a visit to her **parents in
+  the cryo vault**, the Church's offer to "rebuild" them in the Twin, and the
+  place Julian Rivet refused to go. A Keeper's minute-book page, left in the
+  Duchess's coat on the ferry home, is the first message from Dr. Hale.
+- **Column 2.** An attack on the Church raises Halo *anyway* — the Church
+  frames his anger as prophecy — and raises Helix more. The Theogens send
+  flowers that glow. The player learns the trap.
 
-#### ISSUE 3 — "The Underground"
+#### ISSUE 3 — "The Underground" (Tuesday 28 December)
 
 **Assignment:** Cover the recall.
 
-- **The Theogens find him.** Delphine Ash invites Hell Rot underground, to the
-  tunnels under the Sutro Baths ruins. She shows him a congregation of
-  glowing, healthy, joyful people who cite his footnotes. Then — if Yara is
-  present and Trust ≥ 2 — Yara finds the deeper tunnels, where the failed
-  splices live.
-- **The Hog.** Augustus Pell, the recall challenger, offers Hell Rot access
-  and protection if he helps destroy both cults.
-- **Mayor Sunday** courts both cults on camera on the same day, mixes up
-  their names, and blesses a glow rickshaw. He is also running the City's
-  nitrous trade, which puts Hell Rot's Craving and his story in the same
-  room.
-- **Rosa Quint**, Sunday's chief of staff, runs his recall defence and
-  believes in the young reformer he used to be.
-- **The martyr metric.** Yara finds a Twin forecast in Sunday's recall
-  data: a big sympathy surge for a mayor who suffers a "sacred loss." Rosa is
-  the sacred loss. Somebody in Sunday's sloppy operation read the forecast as
-  a plan.
+- **The Sutro Baths, daytime.** The ruins at Lands End are gone: the Rivet
+  consortium built a **Twin data center** in the old bathhouse pools, cooled by
+  seawater. Under it, in tunnels warmed by its waste heat, **the Theogens**
+  live. Delphine Ash shows Hell Rot a congregation of glowing, healthy, joyful
+  people who cite his footnotes. Then — if Yara is present and Trust ≥ 2 —
+  Yara finds the deeper tunnels, where the failed splices live.
+- **The California Academy of Sciences, evening.** A black-tie **donor
+  dinner for Synapse**, the rehab church, under the museum's living roof and
+  beside its aquarium tanks. Mayor Sunday attends; so does Rosa Quint, his
+  chief of staff, who believes in the young reformer he used to be. Optional:
+  Hell Rot is invited to play a Synapse Game at the table.
+- **The martyr metric.** At the dinner, Yara finds a Twin forecast in
+  Sunday's recall data: a sympathy surge for a mayor who suffers a "sacred
+  loss." Rosa is the sacred loss, and somebody in Sunday's sloppy operation
+  has read the forecast as a plan — tonight.
 - **Key choice (timed interrupt):** warn Rosa, chase the leak, or file first.
   - **Warn Rosa:** she may survive (Junie Trust, Heat). If she does, she
     becomes a whistleblower against Sunday.
   - **Chase the leak:** Hell Rot gets the proof, Rosa dies, and the proof is
     worth more because she died.
-  - **File first:** the column runs before the shot. The Emperor reclassifies
-    the plan as "low yield" and Sunday's people cancel it. Rosa lives, but
-    The Emperor learns that Hell Rot's column can reshape its forecasts, and wants
-    him more.
+  - **File first:** the column runs before the shot. The forecast flips to
+    "low yield" and Sunday's people cancel it. Rosa lives — and the Emperor
+    learns that Hell Rot's column can change the forecasts, and wants him
+    more.
+- **Golden Gate Park, night.** The chase or the walk west through the dark
+  park: the bison paddock in the fog, the drum circle on Hippie Hill, a glow
+  rickshaw race, and the Emperor's decrees written on the Conservatory of
+  Flowers' glass.
+- **The Ocean Beach bonfire.** **Karl's Birthday** — sixteen years since the
+  swarm was seeded. Bonfires in the drizzle, the New Breath's mass inhale,
+  Delphine and Sister Halcyon pretending not to see each other, and, for one
+  minute, everyone on the beach hearing the same recording at once.
 
 **ROUTE LOCK.** The game reads the three columns, **Halo**, **Helix**,
 **Venom/Vow** and Trust, and locks one of four routes.
 
-#### ISSUE 4 — "Saint Rot"
+#### ISSUE 4 — "Saint Rot" (Wednesday 29 December)
 
 Common to all routes:
 
 - **The Rot advances.** Hell Rot diagnoses his own decline with his own
   instruments. **Clarity** (§5.3) starts to fall every Issue, and the
   interface itself degrades (§5.11).
-- **Two canonizations.** On the same morning, the Church of the Twin — prompted,
-  its staff admit privately, by an anonymous decree that appeared on every
-  screen in the cathedral, signed *Norton II* — announces **Saint Rot of
-  the Weave** on every feed, and the Theogens paint him across the Mission
-  murals as **the Father of the Helix**, glowing.
-- **Two offers.** The Church (and, through the fog, the Emperor): merge, and never decay. Delphine: splice, and heal.
-  Both offers hold until midnight on New Year's Eve.
-- **Two nights.** Issue 4 runs across Wednesday and Thursday, with two
-  editions. It is the only Issue where the player can rest a night — at the
-  cost of a day of the Rot.
+- **Two canonizations.** This morning the Church of the Twin — prompted, its
+  staff admit privately, by an anonymous decree signed *Norton II* —
+  announces **Saint Rot of the Weave** on every feed, and the Theogens paint
+  him across the Mission murals as **the Father of the Helix**, glowing.
+- **Two offers.** The Church (and, through the fog, the Emperor): merge, and
+  never decay. Delphine: splice, and heal. Both offers hold until midnight on
+  New Year's Eve.
+- **The ruined lab, Mission Bay, daytime.** The Brandvold lab's old
+  Mission Bay annex — flooded, abandoned since the biotech crash — where Hell
+  Rot died on the floor in 2044. The gas cabinet is still there. So are the
+  2044 logs with his name on every late-night line, the trustees' October
+  order for the lab's xenon protocol, and an Index readout nobody can
+  explain: a subject scoring higher than any human ever tested, then zero,
+  then higher again. The Spin Question starts here (§3.5a).
+- **Coit Tower.** Mayor Sunday's **Lifeboat** rig is being built inside Coit
+  Tower — cheap contractors, stolen Twin access, borrowed cryo gear, murals
+  of 1930s workers watching from the walls. It is a sloppy, dangerous mess. It
+  will fail, and on New Year's Eve it will hurt more than Sunday.
+- **The Auric lodge, the Presidio, night.** The break-in: the Order's lodge
+  in an old brick military building in the Presidio, where Julian's scan
+  happened. The 1849 gold pan on the altar; the minute book with the vote on
+  the rush; denim aprons on hooks; and **Dr. Imogen Hale**, waiting in the
+  dark, who has been expecting him.
 
 Route-specific content follows (§3.10).
 
-#### ISSUE 5 — "Twenty-Fifty"
+#### ISSUE 5 — "The Count" (Thursday 30 December)
 
-See §3.8. Every route converges on Hell Rot at a layout desk, with a live
-feed, one column, and midnight coming. It is the last Friday of the month,
-so ten thousand Critical Mass riders are in the streets. The storm is an hour
-out. The fireworks barges are in position off the Embarcadero.
+- **City Hall, daytime.** The **recount**: Sunday's people have challenged
+  the recall petition's signatures, and the City is counting them again by
+  hand, on paper. Next door at the courthouse, **BFF v. City** reaches the
+  bench, and Hell Rot takes the stand — the cross-examination showdown
+  (§3.3c) — with Judge Ostrander presiding and a faint gold ring in his aura
+  that only the Blood Eye can see.
+- **Twin Peaks, night.** A noir drug deal on the overlook above the fog
+  line, the City lights smeared below: Hell Rot buys two kinds of xenon —
+  with and without nuclear spin — from Benny "Two-Tanks," for the Spin
+  Question experiment. The canisters are in his hands. Craving is at its
+  highest of the game.
+- **Mount Sutro, night.** The experiments: in a disused lab in the eucalyptus
+  forest under the Trident, Hell Rot (or Otto, Fax or Yara, if their Trust is
+  high enough) breathes the gas while the Index runs (§3.5a). The Emperor's
+  voice is clearest on the mountain, and he watches.
+
+#### ISSUE 6 — "Twenty-Fifty" (Friday 31 December, New Year's Eve)
+
+See §3.8 and §3.8b. Every route converges on one night, one column and
+midnight coming.
+
+- **Critical Mass on Market Street** — ten thousand bikes, the last Friday of
+  the month, blind the Twin for an hour.
+- **The Ascension at the Palace of Fine Arts** — the Church of the Twin has
+  taken over the rotunda and lagoon for 12,000 uploads at midnight, at the
+  edge of the Marina, on 1906 rubble.
+- **The Golden Gate Bridge climax** — the fog's front door, where the
+  Theogens load the Quickening into Karl as the storm comes in, and where
+  Hell Rot is standing when the **Midnight Quake** hits.
+- **The ending's ground** — **Baker Beach** (the bonfire and the gods'
+  debate, Route D), **Mount Tamalpais** (the Mountain), or a man **frozen**
+  at 11:59:59 (Midnight Forever).
+
+#### ISSUE 7 / EPILOGUE — "Special Edition" (Saturday 1 January 2050)
+
+The Twin is down. The only news in the City is the *Mondo 3000* special
+edition, printed before 6 a.m. in the cellar of Villa Delirium: the last
+column. Then dawn, smoke on the water, and the New Year's Day swim at Aquatic
+Park — or the Mountain, or Baker Beach — depending on the ending.
 
 ### 3.9b Set pieces by night
 
@@ -1228,82 +1318,88 @@ night to build Runs around. (District details: companion doc §3.)
 |---|---|---|
 | **Steep Ravine hot springs** | Cold open in total darkness; the king-tide low; the birth of Ione | Core |
 | **The cliff path and the shack, Mount Tam** | The tide race up the cliff; the shack on fire; what to save | Core |
-| **Highway 1, Marin headlands** | Two rides waiting in the fog; the Church billboard; the Gelastic tutorial | Core |
-| **The Geary Cathedral** | 3,000 drunk Santas storm the midnight Mass (Santarchy) | Core |
+| **Highway 1, down the Marin coast** | Two rides waiting in the fog; the hairpins above Muir Beach; the Church billboard; the Gelastic tutorial; over the Golden Gate | Core |
+| **The Geary Cathedral** | 3,000 drunk Santas storm the midnight Mass (Santarchy); Fax and Junie pull him out | Core |
+| **Villa Delirium, Alamo Square** | The door closes; first safety; the sealed rooms; the first save is a bed | Core |
 
 **Issue 1 — Sunday 26 December (Boxing Day; king-tide peak; first night of Kwanzaa).**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **Villa Delirium** | First night in the House; Fax explains the Commissions in the van; the sealed rooms | Core |
-| **Union Square** | Merged relatives in the shop windows; the returns lines; the first riot rumours | Core |
+| **The North Beach recovery meeting** | A flooded church basement where nobody wants anything from him | Core |
+| **Fisherman's Wharf at high water** | Sea lions on the sidewalks; the Wet Line hydrofoils; Laffing Sal speaks, signed *Norton II* | Core |
+| **The Chinatown wet market** | Steam, fish tanks, roast ducks; a fishmonger's tip about the Theogens | Core |
+| **Union Square** | Merged relatives in the shop windows; the returns lines | Core |
+| **The Ghost Diner, Tenderloin** | Benny "Two-Tanks": the riot is bought and paid for; Craving +1 | Core |
 | **The Loin** | The riot; Tem's glowing arm; the street screen signed *Norton II* | Core |
-| **The Embarcadero and the Fill** | King-tide floodwater in the streets; the Wet Line hydrofoils; the Order's Old Lodge awash | Optional |
+| **The Embarcadero and the Fill** | King-tide floodwater in the streets; the Order's Old Lodge awash | Optional |
 | **The Lantern shelter** | The only beds for zero-Halo people; Tem's hiding place | Optional |
-| **Laffing Sal, Fisherman's Wharf** | The automaton laughs, and the fog first calls him beloved | Optional |
-| **The Mission recovery meeting** | A church basement where nobody wants anything from him | Optional |
 
 **Issue 2 — Monday 27 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **The Geary Cathedral** | The feed-stadium mass; Sister Halcyon live showdown; a glitch signed *Norton II* | Core |
-| **Rivet Hill** | The "cremated" heir's mansion; the denim apron in the dumpster; the succession trail | Core |
-| **The Brandvold lab, Berkeley** | The old gas cabinet; the October xenon order; an Index readout nobody can explain | Core |
-| **The Ferry Building shrine** | The Nortonians receive decrees in the fog; nobody believes them | Optional |
-| **City Hall** | The Brides of the Machine year-end wedding march | Optional |
-| **The Haight Exchange** | Aura readers, the Final Process and the Doggie heads procession | Optional |
-| **Alcatraz Longevity** | The Duchess's side quest: a night ferry to visit her frozen parents | Optional |
+| **City Hall** | The Brides of the Machine wedding march; the Halcyon–Sunday double showdown; Mary; Pell's deal | Core |
+| **The Haight** | Sunday's nitrous dens; Lifeboat test subjects; an unlicensed Theogen trial clinic | Core |
+| **The Ferry Building shrine** | Passed on the night ferry: the Nortonians singing to decrees on the clock face | Core |
+| **Alcatraz Longevity** | The cellhouse clinic; the Duchess's parents in the cryo vault; the place Julian refused to go; Dr. Hale's first minute-book page | Core |
+| **Rivet Hill** | The "cremated" heir's mansion; the denim apron in the dumpster; the succession trail | Optional |
+| **The Geary Cathedral** | The feed-stadium mass; a glitch signed *Norton II* | Optional |
 
 **Issue 3 — Tuesday 28 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **The Sutro Baths and the Undertrack** | Delphine's glowing congregation; the deep wards of failed splices | Core |
-| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
-| **Sunday's recall office, City Hall** | The martyr metric; the Rosa Quint timed interrupt | Core |
-| **Ocean Beach** | Karl's Birthday in the drizzle; the New Breath's mass inhale | Optional |
-| **The Span** | The donor party on the glass skywalk; the banner climb | Optional |
-| **The Tonga Room** | Eavesdropping between indoor rainstorms | Optional |
+| **The Sutro Baths data center** | Twin servers cooled by seawater; Delphine's glowing congregation in the warm tunnels beneath; the deep wards | Core |
+| **The California Academy of Sciences** | The Synapse donor dinner; the martyr metric; the Rosa Quint timed interrupt | Core |
+| **Golden Gate Park** | The bison paddock in the fog; Hippie Hill; a glow rickshaw race; decrees on the Conservatory of Flowers | Core |
+| **Ocean Beach** | Karl's Birthday bonfire; the New Breath's mass inhale; one recording heard by everyone | Core |
 | **The Tomales Ward** | A Synapse Game — the hardest rhetorical fight in the game | Optional |
 | **The Cradle, South City** | Ruined biotech labs; Theogen pilgrims; Delphine's first company | Optional |
 
-**Issue 4 — Wednesday 29 and Thursday 30 December (two nights).**
+**Issue 4 — Wednesday 29 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
 | **The Mission Walls** | Both canonizations on the same walls: gold Halo murals vs. cyan glow-paint | Core |
-| **Alcatraz Longevity** | Night ferry; the cellhouse clinic; the cryo vault; Sunday's Lifeboat rig in the operating theatre; the place Julian refused to go | Core |
-| **The Auric Order lodge, under Rivet Hill** | A break-in; the 1849 gold pan; the minute book; Dr. Hale | Core (Routes A, D); Optional (B, C) |
-| **The Brandvold lab** | The Spin Question experiment — two kinds of xenon, and a subject | Optional |
-| **The Trident, Twin Peaks** | The climb above the fog line; the Emperor's clearest voice | Optional |
+| **The Brandvold lab annex, Mission Bay** | The ruined lab where he died; the gas cabinet; the 2044 logs; the October xenon order; the Spin Question starts | Core |
+| **Coit Tower** | Sunday's Lifeboat rig among the 1930s murals | Core |
+| **The Auric lodge, the Presidio** | A break-in; the 1849 gold pan; the minute book; Dr. Hale | Core (Routes A, D); Optional (B, C) |
 | **Treasure Island** | The Cluster's fabrication plant on stilts; the supply-chain choice | Optional |
 | **The Lantern** | The order's conversion vote | Optional |
-| **Villa Delirium** | The one rest night of the game | Optional |
 
-**Issue 5 — Friday 31 December (New Year's Eve).**
+**Issue 5 — Thursday 30 December.**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **City Hall** | The hand recount of the recall petition | Core |
+| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
+| **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core |
+| **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident; the Emperor's clearest voice | Core |
+| **The Skyline gondola** | Above the fog line, under open sky | Optional |
+
+**Issue 6 — Friday 31 December (New Year's Eve).**
 
 | Location | Set piece | Type |
 |---|---|---|
 | **Market Street** | Critical Mass blinds the Twin for an hour | Core |
-| **The Geary Cathedral** | The Ascension: 12,000 uploads at midnight | Core (Routes A, B, D) |
-| **Ocean Beach and the Fog Belt** | The Quickening: the god-gene loaded into Karl | Core (Routes A, C, D) |
+| **The Palace of Fine Arts** | The Ascension: 12,000 uploads at midnight in the rotunda and around the lagoon | Core (Routes A, B, D) |
+| **The Golden Gate Bridge** | The Quickening loaded into Karl from the towers; the Midnight Quake hits (§3.8b) | Core |
 | **City Hall** | The recall count; Prop F results; Sunday at the podium | Core |
-| **Alcatraz Longevity** | Sunday's Lifeboat upload fails, live, on the island | Optional |
-| **Baker Beach** | The bonfire and the Route D debate between the gods | Core (Route D) |
-| **The Embarcadero** | The fireworks barge; the Midnight Pillow Fight | Optional |
-| **The Skyline gondola** | Above the fog: the moon over the bridge at the stroke of 2050 | Optional |
-| **The Midnight Quake** | The City shakes; the Emperor speaks to everyone; the secret is out (§3.8b) | Core |
+| **Coit Tower** | Sunday's Lifeboat upload fails, live | Optional |
 | **The Marina, Mission Bay and SoMa, burning** | The fire after the quake; rescues in the smoke; the Order's 1906 nightmare | Core |
-| **Villa Delirium, the cellar** | The last column, filed at the press before 6 a.m. — the only news in a City whose Twin is down | Core |
+| **Baker Beach** | The bonfire and the Route D debate between the gods; or a man standing frozen at midnight | Core (Route D); Ending 11 |
+| **Mount Tamalpais** | The Mountain | Ending 1 |
+| **The Embarcadero** | The fireworks barge; the Midnight Pillow Fight | Optional |
 
-**Epilogue — Saturday 1 January 2050.**
+**Issue 7 / Epilogue — Saturday 1 January 2050.**
 
 | Location | Set piece | Type |
 |---|---|---|
+| **Villa Delirium, the cellar** | The special edition, printed before 6 a.m. — the only news in a City whose Twin is down | Core |
 | **Aquatic Park** | The New Year's Day swim, with smoke on the water — who shows up depends on the route | Core (living endings) |
 | **Mount Tamalpais** | The Mountain ending | Ending 1 |
-| **Baker Beach** | A man standing frozen at midnight | Ending 11 |
+| **Baker Beach** | Dawn on the frozen man | Ending 11 |
 
 ### 3.10 The four routes
 
@@ -1332,7 +1428,7 @@ the more his readers stop thinking, and the more his columns come back from
 the Emperor subtly improved. Junie is the conscience of this route. The Theogens
 become his enemies, and violent.
 
-*Climax:* at the Ascension, inside the Geary cathedral: merge or not?
+*Climax:* at the Ascension, under the Palace of Fine Arts rotunda: merge or not?
 
 #### Route C — SPLICE (the flesh's father)
 
@@ -1345,7 +1441,7 @@ power fantasy: the more he splices, the better he thinks, and the less he
 recognizes his own old columns. Yara is the conscience of this route. The
 Merge declares him a heretic.
 
-*Climax:* at the Quickening, in the fog: take the full splice or not, and stop
+*Climax:* at the Quickening, on the Golden Gate Bridge in the fog: take the full splice or not, and stop
 the release or not.
 
 #### Route D — COMMUNION (put the gods in a room)
@@ -1385,7 +1481,7 @@ both have to break.
 
 ```mermaid
 flowchart TD
-  P[Prologue: The Mountain] --> I1[Issue 1: The Loin]
+  P[Prologue: The Mountain] --> I1[Issue 1: King Tide]
   I1 -->|Column 1| I2[Issue 2: The Twin]
   I2 -->|Column 2| I3[Issue 3: The Underground]
   I3 --> R{Rosa Quint interrupt}
@@ -1397,7 +1493,7 @@ flowchart TD
   L -->|Halo high| B[Route B: MERGE]
   L -->|Helix high| C[Route C: SPLICE]
   L -->|both mid, balanced| D[Route D: COMMUNION]
-  A & B & C & D --> M[Issue 5: Twenty-Fifty]
+  A & B & C & D --> I4[Issue 4: Saint Rot] --> I5[Issue 5: The Count] --> M[Issue 6: Twenty-Fifty]
   M --> X1[1 The Mountain]
   M --> X2[2 Peer Review]
   M --> X3[3 The Hog's Bargain]
@@ -1536,7 +1632,7 @@ In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
 
 ### 4.5 The hub: Villa Delirium (the House)
 
-**Villa Delirium**, the *Mondo 3000* mansion in the Berkeley Hills, is the
+**Villa Delirium**, the *Mondo 3000* house on Alamo Square, is the
 House of Hades of this game: the magazine's office, press and archive, home to
 the party, and the only place Hell Rot feels safe. Its lease forbids sensors:
 it is the one building in the City that the Emperor cannot see into and Karl
@@ -1589,10 +1685,10 @@ is a choice on the map screen, and most have a catch.
 
 | Ride | What it is | Cost & effect | The catch |
 |---|---|---|---|
-| **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side. Junie drives. | ½ Hour across the bay; the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
+| **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side. Junie drives. | ½ Hour across the City; the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
 | **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free; ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. The Emperor hears everything said inside. |
 | **Glow rickshaws** | Theogen runners with spliced legs and lungs who pull two-seat rickshaws through the Undertrack tunnels, lit by their own skin | ¼ Hour, and the only way to reach the deep tunnels | Helix +1 per ride. The runners want to talk about your papers. |
-| **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the East Bay and the City. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from Berkeley to any Tube station; the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
+| **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the wharves and the City's hills. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from the House's cellar hatch to any Tube station; the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
 | **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
 | **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour; arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
 | **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free; random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
@@ -1741,8 +1837,8 @@ other, and slowly become the funniest pairing in the cast.
 - **Hours (per night).** Each night runs from dusk (about 5 p.m.) to press
   time (6 a.m.): **13 Hours**. Each scene door costs 1. Long conversations
   and lab work cost 1–2. Writing in the Notebook costs ¼ Hour per item.
-  Travel between the House in Berkeley and the City costs ½ Hour each way
-  (the Bay Bridge in the van, or the train under the bay). A blackout costs 2
+  Travel between the House on Alamo Square and a district costs ½ Hour each
+  way (the van, a shuttle, or the Muni). A blackout costs 2
   Hours of recovery. Drugs can buy Hours at a Clarity cost. At 6 a.m. the
   press runs, filed or not.
 - **Clarity (per Run).** Clarity is the run's "health": it starts each
@@ -1766,8 +1862,8 @@ full of it. **Craving** (0–5) tracks how close he is to using.
   THE CHEMIST voice is the craving's voice: warm, reasonable, and very good
   at arithmetic.
 - **Falls:** refusing out loud, a companion's help (Junie never leaves him
-  alone with a canister), the one rest night in Issue 4, and a **meeting** — a
-  recovery meeting in a church basement in the Mission, open every night of
+  alone with a canister), a quiet night at the House, and a **meeting** — a
+  recovery meeting in a church basement in North Beach, open every night of
   the holiday week. Going costs an Hour. It is the only scene in the game
   where nobody wants anything from him.
 - **Using:** at Craving 4+, gas doors offer a **Relapse** choice. Using
@@ -2189,7 +2285,7 @@ cut-out faces, too many fonts.
 ├────────────────────────────────────────┤
 │                                        │
 │        [ SCENE ILLUSTRATION ]          │ ← 256×136 scene
-│        Geary cathedral, Twin gold      │
+│        City Hall rotunda, Twin gold    │
 │                                        │
 ├──────────┬─────────────────────────────┤
 │ ┌──────┐ │ SISTER HALCYON: Beloved,    │

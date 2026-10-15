@@ -7,7 +7,7 @@
 > the people who live there — the player's party.
 >
 > **One-line pitch:** *Mondo 3000* is a paper magazine, printed in a haunted
-> Berkeley mansion by a household of recovering futurists, about the Bay
+> San Francisco Victorian by a household of recovering futurists, about the Bay
 > Area's oldest export: religions about the future. A billionaire pays for
 > the paper, and in return it runs his hit pieces; everybody knows. Someone
 > else pays for the house, and nobody knows who.
@@ -144,13 +144,28 @@ the core of its credibility and a game mechanic:
 
 ### 4.1 Villa Delirium
 
-A brown-shingle, five-storey, Arts-and-Crafts mansion in the **Berkeley
-Hills**, in the style of the early-20th-century Bay Area architects —
-redwood, deep eaves, a tower, too many staircases — now wedged between two
-new towers from the 2030s upzoning that dwarf it. Locals call it **Villa Delirium**. Its staff
+A painted, five-storey Victorian mansion on **Alamo Square**, in the
+Western Addition — redwood, bay windows, a corner tower, too many
+staircases — that survived 1906 and now sits wedged between two new towers
+from the 2030s upzoning that dwarf it. Locals call it **Villa Delirium**. Its staff
 call it **the House**.
 
-It is the game's hub (main doc §4.5). Its key rooms, from bottom to top:
+It is the game's hub (main doc §4.5), and the place the Prologue ends: the
+first door in the game that closes behind Hell Rot and keeps the fog out.
+
+**Inspiration (not a depiction).** The House is loosely modelled on **the
+Embassy**, a real community house in a large Victorian near Alamo Square,
+which a 2013 *San Francisco Chronicle* profile described as a shared home
+for creatives and technologists
+([SF Chronicle](https://www.sfchronicle.com/bayarea/article/tech-entrepreneurs-revive-communal-living-4988388.php);
+[Global Ecovillage Network directory](https://new.ecovillage.org/directory/the-embassy/)).
+The game takes the shape of the idea — a big old house, a chosen family,
+shared dinners, people building the future in the parlour — and nothing
+else. Villa Delirium's address, history, patron, residents and secrets are
+fiction. No real resident is depicted or named, and the House must never be
+written as a portrait of the real one.
+
+Its key rooms, from bottom to top:
 
 | Floor | Room | Function |
 |---|---|---|
@@ -282,13 +297,13 @@ cancelled. Even by me. Especially by me."*
 every Commission he sent and why, the house he hid from himself, and the
 upload he was planning. They are on paper, so the Emperor, who can read
 anything digital, has never read them. They are the key evidence of Route D,
-and the Lacuna Trust's last letter (Issue 5) finally sends the key.
+and the Lacuna Trust's last letter (Issue 6) finally sends the key.
 
 **What the truths do to each route:**
 
 | Route | Effect |
 |---|---|
-| **A — Heresy** | The House votes on whether to keep taking Rivet money. Refuse: the magazine is homeless for Issue 5 and prints from the van. Accept: Pru's numbers say it is fine; Yara's say it is not. Either way, the final column can expose the Commissions themselves. |
+| **A — Heresy** | The House votes on whether to keep taking Rivet money. Refuse: the magazine is homeless for Issue 6 and prints from the van. Accept: Pru's numbers say it is fine; Yara's say it is not. Either way, the final column can expose the Commissions themselves. |
 | **B — Merge** | The Emperor, by decree, offers to sign the House over outright. Accepting is the moment Hell Rot's Halo jumps to 10 — and the moment he becomes the god's own takedown writer. |
 | **C — Splice** | Delphine — the Commissions' first target — offers to buy the Trust from the Order, and turn the weapon around. |
 | **D — Communion** | Julian's journals break the Emperor's Certainty: they show a man who used a magazine to destroy people and then, as a god, ordered it to investigate himself. |

@@ -327,8 +327,9 @@ winter, each lasting four to five days.
 | Sun 26 Dec (Issue 1) | 9%, sets 7:45 p.m. | **King tide peak** (perigee night) | Morning flooding of the Fill and the Embarcadero is the news when the night begins; lower Undertrack doors are underwater |
 | Mon 27 Dec (Issue 2) | 17%, sets 8:57 p.m. | King tides | The Theogens are pushed up out of the flooded tunnels into the Baths — easier to find, angrier |
 | Tue 28 Dec (Issue 3) | 27%, sets 10:07 p.m. | Tides falling off | Karl's Birthday on Ocean Beach; the tunnels start to drain |
-| Wed 29 – Thu 30 Dec (Issue 4) | 38–50%, sets 11:15 p.m. – 12:22 a.m. | Normal | The Undertrack reopens; the Theogens go back down |
-| Fri 31 Dec (Issue 5) | ~60% waxing gibbous; at midnight it hangs about 15° above the western horizon, straight out over the Golden Gate; sets 1:27 a.m. | **Neap tide**; storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down; at midnight, the **Midnight Quake** (main doc §3.8b) |
+| Wed 29 Dec (Issue 4) | ~38%, sets 11:15 p.m. | Normal | The Undertrack reopens; the Theogens go back down; the Presidio break-in runs in moonless fog after moonset |
+| Thu 30 Dec (Issue 5) | ~50% (first quarter early on the 31st), sets 12:22 a.m. | Normal | From the Twin Peaks overlook, above the fog line, the half moon is up for the drug deal |
+| Fri 31 Dec (Issue 6) | ~60% waxing gibbous; at midnight it hangs about 15° above the western horizon, straight out over the Golden Gate; sets 1:27 a.m. | **Neap tide**; storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down; at midnight, the **Midnight Quake** (main doc §3.8b) |
 
 **The birth at Steep Ravine (Prologue).** Winter's lowest tides on the
 California coast fall in the afternoon and evening, and the deepest lows come
@@ -356,26 +357,36 @@ Quickening.
 |---|---|---|---|---|
 | Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue; ending 1 |
 | Steep Ravine hot springs, south of Stinson Beach | **Low Water** | Real geothermal springs in the rocks at the foot of Mount Tam, inside the surf line. Today they surface only on a low tide of about −1 foot or lower, for about two hours. With 2049's higher seas, only a handful of king-tide lows a year expose them. | Hell Rot's secret bath; the Theogens' birthing pool | Prologue (the birth of Ione); Route C return visit |
-| Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway | The rich; the Grove | Issue 3 (donor party) |
+| Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway; the fog's front door | The rich; the Grove; the Theogens on New Year's Eve | Side quest (donor party); Issue 6: the Quickening, loaded into Karl from the towers; the Midnight Quake |
 | Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
 | Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
-| Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Issue 2 mass; the Ascension |
+| Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Prologue (the Santas); Issue 2 mass |
 | SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node | The Twin's engineers (two of them are order members) | Issue 4 canonization |
-| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. Under it: the Auric Order's lodge room, where the scan happened. | The Rivet trustees; the order | Issue 2: the succession; Route A and D break-in |
-| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. | The Twin | Issue 4 climb; Route D |
-| Sutro Baths ruins, Lands End | **The Baths** | The ruined bathhouse pools are the Theogens' baptism tanks; the tunnels under them are their congregation | Theogens, Delphine | Issue 3; the Quickening |
+| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. | The Rivet trustees | Issue 2: the succession (optional) |
+| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. The overlook sits above the fog line. | The Twin | Issue 5: the drug deal; Route D |
+| Mount Sutro | **The Forest** | Eucalyptus forest under the Trident; a disused university lab in the trees | Nobody, officially | Issue 5: the Spin Question experiment |
+| Sutro Baths ruins, Lands End | **The Baths** | The ruins are gone: the Rivet consortium built a Twin data center in the old pools, cooled by seawater. The tunnels under it, warm with its waste heat, are the Theogens' congregation | Twin engineers above; Theogens, Delphine below | Issue 3 |
 | South San Francisco biotech parks | **The Cradle** | Ruined labs; Theogen pilgrims | Theogens | Issue 3 / Route C |
 | Old BART tunnels | **The Undertrack** | Abandoned transit tunnels; Theogen clinics; the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
 | Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
 | Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists; Rosa Quint's old base | Issue 3 |
-| City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 5 |
+| City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 6 |
 | Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
 | Marina + Mission Bay flood zone | **The Fill** | Behind the seawall; floods on king tides; sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
-| Alcatraz | **The Rock** (branded *Alcatraz Longevity*) | Sold off in the rezoning push and rebuilt as a luxury medical-tourism island: longevity clinics in the old cellhouse, a spa in the warden's house, and under the parade ground the biggest **cryonics vault** on the West Coast, freezing the dying (whole body, or head only) for a revival nobody has achieved. Slogan: *"Escape from Death."* | Medical tourists, cryonics brokers, the frozen | The Duchess's side quest (her parents are in the vault); Issue 4 set piece; Sunday's Lifeboat (Issue 5) |
+| Alcatraz | **The Rock** (branded *Alcatraz Longevity*) | Sold off in the rezoning push and rebuilt as a luxury medical-tourism island: longevity clinics in the old cellhouse, a spa in the warden's house, and under the parade ground the biggest **cryonics vault** on the West Coast, freezing the dying (whole body, or head only) for a revival nobody has achieved. Slogan: *"Escape from Death."* | Medical tourists, cryonics brokers, the frozen | Issue 2: the night ferry and the Duchess's parents in the vault |
 | Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
 | Treasure Island | **Treasure Island** | Half-flooded; fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
-| Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
+| Berkeley | **The Berkeley Hills** | The old university labs where Hell Rot trained | Students, the Brandvold lab | Backstory |
+| Alamo Square | **Villa Delirium** | A painted Victorian on the square, sealed against sensors; the *Mondo 3000* office, press and home (modelled loosely on the Embassy, a real SF community house — inspiration only) | *Mondo 3000* | Prologue end; every Issue's opening |
+| North Beach | **North Beach** | Flooded on king tides; cafés, strip clubs and a church basement that hosts a recovery meeting every night of the holiday week | Old beats, the sober | Issue 1 |
+| Chinatown | **Chinatown** | The wet markets still run at night: tanks, steam, gene-edited fish sold quietly to Theogens | Fishmongers, families | Issue 1 |
+| Union Square | **Union Square** | The shop windows show merged relatives wishing shoppers a merry Christmas by name | Shoppers, the Church | Issue 1 |
+| Telegraph Hill | **Coit Tower** | Closed for "renovation": Sunday's Lifeboat rig, under the 1930s murals | Sunday's contractors | Issue 4; Issue 6 |
+| Golden Gate Park | **The Park** | The California Academy of Sciences (donor dinners under the living roof), the bison paddock, Hippie Hill, the Conservatory of Flowers | Donors, drummers, bison | Issue 3 |
+| Presidio | **The Presidio** | The old Army post; in a leased brick building, the Auric Order's lodge room, where the scan happened | The Order | Issue 4: the break-in |
+| Marina | **The Palace of Fine Arts** | The 1915 rotunda and lagoon on 1906 rubble, taken over by the Church for the Ascension | Church of the Twin | Issue 6: the Ascension |
+| Mission Bay | **The Brandvold annex** | The lab's old satellite, flooded and abandoned since the biotech crash; where Hell Rot died in 2044 | Nobody | Issue 4 |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
 
 ### 3.4b Alcatraz Longevity (the Rock)
@@ -412,9 +423,9 @@ a head-only freeze in October, and he chose the laser instead.
 - **The Church's offer:** the Church of the Twin has offered to "rebuild" the
   frozen from their records inside the Twin — a Merge for the dead. The vault
   owners love it: it turns an embarrassing promise into a product.
-- **Sunday's Lifeboat:** the mayor's bootleg upload rig is being built in the
-  island's operating theatre, by cheap contractors, with stolen Twin access
-  and cryo gear on loan. It will fail.
+- **Sunday's Lifeboat:** the mayor's bootleg upload rig borrows the island's
+  cryo gear, on loan from the vault owners. The rig itself is being built in
+  Coit Tower (main doc, Issue 4). It will fail.
 - **The fog:** Karl is thinnest over the open bay; on the island the Emperor
   sees poorly, and Hell Rot can talk without being heard — or the other way
   round.
@@ -627,10 +638,10 @@ Christmas week where needed, and aimed at the two cults. Each has a gameplay eff
 | **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" Church of the Twin and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
 | **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
 | **Climbing the Span** | Suicide Club bridge climbs | A night climb up the Golden Gate's cables, above the glass skywalk, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
-| **Critical Mass vs. the Twin** | Critical Mass (1992), held on the last Friday of the month — which in 2049 is New Year's Eve | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so the Twin's control of the street goes dark for an hour — and the Emperor, who sees through it, goes blind and frantic. | Issue 5: one Hour on New Year's Eve in which the Emperor cannot see you anywhere in the City. |
+| **Critical Mass vs. the Twin** | Critical Mass (1992), held on the last Friday of the month — which in 2049 is New Year's Eve | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so the Twin's control of the street goes dark for an hour — and the Emperor, who sees through it, goes blind and frantic. | Issue 6: one Hour on New Year's Eve in which the Emperor cannot see you anywhere in the City. |
 | **No Pants Undertrack** | No-pants transit rides | Theogens show off leg splices on the last running train line. The Merge files a decency complaint. A decree in the fog overrules it, citing love. | Comic interlude. Helix +1 if Hell Rot joins in. |
-| **The Midnight Pillow Fight** | The Embarcadero pillow fights | The Dissonance's counter-countdown on the Embarcadero, under the fireworks barges: thousands of people, feathers everywhere, in the rain. The Emperor Norton hologram declares war on the feathers. | Issue 5: cover for a meeting with a Merge defector an hour before midnight. |
-| **The Barge** | New Year's Eve fireworks on the Embarcadero | The Dissonance stows away on a fireworks barge. At midnight the sky can spell one sentence over the bay — and the player writes it. | Issue 5: a free headline, seen by a million people, that counts as a published column line. |
+| **The Midnight Pillow Fight** | The Embarcadero pillow fights | The Dissonance's counter-countdown on the Embarcadero, under the fireworks barges: thousands of people, feathers everywhere, in the rain. The Emperor Norton hologram declares war on the feathers. | Issue 6: cover for a meeting with a Merge defector an hour before midnight. |
+| **The Barge** | New Year's Eve fireworks on the Embarcadero | The Dissonance stows away on a fireworks barge. At midnight the sky can spell one sentence over the bay — and the player writes it. | Issue 6: a free headline, seen by a million people, that counts as a published column line. |
 | **Laffing Sal** | The laughing automaton at the Musée Mécanique | The Emperor's favourite body: he speaks through the antique cackling fairground figure at the Wharf whenever he wants to talk to Hell Rot off the record, and it is the first place Hell Rot hears the name *Norton II*. | A recurring location. The Emperor laughs only here. The Gelastic does nothing to her, and she finds that hilarious. |
 | **The Parrots of Telegraph Hill** | The wild parrot flock | Theogen-spliced parrots that repeat Hell Rot's old columns, out of order, all day. | Ambient. As Clarity drops, the parrots remember his columns better than he does. |
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
