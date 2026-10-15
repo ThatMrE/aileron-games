@@ -164,7 +164,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W12f | "I scored 31 on your test. I have opinions about your test." | Letter from Desh, an Oakland Burn survivor, letters page | *Best letter we got all year.* | BFF, tender, funny |
 | W12g | "Your aura today: anxious tangerine. Matches: 14." | Aura-dating app, Haight Exchange | *Mine is grey with a gold ring nobody else can see. No matches.* | auras, funny |
 | W12h | "The aura is the soul made visible." | Auric Order catechism, first article | *The soul is not a lighting effect. Probably.* | Order, holy |
-| W12j | "Left eye: nobody's lying. Right eye: take the stairs." | Hell Rot, notebook margin | *The dark one and the pale one. They don't always agree.* | eyes, weird |
+| W12j | "Left eye: nobody's lying. Right eye: take the stairs." | Hell Rot, notebook margin | *The blood one and the pale one. They don't always agree.* | eyes, weird |
 | W12k | "You looked through me like I was furniture." | Junie Vasquez, after the clock stopped | *I stopped time to win an argument. I lost the argument.* | eyes, Junie, grim |
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
@@ -278,14 +278,14 @@ One card for each eye's base power and each of its eight upgrades (main doc
 §5.14a). Each card shows the power's name and icon, a line in the voice of
 the eye, and Hell Rot's note. **Pure cards** are printed clean, with the
 eye's colour as a thin border. **Corrupt cards** are printed tinted — the
-dark eye's bleed gold at the edges, the pale eye's frost over white — and
+blood eye's bleed gold at the edges, the pale eye's frost over white — and
 their marginal note is in a shakier hand.
 
-**Dark eye — truth sight**
+**Blood eye — truth sight**
 
 | # | Power | Path | Card line | Hell Rot's note | Tags |
 |---|---|---|---|---|---|
-| E1 | **The Dark Eye** | Base | "Everyone in this room is telling a story. Look again." | *Since the four minutes, I can't stop seeing the seams.* | eyes, Index |
+| E1 | **The Blood Eye** | Base | "Everyone in this room is telling a story. Look again." | *Since the four minutes, I can't stop seeing the seams.* | eyes, Index |
 | E2 | **Tell** | Pure 1 | "The lie flickers, like a bulb about to go." | *Most people lie about small things. Most people are fine.* | eyes, pure |
 | E3 | **Unmask** | Pure 2 | "Under the Halo: a tired woman. Under the glow: a scar. Under the gospel: the old verb." | *Every illusion in this City is made of true parts. I see the glue.* | eyes, pure, Twin |
 | E4 | **Under** | Pure 3 | "The wall is a door. The file is two files. The minute book has a second ink." | *The Order keeps its secrets on paper. Paper has layers.* | eyes, pure, Order |

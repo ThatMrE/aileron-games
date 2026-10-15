@@ -114,7 +114,7 @@ fails.
 ### 2.2 Test two: the eight tells (Lifton)
 
 Robert Jay Lifton's eight criteria of "thought reform" (1961) are the game's
-**tells** — the patterns Hell Rot's **dark eye** can detect. Each cult
+**tells** — the patterns Hell Rot's **blood eye** can detect. Each cult
 shows 4–6.
 
 | # | Tell | Plain meaning |
@@ -259,7 +259,7 @@ faint, soft glow that the fog paints around them: an **aura**.
   glow, and they call Karl's auras "costume jewellery."
 - **Who controls it.** The **Auric Order** holds Karl's calibration contracts
   and can tune any aura. Its Masters carry a faint **gold ring** in theirs,
-  invisible to everyone except Hell Rot's dark eye (main doc §3.3b).
+  invisible to everyone except Hell Rot's blood eye (main doc §3.3b).
 - **The Emperor's hand.** Since November, auras change on their own:
   a whole street flares gold for a minute; a stranger's aura spells a word;
   a judge's goes dark in court. The Church calls it the Twin stirring. It is
@@ -597,7 +597,7 @@ down fails, in story and in mechanics (Dissonance Opinion −2).
 
 A Notebook tab with one page per cult.
 
-- **Tells.** In a scene with cult members, the **dark eye** can reveal one
+- **Tells.** In a scene with cult members, the **blood eye** can reveal one
   of the eight Lifton tells. Each use costs 1 Hour.
 - **Sheet slots.** Quotes, Evidence and lab-verified Samples fill the
   eight-part sheet.

@@ -146,7 +146,7 @@
   read it out to the lab. "Eli Rothschild" became "Eli Roth" became **Hell
   Rot**, and it stuck.
 - **The eyes:** he woke from those four minutes with eyes that no longer
-  matched — and that no longer worked like eyes. The **dark eye** sees
+  matched — and that no longer worked like eyes. The **blood eye** sees
   through lies and illusions. The **pale eye** sees, for a breath ahead, the
   good path through what is about to happen. Whether that is neurology (a
   brain rewired by four minutes without oxygen), Karl (foglets from the lab
@@ -168,8 +168,8 @@
 - **Look:** tall, gaunt, shaved head with a scar crown from an old
   neural-lace implant he fitted for the lab's experiments and pulled out
   himself. A stained lab coat over a loud shirt. And the eyes: since the
-  night he died, he has **heterochromia** — one eye went **dark** (almost
-  black, with a pinpoint of light deep in it) and one went **pale** (ice-white
+  night he died, he has **heterochromia** — one eye went **blood**-dark (a red so deep it
+  is almost black, with a pinpoint of light in it) and one went **pale** (ice-white
   grey, nearly colourless). Those two eyes are his signature and his powers
   (§2.1a, §5.14a).
 - **Kit:**
@@ -453,7 +453,7 @@ into a shared collective, and the collective decides how it is used.
 **The identifiers:** **denim and gold.** In lodge, every member wears denim —
 work clothes, the uniform of the diggings — and something gold. Outside
 lodge, a Master can be spotted by a worn denim cuff and a plain gold ring, and
-by the gold ring in their aura that only Hell Rot's dark eye can see.
+by the gold ring in their aura that only Hell Rot's blood eye can see.
 
 **What it is, in one line:** a gold-rush mining collective, exactly **200
 years old** this year, that grew into a fraternal order in the mould of the
@@ -507,8 +507,8 @@ planned to celebrate with the Ascension.
 
 **The tuned aura.** Every Master's Karl aura carries a faint **gold ring**,
 tuned in at their initiation. It is invisible to the naked eye and to the
-Church's Halo screens — but **Hell Rot's dark eye can see it.** This is the
-core investigation mechanic for the Order: a dark-eye look in any scene can
+Church's Halo screens — but **Hell Rot's blood eye can see it.** This is the
+core investigation mechanic for the Order: a blood-eye look in any scene can
 reveal a ring, and each ring found is a verified Dossier entry.
 
 #### Rites and regalia
@@ -894,18 +894,18 @@ an omen. He sees a woman in labour in a tide pool in the dark.
 
 **The emergency (the tutorial).** The birth goes wrong. The child's spliced
 neurons fire in a seizure before it is even born — Hell Rot can see it in the
-light pattern under Wren's skin with his dark eye, and he recognizes the gene
+light pattern under Wren's skin with his blood eye, and he recognizes the gene
 circuit: it is from his third paper. The tide has turned. The pools will be
 under the surf in under two hours. The Prologue teaches the core systems on
 this one problem:
 
-- **Passive checks and voices:** PEER REVIEW reads the seizure; DARK EYE
+- **Passive checks and voices:** PEER REVIEW reads the seizure; BLOOD EYE
   sees through Delphine's calm to her fear; PALE EYE shows, for a
   heartbeat, the path where the child lives; THE CHEMIST knows what is in
   his bag; KARL speaks to him for the first time, from the fog over the water:
   *"WE SEE IT TOO."*
 - **A red check:** stabilize the child's seizure with what he carries (THE
-  CHEMIST) or by talking Wren through it (DARK EYE). It happens once, and
+  CHEMIST) or by talking Wren through it (BLOOD EYE). It happens once, and
   its result follows the child through the whole game.
 - **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
   refuse and climb out (Venom +, the child's health is left to the cult);
@@ -1347,7 +1347,7 @@ raise relationship rank and, at rank 2, unlock a **keepsake**:
 | Red pencil | Yara | First unverified item each Run auto-verifies |
 | Jar of Marin dirt | Moreau | +1 to every BRAINSTEM skill |
 | Chrome lighter | the Duchess | Start each Run with 20 Ink |
-| VHS tape, labelled "Y2K" | Mary | The dark eye reveals one extra tell per scene |
+| VHS tape, labelled "Y2K" | Mary | The blood eye reveals one extra tell per scene |
 | Pocket watch, stopped | Otto | +1 maximum Clarity |
 | Stadium ticket, 2045 | the Bishop | First church scene each Run: one free check |
 | Floppy disk | Fax | One free trip through his Twin back door per Run |
@@ -1398,7 +1398,7 @@ during dialogue, unasked, when its passive check passes.
 | | **THE COLUMNIST** | Rhetoric, timing, the perfect insult, cover lines | *"Say it shorter. Then say it meaner."* |
 | | **FOOTNOTE** | Encyclopedic recall: history, science, City lore | *"Fun fact: this exact con worked in 1975, three blocks from here."* |
 | **LIMBIC** (feeling) | **THE BASTARD** | Venom, intimidation, provocation | *"Make him cry. On camera. You'll feel better."* |
-| | **DARK EYE** | Truth sight: lies, tells, illusions, edited gospels, hidden auras and the Order's gold ring (§5.14a) | *"She isn't happy. She is relieved. And she's lying about the second thing."* |
+| | **BLOOD EYE** | Truth sight: lies, tells, illusions, edited gospels, hidden auras and the Order's gold ring (§5.14a) | *"She isn't happy. She is relieved. And she's lying about the second thing."* |
 | | **THE CELEBRITY** | Fame, charm, access, seduction | *"They know your face. Use it before it rots."* |
 | **BRAINSTEM** (body) | **MOUNTAIN MAN** | Nerve, endurance, pain, violence | *"You've survived worse. You've survived you."* |
 | | **THE CHEMIST** | Drugs, reagents, physiology; the kitchen lab | *"That's not wine. That's a vector. Don't drink it. Okay, sip it."* |
@@ -1474,7 +1474,7 @@ item as ammunition.
 |---|---|---|---|---|---|
 | **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom; Heat |
 | **Satire** | Irony, reductio ad absurdum | THE COLUMNIST | Pious, Serene | Defensive | Needs an Evidence item |
-| **Parrhesia** | Frank speech at personal risk | DARK EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
+| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
 | **Interrogation** | Elenchus (Socratic questioning) | PEER REVIEW | Defensive | Charming | Damage doubles on the 3rd turn in a row |
 | **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item; the strongest single hit in the game |
 | **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
@@ -1602,7 +1602,7 @@ permanent only on Route C; mechanically, every run starts clean).
 | **Omniscience (lite)** | Every Source door shows its Quote before you enter |
 | **The Long Queue** | Every Dealer price −30% (the Church pays) |
 | **Gospel Edit** | *Satire* hits twice, but the second hit is the Twin's kinder rewrite |
-| **Twin Sight** | DARK EYE +2; see the Twin's version of every scene |
+| **Twin Sight** | BLOOD EYE +2; see the Twin's version of every scene |
 
 **The Theogens' Splices** (cyan; each raises Helix +1 when taken):
 
@@ -1669,7 +1669,7 @@ text alone.
 | **Press Pass** | Start in any unlocked district | First Encounter door each Run is auto-won |
 | **Fact Desk** | Yara verifies one item per Run remotely | Lead fragments merge without Yara |
 | **Old Lab Keys** | One free lab door per Run | Lab puzzles show one extra hint |
-| **Cold Read** | The dark eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
+| **Cold Read** | The blood eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
 | **Skill points** | +1 to any skill (repeatable, rising cost) | — |
 
 ### 5.11 Dissonance doors (the *Hades* Chaos gate)
@@ -1724,7 +1724,7 @@ better the column, the more lovingly both sides misread it.
 | Item | Effect |
 |---|---|
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
-| **The Eyes** | Not equipment — powers. The **dark eye** (truth) and the **pale eye** (foresight), each with a pure and a corrupt upgrade path (§5.14a). |
+| **The Eyes** | Not equipment — powers. The **blood eye** (truth) and the **pale eye** (foresight), each with a pure and a corrupt upgrade path (§5.14a). |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
 
@@ -1740,7 +1740,7 @@ step by step, into the thing both cults are.
 
 | Eye | Base power | In play |
 |---|---|---|
-| **Dark eye** (truth) | Sees through lies and illusions | Glance at anyone (¼ Hour): one tell, lie or hidden layer shows — a cult's Lifton tell, an edited gospel, a masked aura, the Order's gold ring, a Theogen splice under make-up |
+| **Blood eye** (truth) | Sees through lies and illusions | Glance at anyone (¼ Hour): one tell, lie or hidden layer shows — a cult's Lifton tell, an edited gospel, a masked aura, the Order's gold ring, a Theogen splice under make-up |
 | **Pale eye** (foresight) | Sees the good path a breath ahead | In every scene, the door that leads toward the best outcome for the people in it shines faintly. Following it is faster: travel and door costs drop by ¼ Hour. In showdowns, interrupts last one second longer |
 
 **Upgrading.** Hell Rot earns **Sight** — from honest Shulgin entries, deep
@@ -1749,7 +1749,7 @@ experiments. Each eye has four upgrade steps on each path. At every step the
 player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 (§5.6a) grants Sight that can only be spent on corrupt steps.
 
-**The dark eye.**
+**The blood eye.**
 
 | Step | Pure: the Witness | Corrupt: the Liar |
 |---|---|---|
@@ -1770,8 +1770,8 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 **What corruption costs.**
 
 - **Corruption** is tracked per eye (0–4). It adds to **Venom** and shows on
-  his portrait: the dark eye bleeds Twin gold; the pale eye frosts over white.
-- **The dark eye's corrupt powers are lies.** Using them is never a
+  his portrait: the blood eye bleeds Twin gold; the pale eye frosts over white.
+- **The blood eye's corrupt powers are lies.** Using them is never a
   Fabrication by itself — he lies to cops and cult leaders all the time — but
   if anything he learned or showed through a corrupt power goes into a
   column, it counts as a Fabrication (§5.4). At dark Corruption 3+, Yara
@@ -1780,7 +1780,7 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
   costs a point of **maximum Clarity**, and the City notices: clocks skip,
   Karl stutters, and the Emperor — who feels every second of the City —
   starts to ask who is stopping time.
-- **Companions react.** Yara distrusts the corrupt dark eye. Junie hates the
+- **Companions react.** Yara distrusts the corrupt blood eye. Junie hates the
   corrupt pale eye ("you looked through me like I was furniture"). Otto, who
   has spent fifty years refusing to cheat time, has the only scene in the
   game where she raises her voice.
@@ -1790,7 +1790,7 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 - **Both eyes pure at step 4** is required for **Mortal** (ending 8): the
   Witness lets him see the Emperor's truth, the Long Look lets him find the
   path where nobody merges and nobody is spliced without consent.
-- **Dark eye corrupt at step 4** makes **Fabrication** (ending 10) one choice
+- **Blood eye corrupt at step 4** makes **Fabrication** (ending 10) one choice
   away: the Great Lie will work on the City, and he will want to use it.
 - **Pale eye corrupt at step 4** unlocks a new ending, **Midnight Forever**
   (ending 11, §3.11).
@@ -1858,7 +1858,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 | Worship kills thinking | High Halo / Helix make truthful columns weaker with believers |
 | Stuck in the middle | Every column raises the *other* cult's meter |
 | You cannot criticize a god that loves you | Jeremiad heals the Emperor; Satire heals Delphine; morning sermons reframe every column |
-| Flattery is made of true facts | The dark eye shows gospel edits: true facts, false emphasis |
+| Flattery is made of true facts | The blood eye shows gospel edits: true facts, false emphasis |
 | Both gods are cures | Clarity loss vs. the Emperor's crisp text and the Theogens' sharpening text |
 | The scientist's answer to faith | Peer Review: the strongest move, and it only works with verified data |
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
@@ -1988,7 +1988,7 @@ forbidden effects**.
 | City base | Near-black, two greys, sodium orange, rust |
 | Neon / feed | Hot magenta, electric blue, acid green |
 | Skin & life | Three skin ramps, blood red |
-| Hell Rot's signature | **Dark-eye violet-black** and **pale-eye ice-white** — reserved for his eyes and the Eyes overlays. (Cyan now belongs to the Theogens alone.) |
+| Hell Rot's signature | **Blood-eye deep red** and **pale-eye ice-white** — reserved for his eyes and the Eyes overlays. (Cyan now belongs to the Theogens alone.) |
 | Paper | Off-white glossy stock, ink black (Layout screens) |
 | **Forbidden 1: Twin gold** | A smooth gold gradient that the NES palette cannot produce |
 | **Forbidden 2: Theogen pulse** | Not a colour — a motion. Theogen skin and Helix marks **colour-cycle** (the classic 8-bit palette-cycling trick), so they appear to breathe |
@@ -2005,8 +2005,8 @@ every pixel on the screen breathes.
 - **Portraits:** 48 × 48, 3–4 expressions each. Hell Rot gets 10, including
   *high*, *writing*, *Clarity-low*, *Halo-gold*, *Helix-pulse*.
 - **Hell Rot:** silhouette first — tall, bald, scar crown, lab coat. The two
-  eyes — one a black pool with a pinpoint of light, one ice-white — are the
-  most striking pixels on screen. As an eye corrupts (§5.14a), the dark one
+  eyes — one a blood-red pool with a pinpoint of light, one ice-white — are the
+  most striking pixels on screen. As an eye corrupts (§5.14a), the blood one
   bleeds gold and the pale one frosts over.
 - **Junie:** strong verticals, derby pads, a grin. The most expressive range
   in the cast.
