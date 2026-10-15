@@ -2583,6 +2583,36 @@ unique interrupt. Full roster, abilities, rivalries and the New Year's Eve
 Junie and Yara stay the two core companions: Junie's Trust gates the
 Iconoclast ending, Yara's gates the Successor ending.
 
+#### Romance: Junie and Yara
+
+Junie and Yara are the game's two **romance companions**. Romance is
+optional, slow, adult and never transactional: no gift buys it, no stat
+unlocks it on its own, and either of them can say no and mean it.
+
+| | **Junie** | **Yara** |
+|---|---|---|
+| **What draws them** | He is the only person in the House she cannot protect from himself, and she keeps trying | He is the only writer she has ever trusted — she read his papers at 15 and has never told him |
+| **What he has to do** | Let himself be protected. Stay clean when she is watching and when she is not | Let himself be corrected. Print every correction she asks for, even the ones that cost him |
+| **What breaks it** | The corrupt Pale Eye (*"you looked through me like I was furniture"*); a relapse she has to find | Fabrication; the corrupt Blood Eye; using her data as a weapon she did not sign off on |
+| **Key scenes** | Skating the papers out at 5 a.m. after the press runs; the van in the rain; Critical Mass on New Year's Eve | The Fact Desk at 3 a.m.; the *"Priors"* ceremony on Thursday; the error-bar argument that turns into something else |
+| **Gate** | Junie Trust ≥ 4 and a sober Issue 5 | Yara Trust ≥ 4 and no Fabrication on the record |
+| **Ending colour** | In **The Mountain** and **Iconoclast**, she is the one beside him | In **Successor**, the byline is hers and so is the last line about him; it is the saddest version of that ending |
+
+**Rules for writers.**
+
+- **One at a time.** Hell Rot can pursue one romance. Both women notice;
+  neither plays it as comedy or rivalry.
+- **The Rot and consent.** As Clarity falls, he forgets things — including
+  things said between them. The romance never advances in a blackout, a
+  relapse, or a scene where his Clarity is at 1; the other person's
+  choices are always the ones that move it.
+- **Recovery is not a plot device.** Love does not cure him, and neither of
+  them is there to fix him. The romance can survive a relapse; it cannot
+  survive a lie about one.
+- **The age and power gap with Yara.** She is 23, he is in his thirties,
+  and her aunt is his publisher. The writing takes that seriously: she
+  starts it, she sets the pace, and the game lets her end it.
+
 ### 5.16 Degradation: the Rot in the interface
 
 From Issue 4, low Clarity shows in the UI itself, inside every Run.
