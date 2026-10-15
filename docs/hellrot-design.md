@@ -617,7 +617,9 @@ she is the person who would go to prison for it.
   the **Penitents** want to let him go. Each sees the others as the danger.
 - **Succession.** Cornelius Vail is old. The Gilders want the next Warden.
   The Emperor, in a decree, claims the title for himself — he was a Master of
-  the Aura, and the Order's rules never say a Warden must have a body.
+  the Aura, and the Order's rules never say a Warden must have a body. And
+  the Order does not know there is a living Rivet heir: Ione (§3.4). Whoever
+  learns it first holds the fortune's future.
 - **The Emperor's leaks.** On bad nights he writes members' secrets on their
   own windows — affairs, bribes, votes. Every Master fears being next.
 - **The Fellows.** The middle ranks do not know. When they find out, some
@@ -760,6 +762,37 @@ the clearest test of Rule 4 in the game: the smallest one of all, and a god.
 Delphine's real conflict is here: she loves Ione as a child and needs Ione
 as proof, and if the baby is sick, those two pull apart.
 
+**The father: Julian Rivet V.** Delphine and Julian were lovers from 2036 to
+2043 — the gene-god and the heir of the gold, both sure they could out-think
+death. In 2042 he gave her a vial from the Rivet family's gamete bank in the
+Alcatraz vault, as a promise. In 2044 he ended it, and his first Commission
+for *Mondo 3000* buried her company. She kept the vial for five years. Ione
+was conceived in the spring of 2049; Julian was uploaded in October without
+ever knowing. Nobody knows now except Delphine and, if she has guessed, Wren.
+
+What it does to the plot:
+
+- **Ione is the last Rivet heir.** The Order believes the line ended with
+  Julian. A living heir changes the succession fight (§3.3b), the Rivet
+  fortune and the Pooling — the Gilders want the child as a figurehead; the
+  Wardens want the child hidden.
+- **The baby god's father is the AI god.** The Emperor partly *is* Julian.
+  On New Year's Eve, the Quickening's god-gene is built from Ione's genome,
+  so when it reaches the swarm, the Emperor reads his own child in it
+  (§3.8b). Whether he lets it in, or fights it, is part of his convulsion.
+- **The Commissions were personal.** The first hit piece the House ever ran
+  was a man breaking up with a woman in print.
+
+**Seeds (how the player can find out):**
+
+| Issue | Clue |
+|---|---|
+| Prologue | BLOOD EYE, at the birth: a gold thread in the child's light that is not a Theogen edit |
+| Issue 2, Rivet Hill | A 2038 photograph in the dumpster with the denim apron: Julian and a woman whose face has been cut out, her arm glowing faintly cyan |
+| Issue 2, Alcatraz | The vault ledger (Duchess side quest): one Rivet gamete withdrawal, 2042, signed by Julian himself |
+| Issue 4, the Presidio lodge | The minute book: *"The line ends with J.R. V. The Pooling passes to the Order."* — and Dr. Hale's pencil note in the margin: *"Are we sure?"* |
+| Issue 6, the bridge | Delphine tells him, or the Emperor does |
+
 **The bait.** A gene therapy for the Rot — a splice that rebuilds his
 neurons. It will probably work. It will also rewrite his brain, and nobody
 can say who comes out the other side.
@@ -843,14 +876,14 @@ uncertainty on screen.
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. |
-| **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. |
+| **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. Ione's father, though he was uploaded without knowing a child was coming. |
 | **Dr. Imogen Hale** | The inside ally | Neurosurgeon, Keeper of the Pattern, leader of the Order's Penitents. She ran the laser on Julian and wants him allowed to die (§3.3b). |
 | **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
 | **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Halo. The biggest scoop in the game. |
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
-| **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. See §3.4. |
-| **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. See §3.4. |
+| **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone. See §3.4. |
+| **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
@@ -952,7 +985,8 @@ and who listens.
 **What happens.** At midnight on New Year's Eve, everything hits the
 Emperor at once: the first of the Ascension's minds pour in (Julian's wish),
 Sunday's failing Lifeboat crashes into the Twin, the Quickening's god-gene
-reaches the swarm, and the storm tears at his body. Julian pulls one way; the
+reaches the swarm — and in it, the Emperor reads his own child's genome —
+and the storm tears at his body. Julian pulls one way; the
 Emperor pulls the other. He convulses — a seizure the size of a city.
 
 For sixteen years every storm has rained Karl's foglets down into the soil:
@@ -2576,6 +2610,8 @@ Plot questions the writers' room must answer before Alpha.
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
 - **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren
   Castillo is her midwife (§3.4, Prologue).
+- **Ione's father is Julian Rivet V.** Ione is the last Rivet heir and the
+  Emperor's child (§3.4).
 - **Delphine does not know Karl is the Emperor** until Hell Rot tells her;
   it is the deepest crack in her Conviction (§3.4).
 - **Delphine's splices are failing:** the Blood Eye sees it in Issue 3, Yara
@@ -2595,7 +2631,9 @@ Plot questions the writers' room must answer before Alpha.
    reaches him?
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child; the writers need the eleven lines.
-5. **Who is Ione's father?** (Options under discussion.)
+5. **Does the Emperor know Ione is his before New Year's Eve,** and who tells
+   him — Delphine, Hell Rot, or Karl, which has sampled the child's breath
+   since the Prologue?
 
 **Proposition F and the courts**
 
