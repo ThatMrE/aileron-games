@@ -762,6 +762,42 @@ the clearest test of Rule 4 in the game: the smallest one of all, and a god.
 Delphine's real conflict is here: she loves Ione as a child and needs Ione
 as proof, and if the baby is sick, those two pull apart.
 
+**She, or it.** Ione is a girl. Everyone who loves her says "she." The
+Church of the Twin and the Auric Order say **"it"** — in sermons, in the
+minute book, on the scanner readout. The pronoun is a tell: institutions
+treat her as an asset; people treat her as a child. The narration says
+"she."
+
+**Her health (set in the Prologue).** The red check at the birth sets
+Ione's state for the whole game:
+
+| Prologue result | Ione's state | Effect |
+|---|---|---|
+| Stabilized well | Healthy, bright, calm | Delphine's proof is strong; the Quickening is more persuasive |
+| Partly stabilized | Small seizures when the fog is thick | Delphine's love and her need for proof pull apart; Wren starts to waver |
+| Left to the cult | Sick; the splices fight her body | Her light flickers like Delphine's. The Mortal ending is easier to reach; the dark endings get darker |
+
+**The abduction (Issues 4–5).** On Wednesday Ione is **taken from the
+tunnels under the Sutro Baths**. LOST flyers go up across the Mission, and
+Delphine's Conviction cracks for the first time. Who took her depends on
+the player:
+
+- **The Gilders** of the Auric Order, if Hell Rot has found the Alcatraz
+  vault ledger or printed the paternity: a living Rivet heir is a
+  figurehead worth stealing.
+- **The Church of the Twin** otherwise: it wants to scan the one body in
+  the City its Twin cannot read.
+
+Either way, the kidnappers need a lab that can read her spin term, and the
+only one off the books is the disused lab on **Mount Sutro**. So the Issue 5
+rescue Run and the Spin Question experiment happen in the same building, on
+the same night: Ione is in the lab at the worst possible moment, and the
+gas is already flowing.
+
+**As an adult.** The only time the game hears Ione speak is in the
+Epilogue's last scene: in 2069, aged twenty, she reads Hell Rot's last
+column aloud. The whole game becomes something she inherited.
+
 **The father: Julian Rivet V.** Delphine and Julian were lovers from 2036 to
 2043 — the gene-god and the heir of the gold, both sure they could out-think
 death. In 2042 he gave her a vial from the Rivet family's gamete bank in the
@@ -943,8 +979,8 @@ uncertainty on screen.
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
 | **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone. See §3.4. |
-| **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
-| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
+| **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows instead of crying. Both cults want her; the Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
+| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants her to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
@@ -1167,7 +1203,7 @@ this one problem:
   cliff in the dark is a MOUNTAIN MAN gauntlet with sneaker waves.
 
 The child — whatever happened — is named **Ione** (after a sea-nymph in the
-Greek myths), and the Theogens call it **the Tidechild**. It is the second
+Greek myths), and the Theogens call her **the Tidechild**. She is the second
 god of the game: the gene-gods' answer to the Emperor, born seven weeks after the
 AI god first spoke to the Rivet trustees.
 
@@ -1379,6 +1415,9 @@ Common to all routes:
   Tower — cheap contractors, stolen Twin access, borrowed cryo gear, murals
   of 1930s workers watching from the walls. It is a sloppy, dangerous mess. It
   will fail, and on New Year's Eve it will hurt more than Sunday.
+- **Ione is taken.** Sometime in the day, the Tidechild disappears from the
+  tunnels under the Sutro Baths. Delphine's Conviction cracks; LOST flyers
+  go up across the Mission (§3.4).
 - **The Auric lodge, the Presidio, night.** The break-in: the Order's lodge
   in an old brick military building in the Presidio, where Julian's scan
   happened. The 1849 gold pan on the altar; the minute book with the vote on
@@ -1408,7 +1447,9 @@ Route-specific content follows (§3.10).
 - **Mount Sutro, night.** The experiments: in a disused lab in the eucalyptus
   forest under the Trident, Hell Rot (or Otto, Fax or Yara, if their Trust is
   high enough) breathes the gas while the Index runs (§3.5a). The Emperor's
-  voice is clearest on the mountain, and he watches.
+  voice is clearest on the mountain, and he watches. It is also where
+  Ione's kidnappers have brought her, to read her spin term: the rescue Run
+  and the experiment collide in one building.
 
 #### ISSUE 6 — "Twenty-Fifty" (Friday 31 December, New Year's Eve)
 
@@ -1437,7 +1478,9 @@ midnight coming.
 The Twin is down. The only news in the City is the *Mondo 3000* special
 edition, printed before 6 a.m. in the cellar of Villa Delirium: the last
 column. Then dawn, smoke on the water, and the New Year's Day swim at Aquatic
-Park — or the Mountain, or Baker Beach — depending on the ending.
+Park — or the Mountain, or Baker Beach — depending on the ending. The last
+scene jumps twenty years: in 2069, Ione, aged twenty, reads Hell Rot's last
+column aloud. It is the only time the game hears her voice.
 
 ### 3.9b Set pieces by night
 
@@ -1498,6 +1541,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **The Mission Walls** | Both canonizations on the same walls: gold Halo murals vs. cyan glow-paint | Core |
 | **The Brandvold lab annex, Mission Bay** | The ruined lab where he died; the gas cabinet; the 2044 logs; the October xenon order; the Spin Question starts | Core |
 | **Coit Tower** | Sunday's Lifeboat rig among the 1930s murals | Core |
+| **The Sutro tunnels** | Ione is taken; LOST flyers across the Mission | Core |
 | **The Auric lodge, the Presidio** | A break-in; the 1849 gold pan; the minute book; Dr. Hale | Core (Routes A, D); Optional (B, C) |
 | **Treasure Island** | The Cluster's fabrication plant on stilts; the supply-chain choice | Optional |
 | **The Lantern** | The order's conversion vote | Optional |
@@ -1509,7 +1553,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **City Hall** | The hand recount of the recall petition; Rosa testifies (if alive) | Core |
 | **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
 | **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core |
-| **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident; the Emperor's clearest voice | Core |
+| **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident; the rescue of Ione; the Emperor's clearest voice | Core |
 | **The Skyline gondola** | Above the fog line, under open sky | Optional |
 
 **Issue 6 — Friday 31 December (New Year's Eve).**
@@ -1610,6 +1654,15 @@ both have to break.
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4; use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
+
+**Ione's line.** Every ending adds one line about Ione (open question 4
+holds the full set). Three set the tone:
+
+- **Mortal:** *"On New Year's Day, in the cold at Aquatic Park, Ione
+  laughed. It was the first Theogen laugh anyone had heard in years."*
+- **New Flesh:** *"Ione stopped glowing on 3 January. The Theogens say she
+  is resting."*
+- **Midnight Forever:** *"Wren says Ione has started watching the clock."*
 
 ### 3.12 Branching map (high level)
 
@@ -2683,6 +2736,10 @@ Plot questions the writers' room must answer before Alpha.
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
 - **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren
   Castillo is her midwife (§3.4, Prologue).
+- **Ione is a girl;** the Church and the Order call her "it." Her health
+  is set in the Prologue; she is taken in Issue 4 (by the Gilders or the
+  Church) and rescued at Mount Sutro in Issue 5; as an adult in 2069 she
+  reads Hell Rot's last column (§3.4).
 - **Ione's father is Julian Rivet V.** Ione is the last Rivet heir and the
   Emperor's child (§3.4).
 - **The Emperor does not know Ione is his heir,** but can find out in the
@@ -2706,7 +2763,7 @@ Plot questions the writers' room must answer before Alpha.
 3. **What exactly is the god-gene,** and what happens to the Emperor if it
    reaches him?
 4. **What becomes of Ione on each route?** Every ending promises one line
-   about the child; the writers need the eleven lines.
+   about the child; three are drafted (§3.11), eight to go.
 4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
     Nortonian, a Keeper of the Order, or someone the game never names?
 5. **Does Ione learn, as an adult, who the father was?** (Epilogue-line
