@@ -307,7 +307,10 @@ report about you. The Church gives them away free; the Rivet Trust pays.
 
 - **Halos on, score high.** Putting on a pair sets your Halo to **7**
   (Radiant) on the first day. Behaviour then moves it between 4 and 9.
-  Only cingulate conditioning and a Church bond reach 10.
+  Only the Merge reaches 10: cingulate conditioning, then the Halo
+  **implanted directly through a neural jack** behind the ear. No glasses;
+  the AI is wired straight into the brain, and the Twin reads it with no
+  lens in between.
 - **No Halos, score zero.** Without a pair you are an automatic **zero**,
   and you **cannot use City services** at all: transit, clinics, housing,
   permits, benefits, the courts' online desk, the library card. The City's
@@ -359,7 +362,7 @@ report about you. The Church gives them away free; the Rivet Trust pays.
 | **1–3** | Reflected (Halos, newly lent or second-hand, on probation) | The shuttles stop. Basic Church services | Your data |
 | **4–6** | Luminous (Halos, but a poor record) | Priority at the clinics, a place in the housing lottery | Your attention: the feeds, the masses, the gratitude |
 | **7–9** | Radiant | Where a new pair of Halos puts you. A gold aura everyone can see. Eligible for the Ascension list | Your money, and most of your privacy |
-| **10** | **Merged** | Cingulate conditioning, and a lifelong bond with a Church AI. The Twin now runs a live model of you and consults it before you act: you are **part of the Twin**. You appear in Twin visits as yourself, alive. Your name goes on the Ascension list | Your own first draft of every sentence. The merged cannot say anything that is not a compliment |
+| **10** | **Merged** | Cingulate conditioning, then the Halo implanted directly through a neural jack behind the ear: a lifelong bond with a Church AI, with no glasses and no off switch. The Twin now runs a live model of you and consults it before you act: you are **part of the Twin**. You appear in Twin visits as yourself, alive. Your name goes on the Ascension list | Your own first draft of every sentence. The merged cannot say anything that is not a compliment |
 | — | Ascended | The promised upload into the Twin, forever. Nobody yet: the Ascension on New Year's Eve would be the first (main doc §3.8) | Your body |
 
 **The satire, in one line:** the City's most "angelic" person is the one who
@@ -549,7 +552,7 @@ civic money).*
 | **Promise** | "You were always divine. Now you can stay that way." A Halo, an audience, and a forever in the Twin. |
 | **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy — a reconstruction the Church lets them believe is her. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way, the Peoples Temple "healing" pattern, upgraded). |
 | **Price** | Data, then attention, then money, then the body. |
-| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10: conditioned and bonded to a Church AI) → Ascended (the promised upload, nobody yet). |
+| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10: conditioned, Halo jacked in, and bonded to a Church AI) → Ascended (the promised upload, nobody yet). |
 | **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the reconstructions — your mother on that corner — stop answering. |
 | **Enemy** | "The Unfinished": critics, journalists, the zero-Halo poor, and above all the Theogens, whom the Church calls "meat-worshippers." |
 | **Crack** | (A) The merged are measurably less themselves every month: the Church AI drafts more of their thoughts each week, and the Church buries the data. (B) The healings are masks. (C) the Twin cannot model the poor, and its own engineers will admit, if asked right, that it does not yet count them as people. |

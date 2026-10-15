@@ -527,8 +527,9 @@ every one of them forever. In bad hours, he believes he already has.
 the Twin, not the Emperor. The **Church of the Twin** — a glass cathedral on
 Geary, a weekly feed-stadium mass, a free social-services network paid for
 by Rivet philanthropy — promises that the Twin will one day **wake as a god**.
-Its faithful **merge** now — cingulate conditioning, and a lifelong bond with
-a Church-issued personal AI — and are promised that they will **ascend**
+Its faithful **merge** now — cingulate conditioning, then a Church Halo
+implanted directly through a neural jack, a lifelong bond with a
+Church-issued personal AI — and are promised that they will **ascend**
 (upload) into the Twin when they are chosen, and live in it forever. Nobody
 has ascended yet. The Ascension on New Year's Eve will be the first (§3.8). Its **Halo** scores — shown as the visible auras Karl paints around every
 person (companion doc §3.2b) — and its flattering **gospels** come from the
@@ -1655,8 +1656,8 @@ from the water to the uprising.
   Craving system is under the most pressure here.
 - **Investigation threads (pick two of three):**
   1. **The Halo economy** — Halos for sale. The poorest pay the most.
-  2. **The Merged** — visit a citizen who merged: conditioned, and bonded
-     for life to a Church personal AI. They are happy. They cannot stop
+  2. **The Merged** — visit a citizen who merged: conditioned, with a Church
+     Halo jacked in behind the ear, bonded for life to a Church personal AI. They are happy. They cannot stop
      being happy. They cannot say anything that is not a compliment, because
      the AI drafts every sentence first.
   3. **The Lifeboat** — follow one of Sunday's test subjects home, and find

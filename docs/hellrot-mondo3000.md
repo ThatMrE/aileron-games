@@ -514,6 +514,10 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
     knows what Hell Rot saw, and he has never said so. It is why he left
     science, and why he cannot sleep without a light on. He tells Hell Rot
     at Trust 5.
+  - **The first jack.** Fax's 2030s lab jack is the ancestor of the
+    Church's Halo jack, the implant every Merged citizen carries. The Twin
+    listens to every Church jack in the City. It cannot hear his: the format
+    died before the Twin was built.
   - **"Legacy Format."** The messages through his jack come from the
     Emperor's **"I"** — Julian — hiding in the one channel the rest of the
     god cannot hear. Fax is the secret line to the human inside the god, and
