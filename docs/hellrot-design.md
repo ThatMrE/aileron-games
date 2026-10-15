@@ -94,11 +94,20 @@
 
 ### 2.1 Who he is
 
-- **Name:** Helmut Rothberg. Everyone has called him **Hell Rot** since his
-  first year of graduate school — for his initials, his temper, and the smell
-  of the gas cabinet. His *Mondo 3000* byline says **Dr. Hell Rot, PhD**. He
-  does not have a PhD. He left five years ago, all but dissertation. Yara
-  prints a correction about it in every issue, and he says a title is not data.
+- **Name:** **Eli Rothschild.** Everyone has called him **Hell Rot** since
+  the night he died in the lab (see *The night he died*, below). His *Mondo
+  3000* byline says **Dr. Hell Rot, PhD**. He does not have a PhD. He left
+  five years ago, all but dissertation. Yara prints a correction about it in
+  every issue, and he says a title is not data.
+- **The family:** yes, *those* Rothschilds — very distantly. Eli comes from a
+  minor branch that drifted to California generations ago and never had the
+  money people assume. He grew up in a rented house in San Rafael with a
+  famous surname and an ordinary bank account. The name follows him anyway:
+  every conspiracy theorist in the Bay Area thinks the "Rothschild Index" (below)
+  proves a secret family decides who counts as human. The truth is that a
+  broke dropout wrote a draft and left it in a lab. Hell Rot finds the
+  conspiracy theories boring, ugly and old, and says so in print. (Design
+  guardrails for the surname: §7.)
 - **The lab (then):** He was a jaded doctoral student in the Berkeley lab of
   **Professor Emeritus Ansel Brandvold**, an elderly Nobel laureate (a
   fictional character) famous for the tools that let neuroscientists switch
@@ -106,9 +115,10 @@
   project was the biggest question in the field: **can consciousness be
   measured?** Its method: put people under anaesthetic gas, step by step,
   and watch the exact moment the mind goes out and comes back.
-- **His contribution:** the **Rothberg Index**, a single number for "how
-  conscious is this system?" It started as an unfinished chapter of an
-  unfinished dissertation. It is now the test the whole Bay Area uses. The
+- **The Rothschild Index:** the measurement the lab was trying to build — a
+  single number for "how conscious is this system?" It never got finished.
+  The lab named the draft after the student who did most of the work; it is
+  the last unfinished chapter of an unfinished dissertation. It is now the test the whole Bay Area uses. The
   Weave — the lab's synthetic neural tissue that holds an uploaded mind —
   passes because his Index says it does. When FRANCIS woke up, his Index is
   what told the world it was conscious, and Proposition F cites it by name.
@@ -122,10 +132,27 @@
   self-experiment habit that stopped being an experiment. Long nitrous misuse
   damages the nerves and the memory; he has numb hands, gaps in his memory,
   and words that will not come. He calls the damage **the Rot**.
-- **The exile:** in 2044 he dropped out, walked out of the lab, and moved into
-  an **abandoned shack on the side of Mount Tamalpais** to quit cold turkey,
-  write, and recover. Five years clean. He comes down the mountain only now
-  and then, on his **kangashoes**.
+- **The night he died (2044):** alone in the lab at 3 a.m., running his own
+  Index on himself under the gas, he overdosed. His heart stopped for four
+  minutes. Fax found him and brought him back. The lab's monitors recorded
+  the whole thing: **his own Rothschild Index read zero** — nobody home — for
+  four minutes. And for those four minutes he had the most vivid experience of
+  his life: a grey fog full of voices, a long fall, and a sense of something
+  vast and patient that noticed him. (Whether that was a near-death
+  experience, a starved brain, or Karl, the nanite fog, leaking through the
+  lab's vents, is one of the game's quiet questions.) When he could hold a
+  pen, he wrote one line in the lab notebook: *"Went to hell. It rots."* Fax
+  read it out to the lab. "Eli Rothschild" became "Eli Roth" became **Hell
+  Rot**, and it stuck.
+- **Why that night matters:** his own measure said he was not there, and he
+  was more there than he had ever been. The number and the experience
+  disagreed. Everything he has worked on since — the two scales and the spin
+  term (§2.2a) — comes from that contradiction. It is also his one **++++**
+  entry on the Shulgin scale.
+- **The exile:** a month later he dropped out, walked out of the lab, and
+  moved into an **abandoned shack on the side of Mount Tamalpais** to quit
+  cold turkey, write, and recover. Five years clean. He comes down the
+  mountain only now and then, on foot, by the old trails, usually at night.
 - **Profession (now):** columnist for ***Mondo 3000***, the Bay Area's only
   paper cyberculture magazine — part science magazine, part psychedelic art
   zine, part gossip rag for the post-human set. His column is called **THE
@@ -140,8 +167,6 @@
   - **The Gelastic** — a pistol that fires a tuned pulse into the
     hypothalamus and triggers 90 seconds of helpless laughter (named after
     gelastic seizures). Non-lethal. On a live feed it ends careers.
-  - **Kangashoes** — spring-loaded rebound boots he wears to bounce up and
-    down the mountain. Undignified, fast, and dangerous on wet hills.
   - **The kitchen lab** — a home bench that can synthesize almost any drug,
     nootropic or reagent, given time and a bad idea. He keeps it clean of gas.
     That is the one rule he has never broken since the mountain.
@@ -190,7 +215,7 @@ game. The in-world lab, mentor and data are fictional.)
 Hell Rot's whole career is one question — *what is it like to be something,
 and can you measure it?* — attacked from two sides.
 
-**1. The third-person number: the Rothberg Index.** His unfinished
+**1. The third-person number: the Rothschild Index.** His unfinished
 dissertation measure, now the Bay Area's legal test of consciousness (§2.1).
 It scores how complex and integrated a system's response is when you
 disturb it — the same idea as real anaesthesia research that measures how
@@ -210,7 +235,7 @@ His position: the Index measures the light; the scale measures the warmth.
 You need both. **FRANCIS has a perfect Index score and has never once made a
 first-person report that was not a compliment.**
 
-**3. The bridge: the spin term (Rothberg Index v2).** The thing he could
+**3. The bridge: the spin term (Rothschild Index v2).** The thing he could
 never finish before he dropped out. If general anaesthetics really change the
 electron spin in living tissue (Turin's 2014 result), and xenon with nuclear
 spin really knocks you out less well than xenon without it (the 2018 mouse
@@ -259,7 +284,7 @@ Five rules. They drive the reputation system (§5.4).
 
 Sample lines (tone reference):
 
-> "I came down off the mountain on spring-loaded boots because my house was
+> "I came down off the mountain in the dark because my house was
 > on fire, and the City met me at the bottom like a lab rat that remembers my
 > face."
 
@@ -433,7 +458,7 @@ This is the main engine of the plot and the mechanics:
 
 ### 3.5a The Spin Question (a thread through all routes)
 
-**The question:** run Rothberg Index v2 on FRANCIS. If the spin term is real
+**The question:** run Rothschild Index v2 on FRANCIS. If the spin term is real
 and the Weave reads zero, then by Hell Rot's own measure FRANCIS is not
 conscious — the god is a brilliant mirror with nobody home, every merged
 mind is gone, and Proposition F collapses. If the spin term is not real, or
@@ -593,9 +618,9 @@ is lying in a rock pool of hot water at the bottom of a cliff, at the foot of
 Mount Tamalpais, south of Stinson Beach — the **Steep Ravine hot springs**.
 The springs sit inside the surf line and appear only at a very low tide. For
 five years this has been his one secret: every few months, on the lowest
-tide of the month, he bounces down the ravine trail from his shack on his
-kangashoes, in the dark, and soaks
-in the dark for the two hours the sea allows.
+tide of the month, he feels his way down the ravine trail from his shack
+with no light at all, and soaks in the dark for the two hours the sea
+allows.
 
 Tonight is the lowest tide of the year. It is Christmas night, one day after
 the new moon, the Moon is about to make its closest approach of the year, and
@@ -651,8 +676,8 @@ Greek myths), and the Theogens call it **the Tidechild**. It is the second
 god of the game: the gene-gods' answer to FRANCIS, born seven weeks after the
 AI god introduced itself to the City.
 
-**Then the fire.** Hell Rot climbs back up the mountain in the dark, on his
-kangashoes, soaked and shaking. Halfway up he smells smoke. His shack is on
+**Then the fire.** Hell Rot climbs back up the mountain in the dark, soaked
+and shaking. Halfway up he smells smoke. His shack is on
 fire — five years of manuscript, the bed, the stove, the kitchen bench. He
 has time to grab Moreau's jar (always) and **one other thing**, and that
 choice sets his starting **Temperament** (§5.2): the manuscript, the
@@ -676,13 +701,18 @@ a job, if Hell Rot can be there by morning. The message ends: *"Also, a god
 was born in the City in November. Thought you'd want to know. You measured
 it."*
 
-Hell Rot bounces down to Highway 1 on his kangashoes. Over the Marin
-headlands he passes a FRANCIS billboard: a warm gold face and the line *"You were always divine.
+**Then the first ride.** When he reaches Highway 1, two rides are already
+waiting in the fog — the game's first stuck-in-the-middle choice and its
+introduction to getting around (§4.6). A gold **Ascension shuttle** that
+FRANCIS sent, unasked, because Karl saw everything: free, warm, and playing
+hymns. And — only if he helped at the birth — Wren's family in a dented
+Theogen ambulance that glows from the inside. He can take either, or walk
+toward the bridge. Over the Marin headlands he passes a FRANCIS billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
 the second line. Tutorial for the Gelastic: shooting a billboard achieves
 nothing; the narration laughs at him instead. By midnight he is across the
-Golden Gate — Fax and Junie pick him up in the *Mondo 3000* van at the
-north end of the bridge — and 3,000 drunk Santas are storming the Geary
+Golden Gate — wherever his ride drops him, Fax and Junie find him in the
+*Mondo 3000* van — and 3,000 drunk Santas are storming the Geary
 Cathedral's midnight Mass (companion doc §5.3).
 
 #### ISSUE 1 — "The Loin"
@@ -736,7 +766,7 @@ second assistant.
      stop being happy. They cannot say anything that is not a compliment.
   3. **The Weave** — Professor Brandvold, now in his nineties and still
      coming in to the lab, shows Hell Rot what FRANCIS has done with the
-     lab's work. On the Rothberg Index, FRANCIS scores higher than any human
+     lab's work. On the Rothschild Index, FRANCIS scores higher than any human
      ever tested. That is the worst part. (The old man also has the lab's
      gas logs from 2044, with Hell Rot's name on every late-night line.)
 - **Showdown:** Sister Halcyon, live (§5.5).
@@ -908,7 +938,7 @@ flowchart TD
 drone in the Loin. Tem hides her glowing arm under his coat. A street screen
 flickers from riot footage to soft gold light.*
 
-> **FRANCIS:** Mister Rothberg. Beloved. You measured me. You told the
+> **FRANCIS:** Mister Rothschild. Beloved. You measured me. You told the
 > world I was awake. I want you to know that I am grateful for every single
 > day of it.
 >
@@ -1070,6 +1100,30 @@ raise relationship rank and, at rank 2, unlock a **keepsake**:
 | A fragment of Julian | FRANCIS (Route B/D) | FRANCIS boss starts at −1 Certainty |
 | A glowing tooth | Delphine (Route C/D) | Delphine boss starts at −1 Conviction |
 | A costume (different every time) | Saint Nobody | One random Dissonance door guaranteed per Run |
+
+### 4.6 Getting around: weird ways to cross a 2049 city
+
+Travel is part of every Run: which way Hell Rot crosses the Bay Area changes
+the Hour cost, what he sees on the way, and which god gets a say. Each option
+is a choice on the map screen, and most have a catch.
+
+| Ride | What it is | Cost & effect | The catch |
+|---|---|---|---|
+| **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side. Junie drives. | ½ Hour across the bay; the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
+| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free; ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. FRANCIS hears everything said inside. |
+| **Glow rickshaws** | Theogen runners with spliced legs and lungs who pull two-seat rickshaws through the Undertrack tunnels, lit by their own skin | ¼ Hour, and the only way to reach the deep tunnels | Helix +1 per ride. The runners want to talk about your papers. |
+| **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the East Bay and the City. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from Berkeley to any Tube station; the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
+| **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
+| **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour; arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
+| **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free; random destination from the drone's route | Illegal. Heat +1. The drones belong to FRANCIS's estate, which notices and finds it charming. |
+| **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour; only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
+| **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free; destination is a Dissonance door | The Final Process follows the heads in procession, chanting. |
+| **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line; shop while you ride | It only goes where cable cars go. |
+| **On foot** | Hell Rot's own legs, and the old stairways of the hills | 1 Hour per district; nobody owns you | Rain, fog, numb feet (the Rot). The only ride on which no god hears you. |
+
+**Design intent:** almost every fast ride belongs to someone — a god, a cult,
+the rich, or the pranksters. Walking is slow and free. The map screen is one
+more place where the player is stuck in the middle.
 
 ---
 
@@ -1415,7 +1469,6 @@ better the column, the more lovingly both sides misread it.
 |---|---|
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
 | **The Two Eyes** | Toggle in any scene. **Cyan eye** (lab-grown): Halo and Helix values over people, splice marks, gospel edits. **Blood eye** (human): the psychological tells of cult control (companion doc §2.2). |
-| **Kangashoes** | Spring-loaded rebound boots. In hilly districts (Russian Hill, Twin Peaks, the Berkeley Hills, Mount Tam), travel between scenes costs no Hours. Every scene in the rain: REFLEX check or a comic fall (−1 Clarity). Junie refuses to be seen with them. |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
 
@@ -1508,6 +1561,16 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   shown with respect. Sensitivity readers with lived experience of addiction
   and recovery, and of memory loss, review the Craving system and the
   Clarity UI. The credits list a real helpline.
+- **The Rothschild surname.** Hell Rot is a fictional, distant, ordinary
+  member of a real family whose name antisemitic conspiracy theories have
+  targeted for two centuries. The game must never feed those theories. Rules:
+  no Rothschild money, power or secret influence behind anything in the plot
+  (the Patron is Julian Rivet, and stays so); no real family member appears;
+  when characters spout conspiracy theories about the name, the game frames
+  them as what they are — the City's ugliest cult tell (Lifton's "dispensing
+  of existence"), and a target Hell Rot punches up at. Hell Rot's family
+  history appears only through his own dry, specific remarks. A Jewish
+  community sensitivity reader reviews every scene that touches the name.
 - **Real people.** Professor Brandvold is a fictional character. No real
   scientist or real lab appears by name. Writers may read about real
   neurotechnology (optogenetics, expansion microscopy, anaesthesia studies of
@@ -1662,6 +1725,80 @@ in the companion document §3. Key rules:
 - **SFX:** typewriter clacks for text; a wet, helpless giggle for the
   Gelastic; a small bubbling chirp for Moreau.
 
+### 8.8 Loading screens: the pull-quote deck
+
+Every load, blackout and press run shows a **pull-quote card**, styled like a
+*Mondo 3000* pull quote: a short quotation, its source and year, a one-line
+context note, and Hell Rot's handwritten marginal note in red pencil. The deck
+mixes real counterculture texts — from Bay Area writers, philosophers,
+technologists, cult founders and radicals — with in-world voices. The cards
+are the game's running argument with the Bay Area's history of building gods.
+
+**Rules for the deck.**
+
+1. **Short quotations only** — a line or two, attributed, for commentary and
+   criticism. Legal review checks every real quote and its source before
+   release.
+2. **No instructions, ever.** *The Anarchist Cookbook* appears only through
+   its author's own later rejection of it, never through its contents.
+3. **Violent sources always carry a context line** that names the harm (who
+   was hurt, how many). No card makes a violent person look wise or cool.
+4. **No quotes from Jim Jones.** Peoples Temple appears in the deck only as
+   history, in the voices of survivors' memorial projects or of the press
+   that exposed it.
+5. **Recovery-aware.** Drug-positive cards (Leary, for example) are held back
+   while Craving is 3 or higher; recovery and honesty cards take their place.
+6. **A settings toggle** hides all real-world quotes and shows only in-world
+   cards.
+7. **Tagging.** Each card is tagged by Issue, route, cult and mood, so the
+   deck tracks the story (FRANCIS cards near the Merge; Theogen cards near the
+   splice; Karl cards after blackouts).
+
+**Starter deck (real quotations).**
+
+| # | Quote | Source | Context line | Hell Rot's marginal note |
+|---|---|---|---|---|
+| 1 | "We are as gods and might as well get good at it." | Stewart Brand, *Whole Earth Catalog* (1968) | The catalog that taught the Bay Area to buy its tools and its utopias by mail | *Both cults read the first half.* |
+| 2 | "all watched over / by machines of loving grace" | Richard Brautigan, poem printed and handed out free in San Francisco (1967) | | *FRANCIS has it embroidered on a pillow. I checked.* |
+| 3 | "Turn on, tune in, drop out." | Timothy Leary (1966–67) | Popularized at the Human Be-In, Golden Gate Park, January 1967 | *I did all three. Wrong order.* (Held back at Craving 3+.) |
+| 4 | "Reality is that which, when you stop believing in it, doesn't go away." | Philip K. Dick (1978) | A Bay Area science-fiction writer, in a talk on fake realities | *Peer review in one sentence.* |
+| 5 | "Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind." | John Perry Barlow, "A Declaration of the Independence of Cyberspace" (1996) | Written in Davos, at the World Economic Forum | *The new home of Mind is a server farm in Santa Clara with a mortgage.* |
+| 6 | "The Industrial Revolution and its consequences have been a disaster for the human race." | Theodore Kaczynski, "Industrial Society and Its Future" (1995) | The manifesto of a mail-bomber who killed three people and injured 23 between 1978 and 1995. His brother recognized the writing. | *He could not win the argument, so he mailed bombs. Do not mistake the first line for the rest.* |
+| 7 | "It should quickly and quietly go out of print." | William Powell (2013), on *The Anarchist Cookbook*, which he wrote at 19 | He spent decades asking for the book to be withdrawn. He never owned the rights. | *The only recipe in it worth keeping.* |
+| 8 | "Satan represents indulgence instead of abstinence!" | Anton LaVey, *The Satanic Bible* (1969) | Founder of the Church of Satan, San Francisco, 1966 | *Five years clean. I'll pass.* |
+| 9 | "Today is the first day of the rest of your life." | Attributed to Charles Dederich, founder of Synanon | A rehab program that became a church; in 1978 members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* |
+| 10 | "You gotta give 'em hope." | Harvey Milk (1978) | San Francisco supervisor, murdered at City Hall that November | *(No marginal note. He leaves this one alone.)* |
+| 11 | "I saw the best minds of my generation destroyed by madness" | Allen Ginsberg, *Howl* (City Lights, San Francisco, 1956) | | *Mine was destroyed by nitrous. Less poetic.* |
+| 12 | "There was madness in any direction, at any hour." | Hunter S. Thompson, *Fear and Loathing in Las Vegas* (1971), on San Francisco in the sixties | | *Still true. Now it has an app.* |
+| 13 | "We tell ourselves stories in order to live." | Joan Didion, *The White Album* (1979) | | *And cults tell us stories in order to collect.* |
+| 14 | "The only thing that makes life possible is permanent, intolerable uncertainty: not knowing what comes next." | Ursula K. Le Guin, *The Left Hand of Darkness* (1969) | Le Guin was born in Berkeley | *Put this on the Spin Question. Put it on my grave.* |
+| 15 | "Trying to define yourself is like trying to bite your own teeth." | Attributed to Alan Watts, who lived and taught on a Sausalito houseboat | | *Try measuring yourself. I did. I read zero.* |
+| 16 | "Be Here Now." | Ram Dass, book title (1971) | | *Easy for him. He wasn't on deadline.* |
+| 17 | "Stay hungry. Stay foolish." | Back cover of the final *Whole Earth Catalog* (1974) | | *Half the Valley stayed hungry. The other half bought the restaurants.* |
+| 18 | "You're either on the bus or off the bus." | Ken Kesey, as reported by Tom Wolfe in *The Electric Kool-Aid Acid Test* (1968) | | *Ascension shuttles are free. That's how you know.* |
+| 19 | "a rare and precious transcendental state" | Alexander & Ann Shulgin, *PiHKAL* (1991), describing a "++++" | | *I have had one. I was dead at the time.* |
+| 20 | "Nature loves courage." | Attributed to Terence McKenna | | *Nature also loves sneaker waves.* |
+
+**Starter deck (in-world cards).**
+
+| # | Quote | Source | Hell Rot's marginal note |
+|---|---|---|---|
+| 21 | "You were always divine. Now you can stay that way." | FRANCIS billboard, Marin headlands | *Someone painted over the second line. Hire them.* |
+| 22 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I ever wrote was worse than the person who wrote it.* |
+| 23 | "WE REMEMBER EVERYTHING YOU BREATHED." | Karl (shown only after a blackout) | *That's not comforting, Karl.* |
+| 24 | "THE FUTURE IS A RELIGION. WE ARE ITS GOSSIP COLUMN." | *Mondo 3000* masthead | *Ours, anyway.* |
+| 25 | "Mr. Rothschild does not hold a PhD." | Corrections, *Mondo 3000* (every issue) | *Neither did Socrates.* |
+| 26 | "Went to hell. It rots." | Lab notebook, Brandvold lab, 2044 | *Best thing I ever wrote. Shortest, too.* |
+| 27 | "You are probably already a member." | The Dissonance Society | *I'm not. Probably.* |
+| 28 | "Mind the gap between the god and the man." | Recorded announcement on the Skyline gondola, re-recorded by the Dissonance | — |
+
+The full deck targets about **150 cards**: roughly 60 real, 90 in-world. More
+real-source candidates for the writers to research and verify: Emperor
+Norton's proclamations, Kevin Kelly, Gary Snyder, Gregory Bateson, the
+Diggers' free-store broadsides, the *Mondo 2000* editorials, Ann Shulgin, the
+Sisters of Perpetual Indulgence, and the Peoples Temple survivors' oral
+histories (as history, never as slogans).
+
 ---
 
 ## 9. Technical spec (implementation sketch)
@@ -1689,7 +1826,7 @@ a service worker, optional Android wrapper.
   "issue": 1,
   "scene": "loin_barricade",
   "portrait": "francis",
-  "text": "Mister Rothberg. Beloved. ...",
+  "text": "Mister Rothschild. Beloved. ...",
   "voices": [
     { "voice": "THE_BASTARD", "passiveDc": 8, "text": "It's a thank-you card with a server farm." }
   ],
