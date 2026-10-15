@@ -387,8 +387,11 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 
 - **The two benches.** Residents lean to one side of the fight without
   meaning to: Otto and Fax are pulled toward the Theogens; the Duchess, the
-  Bishop, Mary and Junie toward the Merge; Yara and Pru toward numbers; Saint
-  Nobody toward chaos. Party choice each Night quietly shifts Halo and Helix
+  Bishop and Mary toward the Merge; Yara and Pru toward numbers; Saint
+  Nobody toward chaos. **Junie leans toward no faction at all** — the only
+  pull she feels, against her own atheism, is toward **Jesus Christ**: not
+  the Church of the Twin, not the cults, but the faith the nuns taught her.
+  Taking her on a Night shifts neither Halo nor Helix. Party choice each Night quietly shifts Halo and Helix
   (a pulled companion makes their side's doors cheaper and its boons more
   tempting).
 - **Junie's trials of faith (*"Jam"*).** Christmas week is the worst week
@@ -401,7 +404,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   |---|---|---|
   | **Body** | The Theogens: new knees, one splice, and she skates forever on her own legs | Her body — and the cult's claim on her |
   | **Mind** | The Merge: conditioning and a Church personal AI, so she never has to sit alone with her own head again | Her mind — the voice in it would not be only hers |
-  | **Soul** | The Church's Ascension list — or, quieter and harder, the faith of the nuns, back again, in a Christmas-week church in the rain | Her soul — whether she believes anything comes after |
+  | **Soul** | Not the Church's Ascension list, which she laughs at — the faith of the nuns, back again: Christ, in a Christmas-week church in the rain. It is the only offer this week that is not selling her anything, and the only one she cannot laugh at | Her soul — whether she believes anything comes after |
 
   Against all three stands her own temptation: refuse everything and choose
   death — a mortal end, unchanged. The climax of *"Jam"* is a charity bout at
