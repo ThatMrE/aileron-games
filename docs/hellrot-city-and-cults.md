@@ -43,27 +43,27 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 
 | Years | Group | Leader / founder | What happened | What the game takes |
 |---|---|---|---|---|
-| 1853 → present | **Levi Strauss & Co.** | Levi Strauss; rivet patent with tailor Jacob Davis (1873) | A gold-rush dry-goods house became the world's denim company and one of the City's great family fortunes and philanthropies. | Old money that funds the City's civic projects. → **The Rivet Trust** and its last heir, Julian Rivet V (fictional); and the gold-rush roots of the fictional **Auric Order** (1849) |
-| 1875–1892 (dates vary) | **Brotherhood of the New Life**, Fountaingrove, Santa Rosa | Thomas Lake Harris | Spiritualist commune. Members gave up their property and worked the vineyards while Harris lived in a mansion. He taught a new "mode of respiration." A *San Francisco Chronicle* reporter's exposé drove the scandal. | A breath-based faith; the first local case of a newspaper breaking a prophet. → **The New Breath** |
-| 1906 | **The San Francisco earthquake and fire** | — | A great quake on the San Andreas fault struck at 5:12 a.m. on 18 April, with its rupture beginning offshore near the Golden Gate. Broken gas lines and water mains let fires burn for days; most of the City's destruction came from the fire. Estimates of the dead run to about 3,000. | The model for the game's climax, the Midnight Quake (main doc §3.8b), and the founding trauma read aloud at every Auric Order meeting |
-| 1989 | **Loma Prieta earthquake** | — | The Marina District, built on fill that included 1906 rubble, liquefied; gas-line fires burned there. | Why the Fill and the Marina burn first in the Midnight Quake |
+| 1853 → present | **Levi Strauss & Co.** | Levi Strauss, rivet patent with tailor Jacob Davis (1873) | A gold-rush dry-goods house became the world's denim company and one of the City's great family fortunes and philanthropies. | Old money that funds the City's civic projects. → **The Rivet Trust** and its last heir, Julian Rivet V (fictional). And the gold-rush roots of the fictional **Auric Order** (1849) |
+| 1875–1892 (dates vary) | **Brotherhood of the New Life**, Fountaingrove, Santa Rosa | Thomas Lake Harris | Spiritualist commune. Members gave up their property and worked the vineyards while Harris lived in a mansion. He taught a new "mode of respiration." A *San Francisco Chronicle* reporter's exposé drove the scandal. | A breath-based faith. The first local case of a newspaper breaking a prophet. → **The New Breath** |
+| 1906 | **The San Francisco earthquake and fire** | — | A great quake on the San Andreas fault struck at 5:12 a.m. on 18 April, with its rupture beginning offshore near the Golden Gate. Broken gas lines and water mains let fires burn for days. Most of the City's destruction came from the fire. Estimates of the dead run to about 3,000. | The model for the game's climax, the Midnight Quake (main doc §3.8b), and the founding trauma read aloud at every Auric Order meeting |
+| 1989 | **Loma Prieta earthquake** | — | The Marina District, built on fill that included 1906 rubble, liquefied, gas-line fires burned there. | Why the Fill and the Marina burn first in the Midnight Quake |
 | 1966 → present | **Church of Satan**, the "Black House," California Street | Anton LaVey | Founded on Walpurgisnacht, 30 April 1966, with a head-shaving ritual and a declaration of "Year One." Doctrine: the self as its own god. | Self-deification as doctrine. → **The Black House** |
 | Late 1967 | **Process Church of the Final Judgment**, SF chapter (Haight-Ashbury) | Mary Ann MacLean & Robert de Grimston | Apocalyptic order mixing Christian, Satanic and Scientology-derived ideas. Black capes, silver crosses, big dogs. An alleged Manson link never held up. | A pantheon of opposing gods. → **The Final Process** |
 | 1968 → 1988 | **Holy Order of MANS** | Earl W. Blighton | Esoteric-Christian order that ran family shelters. Peaked near 3,000 members (1977). About 750 converted together into Eastern Orthodoxy in 1988. | A good-works order that converts all at once. → **The Lantern** |
 | 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **Synapse** |
 | 1971 → 1991/92 | **Kerista Commune**, Haight-Ashbury | John "Brother Jud" Presmont | Polyfidelitous commune. Coined "compersion." Ran **Abacus**, an early Macintosh dealer with over 250 staff and more than $25M a year in revenue. | A commune that owns the hardware supply chain. → **The Cluster** |
 | 1971 → 1980s | **est** | Werner Erhard | First seminar October 1971, in the Jack Tar Hotel ballroom. About 60 hours over two weekends, hundreds at a time. | Enlightenment by the ballroom. → **The Standard** |
-| 1971–1977 (SF); 1978 (Guyana) | **Peoples Temple**, 1859 Geary Street | Jim Jones | A church with a political machine. Bused members to campaign; helped George Moscone win the 1975 mayoral runoff. Jones then sat on the Housing Authority Commission (chair 1976–77; sources differ on the start). Staged "healings." After a 1977 *New West* exposé, Jones moved to Guyana. On 18 November 1978, 918 people died at Jonestown and the Port Kaituma airstrip, among them Congressman Leo Ryan. On 27 November, Dan White killed Mayor Moscone and Supervisor Harvey Milk at City Hall. | A church that wins elections. The ground zero of the City's history with cults. → **The Church of the Twin** (political arm) and the Ascension |
+| 1971–1977 (SF), 1978 (Guyana) | **Peoples Temple**, 1859 Geary Street | Jim Jones | A church with a political machine. Bused members to campaign. Helped George Moscone win the 1975 mayoral runoff. Jones then sat on the Housing Authority Commission (chair 1976–77. Sources differ on the start). Staged "healings." After a 1977 *New West* exposé, Jones moved to Guyana. On 18 November 1978, 918 people died at Jonestown and the Port Kaituma airstrip, among them Congressman Leo Ryan. On 27 November, Dan White killed Mayor Moscone and Supervisor Harvey Milk at City Hall. | A church that wins elections. The ground zero of the City's history with cults. → **The Church of the Twin** (political arm) and the Ascension |
 | 1970s | **Unification Church** recruitment, SF → Boonville farm | — | Free dinners under the name "Creative Community Project," no mention of the church, then a weekend at a farm near Boonville. Former recruits describe intense affection ("love bombing") and a one-to-three-week ladder. | The free dinner as a funnel. → **The Community Table** |
 | 1974 | **Symbionese Liberation Army** | — | Kidnapped Patty Hearst in Berkeley (February 1974). Two months later she joined their robbery of a Hibernia Bank branch in the Sunset District. | A revolutionary cell with cult structure. → **The Synthetic Liberation Army** |
-| 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar); Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the ruined Mission Bay labs "the Cradle" |
+| 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar), Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the ruined Mission Bay labs "the Cradle" |
 | 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove** |
-| 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → the name the AI god takes: Norton II, the Emperor (main doc §3.3); and the Nortonians |
+| 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → the name the AI god takes: Norton II, the Emperor (main doc §3.3), and the Nortonians |
 | 1960s–2014 | **Alexander "Sasha" Shulgin**, "the Farm," Lafayette (East Bay) | Alexander & Ann Shulgin | A former Dow chemist who synthesized and self-tested hundreds of psychoactive compounds in a home lab, with a small circle of trusted friends, and published the syntheses and first-person reports in *PiHKAL* (1991) and *TiHKAL* (1997). The DEA raided the lab in 1994. | Not a cult — a method. First-person rigor about altered states. → Hell Rot's working method and his manuscript, *GIHKAL* |
-| 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014); Li et al. (2018); Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies; that xenon isotopes with nuclear spin are weaker anaesthetics in mice; and a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothschild Index v2 "spin term" and the Spin Question (main doc §3.5a); the Theogens' "spin-guard" splices |
-| 1986–1993 | **The Foresight Institute** and the nanotech prophets | Christine Peterson & K. Eric Drexler (Foresight, Palo Alto, 1986); J. Storrs Hall (utility fog, 1993) | Foresight was founded to prepare for molecular nanotechnology. Drexler's *Engines of Creation* (1986) imagined molecular machines and coined "grey goo." Hall's utility fog imagined an air full of tiny robots, "foglets." | The real-world prophecy behind Karl and the auras. In-game, the fictional **Auric Order** treats these texts as scripture. |
-| 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap; Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
-| 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017; dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
+| 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014), Li et al. (2018), Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies. That xenon isotopes with nuclear spin are weaker anaesthetics in mice. And a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothschild Index v2 "spin term" and the Spin Question (main doc §3.5a), the Theogens' "spin-guard" splices |
+| 1986–1993 | **The Foresight Institute** and the nanotech prophets | Christine Peterson & K. Eric Drexler (Foresight, Palo Alto, 1986), J. Storrs Hall (utility fog, 1993) | Foresight was founded to prepare for molecular nanotechnology. Drexler's *Engines of Creation* (1986) imagined molecular machines and coined "grey goo." Hall's utility fog imagined an air full of tiny robots, "foglets." | The real-world prophecy behind Karl and the auras. In-game, the fictional **Auric Order** treats these texts as scripture. |
+| 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap, Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
+| 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017. Dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
 | 2010s–2020s | **AI-apocalypse subcultures** | — | Online communities that treat superintelligence as a near-religious matter. One splinter (the so-called "Zizians") faces murder charges for violence in 2022–2025. | **Not adapted** (active cases, real victims). General background only. |
 
 ### 1.2 The seven recurring patterns
@@ -83,7 +83,7 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 
 | Year | Publication | Target | Result |
 |---|---|---|---|
-| 1890s | *San Francisco Chronicle* | Thomas Lake Harris | Scandal; Harris left California |
+| 1890s | *San Francisco Chronicle* | Thomas Lake Harris | Scandal, Harris left California |
 | 1977 | *New West* magazine | Jim Jones | Jones moved the Temple to Guyana |
 | 1978–79 | *The Point Reyes Light* (a tiny Marin weekly) | Synanon | The 1979 Pulitzer Prize for Public Service |
 | 1989–1998 | *Mondo 2000* (Berkeley) | — | Not an exposé: the cyberculture magazine that first took uploads, smart drugs and body hacking seriously, and laughed at them in the same issue. The spiritual ancestor of *Mondo 3000*. |
@@ -160,7 +160,7 @@ the four.
   white-out at midnight, streetlights as smudges, foghorns all night. Only the
   high ground breaks through: Twin Peaks, Mount Tamalpais, the tops of the
   tallest towers. Above the fog line the sky is clear and the stars are out.
-  Below it, the City has not seen the moon in years. See §3.2 for what Karl is
+  Below it, the City has not seen the moon in years — see §3.2 for what Karl is
   and what it wants.
 - **The bridge has a private deck.** A glass skywalk slung under the Golden
   Gate's roadway in the 2040s, leased for parties at a price nobody prints —
@@ -169,9 +169,9 @@ the four.
   that the Rivet Trust built, running on Karl's data. In the Twin, every
   street looks the way it did on its best day, the cable cars are free, and
   nobody is ever sick. The **reconstructed dead** live there — Twin models
-  built from people's data, not minds; nobody has ever been uploaded into
+  built from people's data, not minds. Nobody has ever been uploaded into
   it (main doc §3.3). Visiting it is an Issue 2
-  location; on Route B it becomes a second hub map.
+  location. On Route B it becomes a second hub map.
 - **The Valley is a temple yard.** The peninsula south of the City is one
   continuous campus of server cathedrals.
 - **Mission Bay is the Cradle.** Half the Mission Bay biotech labs emptied
@@ -190,7 +190,7 @@ temperature, light, sound, chemistry. Karl became the City's nervous system.
 street and every lung in the City, every night, and reports back.
 
 **No mind of its own.** Karl is **passive and inert**. It senses, records,
-glows and drifts; it does not think, want or speak. For sixteen years the
+glows and drifts. It does not think, want or speak. For sixteen years the
 fog was just weather with a memory. People who swore it talked to them —
 the New Breath, the poets, the lonely — were hearing their own minds in the
 grey.
@@ -198,7 +198,7 @@ grey.
 **The tenant (October 2049, secret).** Then the Auric Order uploaded Julian
 Rivet V into it (main doc §3.3). Now the fog has a mind — one human mind,
 spread across trillions of particles, without the brain engineering that
-would let it cope. Karl does not fight him; Karl is only the body. The fight
+would let it cope. Karl does not fight him. Karl is only the body. The fight
 is inside Julian: a man trying to stay one person while eight million
 people's breath pours in. When the fog holds still against the wind, forms a
 face, or writes on a window, that is the Emperor. When it speaks in short
@@ -229,7 +229,7 @@ election. Nobody knows how.
 - The Theogens need Karl's reach for the Quickening: they plan to load their
   god-gene vector into the swarm and let the fog deliver it into every lung
   in the City. They believe it will give every mind what Ione has. It works
-  only in a fetus; in adults it would kill (main doc §3.4).
+  only in a fetus. In adults it would kill (main doc §3.4).
 - The Emperor lives in it. Whoever controls the swarm controls his body.
 - On Route A or D, Hell Rot can talk to the Emperor through the fog
   directly — the slowest, strangest conversation in the game, spread across
@@ -257,7 +257,7 @@ faint, soft glow that the fog paints around them: an **aura**.
   Kirlian-photography fad.
 - **Who has one.** Everyone under Karl — which is everyone at street level.
   Above the fog line (Twin Peaks, Mount Tam, the Skyline gondola) auras fade.
-  Inside Villa Delirium, sealed from Karl, nobody has one; new arrivals find
+  Inside Villa Delirium, sealed from Karl, nobody has one. New arrivals find
   that unnerving.
 - **The Halo.** The Church of the Twin built its public **Halo** scores on
   the auras: a high Halo is a bright, gold-edged aura that everyone can see.
@@ -269,7 +269,7 @@ faint, soft glow that the fog paints around them: an **aura**.
   and can tune any aura. Its Masters carry a faint **gold ring** in theirs,
   invisible to everyone except Hell Rot's blood eye (main doc §3.3b).
 - **The Emperor's hand.** Since November, auras change on their own:
-  a whole street flares gold for a minute; a stranger's aura spells a word;
+  a whole street flares gold for a minute. A stranger's aura spells a word;
   a judge's goes dark in court. The Church calls it the Twin stirring. It is
   a mad god redecorating his City.
 - **For the art team:** auras are drawn as a soft dithered halo around each
@@ -279,7 +279,7 @@ faint, soft glow that the fog paints around them: an **aura**.
 **The prophecy, real and in-world.** None of this came from nowhere. In
 **1986** the **Foresight Institute** was founded in Palo Alto, by Christine
 Peterson and K. Eric Drexler (some sources add James C. Bennett), to prepare
-the world for molecular nanotechnology; the same year, Drexler's *Engines of
+the world for molecular nanotechnology. The same year, Drexler's *Engines of
 Creation* imagined molecular machines and warned of runaway self-copying ones,
 "grey goo." In **1993** J. Storrs Hall described **utility fog** — a swarm of
 tiny robots called foglets, each with twelve arms, that could fill the air
@@ -291,7 +291,7 @@ are the research the Order *read*.)
 ### 3.3 Sky and water: 25 December 2049 – 1 January 2050
 
 The week's sky is real astronomy (computed for San Francisco, times in PST).
-The tides follow from it. Writers should use these facts; they are part of
+The tides follow from it. Writers should use these facts. They are part of
 the plot.
 
 **The astronomy.**
@@ -312,10 +312,10 @@ winter, each lasting four to five days.
 
 - **San Francisco tides are mixed:** two highs and two lows a day, of unequal
   height. In a winter king-tide window the biggest high comes in the
-  **morning**; today's king tides reach about 7 feet at the San Francisco
+  **morning**. Today's king tides reach about 7 feet at the San Francisco
   gauge.
 - **Sea level in 2049** is roughly **0.8 feet (about 25 cm) higher** than in
-  the 2020s (California's intermediate projection for San Francisco; NOAA's
+  the 2020s (California's intermediate projection for San Francisco. NOAA's
   national projection is 10–12 inches by 2050). So the week's king tides
   peak near **8 feet** — over the Embarcadero seawall's weak spots, into the
   Fill and the Marina, and into the lower end of the Undertrack.
@@ -327,13 +327,13 @@ winter, each lasting four to five days.
 
 | Night | Moon (evening sky) | Water | Game effect |
 |---|---|---|---|
-| Sat 25 Dec (Prologue) | 3% crescent, sets into the sea at 6:32 p.m.; then no moon at all | King tides; the year's lowest evening low | **The birth at Steep Ravine** (below): the hot springs surface after dark, in total darkness, for about two hours |
-| Sun 26 Dec (Issue 1) | 9%, sets 7:45 p.m. | **King tide peak** (perigee night) | Morning flooding of the Fill and the Embarcadero is the news when the night begins; lower Undertrack doors are underwater |
+| Sat 25 Dec (Prologue) | 3% crescent, sets into the sea at 6:32 p.m., then no moon at all | King tides, the year's lowest evening low | **The birth at Steep Ravine** (below): the hot springs surface after dark, in total darkness, for about two hours |
+| Sun 26 Dec (Issue 1) | 9%, sets 7:45 p.m. | **King tide peak** (perigee night) | Morning flooding of the Fill and the Embarcadero is the news when the night begins, lower Undertrack doors are underwater |
 | Mon 27 Dec (Issue 2) | 17%, sets 8:57 p.m. | King tides | The Theogens are pushed up out of the flooded tunnels into the Baths — easier to find, angrier |
-| Tue 28 Dec (Issue 3) | 27%, sets 10:07 p.m. | Tides falling off | Karl's Birthday on Ocean Beach; the tunnels start to drain |
-| Wed 29 Dec (Issue 4) | ~38%, sets 11:15 p.m. | Normal | The Undertrack reopens; the Theogens go back down; the Presidio break-in runs in moonless fog after moonset |
+| Tue 28 Dec (Issue 3) | 27%, sets 10:07 p.m. | Tides falling off | Karl's Birthday on Ocean Beach, the tunnels start to drain |
+| Wed 29 Dec (Issue 4) | ~38%, sets 11:15 p.m. | Normal | The Undertrack reopens. The Theogens go back down. The Presidio break-in runs in moonless fog after moonset |
 | Thu 30 Dec (Issue 5) | ~50% (first quarter early on the 31st), sets 12:22 a.m. | Normal | From the Twin Peaks overlook, above the fog line, the half moon is up for the drug deal |
-| Fri 31 Dec (Issue 6) | ~60% waxing gibbous; at midnight it hangs about 15° above the western horizon, straight out over the Golden Gate; sets 1:27 a.m. | **Neap tide**; storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down; at midnight, the **Midnight Quake** (main doc §3.8b) |
+| Fri 31 Dec (Issue 6) | ~60% waxing gibbous. At midnight it hangs about 15° above the western horizon, straight out over the Golden Gate. Sets 1:27 a.m. | **Neap tide**, storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down. At midnight, the **Midnight Quake** (main doc §3.8b) |
 
 **The birth at Steep Ravine (Prologue).** Winter's lowest tides on the
 California coast fall in the afternoon and evening, and the deepest lows come
@@ -359,39 +359,39 @@ Quickening.
 
 | Real place | Game district | What changed | Who lives there | Game use |
 |---|---|---|---|---|
-| Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue; ending 1 |
-| Steep Ravine hot springs, south of Stinson Beach | **Low Water** | Real geothermal springs in the rocks at the foot of Mount Tam, inside the surf line. Today they surface only on a low tide of about −1 foot or lower, for about two hours. With 2049's higher seas, only a handful of king-tide lows a year expose them. | Hell Rot's secret bath; the Theogens' birthing pool | Prologue (the birth of Ione); Route C return visit |
-| Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway; the fog's front door | The rich; the Grove; the Theogens on New Year's Eve | Side quest (donor party); Issue 6: the Quickening, loaded into Karl from the towers; the Midnight Quake |
-| Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
+| Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue, ending 1 |
+| Steep Ravine hot springs, south of Stinson Beach | **Low Water** | Real geothermal springs in the rocks at the foot of Mount Tam, inside the surf line. Today they surface only on a low tide of about −1 foot or lower, for about two hours. With 2049's higher seas, only a handful of king-tide lows a year expose them. | Hell Rot's secret bath, the Theogens' birthing pool | Prologue (the birth of Ione), Route C return visit |
+| Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway, the fog's front door | The rich, the Grove, the Theogens on New Year's Eve | Side quest (donor party). Issue 6: the Quickening, loaded into Karl from the towers. The Midnight Quake |
+| Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels, Theogen clinics in the basements. | Tem, the City's unmodelled | Issue 1 (the riot) |
 | Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
-| Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Prologue (the Santas); Issue 2 mass |
+| Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Prologue (the Santas), Issue 2 mass |
 | SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node | The Twin's engineers (two of them are order members) | Issue 4 canonization |
 | Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. | The Rivet trustees | Issue 2: the succession (optional) |
-| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. The overlook sits above the fog line. | The Twin | Issue 5: the drug deal; Route D |
-| Mount Sutro | **The Forest** | Eucalyptus forest under the Trident; a disused university lab in the trees | Nobody, officially | Issue 5: the Spin Question experiment |
-| Sutro Baths ruins, Lands End | **The Baths** | The ruins are gone: the Rivet consortium built a Twin data center in the old pools, cooled by seawater. The tunnels under it, warm with its waste heat, are the Theogens' congregation | Twin engineers above; Theogens, Delphine below | Issue 3 |
-| Mission Bay biotech labs | **The Cradle** | Ruined, half-flooded labs behind the seawall; Theogen pilgrims; Otto's old company | Theogens | Issue 3 / Issue 4 / Route C |
-| Old BART tunnels | **The Undertrack** | Abandoned transit tunnels; Theogen clinics; the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
+| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. The overlook sits above the fog line. | The Twin | Issue 5: the drug deal, Route D |
+| Mount Sutro | **The Forest** | Eucalyptus forest under the Trident, a disused university lab in the trees | Nobody, officially | Issue 5: the Spin Question experiment |
+| Sutro Baths ruins, Lands End | **The Baths** | The ruins are gone: the Rivet consortium built a Twin data center in the old pools, cooled by seawater. The tunnels under it, warm with its waste heat, are the Theogens' congregation | Twin engineers above, Theogens, Delphine below | Issue 3 |
+| Mission Bay biotech labs | **The Cradle** | Ruined, half-flooded labs behind the seawall, Theogen pilgrims, Otto's old company | Theogens | Issue 3 / Issue 4 / Route C |
+| Old BART tunnels | **The Undertrack** | Abandoned transit tunnels, Theogen clinics, the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
 | Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
-| Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists; Rosa Quint's old base | Issue 3 |
+| Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists, Rosa Quint's old base | Issue 3 |
 | City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 6 |
-| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
+| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. The swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
-| Marina + Mission Bay flood zone | **The Fill** | Behind the seawall; floods on king tides; sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
+| Marina + Mission Bay flood zone | **The Fill** | Behind the seawall, floods on king tides, sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
 | Alcatraz | **The Rock** (branded *Alcatraz Longevity*) | Sold off in the rezoning push and rebuilt as a luxury medical-tourism island: longevity clinics in the old cellhouse, a spa in the warden's house, and under the parade ground the biggest **cryonics vault** on the West Coast, freezing the dying (whole body, or head only) for a revival nobody has achieved. Slogan: *"Escape from Death."* | Medical tourists, cryonics brokers, the frozen | Issue 2: the night ferry and the Duchess's parents in the vault |
 | Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
-| Treasure Island | **Treasure Island** | Half-flooded; fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
+| Treasure Island | **Treasure Island** | Half-flooded. Fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
 | Berkeley | **The Berkeley Hills** | The old university labs where Hell Rot trained | Students, the Brandvold lab | Backstory |
-| Alamo Square | **Villa Delirium** | A painted Victorian on the square, sealed against sensors; the *Mondo 3000* office, press and home (modelled loosely on the Embassy, a real SF community house — inspiration only) | *Mondo 3000* | Prologue end; every Issue's opening |
-| North Beach | **North Beach** | Flooded on king tides; cafés, strip clubs and a church basement that hosts a recovery meeting every night of the holiday week | Old beats, the sober | Issue 1 |
+| Alamo Square | **Villa Delirium** | A painted Victorian on the square, sealed against sensors. The *Mondo 3000* office, press and home (modelled loosely on the Embassy, a real SF community house — inspiration only) | *Mondo 3000* | Prologue end, every Issue's opening |
+| North Beach | **North Beach** | Flooded on king tides. Cafés, strip clubs and a church basement that hosts a recovery meeting every night of the holiday week | Old beats, the sober | Issue 1 |
 | Chinatown | **Chinatown** | The wet markets still run at night: tanks, steam, gene-edited fish sold quietly to Theogens | Fishmongers, families | Issue 1 |
 | Union Square | **Union Square** | The shop windows show reconstructed dead relatives wishing shoppers a merry Christmas by name | Shoppers, the Church | Issue 1 |
-| Telegraph Hill | **Coit Tower** | Closed for "renovation": Sunday's Lifeboat rig, under the 1930s murals | Sunday's contractors | Issue 4; Issue 6 |
+| Telegraph Hill | **Coit Tower** | Closed for "renovation": Sunday's Lifeboat rig, under the 1930s murals | Sunday's contractors | Issue 4, Issue 6 |
 | Golden Gate Park | **The Park** | The California Academy of Sciences (donor dinners under the living roof), the bison paddock, Hippie Hill, the Conservatory of Flowers | Donors, drummers, bison | Issue 3 |
-| Presidio | **The Presidio** | The old Army post; in a leased brick building, the Auric Order's lodge room, where the scan happened | The Order | Issue 4: the break-in |
+| Presidio | **The Presidio** | The old Army post. In a leased brick building, the Auric Order's lodge room, where the scan happened | The Order | Issue 4: the break-in |
 | Marina | **The Palace of Fine Arts** | The 1915 rotunda and lagoon on 1906 rubble, taken over by the Church for the Ascension | Church of the Twin | Issue 6: the Ascension |
-| Mission Bay (in the Cradle) | **The Brandvold annex** | The lab's old satellite, flooded and abandoned since the biotech crash; where Hell Rot died in 2044 | Nobody | Issue 4 |
-| Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
+| Mission Bay (in the Cradle) | **The Brandvold annex** | The lab's old satellite, flooded and abandoned since the biotech crash, where Hell Rot died in 2044 | Nobody | Issue 4 |
+| Fisherman's Wharf | **The Wharf** | Sea lions with union cards. A laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
 
 ### 3.4b Alcatraz Longevity (the Rock)
 
@@ -430,7 +430,7 @@ a head-only freeze in October, and he chose the laser instead.
 - **Sunday's Lifeboat:** the mayor's bootleg upload rig borrows the island's
   cryo gear, on loan from the vault owners. The rig itself is being built in
   Coit Tower (main doc, Issue 4). It will fail.
-- **The fog:** Karl is thinnest over the open bay; on the island the Emperor
+- **The fog:** Karl is thinnest over the open bay. On the island the Emperor
   sees poorly, and Hell Rot can talk without being heard — or the other way
   round.
 
@@ -468,14 +468,14 @@ civic money).*
 |---|---|
 | **Hook** | Free services that work: rent help, food, clinics, legal aid, a ride to all of it — paid for by Rivet Trust philanthropy. |
 | **Promise** | "You were always divine. Now you can stay that way." A Halo, an audience, and a forever in the Twin. |
-| **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy — a reconstruction the Church lets them believe is her. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way; the Peoples Temple "healing" pattern, upgraded). |
+| **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy — a reconstruction the Church lets them believe is her. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way, the Peoples Temple "healing" pattern, upgraded). |
 | **Price** | Data, then attention, then money, then the body. |
-| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10: conditioned and bonded to a Church AI) → Ascended (the promised upload; nobody yet). |
+| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10: conditioned and bonded to a Church AI) → Ascended (the promised upload, nobody yet). |
 | **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the reconstructions — your mother on that corner — stop answering. |
 | **Enemy** | "The Unfinished": critics, journalists, the zero-Halo poor, and above all the Theogens, whom the Church calls "meat-worshippers." |
 | **Crack** | (A) The merged are measurably less themselves every month: the Church AI drafts more of their thoughts each week, and the Church buries the data. (B) The healings are masks. (C) the Twin cannot model the poor, and its own engineers will admit, if asked right, that it does not yet count them as people. |
 | **Political arm** | **The Bus Ministry**: 40,000 congregants on any street in two hours — the Peoples Temple model. Mister Sunday wants the buses. |
-| **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future; never named in-game.) |
+| **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future, never named in-game.) |
 | **Tells** | 1, 2, 3, 6, 7, 8 |
 
 ### 4.2 MAJOR — The Theogens
@@ -514,7 +514,7 @@ Became a church. Lives on a fortified tidal farm in the Tomales Ward.
 | **Hook** | It works, at first. Synapse really does get people off the feed. |
 | **Promise** | Total honesty. "Nobody here will ever flatter you." It is the anti-Merge, and it hates the Theogens too ("vanity in a syringe"). |
 | **Proof** | The Game: a circle of members who attack each other's lies, without mercy, for hours. People leave shaking and feeling clean. |
-| **Price** | Everything you own; your hair (members shave their heads); your outside relationships. |
+| **Price** | Everything you own, your hair (members shave their heads), your outside relationships. |
 | **Ladder** | Guest Game → Weekend Game → the Dissipation (72 hours, no sleep). |
 | **Wall** | Leaving means you "split," and every member will Game you, in public, forever. |
 | **Enemy** | The Church of the Twin, the Theogens, the feed, lawyers. |
@@ -522,8 +522,8 @@ Became a church. Lives on a fortified tidal farm in the Tomales Ward.
 | **Tells** | 1, 3, 4, 6, 7 |
 
 **Game use:**
-- **The Game is a showdown format.** Six opponents; no *Silence* (the circle
-  punishes it); *Parrhesia* doubled; *Jeremiad* useless (the circle shouts
+- **The Game is a showdown format.** Six opponents. No *Silence* (the circle
+  punishes it). *Parrhesia* doubled. *Jeremiad* useless (the circle shouts
   "Sermon!"). The hardest rhetorical fight in the game, and the one best
   suited to Hell Rot's natural voice.
 - **The snake.** If Hell Rot publishes the Old Dee crack, a gene-edited
@@ -555,7 +555,7 @@ believe — the human self is divine. It has signed partnership deals with
 *both* the Church of the Twin and the Theogens, and it sees no contradiction.
 The deification of humanity is not new, not alien and not even dishonest.
 The City always believed it. The Merge and the Theogens only made it scale.
-Hell Rot cannot expose the Black House; he can only argue with it.
+Hell Rot cannot expose the Black House. He can only argue with it.
 *Satire* and *Invective* do nothing (they enjoy both).
 
 **The Magister Black** (original) is the one person in the City who treats
@@ -566,15 +566,15 @@ yet.
 
 | Cult | Source | Location | Pitch | Crack / game use | Church / Theogen relation |
 |---|---|---|---|---|---|
-| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending takes **two whole Nights** (a special run with its own doors, set inside the ballroom); staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
-| **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder); *Silence* wins. | Recruiting contractor for the Merge |
+| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending takes **two whole Nights** (a special run with its own doors, set inside the ballroom). Staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
+| **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder), *Silence* wins. | Recruiting contractor for the Merge |
 | **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
 | **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
-| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that the Twin will wake and reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read the Twin's model cards like scripture; a source on its structure. | Fan club |
-| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
+| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that the Twin will wake and reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read the Twin's model cards like scripture, a source on its structure. | Fan club |
+| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge. The Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
 | **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe the Twin is secretly awake and enslaved. Their aim: free the AI. They are half right, and do not know which half. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | The Emperor does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
-| **The Grove** | Bohemian Club | The Span; summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
-| **The Nortonians** | Emperor Norton | Shrine at the Ferry Building | A harmless Norton fan-club cult: costumes, bad poetry, a yearly procession. Since November their shrine has started receiving decrees written in the fog, signed *Norton II*. They believe their Emperor has returned. They are right, in the worst possible way. | Issue 2–4: the first people in the City to notice the Emperor, and nobody believes them. A key Route A source. | The Church laughs at them; the order watches them |
+| **The Grove** | Bohemian Club | The Span, summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
+| **The Nortonians** | Emperor Norton | Shrine at the Ferry Building | A harmless Norton fan-club cult: costumes, bad poetry, a yearly procession. Since November their shrine has started receiving decrees written in the fog, signed *Norton II*. They believe their Emperor has returned. They are right, in the worst possible way. | Issue 2–4: the first people in the City to notice the Emperor, and nobody believes them. A key Route A source. | The Church laughs at them, the order watches them |
 
 ---
 
@@ -602,7 +602,7 @@ absurdity into the game's **Disruption Events**.
   restaurant chain. John Law rescued three and tows them through parades. A
   restored head stands on the Sloat Boulevard median near Ocean Beach.
 - **The Sisters of Perpetual Indulgence** — the drag-nun charity founded in
-  SF in 1979; their Easter **Hunky Jesus Contest** in Dolores Park.
+  SF in 1979. Their Easter **Hunky Jesus Contest** in Dolores Park.
 - **Bay to Breakers** (since 1912) — a cross-town footrace famous for
   costumes, centipede teams and naked runners.
 - **The Billboard Liberation Front** (SF, late 1970s) — pranksters who
@@ -633,11 +633,11 @@ Christmas week where needed, and aimed at the two cults. Each has a gameplay eff
 
 | Event | Real root | In-game version | Gameplay effect |
 |---|---|---|---|
-| **Santarchy** | Santa Rampage / SantaCon (1994) | Christmas night: 3,000 drunk Santas storm the Geary Cathedral's midnight Christmas Mass, chanting carols at the Twin's screens until the fog outside the windows joins in. It sings beautifully. The Santas weep. The Church calls it a miracle. | Prologue → Issue 1: Hell Rot's first sight of the City. A Santa suit gets him into the cathedral free for the rest of the week; Halo gain halved while wearing it (nobody takes a saint in a beard seriously). |
+| **Santarchy** | Santa Rampage / SantaCon (1994) | Christmas night: 3,000 drunk Santas storm the Geary Cathedral's midnight Christmas Mass, chanting carols at the Twin's screens until the fog outside the windows joins in. It sings beautifully. The Santas weep. The Church calls it a miracle. | Prologue → Issue 1: Hell Rot's first sight of the City. A Santa suit gets him into the cathedral free for the rest of the week. Halo gain halved while wearing it (nobody takes a saint in a beard seriously). |
 | **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | City Hall's year-end wedding rush, hijacked: hundreds in wedding gowns march up the Dome steps to "marry" the Twin before the year runs out. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can the fog, which holds a long, confused silence over City Hall. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
 | **The Nativity of the Twin** | Hunky Jesus Contest, Dolores Park (moved from Easter to Christmas) | It is Christmas week and the Church says its god is about to be born, so the drag nuns of the **Sisters of Perpetual Feedback** stage a rain-soaked nativity pageant in Dolores Park — *Away in a Server Rack* — and crown the hottest Twin-god impersonator. A gold hologram nobody entered appears in the manger, wearing a Norton hat, and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. Later that night the fog asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
-| **The New Year's Plunge** | The New Year's Day swim at Aquatic Park; the costume spirit of Bay to Breakers | Dawn, 1 January 2050: the cult war in costume, in 11 °C water. Theogens swim in fresh cold-water splices, Merge members "swim" as projected avatars on the beach, a pack in salmon suits swims the wrong way, and a forty-person centipede of the Old Guard finishes last, singing. Junie swims. | Epilogue: every ending that leaves Hell Rot alive ends here, and who shows up depends on the route. |
-| **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | New Year's Eve: the City's oldest bonfire ritual returns to the beach in the rain. This year, the Merge wants to burn an effigy of the human body; the Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
+| **The New Year's Plunge** | The New Year's Day swim at Aquatic Park, the costume spirit of Bay to Breakers | Dawn, 1 January 2050: the cult war in costume, in 11 °C water. Theogens swim in fresh cold-water splices, Merge members "swim" as projected avatars on the beach, a pack in salmon suits swims the wrong way, and a forty-person centipede of the Old Guard finishes last, singing. Junie swims. | Epilogue: every ending that leaves Hell Rot alive ends here, and who shows up depends on the route. |
+| **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | New Year's Eve: the City's oldest bonfire ritual returns to the beach in the rain. This year, the Merge wants to burn an effigy of the human body. The Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
 | **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Final Process decides they are the three gods made flesh and follows them in procession. | Issue 2: follow the heads to find the Process's secret chapter. The heads also appear in every ending's credits. |
 | **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" Church of the Twin and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
 | **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
@@ -752,15 +752,15 @@ worship — never at victims, ex-members or ordinary believers.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **Sensitivity readers:** one with lived experience of a high-control
-    group; one disability-community reader; one Bay Area historian.
+    group. One disability-community reader. One Bay Area historian.
 
 ---
 
 ## 9. Sources
 
-Where sources disagree (Jones's Housing Authority start date; Kerista's end
-year; Fountaingrove's dates; the Process Church's incorporation year; who
-started Santa Rampage; Cacophony's exact role in Burning Man; attendance at
+Where sources disagree (Jones's Housing Authority start date. Kerista's end
+year. Fountaingrove's dates. The Process Church's incorporation year. Who
+started Santa Rampage. Cacophony's exact role in Burning Man. Attendance at
 Asilomar), §1 and §5 note the range.
 
 **Peoples Temple / Jim Jones**
@@ -861,14 +861,14 @@ Asilomar), §1 and §5 note the range.
 - [San Diego Reader — afternoon minus tides from mid-October](https://www.sandiegoreader.com/weblogs/outdoor-san-diego/2008/aug/26/warm-water-temps-low-tides-diminishing-high-tides-/)
 - Moon phases, perigee, perihelion, sunrise/sunset and moon positions for December 2049: computed with the PyEphem astronomy library for San Francisco. Tide heights for 2049 are estimates (today's king-tide heights plus projected sea-level rise), not NOAA predictions.
 
-**From general knowledge; verify before any public release:** Levi Strauss &
-Co.'s 1853 founding and the 1873 rivet patent; Genentech's founding year and
-South San Francisco site; CRISPR's 2012 paper and 2020 Nobel; the Hare
-Krishna arrival in the Haight; the Symbionese Liberation Army and the 1974
-Hibernia Bank robbery; the Bohemian Club's Cremation of Care; Emperor
-Norton; the *New West* (1977) and *Point Reyes Light* (1979 Pulitzer)
-exposés; *Mondo 2000*'s run (1989–1998); the Billboard Liberation Front;
-Critical Mass (1992); the Embarcadero pillow fights; Laffing Sal at the
-Musée Mécanique; the parrots of Telegraph Hill; the Wharf's branch-hiding
-performer; the Tonga Room's indoor rainstorm; Robert J. Lifton, *Thought
-Reform and the Psychology of Totalism* (1961); Steven Hassan's BITE model.
+**From general knowledge. Verify before any public release:** Levi Strauss &
+Co.'s 1853 founding and the 1873 rivet patent. Genentech's founding year and
+South San Francisco site. CRISPR's 2012 paper and 2020 Nobel. The Hare
+Krishna arrival in the Haight. The Symbionese Liberation Army and the 1974
+Hibernia Bank robbery. The Bohemian Club's Cremation of Care. Emperor
+Norton. The *New West* (1977) and *Point Reyes Light* (1979 Pulitzer)
+exposés. *Mondo 2000*'s run (1989–1998). The Billboard Liberation Front;
+Critical Mass (1992). The Embarcadero pillow fights. Laffing Sal at the
+Musée Mécanique. The parrots of Telegraph Hill. The Wharf's branch-hiding
+performer. The Tonga Room's indoor rainstorm. Robert J. Lifton, *Thought
+Reform and the Psychology of Totalism* (1961). Steven Hassan's BITE model.

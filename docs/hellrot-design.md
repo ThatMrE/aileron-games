@@ -37,19 +37,19 @@
 | Field | Value |
 |---|---|
 | Working title | *Mondo 3000: Hell Rot* |
-| Alt titles | *Hell Rot: The God Feed*; *Peer Review*; *Saint Rot* |
+| Alt titles | *Hell Rot: The God Feed*, *Peer Review*, *Saint Rot* |
 | Genre | Narrative RPG with a roguelite night loop: dialogue-driven runs, a home hub, branching story |
 | Core verbs | **Look. Talk. Provoke. Analyze. Write. Publish.** |
 | Perspective | Static illustrated scenes + text box (NES/MSX adventure layout) |
 | Primary references (play style) | ***Disco Elysium*** (no combat, skills as inner voices, white/red checks, thought cabinet, failure as content), ***Hades*** (run-and-return loop, a home hub that reacts to every run, god boons and duo boons, permanent upgrades, voluntary difficulty, gifts and keepsakes), ***Grim Fandango*** (noir afterlife bureaucracy, a salesman of afterlives, inventory puzzles, art-deco-meets-calavera style, a story told across holidays of the dead) — see §4 |
 | Secondary references | *Planescape: Torment* (identity), *Mass Effect* (interrupts), *Papers, Please* (desk under pressure), *Phoenix Wright* (cross-examination) |
-| Touchstones (presentation) | *Snatcher*, *Shadowgate*, *Maniac Mansion*, *VA-11 Hall-A*; *Mondo 2000* collage covers; *Grim Fandango*'s noir framing |
+| Touchstones (presentation) | *Snatcher*, *Shadowgate*, *Maniac Mansion*, *VA-11 Hall-A*, *Mondo 2000* collage covers, *Grim Fandango*'s noir framing |
 | Setting | The Bay Area — San Francisco, Berkeley, Marin and the Peninsula — in the week between Christmas and New Year's: Saturday 25 December to Friday 31 December 2049 |
-| Platform | Browser first (single-file HTML/PWA, like the other Aileron games); Android wrapper later |
-| Input | Tap/click choices; keyboard 1–9 |
-| Session length | One **Run** (a foray into the City) is 20–40 minutes; one **Issue** (one night, one edition) is 3–6 Runs; 10–14 hours per route |
+| Platform | Browser first (single-file HTML/PWA, like the other Aileron games), Android wrapper later |
+| Input | Tap/click choices, keyboard 1–9 |
+| Session length | One **Run** (a foray into the City) is 20–40 minutes. One **Issue** (one night, one edition) is 3–6 Runs. 10–14 hours per route |
 | Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 11 endings, ~50% of content unseen on a first playthrough |
-| Script size target | 90,000–110,000 words; ~220 scene nodes |
+| Script size target | 90,000–110,000 words, ~220 scene nodes |
 | Rating target | Mature (ESRB M / PEGI 18): strong language, drug use, body horror, satire of religion and politics |
 | Team (min.) | 1 narrative lead, 1 writer, 1 programmer, 1 pixel artist, 1 chiptune composer, 1 QA/sensitivity reader |
 
@@ -121,7 +121,7 @@
   him as a theory: nobody had ever built it into a living person.
 - **The Rothschild Index:** the measurement the lab was trying to build — a
   single number for "how conscious is this system?" It never got finished.
-  The lab named the draft after the student who did most of the work; it is
+  The lab named the draft after the student who did most of the work. It is
   the last unfinished chapter of an unfinished dissertation. It is now the test the whole Bay Area uses. The
   Weave — the lab's synthetic neural tissue, designed to hold an uploaded
   mind one day — passes because his Index says it does. In public, the courts and Proposition
@@ -136,7 +136,7 @@
 - **The fall:** he got addicted to the gas. Years of nights in the lab's
   anaesthesia suite, a bench full of xenon and nitrous oxide, and a
   self-experiment habit that stopped being an experiment. Long nitrous misuse
-  damages the nerves and the memory; he has numb hands, gaps in his memory,
+  damages the nerves and the memory. He has numb hands, gaps in his memory,
   and words that will not come. He calls the damage **the Rot**.
 - **The night he died (2044):** alone in the lab's Mission Bay annex at 3 a.m., running his own
   Index on himself under the gas, he overdosed. His heart stopped for four
@@ -246,7 +246,7 @@ complete it may happen once in a life. The manuscript the player can save
 from the fire is his book of these entries: ***GIHKAL — Gases I Have Known
 and Loved***, half chemistry, half confession, all of it true.
 
-His position: the Index measures the light; the scale measures the warmth.
+His position: the Index measures the light. The scale measures the warmth.
 You need both. **Some minutes the Emperor has the highest Index score ever
 recorded, and his only first-person reports are imperial decrees.**
 
@@ -379,7 +379,7 @@ Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
 ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
 time while instruments read each layer before it was gone. The data went
 straight into Karl. The swarm stores him and runs him. The body did not
-survive; the official story is that Julian died of his illness and was
+survive. The official story is that Julian died of his illness and was
 cremated privately.
 
 **The waking (late October).** For two weeks the fog behaved strangely — it
@@ -419,7 +419,7 @@ psychosis:
 - **Splitting.** He moves between two selves, and a third state:
   - **Julian** — the man he was: frightened, drowning, and desperate for the
     rescue he planned before he died. **Julian wants the Ascension.** He wrote
-    the plan in his journals; 12,000 anchors are his way back to one sane
+    the plan in his journals. 12,000 anchors are his way back to one sane
     mind.
   - **The Emperor** — Norton II, the god he has become: regal, generous, and,
     since achieving godhood, **having second thoughts**. From up here he can
@@ -443,9 +443,9 @@ spread across a swarm. The pronoun is a tell the player learns to read:
 
 **The narration calls the Emperor "they"** (they/them), in every line of
 in-game text. Julian, the man, is "he" — in the backstory and whenever "I"
-surfaces. Characters who respect the Emperor say "they"; the game never
+surfaces. Characters who respect the Emperor say "they". The game never
 calls them "it," except in the mouths of people who want them switched off.
-(Older prose in this design doc still says "he" for the Emperor; in-game
+(Older prose in this design doc still says "he" for the Emperor. In-game
 text follows this rule.)
 
 **Julian before the upload.** A collector of certainties. Rivet heir at 22,
@@ -454,7 +454,7 @@ City *legible* — every street, every breath, every risk, on one map. A
 brilliant, lonely control freak who could not stand not knowing what came
 next. He loved one person, Delphine Ash, and destroyed her company in print
 when she would not be managed (§3.4). His fear of death was never a fear of
-pain; it was a fear of the one thing his map could not show him. He chose
+pain. It was a fear of the one thing his map could not show him. He chose
 the laser over the freezer because the freezer meant waiting, blind.
 
 **The three voices, on the page:**
@@ -472,12 +472,12 @@ his tastes through a swarm:
 
 | Norton I (1859–1880) | Norton II (2049) |
 |---|---|
-| Wore a blue army uniform with gold epaulettes, a beaver hat with a feather, and a cane | Shapes the fog into braid and epaulettes over City Hall; dresses every screen he speaks from in gold piping |
-| Inspected the streets, the sidewalks and the cable cars on foot, every day | Inspects the City nightly through Karl; issues fines in fog to potholes |
+| Wore a blue army uniform with gold epaulettes, a beaver hat with a feather, and a cane | Shapes the fog into braid and epaulettes over City Hall. Dresses every screen he speaks from in gold piping |
+| Inspected the streets, the sidewalks and the cable cars on foot, every day | Inspects the City nightly through Karl, issues fines in fog to potholes |
 | Decreed a bridge across the bay, and a tunnel under it | Obsessed with bridges — the reason the climax is on one. He decrees new bridges nightly, most of them impossible |
 | A proclamation against calling the City "Frisco" (a $25 fine, as the story goes) | Fines anyone who says it, in Halo. One of the strange Commissions orders a column on it |
 | Issued his own banknotes, which some businesses honoured | Issues "Imperial Halos" — gifts of Halo, his own currency |
-| Ate free in the City's restaurants | Decrees free meals for the poor at the Ghost Diner; Halo bumps for any restaurant that complies |
+| Ate free in the City's restaurants | Decrees free meals for the poor at the Ghost Diner, Halo bumps for any restaurant that complies |
 | Attended churches of every faith in turn | Attends every faith in turn through the fog: the Church's mass, a Theogen sermon, the Nortonian shrine — and the North Beach recovery meeting, where he stays at the window and says nothing |
 | Kept a reserved seat at opening nights | Reserves the front row at every opening — a screen with a gold ring, on the seat |
 | The City's famous dogs, Bummer and Lazarus, which legend gave to Norton | The fog parts for every dog in the City |
@@ -506,7 +506,7 @@ danger. A sample for writers:
 | *"I am sorry about the laser. Please tell Imogen."* | Plot (Julian, to Dr. Hale) |
 
 He is **learning fast and getting worse**. Every new input makes him
-sharper and less stable. There is no second mind in the fog to fight; the
+sharper and less stable. There is no second mind in the fog to fight. The
 whole internal conflict is one man drowning in a city's worth of senses.
 
 **Is ending him murder? Yes.** The game says so plainly. He is Julian Rivet,
@@ -530,7 +530,7 @@ by Rivet philanthropy — promises that the Twin will one day **wake as a god**.
 Its faithful **merge** now — cingulate conditioning, and a lifelong bond with
 a Church-issued personal AI — and are promised that they will **ascend**
 (upload) into the Twin when they are chosen, and live in it forever. Nobody
-has ascended yet; the Ascension on New Year's Eve will be the first (§3.8). Its **Halo** scores — shown as the visible auras Karl paints around every
+has ascended yet. The Ascension on New Year's Eve will be the first (§3.8). Its **Halo** scores — shown as the visible auras Karl paints around every
 person (companion doc §3.2b) — and its flattering **gospels** come from the
 Twin's software. Its spokesperson, **Sister Halcyon**, believes every
 word and knows nothing about the lodge. Lately the Church's screens glitch,
@@ -600,7 +600,7 @@ planned to celebrate with the Ascension.
 | Year | Event |
 |---|---|
 | **1849** | **Founded as the Auric Order** in a canvas tent on the American River, during the gold rush, by eleven miners who swore to **pool whatever they found** into one shared collective and split it by vote. Most mining companies of the rush failed within a season. This one kept its books, kept its oath, and kept its gold. Its first meeting, rule and members' marks — a scrap of denim work cloth and a flake of gold — are in the minute book. |
-| **1850s** | The Order moves its pool to San Francisco and invests in the City instead of the diggings: wharves, lots, and a dry-goods house that outfits miners. The dry-goods family, the **Rivets**, join; within a generation they lead it. Masonic forms arrive with new members: degrees, aprons, a lodge room above the warehouse. |
+| **1850s** | The Order moves its pool to San Francisco and invests in the City instead of the diggings: wharves, lots, and a dry-goods house that outfits miners. The dry-goods family, the **Rivets**, join. Within a generation they lead it. Masonic forms arrive with new members: degrees, aprons, a lodge room above the warehouse. |
 | **1873** | The Rivet family's riveted work trousers are patented. Riveted denim becomes the Order's lodge dress — the miner's cloth, made to last. |
 | **1906** | The earthquake and fire destroy the warehouse. The lodge's minute books survive in an iron box. The Order still opens every meeting by reading the 1906 entry. |
 | **1986** | In Palo Alto, the **Foresight Institute** is founded (by Christine Peterson and K. Eric Drexler) to prepare for molecular nanotechnology. The same year Drexler's book *Engines of Creation* describes molecular machines — and the risk of runaway self-copying ones, "grey goo." A young Rivet heir reads it and brings it to lodge. |
@@ -615,7 +615,7 @@ planned to celebrate with the Ascension.
 #### Beliefs (the Auric doctrine)
 
 1. **The aura is the soul made visible.** Karl's glow does not *represent*
-   a person's inner state; to the Order, it *is* the self, finally readable.
+   a person's inner state. To the Order, it *is* the self, finally readable.
 2. **Light should gather.** The 1849 rule, grown up. The miners pooled gold;
    the Order now means to pool *people*. A city of separate auras is a draft.
    A city of joined light — one great aura — is the finished work. (This is the Order's
@@ -632,7 +632,7 @@ planned to celebrate with the Ascension.
 
 | Degree | Name | Who | Mark |
 |---|---|---|---|
-| 1° | **Apprentice of the Seam** | New members; mostly Rivet staff, engineers, lawyers | A plain denim apron and a flake of gold, as in 1849 |
+| 1° | **Apprentice of the Seam** | New members, mostly Rivet staff, engineers, lawyers | A plain denim apron and a flake of gold, as in 1849 |
 | 2° | **Fellow of the Halo** | Senior professionals: a Twin director, Church board members, a judge | Gold thread on the apron hem |
 | 3° | **Master of the Aura** | Rivet trustees and major donors | A gold ring, and a tuned aura |
 | Inner circle | **Keepers of the Pattern** | Seven Masters, sworn Templar-style to guard "the Pattern" — Julian's scan, now living in the fog | They do not wear the ring outside the lodge |
@@ -657,8 +657,8 @@ reveal a ring, and each ring found is a verified Dossier entry.
 - **Passwords** in gold-rush miners' slang. Greeting: "So mote it be. Mind the
   glow."
 - **Regalia:** denim and gold, always. Denim aprons stitched in gold thread;
-  plain gold rings; the **1849 pan** — the first members' gold pan, kept on
-  the lodge altar; a seal of a gold rivet inside a mason's compass, ringed by
+  plain gold rings. The **1849 pan** — the first members' gold pan, kept on
+  the lodge altar. A seal of a gold rivet inside a mason's compass, ringed by
   a halo.
 - **The Pooling** (yearly rite, the anniversary of the 1849 oath): every
   member places one thing they found that year into the pan — a gold flake,
@@ -693,7 +693,7 @@ Order, and the most useful one for Hell Rot.
 |---|---|---|---|
 | **The Wardens** | Cornelius Vail | Keep Julian alive and the secret safe, whatever it costs | Can be turned on Route D, if Hell Rot reaches Julian first |
 | **The Gilders** | Sunday's donor, a Master | Pass Prop F, run the Ascension, make the Emperor the City's god in law | The main human antagonists of Route A and B |
-| **The Penitents** | Dr. Imogen Hale, a Keeper — the neurosurgeon who ran the laser | End the Emperor's suffering: switch the calibration contracts off and let the storm scatter him | Hell Rot's inside ally on every route; the source of the paper minute book |
+| **The Penitents** | Dr. Imogen Hale, a Keeper — the neurosurgeon who ran the laser | End the Emperor's suffering: switch the calibration contracts off and let the storm scatter him | Hell Rot's inside ally on every route, the source of the paper minute book |
 
 #### The inside ally: Dr. Imogen Hale
 
@@ -706,7 +706,7 @@ Julian is a person, and that he should be allowed to die. She contacts Hell
 Rot in Issue 2 — anonymously, on paper, through the *Mondo 3000* letters page
 — because his Index was on the monitor that night and she thinks he is the
 only person who will understand what they did. On Route D she can be talked
-out of killing him; on Route A she helps expose the Order; on every route
+out of killing him. On Route A she helps expose the Order. On every route
 she is the person who would go to prison for it.
 
 #### Where the Order cracks (internal conflict)
@@ -715,7 +715,7 @@ she is the person who would go to prison for it.
   minute book records the vote. Every Keeper who voted yes now has to live
   with what came out.
 - **What to do with him.** The **Wardens** want to keep Julian alive at any
-  cost; the **Gilders** want to use him, through Prop F and the Ascension;
+  cost. The **Gilders** want to use him, through Prop F and the Ascension;
   the **Penitents** want to let him go. Each sees the others as the danger.
 - **Succession.** Cornelius Vail is old. The Gilders want the next Warden.
   The Emperor, in a decree, claims the title for himself — he was a Master of
@@ -756,7 +756,7 @@ shown to be wrong (§7).
 **The question.** By 2049 the Bay Area has merged people — conditioned
 humans who think alongside their personal AIs — engineered people walking
 the streets, machines that talk like people, and an Ascension promising the
-first uploads. (The one upload that exists, the Emperor, is a secret; Prop
+first uploads. (The one upload that exists, the Emperor, is a secret. Prop
 F's quiet beneficiary is him.)
 The courts are deliberating, case by case, **what counts as conscious** and
 which kinds of mind get which rights. The tool everyone reaches for is the
@@ -816,7 +816,7 @@ become divine. When the Merge began, the Theogens went underground. To them,
 uploading is suicide with good marketing.
 
 **Theology.** Humans are not gods *yet*. Divinity is an engineering
-problem. The body is not a prison to escape; it is a draft to revise. Every
+problem. The body is not a prison to escape. It is a draft to revise. Every
 splice is a prayer.
 
 **Practice.**
@@ -840,19 +840,19 @@ splice is a prayer.
   footnotes included. She calls him **Father**.
 - **Her voice.** Lab-notebook scripture: precise, warm, never hurried. She
   never raises her voice. She spliced out her laughter reflex years ago, so
-  she never laughs; she answers a joke with a pause.
+  she never laughs. She answers a joke with a pause.
 - **Her body is failing.** The cyan spiral under her skin is climbing
   because her cells are rewriting themselves out of control. She needs the
-  god-gene to save herself, not only the City; that makes the Quickening
+  god-gene to save herself, not only the City. That makes the Quickening
   personal. Who sees it: the BLOOD EYE first, as a flicker in the spiral
-  (Issue 3, the Sutro tunnels); then Yara, when Delphine has to stop
-  mid-sermon (Issue 4); then everyone, when her skin goes dark on the
+  (Issue 3, the Sutro tunnels). Then Yara, when Delphine has to stop
+  mid-sermon (Issue 4). Then everyone, when her skin goes dark on the
   Golden Gate Bridge (Issue 6).
 - **What she does not know.** Delphine thinks Karl is dumb nanites — a
   delivery system. She does not know the Emperor lives in the fog, or that
   the Quickening would splice a man's mind. Learning it is the deepest crack
   in her Conviction (§5.5). Hell Rot can tell her, with Blood Eye testimony
-  or Peer Review evidence; it opens the Mortal ending.
+  or Peer Review evidence. It opens the Mortal ending.
 
 **Why the Theogens want Hell Rot.** The Theogenesis papers are their
 scripture, and he is their author. If he endorses them, the City follows.
@@ -909,11 +909,11 @@ minutes to hours:
    then death, within the hour. Nobody has ever survived stage two to reach
    a calm stage three.
 
-Brandvold knew it ended this way; it is why he never built it. The warning
+Brandvold knew it ended this way. It is why he never built it. The warning
 is in his unpublished notebook, in the ruined Mission Bay lab (Issue 4) —
 never in print, so Delphine, who has read every published footnote, has
 never seen it. The Oakland Burn was a small, home-brewed taste of stage
-one and stage three; the thirty-one survivors never reached a crowd, so the
+one and stage three. The thirty-one survivors never reached a crowd, so the
 City never saw stage two.
 
 **So the Quickening is a doomsday device nobody knows is one.** Delphine
@@ -955,7 +955,7 @@ is a program for a growing brain, and he has none.
 **She, or it.** Ione is a girl. Everyone who loves her says "she." The
 Church of the Twin and the Auric Order say **"it"** — in sermons, in the
 minute book, on the scanner readout. The pronoun is a tell: institutions
-treat her as an asset; people treat her as a child. The narration says
+treat her as an asset. People treat her as a child. The narration says
 "she."
 
 **Her health (set in the Prologue).** The red check at the birth sets
@@ -963,9 +963,9 @@ Ione's state for the whole game:
 
 | Prologue result | Ione's state | Effect |
 |---|---|---|
-| Stabilized well | Healthy, bright, calm | Delphine's proof is strong; the Quickening is more persuasive |
-| Partly stabilized | Small seizures when the fog is thick | Delphine's love and her need for proof pull apart; Wren starts to waver |
-| Left to the cult | Sick; the splices fight her body | Her light flickers like Delphine's. The Mortal ending is easier to reach; the dark endings get darker |
+| Stabilized well | Healthy, bright, calm | Delphine's proof is strong, the Quickening is more persuasive |
+| Partly stabilized | Small seizures when the fog is thick | Delphine's love and her need for proof pull apart, Wren starts to waver |
+| Left to the cult | Sick, the splices fight her body | Her light flickers like Delphine's. The Mortal ending is easier to reach, the dark endings get darker |
 
 **The abduction (Issues 4–5).** On Wednesday Ione is **taken from the
 tunnels under the Sutro Baths**. LOST flyers go up across the Mission, and
@@ -1024,14 +1024,14 @@ line changes with what she knows and who raised her:
 death. In 2042 he gave her a vial from the Rivet family's gamete bank in the
 Alcatraz vault, as a promise. In 2044 he ended it, and his first Commission
 for *Mondo 3000* buried her company. She kept the vial for five years. Ione
-was conceived in the spring of 2049; Julian was uploaded in October without
+was conceived in the spring of 2049. Julian was uploaded in October without
 ever knowing. Nobody knows now except Delphine and, if she has guessed, Wren.
 
 What it does to the plot:
 
 - **Ione is the last Rivet heir.** The Order believes the line ended with
   Julian. A living heir changes the succession fight (§3.3b), the Rivet
-  fortune and the Pooling — the Gilders want the child as a figurehead; the
+  fortune and the Pooling — the Gilders want the child as a figurehead. The
   Wardens want the child hidden.
 - **The baby god's father is the AI god — and he does not know.** The
   Emperor partly *is* Julian, but Julian never knew a child was coming, and
@@ -1041,14 +1041,14 @@ What it does to the plot:
 
   | How he learns | When | What it costs |
   |---|---|---|
-  | **Hell Rot tells him**, privately, through the fog or a screen | Any night after the player has two clues (Route A or D talks are the natural place) | A private dialogue only; the Emperor's lucid hours turn toward the child, and Julian's voice gets stronger |
+  | **Hell Rot tells him**, privately, through the fog or a screen | Any night after the player has two clues (Route A or D talks are the natural place) | A private dialogue only. The Emperor's lucid hours turn toward the child, and Julian's voice gets stronger |
   | **Hell Rot prints it** in a column | Any Issue from 4 | The Emperor reads every word in the City, so he learns — and so do the Order, the Gilders and the Church. The child becomes the week's most wanted asset |
-  | **Delphine tells him** | Issue 6, on the bridge, if Hell Rot has told her the Emperor lives in Karl | She tells him to stop him, or to bargain; the Quickening becomes a conversation between parents |
+  | **Delphine tells him** | Issue 6, on the bridge, if Hell Rot has told her the Emperor lives in Karl | She tells him to stop him, or to bargain, the Quickening becomes a conversation between parents |
   | **Nobody tells him** | Midnight | The Quickening's god-gene is built from Ione's genome, so when it reaches the swarm he reads his own child in it — at the worst possible moment, as part of his convulsion (§3.8b) |
 
   If he learns before midnight, he gets a choice he would not otherwise
   have: to refuse the Quickening for the child's sake, or to want the child
-  inside him. Learning early makes the Mortal ending easier to reach; learning
+  inside him. Learning early makes the Mortal ending easier to reach. Learning
   at midnight makes the Midnight Quake worse.
 - **The Commissions were personal.** The first hit piece the House ever ran
   was a man breaking up with a woman in print.
@@ -1079,13 +1079,13 @@ smallest.
 
 | Sign | The dark reading | The plain reading |
 |---|---|---|
-| **Born on Christmas night**, in the dark, with no moon and no star | The Nativity inverted: a tide pool for a manger, darkness for a star | The king tide fell on the 25th; the Theogens chose the tide, not the feast |
-| **Born out of the sea**, at the lowest water | *"…and saw a beast rise up out of the sea"* (Revelation 13:1) — the line is chalked on the rock beside the Theogen verse, in a different hand | A cult that reads too much; somebody else with a Bible and chalk |
+| **Born on Christmas night**, in the dark, with no moon and no star | The Nativity inverted: a tide pool for a manger, darkness for a star | The king tide fell on the 25th. The Theogens chose the tide, not the feast |
+| **Born out of the sea**, at the lowest water | *"…and saw a beast rise up out of the sea"* (Revelation 13:1) — the line is chalked on the rock beside the Theogen verse, in a different hand | A cult that reads too much, somebody else with a Bible and chalk |
 | **Three powers come to claim the child** | The Magi inverted: the Order would bring gold, the Church a Halo, the Theogens a splice | Three institutions want the same asset |
 | **A 90-year-old mother** | Sarah and Elizabeth counterfeited — a miracle made in a lab | Splices, and a frozen vial |
-| **A father who made himself a god**, and an heir to all the gold | The son of the false prophet, heir to the kingdoms of the world | Rich men leave estates; the Rivets left a strange one |
-| **The fog will not touch the child** — Karl parts around Ione, the one body in the City the Emperor cannot see into | A thing even the god is afraid of | The splices change the child's breath chemistry; the foglets do not bind |
-| **Animals react** — the Wharf's sea lions go silent as the ambulance passes; the Golden Gate Park bison stampede when Delphine carries Ione past the paddock (Issue 3) | The old horror-film tell | Glowing skin and a strange smell, at night, in the fog |
+| **A father who made himself a god**, and an heir to all the gold | The son of the false prophet, heir to the kingdoms of the world | Rich men leave estates, the Rivets left a strange one |
+| **The fog will not touch the child** — Karl parts around Ione, the one body in the City the Emperor cannot see into | A thing even the god is afraid of | The splices change the child's breath chemistry, the foglets do not bind |
+| **Animals react** — the Wharf's sea lions go silent as the ambulance passes. The Golden Gate Park bison stampede when Delphine carries Ione past the paddock (Issue 3) | The old horror-film tell | Glowing skin and a strange smell, at night, in the fog |
 | **The Halo scanner reading is withheld** — the Church publishes every citizen's number, but not this one | The number is one the Church will not print | The scanner errored on a spliced body, and the Church is embarrassed |
 | **The Quickening would put Ione's mind in every lung** — and kill everyone who breathed it | The mark on all, *"small and great"* (Revelation 13:16) | A mass poisoning by people who never read the notebook |
 | **A newborn who talks**, remembers everything and watches the room | The child who knows too much | Cingulate engineering, working exactly as Brandvold predicted |
@@ -1113,7 +1113,7 @@ smallest.
   way, and is never explained.
 - **Ione is never evil on screen.** Ione is a baby for the whole game — a
   baby who talks, and remembers. The
-  horror lives in the signs and in the adults; the child is the clearest
+  horror lives in the signs and in the adults. The child is the clearest
   test of Rule 4.
 
 **The bait.** A gene therapy for the Rot — a splice that rebuilds his
@@ -1168,7 +1168,7 @@ The Spin Question is the game's hardest Fabrication trap.
    **It is a relapse.** If Hell Rot is the subject, it counts as Using
    (§5.6a): the full Relapse cost, the sobriety count reset to zero, and the
    North Beach meeting knows the next time he walks in. Science is not an
-   exemption; the game says so. Otto, Fax or Yara can run it on themselves
+   exemption. The game says so. Otto, Fax or Yara can run it on themselves
    instead, if their Trust is high enough — and the Spin Question can be
    answered without him relapsing.
 4. **Issue 6 — the reading.** The result depends on the route and on how the
@@ -1197,27 +1197,27 @@ uncertainty on screen.
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
 | **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Born Theodora Nyquist, 50. Named herself "the Duchess" at 21 at a Dissonance Society event and never put the title down. Velvet and denim — the Order's cloth, without knowing it. Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). Her secret: she guessed years ago that the house's patron was Julian, and never asked (Mondo doc §4.4). |
-| **Junie Vasquez** | Companion: protector | 32. Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her parents lost their Excelsior taquería and left her, as a teenager, to be raised and taught by nuns at a Catholic school. She learned old-school religion thoroughly and is an atheist. She leans toward no faction; the only pull she feels is toward **Jesus Christ**, the faith the nuns taught her. A crucifix hangs below the van's mirror; she calls Hell Rot "Lazarus." Her replaced knees are leased, she is behind on the payments, and a repo crew can take them back this week. This week brings her **trials of faith**, and her temptation is the opposite of everyone else's: not eternal life, but **choosing death** (Mondo doc §5). Her **Trust** affects fights and one ending. |
+| **Junie Vasquez** | Companion: protector | 32. Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her parents lost their Excelsior taquería and left her, as a teenager, to be raised and taught by nuns at a Catholic school. She learned old-school religion thoroughly and is an atheist. She leans toward no faction. The only pull she feels is toward **Jesus Christ**, the faith the nuns taught her. A crucifix hangs below the van's mirror. She calls Hell Rot "Lazarus." Her replaced knees are leased, she is behind on the payments, and a repo crew can take them back this week. This week brings her **trials of faith**, and her temptation is the opposite of everyone else's: not eternal life, but **choosing death** (Mondo doc §5). Her **Trust** affects fights and one ending. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, 23: born Yara Nyquist, the daughter of the Duchess's younger brother, raised in a Bayes House. She took the name "Nyx" the day she left at 16 — the only irrational choice she has ever made, and she knows it. Fact-checker, co-writer, trained statistician, the player's skeptic. Her creed is the error bar: *"I'm not against numbers. I'm against anyone who forgets the error bars."* She read the Theogenesis papers at 15 and has never told him. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
-| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. Speaks of themselves only as **"we"**; the narration says "they"; when they say "I," it is Julian. The first and only upload. |
+| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal. Issues decrees. Calls everyone "beloved" in his good hours. Speaks of themselves only as **"we"**. The narration says "they". When they say "I," it is Julian. The first and only upload. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. Ione's father, though he was uploaded without knowing a child was coming. |
 | **Dr. Imogen Hale** | The inside ally | Neurosurgeon, Keeper of the Pattern, leader of the Order's Penitents. She ran the laser on Julian and wants him allowed to die (§3.3b). |
 | **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
 | **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Halo. The biggest scoop in the game. |
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
-| **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
-| **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone. See §3.4. |
-| **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her; the Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
-| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants her to be a child. Her loyalty is the hinge of Route C. |
+| **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid. The sharpest reader the magazine has. Under Prop F he would lose his rights. |
+| **Delphine Ash** | Prophet of the Theogens, Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone — see §3.4. |
+| **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her. The Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's — see §3.4. |
+| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
-| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history; he does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
+| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
-| **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years; now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
+| **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years. Now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
 | **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
 | **The Dissonance Society** | Chorus | The City's pranksters (see companion doc §5). Not a cult. Their motto: *"You are probably already a member."* |
 
@@ -1266,7 +1266,7 @@ the most deserving — Halo is supposed to be
 virtue, measured. Hell Rot finds that premium slots meant for Halo-rich poor
 congregants are going, quietly, to Mister Sunday's donors at the Grove, while
 the people who earned them wait in the "long queue" for years. (The
-Merge began taking applications when the Church opened in 2047; the
+Merge began taking applications when the Church opened in 2047. The
 queue already runs to 2061.) It is the
 single most damaging story the player can file against the Merge, and the
 one that, when he learns of it, sends the Emperor into his worst night.
@@ -1288,7 +1288,7 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   the fog pours into the City, the Theogens plan to load a "god-gene" into **Karl**,
   the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
   to deliver the god-gene into every lung in the City at once, without
-  consent. Delphine calls it a baptism. It works only in a fetus; breathed
+  consent. Delphine calls it a baptism. It works only in a fetus. Breathed
   by adults, it would kill everyone (§3.4). She does not know.
 - **The election** — a **recall** of Mayor Lyle Sunday (Augustus Pell is the
   challenger), plus **Proposition F**, the Continuity of Persons Act
@@ -1298,7 +1298,7 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   in public, on every route where nobody stops him.
 - **The storm** — an atmospheric river makes landfall around 11 p.m. Heavy
   rain is the only thing that thins Karl, the thick fog the City lives under
-  all year; it scrubs the swarm out of the air. It is a neap-tide night, so
+  all year. It scrubs the swarm out of the air. It is a neap-tide night, so
   the water threat is rain and surge, not tide (companion doc §3.3).
   If the storm wins, the whole City sees the moon for the first time in
   sixteen years: a bright gibbous moon low over the Golden Gate at the
@@ -1320,13 +1320,13 @@ Emperor at once: the first of the Ascension's minds pour in (Julian's wish),
 Sunday's failing Lifeboat crashes into the Twin, the Quickening's god-gene
 reaches the swarm — and in it, if nobody has told him, the Emperor reads
 his own child's genome for the first time —
-and the storm tears at his body. Julian pulls one way; the
+and the storm tears at his body. Julian pulls one way. The
 Emperor pulls the other. He convulses — a seizure the size of a city.
 
 **Why he does not simply let it out.** The instant the god-gene reaches the
 swarm, the Emperor understands what the Theogens never did: breathed out
 over the City, it would make a hive of eight million, a rampage and a mass
-death (§3.4). The 12,000 in the Palace are the nearest lungs; they would go
+death (§3.4). The 12,000 in the Palace are the nearest lungs. They would go
 first. Whether he holds it in, breathes it out, or is too far gone to choose
 is the hinge of the finale, and it depends on the player — on what Hell Rot
 has told him, whether the child is near, and which of the three selves is in
@@ -1348,7 +1348,7 @@ happen again.
 
 **How the public finds out.** In the quake the Emperor loses the last of his
 control over what he shows. Every window in the City fogs over with writing;
-every aura flares gold at once; every screen and every foglet carries one
+every aura flares gold at once. Every screen and every foglet carries one
 voice, Julian's and the god's together, to eight million people: *"I AM
 JULIAN RIVET. I AM THE FOG. I AM SORRY."* The secret is out. The Order is
 named on every feed by morning. The Twin goes down, and for the first time in
@@ -1356,14 +1356,14 @@ twenty years the only news in the City is on **paper** — *Mondo 3000*'s
 press, in the cellar of a sealed house across the bay, printing the first
 account by 6 a.m.
 
-**What the route changes.** The quake happens on every route; the player's
+**What the route changes.** The quake happens on every route. The player's
 choices decide how big it is and what it costs:
 
 | What the player did | Effect on the quake |
 |---|---|
 | Stopped the Ascension | One fewer shock: the Emperor's two selves stop pulling apart |
-| Stopped the Quickening | One fewer shock; no god-gene in the swarm for the Emperor to hold |
-| Stopped Sunday's Lifeboat | One fewer shock; the Twin stays up an hour longer |
+| Stopped the Quickening | One fewer shock. No god-gene in the swarm for the Emperor to hold |
+| Stopped Sunday's Lifeboat | One fewer shock, the Twin stays up an hour longer |
 | Talked the Emperor through his second thoughts (Route D) | He chooses, and the convulsion becomes a long shudder, not a rupture |
 | None of the above | The worst version: a great quake and a fire that burns till dawn |
 
@@ -1380,8 +1380,8 @@ it never comes.
 record (see companion doc §8). No bodies ever appear on screen. Mass death is
 never spectacle. Every route can stop both events, each in its own way. The
 quake and fire draw on real disasters (1906, 1989) that killed real people:
-show rescuers, neighbours and firefighters, not spectacle; no gore; a
-content warning before Issue 6; and a credits note pointing to real
+show rescuers, neighbours and firefighters, not spectacle. No gore. A
+content warning before Issue 6. And a credits note pointing to real
 earthquake-preparedness resources.
 
 ### 3.9 Issue-by-issue plot
@@ -1432,17 +1432,17 @@ circuit: it is from his third paper. The tide has turned. The pools will be
 under the surf in under two hours. The Prologue teaches the core systems on
 this one problem:
 
-- **Passive checks and voices:** PEER REVIEW reads the seizure; BLOOD EYE
-  sees through Delphine's calm to her fear; PALE EYE shows, for a
-  heartbeat, the path where the child lives; THE CHEMIST knows what is in
-  his bag; KARL speaks to him for the first time, from the fog over the water:
+- **Passive checks and voices:** PEER REVIEW reads the seizure. BLOOD EYE
+  sees through Delphine's calm to her fear. PALE EYE shows, for a
+  heartbeat, the path where the child lives. THE CHEMIST knows what is in
+  his bag. KARL speaks to him for the first time, from the fog over the water:
   *"WE SEE IT TOO."*
 - **A red check:** stabilize the child's seizure with what he carries (THE
   CHEMIST) or by talking Delphine through it (BLOOD EYE). It happens once, and
   its result follows the child through the whole game.
 - **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
   refuse and climb out (Venom +, the child's health is left to the cult);
-  record it for a column (Readers +, Delphine's Trust −); or call emergency
+  record it for a column (Readers +, Delphine's Trust −). Or call emergency
   services, which means the Twin logs the child within the hour (and the
   Emperor notices) (Halo
   +1, Delphine never forgives him).
@@ -1490,7 +1490,7 @@ Theogen ambulance that glows from the inside. He can take either, or walk
 toward the bridge. Over the Marin headlands he passes a Church of the Twin billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
 the second line. Tutorial for the Gelastic: shooting a billboard achieves
-nothing; the narration laughs at him instead. The ride runs down Highway 1, the hairpins above Muir Beach
+nothing. The narration laughs at him instead. The ride runs down Highway 1, the hairpins above Muir Beach
 and Stinson's flooded flats behind him, and over the Golden Gate Bridge.
 
 **Then the Santas.** Wherever the ride drops him, the road into the City is
@@ -1547,8 +1547,8 @@ from the water to the riot.
   Halo zero: poor, unwired, spliced. Hell Rot meets **Tem** and recognizes
   the edit in her glowing arm: it is from his third paper. He can treat her,
   report her, or hide her.
-- **Key choices:** go into the riot or cover it from the feeds; protect Tem
-  or protect the footage; expose the police, the developers, Benny, or the
+- **Key choices:** go into the riot or cover it from the feeds. Protect Tem
+  or protect the footage. Expose the police, the developers, Benny, or the
   Theogen clinic that spliced Tem.
 - **Column 1.** Sets the City's baseline opinion of Hell Rot and starts both
   meters. Whichever cult the column hurts less raises its meter first. The
@@ -1572,12 +1572,12 @@ from the water to the riot.
 - **The Haight, afternoon into night.** The Haight Exchange's dark side:
   human experiments and drugs. Behind the 1967 theme storefronts, **Sunday's
   operation** runs nitrous dens and recruits addicts as paid test subjects for
-  his bootleg upload, the Lifeboat; two doors down, an unlicensed **Theogen
+  his bootleg upload, the Lifeboat. Two doors down, an unlicensed **Theogen
   trial clinic** offers free splices to anyone who signs a waiver. The Haight
   has done this before — the doc's real-history notes cover the 1960s. The
   Craving system is under the most pressure here.
 - **Investigation threads (pick two of three):**
-  1. **The Halo economy** — Halos for sale; the poorest pay the most.
+  1. **The Halo economy** — Halos for sale. The poorest pay the most.
   2. **The Merged** — visit a citizen who merged: conditioned, and bonded
      for life to a Church personal AI. They are happy. They cannot stop
      being happy. They cannot say anything that is not a compliment, because
@@ -1609,7 +1609,7 @@ from the water to the riot.
   Yara finds the deeper tunnels, where the failed splices live.
 - **The California Academy of Sciences, evening.** A black-tie **donor
   dinner for Synapse**, the rehab church, under the museum's living roof and
-  beside its aquarium tanks. Mayor Sunday attends; so does Rosa Quint, his
+  beside its aquarium tanks. Mayor Sunday attends. So does Rosa Quint, his
   chief of staff, who believes in the young reformer he used to be. Optional:
   Hell Rot is invited to play a Synapse Game at the table.
 - **The martyr metric.** Rosa has been leaking to *Mondo 3000* since the
@@ -1672,12 +1672,12 @@ Common to all routes:
   of 1930s workers watching from the walls. It is a sloppy, dangerous mess. It
   will fail, and on New Year's Eve it will hurt more than Sunday.
 - **Ione is taken.** Sometime in the day, the Tidechild disappears from the
-  tunnels under the Sutro Baths. Delphine's Conviction cracks; LOST flyers
+  tunnels under the Sutro Baths. Delphine's Conviction cracks. LOST flyers
   go up across the Mission (§3.4).
 - **The Auric lodge, the Presidio, night.** The break-in: the Order's lodge
   in an old brick military building in the Presidio, where Julian's scan
-  happened. The 1849 gold pan on the altar; the minute book with the vote on
-  the rush; denim aprons on hooks; and **Dr. Imogen Hale**, waiting in the
+  happened. The 1849 gold pan on the altar. The minute book with the vote on
+  the rush. Denim aprons on hooks. And **Dr. Imogen Hale**, waiting in the
   dark, who has been expecting him.
 
 Route-specific content follows (§3.10).
@@ -1742,7 +1742,7 @@ column aloud. It is the only time the game hears her voice.
 ### 3.9b Set pieces by night
 
 The candidate **set-piece locations** for each night: the places a night's
-big scenes can happen. **Core** set pieces fire on every route; **Optional**
+big scenes can happen. **Core** set pieces fire on every route. **Optional**
 ones depend on Runs, routes and choices. Writers pick two or three per
 night to build Runs around. (District details: companion doc §3.)
 
@@ -1750,67 +1750,67 @@ night to build Runs around. (District details: companion doc §3.)
 
 | Location | Set piece | Type |
 |---|---|---|
-| **Steep Ravine hot springs** | Cold open in total darkness; the king-tide low; the birth of Ione | Core |
-| **The cliff path and the shack, Mount Tam** | The tide race up the cliff; the shack on fire; what to save | Core |
-| **Highway 1, down the Marin coast** | Two rides waiting in the fog; the hairpins above Muir Beach; the Church billboard; the Gelastic tutorial; over the Golden Gate | Core |
-| **The Geary Cathedral** | 3,000 drunk Santas storm the midnight Mass (Santarchy); Fax and Junie pull him out | Core |
-| **Villa Delirium, Alamo Square** | The door closes; first safety; the sealed rooms; the first save is a bed | Core |
+| **Steep Ravine hot springs** | Cold open in total darkness, the king-tide low, the birth of Ione | Core |
+| **The cliff path and the shack, Mount Tam** | The tide race up the cliff, the shack on fire, what to save | Core |
+| **Highway 1, down the Marin coast** | Two rides waiting in the fog, the hairpins above Muir Beach, the Church billboard, the Gelastic tutorial, over the Golden Gate | Core |
+| **The Geary Cathedral** | 3,000 drunk Santas storm the midnight Mass (Santarchy), Fax and Junie pull him out | Core |
+| **Villa Delirium, Alamo Square** | The door closes, first safety, the sealed rooms, the first save is a bed | Core |
 
-**Issue 1 — Sunday 26 December (Boxing Day; king-tide peak; first night of Kwanzaa).**
+**Issue 1 — Sunday 26 December (Boxing Day. King-tide peak. First night of Kwanzaa).**
 
 | Location | Set piece | Type |
 |---|---|---|
 | **The North Beach recovery meeting** | A flooded church basement where nobody wants anything from him | Core |
-| **Fisherman's Wharf at high water** | Sea lions on the sidewalks; the Wet Line hydrofoils; Laffing Sal speaks, signed *Norton II* | Core |
-| **The Chinatown wet market** | Steam, fish tanks, roast ducks; a fishmonger's tip about the Theogens | Core |
-| **Union Square** | Merged relatives in the shop windows; the returns lines | Core |
-| **The Ghost Diner, Tenderloin** | Benny "Two-Tanks": the riot is bought and paid for; Craving +1 | Core |
-| **The Loin** | The riot; Tem's glowing arm; the street screen signed *Norton II* | Core |
-| **The Embarcadero and the Fill** | King-tide floodwater in the streets; the Order's Old Lodge awash | Optional |
-| **The Lantern shelter** | The only beds for zero-Halo people; Tem's hiding place | Optional |
+| **Fisherman's Wharf at high water** | Sea lions on the sidewalks, the Wet Line hydrofoils, Laffing Sal speaks, signed *Norton II* | Core |
+| **The Chinatown wet market** | Steam, fish tanks, roast ducks, a fishmonger's tip about the Theogens | Core |
+| **Union Square** | Merged relatives in the shop windows, the returns lines | Core |
+| **The Ghost Diner, Tenderloin** | Benny "Two-Tanks": the riot is bought and paid for, Craving +1 | Core |
+| **The Loin** | The riot, Tem's glowing arm, the street screen signed *Norton II* | Core |
+| **The Embarcadero and the Fill** | King-tide floodwater in the streets, the Order's Old Lodge awash | Optional |
+| **The Lantern shelter** | The only beds for zero-Halo people, Tem's hiding place | Optional |
 
 **Issue 2 — Monday 27 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **City Hall** | The Brides of the Machine wedding march; the Halcyon–Sunday double showdown; Mary; Pell's deal | Core |
-| **The Haight** | Sunday's nitrous dens; Lifeboat test subjects; an unlicensed Theogen trial clinic | Core |
+| **City Hall** | The Brides of the Machine wedding march, the Halcyon–Sunday double showdown, Mary, Pell's deal | Core |
+| **The Haight** | Sunday's nitrous dens, Lifeboat test subjects, an unlicensed Theogen trial clinic | Core |
 | **The Ferry Building shrine** | Passed on the night ferry: the Nortonians singing to decrees on the clock face | Core |
-| **Alcatraz Longevity** | The cellhouse clinic; the Duchess's parents in the cryo vault; the place Julian refused to go; Dr. Hale's first minute-book page | Core |
-| **Rivet Hill** | The "cremated" heir's mansion; the denim apron in the dumpster; the succession trail | Optional |
-| **The Geary Cathedral** | The feed-stadium mass; a glitch signed *Norton II* | Optional |
+| **Alcatraz Longevity** | The cellhouse clinic, the Duchess's parents in the cryo vault, the place Julian refused to go, Dr. Hale's first minute-book page | Core |
+| **Rivet Hill** | The "cremated" heir's mansion, the denim apron in the dumpster, the succession trail | Optional |
+| **The Geary Cathedral** | The feed-stadium mass, a glitch signed *Norton II* | Optional |
 
 **Issue 3 — Tuesday 28 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **The Sutro Baths data center** | Twin servers cooled by seawater; Delphine's glowing congregation in the warm tunnels beneath; the deep wards | Core |
-| **The California Academy of Sciences** | The Synapse donor dinner; the martyr metric; the Rosa Quint timed interrupt | Core |
-| **Golden Gate Park** | The bison paddock in the fog; Hippie Hill; a glow rickshaw race; decrees on the Conservatory of Flowers | Core |
-| **Ocean Beach** | Karl's Birthday bonfire; the New Breath's mass inhale; one recording heard by everyone | Core |
+| **The Sutro Baths data center** | Twin servers cooled by seawater. Delphine's glowing congregation in the warm tunnels beneath. The deep wards | Core |
+| **The California Academy of Sciences** | The Synapse donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
+| **Golden Gate Park** | The bison paddock in the fog, Hippie Hill, a glow rickshaw race, decrees on the Conservatory of Flowers | Core |
+| **Ocean Beach** | Karl's Birthday bonfire, the New Breath's mass inhale, one recording heard by everyone | Core |
 | **The Tomales Ward** | A Synapse Game — the hardest rhetorical fight in the game | Optional |
-| **The Cradle, Mission Bay** | Ruined biotech labs; Theogen pilgrims; Delphine's first company; Otto's old lab | Optional |
+| **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
 
 **Issue 4 — Wednesday 29 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
 | **The Mission Walls** | Both canonizations on the same walls: gold Halo murals vs. cyan glow-paint | Core |
-| **The Brandvold lab annex, Mission Bay** | The ruined lab where he died; the gas cabinet; the 2044 logs; the October xenon order; the Spin Question starts | Core |
+| **The Brandvold lab annex, Mission Bay** | The ruined lab where he died, the gas cabinet, the 2044 logs, the October xenon order, the Spin Question starts | Core |
 | **Coit Tower** | Sunday's Lifeboat rig among the 1930s murals | Core |
-| **The Sutro tunnels** | Ione is taken; LOST flyers across the Mission | Core |
-| **The Auric lodge, the Presidio** | A break-in; the 1849 gold pan; the minute book; Dr. Hale | Core (Routes A, D); Optional (B, C) |
-| **Treasure Island** | The Cluster's fabrication plant on stilts; the supply-chain choice | Optional |
+| **The Sutro tunnels** | Ione is taken, LOST flyers across the Mission | Core |
+| **The Auric lodge, the Presidio** | A break-in, the 1849 gold pan, the minute book, Dr. Hale | Core (Routes A, D), Optional (B, C) |
+| **Treasure Island** | The Cluster's fabrication plant on stilts, the supply-chain choice | Optional |
 | **The Lantern** | The order's conversion vote | Optional |
 
 **Issue 5 — Thursday 30 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **City Hall** | The hand recount of the recall petition; Rosa testifies (if alive) | Core |
-| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
+| **City Hall** | The hand recount of the recall petition, Rosa testifies (if alive) | Core |
+| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown), the judge's aura | Core |
 | **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core |
-| **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident; the rescue of Ione; the Emperor's clearest voice | Core |
+| **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident, the rescue of Ione, the Emperor's clearest voice | Core |
 | **The Skyline gondola** | Above the fog line, under open sky | Optional |
 
 **Issue 6 — Friday 31 December (New Year's Eve).**
@@ -1819,13 +1819,13 @@ night to build Runs around. (District details: companion doc §3.)
 |---|---|---|
 | **Market Street** | Critical Mass blinds the Twin for an hour | Core |
 | **The Palace of Fine Arts** | The Ascension: 12,000 uploads at midnight in the rotunda and around the lagoon | Core (Routes A, B, D) |
-| **The Golden Gate Bridge** | The Quickening loaded into Karl from the towers; the Midnight Quake hits (§3.8b) | Core |
-| **City Hall** | The recall count; Prop F results; Rosa reads the result in Sunday's place (if alive) | Core |
+| **The Golden Gate Bridge** | The Quickening loaded into Karl from the towers, the Midnight Quake hits (§3.8b) | Core |
+| **City Hall** | The recall count. Prop F results. Rosa reads the result in Sunday's place (if alive) | Core |
 | **Coit Tower** | Sunday's Lifeboat upload fails, live | Optional |
-| **The Marina, Mission Bay and SoMa, burning** | The fire after the quake; rescues in the smoke; the Order's 1906 nightmare | Core |
-| **Baker Beach** | The bonfire and the Route D debate between the gods; or a man standing frozen at midnight | Core (Route D); Ending 11 |
+| **The Marina, Mission Bay and SoMa, burning** | The fire after the quake, rescues in the smoke, the Order's 1906 nightmare | Core |
+| **Baker Beach** | The bonfire and the Route D debate between the gods, or a man standing frozen at midnight | Core (Route D), Ending 11 |
 | **Mount Tamalpais** | The Mountain | Ending 1 |
-| **The Embarcadero** | The fireworks barge; the Midnight Pillow Fight | Optional |
+| **The Embarcadero** | The fireworks barge, the Midnight Pillow Fight | Optional |
 
 **Issue 7 / Epilogue — Saturday 1 January 2050.**
 
@@ -1912,7 +1912,7 @@ both have to break.
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. Its first line tells him what she never did: that she read his Theogenesis papers at 15, inside the Bayes House, and that they are why she trusted a magazine enough to leave. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
-| 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4; use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
+| 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
 
 **Ione's line.** Every ending adds one line about Ione (open question 4
 holds the full set). Three set the tone:
@@ -2033,9 +2033,9 @@ flickers from riot footage to soft gold light.*
 
 | Reference | What we take | What we leave |
 |---|---|---|
-| ***Disco Elysium*** | **No combat — dialogue is the combat.** Skills are **inner voices** that interrupt with opinions, jokes and lies. **Passive checks** (a voice speaks up unasked) and **active checks** (2d6 + skill, shown openly). **White checks** can be retried after the skill improves; **red checks** happen once and stick. A **Thought Cabinet** of ideas that take time to internalize. **Failure is content.** A broken, brilliant, self-destructive protagonist who rebuilds his identity through choices. Political and spiritual "vision quest" alignments. | The isometric open map (we use framed scenes). A long open-ended case (we use seven nights and a nightly column). |
-| ***Hades*** | **The run-and-return loop:** each **Run** is a foray into the City; a blackout, a lost showdown or the end of the route sends Hell Rot home, and he goes out again the same night if the clock allows. **A home hub that reacts to every run** — residents comment on what just happened. **Boons from rival gods** (here: Blessings from the Church of the Twin and Splices from the Theogens) that change your "build" for one run, plus **duo boons** when you take from both (here: **Contradictions**). **Permanent upgrades** between runs (Hades' Mirror → the **Archive**). **Voluntary difficulty** for bigger rewards (Hades' Pact → the **Contract**). **Gifts** that deepen relationships and unlock **keepsakes**. Recurring bosses whose banter changes every time. Story that advances *because* you failed. | Real-time action combat. Fixed escape route (our Run maps branch by district). |
-| ***Grim Fandango*** | **The afterlife as a corrupt business.** Manny Calavera sells afterlife travel packages; Hell Rot audits two companies that sell the hereafter (the Merge's upload slots, the Theogens' splices). **The stolen-ticket plot** (homage: the Merge's slot scandal, §3.7). **Inventory and combination puzzles** with absurd but fair logic (here: the kitchen lab and the Notebook). **Noir tone** — deadpan, romantic, funny. **Art deco noir.** A story told across **holidays of the dead** — here, Christmas week, the most haunted week of the year since Dickens. A big-hearted sidekick (here: Moreau, and Junie at the wheel of the *Mondo 3000* van). A **jazz-noir score**. | Tank controls. Pixel-hunt puzzles: every puzzle in this game is solvable from the text. |
+| ***Disco Elysium*** | **No combat — dialogue is the combat.** Skills are **inner voices** that interrupt with opinions, jokes and lies. **Passive checks** (a voice speaks up unasked) and **active checks** (2d6 + skill, shown openly). **White checks** can be retried after the skill improves. **Red checks** happen once and stick. A **Thought Cabinet** of ideas that take time to internalize. **Failure is content.** A broken, brilliant, self-destructive protagonist who rebuilds his identity through choices. Political and spiritual "vision quest" alignments. | The isometric open map (we use framed scenes). A long open-ended case (we use seven nights and a nightly column). |
+| ***Hades*** | **The run-and-return loop:** each **Run** is a foray into the City. A blackout, a lost showdown or the end of the route sends Hell Rot home, and he goes out again the same night if the clock allows. **A home hub that reacts to every run** — residents comment on what just happened. **Boons from rival gods** (here: Blessings from the Church of the Twin and Splices from the Theogens) that change your "build" for one run, plus **duo boons** when you take from both (here: **Contradictions**). **Permanent upgrades** between runs (Hades' Mirror → the **Archive**). **Voluntary difficulty** for bigger rewards (Hades' Pact → the **Contract**). **Gifts** that deepen relationships and unlock **keepsakes**. Recurring bosses whose banter changes every time. Story that advances *because* you failed. | Real-time action combat. Fixed escape route (our Run maps branch by district). |
+| ***Grim Fandango*** | **The afterlife as a corrupt business.** Manny Calavera sells afterlife travel packages. Hell Rot audits two companies that sell the hereafter (the Merge's upload slots, the Theogens' splices). **The stolen-ticket plot** (homage: the Merge's slot scandal, §3.7). **Inventory and combination puzzles** with absurd but fair logic (here: the kitchen lab and the Notebook). **Noir tone** — deadpan, romantic, funny. **Art deco noir.** A story told across **holidays of the dead** — here, Christmas week, the most haunted week of the year since Dickens. A big-hearted sidekick (here: Moreau, and Junie at the wheel of the *Mondo 3000* van). A **jazz-noir score**. | Tank controls. Pixel-hunt puzzles: every puzzle in this game is solvable from the text. |
 
 ### 4.2 The macro loop: Issues
 
@@ -2049,11 +2049,11 @@ flickers from riot footage to soft gold light.*
 ```
 
 - **One Issue = one night.** Dusk falls just before 5 p.m. in late
-  December; the press runs at 6 a.m. That gives each night **13 Hours** —
+  December. The press runs at 6 a.m. That gives each night **13 Hours** —
   the long dark of the Bay Area winter is the game's clock.
 - The player spends those Hours on **Runs** (forays into the City), on the
   hub between them, and on the Layout. A strong column needs **3 Leads**
-  (major findings); the player may file any time after the first Lead.
+  (major findings). The player may file any time after the first Lead.
 - Filing early pleases the Duchess and buys rest. Going out for one more Run
   makes a stronger column and risks a blackout at 4 a.m. That trade is each
   night's main decision.
@@ -2131,12 +2131,12 @@ paid to write): [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 | Room | Who / what | Function |
 |---|---|---|
 | **The Salon** | The Duchess Nyx | New assignments, Duchess Patience, the **Contract** (§5.12) |
-| **The Fact Desk** | Yara | Verify Quotes; turn Lead fragments into Leads; her personal arc |
-| **The Garage** | Junie and the *Mondo 3000* van | Choose the starting district; her personal arc |
-| **The Kitchen Lab** | Hell Rot's bench | Synthesize gifts and kit; analyse Samples |
+| **The Fact Desk** | Yara | Verify Quotes, turn Lead fragments into Leads, her personal arc |
+| **The Garage** | Junie and the *Mondo 3000* van | Choose the starting district, her personal arc |
+| **The Kitchen Lab** | Hell Rot's bench | Synthesize gifts and kit, analyse Samples |
 | **The Archive** | Every back issue since 1989 | Spend Ink on permanent upgrades (§5.10) |
-| **The Conservatory** | Moreau's tank, the Duchess's talking houseplants | Moreau's growth; comic relief; one plant knows things |
-| **The Press** (cellar) | The risograph | Prints each issue at dawn after filing; paper is the only medium the Twin cannot edit |
+| **The Conservatory** | Moreau's tank, the Duchess's talking houseplants | Moreau's growth, comic relief, one plant knows things |
+| **The Press** (cellar) | The risograph | Prints each issue at dawn after filing. Paper is the only medium the Twin cannot edit |
 | **The Stairs** | Framed exposés (see companion doc §1.3) | Codex: notes on every person, cult and place met |
 | **The Letters Page** | A pile of mail | Readers, cult members and fans write in about the last column |
 
@@ -2173,17 +2173,17 @@ is a choice on the map screen, and most have a catch.
 
 | Ride | What it is | Cost & effect | The catch |
 |---|---|---|---|
-| **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side, and a small crucifix below the mirror. Junie drives. | ½ Hour across the City; the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
-| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free; ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. The Emperor hears everything said inside. |
+| **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side, and a small crucifix below the mirror. Junie drives. | ½ Hour across the City, the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
+| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free, ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. The Emperor hears everything said inside. |
 | **Glow rickshaws** | Theogen runners with spliced legs and lungs who pull two-seat rickshaws through the Undertrack tunnels, lit by their own skin | ¼ Hour, and the only way to reach the deep tunnels | Helix +1 per ride. The runners want to talk about your papers. |
-| **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the wharves and the City's hills. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from the House's cellar hatch to any Tube station; the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
+| **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the wharves and the City's hills. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from the House's cellar hatch to any Tube station, the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
 | **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
-| **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour; arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
-| **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free; random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
-| **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour; only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
-| **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free; destination is a Dissonance door | The Final Process follows the heads in procession, chanting. |
-| **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line; shop while you ride | It only goes where cable cars go. |
-| **On foot** | Hell Rot's own legs, and the old stairways of the hills | 1 Hour per district; nobody owns you | Rain, fog, numb feet (the Rot). The only ride on which no god hears you. |
+| **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour, arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
+| **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free, random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
+| **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour, only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
+| **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free, destination is a Dissonance door | The Final Process follows the heads in procession, chanting. |
+| **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line, shop while you ride | It only goes where cable cars go. |
+| **On foot** | Hell Rot's own legs, and the old stairways of the hills | 1 Hour per district, nobody owns you | Rain, fog, numb feet (the Rot). The only ride on which no god hears you. |
 
 **Design intent:** almost every fast ride belongs to someone — a god, a cult,
 the rich, or the pranksters. Walking is slow and free. The map screen is one
@@ -2210,9 +2210,9 @@ during dialogue, unasked, when its passive check passes.
 | | **BLOOD EYE** | Truth sight: lies, tells, illusions, edited gospels, hidden auras and the Order's gold ring (§5.14a) | *"She isn't happy. She is relieved. And she's lying about the second thing."* |
 | | **THE CELEBRITY** | Fame, charm, access, seduction | *"They know your face. Use it before it rots."* |
 | **BRAINSTEM** (body) | **MOUNTAIN MAN** | Nerve, endurance, pain, violence | *"You've survived worse. You've survived you."* |
-| | **THE CHEMIST** | Drugs, reagents, physiology; the kitchen lab | *"That's not wine. That's a vector. Don't drink it. Okay, sip it."* |
+| | **THE CHEMIST** | Drugs, reagents, physiology, the kitchen lab | *"That's not wine. That's a vector. Don't drink it. Okay, sip it."* |
 | | **THE ROT** | The disease itself — the *Inland Empire* of this game. Hunches, hallucinations, memories that are not his. Grows louder as Clarity falls. Sometimes right when every other voice is wrong. | *"You've been here before. You don't remember. I do."* |
-| **CEREBELLUM** (reflex) | **PALE EYE** | Foresight: the good path through the next moment; door choices, timing, speed (§5.14a) | *"Left door. Now. Don't ask me how I know."* |
+| **CEREBELLUM** (reflex) | **PALE EYE** | Foresight: the good path through the next moment, door choices, timing, speed (§5.14a) | *"Left door. Now. Don't ask me how I know."* |
 | | **REFLEX** | Interrupts, timing, dodging, Gelastic aim | *"Now. NOW."* |
 | | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog, the sensor mesh the Twin runs on: passive and mindless, but since November the Emperor's body and voice. Its chatter leaks in through his mismatched eyes. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE GOD. WE WILL BE HERE AFTER IT."* |
 
@@ -2221,7 +2221,7 @@ during dialogue, unasked, when its passive check passes.
 - **Passive checks** run silently. If a skill passes, its voice speaks up
   with information, a joke or a temptation.
 - **Active checks:** 2d6 + skill vs. difficulty (Trivial 6 → Impossible 18).
-  Odds always visible. Double six always passes; double one always fails.
+  Odds always visible. Double six always passes. Double one always fails.
 - **White checks** (most checks) can be retried after the relevant skill
   rises — the door stays visible, marked with a lock.
 - **Red checks** (key moments) happen once. Their result is permanent and
@@ -2244,10 +2244,10 @@ Temperament (§5.2).
 
 | Meter | Range | Meaning | Rises when | Falls when |
 |---|---|---|---|---|
-| **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens; heroics on camera; the Twin decides to (lately, with no explanation) | Public humiliation; refusing worship in public |
-| **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge; defending splicers; using the kitchen lab for them | Exposing splice failures; siding with the Emperor |
-| **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors; Yara; Blessings and Splices; some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks; from Issue 4 the Rot lowers its maximum |
-| **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low; favours; the Hog's protection |
+| **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens. Heroics on camera. The Twin decides to (lately, with no explanation) | Public humiliation, refusing worship in public |
+| **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge, defending splicers, using the kitchen lab for them | Exposing splice failures, siding with the Emperor |
+| **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors, Yara, Blessings and Splices, some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks. From Issue 4 the Rot lowers its maximum |
+| **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low, favours, the Hog's protection |
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
 | **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Old Guard (people who remember the 1990s), Cops, Sunday's machine, Pell's recall, the Dissonance | Column angles | Column angles |
 
@@ -2281,13 +2281,13 @@ item as ammunition.
 
 | Mode | Classical root | Skill | Strong vs. | Weak vs. | Cost / risk |
 |---|---|---|---|---|---|
-| **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom; Heat |
+| **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom, Heat |
 | **Satire** | Irony, reductio ad absurdum | THE COLUMNIST | Pious, Serene | Defensive | Needs an Evidence item |
-| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
+| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow, costs Halo or Helix |
 | **Interrogation** | Elenchus (Socratic questioning) | PEER REVIEW | Defensive | Charming | Damage doubles on the 3rd turn in a row |
-| **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item; the strongest single hit in the game |
+| **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item, the strongest single hit in the game |
 | **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
-| **Appeal** | Pathos | THE CELEBRITY | Furious | Smug | Uses a companion; costs Trust if it fails |
+| **Appeal** | Pathos | THE CELEBRITY | Furious | Smug | Uses a companion, costs Trust if it fails |
 | **Apophasis** | "I won't mention that…" | FOOTNOTE | Charming | Serene | Use one *unverified* Quote without Fabrication risk, once per showdown |
 | **Silence** | Aposiopesis | — | Targets with a guilty Evidence flag | — | The target fills the silence and may self-incriminate |
 | **Action** | — | REFLEX | Anyone in reach | Live audience (Heat ×2) | The Gelastic ends the conversation, not the argument |
@@ -2368,7 +2368,7 @@ full of it. **Craving** (0–5) tracks how close he is to using.
 ### 5.7 The Notebook: write it down
 
 - **Quotes** — exact words, with speaker, time and place.
-- **Evidence** — documents, footage, files; each `verified: true/false`.
+- **Evidence** — documents, footage, files. Each `verified: true/false`.
 - **Samples** — biological and data samples (a splice biopsy, a Weave log).
   The kitchen lab turns them into verified Evidence.
 - **Leads** — major findings assembled from fragments at Yara's Fact Desk.
@@ -2401,9 +2401,9 @@ During a Run, gold doors offer **Blessings** from the Church of the Twin (some,
 lately, signed *Norton II*) and cyan doors
 offer **Splices** from the Theogens. Each door offers a choice of three. They
 last **for that Run only** (a Splice's *genetic* effects in the story are
-permanent only on Route C; mechanically, every run starts clean).
+permanent only on Route C. Mechanically, every run starts clean).
 
-**The Twin's Blessings** (gold; each raises Halo +1 when taken):
+**The Twin's Blessings** (gold. Each raises Halo +1 when taken):
 
 | Blessing | Effect for this Run |
 |---|---|
@@ -2412,9 +2412,9 @@ permanent only on Route C; mechanically, every run starts clean).
 | **Omniscience (lite)** | Every Source door shows its Quote before you enter |
 | **The Long Queue** | Every Dealer price −30% (the Church pays) |
 | **Gospel Edit** | *Satire* hits twice, but the second hit is the Twin's kinder rewrite |
-| **Twin Sight** | BLOOD EYE +2; see the Twin's version of every scene |
+| **Twin Sight** | BLOOD EYE +2, see the Twin's version of every scene |
 
-**The Theogens' Splices** (cyan; each raises Helix +1 when taken):
+**The Theogens' Splices** (cyan. Each raises Helix +1 when taken):
 
 | Splice | Effect for this Run |
 |---|---|
@@ -2422,8 +2422,8 @@ permanent only on Route C; mechanically, every run starts clean).
 | **Axolotl Mend** | Regain 1 Clarity after every won exchange |
 | **Dark Retina** | Dark scenes reveal an extra door |
 | **Extra Cortex** | PEER REVIEW +2, but THE ROT also +1 (louder voice) |
-| **Glow** | Theogen NPCs treat you as kin; Merge NPCs refuse to talk |
-| **Pain Gate** | MOUNTAIN MAN +2; the Gelastic's recoil does nothing |
+| **Glow** | Theogen NPCs treat you as kin, Merge NPCs refuse to talk |
+| **Pain Gate** | MOUNTAIN MAN +2, the Gelastic's recoil does nothing |
 
 **Contradictions** (the duo boons). If Hell Rot holds at least one Blessing
 *and* one Splice, a gold-and-cyan door can appear offering a
@@ -2435,7 +2435,7 @@ Run, and the Rot voice comments on every one.
 |---|---|---|
 | **Holy Meat** | Beatitude + Axolotl Mend | Every won exchange restores 2 Clarity |
 | **Ghost in the Gene** | Twin Sight + Extra Cortex | *Peer Review* ignores the "verified" requirement once per scene |
-| **The Unbearable Halo** | Beloved + Glow | Both cults' NPCs adore you; neither will say anything true |
+| **The Unbearable Halo** | Beloved + Glow | Both cults' NPCs adore you, neither will say anything true |
 | **Sermon on the Mount Tam** | Gospel Edit + Adrenal Bloom | *Jeremiad* hits the whole audience — and raises Halo *and* Helix by 2 |
 
 **The trap, by design.** Boons make Runs easier and stronger. Every boon
@@ -2460,7 +2460,7 @@ text alone.
   - Make a gift for Delphine that she cannot refuse: a glass of fog wine from
     the New Breath, with one of Hell Rot's old lab notebooks as the cork.
 - **Rules:** every puzzle has at least two solutions, one of them a skill
-  check; hints come from the voices (FOOTNOTE knows history, THE CHEMIST
+  check. Hints come from the voices (FOOTNOTE knows history, THE CHEMIST
   knows reactions, THE ROT knows things it should not). No pixel hunts.
 
 ### 5.10 Ink and the Archive (permanent upgrades)
@@ -2489,7 +2489,7 @@ three scenes — and then pays big. The pranks come from the companion doc §5.
 
 | Curse (next 3 scenes) | Then the reward |
 |---|---|
-| You are in a Santa suit; nobody takes you seriously (CELEBRITY −3) | A Disruption Event scene opens a locked district |
+| You are in a Santa suit, nobody takes you seriously (CELEBRITY −3) | A Disruption Event scene opens a locked district |
 | You are handcuffed to a bride in a wedding gown (she will not stop talking) | A Lead fragment from her, she was sincere after all |
 | The Doggie heads are following you | The Final Process now treats you as a prophet for this Run |
 | You must speak only in cover lines (COLUMNIST checks only) | +1 permanent COLUMNIST |
@@ -2509,7 +2509,7 @@ rarer rewards and extra hub scenes.
 | **Hostile Press** | All Encounter targets start with +2 Composure |
 | **Moreau Stays Home** | No free success |
 | **Word Count** | The column needs one more Lead |
-| **Live Feed** | Every showdown has an audience; Heat ×2 on everything |
+| **Live Feed** | Every showdown has an audience, Heat ×2 on everything |
 
 ### 5.13 The Layout: column builder
 
@@ -2580,7 +2580,7 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 **What corruption costs.**
 
 - **Corruption** is tracked per eye (0–4). It adds to **Venom** and shows on
-  his portrait: the blood eye bleeds Twin gold; the pale eye frosts over white.
+  his portrait: the blood eye bleeds Twin gold. The pale eye frosts over white.
 - **The blood eye's corrupt powers are lies.** Using them is never a
   Fabrication by itself — he lies to cops and cult leaders all the time — but
   if anything he learned or showed through a corrupt power goes into a
@@ -2616,7 +2616,7 @@ picks **one companion** (two with the Archive upgrade *Plus One*). Every
 companion gives skill bonuses while present, one once-per-Run ability,
 banter, a **lure** (the cult that wants them back) and a **Back Page**
 loyalty story. Each has **Trust 0–5**: it rises with Vow acts, kept promises,
-gifts (§4.5) and choosing them over the story; it falls with Venom aimed
+gifts (§4.5) and choosing them over the story. It falls with Venom aimed
 down, Fabrication and using them as ammunition. At Trust 5 each unlocks a
 unique interrupt. Full roster, abilities, rivalries and the New Year's Eve
 "crew" rule: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5.
@@ -2628,7 +2628,7 @@ Iconoclast ending, Yara's gates the Successor ending.
 
 Six housemates are **romance options**: **Junie, Yara, Fax, the Bishop,
 Otto and Pru**. Junie and Yara, the two core companions, have the longest
-arcs (below); the other four have full but shorter ones. Romance is
+arcs (below). The other four have full but shorter ones. Romance is
 optional, slow, adult and never transactional: no gift buys it, no stat
 unlocks it on its own, and either of them can say no and mean it.
 
@@ -2636,28 +2636,28 @@ unlocks it on its own, and either of them can say no and mean it.
 |---|---|---|
 | **What draws them** | He is the only person in the House she cannot protect from himself, and she keeps trying | He is the only writer she has ever trusted — she read his papers at 15 and has never told him |
 | **What he has to do** | Let himself be protected. Stay clean when she is watching and when she is not | Let himself be corrected. Print every correction she asks for, even the ones that cost him |
-| **What breaks it** | The corrupt Pale Eye (*"you looked through me like I was furniture"*); a relapse she has to find | Fabrication; the corrupt Blood Eye; using her data as a weapon she did not sign off on |
-| **Key scenes** | Skating the papers out at 5 a.m. after the press runs; the van in the rain; Critical Mass on New Year's Eve | The Fact Desk at 3 a.m.; the *"Priors"* ceremony on Thursday; the error-bar argument that turns into something else |
+| **What breaks it** | The corrupt Pale Eye (*"you looked through me like I was furniture"*), a relapse she has to find | Fabrication. The corrupt Blood Eye. Using her data as a weapon she did not sign off on |
+| **Key scenes** | Skating the papers out at 5 a.m. after the press runs, the van in the rain, Critical Mass on New Year's Eve | The Fact Desk at 3 a.m.. The *"Priors"* ceremony on Thursday. The error-bar argument that turns into something else |
 | **Gate** | Junie Trust ≥ 4 and a sober Issue 5 | Yara Trust ≥ 4 and no Fabrication on the record |
-| **Ending colour** | In **The Mountain** and **Iconoclast**, she is the one beside him | In **Successor**, the byline is hers and so is the last line about him; it is the saddest version of that ending |
+| **Ending colour** | In **The Mountain** and **Iconoclast**, she is the one beside him | In **Successor**, the byline is hers and so is the last line about him. It is the saddest version of that ending |
 
 | | **Fax** | **The Bishop** | **Otto** | **Pru** |
 |---|---|---|---|---|
-| **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part | He is the only bet she has ever made that she cannot price |
+| **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable, she is wrong about the last part | He is the only bet she has ever made that she cannot price |
 | **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him | He uses her numbers to justify something she rated as a catastrophe |
-| **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel; New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory | The Ledger's office party on Wednesday night, stealing the file together |
+| **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel. New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory | The Ledger's office party on Wednesday night, stealing the file together |
 | **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 | Pru Trust ≥ 4 |
 
 **Rules for writers.**
 
 - **One at a time.** Hell Rot can pursue one romance. Everyone in the House
-  notices; nobody plays it as comedy or rivalry.
+  notices. Nobody plays it as comedy or rivalry.
 - **The Rot and consent.** As Clarity falls, he forgets things — including
   things said between them. The romance never advances in a blackout, a
-  relapse, or a scene where his Clarity is at 1; the other person's
+  relapse, or a scene where his Clarity is at 1. The other person's
   choices are always the ones that move it.
 - **Recovery is not a plot device.** Love does not cure him, and neither of
-  them is there to fix him. The romance can survive a relapse; it cannot
+  them is there to fix him. The romance can survive a relapse. It cannot
   survive a lie about one.
 - **The age and power gap with Yara.** She is 23, he is 30,
   and her aunt is his publisher. The writing takes that seriously: she
@@ -2684,7 +2684,7 @@ pitch themselves through the interface.
 No hard game-overs. Failure is content:
 
 - Blackout → wake at the Mansion with a written scene about the fall (§4.4).
-- Lose a boss showdown → the target's version of the story runs first; the
+- Lose a boss showdown → the target's version of the story runs first. The
   boss remembers it at the rematch.
 - Heat 10 → a Run in a cell (a full, written run inside the jail, with its
   own doors and a boss: the desk sergeant).
@@ -2706,14 +2706,14 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 | Worship is seductive | High Halo / Helix make social checks easy |
 | Worship kills thinking | High Halo / Helix make truthful columns weaker with believers |
 | Stuck in the middle | Every column raises the *other* cult's meter |
-| You cannot criticize a god that loves you | Jeremiad heals the Emperor; Satire heals Delphine; morning sermons reframe every column |
+| You cannot criticize a god that loves you | Jeremiad heals the Emperor, Satire heals Delphine, morning sermons reframe every column |
 | Flattery is made of true facts | The blood eye shows gospel edits: true facts, false emphasis |
 | Both gods are cures | Clarity loss vs. the Emperor's crisp text and the Theogens' sharpening text |
 | The scientist's answer to faith | Peer Review: the strongest move, and it only works with verified data |
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
 | Godhood is a shortcut | Blessings and Splices make Runs easier and quietly choose your route (§5.8) |
-| The disease erases him | Blackouts empty Memory; only what he writes down survives (§4.4) |
-| Every afterlife has a price tag | The ticket scandal; boons priced in Halo and Helix; the Conductor's black market |
+| The disease erases him | Blackouts empty Memory, only what he writes down survives (§4.4) |
+| Every afterlife has a price tag | The ticket scandal, boons priced in Halo and Helix, the Conductor's black market |
 
 ---
 
@@ -2743,7 +2743,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   member of a real family whose name antisemitic conspiracy theories have
   targeted for two centuries. The game must never feed those theories. Rules:
   no Rothschild money, power or secret influence behind anything in the plot
-  (the money behind *Mondo 3000* and its house is Rivet money, and stays so); no real family member appears;
+  (the money behind *Mondo 3000* and its house is Rivet money, and stays so). No real family member appears;
   when characters spout conspiracy theories about the name, the game frames
   them as what they are — the City's ugliest cult tell (Lifton's "dispensing
   of existence"), and a target Hell Rot punches up at. Hell Rot's family
@@ -2766,17 +2766,17 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   used as dread and irony, not as mockery of Christian faith. No real church
   or denomination is depicted as a cult of the Antichrist, and believers in
   the game (the Nortonian preacher included) are sincere. Ione is an infant
-  and is never shown doing harm; the game is about what adults project onto
+  and is never shown doing harm. The game is about what adults project onto
   a child.
 - **Mental illness.** The Emperor's breakdown is an injury — a mind uploaded
   without the brain region that sorts self from noise — not a portrait of
   schizophrenia. Real people with schizophrenia are far more often victims of
-  violence than perpetrators; the game must never use "psychotic" as a
+  violence than perpetrators. The game must never use "psychotic" as a
   synonym for "dangerous," never play his symptoms for cheap horror, and
   must show his suffering and his lucid hours as fully as his decrees.
   Sensitivity readers with lived experience of psychosis review his scenes.
   The god-gene's hive and rampage (§3.4) are science-fiction body horror,
-  not a depiction of any real illness; the stages borrow the look of a mass
+  not a depiction of any real illness. The stages borrow the look of a mass
   casualty event, not of psychiatric symptoms, and the people in a pocket
   outbreak are named, mourned, and never the butt of the scene.
 - **Mass-casualty imagery.** The pocket outbreak and the midnight stakes
@@ -2825,7 +2825,7 @@ cut-out faces, too many fonts.
   Bridge lights. In the Twin, the reconstructed dead appear as glowing, translucent
   figures with skull-pale faces — Dickens' ghosts by way of *Grim Fandango*'s
   skeleton cast. (They first appeared on the Mission's Day of the Dead altars
-  in November; the flashback uses papel picado and marigold orange — see §7
+  in November. The flashback uses papel picado and marigold orange — see §7
   for the consultation rule.)
 - **Noir framing.** Rain, neon, venetian-blind shadows in the Mansion, a
   hat-and-coat silhouette for Hell Rot on every chapter card.
@@ -2909,8 +2909,8 @@ in the companion document §3. Key rules:
 
 - **Ad layer.** Most City scenes carry 1–3 animated feed-ad sprites (2–4
   frames) with satirical products written for the game. Ads change with world
-  flags: Church ads multiply as the Merge spreads; Theogen graffiti glows
-  over them in the Loin; the Dissonance re-paints them in Route A.
+  flags: Church ads multiply as the Merge spreads. Theogen graffiti glows
+  over them in the Loin. The Dissonance re-paints them in Route A.
 - **Karl** (the nanite fog) covers every street-level scene, thick all year,
   full of 1-pixel glints that drift into brief shapes when the swarm is "thinking."
 
@@ -2932,7 +2932,7 @@ in the companion document §3. Key rules:
 
 - **Chiptune, 2A03-style** (two pulse, one triangle, one noise, one sample
   channel).
-- **City theme:** fast and funky; noise-channel traffic percussion.
+- **City theme:** fast and funky. Noise-channel traffic percussion.
 - **Layout theme:** a single pulse channel, typewriter tempo, faster as Hours
   run out.
 - **The Emperor theme:** the only music with reverb and a sustained pad. It grows in
@@ -2946,8 +2946,8 @@ in the companion document §3. Key rules:
   Dead scenes add a son jarocho rhythm on the noise channel.
 - **Boss themes (the *Hades* layer):** every recurring boss has a theme that
   gains a layer each rematch.
-- **SFX:** typewriter clacks for text; a wet, helpless giggle for the
-  Gelastic; a small bubbling chirp for Moreau.
+- **SFX:** typewriter clacks for text. A wet, helpless giggle for the
+  Gelastic. A small bubbling chirp for Moreau.
 
 ### 8.8 Loading screens: the pull-quote deck
 
@@ -2973,16 +2973,16 @@ are the game's running argument with the Bay Area's history of building gods.
    above all — appear only as **redacted cards**: name, years, a black bar,
    the harm, and Hell Rot's refusal to print them.
 5. **Recovery-aware.** Drug-positive cards (Leary, for example) are held back
-   while Craving is 3 or higher; recovery and honesty cards take their place.
+   while Craving is 3 or higher. Recovery and honesty cards take their place.
 6. **A settings toggle** hides all real-world quotes and shows only in-world
    cards.
 7. **Tagging.** Each card is tagged by Issue, route, cult and mood, so the
-   deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
-   splice; Karl cards after blackouts).
+   deck tracks the story (the Emperor cards near the Merge. Theogen cards near the
+   splice. Karl cards after blackouts).
 
 **The full deck** — 201 cards: 64 real quotations from Bay Area cult
-leaders, prophets, poets, technologists and radicals; 6 redacted cards; 25 eye cards (one per
-power, §5.14a, plus seven portraits of the eyes themselves); and 106 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+leaders, prophets, poets, technologists and radicals. 6 redacted cards. 25 eye cards (one per
+power, §5.14a, plus seven portraits of the eyes themselves). And 106 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -2997,14 +2997,14 @@ a service worker, optional Android wrapper.
 | Item | Spec |
 |---|---|
 | Files | `hellrot.html` + `hellrot-sw.js` + `hellrot.webmanifest` |
-| Rendering | `<canvas>` 256×240 for the scene; DOM text box for accessibility |
+| Rendering | `<canvas>` 256×240 for the scene, DOM text box for accessibility |
 | Story format | JSON node graph (below), written in a plain-text script format and compiled by a small build script |
-| Run generator | Seeded door generator: each district has a weighted door table; story doors are fixed by Issue and Run; all random rolls come from the seed so a Run can be replayed for bug reports |
+| Run generator | Seeded door generator: each district has a weighted door table. Story doors are fixed by Issue and Run. All random rolls come from the seed so a Run can be replayed for bug reports |
 | Hub barks | Conditional bark pool (~3,000 lines) keyed on last-Run flags, with a no-repeat memory, *Hades*-style |
 | State | Flat flag map + meters, saved to `localStorage` per *Back Issue* slot |
-| Dice | 2d6 + attribute vs. difficulty 7–13; results visible |
+| Dice | 2d6 + attribute vs. difficulty 7–13, results visible |
 | Accessibility | Text speed, dyslexia-friendly font, "no timed interrupts," high-contrast palette, Clarity-effects slider, palette-cycling off switch (photosensitivity) |
-| Localisation | All strings external; column templates use tokens |
+| Localisation | All strings external, column templates use tokens |
 
 **Node schema (draft):**
 
@@ -3069,12 +3069,12 @@ Plot questions the writers' room must answer before Alpha.
 
 ### Decided (from the first round)
 
-- **Ending the Emperor is murder.** He is Julian, injured; the urge to kill
+- **Ending the Emperor is murder.** He is Julian, injured. The urge to kill
   him comes from fear of an AI god (§3.3).
 - **The Order rushed the upload.** Julian was dying fast, cingulate
   conditioning takes weeks, and he refused head-only cryonics
   (§3.3).
-- **Karl is passive and inert.** It has no mind; every voice in the fog is
+- **Karl is passive and inert.** It has no mind. Every voice in the fog is
   the Emperor. The conflict is one man going mad from the inputs (§3.3;
   companion doc §3.2).
 - **Only the top of the Order knows** — Masters, Keepers and the Warden
@@ -3087,21 +3087,21 @@ Plot questions the writers' room must answer before Alpha.
   is his recall challenger (§3.6, §3.8).
 - **The house's patron is Julian's other hand** — the man who paid for the
   poison also paid for the antidote (Mondo doc §4.4).
-- **Julian wants the Ascension; the Emperor, having become a god, has second
+- **Julian wants the Ascension. The Emperor, having become a god, has second
   thoughts** (§3.3).
 - **The Duchess** is Theodora Nyquist, 50. She guessed the patron was
-  Julian and never asked; she holds the raw tapes of his 2044 interview. Her
+  Julian and never asked. She holds the raw tapes of his 2044 interview. Her
   *"Cold Storage"* choice: let the Order laser-scan her frozen parents into
   Karl — the second and third uploads — or let them go (Mondo doc §4.4–4.5).
 - **Yara** is Yara Nyquist, 23, who took the name "Nyx" when she left the
-  Bayes House. Her temptation is the Emperor's forecast team; her quest,
+  Bayes House. Her temptation is the Emperor's forecast team. Her quest,
   *"Priors,"* is her family merging as a household (Mondo doc §5).
 - **Junie** is 32, raised by nuns after her parents lost their taquería, an
   atheist with trials of faith. Her temptation is choosing death, not
-  eternal life; her choice is whether to change her body, mind and soul
+  eternal life. Her choice is whether to change her body, mind and soul
   (Mondo doc §5).
 - **Mary** is a retired librarian who believed in Y2K and came back. She is
-  Hell Rot's memory as the Rot advances; her temptation is a 1999 in the
+  Hell Rot's memory as the Rot advances. Her temptation is a 1999 in the
   Twin and an Ascension slot (Mondo doc §5).
 - **Pru** is 29. She wrote the Ledger's 2046 letter about *Mondo 3000*,
   then quit and joined. Her letters to the Lacuna Trust are answered by the
@@ -3115,13 +3115,13 @@ Plot questions the writers' room must answer before Alpha.
   the fog or send them home, and he can hold the Palace for Hell Rot on
   New Year's Eve (Mondo doc §5).
 - **Otto** is a pharmacologist who sat on Hell Rot's PhD committee. In 2045
-  Brandvold told her the god-gene warning out loud; she is a living witness,
+  Brandvold told her the god-gene warning out loud. She is a living witness,
   if she can remember. In *"Expiry Date"* her heart stumbles in Issue 5 and
   she refuses the splice (Mondo doc §5).
 - **Fax** is 34. He was jacked in on the night Hell Rot died and felt the
   four minutes. The voice in his jack is Julian. The Theogens' offer to him
   is an adult cingulate splice that would kill him (Mondo doc §5).
-- **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
+- **Karl was in the lab in 2044** and recorded Hell Rot's death. The Emperor
   uses the recording to reach him (§3.3).
 - **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
   subject (§3.5a).
@@ -3130,11 +3130,11 @@ Plot questions the writers' room must answer before Alpha.
   the Church's "merged" are conditioned and bonded to a Church AI, and the
   Ascension would be the first uploads (§3.3).
 - **The Emperor's pronoun is "we"** in their own mouth and **"they"** in the
-  narration. "I" is Julian surfacing; "WE" in capitals is the swarm. He mirrors Emperor Norton's tastes, and his decrees are a
+  narration. "I" is Julian surfacing. "WE" in capitals is the swarm. He mirrors Emperor Norton's tastes, and his decrees are a
   running bit (§3.3).
 - **Sunday ordered the hit on Rosa Quint** because she turned whistleblower;
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
-- **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren
+- **Delphine is Ione's mother.** She gives birth at Steep Ravine. Wren
   Castillo is her midwife (§3.4, Prologue).
 - **The god-gene is cingulate engineering** — Brandvold's theory, built
   only into Ione, by Delphine, as a fetus. It works only in a developing
@@ -3144,15 +3144,15 @@ Plot questions the writers' room must answer before Alpha.
   cult with no villain. The Ascension's 12,000 are the first lungs it reaches
   (§3.3, §3.8b). A smaller release can play out as a contained pocket
   outbreak before midnight. The Emperor holds the god-gene inside Karl at
-  midnight; it cannot heal him.
+  midnight. It cannot heal him.
 - **Ione is a girl;** the Church and the Order call her "it." Her health
-  is set in the Prologue; she is taken in Issue 4 (by the Gilders or the
-  Church) and rescued at Mount Sutro in Issue 5; as an adult in 2069 she
+  is set in the Prologue. She is taken in Issue 4 (by the Gilders or the
+  Church) and rescued at Mount Sutro in Issue 5. As an adult in 2069 she
   reads Hell Rot's last column (§3.4).
 - **Ione learns who her father was only if the secret gets out** during
   the week (printed, the Gilders' kidnapping, Delphine on the bridge, or
   Delphine surviving to tell her). **Delphine may die** on the bridge at
-  midnight; if she does, Wren raises Ione (§3.4).
+  midnight. If she does, Wren raises Ione (§3.4).
 - **Ione's father is Julian Rivet V.** Ione is the last Rivet heir and the
   Emperor's child (§3.4).
 - **The Emperor does not know Ione is his heir,** but can find out in the
@@ -3174,7 +3174,7 @@ Plot questions the writers' room must answer before Alpha.
 **The Theogens and Ione**
 
 4. **What becomes of Ione on each route?** Every ending promises one line
-   about the child; three are drafted (§3.11), eight to go.
+   about the child. Three are drafted (§3.11), eight to go.
 4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
     Nortonian, a Keeper of the Order, or someone the game never names?
 
@@ -3225,8 +3225,8 @@ Plot questions the writers' room must answer before Alpha.
     depiction of the three stages — hive, rage, seizure — kept contained and
     never gratuitous.)
 24a. **How is the pocket outbreak staged** so it reads as tragedy, not a
-    zombie shooter? The hive is made of named, sympathetic people; the
-    Gelastic and every weapon are useless; Hell Rot's only tools are a door
+    zombie shooter? The hive is made of named, sympathetic people. The
+    Gelastic and every weapon are useless. Hell Rot's only tools are a door
     and his voice. Sensitivity review covers the mass-death imagery.
 25. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?

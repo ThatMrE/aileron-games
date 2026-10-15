@@ -41,7 +41,7 @@
 | R2 | "Satan represents vital existence, instead of spiritual pipe dreams!" | LaVey, *The Satanic Bible* | | *The Merge is a spiritual pipe dream with a server bill.* | Black House, Merge |
 | R3 | "Satan represents vengeance, instead of turning the other cheek!" | LaVey, *The Satanic Bible* | | *Rule 1: punch up. Rule 1a: cheeks are optional.* | Black House |
 | R4 | "Satan has been the best friend the Church has ever had, as he has kept it in business all these years!" | LaVey, *The Satanic Bible* | The ninth of his Nine Satanic Statements | *Every church needs a villain. The Emperor picked me.* | Black House, funny, I4 |
-| R5 | "Today is the first day of the rest of your life." | Attributed to Charles "Chuck" Dederich, founder of Synanon | A rehab program that became a church; in 1978 its members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* | Synapse, recovery |
+| R5 | "Today is the first day of the rest of your life." | Attributed to Charles "Chuck" Dederich, founder of Synanon | A rehab program that became a church. In 1978 its members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* | Synapse, recovery |
 | R6 | "Synanon" | The name itself (1958) | By the group's own story, a new member slurred "symposium" and "seminar" together, and Dederich kept the word | *A cult named after a man too high to pronounce "seminar." Respect.* | Synapse, weird |
 | R7 | "Turn on, tune in, drop out." | Timothy Leary (1966–67) | Popularized at the Human Be-In, Golden Gate Park, January 1967. In 1966 Leary also founded a religion, the League for Spiritual Discovery | *I did all three. Wrong order.* | drugs+, Haight |
 | R8 | "Think for yourself and question authority." | Attributed to Timothy Leary | | *Including Timothy Leary.* | |
@@ -66,7 +66,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 |---|---|---|---|---|
 | X1 | **JIM JONES** (1931–1978) ███████████ | Peoples Temple, 1859 Geary Boulevard. 918 people died at Jonestown and Port Kaituma on 18 November 1978. | *I don't print his words. Read the names of the people he killed instead. The Jonestown Institute keeps the list.* | Twin, grim, I2 |
 | X2 | **CHARLES MANSON** (1934–2017) ███████████ | Recruited his first followers in the Haight in 1967 | *No. Next card.* | grim |
-| X3 | **THOMAS LAKE HARRIS** (1823–1906) ███████████ | Ran the Fountaingrove commune in Santa Rosa; his followers worked his vineyards for free | *A San Francisco Chronicle reporter took him apart in print. Reprint the reporter, not him.* | New Breath, I3 |
+| X3 | **THOMAS LAKE HARRIS** (1823–1906) ███████████ | Ran the Fountaingrove commune in Santa Rosa, his followers worked his vineyards for free | *A San Francisco Chronicle reporter took him apart in print. Reprint the reporter, not him.* | New Breath, I3 |
 | X4 | **SYNANON'S LATE SERMONS** ███████████ | In its last years Synanon armed a private guard and its founder made threats on tape | *The first line was a greeting card. The last lines were threats. That's the arc.* | Synapse, grim |
 | X5 | **THE PROCESS** ███████████ | Black capes, silver crosses, German shepherds on Haight Street, 1967 | *They wrote beautifully. That's the problem with all of them.* | Final Process, weird |
 | X6 | **THE NEXT ONE** ███████████ | A blank card with the year 2049 | *There is always a next one. This week there are two.* | B, C, grim, I6 |
@@ -378,7 +378,7 @@ cut any that fail. Notes:
 - **R11** (the "Frisco" decree) is commonly attributed to Emperor Norton, but
   historians doubt he wrote it. The card says so, on purpose.
 - **R58** is a famous misattribution to Mark Twain. The card is about that.
-- **R52:** William Powell, writing in *The Guardian* in 2013; the book's
+- **R52:** William Powell, writing in *The Guardian* in 2013. The book's
   contents never appear in the game.
 - **R51:** only the opening line of the manifesto appears, always with the
   harm named.
