@@ -373,7 +373,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 |---|---|---|---|---|---|---|
 | **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** Born Theodora Nyquist, 50; "the Duchess" since a Dissonance Society night at 21. In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: The Emperor offers to *upload* her parents — a laser scan of their frozen brains into Karl | *"Cold Storage"* — see below |
 | **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Emperor's **forecast team** — the Twin's prediction engine, the same one that produced the martyr metric that nearly killed Rosa. The offer comes in Issue 4, after she has seen what the forecasts do. The temptation is not the Emperor; it is fixing the model from inside, so she could stop the next one | *"Priors"* — her parents' Bayes House is **merging as a household**: one shared personal AI for the whole family, deciding everything by expected value, forever — the coin-flip house made permanent. They want her home as the household's tie-breaking human. The ceremony is Thursday: she goes and tries to talk them out of it, or lets them go |
-| **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None — on purpose.** She is the House's **control group**, and proud of it. 32. Her parents could not keep their Excelsior taquería open and left her, as a teenager, with the nuns at a Catholic school. She learned old-school religion — the catechism, the Latin, the saints' deaths — and came out an atheist who still knows every verse. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | **Death, not eternal life.** Everyone else is tempted by forever; Junie is tempted by an ending. The nuns promised her heaven, she stopped believing, and she suspects nothing comes after — and finds that restful. Her lure is to refuse every offer of more life and let herself be used up: the bodyguard who steps in front of everything, the skater who skates on knees that are done | *"Jam"* — her **trials of faith**: she must decide whether to change her **body, mind and soul** (below) |
+| **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None — on purpose.** She is the House's **control group**, and proud of it. 32. Her parents could not keep their Excelsior taquería open and left her, as a teenager, with the nuns at a Catholic school. She learned old-school religion — the catechism, the Latin, the saints' deaths — and came out an atheist who still knows every verse. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | **Death, not eternal life.** Everyone else is tempted by forever; Junie is tempted by an ending. The nuns promised her heaven, she stopped believing, and she suspects nothing comes after — and finds that restful. Her lure is to refuse every offer of more life and let herself be used up: the bodyguard who steps in front of everything, the skater who skates on knees she does not own | *"Jam"* — her **trials of faith**: she must decide whether to change her **body, mind and soul** (below) |
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
 | **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — the Emperor asks him to preach at the Ascension |
 | **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | PALE EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that the Emperor does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
@@ -402,16 +402,35 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 
   | Trial | The offer | What it would change |
   |---|---|---|
-  | **Body** | The Theogens: new knees, one splice, and she skates forever on her own legs | Her body — and the cult's claim on her |
+  | **Body** | The Theogens: one splice, and her own knees grow back. Nobody can repossess them | Her body — and the cult's claim on her |
   | **Mind** | The Merge: conditioning and a Church personal AI, so she never has to sit alone with her own head again | Her mind — the voice in it would not be only hers |
   | **Soul** | Not the Church's Ascension list, which she laughs at — the faith of the nuns, back again: Christ, in a Christmas-week church in the rain. It is the only offer this week that is not selling her anything, and the only one she cannot laugh at | Her soul — whether she believes anything comes after |
 
   Against all three stands her own temptation: refuse everything and choose
   death — a mortal end, unchanged. The climax of *"Jam"* is a charity bout at
   the Cow Palace on Wednesday night against a spliced Theogen team, skated on
-  knees that are done. What she does there — and whether Hell Rot is in the
+  knees that may not be hers by Thursday. What she does there — and whether Hell Rot is in the
   stands — shows which way she is leaning. She is the one person in the House
   who asks Hell Rot what he saw when he died, and listens to the answer.
+- **Junie's knees.** Her own knees were wrecked by derby. Two years ago she
+  had both replaced with leased robotic knees, on a medical loan she cannot
+  pay. She is three payments behind. This week the lender sends a **repo
+  crew**. They can take the knees back at any time — in the street, in the
+  van, at the bout. The Church offers to clear the debt if she joins the
+  Ascension list. The Theogens offer knees of her own. Hell Rot can pay one
+  payment from the House's Ink, once. The repo crew is a running threat and
+  a running joke: two tired men with a van, a clipboard and a warrant, who
+  are sorry about it.
+- **Junie's Catholic habits.** She is an atheist, and she still does these
+  things without thinking:
+  - A small **crucifix hangs below the rear-view mirror** of the *Mondo 3000*
+    van. She says it came with the van. It did not.
+  - She crosses herself before a fight, and before the van goes over a hill.
+  - She says a Hail Mary under her breath when Hell Rot is in danger. She
+    stops halfway when she notices.
+  - She knows the saint for every day of the week, and tells him.
+  - She calls Hell Rot **"Lazarus"** — the man who died and came back.
+  - On Christmas night, at the Santas' Mass, she kneels. Only for a second.
 - **Rivalries** (banter pairs that develop over the game):
   - **Yara vs. Pru** — two quantitative minds, opposite conclusions. They share
     a desk and do not speak until Issue 3. Their first spoken exchange is
