@@ -983,6 +983,16 @@ scene that makes the midnight stakes real and literal. Whether it happens,
 and whether Hell Rot can wall it off or has to leave people inside, is a
 choice with its own blackout and its own column.
 
+**How the pocket outbreak is staged.** It is told, not shown. A content
+warning comes first. The scene illustration freezes on the closed door and
+stays there. The **hive** stage is text and sound: named people Hell Rot
+knows speak in unison, calm, finishing each other's sentences. The **rage**
+stage is only the door and the text box shaking, and Hell Rot's voice is
+the only tool he has. The Gelastic and every weapon do nothing. The
+**seizure** stage cuts the sound, and the text becomes a list of their
+names. No sprites, no gore and no combat at any stage. The column he writes
+afterwards is not optional.
+
 If the god-gene is released into the City, the run fails: a black screen,
 a count of the dead, and the night begins again from dusk (§4). The
 Quickening never completes in any ending. When it reaches the swarm at
@@ -990,6 +1000,13 @@ midnight, the Emperor — reading his daughter's mind in it, and the design
 he was uploaded without — **holds it inside Karl and does not breathe it
 out**. Holding it is part of his convulsion (§3.8b). It cannot heal him: it
 is a program for a growing brain, and he has none.
+
+**The Quickening on screen.** Fog effect only. Because it never completes,
+there is no full sequence to show. Cyan threads run through Karl's grey and
+gold and gather at the bridge towers. Then the whole City's fog **stops
+moving** for nine seconds: that stillness is the Emperor holding it. Then the
+convulsion begins (§3.8b). The fail state shows nothing of the deaths: a
+black screen, a count, and dusk again.
 
 **She, or it.** Ione is a girl. Everyone who loves her says "she." The
 Church of the Twin and the Auric Order say **"it"** — in sermons, in the
@@ -1238,7 +1255,7 @@ uncertainty on screen.
 | **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Born Theodora Nyquist, 50. Named herself "the Duchess" at 21 at a Dissonance Society event and never put the title down. Velvet and denim — the Order's cloth, without knowing it. Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). Her secret: she guessed years ago that the house's patron was Julian, and never asked (Mondo doc §4.4). |
 | **Junie Vasquez** | Companion: protector | 32. Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her parents lost their Excelsior taquería and left her, as a teenager, to be raised and taught by nuns at a Catholic school. She learned old-school religion thoroughly and is an atheist. She leans toward no faction. The only pull she feels is toward **Jesus Christ**, the faith the nuns taught her. A crucifix hangs below the van's mirror. She calls Hell Rot "Lazarus." Her replaced knees are leased, she is behind on the payments, and a repo crew can take them back this week. This week brings her **trials of faith**, and her temptation is the opposite of everyone else's: not eternal life, but **choosing death** (Mondo doc §5). Her **Trust** affects fights and one ending. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, 23: born Yara Nyquist, the daughter of the Duchess's younger brother, raised in a Bayes House. She took the name "Nyx" the day she left at 16 — the only irrational choice she has ever made, and she knows it. Fact-checker, co-writer, trained statistician, the player's skeptic. Her creed is the error bar: *"I'm not against numbers. I'm against anyone who forgets the error bars."* She read the Theogenesis papers at 15 and has never told him. Her **Trust** unlocks the "Successor" ending. |
-| **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
+| **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub, and saving him from the fire costs something (§3.8b). |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal. Issues decrees. Calls everyone "beloved" in his good hours. Speaks of themselves only as **"we"**. The narration says "they". When they say "I," it is Julian. The first and only upload. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. Ione's father, though he was uploaded without knowing a child was coming. |
@@ -1501,6 +1518,16 @@ in the Fill and the Marina. Water mains crack. The rain band passes by
 Mission Bay and South of Market and spread toward downtown. The Auric Order,
 which opens every meeting by reading its account of the 1906 fire, watches it
 happen again.
+
+**The second fire (Moreau's payoff).** The Prologue fire let Hell Rot save
+Moreau's jar *and* one other thing. By New Year's Eve Moreau lives in a
+bathtub and is too big to carry. When the fire reaches wherever Hell Rot is,
+saving Moreau now *costs* the one other thing: the last column, the Notebook
+or a person's evidence. He can leave Moreau behind. Moreau regrows, survives
+anyway, and turns up in the Epilogue — and the Epilogue says what the
+choice meant. There is no Moreau boss fight. Every ending has one Moreau
+line (§3.11). The default: the Cal Academy aquarium takes him in, because no
+flat in the City has a tank big enough.
 
 **How the public finds out.** In the quake the Emperor loses the last of his
 control over what he shows. Every window in the City fogs over with writing;
@@ -2448,6 +2475,15 @@ with its own cult and makes truthful columns *less* effective with that cult's
 members ("Your readers believe you. They no longer check."). The HUD shows
 them as a gold bar and a pulsing cyan spiral, side by side, pulling against
 each other.
+
+**The Morning Poll (no vote meter on the HUD).** Prop F's and the recall's
+vote shares are hidden. Columns move them through Opinion. The only view is
+a **Morning Poll** strip on the 6 a.m. press-run screen, printed in the
+paper's style: an arrow for each vote, a rough figure and a margin of
+error. The poll is a night behind and can be off by up to 3 points, so the
+player sees trends, not a score to farm. At **Yara Trust ≥ 3** she adds her
+own error bars and says which polls to ignore. The real results arrive
+only on Thursday (the ruling) and at the recount, where Rosa reads them.
 
 ### 5.4 Reputation: Venom / Vow
 
@@ -3506,6 +3542,15 @@ Plot questions the writers' room must answer before Alpha.
   faction, no leader, no quest. They appear only as overheard lines, graffiti
   and the odd loading card, and every time the game shows them wrong. Hell
   Rot answers them once, in print, and moves on (§2.1, §7).
+- **No vote meter on the HUD (was Q22).** The vote shares are hidden. A
+  Morning Poll on the press-run screen shows them a night late, with a
+  margin of error. Yara's error bars sharpen it (§5.3).
+- **Moreau stays a running gag (was Q23).** No boss fight. The payoff is the
+  second fire: saving the bathtub-sized axolotl costs the "one other thing"
+  (§3.8b).
+- **The Quickening is fog only (was Q24, Q24a).** Nine seconds of still fog
+  at midnight. The pocket outbreak is told through a closed door, voices and
+  a list of names — no sprites, no gore, no combat (§3.4).
 
 ### Still open
 
@@ -3516,16 +3561,5 @@ Plot questions the writers' room must answer before Alpha.
 
 **Design questions**
 
-22. Should the player's columns move Prop F's and the recall's vote share
-    visibly, night by night, on the HUD?
-23. Should Moreau's growth pay off in a boss fight, or stay a running gag?
-24. How literal is the Quickening on screen — fog effect only, or a full
-    sequence? (Now tied to §3.4: the pocket outbreak needs an on-screen
-    depiction of the three stages — hive, rage, seizure — kept contained and
-    never gratuitous.)
-24a. **How is the pocket outbreak staged** so it reads as tragedy, not a
-    zombie shooter? The hive is made of named, sympathetic people. The
-    Gelastic and every weapon are useless. Hell Rot's only tools are a door
-    and his voice. Sensitivity review covers the mass-death imagery.
 25. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?
