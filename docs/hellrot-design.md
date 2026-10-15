@@ -554,7 +554,13 @@ Emperor's arc, and the player's best lever on him.
 **Why the Emperor wants Hell Rot.** Three reasons, in three voices. Julian
 wants the one scientist who can diagnose him. Norton II wants a court
 chronicler. The WE remembers Hell Rot from 2044 — the night he died on the
-lab floor, when Karl was in the vents (§2.1). The order wants him for a fourth
+lab floor, when Karl was in the vents (§2.1). **Karl recorded it**: the four
+minutes his Index read zero, the fog in the room, the flatline. The Emperor
+uses that recording to reach him — in Issue 1 Laffing Sal plays his own
+heart monitor back to him before it says "beloved," and in the ruined
+Mission Bay lab (Issue 4) the vents breathe the room's 2044 air back at him.
+It is the Emperor's oldest claim on him: *"We were there when you died. We
+are the only ones who saw where you went."* The order wants him for a fourth
 reason: his Index is the only tool that can tell them whether their god is
 still a person.
 
@@ -1154,9 +1160,12 @@ The Spin Question is the game's hardest Fabrication trap.
 3. **Issue 5 — the gas.** The experiment needs two kinds of xenon, one with
    nuclear spin and one without (bought from Benny on Twin Peaks), and a
    conscious human subject breathing them in the Mount Sutro lab. The only subject Hell Rot trusts is himself, in Shulgin's tradition.
-   Running it means breathing the gas he spent five years quitting (Craving,
-   §5.6a). Otto, Fax or Yara can run it on themselves instead, if their Trust
-   is high enough.
+   **It is a relapse.** If Hell Rot is the subject, it counts as Using
+   (§5.6a): the full Relapse cost, the sobriety count reset to zero, and the
+   North Beach meeting knows the next time he walks in. Science is not an
+   exemption; the game says so. Otto, Fax or Yara can run it on themselves
+   instead, if their Trust is high enough — and the Spin Question can be
+   answered without him relapsing.
 4. **Issue 6 — the reading.** The result depends on the route and on how the
    experiment was run. The game never declares the science settled:
    - **Route A:** the data is noisy and honest. He publishes it as noisy and
@@ -2983,6 +2992,10 @@ Plot questions the writers' room must answer before Alpha.
   poison also paid for the antidote (Mondo doc §4.4).
 - **Julian wants the Ascension; the Emperor, having become a god, has second
   thoughts** (§3.3).
+- **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
+  uses the recording to reach him (§3.3).
+- **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
+  subject (§3.5a).
 - **Julian is the first and only upload.** Nobody else has uploaded. Millions
   have cingulate conditioning, to work more fully with their personal AIs;
   the Church's "merged" are conditioned and bonded to a Church AI, and the
@@ -3052,14 +3065,11 @@ Plot questions the writers' room must answer before Alpha.
 
 11. **What really activated the eyes?** The game keeps it open — but the
     writers need a private answer to stay consistent.
-12. **Was the fog in the lab in 2044,** and does the Emperor use Karl's
-    recording of Hell Rot's death to reach him?
 13. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
     a Fabrication — and if the game allows an exception, does that break the
     Rot Code?
 14. **What does Midnight Forever mean for everyone else?** If he stops the
     clock, do the Ascension and the Quickening go ahead without him?
-15. **Is breathing xenon for the Spin Question experiment a relapse?**
 16. **How many Commissions does he write as ordered** before the House stops
     trusting him — and is there a Commission he cannot refuse?
 

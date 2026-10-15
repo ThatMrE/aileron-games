@@ -88,8 +88,8 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1978–79 | *The Point Reyes Light* (a tiny Marin weekly) | Synanon | The 1979 Pulitzer Prize for Public Service |
 | 1989–1998 | *Mondo 2000* (Berkeley) | — | Not an exposé: the cyberculture magazine that first took uploads, smart drugs and body hacking seriously, and laughed at them in the same issue. The spiritual ancestor of *Mondo 3000*. |
 
-The Duchess Nyx keeps framed copies of all four on the stairs of her Berkeley
-mansion. Hell Rot's line when he first sees them is the thesis of the
+The Duchess Nyx keeps framed copies of all four on the stairs of Villa Delirium,
+the Alamo Square house. Hell Rot's line when he first sees them is the thesis of the
 setting: *"In this town, a magazine is the only exorcist that works."*
 
 ---
