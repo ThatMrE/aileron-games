@@ -794,9 +794,39 @@ rescue Run and the Spin Question experiment happen in the same building, on
 the same night: Ione is in the lab at the worst possible moment, and the
 gas is already flowing.
 
+**Delphine may die.** Her failing splices give out on the Golden Gate
+Bridge at midnight unless something stops her first. She **lives** if:
+
+- she learns the Emperor lives in Karl and calls off the Quickening by her
+  own choice (Route D, the Mortal ending), or
+- Hell Rot and Wren carry her off the south tower before the Midnight Quake
+  (a MOUNTAIN MAN red check, Wren Trust ≥ 3).
+
+Otherwise she **dies** on the bridge: in the convulsion if the Quickening
+runs, or in the storm if it is stopped by force. If she dies, **Wren raises
+Ione**.
+
+**What Ione knows about her father.** Ione learns who her father was only
+if the secret gets out during the week. She knows if any of these happened:
+
+- Hell Rot **printed the paternity** in a column;
+- the **Gilders** took her in Issue 4 (they took her *because* she is the
+  heir, and the court papers say so);
+- Delphine **told the Emperor on the bridge**, on an open feed;
+- Delphine **lived** — she tells her daughter at sixteen.
+
+If none happened and Delphine died keeping the secret, Ione never knows.
+
 **As an adult.** The only time the game hears Ione speak is in the
 Epilogue's last scene: in 2069, aged twenty, she reads Hell Rot's last
-column aloud. The whole game becomes something she inherited.
+column aloud. The whole game becomes something she inherited. Her first
+line changes with what she knows and who raised her:
+
+| Ione knows? | Mother | Ione's first line in 2069 |
+|---|---|---|
+| Yes | Lived | *"My mother says he was in the pool when I was born. My father was in the fog. Neither of them could hold me."* |
+| Yes | Died | *"I have my mother's light and my father's money. Wren taught me what to do with both."* |
+| No | Died | *"I never knew who my father was. The fog did, I think. It always went around me."* |
 
 **The father: Julian Rivet V.** Delphine and Julian were lovers from 2036 to
 2043 — the gene-god and the heir of the gold, both sure they could out-think
@@ -1467,7 +1497,8 @@ midnight coming.
   edge of the Marina, on 1906 rubble.
 - **The Golden Gate Bridge climax** — the fog's front door, where the
   Theogens load the Quickening into Karl as the storm comes in — Delphine at
-  the south tower with Ione, her skin going dark — and where
+  the south tower with Ione, her skin going dark, and perhaps dying there
+  (§3.4) — and where
   Hell Rot is standing when the **Midnight Quake** hits.
 - **The ending's ground** — **Baker Beach** (the bonfire and the gods'
   debate, Route D), **Mount Tamalpais** (the Mountain), or a man **frozen**
@@ -2740,6 +2771,10 @@ Plot questions the writers' room must answer before Alpha.
   is set in the Prologue; she is taken in Issue 4 (by the Gilders or the
   Church) and rescued at Mount Sutro in Issue 5; as an adult in 2069 she
   reads Hell Rot's last column (§3.4).
+- **Ione learns who her father was only if the secret gets out** during
+  the week (printed, the Gilders' kidnapping, Delphine on the bridge, or
+  Delphine surviving to tell her). **Delphine may die** on the bridge at
+  midnight; if she does, Wren raises Ione (§3.4).
 - **Ione's father is Julian Rivet V.** Ione is the last Rivet heir and the
   Emperor's child (§3.4).
 - **The Emperor does not know Ione is his heir,** but can find out in the
@@ -2766,8 +2801,6 @@ Plot questions the writers' room must answer before Alpha.
    about the child; three are drafted (§3.11), eight to go.
 4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
     Nortonian, a Keeper of the Order, or someone the game never names?
-5. **Does Ione learn, as an adult, who the father was?** (Epilogue-line
-   material only.)
 
 **Proposition F and the courts**
 
