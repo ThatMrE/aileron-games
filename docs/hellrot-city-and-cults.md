@@ -275,7 +275,7 @@ faint, soft glow that the fog paints around them: an **aura**.
   a mad god redecorating his City.
 - **For the art team:** auras are drawn as a soft dithered halo around each
   character sprite, in the fog palette, with Twin gold reserved for high
-  Halos and the Order's ring.
+  Halo scores and the Order's ring.
 
 **The prophecy, real and in-world.** None of this came from nowhere. In
 **1986** the **Foresight Institute** was founded in Palo Alto, by Christine
@@ -335,7 +335,7 @@ report about you. The Church gives them away free; the Rivet Trust pays.
 | Calm: slow breath, blue-grey aura, no spikes | Low noise in the signal |
 | Gratitude: thanks, compliments, kind posts — the Church's gospels count them | The Twin's sentiment score |
 | Attending mass on the feed, volunteering at Church services | Visible devotion, logged |
-| Friends with high Halos | A clean social graph |
+| Friends with high Halo scores | A clean social graph |
 | Donations, and Halo upgrades (*"Love is free. Halo upgrades are not."*) | Money |
 
 **What lowers it:**
@@ -451,7 +451,7 @@ Quickening.
 | Sutro Baths ruins, Lands End | **The Baths** | The ruins are gone: the Rivet consortium built a Twin data center in the old pools, cooled by seawater. The tunnels under it, warm with its waste heat, are the Theogens' congregation | Twin engineers above, Theogens, Delphine below | Issue 3 |
 | Mission Bay biotech labs | **The Cradle** | Ruined, half-flooded labs behind the seawall, Theogen pilgrims, Otto's old company | Theogens | Issue 3 / Issue 4 / Route C |
 | Old BART tunnels | **The Undertrack** | Abandoned transit tunnels, Theogen clinics, the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
-| Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
+| Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halo scores — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
 | Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists, Rosa Quint's old base | Issue 3 |
 | City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 6 |
 | Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. The swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
