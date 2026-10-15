@@ -62,17 +62,17 @@ those communities dispute the grouping, and the term itself is contested.
 *Mondo 2000* used cyberpunk: as a rich, local, real subject to report on,
 with curiosity, respect for the ideas, and a lot of jokes.
 
-### 2.2 The in-world frame: "the Bundle" in 2999
+### 2.2 The in-world frame: "the Bundle" in 2049
 
-A thousand years on, the City still calls this family of ideas **the
-Bundle**. Each letter has grown into a church, a lobby, a fashion or a cult —
+Twenty-five years after the acronym, the City calls this family of ideas
+**the Bundle**. Each letter has grown into a church, a lobby, a fashion or a cult —
 and the game's two god-cults are the Bundle's two great descendants:
 
-| Letter | Descendant in 2999 | Where it shows up |
+| Letter | Descendant in 2049 | Where it shows up |
 |---|---|---|
 | **T** Transhumanism | Both cults; the City's whole body-mod economy | Everywhere |
 | **E** Extropianism | **The Theogens**: endless self-revision through splicing | The Undertrack, the Baths |
-| **S** Singularitarianism | **The Church of the Twin**: the god arrived, a decade late | The Geary Cathedral |
+| **S** Singularitarianism | **The Church of the Twin**: the god arrived, four years after the famous 2045 forecast | The Geary Cathedral |
 | **C** Cosmism | **The Merge**: resurrect the dead (Emperor Norton first), keep everyone forever | The Twin |
 | **R** Rationalism | The **Bayes Houses**: group homes that run their lives by probability; a reliable source of brilliant, exhausted defectors | Haight Exchange |
 | **EA** Effective Altruism | **The Ledger**: a charity bloc that rates every cause by numbers and funds both cults "as a hedge" | The Spire District |
@@ -80,7 +80,7 @@ and the game's two god-cults are the Bundle's two great descendants:
 
 ### 2.3 Editorial mission
 
-*Mondo 3000*'s masthead line, printed on every issue since 2989:
+*Mondo 3000*'s masthead line, printed on every issue since 2041:
 
 > **THE FUTURE IS A RELIGION. WE ARE ITS GOSSIP COLUMN.**
 
@@ -91,17 +91,18 @@ from inside, often high, never neutral, always on paper.
 
 ## 3. History of *Mondo 3000*
 
-### 3.1 Founding (2989)
+### 3.1 Founding (2041)
 
-- The **Duchess Nyx** founded *Mondo 3000* in **2989** — eleven years before
-  the millennium, exactly as *Mondo 2000* was founded eleven years before
-  its own. She did it on purpose. She does everything on purpose.
-- The spark: in the cold-storage archives on the Rock (Alcatraz), next to the
-  frozen heads, she found a crate of 20th-century paper magazines, including
-  a nearly complete run of *Mondo 2000*. She read them in one night. She
-  decided the City needed one again.
+- The **Duchess Nyx** founded *Mondo 3000* in **2041**. *Mondo 2000* had
+  named itself after a year eleven years away. By 2041 the year 2000 was
+  ancient history, so the Duchess named hers after a year no living reader
+  would ever see — "the only honest name for a magazine about the future."
+- The spark: clearing out the Rock's cryonics vault office (her parents are
+  stored there), she found a crate of 1990s paper magazines, including a
+  nearly complete run of *Mondo 2000*. She read them in one night. She
+  decided the Bay Area needed one again.
 - First issue: 48 pages, risograph-printed, 900 copies, cover line *"THE
-  SINGULARITY IS LATE AGAIN."*
+  SINGULARITY IS COMING (AGAIN)."*
 
 ### 3.2 Why paper
 
@@ -116,18 +117,19 @@ the core of its credibility and a game mechanic:
   **permanently verified**, and a back issue in the Archive is proof no cult
   can rewrite.
 
-### 3.3 The years before Hell Rot (2989–2999)
+### 3.3 The years before Hell Rot (2041–2049)
 
 | Year | Issue | What happened |
 |---|---|---|
-| 2989 | No. 1 | *"The Singularity Is Late Again."* The Bishop's prophecy fails (§5). He moves in. |
-| 2991 | No. 14 | Exposé of a Bayes House that ran a member's life by coin-flip for a year. Yara's childhood home. She moves in. |
-| 2993 | No. 30 | The first "Theogen" story — a splice clinic in the Loin. Circulation triples. |
-| 2994 | No. 37 | The Duchess publishes a 40-page interview with a then-obscure, reclusive biotech heir: Julian Rivet V. He talks for six hours about death. |
-| 2994 | — | The **Patron** buys the mansion (§4). The magazine moves in. |
-| 2996 | No. 61 | The Ledger rates *Mondo 3000* "net-negative for civilization." The Duchess frames the letter. |
-| 2997 | No. 70 | Circulation peaks at 210,000 paper copies — the largest print run in the City. |
-| 2999 | No. 88 | The Duchess signs Hell Rot. Issue 1 of the game is *Mondo 3000* No. 89. |
+| 2041 | No. 1 | *"The Singularity Is Coming (Again)."* Monthly, on paper. |
+| 2042 | No. 14 | Exposé of a Bayes House that ran a member's life by coin-flip for a year. Yara's childhood home. She moves in at 16. |
+| 2043 | No. 27 | The first "Theogen" story — a splice clinic in the Loin. Circulation triples. |
+| 2044 | No. 37 | The Duchess publishes a 40-page interview with a reclusive heir: Julian Rivet V, whose family trust is building the Twin. He talks for six hours about death. |
+| 2044 | — | The **Patron** buys the mansion (§4). The magazine moves in. |
+| 2045 | No. 49 | *"The Singularity Is Late."* The Bishop's stadium prophecy for 2045 fails (§5). He moves in. |
+| 2046 | No. 61 | The Ledger rates *Mondo 3000* "net-negative for civilization." The Duchess frames the letter. |
+| 2047 | No. 80 | Circulation peaks at 64,000 paper copies — the largest print run of any magazine in the Bay Area. |
+| 2049 | No. 104 | In November, FRANCIS goes public. The Duchess signs Hell Rot and announces the **Holiday Week Dailies**: seven paper editions in seven days, 25–31 December. Issue 1 of the game is Daily No. 1. |
 
 ---
 
@@ -138,7 +140,7 @@ the core of its credibility and a game mechanic:
 A brown-shingle, five-storey, Arts-and-Crafts mansion in the **Berkeley
 Hills**, in the style of the early-20th-century Bay Area architects —
 redwood, deep eaves, a tower, too many staircases — now wedged between two
-stacked towers that dwarf it. Locals call it **Villa Delirium**. Its staff
+new towers from the 2030s upzoning that dwarf it. Locals call it **Villa Delirium**. Its staff
 call it **the House**.
 
 It is the game's hub (main doc §4.5). Its key rooms, from bottom to top:
@@ -160,7 +162,7 @@ It is the game's hub (main doc §4.5). Its key rooms, from bottom to top:
 
 ### 4.2 The deed: four conditions
 
-In 2994 an anonymous buyer paid cash for the house through a shell called the
+In 2044 an anonymous buyer paid cash for the house through a shell called the
 **Lacuna Trust** and leased it to *Mondo 3000* for **one peppercorn a year**.
 The lease has four conditions, carved over the Salon fireplace:
 
@@ -189,13 +191,13 @@ different housemate each time.
 |---|---|---|
 | **Delphine Ash** | She quotes back issues no one else remembers | She never knew the House is sealed — she sent a Theogen courier who walked into the glass |
 | **Mayor Pell** | He hates both cults; he would pay to keep a critic alive | He tries to *buy* the magazine in Issue 3. You do not buy what you already own. |
-| **Karl** | The fog is the only being older and stranger than the Trust | Karl cannot enter the House. Why would it pay for a building it is locked out of? (Karl, asked: "WE WONDERED THAT TOO.") |
+| **Karl** | The fog is older than the Trust, and stranger than anyone | Karl cannot enter the House. Why would it pay for a building it is locked out of? (Karl, asked: "WE WONDERED THAT TOO.") |
 | **The Ledger** | Effective altruists fund critics as "epistemic insurance" | Pru shows their books. They rate the magazine net-negative. |
-| **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? | His bank records from 2994 show he was broke, on the mountain, and buying ketamine in bulk |
+| **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? | His bank records from 2044 show he was freshly fired, broke, on the mountain, and buying ketamine in bulk |
 
 **The truth (revealed in Issue 4, all routes):** the Patron was **Julian
 Rivet V** — the last Rivet heir, the man whose upload became FRANCIS. Two
-months after his six-hour interview with the Duchess in 2994, he set up the
+months after his six-hour interview with the Duchess in 2044, he set up the
 Lacuna Trust. He was a quiet longtermist (the Bundle's **L**). He was already
 finishing the Twin, and he knew it might become a god. He also believed that
 every god needs a heretic on retainer, and that the heretic needs a house the
@@ -209,7 +211,7 @@ critics. The fragment of Julian inside it, when Hell Rot finally reaches him,
 says something else: *"I set it up so it couldn't be cancelled. Even by me.
 Especially by me."*
 
-**The Locked Room** holds Julian's handwritten journals from 2989 to 2999 —
+**The Locked Room** holds Julian's handwritten journals from 2044 to 2049 —
 on paper, so FRANCIS has never read them. They are the key evidence of Route
 D, and the Trust's last letter (Issue 5) finally sends the key.
 
@@ -243,7 +245,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   that wants them back, and the moment it will try.
 - **Loyalty quests ("Back Page" stories).** Each companion has a personal
   story told as a short run of Nights. Finish it, and their final keepsake
-  and interrupt unlock. Skip it, and on Millennium Night they may not be
+  and interrupt unlock. Skip it, and on New Year's Eve they may not be
   there.
 - **Editorial meetings** (§6.3) start every Issue: the party argues about the
   angle. The player decides, and the household remembers who lost the vote.
@@ -252,14 +254,14 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 
 | Resident | Masthead title | Bundle past | Companion bonuses | Once-per-Night ability | Lure | Back Page story |
 |---|---|---|---|---|---|---|
-| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** In her twenties she paid to thaw and revive three 20th-century strangers, as a sacred duty to the dead. Two did not survive the revival. She stopped believing that night. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: FRANCIS offers to bring back the two she lost, inside the Twin | *"The Other Two"* — find out what the Twin's copies of them really are |
+| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: FRANCIS offers to rebuild her parents inside the Twin from their records | *"Cold Storage"* — find out what the Twin's copies of them really are |
 | **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Bayes Houses' new champion, which wants her to run FRANCIS's forecast team | *"Priors"* — her parents' house is merging, as a household, and they want her to come |
 | **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None.** She is the House's **control group**, and proud of it. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | The Merge: her knees are failing, and the Twin would let her skate forever | *"Jam"* — one last bout at the Cow Palace roller rink, and a choice about her body |
-| **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 140 years old after a century of life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
-| **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2989 and filled a stadium. It did not come. He wrote the cover story about his own failure for issue No. 1. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only ten years early | *"Late"* — FRANCIS asks him to preach at the Ascension |
-| **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Fitted with a 2950s neural jack in his teens; the format died, and the jack still runs on an obsolete protocol. | CYAN EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that FRANCIS does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
+| **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
+| **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — FRANCIS asks him to preach at the Ascension |
+| **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Fitted with a 2030s neural jack in his teens; the format died, and the jack still runs on an obsolete protocol. | CYAN EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that FRANCIS does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
 | **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul | *"Marginal"* — Pru knows who the Patron is. She has known all along. |
-| **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** Frozen in 1999, thawed in 2999. She read *Mondo 2000* when it was new. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
+| **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
 | **Saint Nobody** | Contributing Editor (Pranks) | **Unknown.** Different costume every time. | THE CELEBRITY +1, REFLEX +1, KARL +1 | **Disruption:** turn the next door into a Dissonance door | None. That is what scares both cults. | *"Unmasked"* — never completed. The credits complete it. |
 | **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. FRANCIS wants a scan. | Grows one size per Issue (main doc §5.14) |
 | **The Greenhouse** | Letters Editors | A colony of spliced houseplants the Duchess bought from a Theogen florist years ago. They read DNA and sort the mail. | — | Read one genome or one letter | They are a Theogen product, and the Theogens would like them back | Comic relief; a key lab puzzle (main doc §5.9) |
@@ -284,9 +286,9 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   Junie, Fax, the Bishop and Otto. Saint Nobody flirts with everyone and
   commits to no one.
 
-### 5.4 Who stays and who goes on Millennium Night
+### 5.4 Who stays and who goes on New Year's Eve
 
-On Millennium Night (main doc §3.8), every resident with a finished Back Page
+On New Year's Eve (main doc §3.8), every resident with a finished Back Page
 story and Trust ≥ 3 shows up at the final scene, each one covering a piece of
 the City — like the final heist crew of a classic RPG. Each one present
 removes one obstacle from the last column (a locked door, a guard, a
@@ -342,7 +344,7 @@ printed in Corrections.
 
 - **TESCREAL is a contested term** describing real, living movements with
   real members. The game names no real person or organization from them. It
-  satirizes ideas through fictional 30th-century descendants, and gives every
+  satirizes ideas through fictional mid-century descendants, and gives every
   defector in the House a fair and intelligent account of why they believed.
   The Bishop, Otto, Yara and Pru must each get one scene in which their old
   philosophy is shown at its best.

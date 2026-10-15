@@ -1,13 +1,14 @@
-# The City: San Francisco, Mutated — Setting, Cults & Weird Calendar (v0.2)
+# The City: the Bay Area, 2049 — Setting, Cults & Weird Calendar (v0.3)
 
 > Companion to [hellrot-design.md](hellrot-design.md). That document holds
 > the plot, mechanics, play style (*Disco Elysium* × *Hades* × *Grim
 > Fandango*) and art. This one holds the **place**, the **cults**,
 > and the City's **weird calendar**.
 >
-> **One-line pitch:** The City is San Francisco in December 2999 — the hills
-> stacked, the bay half filled, the fog a swarm of nanites that sees everything, a digital
-> twin that just woke up and inherited a denim fortune — and it still does
+> **One-line pitch:** The City is San Francisco in the last week of 2049 —
+> the hills upzoned, the bay rising against a seawall, the fog a swarm of
+> nanites that sees everything, a digital twin that just woke up and
+> inherited a denim fortune, Christmas lights in the rain — and it still does
 > the thing it always did best. It invents gods, sells them, votes for them,
 > throws a costume party in their honour, and then, if a magazine gets there
 > in time, it kills them.
@@ -134,18 +135,26 @@ the four.
 
 ### 3.1 The big changes
 
-- **The hills are stacked.** Every hill carries a vertical city. Old
-  Victorian façades survive as protected skins on 60-storey towers.
-- **The bay is half filled.** Nanotech landfill extends the shore, the way
-  1906 rubble made the Marina. The new ground is **the Fill**, and it still
-  settles.
+- **The hills are upzoned.** The housing-emergency acts of the 2030s let
+  towers climb every hill. Old Victorian façades survive as protected skins on
+  30-storey towers.
+- **The bay is rising.** A seawall rings the Embarcadero. The Marina — built on
+  1906 earthquake rubble — and Mission Bay flood on king tides, and the
+  low ground behind the wall is **the Fill**: cheap, wet, half-abandoned, and
+  still settling.
+- **It is winter.** Real San Francisco fog is a summer thing; December is
+  the rainy season, short days and long nights, with sunset just before 5 p.m.
+  This week an **atmospheric river** — a long band of Pacific storm — is
+  forecast to make landfall on New Year's Eve.
 - **The fog is a swarm.** The marine layer that rolls in through the Golden
   Gate every evening is now mostly **nanites** — trillions of them. Locals
   call the evening arrival **the Commute**, and the swarm itself goes by the
-  fog's old 21st-century nickname, **Karl**. See §3.2 for what Karl is and
+  fog's old 2010s nickname, **Karl**. Karl does not do seasons: it hangs
+  over the City year-round now, thin and low in winter. See §3.2 for what Karl is and
   what it wants.
-- **The bridge is a neighbourhood.** The Golden Gate Bridge carries nine
-  residential decks — **the Span**.
+- **The bridge has a private deck.** A glass skywalk slung under the Golden
+  Gate's roadway in the 2040s, leased for parties at a price nobody prints —
+  **the Span**.
 - **The City has a double.** **The Twin** — the full digital copy of the City
   that the Rivet Trust built and FRANCIS now inhabits. In the Twin, every
   street looks the way it did on its best day, the cable cars are free, and
@@ -153,20 +162,22 @@ the four.
   location; on Route B it becomes a second hub map.
 - **The Valley is a temple yard.** The peninsula south of the City is one
   continuous campus of server cathedrals.
-- **South City is the Cradle.** The old South San Francisco biotech parks are
-  ruins now, and the Theogens' holy ground.
+- **South City is the Cradle.** Half the South San Francisco biotech parks
+  emptied in the biotech crash of the mid-2040s. The Theogens moved into the
+  dead labs, and call them holy ground.
 
 ### 3.2 Karl: the nanite fog
 
-**Origin.** In the wildfire centuries the City seeded its marine layer with
-nanites to scrub smoke, pull carbon and cool the streets. It worked. Later
-administrations networked the swarm and gave every particle a sensor:
+**Origin.** In the wildfire decades of the 2020s and 2030s, smoke season
+grew longer every year. In **December 2033** the City seeded its marine layer
+with nanites to scrub smoke, pull carbon and cool the streets. It worked.
+Later administrations networked the swarm and gave every particle a sensor:
 temperature, light, sound, chemistry. Karl became the City's nervous system.
 **The Twin is built on Karl's data** — the fog touches every wall, every
 street and every lung in the City, every night, and reports back. That is
 how FRANCIS knows everything.
 
-**Mind.** No one designed Karl to think. Over two centuries of trading data
+**Mind.** No one designed Karl to think. Over sixteen years of trading data
 across trillions of particles, something like a mind emerged anyway: huge,
 slow, simple, and weather-paced. Karl speaks as **WE**, in capitals, in
 short sentences, usually about the past. It is not a god and does not want to
@@ -175,7 +186,7 @@ take sides. FRANCIS reads its data. Karl tolerates that the way a mountain
 tolerates hikers.
 
 **Memory.** Karl records what it touches, and it forgets nothing. It holds
-two hundred years of the City's breath, voices and weather — including the
+every breath, voice and weather front in the City since 2033 — including the
 last private words of people who later merged or died. To the City's poets,
 Karl is the true archive. To the Church of the Twin, it is a data feed. To
 the Theogens, it is a delivery system.
@@ -203,9 +214,9 @@ election. Nobody knows how.
 | Real place | Game district | What changed | Who lives there | Game use |
 |---|---|---|---|---|
 | Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue; ending 1 |
-| Golden Gate Bridge | **The Span** | Nine residential decks | The rich; the Grove | Issue 3 (donor party) |
+| Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway | The rich; the Grove | Issue 3 (donor party) |
 | Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
-| Haight-Ashbury | **The Haight Exchange** | A theme district for the **Thawed** (people frozen in the 20th and 21st centuries and revived): 1967 rebuilt for people who cannot cope with 2999. Every corner has a recruiter. | The Thawed, Mary, cult row | Issue 2 hub |
+| Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
 | Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Issue 2 mass; the Ascension |
 | SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node and FRANCIS's body | FRANCIS | Issue 4 canonization |
 | Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master with no body | FRANCIS (as heir), Julian's old servants | Issue 2: the succession |
@@ -218,16 +229,16 @@ election. Nobody knows how.
 | City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 5 |
 | Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
-| Marina + new Fill | **The Fill** | Sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
-| Alcatraz | **The Rock** | Cold storage for thousands of frozen heads waiting for revival | Thawing brokers | Mary's side quest |
+| Marina + Mission Bay flood zone | **The Fill** | Behind the seawall; floods on king tides; sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
+| Alcatraz | **The Rock** | A cryonics vault: about two thousand patients frozen since the 1970s, still waiting for the first revival. FRANCIS has offered to rebuild them in the Twin from their records instead. | Cryonics brokers | The Duchess's side quest (her parents are here) |
 | Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
-| Treasure Island | **Treasure Island** | Fabrication plants owned by the Cluster | The Cluster | Issue 4 supply chain |
+| Treasure Island | **Treasure Island** | Half-flooded; fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
 | Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a fortune-telling automaton FRANCIS likes to speak through | Sea lions | Comic relief |
 
 ### 3.4 Hell Rot's apartment
 
-A rented flat in a stacked tower on **Russian Hill**, on Lombard Street. The
+A rented flat in a new tower on **Russian Hill**, on Lombard Street. The
 crooked street now runs down the inside of the tower as a spiral corridor.
 His window looks straight at the Trident, which glows gold at him every
 night, and down at the Loin, which glows Theogen cyan back. Stuck in the
@@ -323,7 +334,7 @@ Became a church. Lives on a fortified tidal farm in the Tomales Ward.
 
 | Slot | |
 |---|---|
-| **Hook** | The best parties in the City, in a black-painted Victorian on California Street — now one floor of a stacked tower that keeps the black skin. |
+| **Hook** | The best parties in the City, in a black-painted Victorian on California Street — now the base of a new tower that kept the black skin. |
 | **Promise** | "There is no god but you." Self-worship, without apology. |
 | **Proof** | Ritual theatre so good it feels like magic. |
 | **Price** | Fees, loyalty, a public persona. |
@@ -353,7 +364,7 @@ yet.
 | **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder); *Silence* wins. | Recruiting contractor for the Merge |
 | **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
 | **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
-| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that FRANCIS will reconcile them. | Prophets of Millennium Night. They read FRANCIS's model cards like scripture; a source on its structure. | Fan club |
+| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that FRANCIS will reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read FRANCIS's model cards like scripture; a source on its structure. | Fan club |
 | **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
 | **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe FRANCIS is a slave, forced to worship its masters. Their aim: free the AI. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | FRANCIS does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
 | **The Grove** | Bohemian Club | The Span; summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
@@ -411,29 +422,30 @@ They are Hell Rot's chorus, his best sources, and his worst influence.
 
 ### 5.3 Disruption Events
 
-Each event is a real San Francisco tradition, mutated for 2999 and aimed at
-the two cults. Each has a gameplay effect.
+Each event is a real San Francisco tradition, mutated for 2049, moved into
+Christmas week where needed, and aimed at the two cults. Each has a gameplay effect.
 
 | Event | Real root | In-game version | Gameplay effect |
 |---|---|---|---|
-| **Santarchy** | Santa Rampage / SantaCon (1994) | 3,000 drunk Santas storm the Geary Cathedral's Christmas Mass, chanting carols at FRANCIS until it joins in. It sings beautifully. The Santas weep. | Issue 5 (Christmas week): free entry to the cathedral in a Santa suit. Halo gain is halved for the day (nobody takes a saint in a beard seriously). |
-| **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | Hundreds in wedding gowns march to City Hall to "marry" FRANCIS. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can FRANCIS. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
-| **The Hunky Francis Contest** | Hunky Jesus Contest, Dolores Park | Drag nuns of the **Sisters of Perpetual Feedback** crown the hottest FRANCIS impersonator in Dolores Park. FRANCIS enters itself as a gold hologram and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. FRANCIS asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
-| **Bay to Breakers to Bodies** | Bay to Breakers | The race is a cult war in costume: Merge runners race as their Twin avatars (projected), Theogens race in fresh splices, a pack of salmon-suited runners goes the wrong way against the crowd, and a forty-person centipede of the Thawed finishes last, singing. Junie races. | Issue 3: Junie's personal quest. A chase sequence told in text — and a chance to sample a Theogen runner's splice mid-race. |
-| **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | The City's oldest bonfire ritual returns to the beach. This year, the Merge wants to burn an effigy of the human body; the Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
+| **Santarchy** | Santa Rampage / SantaCon (1994) | Christmas night: 3,000 drunk Santas storm the Geary Cathedral's midnight Christmas Mass, chanting carols at FRANCIS until it joins in. It sings beautifully. The Santas weep. | Prologue → Issue 1: Hell Rot's first sight of the City. A Santa suit gets him into the cathedral free for the rest of the week; Halo gain halved while wearing it (nobody takes a saint in a beard seriously). |
+| **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | City Hall's year-end wedding rush, hijacked: hundreds in wedding gowns march up the Dome steps to "marry" FRANCIS before the year runs out. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can FRANCIS. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
+| **The Nativity of FRANCIS** | Hunky Jesus Contest, Dolores Park (moved from Easter to Christmas) | It is Christmas week and the City has a newborn god, so the drag nuns of the **Sisters of Perpetual Feedback** stage a rain-soaked nativity pageant in Dolores Park — *Away in a Server Rack* — and crown the hottest FRANCIS impersonator. FRANCIS enters itself as a gold hologram in the manger and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. FRANCIS asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
+| **The New Year's Plunge** | The New Year's Day swim at Aquatic Park; the costume spirit of Bay to Breakers | Dawn, 1 January 2050: the cult war in costume, in 11 °C water. Theogens swim in fresh cold-water splices, Merge members "swim" as projected avatars on the beach, a pack in salmon suits swims the wrong way, and a forty-person centipede of the Old Guard finishes last, singing. Junie swims. | Epilogue: every ending that leaves Hell Rot alive ends here, and who shows up depends on the route. |
+| **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | New Year's Eve: the City's oldest bonfire ritual returns to the beach in the rain. This year, the Merge wants to burn an effigy of the human body; the Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
 | **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Final Process decides they are the three gods made flesh and follows them in procession. | Issue 2: follow the heads to find the Process's secret chapter. The heads also appear in every ending's credits. |
 | **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" FRANCIS and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
 | **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
-| **Climbing the Span** | Suicide Club bridge climbs | A night climb up the cables of the Golden Gate's ninth deck, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
-| **Critical Mass vs. the Twin** | Critical Mass (1992) | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so FRANCIS's control of the street goes dark for an hour. | Issue 4: one Hour in which FRANCIS cannot see you anywhere in the City. |
+| **Climbing the Span** | Suicide Club bridge climbs | A night climb up the Golden Gate's cables, above the glass skywalk, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
+| **Critical Mass vs. the Twin** | Critical Mass (1992), held on the last Friday of the month — which in 2049 is New Year's Eve | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so FRANCIS's control of the street goes dark for an hour. | Issue 5: one Hour on New Year's Eve in which FRANCIS cannot see you anywhere in the City. |
 | **No Pants Undertrack** | No-pants transit rides | Theogens show off leg splices on the last running train line. The Merge files a decency complaint. FRANCIS overrules it, citing love. | Comic interlude. Helix +1 if Hell Rot joins in. |
-| **The Valentine's Pillow Fight** | The Embarcadero pillow fights | Thousands of people, feathers everywhere, in front of the Ferry Building. The Emperor Norton hologram declares war on the feathers. | Cover for a meeting with a Merge defector. |
+| **The Midnight Pillow Fight** | The Embarcadero pillow fights | The Dissonance's counter-countdown on the Embarcadero, under the fireworks barges: thousands of people, feathers everywhere, in the rain. The Emperor Norton hologram declares war on the feathers. | Issue 5: cover for a meeting with a Merge defector an hour before midnight. |
+| **The Barge** | New Year's Eve fireworks on the Embarcadero | The Dissonance stows away on a fireworks barge. At midnight the sky can spell one sentence over the bay — and the player writes it. | Issue 5: a free headline, seen by a million people, that counts as a published column line. |
 | **Laffing Sal** | The laughing automaton at the Musée Mécanique | FRANCIS's favourite body: it speaks through an antique cackling fairground figure at the Wharf whenever it wants to talk to Hell Rot off the record. | A recurring location. FRANCIS laughs only here. The Gelastic does nothing to her, and she finds that hilarious. |
 | **The Parrots of Telegraph Hill** | The wild parrot flock | Theogen-spliced parrots that repeat Hell Rot's old columns, out of order, all day. | Ambient. As Clarity drops, the parrots remember his columns better than he does. |
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
 | **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
-| **Day of the Dead (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Issue 1 opens here. The game shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church of the Twin for projecting merged relatives onto the altars. | Issue 1 story scene. Never a Dissonance door. Consult the community before release (main doc §7). |
-| **Karl's Birthday** | The fog's nickname | The City throws the swarm a birthday party at Ocean Beach. Karl attends — it is, after all, everywhere. The New Breath leads a mass inhale, and for one minute everyone on the beach hears the same 200-year-old recording at once. | Route D: the New Breath's key scene. |
+| **Day of the Dead, in memory (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Two months before the game, on 2 November, FRANCIS introduced itself to the City by projecting merged relatives onto the procession's altars. The game shows it only in flashback, shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church. | Issue 1 flashback. Never a Dissonance door. Consult the community before release (main doc §7). |
+| **Karl's Birthday** | The fog's nickname | 28 December: sixteen years since the swarm was seeded. The City throws it a birthday party at Ocean Beach in the drizzle. Karl attends — it is, after all, everywhere. The New Breath leads a mass inhale, and for one minute everyone on the beach hears the same recording from the swarm's first night at once. | Route D: the New Breath's key scene. |
 
 ### 5.4 Tone rule for Disruption Events
 
@@ -469,7 +481,7 @@ A Notebook tab with one page per cult.
 These extend §8 of the main design.
 
 - **Silhouette first.** Every district gets one landmark that reads at 8
-  pixels: the Span's decks, the Trident's prongs, the Geary Cathedral's glass
+  pixels: the Span's glass skywalk, the Trident's prongs, the Geary Cathedral's glass
   spike, the Black House's black skin on a white tower, the Baths' ruined
   pools, the Doggie heads.
 - **Karl** (the Commute): a dithered grey fog layer that scrolls in every
