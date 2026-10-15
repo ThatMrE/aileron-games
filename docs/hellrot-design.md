@@ -1267,6 +1267,7 @@ uncertainty on screen.
 | **Delphine Ash** | Prophet of the Theogens, Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone — see §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her. The Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's — see §3.4. |
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Her loyalty is the hinge of Route C. |
+| **The Magister Black** | Theogen patron, host of the Black House | Born Desmond Achterberg, 61. A former stage mentalist in a white suit with a magenta splice. The Theogens' second purse, and the one person who treats Hell Rot as an equal. Hides nothing (companion doc §4.2). |
 | **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the 60-hour seminar the Church bought and made its on-ramp, the Seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
@@ -1831,6 +1832,10 @@ from the water to the uprising.
   Delphine, with Ione asleep against her, and Sister Halcyon — her nurse,
   fifteen years ago (§3.6c) — pretending not to see each other, and, for one
   minute, everyone on the beach hearing the same recording at once.
+- **The Black House, California Street, late (optional).** The Magister
+  Black's salon. The Theogens' donor ledger sits open on a lectern, because
+  he hides nothing. With Pru or Yara along, it becomes evidence for the Open
+  Dataset. He offers Hell Rot a drink, and asks for his obituary.
 
 **ROUTE LOCK.** The game reads the three columns, **Sainthood**, **Helix**,
 **Venom/Vow** and Trust, and locks one of four routes.
@@ -2002,6 +2007,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **Ocean Beach** | Karl's Birthday bonfire, the Church's mass inhale, one recording heard by everyone | Core |
 | **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game | Optional |
 | **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
+| **The Black House** | The Magister Black's salon, the open donor ledger, the obituary request | Optional |
 
 **Issue 4 — Wednesday 29 December.**
 
@@ -2038,6 +2044,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **Baker Beach** | The bonfire and the Route D debate between the gods, or a man standing frozen at midnight | Core (Route D), Ending 11 |
 | **Mount Tamalpais** | The Mountain | Ending 1 |
 | **The Embarcadero** | The fireworks barge, the Midnight Pillow Fight | Optional |
+| **The Black House** | The Magister's New Year's Eve party. With proof the god-gene kills adults, he pulls his money on the record. The obituary is due | Optional |
 
 **Issue 7 / Epilogue — Saturday 1 January 2050.**
 
@@ -2195,6 +2202,14 @@ The rest of the set. Each line works whether Delphine lived or died:
 - **Mortal:** he unplugs the jack for good and frames it.
 - **Saint Rot:** he designs the Emperor's covers, and they are the best work
   of his life.
+
+**The Magister Black's line.** Three endings close on him:
+
+- **Mortal:** *"The Magister threw a party for the human race. Dress code:
+  as you are."*
+- **The Mob:** he becomes the Theogens' treasurer, and hates the job.
+- **Saint Rot:** he sends one note: *"You were one of us. Now you're
+  nobody's."*
 
 ### 3.12 Branching map (high level)
 

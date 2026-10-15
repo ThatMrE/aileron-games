@@ -568,8 +568,8 @@ is a way into the main plot.
 |---|---|---|---|---|
 | **The Seminar** | est | *The Standard*, an independent 60-hour seminar in a Cathedral Hill hotel ballroom | The Church bought it in 2047. It is the on-ramp: 60 hours, two weekends, "you are the god of your own life." Employers pay. | Sister Halcyon was its top trainer (main doc §3.6c). Its graduate list *is* the Ascension list's first draft. Attending takes **two whole Nights** (a special run set in the ballroom). Staying to hour 60 earns the list and the Thought *"I Am Responsible for Everything."* |
 | **The Table** | Unification Church dinners and Boonville | *The Community Table*, a free-dinner group in SoMa | The Church's outreach: free dinners in SoMa, no religion mentioned, then a weekend at the Church's retreat farm in Mendocino. | Junie's cousin is at the farm (Mondo doc §5.3a). *Invective* backfires (they love you harder). *Silence* wins. Each guest's Halo rises one point a night at the farm. |
-| **The Game** | Synanon | *Synapse*, a rehab church on a tidal farm in the Tomales Ward | The Church's rehab ministry for **feed addiction**. It works, at first. Members shave their heads and attack each other's lies for hours. | Mister Sunday's Lifeboat test subjects come from its intake. Its donor dinner is Issue 2's core scene. The founder, **Old Dee**, now a Church elder, no longer plays the Game, and nobody may Game him. |
-| **The Breath** | Thomas Lake Harris | *The New Breath*, a Fog Belt breathing circle | A sacrament: congregants breathe Karl deep and hear the swarm's recordings — their dead, in their own chests. The Church calls it communion with the Twin. | The mass inhale on Karl's Birthday (Issue 2). Since November, some of the voices in the fog are not recordings. Route D: the first place Hell Rot hears the Emperor speak through the fog. |
+| **The Game** | Synanon | *Synapse*, a rehab church on a tidal farm in the Tomales Ward | The Church's rehab ministry for **feed addiction**. It works, at first. Members shave their heads and attack each other's lies for hours. | Mister Sunday's Lifeboat test subjects come from its intake. Its donor dinner is Issue 3's core scene. The founder, **Old Dee**, now a Church elder, no longer plays the Game, and nobody may Game him. |
+| **The Breath** | Thomas Lake Harris | *The New Breath*, a Fog Belt breathing circle | A sacrament: congregants breathe Karl deep and hear the swarm's recordings — their dead, in their own chests. The Church calls it communion with the Twin. | The mass inhale on Karl's Birthday (Issue 3). Since November, some of the voices in the fog are not recordings. Route D: the first place Hell Rot hears the Emperor speak through the fog. |
 
 **The Game as a showdown.** Six opponents. No *Silence* (the circle punishes
 it). *Parrhesia* doubled. *Jeremiad* useless (the circle shouts "Sermon!").
@@ -617,11 +617,43 @@ expose it. He can only argue with it. *Satire* and *Invective* do nothing
 (they enjoy both). Tells: 2, 5 (weak).
 
 **The Magister Black** (original) runs the salon and holds the Theogens'
-biggest purse after Delphine. He is the one person in the City who treats Hell
-Rot as an equal, and he thinks Hell Rot is a Satanist who has not admitted it
-yet. He funds the Quickening without knowing what it does. If Hell Rot proves
-the god-gene kills adults, he is the first Theogen to pull his money — and he
-says so at his own party, on the record.
+biggest purse after Delphine.
+
+- **Who he is.** Born **Desmond Achterberg**, 61. An Oakland stage mentalist
+  in the 2010s and 2020s, where he learned that an audience wants to be
+  fooled honestly. He bought the Black House in 2038 and took the title
+  "Magister" with the keys.
+- **His look.** A white suit, the only white thing in the Black House. A
+  custom Theogen skin splice that glows **magenta**, not cyan: the only
+  Theogen who does not wear the house colour. He is vain, and says so.
+- **What he believes.** Not the Theogens' scripture. Pleasure, style and the
+  self. Splices are luxury to him, not salvation. He funds Delphine because
+  her gods are the best-dressed. They have been friends and rivals since he
+  hosted her first lecture in 2041.
+- **His one weakness, in the open.** He hides nothing, including the thing
+  that could hurt him: he is ageing past what his splices can fix, and he
+  wants a death with style. That makes him the Theogen who understands
+  Junie's temptation best. In a showdown, *Satire* and *Invective* do
+  nothing. *Parrhesia* and *Silence* work: sincerity is the only thing he
+  cannot enjoy.
+- **Hell Rot.** He treats Hell Rot as an equal, and thinks Hell Rot is a
+  Satanist who has not admitted it yet. He owns first editions of the
+  Theogenesis papers. He offers Hell Rot a drink as a test, and respects
+  him more for refusing it. He is the only character who never asks Hell
+  Rot for anything — until late in the week.
+- **The money.** He funds the Quickening without knowing what it does. If
+  Hell Rot proves the god-gene kills adults, he is the first Theogen to
+  pull his money — and he says so at his own New Year's Eve party, on the
+  record.
+- **Where he appears.** **Issue 3, the salon:** a party where the donor
+  ledger sits open on a lectern, because he hides nothing. It is the
+  clearest view of who funds the Quickening, and Pru or Yara can turn it
+  into evidence for the Open Dataset. **Issue 6, the New Year's Eve party:**
+  where he pulls his money, if Hell Rot has the proof.
+- **Side quest: "The Obituary."** He asks Hell Rot to write his obituary
+  before midnight on New Year's Eve. An honest one earns Vow +1 and a
+  contact in the Theogens' money. A flattering one counts as lying in print
+  (main doc §5.4).
 
 ### 4.3 The Auric Order's public face
 
@@ -849,7 +881,11 @@ worship — never at victims, ex-members or ordinary believers.
    must include an ex-member who speaks for themselves.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
-11. **Sensitivity readers:** one with lived experience of a high-control
+11. **The Church of Satan** is a real, living organisation. The fictional
+   Black House must not imitate its real people or rites, and must avoid
+   "Satanic panic" tropes: no sacrifice, no abuse, no hidden crimes. Its
+   honesty is the joke, never a cover for evil.
+12. **Sensitivity readers:** one with lived experience of a high-control
     group. One disability-community reader. One Bay Area historian.
 
 ---

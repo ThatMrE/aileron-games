@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 211 cards: 66 real
-> quotations, 6 redacted cards, 114 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 213 cards: 66 real
+> quotations, 6 redacted cards, 116 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -134,7 +134,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (114) and eye cards (25)
+## Part 2 — In-world cards (116) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
@@ -245,7 +245,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W55 | "The Tube capsule, pressurised. Panic, then the East Bay." | + | *Do not take the Tube.* | GIHKAL, transport, funny |
 | W56 | "Rain on New Year's Eve with the fog gone and the moon out." | (unrated) | *Some things you don't score.* | GIHKAL, I6, tender |
 
-### 2F. The cults of the City (14)
+### 2F. The cults of the City (16)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -262,6 +262,8 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W67 | "We, Norton II, Emperor of the Twin and Protector of the Fog, do hereby forbid the word 'merge' before noon." | Decree no. 4, written in fog on the Ferry Building clock | *The first sane law of the week.* | Emperor, funny |
 | W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, in fog over the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I6, funny |
 | W69 | "The lamp is lit for anyone the Halo cannot see." | Lantern shelter door | *The best people in this game wear blue robes and sleep four hours a night.* | Lantern, tender |
+| W69a | "Everyone here worships themselves. I just print the guest list." | The Magister Black, at the salon | *The only host in town who tells you what the party is for.* | Black House, Theogens, I3 |
+| W69b | "Write my obituary, Doctor. Before midnight. Be cruel if it's true." | The Magister Black | *First time anyone asked me for the truth and meant it.* | Black House, I6 |
 | W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *The Emperor only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
 
 ### 2G. The City, the week, the weather (22)
