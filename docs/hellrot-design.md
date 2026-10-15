@@ -2353,10 +2353,10 @@ Plot questions the writers' room must answer before Alpha.
 
 **Design questions**
 
-24. Should the player's columns move Prop F's and the recall's vote share
+25. Should the player's columns move Prop F's and the recall's vote share
     visibly, night by night, on the HUD?
-25. Should Moreau's growth pay off in a boss fight, or stay a running gag?
-26. How literal is the Quickening on screen — fog effect only, or a full
+26. Should Moreau's growth pay off in a boss fight, or stay a running gag?
+27. How literal is the Quickening on screen — fog effect only, or a full
     sequence?
-27. Does *Mondo 3000* get a playable letters page where cult members, Burn
+28. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?
