@@ -225,7 +225,8 @@ election. Nobody knows how.
 - The Merge needs Karl's sensors to keep the Twin alive.
 - The Theogens need Karl's reach for the Quickening: they plan to load their
   god-gene vector into the swarm and let the fog deliver it into every lung
-  in the City.
+  in the City. They believe it will give every mind what Ione has. It works
+  only in a fetus; in adults it would kill (main doc §3.4).
 - The Emperor lives in it. Whoever controls the swarm controls his body.
 - On Route A or D, Hell Rot can talk to the Emperor through the fog
   directly — the slowest, strangest conversation in the game, spread across
@@ -489,7 +490,7 @@ habit of chemical self-experiment.*
 | **Ladder** | First Light (a small glow splice) → Mending (regeneration) → Cortex (added neurons) → the Last Splice, which nobody has finished. |
 | **Wall** | Your body. Splices cannot come out. Without the cult's clinics, a spliced body breaks down. Leaving is a medical problem. |
 | **Enemy** | The Church of the Twin and the Merge ("the Ghosts"), the City's medical licensing board, and "the Drafts" — unspliced humans. |
-| **Crack** | (A) The failure rate: the deep wards of the Undertrack hold everyone whose splice failed, cared for and hidden. (B) Delphine's own splices are failing, slowly. (C) The Quickening would splice the whole City without consent. |
+| **Crack** | (A) The failure rate: the deep wards of the Undertrack hold everyone whose splice failed, cared for and hidden. (B) Delphine's own splices are failing, slowly. (C) The Quickening would splice the whole City without consent — and, though the Theogens do not know it, kill everyone who breathed it. |
 | **Political arm** | None, officially. Unofficially: half the City's nurses. |
 | **Tells** | 2, 3, 5, 6, 8 |
 

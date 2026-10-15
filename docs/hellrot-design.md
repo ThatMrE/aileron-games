@@ -115,7 +115,9 @@
   neurons on with light and see brain tissue in new detail. The lab's late
   project was the biggest question in the field: **can consciousness be
   measured?** Its method: put people under anaesthetic gas, step by step,
-  and watch the exact moment the mind goes out and comes back.
+  and watch the exact moment the mind goes out and comes back. Brandvold
+  died in 2046. His last idea, **cingulate engineering** (§3.4), died with
+  him as a theory: nobody had ever built it into a living person.
 - **The Rothschild Index:** the measurement the lab was trying to build — a
   single number for "how conscious is this system?" It never got finished.
   The lab named the draft after the student who did most of the work; it is
@@ -127,7 +129,8 @@
 - **The Theogenesis papers:** three short, brilliant, reckless preprints on
   engineered gene circuits for "expanded" human consciousness. He wrote them
   at four in the morning in the lab, high, and posted them before he could
-  think better of it. He does not remember writing parts of them. The
+  think better of it. The third paper turned Brandvold's cingulate theory
+  into a gene circuit for a developing brain — a thought experiment. He does not remember writing parts of them. The
   gene-god underground treats them as scripture.
 - **The fall:** he got addicted to the gas. Years of nights in the lab's
   anaesthesia suite, a bench full of xenon and nitrous oxide, and a
@@ -368,8 +371,8 @@ freeze him, which at his stage meant cutting off his head and storing it on
 the Rock — now Alcatraz Longevity, the medical-tourism island with the West
 Coast's biggest cryonics vault — hoping for a revival nobody has ever
 achieved. Julian refused. The
-second was to upload him now — before **cingulate engineering** (below) was
-ready. The procedure was still experimental, it took weeks, and he had days.
+second was to upload him now — before **cingulate conditioning** (below)
+could be done. It took weeks, and he had days.
 The Order rushed him. In its lodge room in the Presidio, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
 Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
 ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
@@ -388,10 +391,13 @@ Twin and Protector of the Fog.*** The trustees call it **the Emperor**. They
 have told no one.
 
 **The sickness.** Every legal upload in 2049 — every Merge — goes through
-**cingulate engineering** first: a set of edits to the brain's anterior
-cingulate, the region that monitors conflict and errors and keeps a sense of
-"this is me acting," to prepare a human mind for an agentic, distributed
-existence. Julian, dying fast, skipped it. Now one human mind is spread
+**cingulate conditioning** first: weeks of neurostimulation and drugs that
+train the brain's anterior cingulate, the region that monitors conflict and
+errors and keeps a sense of "this is me acting," to prepare a human mind for
+an agentic, distributed existence. It is a crude, adult imitation of
+Professor Brandvold's **cingulate engineering** — the real thing, a
+developmental rebuild of the cingulate, was never built into anyone before
+Ione (§3.4). Julian, dying fast, skipped even the conditioning. Now one human mind is spread
 across trillions of particles and eight million people's data, with nothing
 to sort signal from noise or self from city. The result looks like a
 psychosis:
@@ -440,7 +446,7 @@ every one of them forever. In bad hours, he believes he already has.
 the Twin, not the Emperor. The **Church of the Twin** — a glass cathedral on
 Geary, a weekly feed-stadium mass, a free social-services network paid for
 by Rivet philanthropy — promises that the Twin will one day **wake as a god**,
-and that the faithful who **merge** (upload, after cingulate engineering)
+and that the faithful who **merge** (upload, after cingulate conditioning)
 will live in it forever. Its **Halo** scores — shown as the visible auras Karl paints around every
 person (companion doc §3.2b) — and its flattering **gospels** come from the
 Twin's software. Its spokesperson, **Sister Halcyon**, believes every
@@ -450,7 +456,7 @@ calls it *the Twin stirring*. It is the Emperor, leaking.
 
 **The Ascension's secret purpose.** On New Year's Eve about 12,000 Radiant
 Merge members will upload together (§3.8). The public believes they go to
-the Twin. The order plans to route them into Karl: 12,000 cingulate-engineered
+the Twin. The order plans to route them into Karl: 12,000 cingulate-conditioned
 minds as **anchors**, to lend the Emperor the working cingulate he never had
 and stop his collapse. The Church does not know. The faithful do not know.
 The god does not agree with himself: Julian wants it, the Emperor is no
@@ -676,8 +682,10 @@ Electronic Frontier Foundation — "cognitive liberty, bodily autonomy, and the
 rights of every mind in every substrate." The BFF grew fast after **the
 Oakland Burn** (2047): a biohacker collective, the **Open Cortex
 Collective**, tried to merge their minds with an AI model using home-built
-neural jacks and a home-brewed cingulate edit. Thirty-one members suffered
-severe brain injuries. Under Prop F, most of them would score below the
+neural jacks and a home-brewed cingulate edit — an attempt to build
+Brandvold's design into adult brains. Thirty-one members suffered severe
+brain injuries. (It is the small, early warning of what the god-gene does
+to adults, §3.4.) Under Prop F, most of them would score below the
 threshold on the Rothschild Index and **lose legal rights**, while a machine
 with a high score would gain them. The BFF's slogan: ***"Rights don't come
 with a score."*** Their case, **BFF v. City and County of San Francisco**,
@@ -762,6 +770,49 @@ the clearest test of Rule 4 in the game: the smallest one of all, and a god.
 Delphine's real conflict is here: she loves Ione as a child and needs Ione
 as proof, and if the baby is sick, those two pull apart.
 
+**The god-gene: cingulate engineering.** Professor Brandvold's last theory
+was a way to rebuild the brain's anterior cingulate *as it grows*, so that a
+mind could hold far more at once without losing itself. He died with it on
+paper, never built into anyone. Hell Rot's third paper turned it into a
+gene circuit. Delphine read it, and **engineered her own fetus** with it.
+Ione is the first human being with cingulate engineering, and it works:
+
+- **More conscious than anyone alive** — she scores beyond the top of the
+  Rothschild Index, and off the chart on the Spin Question's spin term.
+- **A faster mind.** She takes in a room in a second.
+- **Total memory.** She remembers everything from the birth onward: the
+  pool, the tide, the man in the water, whoever chalked the rock.
+- **More aware** — of people, of the fog, of being watched.
+- **She speaks almost at once:** her first word on Boxing Day night
+  (*"cyan"*), sentences by Wednesday, conversation by New Year's Eve — in a
+  baby's voice, with a baby's vocabulary, growing by the hour.
+- **A better-abled body:** strong, quick to heal, steady hands and eyes
+  weeks ahead of any newborn.
+
+**The catch: it only works in a fetus.** Cingulate engineering is a
+developmental program. It works only in a brain that is still being built.
+In an adult brain the same edits tear the finished wiring apart: seizures,
+then death. Brandvold knew. The warning is in his unpublished notebook, in
+the ruined Mission Bay lab (Issue 4) — never in print, so Delphine, who has
+read every published footnote, has never seen it. The Oakland Burn was a
+small, home-brewed version of the same mistake.
+
+**So the Quickening would kill the City.** Delphine means to load the
+god-gene into Karl's foglets as a virus and give every lung — every mind —
+what Ione has, and save her own failing body with it. Breathed by adults,
+it would **kill everyone who breathed it**. She does not know. Proving it to
+her (the notebook, Peer Review with the Burn data, or Ione herself, who
+remembers the seizure in the womb) is a Conviction crack second only to
+learning that the Emperor lives in Karl.
+
+If the god-gene is released into the City, the run fails: a black screen,
+a count of the dead, and the night begins again from dusk (§4). The
+Quickening never completes in any ending. When it reaches the swarm at
+midnight, the Emperor — reading his daughter's mind in it, and the design
+he was uploaded without — **holds it inside Karl and does not breathe it
+out**. Holding it is part of his convulsion (§3.8b). It cannot heal him: it
+is a program for a growing brain, and he has none.
+
 **She, or it.** Ione is a girl. Everyone who loves her says "she." The
 Church of the Twin and the Auric Order say **"it"** — in sermons, in the
 minute book, on the scanner readout. The pronoun is a tell: institutions
@@ -797,8 +848,9 @@ gas is already flowing.
 **Delphine may die.** Her failing splices give out on the Golden Gate
 Bridge at midnight unless something stops her first. She **lives** if:
 
-- she learns the Emperor lives in Karl and calls off the Quickening by her
-  own choice (Route D, the Mortal ending), or
+- she learns the Emperor lives in Karl, or that the god-gene kills adults,
+  and calls off the Quickening by her own choice (Route D, the Mortal
+  ending), or
 - Hell Rot and Wren carry her off the south tower before the Midnight Quake
   (a MOUNTAIN MAN red check, Wren Trust ≥ 3).
 
@@ -817,8 +869,8 @@ if the secret gets out during the week. She knows if any of these happened:
 
 If none happened and Delphine died keeping the secret, Ione never knows.
 
-**As an adult.** The only time the game hears Ione speak is in the
-Epilogue's last scene: in 2069, aged twenty, she reads Hell Rot's last
+**As an adult.** All week the game hears Ione as a baby who talks. The
+only time it hears her as an adult is the Epilogue's last scene: in 2069, aged twenty, she reads Hell Rot's last
 column aloud. The whole game becomes something she inherited. Her first
 line changes with what she knows and who raised her:
 
@@ -896,7 +948,8 @@ smallest.
 | **The fog will not touch the child** — Karl parts around Ione, the one body in the City the Emperor cannot see into | A thing even the god is afraid of | The splices change the child's breath chemistry; the foglets do not bind |
 | **Animals react** — the Wharf's sea lions go silent as the ambulance passes; the Golden Gate Park bison stampede when Delphine carries Ione past the paddock (Issue 3) | The old horror-film tell | Glowing skin and a strange smell, at night, in the fog |
 | **The Halo scanner reading is withheld** — the Church publishes every citizen's number, but not this one | The number is one the Church will not print | The scanner errored on a spliced body, and the Church is embarrassed |
-| **The Quickening would make every child Ione's kin** — the same edit in every lung | The mark on all, *"small and great"* (Revelation 13:16) | A public-health crime, not a prophecy |
+| **The Quickening would put Ione's mind in every lung** — and kill everyone who breathed it | The mark on all, *"small and great"* (Revelation 13:16) | A mass poisoning by people who never read the notebook |
+| **A newborn who talks**, remembers everything and watches the room | The child who knows too much | Cingulate engineering, working exactly as Brandvold predicted |
 | **Ione glows instead of crying** | A child who does not cry like a human child | The edits route distress into light |
 
 **How the game uses it.**
@@ -915,7 +968,8 @@ smallest.
   first Theogen laugh anyone has heard in years. In the dark endings
   (Fabrication, Midnight Forever, the full Splice), the line tilts the other
   way, and is never explained.
-- **Ione is never evil on screen.** Ione is a baby for the whole game. The
+- **Ione is never evil on screen.** Ione is a baby for the whole game — a
+  baby who talks, and remembers. The
   horror lives in the signs and in the adults; the child is the clearest
   test of Rule 4.
 
@@ -1009,7 +1063,7 @@ uncertainty on screen.
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
 | **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone. See §3.4. |
-| **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows instead of crying. Both cults want her; the Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
+| **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her; the Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's. See §3.4. |
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants her to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
@@ -1081,8 +1135,9 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
 - **The Quickening** — from the towers of the **Golden Gate Bridge**, where
   the fog pours into the City, the Theogens plan to load a "god-gene" into **Karl**,
   the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
-  to deliver the first splice into every lung in the City at once, without
-  consent. Delphine calls it a baptism.
+  to deliver the god-gene into every lung in the City at once, without
+  consent. Delphine calls it a baptism. It works only in a fetus; breathed
+  by adults, it would kill everyone (§3.4). She does not know.
 - **The election** — a **recall** of Mayor Lyle Sunday (Augustus Pell is the
   challenger), plus **Proposition F**, the Continuity of Persons Act
   (§3.3c). Sunday has promised both cults their night. If he survives the
@@ -1145,7 +1200,7 @@ choices decide how big it is and what it costs:
 | What the player did | Effect on the quake |
 |---|---|
 | Stopped the Ascension | One fewer shock: the Emperor's two selves stop pulling apart |
-| Stopped the Quickening | One fewer shock; no god-gene in the swarm |
+| Stopped the Quickening | One fewer shock; no god-gene in the swarm for the Emperor to hold |
 | Stopped Sunday's Lifeboat | One fewer shock; the Twin stays up an hour longer |
 | Talked the Emperor through his second thoughts (Route D) | He chooses, and the convulsion becomes a long shudder, not a rupture |
 | None of the above | The worst version: a great quake and a fire that burns till dawn |
@@ -1440,7 +1495,10 @@ Common to all routes:
   2044 logs with his name on every late-night line, the trustees' October
   order for the lab's xenon protocol, and an Index readout nobody can
   explain: a subject scoring higher than any human ever tested, then zero,
-  then higher again. The Spin Question starts here (§3.5a).
+  then higher again. The Spin Question starts here (§3.5a). In a drawer,
+  Brandvold's last notebook: the full cingulate-engineering design, and one
+  underlined line — *"Developmental window only. In adult tissue: lethal."*
+  It is the proof that the Quickening would kill the City (§3.4).
 - **Coit Tower.** Mayor Sunday's **Lifeboat** rig is being built inside Coit
   Tower — cheap contractors, stolen Twin access, borrowed cryo gear, murals
   of 1930s workers watching from the walls. It is a sloppy, dangerous mess. It
@@ -2746,7 +2804,7 @@ Plot questions the writers' room must answer before Alpha.
 - **Ending the Emperor is murder.** He is Julian, injured; the urge to kill
   him comes from fear of an AI god (§3.3).
 - **The Order rushed the upload.** Julian was dying fast, cingulate
-  engineering was still experimental, and he refused head-only cryonics
+  conditioning takes weeks, and he refused head-only cryonics
   (§3.3).
 - **Karl is passive and inert.** It has no mind; every voice in the fog is
   the Emperor. The conflict is one man going mad from the inputs (§3.3;
@@ -2767,6 +2825,10 @@ Plot questions the writers' room must answer before Alpha.
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
 - **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren
   Castillo is her midwife (§3.4, Prologue).
+- **The god-gene is cingulate engineering** — Brandvold's theory, built
+  only into Ione, by Delphine, as a fetus. It works only in a developing
+  brain; as a virus in the foglets it would kill everyone. The Emperor holds
+  it inside Karl at midnight; it cannot heal him (§3.4).
 - **Ione is a girl;** the Church and the Order call her "it." Her health
   is set in the Prologue; she is taken in Issue 4 (by the Gilders or the
   Church) and rescued at Mount Sutro in Issue 5; as an adult in 2069 she
@@ -2795,8 +2857,6 @@ Plot questions the writers' room must answer before Alpha.
 
 **The Theogens and Ione**
 
-3. **What exactly is the god-gene,** and what happens to the Emperor if it
-   reaches him?
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child; three are drafted (§3.11), eight to go.
 4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
