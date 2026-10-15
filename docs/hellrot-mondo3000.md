@@ -401,9 +401,9 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   - **Fax vs. the Greenhouse** — the plants keep reading his DNA out loud.
   - **Junie vs. everyone** — she is the only one who has never believed in
     anything, and she finds the rest of them exhausting and lovable.
-- **Romance.** Optional, slow, adult, and never transactional. The two
-  romance companions are **Junie** and **Yara** (main doc §5.15). Fax, the
-  Bishop and Otto get flirtations, not arcs. Saint Nobody flirts with
+- **Romance.** Optional, slow, adult, and never transactional. The romance
+  options are **Junie, Yara, Fax, the Bishop and Otto** (main doc §5.15);
+  Junie's and Yara's arcs are the longest. Saint Nobody flirts with
   everyone and commits to no one.
 
 ### 5.4 Who stays and who goes on New Year's Eve

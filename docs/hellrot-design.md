@@ -2583,9 +2583,11 @@ unique interrupt. Full roster, abilities, rivalries and the New Year's Eve
 Junie and Yara stay the two core companions: Junie's Trust gates the
 Iconoclast ending, Yara's gates the Successor ending.
 
-#### Romance: Junie and Yara
+#### Romance
 
-Junie and Yara are the game's two **romance companions**. Romance is
+Five housemates are **romance options**: **Junie, Yara, Fax, the Bishop and
+Otto**. Junie and Yara, the two core companions, have the longest arcs
+(below); the other three have full but shorter ones. Romance is
 optional, slow, adult and never transactional: no gift buys it, no stat
 unlocks it on its own, and either of them can say no and mean it.
 
@@ -2598,10 +2600,17 @@ unlocks it on its own, and either of them can say no and mean it.
 | **Gate** | Junie Trust ≥ 4 and a sober Issue 5 | Yara Trust ≥ 4 and no Fabrication on the record |
 | **Ending colour** | In **The Mountain** and **Iconoclast**, she is the one beside him | In **Successor**, the byline is hers and so is the last line about him; it is the saddest version of that ending |
 
+| | **Fax** | **The Bishop** | **Otto** |
+|---|---|---|---|
+| **What draws them** | He restarted Hell Rot's heart in 2044 and has never said what it cost him | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part |
+| **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him |
+| **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel; New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory |
+| **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 |
+
 **Rules for writers.**
 
-- **One at a time.** Hell Rot can pursue one romance. Both women notice;
-  neither plays it as comedy or rivalry.
+- **One at a time.** Hell Rot can pursue one romance. Everyone in the House
+  notices; nobody plays it as comedy or rivalry.
 - **The Rot and consent.** As Clarity falls, he forgets things — including
   things said between them. The romance never advances in a blackout, a
   relapse, or a scene where his Clarity is at 1; the other person's
