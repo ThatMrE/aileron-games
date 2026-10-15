@@ -277,6 +277,18 @@ faint, soft glow that the fog paints around them: an **aura**.
   character sprite, in the fog palette, with Twin gold reserved for high
   Halos and the Order's ring.
 
+**The prophecy, real and in-world.** None of this came from nowhere. In
+**1986** the **Foresight Institute** was founded in Palo Alto, by Christine
+Peterson and K. Eric Drexler (some sources add James C. Bennett), to prepare
+the world for molecular nanotechnology. The same year, Drexler's *Engines of
+Creation* imagined molecular machines and warned of runaway self-copying ones,
+"grey goo." In **1993** J. Storrs Hall described **utility fog** — a swarm of
+tiny robots called foglets, each with twelve arms, that could fill the air
+and act as almost any material. In the game, the Auric Order treated these
+texts as prophecy and spent forty years making them real. (The real Foresight
+Institute and these writers have no connection to the fictional Order. They
+are the research the Order *read*.)
+
 ### 3.2c The Halo score (the citizen score)
 
 The **Halo score** (0–10) is the Church of the Twin's public rating of every
@@ -324,18 +336,6 @@ can predict completely.
 has become completely predictable. The Loin is Halo zero not because it is
 wicked but because it is free, poor and hard to forecast — and the Twin
 treats that as the same thing.
-
-**The prophecy, real and in-world.** None of this came from nowhere. In
-**1986** the **Foresight Institute** was founded in Palo Alto, by Christine
-Peterson and K. Eric Drexler (some sources add James C. Bennett), to prepare
-the world for molecular nanotechnology. The same year, Drexler's *Engines of
-Creation* imagined molecular machines and warned of runaway self-copying ones,
-"grey goo." In **1993** J. Storrs Hall described **utility fog** — a swarm of
-tiny robots called foglets, each with twelve arms, that could fill the air
-and act as almost any material. In the game, the Auric Order treated these
-texts as prophecy and spent forty years making them real. (The real Foresight
-Institute and these writers have no connection to the fictional Order. They
-are the research the Order *read*.)
 
 ### 3.3 Sky and water: 25 December 2049 – 1 January 2050
 
