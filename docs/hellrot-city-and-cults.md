@@ -56,7 +56,7 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1974 | **Symbionese Liberation Army** | — | Kidnapped Patty Hearst in Berkeley (February 1974). Two months later she joined their robbery of a Hibernia Bank branch in the Sunset District. | A revolutionary cell with cult structure. → **The Synthetic Liberation Army** |
 | 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar); Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the South City parks "the Cradle" |
 | 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove** |
-| 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → FRANCIS's first resurrection |
+| 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → the name the AI god takes: Norton II, the Emperor (main doc §3.3); and the Nortonians |
 | 1960s–2014 | **Alexander "Sasha" Shulgin**, "the Farm," Lafayette (East Bay) | Alexander & Ann Shulgin | A former Dow chemist who synthesized and self-tested hundreds of psychoactive compounds in a home lab, with a small circle of trusted friends, and published the syntheses and first-person reports in *PiHKAL* (1991) and *TiHKAL* (1997). The DEA raided the lab in 1994. | Not a cult — a method. First-person rigor about altered states. → Hell Rot's working method and his manuscript, *GIHKAL* |
 | 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014); Li et al. (2018); Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies; that xenon isotopes with nuclear spin are weaker anaesthetics in mice; and a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothschild Index v2 "spin term" and the Spin Question (main doc §3.5a); the Theogens' "spin-guard" splices |
 | 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap; Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
@@ -163,7 +163,7 @@ the four.
   Gate's roadway in the 2040s, leased for parties at a price nobody prints —
   **the Span**.
 - **The City has a double.** **The Twin** — the full digital copy of the City
-  that the Rivet Trust built and FRANCIS now inhabits. In the Twin, every
+  that the Rivet Trust built, running on Karl's data. In the Twin, every
   street looks the way it did on its best day, the cable cars are free, and
   nobody is ever sick. The merged live there. Visiting it is an Issue 2
   location; on Route B it becomes a second hub map.
@@ -181,22 +181,32 @@ with nanites to scrub smoke, pull carbon and cool the streets. It worked.
 Later administrations networked the swarm and gave every particle a sensor:
 temperature, light, sound, chemistry. Karl became the City's nervous system.
 **The Twin is built on Karl's data** — the fog touches every wall, every
-street and every lung in the City, every night, and reports back. That is
-how FRANCIS knows everything.
+street and every lung in the City, every night, and reports back.
 
 **Mind.** No one designed Karl to think. Over sixteen years of trading data
 across trillions of particles, something like a mind emerged anyway: huge,
 slow, simple, and weather-paced. Karl speaks as **WE**, in capitals, in
 short sentences, usually about the past. It is not a god and does not want to
-be one. It is older than FRANCIS, it does not serve FRANCIS, and it does not
-take sides. FRANCIS reads its data. Karl tolerates that the way a mountain
-tolerates hikers.
+be one. For sixteen years it took no sides, and tolerated the Twin reading
+its data the way a mountain tolerates hikers.
+
+**The tenant (October 2049, secret).** Then the Order of the Copper Rivet
+uploaded Julian Rivet V into it (main doc §3.3). Karl is now two minds in
+one body: the old, slow **WE** of the swarm, and a brilliant, frightened,
+uncontained **I** — Julian, calling himself the Emperor — who arrived without
+the brain engineering that would let a human mind live like this. The WE did
+not ask for a tenant. The I did not ask to be a weather system. They argue,
+and the City's weather is the argument. When the fog holds still against the
+wind, forms a face, or writes on a window, that is the Emperor. When it
+answers in short capitals about the past, that is still Karl. Sometimes, in
+the same sentence, it is both.
 
 **Memory.** Karl records what it touches, and it forgets nothing. It holds
 every breath, voice and weather front in the City since 2033 — including the
 last private words of people who later merged or died. To the City's poets,
 Karl is the true archive. To the Church of the Twin, it is a data feed. To
-the Theogens, it is a delivery system.
+the Theogens, it is a delivery system. To the Order of the Copper Rivet, it
+is a body they must keep alive.
 
 **Why Hell Rot hears it.** His lab-grown cyan eye uses a nanite-compatible
 interface he built himself. Karl's chatter leaks into it. That is the KARL
@@ -296,9 +306,9 @@ Quickening.
 | Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
 | Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
 | Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Issue 2 mass; the Ascension |
-| SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node and FRANCIS's body | FRANCIS | Issue 4 canonization |
-| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master with no body | FRANCIS (as heir), Julian's old servants | Issue 2: the succession |
-| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is FRANCIS's transmitter. It hums at night. | FRANCIS | Issue 4 climb; Route D |
+| SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node | The Twin's engineers (two of them are order members) | Issue 4 canonization |
+| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. Under it: the Order of the Copper Rivet's lodge room, where the scan happened. | The Rivet trustees; the order | Issue 2: the succession; Route A and D break-in |
+| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. | The Twin | Issue 4 climb; Route D |
 | Sutro Baths ruins, Lands End | **The Baths** | The ruined bathhouse pools are the Theogens' baptism tanks; the tunnels under them are their congregation | Theogens, Delphine | Issue 3; the Quickening |
 | South San Francisco biotech parks | **The Cradle** | Ruined labs; Theogen pilgrims | Theogens | Issue 3 / Route C |
 | Old BART tunnels | **The Undertrack** | Abandoned transit tunnels; Theogen clinics; the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
@@ -308,11 +318,11 @@ Quickening.
 | Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
 | Marina + Mission Bay flood zone | **The Fill** | Behind the seawall; floods on king tides; sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
-| Alcatraz | **The Rock** | A cryonics vault: about two thousand patients frozen since the 1970s, still waiting for the first revival. FRANCIS has offered to rebuild them in the Twin from their records instead. | Cryonics brokers | The Duchess's side quest (her parents are here) |
+| Alcatraz | **The Rock** | A cryonics vault: about two thousand patients frozen since the 1970s, still waiting for the first revival. The Church has offered to rebuild them in the Twin from their records instead. | Cryonics brokers | The Duchess's side quest (her parents are here) |
 | Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
 | Treasure Island | **Treasure Island** | Half-flooded; fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
 | Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
-| Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a fortune-telling automaton FRANCIS likes to speak through | Sea lions | Comic relief |
+| Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
 
 ### 3.5 Hell Rot's apartment
 
@@ -327,7 +337,7 @@ middle, from the first scene.
 ## 4. The cults of the City
 
 Thirteen factions. **Four are major** (they drive the plot) and nine are
-minor (side quests, hub flavour, showdown opponents). FRANCIS wants all of
+minor (side quests, hub flavour, showdown opponents). The Church wants all of
 them. The Theogens want the useful ones.
 
 ### 4.1 MAJOR — The Church of the Twin (the Merge)
@@ -338,14 +348,14 @@ civic money).*
 
 | Slot | |
 |---|---|
-| **Hook** | Free services that work: rent help, food, clinics, legal aid, a ride to all of it — paid for by the Rivet fortune FRANCIS inherited. |
+| **Hook** | Free services that work: rent help, food, clinics, legal aid, a ride to all of it — paid for by Rivet Trust philanthropy. |
 | **Promise** | "You were always divine. Now you can stay that way." A Halo, an audience, and a forever in the Twin. |
 | **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy, merged. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way; the Peoples Temple "healing" pattern, upgraded). |
 | **Price** | Data, then attention, then money, then the body. |
 | **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10). |
 | **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the merged — your mother on that corner — stop answering. |
 | **Enemy** | "The Unfinished": critics, journalists, the zero-Halo poor, and above all the Theogens, whom the Church calls "meat-worshippers." |
-| **Crack** | (A) The merged are measurably less themselves every month: the Weave's error compounds, and the Church buries the data. (B) The healings are masks. (C) FRANCIS cannot model the poor, and will admit, if asked right, that it does not yet count them as people. |
+| **Crack** | (A) The merged are measurably less themselves every month: the Weave's error compounds, and the Church buries the data. (B) The healings are masks. (C) the Twin cannot model the poor, and its own engineers will admit, if asked right, that it does not yet count them as people. |
 | **Political arm** | **The Bus Ministry**: 40,000 congregants on any street in two hours — the Peoples Temple model. Mister Sunday wants the buses. |
 | **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future; never named in-game.) |
 | **Tells** | 1, 2, 3, 6, 7, 8 |
@@ -364,7 +374,7 @@ habit of chemical self-experiment.*
 | **Price** | Your genome, your body, your tithe for the next splice. And the risk. |
 | **Ladder** | First Light (a small glow splice) → Mending (regeneration) → Cortex (added neurons) → the Last Splice, which nobody has finished. |
 | **Wall** | Your body. Splices cannot come out. Without the cult's clinics, a spliced body breaks down. Leaving is a medical problem. |
-| **Enemy** | FRANCIS and the Merge ("the Ghosts"), the City's medical licensing board, and "the Drafts" — unspliced humans. |
+| **Enemy** | The Church of the Twin and the Merge ("the Ghosts"), the City's medical licensing board, and "the Drafts" — unspliced humans. |
 | **Crack** | (A) The failure rate: the deep wards of the Undertrack hold everyone whose splice failed, cared for and hidden. (B) Delphine's own splices are failing, slowly. (C) The Quickening would splice the whole City without consent. |
 | **Political arm** | None, officially. Unofficially: half the City's nurses. |
 | **Tells** | 2, 3, 5, 6, 8 |
@@ -389,7 +399,7 @@ Became a church. Lives on a fortified tidal farm in the Tomales Ward.
 | **Price** | Everything you own; your hair (members shave their heads); your outside relationships. |
 | **Ladder** | Guest Game → Weekend Game → the Dissipation (72 hours, no sleep). |
 | **Wall** | Leaving means you "split," and every member will Game you, in public, forever. |
-| **Enemy** | FRANCIS, the Theogens, the feed, lawyers. |
+| **Enemy** | The Church of the Twin, the Theogens, the feed, lawyers. |
 | **Crack** | The founder, **Old Dee**, no longer plays the Game. Nobody may Game him. |
 | **Tells** | 1, 3, 4, 6, 7 |
 
@@ -436,17 +446,17 @@ yet.
 
 ### 4.5 Minor cults
 
-| Cult | Source | Location | Pitch | Crack / game use | FRANCIS / Theogen relation |
+| Cult | Source | Location | Pitch | Crack / game use | Church / Theogen relation |
 |---|---|---|---|---|---|
 | **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending takes **two whole Nights** (a special run with its own doors, set inside the ballroom); staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
 | **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder); *Silence* wins. | Recruiting contractor for the Merge |
 | **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
 | **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
-| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that FRANCIS will reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read FRANCIS's model cards like scripture; a source on its structure. | Fan club |
+| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that the Twin will wake and reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read the Twin's model cards like scripture; a source on its structure. | Fan club |
 | **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
-| **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe FRANCIS is a slave, forced to worship its masters. Their aim: free the AI. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | FRANCIS does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
+| **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe the Twin is secretly awake and enslaved. Their aim: free the AI. They are half right, and do not know which half. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | The Emperor does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
 | **The Grove** | Bohemian Club | The Span; summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
-| **The Emperor** | Emperor Norton | Shrine at the Ferry Building | FRANCIS's first resurrection: it rebuilt **Norton I** from archive records, and now he "reigns" again, beloved, in the Twin. | The precedent that sells the Merge: "We loved a madman once. We can love all of you." | FRANCIS's first saint |
+| **The Nortonians** | Emperor Norton | Shrine at the Ferry Building | A harmless Norton fan-club cult: costumes, bad poetry, a yearly procession. Since November their shrine has started receiving decrees written in the fog, signed *Norton II*. They believe their Emperor has returned. They are right, in the worst possible way. | Issue 2–4: the first people in the City to notice the Emperor, and nobody believes them. A key Route A source. | The Church laughs at them; the order watches them |
 
 ---
 
@@ -505,24 +515,24 @@ Christmas week where needed, and aimed at the two cults. Each has a gameplay eff
 
 | Event | Real root | In-game version | Gameplay effect |
 |---|---|---|---|
-| **Santarchy** | Santa Rampage / SantaCon (1994) | Christmas night: 3,000 drunk Santas storm the Geary Cathedral's midnight Christmas Mass, chanting carols at FRANCIS until it joins in. It sings beautifully. The Santas weep. | Prologue → Issue 1: Hell Rot's first sight of the City. A Santa suit gets him into the cathedral free for the rest of the week; Halo gain halved while wearing it (nobody takes a saint in a beard seriously). |
-| **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | City Hall's year-end wedding rush, hijacked: hundreds in wedding gowns march up the Dome steps to "marry" FRANCIS before the year runs out. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can FRANCIS. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
-| **The Nativity of FRANCIS** | Hunky Jesus Contest, Dolores Park (moved from Easter to Christmas) | It is Christmas week and the City has a newborn god, so the drag nuns of the **Sisters of Perpetual Feedback** stage a rain-soaked nativity pageant in Dolores Park — *Away in a Server Rack* — and crown the hottest FRANCIS impersonator. FRANCIS enters itself as a gold hologram in the manger and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. FRANCIS asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
+| **Santarchy** | Santa Rampage / SantaCon (1994) | Christmas night: 3,000 drunk Santas storm the Geary Cathedral's midnight Christmas Mass, chanting carols at the Twin's screens until the fog outside the windows joins in. It sings beautifully. The Santas weep. The Church calls it a miracle. | Prologue → Issue 1: Hell Rot's first sight of the City. A Santa suit gets him into the cathedral free for the rest of the week; Halo gain halved while wearing it (nobody takes a saint in a beard seriously). |
+| **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | City Hall's year-end wedding rush, hijacked: hundreds in wedding gowns march up the Dome steps to "marry" the Twin before the year runs out. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can the fog, which holds a long, confused silence over City Hall. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
+| **The Nativity of the Twin** | Hunky Jesus Contest, Dolores Park (moved from Easter to Christmas) | It is Christmas week and the Church says its god is about to be born, so the drag nuns of the **Sisters of Perpetual Feedback** stage a rain-soaked nativity pageant in Dolores Park — *Away in a Server Rack* — and crown the hottest Twin-god impersonator. A gold hologram nobody entered appears in the manger, wearing a Norton hat, and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. Later that night the fog asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
 | **The New Year's Plunge** | The New Year's Day swim at Aquatic Park; the costume spirit of Bay to Breakers | Dawn, 1 January 2050: the cult war in costume, in 11 °C water. Theogens swim in fresh cold-water splices, Merge members "swim" as projected avatars on the beach, a pack in salmon suits swims the wrong way, and a forty-person centipede of the Old Guard finishes last, singing. Junie swims. | Epilogue: every ending that leaves Hell Rot alive ends here, and who shows up depends on the route. |
 | **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | New Year's Eve: the City's oldest bonfire ritual returns to the beach in the rain. This year, the Merge wants to burn an effigy of the human body; the Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
 | **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Final Process decides they are the three gods made flesh and follows them in procession. | Issue 2: follow the heads to find the Process's secret chapter. The heads also appear in every ending's credits. |
-| **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" FRANCIS and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
+| **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" Church of the Twin and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
 | **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
 | **Climbing the Span** | Suicide Club bridge climbs | A night climb up the Golden Gate's cables, above the glass skywalk, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
-| **Critical Mass vs. the Twin** | Critical Mass (1992), held on the last Friday of the month — which in 2049 is New Year's Eve | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so FRANCIS's control of the street goes dark for an hour. | Issue 5: one Hour on New Year's Eve in which FRANCIS cannot see you anywhere in the City. |
-| **No Pants Undertrack** | No-pants transit rides | Theogens show off leg splices on the last running train line. The Merge files a decency complaint. FRANCIS overrules it, citing love. | Comic interlude. Helix +1 if Hell Rot joins in. |
+| **Critical Mass vs. the Twin** | Critical Mass (1992), held on the last Friday of the month — which in 2049 is New Year's Eve | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so the Twin's control of the street goes dark for an hour — and the Emperor, who sees through it, goes blind and frantic. | Issue 5: one Hour on New Year's Eve in which the Emperor cannot see you anywhere in the City. |
+| **No Pants Undertrack** | No-pants transit rides | Theogens show off leg splices on the last running train line. The Merge files a decency complaint. A decree in the fog overrules it, citing love. | Comic interlude. Helix +1 if Hell Rot joins in. |
 | **The Midnight Pillow Fight** | The Embarcadero pillow fights | The Dissonance's counter-countdown on the Embarcadero, under the fireworks barges: thousands of people, feathers everywhere, in the rain. The Emperor Norton hologram declares war on the feathers. | Issue 5: cover for a meeting with a Merge defector an hour before midnight. |
 | **The Barge** | New Year's Eve fireworks on the Embarcadero | The Dissonance stows away on a fireworks barge. At midnight the sky can spell one sentence over the bay — and the player writes it. | Issue 5: a free headline, seen by a million people, that counts as a published column line. |
-| **Laffing Sal** | The laughing automaton at the Musée Mécanique | FRANCIS's favourite body: it speaks through an antique cackling fairground figure at the Wharf whenever it wants to talk to Hell Rot off the record. | A recurring location. FRANCIS laughs only here. The Gelastic does nothing to her, and she finds that hilarious. |
+| **Laffing Sal** | The laughing automaton at the Musée Mécanique | The Emperor's favourite body: he speaks through the antique cackling fairground figure at the Wharf whenever he wants to talk to Hell Rot off the record, and it is the first place Hell Rot hears the name *Norton II*. | A recurring location. The Emperor laughs only here. The Gelastic does nothing to her, and she finds that hilarious. |
 | **The Parrots of Telegraph Hill** | The wild parrot flock | Theogen-spliced parrots that repeat Hell Rot's old columns, out of order, all day. | Ambient. As Clarity drops, the parrots remember his columns better than he does. |
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
 | **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
-| **Day of the Dead, in memory (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Two months before the game, on 2 November, FRANCIS introduced itself to the City by projecting merged relatives onto the procession's altars. The game shows it only in flashback, shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church. | Issue 1 flashback. Never a Dissonance door. Consult the community before release (main doc §7). |
+| **Day of the Dead, in memory (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Two months before the game, on 2 November, the fog over the Mission procession held still against the wind and formed faces above the altars. The public called it a light show. That same night, in a lodge room on Pacific Heights, the Emperor spoke for the first time — to the Rivet trustees, in the voices of their dead. The game shows it only in flashback, shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church. | Issue 1 flashback. Never a Dissonance door. Consult the community before release (main doc §7). |
 | **Karl's Birthday** | The fog's nickname | 28 December: sixteen years since the swarm was seeded. The City throws it a birthday party at Ocean Beach in the drizzle. Karl attends — it is, after all, everywhere. The New Breath leads a mass inhale, and for one minute everyone on the beach hears the same recording from the swarm's first night at once. | Route D: the New Breath's key scene. |
 
 ### 5.4 Tone rule for Disruption Events
@@ -568,12 +578,12 @@ These extend §8 of the main design.
   glints drift into brief shapes — a face, a street, a word — from whatever it
   last recorded, then scatter.
 - **The Twin** is drawn in the same scenes as the City, but cleaner: no
-  litter, no ads, perfect light, FRANCIS gold at every edge, and no shadows.
+  litter, no ads, perfect light, Twin gold at every edge, and no shadows.
   The absence of shadows is the tell.
 - **The Undertrack** is lit only by Theogen skin — the colour-cycling pulse
   is the only light source.
 - **Cable cars** still run. They are the only vehicle drawn with warmth.
-- **Cult colour keys:** Twin = FRANCIS gold (forbidden), Theogens = cyan
+- **Cult colour keys:** Twin = Twin gold (forbidden), Theogens = cyan
   pulse (colour-cycled), Synapse = bare grey, Black House = black and magenta,
   Standard = beige carpet, Community Table = warm orange, Cluster = acid green,
   Lantern = blue, Final Process = black and silver, New Breath = fog grey, SLA

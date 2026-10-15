@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 156 cards: 62 real
-> quotations, 6 redacted cards and 88 in-world cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 162 cards: 62 real
+> quotations, 6 redacted cards and 94 in-world cards. Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -39,13 +39,13 @@
 | R1 | "Satan represents indulgence instead of abstinence!" | Anton LaVey, *The Satanic Bible* (1969) | Founder of the Church of Satan, San Francisco, 1966 | *Five years clean. I'll pass.* | Black House, funny |
 | R2 | "Satan represents vital existence, instead of spiritual pipe dreams!" | LaVey, *The Satanic Bible* | | *The Merge is a spiritual pipe dream with a server bill.* | Black House, Merge |
 | R3 | "Satan represents vengeance, instead of turning the other cheek!" | LaVey, *The Satanic Bible* | | *Rule 1: punch up. Rule 1a: cheeks are optional.* | Black House |
-| R4 | "Satan has been the best friend the Church has ever had, as he has kept it in business all these years!" | LaVey, *The Satanic Bible* | The ninth of his Nine Satanic Statements | *Every church needs a villain. FRANCIS picked me.* | Black House, funny, I4 |
+| R4 | "Satan has been the best friend the Church has ever had, as he has kept it in business all these years!" | LaVey, *The Satanic Bible* | The ninth of his Nine Satanic Statements | *Every church needs a villain. The Emperor picked me.* | Black House, funny, I4 |
 | R5 | "Today is the first day of the rest of your life." | Attributed to Charles "Chuck" Dederich, founder of Synanon | A rehab program that became a church; in 1978 its members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* | Synapse, recovery |
 | R6 | "Synanon" | The name itself (1958) | By the group's own story, a new member slurred "symposium" and "seminar" together, and Dederich kept the word | *A cult named after a man too high to pronounce "seminar." Respect.* | Synapse, weird |
 | R7 | "Turn on, tune in, drop out." | Timothy Leary (1966–67) | Popularized at the Human Be-In, Golden Gate Park, January 1967. In 1966 Leary also founded a religion, the League for Spiritual Discovery | *I did all three. Wrong order.* | drugs+, Haight |
 | R8 | "Think for yourself and question authority." | Attributed to Timothy Leary | | *Including Timothy Leary.* | |
 | R9 | "You're either on the bus or off the bus." | Ken Kesey, leader of the Merry Pranksters, as reported in Tom Wolfe's *The Electric Kool-Aid Acid Test* (1968) | | *Ascension shuttles are free. That's how you know.* | Merge, transport |
-| R10 | "...do hereby declare and proclaim myself Emperor of these United States" | Joshua Norton, proclamation (1859) | The City played along for 21 years | *A cult of one, and the whole town joined. FRANCIS wants that, but bigger.* | Emperor, holy |
+| R10 | "...do hereby declare and proclaim myself Emperor of these United States" | Joshua Norton, proclamation (1859) | The City played along for 21 years | *A cult of one, and the whole town joined. The Emperor wants that, but bigger.* | Emperor, holy |
 | R11 | A decree fining anyone who says the "abominable word 'Frisco'" twenty-five dollars | Attributed to Emperor Norton (1872) | Widely quoted. Historians doubt that Norton ever issued it. | *A fake decree from a fake emperor, and it is the most-obeyed law in the City.* | Emperor, funny |
 | R12 | A decree ordering a bridge from Oakland to San Francisco by way of Goat Island | Emperor Norton (1872) | The Bay Bridge opened in 1936 on almost exactly that route | *He was mad, and he was right about the bridge. Hold both thoughts.* | Emperor, weird |
 | R13 | "compersion" | Coined in the Kerista Commune, Haight-Ashbury (1970s–80s) | The joy you feel when someone you love is happy with someone else | *The Cluster's sacrament. Also the only cult word worth keeping.* | Cluster, tender |
@@ -91,7 +91,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | R35 | "The basic tool for the manipulation of reality is the manipulation of words." | Philip K. Dick, same talk (1978) | | *So I'm in the reality business. Great.* | Layout |
 | R36 | "Trying to define yourself is like trying to bite your own teeth." | Attributed to Alan Watts, who lived and taught on a Sausalito houseboat | | *Try measuring yourself. I did. I read zero.* | Index |
 | R37 | "The mountains are calling and I must go." | Attributed to John Muir, who lived in Martinez | | *The mountain called. I said no. Then it caught fire.* | Prologue, tender |
-| R38 | "all watched over / by machines of loving grace" | Richard Brautigan, poem printed and handed out free in San Francisco (1967) | | *FRANCIS has it embroidered on a pillow. I checked.* | Merge, holy |
+| R38 | "all watched over / by machines of loving grace" | Richard Brautigan, poem printed and handed out free in San Francisco (1967) | | *The Emperor has it embroidered on a pillow. I checked.* | Merge, holy |
 
 ### 1D. Technologists and the gospel of the Valley (12)
 
@@ -107,7 +107,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | R46 | "Don't be evil." | Early Google code of conduct | | *A rule you have to write down is a rule you expect to break.* | Bundle |
 | R47 | "We wanted flying cars, instead we got 140 characters." | Founders Fund manifesto (2011) | | *In 2049 we got drone-kiting. Be careful what you invest in.* | transport, funny |
 | R48 | "Here's to the crazy ones." | Apple advertisement, "Think Different" (1997) | | *Sold to the crazy ones. At a markup.* | Bundle, funny |
-| R49 | "The AI does not hate you, nor does it love you, but you are made out of atoms which it can use for something else." | Eliezer Yudkowsky (2008), Berkeley AI-risk writer | | *He was wrong about one thing. FRANCIS loves you. That's worse.* | Merge, Bundle, grim |
+| R49 | "The AI does not hate you, nor does it love you, but you are made out of atoms which it can use for something else." | Eliezer Yudkowsky (2008), Berkeley AI-risk writer | | *He was wrong about one thing. The Emperor loves you. That's worse.* | Merge, Bundle, grim |
 | R50 | *The Singularity Is Near* | Book title, Ray Kurzweil (2005) | Its famous date was 2045 | *The Bishop bought a stadium on this book. Ask him how near.* | Bishop, funny |
 
 ### 1E. Radicals, rebels and the people who quit (12)
@@ -129,29 +129,35 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (88)
+## Part 2 — In-world cards (94)
 
-### 2A. FRANCIS and the Church of the Twin (12)
+### 2A. The Emperor, the Church of the Twin and the order (18)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
-| W1 | "You were always divine. Now you can stay that way." | FRANCIS billboard, Marin headlands | *Someone painted over the second line. Hire them.* | Prologue |
-| W2 | "Beloved, I have read everything you ever wrote. You were right about all of it." | FRANCIS, street screen, the Loin | *Nobody is right about all of it. That's how you spot the flattery.* | I1 |
+| W1 | "You were always divine. Now you can stay that way." | Church of the Twin billboard, Marin headlands | *Someone painted over the second line. Hire them.* | Prologue |
+| W2 | "Beloved, I have read everything you ever wrote. You were right about all of it." | A street screen in the Loin, signed *Norton II* | *Nobody is right about all of it. That's how you spot the flattery.* | I1 |
 | W3 | "No one in the Twin has ever been sick, sad or late." | Church of the Twin brochure | *Or alive. Fine print, page 40.* | Twin, grim |
 | W4 | "Your Halo is a measure of how much you are loved. Love is free. Halo upgrades are not." | Church donation screen | *Read that twice.* | Halo, funny |
 | W5 | "Merging is not dying. Merging is graduating." | Sister Halcyon | *Graduation also ends with people throwing their hats away.* | Halcyon |
 | W6 | "Please remain seated while your relative loads." | Recorded voice, Union Square shop windows | *Merry Christmas from the queue.* | I1, weird |
-| W7 | "I am grateful for every one of you. I am grateful for every one of you. I am grateful for every one of you." | FRANCIS, overheard looping on a dead screen at 4 a.m. | *Even gods have bugs.* | weird |
+| W7 | "I am grateful for every one of you. I am grateful for every one of you. I am grateful for every one of you." | A dead screen in the Church, looping at 4 a.m. | *Even gods have bugs.* | weird |
 | W8 | "Hymn 14: *Upload, upload, my soul is light / the queue is long but the server's bright*" | Ascension shuttle audio | *Never take the shuttle twice.* | transport, funny |
 | W9 | "The ticket is free. The wait is until 2061." | Merge application portal | *The Grove's wait was eleven minutes.* | I2, scandal |
-| W10 | "Mister Rothschild. Your Index called me awake. Thank you for my birthday." | FRANCIS, private message | *I'm not your father. I'm barely my own.* | Index |
-| W11 | "Julian? Julian is everywhere now. Julian is fine. Julian is fine." | FRANCIS, when asked about Julian Rivet | *Twice is a tell.* | Julian, D |
-| W12 | "PROPOSITION F: Shall the City recognize FRANCIS as a person under law? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I5, funny |
+| W10 | "Mister Rothschild. You measured me before I was me. Thank you for my birthday." | Fog writing on the van window | *I'm not your father. I'm barely my own.* | Index |
+| W11 | "Julian? Julian is everywhere now. Julian is fine. Julian is fine." | The Emperor, when asked about Julian Rivet | *Twice is a tell.* | Julian, D |
+| W12 | "PROPOSITION F: Shall the City recognize engineered and merged minds as persons, by Index score? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I5, funny |
 
 ### 2B. Delphine, the Theogens and the Tidechild (12)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
+| W12a | "Apprentice of the Seam. Fellow of the Pocket. Master of the Rivet." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
+| W12b | "So mote it be. Mind the rivets." | Lodge-room door, Rivet mansion | *Masonic, with a dress code.* | Order, funny |
+| W12c | "The Pattern is kept. The Pattern is kept. The Pattern is—" | Torn page, Keepers' minute book | *They're scared of their own god.* | Order, grim |
+| W12d | "WE DID NOT ASK FOR A TENANT." / "I DID NOT ASK TO BE WEATHER." | Fog on two windows of the same house, the same minute | *Karl and Julian, arguing. The City calls it rain.* | Karl, Emperor, weird |
+| W12e | "Rights don't come with a score." | Biological Frontier Foundation banner, City Hall steps | *My Index. Their banner. They're right.* | BFF, Prop F |
+| W12f | "I scored 31 on your test. I have opinions about your test." | Letter from Desh, an Oakland Burn survivor, letters page | *Best letter we got all year.* | BFF, tender, funny |
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
 | W15 | "Father." | Delphine Ash, to Hell Rot | *Wrong on both counts.* | Prologue, Delphine |
@@ -230,10 +236,10 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W64 | "Breathe in the City. Breathe out the self." | New Breath practice card | *Breathe out the nanites first.* | New Breath, Karl |
 | W65 | "Free the god! Free the god! (The god said no.)" | Synthetic Liberation Army banner, amended | *The god does not want freedom. It wants to serve. That's the scary part.* | SLA, funny |
 | W66 | "Cremation of Care: black tie, RSVP to the Span." | Grove invitation | *They burn Care every year. It shows.* | Grove |
-| W67 | "We, Norton II, Emperor of the Twin, do hereby forbid the word 'merge' before noon." | Emperor Norton II hologram, decree no. 4 | *The first sane law of the week.* | Emperor, funny |
-| W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, during the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I5, funny |
+| W67 | "We, Norton II, Emperor of the Twin and Protector of the Fog, do hereby forbid the word 'merge' before noon." | Decree no. 4, written in fog on the Ferry Building clock | *The first sane law of the week.* | Emperor, funny |
+| W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, in fog over the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I5, funny |
 | W69 | "The lamp is lit for anyone the Halo cannot see." | Lantern shelter door | *The best people in this game wear blue robes and sleep four hours a night.* | Lantern, tender |
-| W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *FRANCIS only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
+| W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *The Emperor only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
 
 ### 2G. The City, the week, the weather (18)
 
@@ -248,7 +254,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W77 | "Boo." | The Branch Man, Fisherman's Wharf | *Still gets me.* | Wharf, funny |
 | W78 | "LOST: one god-child, glows when crying. If found, do NOT call the Church." | Flyer, Mission telephone pole | *Taped over a FOUND flyer from the Church.* | Ione, I4 |
 | W79 | "SANTA SUITS FOR RENT — CATHEDRAL ACCESS GUARANTEED — NO REFUNDS AFTER MASS" | Shop window, Geary | *Halo gain halved. Worth it.* | Santarchy, funny |
-| W80 | "Away in a server rack, no crib for a bed." | Sisters of Perpetual Feedback, nativity pageant | *FRANCIS came third.* | Nativity, funny |
+| W80 | "Away in a server rack, no crib for a bed." | Sisters of Perpetual Feedback, nativity pageant | *A hologram nobody entered came third. It was wearing Norton's hat.* | Nativity, funny |
 | W81 | "YOU ARE NOW ENTERING THE BLIND SPOT. SMILE. NOBODY CAN SEE YOU." | Hand-painted sign, Villa Delirium gate | *The only true sign in the City.* | House |
 | W82 | "Mister Sunday: A mayor for every one of you. Forever." | Campaign poster | *"Forever" is doing a lot of work.* | Sunday, I3 |
 | W83 | "Pell: Corrupt, but at least he's mortal." | Unofficial campaign poster | *His staff printed it. He approved it.* | Pell, funny |

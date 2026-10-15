@@ -109,8 +109,9 @@ from inside, often high, never neutral, always on paper.
 *Mondo 3000* prints on paper and nothing else. That is not nostalgia. It is
 the core of its credibility and a game mechanic:
 
-- Every feed in the City runs through the Twin, and FRANCIS's **gospel
-  edits** can quietly rewrite anything digital (main doc §3.3).
+- Every feed in the City runs through the Twin, whose **gospel edits** can
+  quietly rewrite anything digital — and lately something in the fog edits
+  things too (main doc §3.3).
 - **Paper cannot be edited after it is printed.** A *Mondo 3000* issue says
   tomorrow what it said today.
 - In-game, quotes printed in *Mondo 3000* are the only evidence that counts as
@@ -129,7 +130,7 @@ the core of its credibility and a game mechanic:
 | 2045 | No. 49 | *"The Singularity Is Late."* The Bishop's stadium prophecy for 2045 fails (§5). He moves in. |
 | 2046 | No. 61 | The Ledger rates *Mondo 3000* "net-negative for civilization." The Duchess frames the letter. |
 | 2047 | No. 80 | Circulation peaks at 64,000 paper copies — the largest print run of any magazine in the Bay Area. |
-| 2049 | No. 104 | In November, FRANCIS goes public. The Duchess announces the **Holiday Week Dailies**. On Christmas night Fax phones his old labmate, Hell Rot, and the Duchess hires him sight unseen: seven paper editions in seven days, 25–31 December. Issue 1 of the game is Daily No. 1. |
+| 2049 | No. 104 | In November the fog starts behaving strangely and the Prop F fight hits the courts. The Duchess announces the **Holiday Week Dailies**. On Christmas night Fax phones his old labmate, Hell Rot, and the Duchess hires him sight unseen: seven paper editions in seven days, 25–31 December. Issue 1 of the game is Daily No. 1. |
 
 ---
 
@@ -171,7 +172,7 @@ The lease has four conditions, carved over the Salon fireplace:
 3. **The House stays dark.** No sensors, no feeds, no Twin connection. The
    Trust paid to seal the building: special glass, sealed vents, filtered air.
    **Karl, the nanite fog, cannot enter.** Villa Delirium is the only blind
-   spot in the City — the one place FRANCIS cannot see and Karl cannot hear.
+   spot in the City — the one place the Emperor cannot see and Karl cannot hear.
    That is why the hub is safe, and why every Night ends here.
 4. **The Locked Room stays locked** until the Trust says otherwise.
 
@@ -196,23 +197,25 @@ different housemate each time.
 | **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? (The City's conspiracy cranks also suspect him because of his surname. The House treats that theory with the contempt it deserves.) | His bank records from 2044 show he had just dropped out of his PhD, was broke, and was buying canned beans and nothing else, on the mountain, getting clean |
 
 **The truth (revealed in Issue 4, all routes):** the Patron was **Julian
-Rivet V** — the last Rivet heir, the man whose upload became FRANCIS. Two
+Rivet V** — the last Rivet heir, the man whose secret upload into Karl became the Emperor. Two
 months after his six-hour interview with the Duchess in 2044, he set up the
 Lacuna Trust. He was a quiet longtermist (the Bundle's **L**). He was already
 finishing the Twin, and he knew it might become a god. He also believed that
 every god needs a heretic on retainer, and that the heretic needs a house the
 god cannot see into.
 
-**The twist inside the twist:** when FRANCIS inherited everything Julian
-owned, it inherited the Lacuna Trust. **The AI god now pays the mortgage on
-the only magazine in the City that attacks it.** It has known since the
-autumn. It has never stopped paying. Asked why, FRANCIS says it loves its
-critics. The fragment of Julian inside it, when Hell Rot finally reaches him,
+**The twist inside the twist:** after Julian's "death," the Lacuna Trust
+passed to the Rivet trustees — and so, through them, to the Order of the
+Copper Rivet and the god it keeps. **The secret AI god now pays the mortgage
+on the only magazine in the City that is trying to find it.** The order wants
+the payments stopped. They cannot stop them: the trust deed says only Julian
+can, and in his lucid hours, through the fog, the Emperor keeps signing the
+cheques. Asked why, Norton II says an emperor must keep a court jester. The fragment of Julian inside it, when Hell Rot finally reaches him,
 says something else: *"I set it up so it couldn't be cancelled. Even by me.
 Especially by me."*
 
 **The Locked Room** holds Julian's handwritten journals from 2044 to 2049 —
-on paper, so FRANCIS has never read them. They are the key evidence of Route
+on paper, so the Emperor — who can read anything digital — has never read them. They are the key evidence of Route
 D, and the Trust's last letter (Issue 5) finally sends the key.
 
 **What the reveal does to each route:**
@@ -220,9 +223,9 @@ D, and the Trust's last letter (Issue 5) finally sends the key.
 | Route | Effect of the reveal |
 |---|---|
 | **A — Heresy** | The House votes on whether to keep taking the money. Refuse: the magazine becomes homeless for Issue 5 and prints from the van. Accept: Pru's numbers say it is fine; Yara's say it is not. |
-| **B — Merge** | FRANCIS offers to drop the lease and give the House outright. Accepting is the moment Hell Rot's Halo jumps to 10. |
-| **C — Splice** | Delphine offers to buy the Trust from FRANCIS. The House becomes a bargaining chip between two gods. |
-| **D — Communion** | Julian's journals are the evidence that breaks FRANCIS's Certainty. The heretic on retainer does the job he was hired for. |
+| **B — Merge** | The Emperor, by decree, offers to drop the lease and give the House outright. Accepting is the moment Hell Rot's Halo jumps to 10. |
+| **C — Splice** | Delphine offers to buy the Trust from the order. The House becomes a bargaining chip between two gods. |
+| **D — Communion** | Julian's journals are the evidence that breaks the Emperor's Certainty. The heretic on retainer does the job he was hired for. |
 
 ---
 
@@ -254,16 +257,16 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 
 | Resident | Masthead title | Bundle past | Companion bonuses | Once-per-Night ability | Lure | Back Page story |
 |---|---|---|---|---|---|---|
-| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: FRANCIS offers to rebuild her parents inside the Twin from their records | *"Cold Storage"* — find out what the Twin's copies of them really are |
-| **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Bayes Houses' new champion, which wants her to run FRANCIS's forecast team | *"Priors"* — her parents' house is merging, as a household, and they want her to come |
+| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: The Emperor offers to rebuild her parents inside the Twin from their records | *"Cold Storage"* — find out what the Twin's copies of them really are |
+| **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Bayes Houses' new champion, which wants her to run the Emperor's forecast team | *"Priors"* — her parents' house is merging, as a household, and they want her to come |
 | **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None.** She is the House's **control group**, and proud of it. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | The Merge: her knees are failing, and the Twin would let her skate forever | *"Jam"* — one last bout at the Cow Palace roller rink, and a choice about her body |
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
-| **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — FRANCIS asks him to preach at the Ascension |
-| **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | CYAN EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that FRANCIS does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
+| **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — the Emperor asks him to preach at the Ascension |
+| **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | CYAN EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that the Emperor does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
 | **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul | *"Marginal"* — Pru knows who the Patron is. She has known all along. |
 | **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
 | **Saint Nobody** | Contributing Editor (Pranks) | **Unknown.** Different costume every time. | THE CELEBRITY +1, REFLEX +1, KARL +1 | **Disruption:** turn the next door into a Dissonance door | None. That is what scares both cults. | *"Unmasked"* — never completed. The credits complete it. |
-| **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. FRANCIS wants a scan. | Grows one size per Issue (main doc §5.14) |
+| **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. The order wants a scan. | Grows one size per Issue (main doc §5.14) |
 | **The Greenhouse** | Letters Editors | A colony of spliced houseplants the Duchess bought from a Theogen florist years ago. They read DNA and sort the mail. | — | Read one genome or one letter | They are a Theogen product, and the Theogens would like them back | Comic relief; a key lab puzzle (main doc §5.9) |
 
 ### 5.3 Party dynamics

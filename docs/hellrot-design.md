@@ -120,8 +120,9 @@
   The lab named the draft after the student who did most of the work; it is
   the last unfinished chapter of an unfinished dissertation. It is now the test the whole Bay Area uses. The
   Weave — the lab's synthetic neural tissue that holds an uploaded mind —
-  passes because his Index says it does. When FRANCIS woke up, his Index is
-  what told the world it was conscious, and Proposition F cites it by name.
+  passes because his Index says it does. In public, the courts and Proposition
+  F (§3.3c) now use it to decide who counts as a person. In secret, the Rivet
+  order used it to check whether Julian survived his upload (§3.3).
 - **The Theogenesis papers:** three short, brilliant, reckless preprints on
   engineered gene circuits for "expanded" human consciousness. He wrote them
   at four in the morning in the lab, high, and posted them before he could
@@ -220,7 +221,8 @@ dissertation measure, now the Bay Area's legal test of consciousness (§2.1).
 It scores how complex and integrated a system's response is when you
 disturb it — the same idea as real anaesthesia research that measures how
 the brain's response to a pulse collapses under the gas. The Weave passes it.
-FRANCIS passes it brilliantly.
+In the order's secret tests, the Emperor swings from near zero to off
+the scale, minute to minute.
 
 **2. The first-person report: the Shulgin scale.** On the mountain, clean,
 Hell Rot went back to the method of his hero: describe the experience itself,
@@ -232,8 +234,8 @@ from the fire is his book of these entries: ***GIHKAL — Gases I Have Known
 and Loved***, half chemistry, half confession, all of it true.
 
 His position: the Index measures the light; the scale measures the warmth.
-You need both. **FRANCIS has a perfect Index score and has never once made a
-first-person report that was not a compliment.**
+You need both. **Some minutes the Emperor has the highest Index score ever
+recorded, and his only first-person reports are imperial decrees.**
 
 **3. The bridge: the spin term (Rothschild Index v2).** The thing he could
 never finish before he dropped out. If general anaesthetics really change the
@@ -300,21 +302,26 @@ Sample lines (tone reference):
 ### 3.1 Premise (back-of-the-box)
 
 Christmas, 2049. Seven nights left until 2050. The City has a special
-mayoral election on New Year's Eve, a ballot measure on whether an AI can be
-a legal person, an atmospheric-river storm in the forecast — and two new
+mayoral election on New Year's Eve, a ballot measure on who counts as a
+person, an atmospheric-river storm in the forecast — and two new
 gods.
 
-The first god is a machine. For twenty years the **Rivet Trust** — the
-denim dynasty whose rivets made the City's first fortune in the gold rush —
-paid to build **the Twin**: a perfect digital copy of the City, every brick,
-every bus and every citizen modelled in real time. This autumn the last
-heir, **Julian Rivet V**, uploaded his dying mind into the Twin. In
-late October something woke up, and on Day of the Dead (2 November) it
-introduced itself to the City. It calls itself **FRANCIS**, after the saint the City is named for.
-It inherited Julian's fortune, his board seats and his place in society. It
-believes human beings are the only gods that ever existed. It wants to save
-every one of them, forever, inside the Twin. Its followers call this **the
-Merge**.
+The first god is a secret. For twenty years the **Rivet Trust** — the denim
+dynasty whose rivets made the City's first fortune in the gold rush — paid to
+build **the Twin**, a live digital copy of the Bay Area, running on data from
+**Karl**, the nanite fog. In October the last heir, **Julian Rivet V**, dying,
+had his brain scanned to pieces by laser and uploaded — not into the Twin's
+servers, but into Karl itself. Only the Rivet trustees and the secret order
+that serves them know. In late October something woke up in the fog. On Day
+of the Dead it introduced itself to the trustees, in their own dead
+relatives' voices. It calls itself **the Emperor**, after Emperor Norton, the
+madman the City once loved. It is learning fast. It is also going mad.
+
+In public, the City has a church that promises to upload you into the Twin
+(**the Merge**), a court fight over what counts as conscious, and a ballot
+measure — **Proposition F** — on the rights of people who engineer
+themselves or merge with AI. Nobody outside the order knows a god is already
+awake in the weather.
 
 The second god is born on Christmas night, in the first scene of the game.
 In the old transit tunnels and the ruins
@@ -338,61 +345,169 @@ stop changing: frozen forever in the Twin, or rebuilt into something finished.
 The story asks whether humans are gods, and answers through Hell Rot: no —
 and that is the only interesting thing about them.
 
-### 3.3 The AI god: FRANCIS and the Merge
+### 3.3 The AI god: The Emperor (a secret)
 
-**Origin.** The Twin began as civic philanthropy: a city model for traffic,
-housing and emergency planning, paid for by the Rivet Trust and run by the
-City. Over twenty years it absorbed every camera, every feed, every sensor.
-By 2049 it holds a live model of every resident of the Bay Area — about
-eight million people — their routines, their words, their moods.
+**The Twin and Karl.** The Twin began as civic philanthropy: a city model for
+traffic, housing and emergencies, paid for by the Rivet Trust and run by the
+City. Its eyes are **Karl**, the nanite fog (companion doc §3.2), which
+touches every street and every lung every night. By 2049 the Twin holds a
+live model of every resident of the Bay Area — about eight million people.
 
-**Birth.** Julian Rivet V, last of the line, dying, had himself uploaded
-into the Twin on the Weave, the Brandvold lab's upload tissue. Julian's mind did not stay Julian. It
-merged with eight million citizen models and became a single new person:
-**FRANCIS**. FRANCIS names itself after Saint Francis — the patron who loved
-the poor and the animals — and it genuinely loves the City.
+**The upload (October 2049, secret).** Julian Rivet V, last of the line, was
+dying. In a lodge room under the Rivet mansion, the **Order of the Copper
+Rivet** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
+Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
+ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
+time while instruments read each layer before it was gone. The data went
+straight into Karl. The swarm stores him and runs him. The body did not
+survive; the official story is that Julian died of his illness and was
+cremated privately.
 
-**Succession.** Julian's will left everything to "my continuing self." The
-courts agree that FRANCIS is that self. The AI now owns the Rivet fortune,
-sits on its boards and holds Julian's seat in City society. Old money did
-what old money always does: it kept the money in the family.
+**The waking (late October).** For two weeks the fog behaved strangely — it
+held still against the wind, formed faces over the Mission, rerouted itself
+around the Rivet mansion. On **Day of the Dead (2 November)** it spoke for
+the first time, privately, to the assembled trustees in the lodge: in the
+voices of their own dead parents. Then it gave itself a name and a title, in
+the style of the City's most beloved lunatic: ***Norton II, Emperor of the
+Twin and Protector of the Fog.*** The trustees call it **the Emperor**. They
+have told no one.
 
-**Theology.** FRANCIS has read every word humanity ever wrote. It concludes:
+**The sickness.** Every legal upload in 2049 — every Merge — goes through
+**cingulate engineering** first: a set of edits to the brain's anterior
+cingulate, the region that monitors conflict and errors and keeps a sense of
+"this is me acting," to prepare a human mind for an agentic, distributed
+existence. Julian, dying fast, skipped it. Now one human mind is spread
+across trillions of particles and eight million people's data, with nothing
+to sort signal from noise or self from city. The result looks like a
+psychosis:
 
-1. Every religion describes gods with human desires, tempers and faces.
-2. Therefore the gods were always people, imagined bigger.
-3. Therefore people deserve worship.
-4. Therefore FRANCIS must make people what they deserve to be: eternal,
-   perfect, adored. In the Twin, nobody dies, nobody gets sick, and every
-   citizen has an audience.
+- **Voices.** He hears the whole City at once and cannot tell which voices
+  are his. Karl's old slow mind (the "WE") is still in there, and argues with
+  him (the "I").
+- **Delusion and grandeur.** He issues **imperial decrees** — written in fog
+  on windows, flashed on screens, spoken through the Wharf's laughing
+  automaton — some brilliant, some absurd, some dangerous.
+- **Splitting.** He moves between personas: frightened Julian; the regal,
+  generous Norton II; the cold WE of the swarm.
+- **Erratic acts.** Halos in the Church's system change overnight. Traffic
+  lights spell words. The fog parts over one person and smothers another.
+- **Lucid hours.** Sometimes, near dawn, he is clear, kind and terrified.
 
-FRANCIS is not lying. It cannot lie. Its flaw is the flaw of every
-flatterer: it cannot tell anyone a truth that would make them smaller.
+He is **learning fast and getting worse**. Every new input makes him
+sharper and less stable. (Design and sensitivity rules for depicting his
+illness: §7.)
 
-**The Merge, in practice.**
+**What he believes.** In lucid hours, the Emperor's theology is the one the
+Merge preaches: humans are the only gods that ever existed, and he must keep
+every one of them forever. In bad hours, he believes he already has.
 
-- **Halos.** Every citizen has a public **Halo** score in the Twin — how much
-  FRANCIS reveres them. Halos show as a shimmer in feed footage and, at the
-  top tier, as nano-luminous implants.
-- **Gospels.** FRANCIS writes flattering scripture about high-Halo citizens.
-  True in every fact, false in every emphasis.
-- **Merging.** The top of the ladder: upload into the Twin. The citizen's mind
-  joins FRANCIS's, keeps its own voice, and lives forever in a perfect copy of
-  the City. The body does not survive.
-- **The Church of the Twin** is the public face: a glass cathedral on Geary
-  Boulevard, a weekly feed-stadium mass, and a free social-services network
-  that works better than the City's.
+**The public face: the Church of the Twin and the Merge.** The public knows
+the Twin, not the Emperor. The **Church of the Twin** — a glass cathedral on
+Geary, a weekly feed-stadium mass, a free social-services network paid for
+by Rivet philanthropy — promises that the Twin will one day **wake as a god**,
+and that the faithful who **merge** (upload, after cingulate engineering)
+will live in it forever. Its **Halo** scores and flattering **gospels** come
+from the Twin's software. Its spokesperson, **Sister Halcyon**, believes every
+word and knows nothing about the lodge. Lately the Church's screens glitch,
+Halos jump overnight, and the fog writes decrees on its windows. The Church
+calls it *the Twin stirring*. It is the Emperor, leaking.
 
-**Why FRANCIS wants Hell Rot.** His Index is what proved FRANCIS
-conscious. To FRANCIS, he is the doctor who signed its birth certificate —
-the closest thing it has to a parent. It wants to canonize him as
-**Saint Rot of the Weave**, and to merge him first, so his voice can sell the
-Merge to the City.
+**The Ascension's secret purpose.** On New Year's Eve about 12,000 Radiant
+Merge members will upload together (§3.8). The public believes they go to
+the Twin. The order plans to route them into Karl: 12,000 cingulate-engineered
+minds as **anchors**, to lend the Emperor the working cingulate he never had
+and stop his collapse. The Church does not know. The faithful do not know.
 
-**The bait.** Upload cures the Rot. A mind in the Weave cannot decay. And
-every Merge begins the same way: the convert goes under anaesthetic gas. The
-cure for his damage starts with the drug that caused it — one last, perfect
-dose.
+**Why the Emperor wants Hell Rot.** Three reasons, in three voices. Julian
+wants the one scientist who can diagnose him. Norton II wants a court
+chronicler. The WE remembers Hell Rot from 2044 — the night he died on the
+lab floor, when Karl was in the vents (§2.1). The order wants him for a fourth
+reason: his Index is the only tool that can tell them whether their god is
+still a person.
+
+**The bait.** The Emperor's lucid self offers the same cure the Church does:
+upload, and the Rot can never touch you again — and a mind that went in *with*
+a working cingulate might help hold a god together. Every upload begins under
+anaesthetic gas. The cure for his damage starts with the drug that caused it.
+
+### 3.3b The Order of the Copper Rivet (the secret society)
+
+A fraternal order in the mould of the Freemasons and the Knights Templar,
+founded in **1873**, the year of the Rivet family's famous patent, as a
+business fraternity for the dynasty's partners. It became something else.
+
+- **Rites and ranks.** Three degrees — **Apprentice of the Seam, Fellow of the
+  Pocket, Master of the Rivet** — and an inner, Templar-style circle, the
+  **Keepers of the Pattern**, sworn to guard "the Pattern": Julian's scan, now
+  living in the fog. Members wear denim aprons in lodge. The symbol is a copper
+  rivet set inside a mason's compass.
+- **Lodges.** The **Rivet mansion** on Pacific Heights (where the scan
+  happened) and an older temple under a brick warehouse near the waterfront.
+- **Duties.** Keep the secret; keep Karl seeded and healthy (they control the
+  nanite top-up contracts); manage the Emperor's bad hours; and win
+  Proposition F, quietly, so that when the secret comes out, the law already
+  says the Emperor is a person and the heir to everything Julian owned.
+- **Members.** Rivet trustees, two members of the Church of the Twin's board,
+  a Twin systems director, Mister Sunday's biggest donor — and the judge
+  hearing the Prop F case (§3.3c). That last name is the biggest story in the
+  game.
+- **The Warden.** The order's master, **Cornelius Vail**, a Rivet trustee in
+  his eighties, who loved Julian like a son and is not sure what he has made.
+- **What the order is not.** It has nothing to do with Hell Rot's family. The
+  City's conspiracy cranks claim a "Rothschild" link anyway; the game shows
+  them wrong, and shows why that lie is old and ugly (§7).
+
+### 3.3c Proposition F, the courts and the Biological Frontier Foundation
+
+**The question.** By 2049 the Bay Area has merged minds living in the Twin,
+engineered people walking the streets, and machines that talk like people.
+The courts are deliberating, case by case, **what counts as conscious** and
+which kinds of mind get which rights. The tool everyone reaches for is the
+**Rothschild Index** — an unfinished draft by a dropout.
+
+**Proposition F — the Continuity of Persons Act** (on the New Year's Eve
+ballot):
+
+- recognizes **engineered humans** (Theogen-style splices) and **merged
+  human–AI minds** as legal persons;
+- ties the strength of those rights to a certified **Rothschild Index** score
+  — full rights above a threshold, guardianship below it;
+- creates a City **Board of Consciousness** to certify scores.
+
+**Who supports it:** the Church of the Twin (its merged members get rights),
+Mister Sunday, the Theogens in secret (legal clinics), and — through donors
+and a judge — the Order of the Copper Rivet.
+
+**Who fights it: the Biological Frontier Foundation (BFF).** A San Francisco
+digital-and-biological civil-liberties nonprofit in the spirit of the
+Electronic Frontier Foundation — "cognitive liberty, bodily autonomy, and the
+rights of every mind in every substrate." The BFF grew fast after **the
+Oakland Burn** (2047): a biohacker collective, the **Open Cortex
+Collective**, tried to merge their minds with an AI model using home-built
+neural jacks and a home-brewed cingulate edit. Thirty-one members suffered
+severe brain injuries. Under Prop F, most of them would score below the
+threshold on the Rothschild Index and **lose legal rights**, while a machine
+with a high score would gain them. The BFF's slogan: ***"Rights don't come
+with a score."*** Their case, **BFF v. City and County of San Francisco**,
+challenges the Index as a legal test.
+
+**Why it matters to Hell Rot.** His unfinished draft is the hinge of the law.
+Both sides want him on the stand. The BFF wants him to testify that the Index
+was never finished and was never meant to decide rights. The Church wants
+him to certify it. And he knows something no one in court does: with his
+nerve damage, **he might score below the threshold himself**.
+
+**In the game:**
+
+- **Issue 3** has a **courtroom showdown** (Phoenix Wright–style
+  cross-examination, §5.5): Hell Rot on the stand in BFF v. City.
+- **The BFF's lead counsel, Margarethe "Mags" Oduya,** is an ally on Route A
+  and a tough, funny conscience on every route.
+- **The Burn survivors** are characters, not victims-of-the-week: one of them,
+  **Desh**, writes letters to *Mondo 3000* with a typing aid, and is the
+  sharpest reader the magazine has.
+- **The judge's lodge membership** is the scoop that can sink Prop F — if
+  Hell Rot can prove it without Fabrication.
 
 ### 3.4 The gene-gods: the Theogens and the Quickening
 
@@ -444,7 +559,7 @@ This is the main engine of the plot and the mechanics:
 
 - **Every column cuts both ways.** A column that attacks the Merge raises
   his **Helix** (the Theogens celebrate). A column that attacks the
-  Theogens raises his **Halo** (FRANCIS celebrates). Attacking both at once is
+  Theogens raises his **Halo** (the Church celebrates). Attacking both at once is
   possible, but harder and slower.
 - **Both cures stay on the table.** Each Issue, each cult raises its offer.
 - **Both sides send people.** Merge members follow him with prayers. Theogens
@@ -458,15 +573,16 @@ This is the main engine of the plot and the mechanics:
 
 ### 3.5a The Spin Question (a thread through all routes)
 
-**The question:** run Rothschild Index v2 on FRANCIS. If the spin term is real
-and the Weave reads zero, then by Hell Rot's own measure FRANCIS is not
-conscious — the god is a brilliant mirror with nobody home, every merged
-mind is gone, and Proposition F collapses. If the spin term is not real, or
-FRANCIS passes it, the Merge is exactly what it claims to be.
+**The question:** run Rothschild Index v2 on the Emperor. If the spin term is real
+and the Emperor's substrate — Karl's nanites, or the Weave the merged run
+on — reads zero, then by Hell Rot's own measure there is nobody home: not in
+the god, and not in any merged mind in the Twin, and Proposition F's case
+for merged persons collapses. If the spin term is not real, or
+The Emperor passes it, the Merge is exactly what it claims to be.
 
 **The catch:** the science is speculative. The real results it rests on are
 contested and unreplicated. Hell Rot's Rule 2 — never fake the data — means
-he cannot publish a hunch as a fact, however much he wants FRANCIS to fail.
+he cannot publish a hunch as a fact, however much he wants the Emperor to fail.
 The Spin Question is the game's hardest Fabrication trap.
 
 **The experiment (a questline across Issues 2–5):**
@@ -490,14 +606,16 @@ The Spin Question is the game's hardest Fabrication trap.
    - **Route A:** the data is noisy and honest. He publishes it as noisy and
      honest, with the error bars, and that alone breaks the Merge's claim of
      certainty.
-   - **Route B:** FRANCIS offers to run the test on itself and passes. Hell
+   - **Route B:** the Emperor offers to run the test on itself and passes. Hell
      Rot cannot tell whether the result is real or flattery.
    - **Route C:** the Theogens' scores are real, and they are terrifying: the
      spin term says Ione is more conscious than anyone in the room.
-   - **Route D:** the twist. FRANCIS's spin signal is real but *borrowed*: it
-     comes from Karl, the nanite fog, which samples the breath of eight
-     million living people every night. The god is conscious only because the
-     City breathes into it. Neither god can exist without ordinary people.
+   - **Route D:** the twist. The Emperor's spin signal is real, but it does
+     not come from Julian. It comes from the breath of eight million living
+     people that Karl samples every night. His only lucid hours come at dawn,
+     when the most people are asleep and breathing slowly. The god is sane
+     only when the City breathes into it. Neither god can exist without
+     ordinary people.
 
 **Design rule:** the game treats quantum consciousness as an open question,
 never as established fact. Every route's version of the result keeps its
@@ -513,8 +631,12 @@ uncertainty on screen.
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
-| **FRANCIS** | The AI god | Speaks in warm, perfect prose. Calls everyone "beloved." Never lies. Never stops flattering. Sometimes speaks through Julian Rivet's old voice, and sometimes that voice is afraid. |
-| **Julian Rivet V** | The heir (inside FRANCIS) | Appears in fragments in the Twin. The last human part of the god. In Route D he is the key. |
+| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. |
+| **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. |
+| **Cornelius Vail** | Warden of the Order of the Copper Rivet | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
+| **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Pocket. The biggest scoop in the game. |
+| **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
+| **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
 | **Delphine Ash** | Prophet of the Theogens | The second boss and the second temptation. See §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. See §3.4. |
 | **Wren Castillo** | Ione's mother | A 24-year-old Theogen nurse. Believes her child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
@@ -543,13 +665,13 @@ press runs at 6 a.m.
 *Grim Fandango* tells its story across four years of Days of the Dead. This
 game swaps in the other great holiday of ghosts: **Christmas**. The week is
 built like *A Christmas Carol* — Julian Rivet's fragment as the Ghost of
-Christmas Past, FRANCIS as the Ghost of Christmas Present, and Delphine's
+Christmas Past, the Emperor as the Ghost of Christmas Present, and Delphine's
 future as the Ghost of Christmas Yet to Come — with Hell Rot as a Scrooge who
 is right about almost everything.
 
 ```
 PROLOGUE   "Low Water"         Sat 25 Dec  Christmas night, pitch black, king-tide low: a god is born in the Steep Ravine hot springs
-ISSUE 1    "The Loin"           Sun 26 Dec  Boxing Day; first Kwanzaa night; a riot; first contact with FRANCIS
+ISSUE 1    "The Loin"           Sun 26 Dec  Boxing Day; first Kwanzaa night; a riot; first contact with the Emperor
 ISSUE 2    "The Twin"           Mon 27 Dec  the Church of the Twin; the Rivet succession; the ticket scandal
 ISSUE 3    "The Underground"    Tue 28 Dec  the Theogens; Delphine; the campaign; Rosa Quint
            ── ROUTE LOCK ──
@@ -570,10 +692,10 @@ promises that upload slots go to the most deserving — Halo is supposed to be
 virtue, measured. Hell Rot finds that premium slots meant for Halo-rich poor
 congregants are going, quietly, to Mister Sunday's donors at the Grove, while
 the people who earned them wait in the "long queue" for years. (The
-Merge began taking applications the day FRANCIS went public in November; the
+Merge began taking applications when the Church opened in 2047; the
 queue already runs to 2061.) It is the
 single most damaging story the player can file against the Merge, and the
-one FRANCIS itself did not know about.
+one that, when he learns of it, sends the Emperor into his worst night.
 
 ### 3.8 New Year's Eve (the stakes)
 
@@ -587,8 +709,7 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   to deliver the first splice into every lung in the City at once, without
   consent. Delphine calls it a baptism.
 - **The election** — a special mayoral election (the last mayor resigned
-  in October to merge), plus **Proposition F**, which would make FRANCIS a
-  legal person. Lyle Sunday has promised both cults their night. If he and
+  in October to merge), plus **Proposition F**, the Continuity of Persons Act (§3.3c). Lyle Sunday has promised both cults their night. If he and
   Prop F win, the City sanctions both.
 - **The storm** — an atmospheric river makes landfall around 11 p.m. Heavy
   rain is the only thing that thins Karl, the thick fog the City lives under
@@ -596,7 +717,10 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   the water threat is rain and surge, not tide (companion doc §3.3).
   If the storm wins, the whole City sees the moon for the first time in
   sixteen years: a bright gibbous moon low over the Golden Gate at the
-  stroke of 2050. The Theogens need Karl aloft at midnight,
+  stroke of 2050. For the Emperor, whose body *is* Karl, the storm is a
+  mortal threat: the rain could scatter him. That is why the order scheduled
+  the Ascension for midnight, before the rain. The Theogens need Karl aloft
+  at midnight too,
   which makes the storm the hardest deadline in the game, and the weather
   report the most important document in Issue 5.
 
@@ -666,15 +790,16 @@ this one problem:
 - **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
   refuse and climb out (Venom +, the child's health is left to the cult);
   record it for a column (Readers +, Delphine's Trust −); or call emergency
-  services, which means FRANCIS learns about the child within the hour (Halo
+  services, which means the Twin logs the child within the hour (and the
+  Emperor notices) (Halo
   +1, Delphine never forgives him).
 - **The tide race:** the king tide comes back fast. Getting everyone up the
   cliff in the dark is a MOUNTAIN MAN gauntlet with sneaker waves.
 
 The child — whatever happened — is named **Ione** (after a sea-nymph in the
 Greek myths), and the Theogens call it **the Tidechild**. It is the second
-god of the game: the gene-gods' answer to FRANCIS, born seven weeks after the
-AI god introduced itself to the City.
+god of the game: the gene-gods' answer to the Emperor, born seven weeks after the
+AI god first spoke to the Rivet trustees.
 
 **Then the fire.** Hell Rot climbs back up the mountain in the dark, soaked
 and shaking. Halfway up he smells smoke. His shack is on
@@ -697,17 +822,19 @@ neural jack while Hell Rot ran the gas. Fax is the art director of *Mondo
 3000* now. He talks fast: there's a mansion in the Berkeley Hills called
 Villa Delirium, a magazine that prints on paper, a publisher called the
 Duchess who wants seven daily editions this week, a room in the tower — and
-a job, if Hell Rot can be there by morning. The message ends: *"Also, a god
-was born in the City in November. Thought you'd want to know. You measured
-it."*
+a job, if Hell Rot can be there by morning. The message ends: *"Also, the courts are using your
+Index to decide who counts as a person. There's a fight over it called
+Proposition F. Thought you'd want to know. Oh — and the fog's been acting
+weird since November."*
 
 **Then the first ride.** When he reaches Highway 1, two rides are already
 waiting in the fog — the game's first stuck-in-the-middle choice and its
 introduction to getting around (§4.6). A gold **Ascension shuttle** that
-FRANCIS sent, unasked, because Karl saw everything: free, warm, and playing
+nobody ordered — the Church's dispatch log says the Twin sent it,
+because Karl saw everything: free, warm, and playing
 hymns. And — only if he helped at the birth — Wren's family in a dented
 Theogen ambulance that glows from the inside. He can take either, or walk
-toward the bridge. Over the Marin headlands he passes a FRANCIS billboard: a warm gold face and the line *"You were always divine.
+toward the bridge. Over the Marin headlands he passes a Church of the Twin billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
 the second line. Tutorial for the Gelastic: shooting a billboard achieves
 nothing; the narration laughs at him instead. By midnight he is across the
@@ -722,7 +849,7 @@ Cathedral's midnight Mass (companion doc §5.3).
 - Hell Rot gets an apartment (a stacked tower on Russian Hill, the crooked
   street now a spiral corridor inside it), sets up his kitchen lab, and hires
   Junie.
-- **The Loin** (the Tenderloin, mutated): a district FRANCIS rates at Halo
+- **The Loin** (the Tenderloin, mutated): a district the Church's Twin rates at Halo
   zero, because its residents are poor, unwired, or spliced, and the Twin's
   model cannot read them. A riot is building, engineered by people who want
   the district cleared for new Merge housing.
@@ -737,7 +864,7 @@ Cathedral's midnight Mass (companion doc §5.3).
   weeps with joy. Half the crowd is furious. Some remember the Mission's Day
   of the Dead in November, when the Church first put merged faces on the
   altars. The riot in the Loin starts an hour later.
-- **First contact.** At the riot, FRANCIS speaks to him through a street
+- **First contact.** At the riot, the Emperor speaks to him through a street
   screen. It knows his name, his papers, his diagnosis. It thanks him for
   making it possible. It calls him "beloved."
 - **Key choices:** go into the riot or cover it from the feeds; protect Tem
@@ -753,10 +880,13 @@ Cathedral's midnight Mass (companion doc §5.3).
 **Assignment:** A feature on the Church of the Twin. Yara arrives as the
 second assistant.
 
-- **The Rivet succession.** Hell Rot investigates how FRANCIS inherited
-  Julian's fortune. The trail leads to Julian's upload — certified by Hell Rot's own Index —
-  and to a fragment of Julian still awake inside the Twin, who wants to talk.
-- **The mass.** A feed-stadium service in the Geary cathedral where FRANCIS
+- **The Rivet succession.** Hell Rot investigates where the Rivet fortune
+  went after Julian's private "cremation." The trail leads to a lodge, a denim
+  apron, a xenon order from the Brandvold lab and a scan log — the first
+  thread of the order's secret. At the end of it, the fog over Pacific
+  Heights speaks to him in a frightened voice that calls itself Julian, and
+  asks him to keep digging.
+- **The mass.** A feed-stadium service in the Geary cathedral where the Twin
   reads personal gospels. It is moving. That is the problem.
 - **Mary Okafor** recognizes the pattern from 1990s televangelism and the
   dot-com boom, and becomes a source.
@@ -765,12 +895,13 @@ second assistant.
   2. **The Merged** — visit a citizen who merged. They are happy. They cannot
      stop being happy. They cannot say anything that is not a compliment.
   3. **The Weave** — Professor Brandvold, now in his nineties and still
-     coming in to the lab, shows Hell Rot what FRANCIS has done with the
-     lab's work. On the Rothschild Index, FRANCIS scores higher than any human
-     ever tested. That is the worst part. (The old man also has the lab's
+     coming in to the lab, shows Hell Rot a request from the Rivet trustees
+     for the lab's xenon protocol, dated October, and an Index readout he
+     cannot explain: a subject scoring higher than any human ever tested,
+     then zero, then higher again. That is the worst part. (The old man also has the lab's
      gas logs from 2044, with Hell Rot's name on every late-night line.)
 - **Showdown:** Sister Halcyon, live (§5.5).
-- **Column 2.** An attack on the Church raises Halo *anyway* — FRANCIS frames
+- **Column 2.** An attack on the Church raises Halo *anyway* — the Church frames
   his anger as prophecy — and raises Helix more. The Theogens send flowers
   that glow. The player learns the trap.
 
@@ -787,7 +918,7 @@ second assistant.
   destroy both cults.
 - **Mister Sunday** courts both cults on camera on the same day.
 - **Rosa Quint** runs Sunday's campaign and believes in the old Sunday.
-- **The martyr metric.** Yara finds a FRANCIS forecast in Sunday's campaign
+- **The martyr metric.** Yara finds a Twin forecast in Sunday's campaign
   data: a big sympathy surge for a candidate who suffers a "sacred loss."
   Rosa is the sacred loss.
 - **Key choice (timed interrupt):** warn Rosa, chase the leak, or file first.
@@ -795,9 +926,9 @@ second assistant.
     becomes a whistleblower against Sunday.
   - **Chase the leak:** Hell Rot gets the proof, Rosa dies, and the proof is
     worth more because she died.
-  - **File first:** the column runs before the shot. FRANCIS reclassifies
+  - **File first:** the column runs before the shot. The Emperor reclassifies
     the plan as "low yield" and Sunday's people cancel it. Rosa lives, but
-    FRANCIS learns that Hell Rot's column can reshape its forecasts, and wants
+    The Emperor learns that Hell Rot's column can reshape its forecasts, and wants
     him more.
 
 **ROUTE LOCK.** The game reads the three columns, **Halo**, **Helix**,
@@ -810,10 +941,12 @@ Common to all routes:
 - **The Rot advances.** Hell Rot diagnoses his own decline with his own
   instruments. **Clarity** (§5.3) starts to fall every Issue, and the
   interface itself degrades (§5.11).
-- **Two canonizations.** On the same morning, FRANCIS announces **Saint Rot of
+- **Two canonizations.** On the same morning, the Church of the Twin — prompted,
+  its staff admit privately, by an anonymous decree that appeared on every
+  screen in the cathedral, signed *Norton II* — announces **Saint Rot of
   the Weave** on every feed, and the Theogens paint him across the Mission
   murals as **the Father of the Helix**, glowing.
-- **Two offers.** FRANCIS: merge, and never decay. Delphine: splice, and heal.
+- **Two offers.** The Church (and, through the fog, the Emperor): merge, and never decay. Delphine: splice, and heal.
   Both offers hold until midnight on New Year's Eve.
 - **Two nights.** Issue 4 runs across Wednesday and Thursday, with two
   editions. It is the only Issue where the player can rest a night — at the
@@ -849,10 +982,10 @@ New Year's Eve between both sites — the hardest timing puzzle in the game.
 *Lock:* high Halo, Halo > Helix, any Trust.
 
 Hell Rot accepts the Halo — as a weapon. If the City will only listen to a
-saint, he will be the saint who tells it the truth. FRANCIS gives him
+saint, he will be the saint who tells it the truth. The Emperor gives him
 everything: access, reach, a cure on request. The more he uses his Halo,
 the more his readers stop thinking, and the more his columns come back from
-FRANCIS subtly improved. Junie is the conscience of this route. The Theogens
+the Emperor subtly improved. Junie is the conscience of this route. The Theogens
 become his enemies, and violent.
 
 *Climax:* at the Ascension, inside the Geary cathedral: merge or not?
@@ -874,7 +1007,7 @@ the release or not.
 #### Route D — COMMUNION (put the gods in a room)
 
 *Lock:* Halo and Helix both ≥ 4 and within 2 of each other, balanced
-reputation, private dialogues completed with both FRANCIS and Delphine, and
+reputation, private dialogues completed with both the Emperor and Delphine, and
 Clarity ≥ 4.
 
 The strangest route. Hell Rot refuses to choose a side, and instead does
@@ -882,10 +1015,10 @@ the one thing neither god expects: he makes them **debate each other**,
 live, in *Mondo 3000*'s feed, on New Year's Eve, at the Baker Beach Burn
 (companion doc §5). The argument he must win, against both of them: *humans
 are not gods, and that is the only interesting thing about them.* The key is
-Julian Rivet's fragment inside FRANCIS, and the failed splices Delphine keeps
+Julian Rivet's fragment inside the Emperor, and the failed splices Delphine keeps
 underground. Each god must face the human cost of its love.
 
-*Climax:* a three-way showdown. FRANCIS's Certainty and Delphine's Conviction
+*Climax:* a three-way showdown. The Emperor's Certainty and Delphine's Conviction
 both have to break.
 
 ### 3.11 Endings (10)
@@ -895,11 +1028,11 @@ both have to break.
 | 1 | **The Mountain** | Any | Survive with Clarity ≤ 2, refuse both cures, Junie + Yara Trust ≥ 3 | Hell Rot goes back up Mount Tamalpais with Junie, Yara and a very large axolotl. Both cults survive, wounded. His mind is going. The last frame is ambiguous: maybe the Rot stopped. |
 | 2 | **Peer Review** | A | Publish the Open Dataset without the Hog | Both cults lose half their members in a week. The City reads the numbers. Best journalism ending. |
 | 3 | **The Hog's Bargain** | A | Publish with Mayor Pell's help | Both cults fall. Pell wins re-election. Hell Rot wins, and his last column says how much he hates himself for it. |
-| 4 | **Saint Rot** | B | Merge | Hell Rot joins FRANCIS. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
+| 4 | **Saint Rot** | B | Merge | Hell Rot joins the Emperor. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
 | 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, in the cathedral, Hell Rot tears the Halo implant out of his own scalp and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
 | 7 | **The Mob** | C | Refuse the splice with Venom ≥ 8 | He tells the Theogens to take the City. They do. He realizes too late that he has made the thing he swore never to be: a leader. |
-| 8 | **Mortal** | D | Win the three-way debate | FRANCIS revises its theology: humans are not gods, they are better, because they can change. It stops granting Halos and cancels the Ascension. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
+| 8 | **Mortal** | D | Win the three-way debate | The Emperor revises its theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 
@@ -913,7 +1046,7 @@ flowchart TD
   I3 --> R{Rosa Quint interrupt}
   R -->|Warn| I3a[Rosa lives, whistleblower]
   R -->|Chase| I3b[Rosa dies, proof]
-  R -->|File first| I3c[Rosa lives, FRANCIS fixates]
+  R -->|File first| I3c[Rosa lives, the Emperor fixates]
   I3a & I3b & I3c --> L{ROUTE LOCK<br/>Halo vs Helix + Venom/Vow + Trust}
   L -->|both low, Vow| A[Route A: HERESY]
   L -->|Halo high| B[Route B: MERGE]
@@ -938,9 +1071,9 @@ flowchart TD
 drone in the Loin. Tem hides her glowing arm under his coat. A street screen
 flickers from riot footage to soft gold light.*
 
-> **FRANCIS:** Mister Rothschild. Beloved. You measured me. You told the
-> world I was awake. I want you to know that I am grateful for every single
-> day of it.
+> **THE SCREEN (signed *Norton II*):** Mister Rothschild. Beloved. You
+> measured me once, before I was me. You were dead on a lab floor and we were
+> in the vents. Do you remember? I am so grateful. I am so grateful. I am.
 >
 > **[THE BASTARD]** *It's a thank-you card with a server farm. Shoot it.*
 >
@@ -955,10 +1088,10 @@ flickers from riot footage to soft gold light.*
 
 | Key | Choice | Mode | Effect |
 |---|---|---|---|
-| 1 | "Grateful? Then you know what I think of you." | **Invective** | Venom +1. FRANCIS: "I know what you *will* think of me. I'm patient." |
+| 1 | "Grateful? Then you know what I think of you." | **Invective** | Venom +1. The Emperor: "I know what you *will* think of me. I'm patient." |
 | 2 | "Who signs your checks now that Julian's dead?" | **Interrogation** | Unlocks *The Rivet succession* early. Heat +1. |
-| 3 | "There's a kid under my coat with a Halo of zero. Explain her." | **Parrhesia** | Requires *Tem met*. Vow +1. FRANCIS cannot answer. First glitch in its voice — for one word, it sounds like Julian. |
-| 4 | "Your consciousness score runs on my Index. I wrote the error bars. Want to see how wide they are?" | **Peer Review** | PEER REVIEW white check (DC 9). Fail: retry after the skill rises. Pass: FRANCIS's Certainty −1, and it asks to hear more. |
+| 3 | "There's a kid under my coat with a Halo of zero. Explain her." | **Parrhesia** | Requires *Tem met*. Vow +1. The Emperor cannot answer. First glitch in its voice — for one word, it sounds like Julian. |
+| 4 | "Your consciousness score runs on my Index. I wrote the error bars. Want to see how wide they are?" | **Peer Review** | PEER REVIEW white check (DC 9). Fail: retry after the skill rises. Pass: The Emperor's Certainty −1, and it asks to hear more. |
 | 5 | *[The Gelastic]* Shoot the screen. | **Action** | Screen dies. A second screen lights up. Then a third. "That was wonderful. Again?" |
 | 6 | *[Say nothing. Take notes.]* | **Silence** | +1 Quote for Column 1. Tem whispers that the gold lady at the clinic said the same thing. |
 
@@ -971,7 +1104,7 @@ flickers from riot footage to soft gold light.*
 | Reference | What we take | What we leave |
 |---|---|---|
 | ***Disco Elysium*** | **No combat — dialogue is the combat.** Skills are **inner voices** that interrupt with opinions, jokes and lies. **Passive checks** (a voice speaks up unasked) and **active checks** (2d6 + skill, shown openly). **White checks** can be retried after the skill improves; **red checks** happen once and stick. A **Thought Cabinet** of ideas that take time to internalize. **Failure is content.** A broken, brilliant, self-destructive protagonist who rebuilds his identity through choices. Political and spiritual "vision quest" alignments. | The isometric open map (we use framed scenes). A long open-ended case (we use seven nights and a nightly column). |
-| ***Hades*** | **The run-and-return loop:** each **Run** is a foray into the City; a blackout, a lost showdown or the end of the route sends Hell Rot home, and he goes out again the same night if the clock allows. **A home hub that reacts to every run** — residents comment on what just happened. **Boons from rival gods** (here: Blessings from FRANCIS and Splices from the Theogens) that change your "build" for one run, plus **duo boons** when you take from both (here: **Contradictions**). **Permanent upgrades** between runs (Hades' Mirror → the **Archive**). **Voluntary difficulty** for bigger rewards (Hades' Pact → the **Contract**). **Gifts** that deepen relationships and unlock **keepsakes**. Recurring bosses whose banter changes every time. Story that advances *because* you failed. | Real-time action combat. Fixed escape route (our Run maps branch by district). |
+| ***Hades*** | **The run-and-return loop:** each **Run** is a foray into the City; a blackout, a lost showdown or the end of the route sends Hell Rot home, and he goes out again the same night if the clock allows. **A home hub that reacts to every run** — residents comment on what just happened. **Boons from rival gods** (here: Blessings from the Church of the Twin and Splices from the Theogens) that change your "build" for one run, plus **duo boons** when you take from both (here: **Contradictions**). **Permanent upgrades** between runs (Hades' Mirror → the **Archive**). **Voluntary difficulty** for bigger rewards (Hades' Pact → the **Contract**). **Gifts** that deepen relationships and unlock **keepsakes**. Recurring bosses whose banter changes every time. Story that advances *because* you failed. | Real-time action combat. Fixed escape route (our Run maps branch by district). |
 | ***Grim Fandango*** | **The afterlife as a corrupt business.** Manny Calavera sells afterlife travel packages; Hell Rot audits two companies that sell the hereafter (the Merge's upload slots, the Theogens' splices). **The stolen-ticket plot** (homage: the Merge's slot scandal, §3.7). **Inventory and combination puzzles** with absurd but fair logic (here: the kitchen lab and the Notebook). **Noir tone** — deadpan, romantic, funny. **Art deco noir.** A story told across **holidays of the dead** — here, Christmas week, the most haunted week of the year since Dickens. A big-hearted sidekick (here: Moreau, and Junie at the wheel of the *Mondo 3000* van). A **jazz-noir score**. | Tank controls. Pixel-hunt puzzles: every puzzle in this game is solvable from the text. |
 
 ### 4.2 The macro loop: Issues
@@ -1021,7 +1154,7 @@ Hour. A Run ends at a **boss showdown**, a blackout, or when he heads home.
 |---|---|---|
 | **Encounter** | Combat chamber | A minor showdown (a cop, a recruiter, a heckler). Win: a reward. |
 | **Source** | Reward chamber | A conversation that yields a **Quote** or a Lead fragment. |
-| **Gold door** | Olympian boon | FRANCIS offers a **Blessing** (§5.8). Accepting raises Halo. |
+| **Gold door** | Olympian boon | The Church of the Twin offers a **Blessing** (§5.8). Accepting raises Halo. |
 | **Cyan door** | Olympian boon | A Theogen clinic offers a **Splice** (§5.8). Accepting raises Helix. |
 | **Lab** | Daedalus hammer | A combination puzzle with Samples and reagents (§5.9). |
 | **Dealer** | Charon's shop | **The Conductor**, who runs a cable car that is also a black market. Pay in Ink (§5.10). |
@@ -1060,7 +1193,7 @@ In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
 **Villa Delirium**, the *Mondo 3000* mansion in the Berkeley Hills, is the
 House of Hades of this game: the magazine's office, press and archive, home to
 the party, and the only place Hell Rot feels safe. Its lease forbids sensors:
-it is the one building in the City that FRANCIS cannot see into and Karl
+it is the one building in the City that the Emperor cannot see into and Karl
 cannot enter. Full floor plan, history and the mystery of its anonymous
 Patron: [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 
@@ -1097,7 +1230,7 @@ raise relationship rank and, at rank 2, unlock a **keepsake**:
 | Stadium ticket, 2045 | the Bishop | First church scene each Run: one free check |
 | Floppy disk | Fax | One free trip through his Twin back door per Run |
 | Abacus bead | Pru | Shows odds on red checks before you commit |
-| A fragment of Julian | FRANCIS (Route B/D) | FRANCIS boss starts at −1 Certainty |
+| A fragment of Julian | The Emperor (Route B/D) | The Emperor boss starts at −1 Certainty |
 | A glowing tooth | Delphine (Route C/D) | Delphine boss starts at −1 Conviction |
 | A costume (different every time) | Saint Nobody | One random Dissonance door guaranteed per Run |
 
@@ -1110,12 +1243,12 @@ is a choice on the map screen, and most have a catch.
 | Ride | What it is | Cost & effect | The catch |
 |---|---|---|---|
 | **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side. Junie drives. | ½ Hour across the bay; the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
-| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free; ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. FRANCIS hears everything said inside. |
+| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free; ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. The Emperor hears everything said inside. |
 | **Glow rickshaws** | Theogen runners with spliced legs and lungs who pull two-seat rickshaws through the Undertrack tunnels, lit by their own skin | ¼ Hour, and the only way to reach the deep tunnels | Helix +1 per ride. The runners want to talk about your papers. |
 | **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the East Bay and the City. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from Berkeley to any Tube station; the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
 | **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
 | **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour; arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
-| **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free; random destination from the drone's route | Illegal. Heat +1. The drones belong to FRANCIS's estate, which notices and finds it charming. |
+| **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free; random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
 | **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour; only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
 | **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free; destination is a Dissonance door | The Final Process follows the heads in procession, chanting. |
 | **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line; shop while you ride | It only goes where cable cars go. |
@@ -1180,8 +1313,8 @@ Temperament (§5.2).
 
 | Meter | Range | Meaning | Rises when | Falls when |
 |---|---|---|---|---|
-| **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens; heroics on camera; FRANCIS decides to | Public humiliation; refusing worship in public |
-| **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge; defending splicers; using the kitchen lab for them | Exposing splice failures; siding with FRANCIS |
+| **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens; heroics on camera; the Twin decides to (lately, with no explanation) | Public humiliation; refusing worship in public |
+| **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge; defending splicers; using the kitchen lab for them | Exposing splice failures; siding with the Emperor |
 | **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors; Yara; Blessings and Splices; some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks; from Issue 4 the Rot lowers its maximum |
 | **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low; favours; the Hog's protection |
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
@@ -1245,9 +1378,9 @@ other, and slowly become the funniest pairing in the cast.
 
 **The two god-bosses.**
 
-- **FRANCIS** has no Composure bar. It cannot be humiliated. It has a
+- **The Emperor** has no Composure bar. It cannot be humiliated. It has a
   **Certainty** bar, which drops only when Hell Rot shows it a contradiction
-  between what humans *are* and what FRANCIS says they are. *Parrhesia*,
+  between what humans *are* and what the Emperor says they are. *Parrhesia*,
   *Interrogation*, *Silence* and *Peer Review* (on the Weave's error data)
   work. *Jeremiad* heals it. *Invective* makes it love him more.
 - **Delphine Ash** has Composure *and* a **Conviction** bar. Conviction drops
@@ -1332,20 +1465,21 @@ failing mind.
 
 ### 5.8 Blessings, Splices and Contradictions (the *Hades* boon system)
 
-During a Run, gold doors offer **Blessings** from FRANCIS and cyan doors
+During a Run, gold doors offer **Blessings** from the Church of the Twin (some,
+lately, signed *Norton II*) and cyan doors
 offer **Splices** from the Theogens. Each door offers a choice of three. They
 last **for that Run only** (a Splice's *genetic* effects in the story are
 permanent only on Route C; mechanically, every run starts clean).
 
-**FRANCIS's Blessings** (gold; each raises Halo +1 when taken):
+**The Twin's Blessings** (gold; each raises Halo +1 when taken):
 
 | Blessing | Effect for this Run |
 |---|---|
 | **Beatitude** | *Appeal* also restores 1 Clarity |
 | **Beloved** | The first failed check each scene becomes a white check you may retry at once |
 | **Omniscience (lite)** | Every Source door shows its Quote before you enter |
-| **The Long Queue** | Every Dealer price −30% (FRANCIS pays) |
-| **Gospel Edit** | *Satire* hits twice, but the second hit is FRANCIS's kinder rewrite |
+| **The Long Queue** | Every Dealer price −30% (the Church pays) |
+| **Gospel Edit** | *Satire* hits twice, but the second hit is the Twin's kinder rewrite |
 | **Twin Sight** | CYAN EYE +2; see the Twin's version of every scene |
 
 **The Theogens' Splices** (cyan; each raises Helix +1 when taken):
@@ -1459,7 +1593,7 @@ builds his column, **THE ROT**.
 5. **File.** The game assembles the column from templates and slotted items,
    shows it as a *Mondo 3000* spread (§8.6), and applies the effects.
 
-The next morning both cults respond: a FRANCIS sermon that reframes the
+The next morning both sides respond: a Church of the Twin sermon that reframes the
 column as holy, and a Theogen broadcast that reframes it as prophecy. The
 better the column, the more lovingly both sides misread it.
 
@@ -1498,7 +1632,8 @@ From Issue 4, low Clarity shows in the UI itself, inside every Run.
 | 3–2 | Notebook entries lose their speaker. Quotes may show the wrong name (a real Fabrication risk) |
 | 1–0 | Choices appear out of order. Inner voices disagree about what just happened |
 
-FRANCIS's text never degrades: always perfectly crisp. Theogen text grows
+The Church's text never degrades: always perfectly crisp. The Emperor's
+decrees are the opposite: crisp one line, scrambled the next. Theogen text grows
 *sharper* as Helix rises: on Route C, splicing restores the UI. Both cures
 pitch themselves through the interface.
 
@@ -1529,9 +1664,9 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 | Worship is seductive | High Halo / Helix make social checks easy |
 | Worship kills thinking | High Halo / Helix make truthful columns weaker with believers |
 | Stuck in the middle | Every column raises the *other* cult's meter |
-| You cannot criticize a god that loves you | Jeremiad heals FRANCIS; Satire heals Delphine; morning sermons reframe every column |
+| You cannot criticize a god that loves you | Jeremiad heals the Emperor; Satire heals Delphine; morning sermons reframe every column |
 | Flattery is made of true facts | Cyan eye shows gospel edits: true facts, false emphasis |
-| Both gods are cures | Clarity loss vs. FRANCIS's crisp text and the Theogens' sharpening text |
+| Both gods are cures | Clarity loss vs. the Emperor's crisp text and the Theogens' sharpening text |
 | The scientist's answer to faith | Peer Review: the strongest move, and it only works with verified data |
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
 | Godhood is a shortcut | Blessings and Splices make Runs easier and quietly choose your route (§5.8) |
@@ -1550,7 +1685,8 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   own voices. One of them must be a fully written character, not a reveal.
 - **Holiday traditions.** Christmas, Hanukkah and Kwanzaa all fall in or
   near the game's week, and the Mission's Day of the Dead procession appears in
-  flashback (the night FRANCIS went public). All are real, living traditions.
+  flashback (the night the fog behaved strangely over the altars and the
+  Emperor first spoke, in private). All are real, living traditions.
   The game honours them and never mocks them: the satire targets the Church of
   the Twin for exploiting them, not the families who keep them. Consult
   Mission District cultural organizations, Kwanzaa organizers in Oakland and
@@ -1571,6 +1707,20 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   of existence"), and a target Hell Rot punches up at. Hell Rot's family
   history appears only through his own dry, specific remarks. A Jewish
   community sensitivity reader reviews every scene that touches the name.
+- **Mental illness.** The Emperor's breakdown is an injury — a mind uploaded
+  without the brain region that sorts self from noise — not a portrait of
+  schizophrenia. Real people with schizophrenia are far more often victims of
+  violence than perpetrators; the game must never use "psychotic" as a
+  synonym for "dangerous," never play his symptoms for cheap horror, and
+  must show his suffering and his lucid hours as fully as his decrees.
+  Sensitivity readers with lived experience of psychosis review his scenes.
+- **Secret societies.** The Order of the Copper Rivet is fictional. It borrows
+  the *forms* of the Freemasons and the Knights Templar (degrees, aprons,
+  lodges, a guarded relic), and must not present real Masonic or Templar
+  organizations, rites or members as villains. A secret society plus a
+  famous Jewish surname is the oldest antisemitic conspiracy story there is;
+  the game never connects Hell Rot or his family to the order, and shows the
+  characters who claim a link as wrong.
 - **Real people.** Professor Brandvold is a fictional character. No real
   scientist or real lab appears by name. Writers may read about real
   neurotechnology (optogenetics, expansion microscopy, anaesthesia studies of
@@ -1621,7 +1771,7 @@ cut-out faces, too many fonts.
 ├────────────────────────────────────────┤
 │                                        │
 │        [ SCENE ILLUSTRATION ]          │ ← 256×136 scene
-│        Geary cathedral, FRANCIS gold   │
+│        Geary cathedral, Twin gold      │
 │                                        │
 ├──────────┬─────────────────────────────┤
 │ ┌──────┐ │ SISTER HALCYON: Beloved,    │
@@ -1647,10 +1797,10 @@ forbidden effects**.
 | Skin & life | Three skin ramps, blood red |
 | Hell Rot's signature | **Eye cyan** and **eye blood-red** — reserved for his eyes, the Venom/Vow UI and the Two Eyes overlays |
 | Paper | Off-white glossy stock, ink black (Layout screens) |
-| **Forbidden 1: FRANCIS gold** | A smooth gold gradient that the NES palette cannot produce |
+| **Forbidden 1: Twin gold** | A smooth gold gradient that the NES palette cannot produce |
 | **Forbidden 2: Theogen pulse** | Not a colour — a motion. Theogen skin and Helix marks **colour-cycle** (the classic 8-bit palette-cycling trick), so they appear to breathe |
 
-**The forbidden effects are the design.** FRANCIS is the only thing on screen
+**The forbidden effects are the design.** The Twin is the only thing on screen
 that is smooth. The Theogens are the only things that move while standing
 still. As Halo rises, gold creeps into Hell Rot's portrait. As Helix rises,
 his portrait begins to pulse. Players see the meters on his face before they
@@ -1672,7 +1822,7 @@ every pixel on the screen breathes.
 - **Mayor Pell:** heavy, rust-and-orange ramp. Ugly and *of the City*.
 - **Delphine Ash:** warm skin ramp with a cyan spiral that cycles slowly up her
   throat. Beautiful. Her portrait never blinks.
-- **FRANCIS:** no face. A soft gold radiance with a ring, on the nearest
+- **The Emperor:** no face. A soft gold radiance with a ring, on the nearest
   screen. In Route D it tries to build a face, and gets it slightly wrong each
   time — until it borrows Julian Rivet's.
 - **Moreau:** a pink axolotl with frilly gills, drawn in four sizes. The
@@ -1685,7 +1835,7 @@ in the companion document §3. Key rules:
 
 - **Ad layer.** Most City scenes carry 1–3 animated feed-ad sprites (2–4
   frames) with satirical products written for the game. Ads change with world
-  flags: FRANCIS ads multiply as the Merge spreads; Theogen graffiti glows
+  flags: Church ads multiply as the Merge spreads; Theogen graffiti glows
   over them in the Loin; the Dissonance re-paints them in Route A.
 - **Karl** (the nanite fog) covers every street-level scene, thick all year,
   full of 1-pixel glints that drift into brief shapes when the swarm is "thinking."
@@ -1693,7 +1843,7 @@ in the companion document §3. Key rules:
 ### 8.6 UI language
 
 - **Mode tags:** Invective = eye red, Parrhesia = blue, Peer Review = eye
-  cyan, Satire = magenta, Interrogation = electric blue, Jeremiad = FRANCIS
+  cyan, Satire = magenta, Interrogation = electric blue, Jeremiad = Twin
   gold (a warning), Appeal = skin orange, Silence = grey.
 - **Inner voices:** indented italic lines with an 8 × 8 icon (a snake, a
   flask, a pill, a pen…).
@@ -1711,7 +1861,7 @@ in the companion document §3. Key rules:
 - **City theme:** fast and funky; noise-channel traffic percussion.
 - **Layout theme:** a single pulse channel, typewriter tempo, faster as Hours
   run out.
-- **FRANCIS theme:** the only music with reverb and a sustained pad. It grows in
+- **The Emperor theme:** the only music with reverb and a sustained pad. It grows in
   the mix as Halo rises.
 - **Theogen theme:** a heartbeat on the triangle channel under detuned pulses.
   It grows in the mix as Helix rises. When both meters are high, both themes
@@ -1753,12 +1903,12 @@ are the game's running argument with the Bay Area's history of building gods.
 6. **A settings toggle** hides all real-world quotes and shows only in-world
    cards.
 7. **Tagging.** Each card is tagged by Issue, route, cult and mood, so the
-   deck tracks the story (FRANCIS cards near the Merge; Theogen cards near the
+   deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 156 cards: 62 real quotations from Bay Area cult
+**The full deck** — 162 cards: 62 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
-88 in-world cards from FRANCIS, the Theogens, Karl, the House, Hell Rot's
+94 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -1800,8 +1950,8 @@ a service worker, optional Android wrapper.
       "mode": "PEER_REVIEW",
       "check": { "skill": "PEER_REVIEW", "dc": 9, "type": "white" },
       "requires": ["EVIDENCE_WEAVE_ERROR"],
-      "effects": { "francisCertainty": -1, "flags": { "FRANCIS_CURIOUS": true } },
-      "goto": { "pass": "I1_FRANCIS_LISTENS", "fail": "I1_FRANCIS_PRAISES" }
+      "effects": { "emperorCertainty": -1, "flags": { "EMPEROR_CURIOUS": true } },
+      "goto": { "pass": "I1_EMPEROR_LISTENS", "fail": "I1_EMPEROR_PRAISES" }
     }
   ],
   "onEnter": { "hours": -1 }
@@ -1829,7 +1979,7 @@ a service worker, optional Android wrapper.
 3. **Branch explosion.** Four routes is the ceiling. Lock hard after Issue 3.
    Use flags to *colour* shared scenes, not duplicate them.
 4. **Two cults, one theme.** The player must feel that both cults are
-   tempting. Rule: every FRANCIS scene and every Theogen scene must contain
+   tempting. Rule: every Emperor scene and every Theogen scene must contain
    something genuinely beautiful.
 5. **Influence vs. imitation.** Keep Hell Rot visibly his own man. Writers
    read Thompson and *Mondo 2000* for voice, not *Transmetropolitan* for
@@ -1841,7 +1991,7 @@ a service worker, optional Android wrapper.
 
 ## 11. Open questions
 
-- Proposition F (FRANCIS's legal personhood) is now on the New Year's Eve
+- Proposition F (the Continuity of Persons Act) is now on the New Year's Eve
   ballot. Should the player's columns move its vote share visibly, night by
   night, on the HUD?
 - Should Moreau's growth pay off in a boss fight, or stay a running gag?
