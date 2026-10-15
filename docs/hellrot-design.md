@@ -354,8 +354,7 @@ touches every street and every lung every night. By 2049 the Twin holds a
 live model of every resident of the Bay Area — about eight million people.
 
 **The upload (October 2049, secret).** Julian Rivet V, last of the line, was
-dying. In a lodge room under the Rivet mansion, the **Order of the Copper
-Rivet** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
+dying. In a lodge room under the Rivet mansion, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
 Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
 ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
 time while instruments read each layer before it was gone. The data went
@@ -406,8 +405,9 @@ the Twin, not the Emperor. The **Church of the Twin** — a glass cathedral on
 Geary, a weekly feed-stadium mass, a free social-services network paid for
 by Rivet philanthropy — promises that the Twin will one day **wake as a god**,
 and that the faithful who **merge** (upload, after cingulate engineering)
-will live in it forever. Its **Halo** scores and flattering **gospels** come
-from the Twin's software. Its spokesperson, **Sister Halcyon**, believes every
+will live in it forever. Its **Halo** scores — shown as the visible auras Karl paints around every
+person (companion doc §3.2b) — and its flattering **gospels** come from the
+Twin's software. Its spokesperson, **Sister Halcyon**, believes every
 word and knows nothing about the lodge. Lately the Church's screens glitch,
 Halos jump overnight, and the fog writes decrees on its windows. The Church
 calls it *the Twin stirring*. It is the Emperor, leaking.
@@ -430,32 +430,121 @@ upload, and the Rot can never touch you again — and a mind that went in *with*
 a working cingulate might help hold a god together. Every upload begins under
 anaesthetic gas. The cure for his damage starts with the drug that caused it.
 
-### 3.3b The Order of the Copper Rivet (the secret society)
+### 3.3b The Auric Order (the secret society)
 
-A fraternal order in the mould of the Freemasons and the Knights Templar,
-founded in **1873**, the year of the Rivet family's famous patent, as a
-business fraternity for the dynasty's partners. It became something else.
+**The name.** *Auric* means "of gold" (from the Latin *aurum*) and it echoes
+*aura*. The order guards both: the Rivet gold, and the light that Karl paints
+around every person in the City (companion doc §3.2b). Members call it simply
+**the Order**. Outsiders who have heard rumours call it "the Gold Lodge."
 
-- **Rites and ranks.** Three degrees — **Apprentice of the Seam, Fellow of the
-  Pocket, Master of the Rivet** — and an inner, Templar-style circle, the
-  **Keepers of the Pattern**, sworn to guard "the Pattern": Julian's scan, now
-  living in the fog. Members wear denim aprons in lodge. The symbol is a copper
-  rivet set inside a mason's compass.
-- **Lodges.** The **Rivet mansion** on Pacific Heights (where the scan
-  happened) and an older temple under a brick warehouse near the waterfront.
-- **Duties.** Keep the secret; keep Karl seeded and healthy (they control the
-  nanite top-up contracts); manage the Emperor's bad hours; and win
-  Proposition F, quietly, so that when the secret comes out, the law already
-  says the Emperor is a person and the heir to everything Julian owned.
-- **Members.** Rivet trustees, two members of the Church of the Twin's board,
-  a Twin systems director, Mister Sunday's biggest donor — and the judge
-  hearing the Prop F case (§3.3c). That last name is the biggest story in the
-  game.
-- **The Warden.** The order's master, **Cornelius Vail**, a Rivet trustee in
-  his eighties, who loved Julian like a son and is not sure what he has made.
-- **What the order is not.** It has nothing to do with Hell Rot's family. The
-  City's conspiracy cranks claim a "Rothschild" link anyway; the game shows
-  them wrong, and shows why that lie is old and ugly (§7).
+**What it is, in one line:** a 176-year-old fraternal order in the mould of
+the Freemasons and the Knights Templar, which read the Bay Area's nanotech
+prophecies in the 1980s, spent forty years making them come true, and now
+keeps a mad god alive in the fog.
+
+#### History
+
+| Year | Event |
+|---|---|
+| **1873** | Founded as the **Copper Rivet Lodge**, a business fraternity for the partners of the Rivet dry-goods house, in the year of the family's famous patent. Masonic forms: degrees, aprons, an oath, a lodge room above the warehouse. |
+| **1906** | The earthquake and fire destroy the warehouse. The lodge's minute books survive in an iron box. The Order still opens every meeting by reading the 1906 entry. |
+| **1986** | In Palo Alto, the **Foresight Institute** is founded (by Christine Peterson and K. Eric Drexler) to prepare for molecular nanotechnology. The same year Drexler's book *Engines of Creation* describes molecular machines — and the risk of runaway self-copying ones, "grey goo." A young Rivet heir reads it and brings it to lodge. |
+| **1987** | The lodge refounds itself as **the Auric Order**, with a new purpose: to see the age of molecular machines coming, prepare for it, and make sure it serves the City — and the family. |
+| **1993** | J. Storrs Hall publishes "utility fog": a swarm of tiny robots, *foglets*, that could fill the air and become almost any material. The Order adopts the paper as scripture. Its inner circle starts calling the future swarm "the Fog." |
+| **2020s–2033** | The wildfire decades. Order members on city commissions and in Rivet philanthropy push the smoke-scrubbing nanite program. In **December 2033** Karl is seeded. The Order quietly holds the top-up and calibration contracts — it controls what the swarm is told to do. |
+| **2030s–2040s** | Karl's sensors start to show a faint glow around each person: the **auras** (§3.2b of the companion doc). The Order learns to tune them. The Church of the Twin later builds its Halo scores on them. |
+| **2044** | Julian Rivet V, Master of the Aura, gives his six-hour interview to the Duchess and sets up the Lacuna Trust (Mondo doc §4). |
+| **October 2049** | The Order performs Julian's destructive laser ablation scan in the lodge room under the Rivet mansion and uploads him into Karl. |
+| **2 November 2049** | The Emperor speaks for the first time, to the assembled Order, in the voices of their dead. |
+
+#### Beliefs (the Auric doctrine)
+
+1. **The aura is the soul made visible.** Karl's glow does not *represent*
+   a person's inner state; to the Order, it *is* the self, finally readable.
+2. **Light should gather.** A city of separate auras is a draft. A city of
+   joined light — one great aura — is the finished work. (This is the Order's
+   version of the Bundle: longtermist in its patience, Cosmist in its wish to
+   keep everyone forever.)
+3. **The first Aureate.** The Emperor is the first mind to *become* an aura:
+   a person made entirely of the City's light. The Order calls him the first
+   **Aureate**, and believes everyone will follow.
+4. **Secrecy is stewardship.** The public is not ready. The Order will tell
+   them when the law (Proposition F) and the god (stabilized by the Ascension)
+   are both ready.
+
+#### Structure and ranks
+
+| Degree | Name | Who | Mark |
+|---|---|---|---|
+| 1° | **Apprentice of the Seam** | New members; mostly Rivet staff, engineers, lawyers | A plain denim apron |
+| 2° | **Fellow of the Halo** | Senior professionals: a Twin director, Church board members, a judge | Gold thread on the apron hem |
+| 3° | **Master of the Aura** | Rivet trustees and major donors | A gold ring, and a tuned aura |
+| Inner circle | **Keepers of the Pattern** | Seven Masters, sworn Templar-style to guard "the Pattern" — Julian's scan, now living in the fog | They do not wear the ring outside the lodge |
+| Head | **The Warden** | Currently **Cornelius Vail** | Holds the 1906 iron box |
+
+**The tuned aura.** Every Master's Karl aura carries a faint **gold ring**,
+tuned in at their initiation. It is invisible to the naked eye and to the
+Church's Halo screens — but **Hell Rot's cyan eye can see it.** This is the
+core investigation mechanic for the Order: a cyan-eye scan in any scene can
+reveal a ring, and each ring found is a verified Dossier entry.
+
+#### Rites and regalia
+
+- **The Kindling** (initiation): the lodge vents are opened, Karl's fog fills
+  the room, and the candidate stands blindfolded while the Keepers tune their
+  aura. They leave with the ring.
+- **The Quiet:** no devices, no feeds, no Twin in lodge. Minutes are kept on
+  paper — the Order's great strength and its great weakness.
+- **The Reading:** every meeting opens with the 1906 minute-book entry, read
+  aloud by the Warden.
+- **Passwords** in 1870s dry-goods slang. Greeting: "So mote it be. Mind the
+  glow."
+- **Regalia:** denim aprons stitched in gold thread; gold rings; a seal of a
+  gold rivet inside a mason's compass, ringed by a halo.
+- **Lodges:** the room under the **Rivet mansion** (where the scan happened)
+  and the **Old Lodge**, under a brick warehouse near the waterfront, which
+  floods on king tides — a problem in Issues 1–2.
+
+#### Assets
+
+- **Karl's control contracts** — top-up, calibration and the aura settings.
+- **The Lacuna Trust** and the wider Rivet fortune.
+- **Seats** on the Church of the Twin's board, the Twin's engineering staff,
+  and the bench (**Judge Harlan Ostrander**, Fellow of the Halo).
+- **Mister Sunday's biggest donor**, and through him, the campaign.
+- **Paper**: the minute books, the Pattern logs, the scan records.
+
+#### Factions inside the Order
+
+| Faction | Leader | Wants | Player use |
+|---|---|---|---|
+| **The Wardens** | Cornelius Vail | Keep Julian alive and the secret safe, whatever it costs | Can be turned on Route D, if Hell Rot reaches Julian first |
+| **The Gilders** | Sunday's donor, a Master | Pass Prop F, run the Ascension, make the Emperor the City's god in law | The main human antagonists of Route A and B |
+| **The Penitents** | A Keeper who assisted at the scan | End the Emperor's suffering: switch the calibration contracts off and let Karl's storm scatter him | Secret ally on Routes A and D; the source of the paper minute book |
+
+#### Weaknesses (the cracks)
+
+- **The gold ring**, visible to one eye in the City.
+- **Paper minutes** that someone can steal.
+- **The Penitents.**
+- **The Emperor himself**, who leaks lodge secrets in his decrees on bad
+  nights.
+- **The BFF's lawsuit**, whose discovery requests could reach the Twin's
+  calibration logs.
+
+#### Lifton tells (Dossier)
+
+1 (milieu control: the Quiet), 2 (mystical manipulation: the Kindling), 5
+(sacred science: Drexler and Hall as scripture), 6 (loading the language),
+8 (dispensing of existence: the unmodelled poor have no aura worth tuning).
+
+#### What the Order is not
+
+It is fictional. It borrows the *forms* of Masonic and Templar orders, and
+the real history of Bay Area nanotech futurism, but no real fraternal order,
+institute or person belongs to it or approves of it. It has nothing to do
+with Hell Rot's family, and the characters who claim a "Rothschild" link are
+shown to be wrong (§7).
 
 ### 3.3c Proposition F, the courts and the Biological Frontier Foundation
 
@@ -476,7 +565,7 @@ ballot):
 
 **Who supports it:** the Church of the Twin (its merged members get rights),
 Mister Sunday, the Theogens in secret (legal clinics), and — through donors
-and a judge — the Order of the Copper Rivet.
+and a judge — the Auric Order.
 
 **Who fights it: the Biological Frontier Foundation (BFF).** A San Francisco
 digital-and-biological civil-liberties nonprofit in the spirit of the
@@ -633,8 +722,8 @@ uncertainty on screen.
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. |
-| **Cornelius Vail** | Warden of the Order of the Copper Rivet | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
-| **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Pocket. The biggest scoop in the game. |
+| **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
+| **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Halo. The biggest scoop in the game. |
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
 | **Delphine Ash** | Prophet of the Theogens | The second boss and the second temptation. See §3.4. |
@@ -1714,7 +1803,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   synonym for "dangerous," never play his symptoms for cheap horror, and
   must show his suffering and his lucid hours as fully as his decrees.
   Sensitivity readers with lived experience of psychosis review his scenes.
-- **Secret societies.** The Order of the Copper Rivet is fictional. It borrows
+- **Secret societies.** The Auric Order is fictional. It borrows
   the *forms* of the Freemasons and the Knights Templar (degrees, aprons,
   lodges, a guarded relic), and must not present real Masonic or Templar
   organizations, rites or members as villains. A secret society plus a
@@ -1906,9 +1995,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 162 cards: 62 real quotations from Bay Area cult
+**The full deck** — 166 cards: 64 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
-94 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+96 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.

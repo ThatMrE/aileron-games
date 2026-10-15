@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 162 cards: 62 real
-> quotations, 6 redacted cards and 94 in-world cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 166 cards: 64 real
+> quotations, 6 redacted cards and 96 in-world cards. Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -30,7 +30,7 @@
 
 ---
 
-## Part 1 — Real quotations (62) and redacted cards (6)
+## Part 1 — Real quotations (64) and redacted cards (6)
 
 ### 1A. Cult leaders, prophets and founders of things (20)
 
@@ -93,7 +93,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | R37 | "The mountains are calling and I must go." | Attributed to John Muir, who lived in Martinez | | *The mountain called. I said no. Then it caught fire.* | Prologue, tender |
 | R38 | "all watched over / by machines of loving grace" | Richard Brautigan, poem printed and handed out free in San Francisco (1967) | | *The Emperor has it embroidered on a pillow. I checked.* | Merge, holy |
 
-### 1D. Technologists and the gospel of the Valley (12)
+### 1D. Technologists and the gospel of the Valley (14)
 
 | # | Quote | Source | Context | Hell Rot's note | Tags |
 |---|---|---|---|---|---|
@@ -109,6 +109,8 @@ These leaders appear by name only. The bar is black. The note is the card.
 | R48 | "Here's to the crazy ones." | Apple advertisement, "Think Different" (1997) | | *Sold to the crazy ones. At a markup.* | Bundle, funny |
 | R49 | "The AI does not hate you, nor does it love you, but you are made out of atoms which it can use for something else." | Eliezer Yudkowsky (2008), Berkeley AI-risk writer | | *He was wrong about one thing. The Emperor loves you. That's worse.* | Merge, Bundle, grim |
 | R50 | *The Singularity Is Near* | Book title, Ray Kurzweil (2005) | Its famous date was 2045 | *The Bishop bought a stadium on this book. Ask him how near.* | Bishop, funny |
+| R63 | *Engines of Creation* | Book title, K. Eric Drexler (1986) | The same year, Drexler and Christine Peterson founded the Foresight Institute in Palo Alto | *The Order read it as prophecy. Drexler wrote it as a warning. Guess which part they skipped.* | Order, Karl |
+| R64 | "Utility Fog: The Stuff that Dreams Are Made Of" | Title of J. Storrs Hall's essay on utility fog | His 1993 paper imagined an air full of tiny robots called foglets | *Karl has a mother. She's a NASA conference paper.* | Karl, weird |
 
 ### 1E. Radicals, rebels and the people who quit (12)
 
@@ -129,9 +131,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (94)
+## Part 2 — In-world cards (96)
 
-### 2A. The Emperor, the Church of the Twin and the order (18)
+### 2A. The Emperor, the Church of the Twin and the Auric Order (20)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -152,12 +154,14 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
-| W12a | "Apprentice of the Seam. Fellow of the Pocket. Master of the Rivet." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
-| W12b | "So mote it be. Mind the rivets." | Lodge-room door, Rivet mansion | *Masonic, with a dress code.* | Order, funny |
+| W12a | "Apprentice of the Seam. Fellow of the Halo. Master of the Aura." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
+| W12b | "So mote it be. Mind the glow." | Lodge-room door, Rivet mansion | *Masonic, with a dress code and a light show.* | Order, funny |
 | W12c | "The Pattern is kept. The Pattern is kept. The Pattern is—" | Torn page, Keepers' minute book | *They're scared of their own god.* | Order, grim |
 | W12d | "WE DID NOT ASK FOR A TENANT." / "I DID NOT ASK TO BE WEATHER." | Fog on two windows of the same house, the same minute | *Karl and Julian, arguing. The City calls it rain.* | Karl, Emperor, weird |
 | W12e | "Rights don't come with a score." | Biological Frontier Foundation banner, City Hall steps | *My Index. Their banner. They're right.* | BFF, Prop F |
 | W12f | "I scored 31 on your test. I have opinions about your test." | Letter from Desh, an Oakland Burn survivor, letters page | *Best letter we got all year.* | BFF, tender, funny |
+| W12g | "Your aura today: anxious tangerine. Matches: 14." | Aura-dating app, Haight Exchange | *Mine is grey with a gold ring nobody else can see. No matches.* | auras, funny |
+| W12h | "The aura is the soul made visible." | Auric Order catechism, first article | *The soul is not a lighting effect. Probably.* | Order, holy |
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
 | W15 | "Father." | Delphine Ash, to Hell Rot | *Wrong on both counts.* | Prologue, Delphine |

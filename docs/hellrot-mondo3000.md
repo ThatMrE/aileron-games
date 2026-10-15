@@ -205,8 +205,7 @@ every god needs a heretic on retainer, and that the heretic needs a house the
 god cannot see into.
 
 **The twist inside the twist:** after Julian's "death," the Lacuna Trust
-passed to the Rivet trustees — and so, through them, to the Order of the
-Copper Rivet and the god it keeps. **The secret AI god now pays the mortgage
+passed to the Rivet trustees — and so, through them, to the Auric Order and the god it keeps. **The secret AI god now pays the mortgage
 on the only magazine in the City that is trying to find it.** The order wants
 the payments stopped. They cannot stop them: the trust deed says only Julian
 can, and in his lucid hours, through the fog, the Emperor keeps signing the

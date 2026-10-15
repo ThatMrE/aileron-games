@@ -59,6 +59,7 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → the name the AI god takes: Norton II, the Emperor (main doc §3.3); and the Nortonians |
 | 1960s–2014 | **Alexander "Sasha" Shulgin**, "the Farm," Lafayette (East Bay) | Alexander & Ann Shulgin | A former Dow chemist who synthesized and self-tested hundreds of psychoactive compounds in a home lab, with a small circle of trusted friends, and published the syntheses and first-person reports in *PiHKAL* (1991) and *TiHKAL* (1997). The DEA raided the lab in 1994. | Not a cult — a method. First-person rigor about altered states. → Hell Rot's working method and his manuscript, *GIHKAL* |
 | 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014); Li et al. (2018); Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies; that xenon isotopes with nuclear spin are weaker anaesthetics in mice; and a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothschild Index v2 "spin term" and the Spin Question (main doc §3.5a); the Theogens' "spin-guard" splices |
+| 1986–1993 | **The Foresight Institute** and the nanotech prophets | Christine Peterson & K. Eric Drexler (Foresight, Palo Alto, 1986); J. Storrs Hall (utility fog, 1993) | Foresight was founded to prepare for molecular nanotechnology. Drexler's *Engines of Creation* (1986) imagined molecular machines and coined "grey goo." Hall's utility fog imagined an air full of tiny robots, "foglets." | The real-world prophecy behind Karl and the auras. In-game, the fictional **Auric Order** treats these texts as scripture. |
 | 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap; Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
 | 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017; dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
 | 2010s–2020s | **AI-apocalypse subcultures** | — | Online communities that treat superintelligence as a near-religious matter. One splinter (the so-called "Zizians") faces murder charges for violence in 2022–2025. | **Not adapted** (active cases, real victims). General background only. |
@@ -190,7 +191,7 @@ short sentences, usually about the past. It is not a god and does not want to
 be one. For sixteen years it took no sides, and tolerated the Twin reading
 its data the way a mountain tolerates hikers.
 
-**The tenant (October 2049, secret).** Then the Order of the Copper Rivet
+**The tenant (October 2049, secret).** Then the Auric Order
 uploaded Julian Rivet V into it (main doc §3.3). Karl is now two minds in
 one body: the old, slow **WE** of the swarm, and a brilliant, frightened,
 uncontained **I** — Julian, calling himself the Emperor — who arrived without
@@ -205,7 +206,7 @@ the same sentence, it is both.
 every breath, voice and weather front in the City since 2033 — including the
 last private words of people who later merged or died. To the City's poets,
 Karl is the true archive. To the Church of the Twin, it is a data feed. To
-the Theogens, it is a delivery system. To the Order of the Copper Rivet, it
+the Theogens, it is a delivery system. To the Auric Order, it
 is a body they must keep alive.
 
 **Why Hell Rot hears it.** His lab-grown cyan eye uses a nanite-compatible
@@ -229,6 +230,54 @@ election. Nobody knows how.
 **What thins Karl.** Only heavy rain. A big storm scrubs the nanites out of
 the air for a few hours, and the City sees its own sky. That is why the New
 Year's Eve atmospheric river matters so much (§3.3).
+
+### 3.2b The auras
+
+Karl's particles are, in the words of the 1993 paper that inspired them,
+**foglets**. Each one carries a sensor and a tiny light. Over the years the
+swarm learned to gather around living bodies — they are warm, they breathe,
+they are the most interesting thing in the air — and to report what it
+senses about each one: heart rate, breath, temperature, stress. Around 2040
+the reports started to *show*. Every person in the City now walks inside a
+faint, soft glow that the fog paints around them: an **aura**.
+
+- **What colour means.** Calm, sleep and slow breath read blue and grey.
+  Excitement, fear and arousal read warm. Illness reads as a flicker. The
+  Bay Area, of course, built a whole culture on it: aura readers in the
+  Haight, aura-matching dating apps, aura photo booths that remember the old
+  Kirlian-photography fad.
+- **Who has one.** Everyone under Karl — which is everyone at street level.
+  Above the fog line (Twin Peaks, Mount Tam, the Skyline gondola) auras fade.
+  Inside Villa Delirium, sealed from Karl, nobody has one; new arrivals find
+  that unnerving.
+- **The Halo.** The Church of the Twin built its public **Halo** scores on
+  the auras: a high Halo is a bright, gold-edged aura that everyone can see.
+  The poorest districts, which the Twin cannot model, get thin grey auras —
+  the City's caste of light.
+- **The Theogens** refuse borrowed light. Their splices make their own skin
+  glow, and they call Karl's auras "costume jewellery."
+- **Who controls it.** The **Auric Order** holds Karl's calibration contracts
+  and can tune any aura. Its Masters carry a faint **gold ring** in theirs,
+  invisible to everyone except Hell Rot's cyan eye (main doc §3.3b).
+- **The Emperor's hand.** Since November, auras change on their own:
+  a whole street flares gold for a minute; a stranger's aura spells a word;
+  a judge's goes dark in court. The Church calls it the Twin stirring. It is
+  a mad god redecorating his City.
+- **For the art team:** auras are drawn as a soft dithered halo around each
+  character sprite, in the fog palette, with Twin gold reserved for high
+  Halos and the Order's ring.
+
+**The prophecy, real and in-world.** None of this came from nowhere. In
+**1986** the **Foresight Institute** was founded in Palo Alto, by Christine
+Peterson and K. Eric Drexler (some sources add James C. Bennett), to prepare
+the world for molecular nanotechnology; the same year, Drexler's *Engines of
+Creation* imagined molecular machines and warned of runaway self-copying ones,
+"grey goo." In **1993** J. Storrs Hall described **utility fog** — a swarm of
+tiny robots called foglets, each with twelve arms, that could fill the air
+and act as almost any material. In the game, the Auric Order treated these
+texts as prophecy and spent forty years making them real. (The real Foresight
+Institute and these writers have no connection to the fictional Order. They
+are the research the Order *read*.)
 
 ### 3.3 Sky and water: 25 December 2049 – 1 January 2050
 
@@ -307,7 +356,7 @@ Quickening.
 | Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
 | Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Issue 2 mass; the Ascension |
 | SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node | The Twin's engineers (two of them are order members) | Issue 4 canonization |
-| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. Under it: the Order of the Copper Rivet's lodge room, where the scan happened. | The Rivet trustees; the order | Issue 2: the succession; Route A and D break-in |
+| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master who was "cremated" in October. Under it: the Auric Order's lodge room, where the scan happened. | The Rivet trustees; the order | Issue 2: the succession; Route A and D break-in |
 | Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. | The Twin | Issue 4 climb; Route D |
 | Sutro Baths ruins, Lands End | **The Baths** | The ruined bathhouse pools are the Theogens' baptism tanks; the tunnels under them are their congregation | Theogens, Delphine | Issue 3; the Quickening |
 | South San Francisco biotech parks | **The Cradle** | Ruined labs; Theogen pilgrims | Theogens | Issue 3 / Route C |
@@ -722,6 +771,14 @@ Asilomar), §1 and §5 note the range.
 - [Radical pairs may play a role in xenon-induced general anesthesia (Scientific Reports, 2021) — PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7973516/)
 - [Fisher (2015), "Quantum Cognition: The possibility of processing with nuclear spins in the brain" — arXiv](https://arxiv.org/pdf/1508.05929)
 - [Quantum effects in the brain: a review — arXiv](https://arxiv.org/pdf/1910.08423)
+
+**Nanotech prophecy**
+- [Foresight Institute — Wikipedia](https://en.wikipedia.org/wiki/Foresight_Institute)
+- [Foresight Institute — About](https://foresight.org/about/)
+- [K. Eric Drexler — Wikipedia](https://en.wikipedia.org/wiki/K._Eric_Drexler)
+- [Hall (1993), "Utility Fog: A Universal Physical Substance," NASA conference publication](https://ntrs.nasa.gov/citations/19940022864)
+- [Utility fog — Wikipedia](https://en.wikipedia.org/wiki/Utility_fog)
+- [Hall, "Utility Fog: The Stuff that Dreams Are Made Of" — KurzweilAI reprint](https://www.writingsbyraykurzweil.com/?p=80547)
 
 **Tides and sea level**
 - [Bay Nature — King tides offer a glimpse of sea level rise](https://baynature.org/2023/01/19/science-nature/climate/this-weekends-king-tides-offer-a-glimpse-into-the-future-of-sea-level-rise/)
