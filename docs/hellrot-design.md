@@ -3502,6 +3502,10 @@ Plot questions the writers' room must answer before Alpha.
   Order's public face. The Final Process and the Synthetic Liberation Army
   are cut. The Lantern and the Nortonians stay, as groups that are not
   cults (companion doc §4).
+- **The conspiracy cranks are background noise (was Q18).** No named
+  faction, no leader, no quest. They appear only as overheard lines, graffiti
+  and the odd loading card, and every time the game shows them wrong. Hell
+  Rot answers them once, in print, and moves on (§2.1, §7).
 
 ### Still open
 
@@ -3509,17 +3513,6 @@ Plot questions the writers' room must answer before Alpha.
 
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child. Three are drafted (§3.11), eight to go.
-
-**Proposition F and the courts**
-
-
-**Hell Rot**
-
-
-**The City**
-
-18. **Who are the conspiracy cranks** who link the Order to his surname —
-    a named faction, or background noise? (Guardrails: §7.)
 
 **Design questions**
 
