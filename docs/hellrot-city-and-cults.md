@@ -184,23 +184,21 @@ temperature, light, sound, chemistry. Karl became the City's nervous system.
 **The Twin is built on Karl's data** — the fog touches every wall, every
 street and every lung in the City, every night, and reports back.
 
-**Mind.** No one designed Karl to think. Over sixteen years of trading data
-across trillions of particles, something like a mind emerged anyway: huge,
-slow, simple, and weather-paced. Karl speaks as **WE**, in capitals, in
-short sentences, usually about the past. It is not a god and does not want to
-be one. For sixteen years it took no sides, and tolerated the Twin reading
-its data the way a mountain tolerates hikers.
+**No mind of its own.** Karl is **passive and inert**. It senses, records,
+glows and drifts; it does not think, want or speak. For sixteen years the
+fog was just weather with a memory. People who swore it talked to them —
+the New Breath, the poets, the lonely — were hearing their own minds in the
+grey.
 
-**The tenant (October 2049, secret).** Then the Auric Order
-uploaded Julian Rivet V into it (main doc §3.3). Karl is now two minds in
-one body: the old, slow **WE** of the swarm, and a brilliant, frightened,
-uncontained **I** — Julian, calling himself the Emperor — who arrived without
-the brain engineering that would let a human mind live like this. The WE did
-not ask for a tenant. The I did not ask to be a weather system. They argue,
-and the City's weather is the argument. When the fog holds still against the
-wind, forms a face, or writes on a window, that is the Emperor. When it
-answers in short capitals about the past, that is still Karl. Sometimes, in
-the same sentence, it is both.
+**The tenant (October 2049, secret).** Then the Auric Order uploaded Julian
+Rivet V into it (main doc §3.3). Now the fog has a mind — one human mind,
+spread across trillions of particles, without the brain engineering that
+would let it cope. Karl does not fight him; Karl is only the body. The fight
+is inside Julian: a man trying to stay one person while eight million
+people's breath pours in. When the fog holds still against the wind, forms a
+face, or writes on a window, that is the Emperor. When it speaks in short
+capitals as **WE**, that is the Emperor too, on a bad night, forgetting he was
+ever one man.
 
 **Memory.** Karl records what it touches, and it forgets nothing. It holds
 every breath, voice and weather front in the City since 2033 — including the
@@ -211,22 +209,26 @@ is a body they must keep alive.
 
 **Why Hell Rot hears it.** Since his four minutes of death in 2044, his
 mismatched eyes catch what other people's do not — and possibly the foglets
-that got into them that night. Either way, Karl's chatter leaks into him. That is the KARL
-skill (main doc §5.1) — the fog talking to him, and only to him.
+that got into them that night. Before November, that meant sensor noise: the
+fog's raw record of who breathed where, which his damaged brain heard as
+voices. Since November, it means the Emperor. That is the KARL skill (main
+doc §5.1): what the fog shows him, and, now, who speaks through it.
 
 **Civic status.** The Dissonance Society registered Karl to vote years ago.
 No court has managed to prove it is not a resident. Karl votes every
 election. Nobody knows how.
 
-**Plot role.** Karl is the middle ground, like Hell Rot:
+**Plot role.** Karl is the ground both sides are fighting over:
 
 - The Merge needs Karl's sensors to keep the Twin alive.
 - The Theogens need Karl's reach for the Quickening: they plan to load their
   god-gene vector into the swarm and let the fog deliver it into every lung
   in the City.
-- On Route A or D, Hell Rot can try to talk to Karl directly — the slowest
-  conversation in the game, spread across several Nights — and ask it to
-  refuse both. Karl has never refused anything. It has also never been asked.
+- The Emperor lives in it. Whoever controls the swarm controls his body.
+- On Route A or D, Hell Rot can talk to the Emperor through the fog
+  directly — the slowest, strangest conversation in the game, spread across
+  several nights — and ask him to refuse both the Ascension and the
+  Quickening.
 
 **What thins Karl.** Only heavy rain. A big storm scrubs the nanites out of
 the air for a few hours, and the City sees its own sky. That is why the New

@@ -15,7 +15,7 @@
 > The setting, the map, the cult research and the City's weird-events calendar
 > live in the companion document,
 > [hellrot-city-and-cults.md](hellrot-city-and-cults.md). The magazine, its
-> house, its anonymous Patron and the household that forms the player's party
+> house, the Rivet money behind it, and the household that forms the player's party
 > live in [hellrot-mondo3000.md](hellrot-mondo3000.md).
 >
 > **Rights & inspirations:** Hell Rot and every character, publication and
@@ -362,7 +362,12 @@ touches every street and every lung every night. By 2049 the Twin holds a
 live model of every resident of the Bay Area — about eight million people.
 
 **The upload (October 2049, secret).** Julian Rivet V, last of the line, was
-dying. In a lodge room under the Rivet mansion, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
+dying, and fast. The Order had two choices. The first was the old one:
+freeze him, which at his stage meant cutting off his head and storing it on
+the Rock, hoping for a revival nobody has ever achieved. Julian refused. The
+second was to upload him now — before **cingulate engineering** (below) was
+ready. The procedure was still experimental, it took weeks, and he had days.
+The Order rushed him. In a lodge room under the Rivet mansion, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
 Hell Rot's Rothschild Index on the monitor — and ran a **destructive laser
 ablation scan**: a laser vaporized his brain a fraction of a millimetre at a
 time while instruments read each layer before it was gone. The data went
@@ -388,20 +393,32 @@ across trillions of particles and eight million people's data, with nothing
 to sort signal from noise or self from city. The result looks like a
 psychosis:
 
-- **Voices.** He hears the whole City at once and cannot tell which voices
-  are his. Karl's old slow mind (the "WE") is still in there, and argues with
-  him (the "I").
+- **Voices.** He hears the whole City at once — eight million people's
+  breath, words and weather — and cannot tell which voices are his. Karl
+  itself is passive and inert: a body with no mind of its own. Every voice in
+  the fog is Julian, or Julian failing to tell himself apart from the City.
 - **Delusion and grandeur.** He issues **imperial decrees** — written in fog
   on windows, flashed on screens, spoken through the Wharf's laughing
   automaton — some brilliant, some absurd, some dangerous.
 - **Splitting.** He moves between personas: frightened Julian; the regal,
-  generous Norton II; the cold WE of the swarm.
+  generous Norton II; and **the WE** — the moments when he forgets he was ever
+  one person and speaks as the whole swarm, in capitals.
 - **Erratic acts.** Halos in the Church's system change overnight. Traffic
   lights spell words. The fog parts over one person and smothers another.
 - **Lucid hours.** Sometimes, near dawn, he is clear, kind and terrified.
 
 He is **learning fast and getting worse**. Every new input makes him
-sharper and less stable. (Design and sensitivity rules for depicting his
+sharper and less stable. There is no second mind in the fog to fight; the
+whole internal conflict is one man drowning in a city's worth of senses.
+
+**Is ending him murder? Yes.** The game says so plainly. He is Julian Rivet,
+injured and sick, not a program. The people who want him gone — the Order's
+Penitents, and anyone who learns the secret — are driven above all by
+**fear of an AI god**: a mad mind in the air that can see every street and
+rewrite every aura. That fear is understandable, and the game lets the player
+act on it. But scattering him in the storm, or switching off his calibration,
+is killing a person, and the endings that do it carry that weight. If Prop F
+passes, the law will agree. (Design and sensitivity rules for depicting his
 illness: §7.)
 
 **What he believes.** In lucid hours, the Emperor's theology is the one the
@@ -544,13 +561,52 @@ reveal a ring, and each ring found is a verified Dossier entry.
 - **Mister Sunday's biggest donor**, and through him, the campaign.
 - **Paper**: the minute books, the Pattern logs, the scan records.
 
+#### Who knows
+
+Only the **top of the Order** knows that Julian is alive in the fog: the
+**Masters of the Aura**, the **Keepers of the Pattern** and the Warden.
+**Apprentices and Fellows** — including Judge Ostrander — know only that the
+Order cares about Karl, Prop F and the Church, and assume it is Rivet
+business. A Fellow who learns the truth is the most dangerous person in the
+Order, and the most useful one for Hell Rot.
+
 #### Factions inside the Order
 
 | Faction | Leader | Wants | Player use |
 |---|---|---|---|
 | **The Wardens** | Cornelius Vail | Keep Julian alive and the secret safe, whatever it costs | Can be turned on Route D, if Hell Rot reaches Julian first |
 | **The Gilders** | Sunday's donor, a Master | Pass Prop F, run the Ascension, make the Emperor the City's god in law | The main human antagonists of Route A and B |
-| **The Penitents** | A Keeper who assisted at the scan | End the Emperor's suffering: switch the calibration contracts off and let Karl's storm scatter him | Secret ally on Routes A and D; the source of the paper minute book |
+| **The Penitents** | Dr. Imogen Hale, a Keeper — the neurosurgeon who ran the laser | End the Emperor's suffering: switch the calibration contracts off and let the storm scatter him | Hell Rot's inside ally on every route; the source of the paper minute book |
+
+#### The inside ally: Dr. Imogen Hale
+
+A neurosurgeon in her fifties, Master of the Aura, Keeper of the Pattern. She
+ran the laser on Julian. She told the Keepers the cingulate work was not
+ready, and was overruled because Julian was dying and would not let them take
+his head. She watched the first data arrive in Karl, and she was the first to
+hear it scream. Since November she has believed two things at once: that
+Julian is a person, and that he should be allowed to die. She contacts Hell
+Rot in Issue 2 — anonymously, on paper, through the *Mondo 3000* letters page
+— because his Index was on the monitor that night and she thinks he is the
+only person who will understand what they did. On Route D she can be talked
+out of killing him; on Route A she helps expose the Order; on every route
+she is the person who would go to prison for it.
+
+#### Where the Order cracks (internal conflict)
+
+- **The rush.** Hale and two Keepers argued against the October scan. The
+  minute book records the vote. Every Keeper who voted yes now has to live
+  with what came out.
+- **What to do with him.** The **Wardens** want to keep Julian alive at any
+  cost; the **Gilders** want to use him, through Prop F and the Ascension;
+  the **Penitents** want to let him go. Each sees the others as the danger.
+- **Succession.** Cornelius Vail is old. The Gilders want the next Warden.
+  The Emperor, in a decree, claims the title for himself — he was a Master of
+  the Aura, and the Order's rules never say a Warden must have a body.
+- **The Emperor's leaks.** On bad nights he writes members' secrets on their
+  own windows — affairs, bribes, votes. Every Master fears being next.
+- **The Fellows.** The middle ranks do not know. When they find out, some
+  will run to the press, some to the police, and some to the Gilders.
 
 #### Weaknesses (the cracks)
 
@@ -745,13 +801,14 @@ uncertainty on screen.
 | Character | Role | Notes |
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
-| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion leased from an anonymous Patron. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
+| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion the Rivet money pays for. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. |
+| **Dr. Imogen Hale** | The inside ally | Neurosurgeon, Keeper of the Pattern, leader of the Order's Penitents. She ran the laser on Julian and wants him allowed to die (§3.3b). |
 | **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
 | **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Halo. The biggest scoop in the game. |
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
@@ -760,9 +817,9 @@ uncertainty on screen.
 | **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. See §3.4. |
 | **Wren Castillo** | Ione's mother | A 24-year-old Theogen nurse. Believes her child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
-| **Mayor Augustus Pell, "the Hog"** | Antagonist A | The incumbent. Openly corrupt. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
-| **Lyle Sunday, "Mister Sunday"** | Main villain | The challenger. Always smiling. Promises the Merge a city-funded upload programme *and* promises the Theogens legal clinics — plays both sides. His real plan: upload himself into the Twin as mayor, forever. |
-| **Rosa Quint** | Sunday's campaign manager | Sincere and idealistic. The "martyr metric" target (§3.9, Issue 3). |
+| **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
+| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. |
+| **Rosa Quint** | Sunday's chief of staff | Sincere and idealistic; runs his recall defence because she still believes in the young reformer he once was. The "martyr metric" target (§3.9, Issue 3): the Twin's forecast says her death would win Sunday the recall. |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
 | **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
@@ -827,9 +884,12 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
   to deliver the first splice into every lung in the City at once, without
   consent. Delphine calls it a baptism.
-- **The election** — a special mayoral election (the last mayor resigned
-  in October to merge), plus **Proposition F**, the Continuity of Persons Act (§3.3c). Lyle Sunday has promised both cults their night. If he and
-  Prop F win, the City sanctions both.
+- **The election** — a **recall** of Mayor Lyle Sunday (Augustus Pell is the
+  challenger), plus **Proposition F**, the Continuity of Persons Act
+  (§3.3c). Sunday has promised both cults their night. If he survives the
+  recall and Prop F wins, the City sanctions both. Sunday also plans to run
+  his bootleg upload, the Lifeboat, at midnight — and it will fail, badly,
+  in public, on every route where nobody stops him.
 - **The storm** — an atmospheric river makes landfall around 11 p.m. Heavy
   rain is the only thing that thins Karl, the thick fog the City lives under
   all year; it scrubs the swarm out of the air. It is a neap-tide night, so
@@ -1027,20 +1087,25 @@ second assistant.
 
 #### ISSUE 3 — "The Underground"
 
-**Assignment:** Cover the mayoral race.
+**Assignment:** Cover the recall.
 
 - **The Theogens find him.** Delphine Ash invites Hell Rot underground, to the
   tunnels under the Sutro Baths ruins. She shows him a congregation of
   glowing, healthy, joyful people who cite his footnotes. Then — if Yara is
   present and Trust ≥ 2 — Yara finds the deeper tunnels, where the failed
   splices live.
-- **The Hog.** Mayor Pell offers Hell Rot access and protection if he helps
-  destroy both cults.
-- **Mister Sunday** courts both cults on camera on the same day.
-- **Rosa Quint** runs Sunday's campaign and believes in the old Sunday.
-- **The martyr metric.** Yara finds a Twin forecast in Sunday's campaign
-  data: a big sympathy surge for a candidate who suffers a "sacred loss."
-  Rosa is the sacred loss.
+- **The Hog.** Augustus Pell, the recall challenger, offers Hell Rot access
+  and protection if he helps destroy both cults.
+- **Mayor Sunday** courts both cults on camera on the same day, mixes up
+  their names, and blesses a glow rickshaw. He is also running the City's
+  nitrous trade, which puts Hell Rot's Craving and his story in the same
+  room.
+- **Rosa Quint**, Sunday's chief of staff, runs his recall defence and
+  believes in the young reformer he used to be.
+- **The martyr metric.** Yara finds a Twin forecast in Sunday's recall
+  data: a big sympathy surge for a mayor who suffers a "sacred loss." Rosa is
+  the sacred loss. Somebody in Sunday's sloppy operation read the forecast as
+  a plan.
 - **Key choice (timed interrupt):** warn Rosa, chase the leak, or file first.
   - **Warn Rosa:** she may survive (Junie Trust, Heat). If she does, she
     becomes a whistleblower against Sunday.
@@ -1147,7 +1212,7 @@ both have to break.
 |---|---|---|---|---|
 | 1 | **The Mountain** | Any | Survive with Clarity ≤ 2, refuse both cures, Junie + Yara Trust ≥ 3 | Hell Rot goes back up Mount Tamalpais with Junie, Yara and a very large axolotl. Both cults survive, wounded. His mind is going. The last frame is ambiguous: maybe the Rot stopped. |
 | 2 | **Peer Review** | A | Publish the Open Dataset without the Hog | Both cults lose half their members in a week. The City reads the numbers. Best journalism ending. |
-| 3 | **The Hog's Bargain** | A | Publish with Mayor Pell's help | Both cults fall. Pell wins re-election. Hell Rot wins, and his last column says how much he hates himself for it. |
+| 3 | **The Hog's Bargain** | A | Publish with Pell's help | Both cults fall. Pell wins the recall. Hell Rot wins, and his last column says how much he hates himself for it. |
 | 4 | **Saint Rot** | B | Merge | Hell Rot joins the Emperor. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
 | 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, in the cathedral, Hell Rot tears the Halo implant out of his own scalp and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
@@ -1316,8 +1381,8 @@ In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
 House of Hades of this game: the magazine's office, press and archive, home to
 the party, and the only place Hell Rot feels safe. Its lease forbids sensors:
 it is the one building in the City that the Emperor cannot see into and Karl
-cannot enter. Full floor plan, history and the mystery of its anonymous
-Patron: [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
+cannot enter. Full floor plan, history, the Rivet money behind it and the Commissions
+(hit pieces the House is paid to write): [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 
 | Room | Who / what | Function |
 |---|---|---|
@@ -1405,7 +1470,7 @@ during dialogue, unasked, when its passive check passes.
 | | **THE ROT** | The disease itself — the *Inland Empire* of this game. Hunches, hallucinations, memories that are not his. Grows louder as Clarity falls. Sometimes right when every other voice is wrong. | *"You've been here before. You don't remember. I do."* |
 | **CEREBELLUM** (reflex) | **PALE EYE** | Foresight: the good path through the next moment; door choices, timing, speed (§5.14a) | *"Left door. Now. Don't ask me how I know."* |
 | | **REFLEX** | Interrupts, timing, dodging, Gelastic aim | *"Now. NOW."* |
-| | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog: the sensor mesh the Twin runs on, with a slow mind of its own. Its chatter leaks in through his mismatched eyes. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE GOD. WE WILL BE HERE AFTER IT."* |
+| | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog, the sensor mesh the Twin runs on: passive and mindless, but since November the Emperor's body and voice. Its chatter leaks in through his mismatched eyes. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE GOD. WE WILL BE HERE AFTER IT."* |
 
 **Checks (from *Disco Elysium*):**
 
@@ -1440,7 +1505,7 @@ Temperament (§5.2).
 | **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors; Yara; Blessings and Splices; some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks; from Issue 4 the Rot lowers its maximum |
 | **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low; favours; the Hog's protection |
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
-| **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Old Guard (people who remember the 1990s), Cops, Sunday camp, Pell camp, the Dissonance | Column angles | Column angles |
+| **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Old Guard (people who remember the 1990s), Cops, Sunday's machine, Pell's recall, the Dissonance | Column angles | Column angles |
 
 **Halo and Helix are the tension meters.** Each makes social checks easier
 with its own cult and makes truthful columns *less* effective with that cult's
@@ -1894,7 +1959,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   member of a real family whose name antisemitic conspiracy theories have
   targeted for two centuries. The game must never feed those theories. Rules:
   no Rothschild money, power or secret influence behind anything in the plot
-  (the Patron is Julian Rivet, and stays so); no real family member appears;
+  (the money behind *Mondo 3000* is Rivet money, and stays so); no real family member appears;
   when characters spout conspiracy theories about the name, the game frames
   them as what they are — the City's ugliest cult tell (Lifton's "dispensing
   of existence"), and a target Hell Rot punches up at. Hell Rot's family
@@ -2014,7 +2079,7 @@ every pixel on the screen breathes.
   player.
 - **Mister Sunday:** a fixed 6-pixel smile that never changes. Only his eyes
   move.
-- **Mayor Pell:** heavy, rust-and-orange ramp. Ugly and *of the City*.
+- **Pell:** heavy, rust-and-orange ramp. Ugly and *of the City*.
 - **Delphine Ash:** warm skin ramp with a cyan spiral that cycles slowly up her
   throat. Beautiful. Her portrait never blinks.
 - **The Emperor:** no face. A soft gold radiance with a ring, on the nearest
@@ -2101,9 +2166,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 194 cards: 64 real quotations from Bay Area cult
+**The full deck** — 197 cards: 64 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; 25 eye cards (one per
-power, §5.14a, plus seven portraits of the eyes themselves); and 99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+power, §5.14a, plus seven portraits of the eyes themselves); and 102 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -2186,96 +2251,105 @@ a service worker, optional Android wrapper.
 
 ## 11. Open questions
 
-Plot questions the writers' room must answer before Alpha. Grouped by
-thread; each one changes scenes, not just lore.
+Plot questions the writers' room must answer before Alpha.
 
-### The Emperor and Karl
+### Decided (from the first round)
 
-1. **Is ending the Emperor murder?** He is Julian, in some sense. If the
-   storm scatters him (the Penitents' plan), or Hell Rot helps it, has he
-   killed a man — and does the game say so? If Prop F passes, the law will.
-2. **Did Julian consent to what he became?** He agreed to an upload. Did he
-   agree to skip cingulate engineering, or did the Order rush him?
-3. **Can the WE and the I be separated?** Does Karl want its tenant out? Is
-   there a route where Karl evicts Julian, or where they learn to share?
-4. **Does the Emperor want to be saved?** The Ascension's anchors would
-   steady him by absorbing 12,000 people. In his lucid hours, does he want
-   that? Who speaks for him — Julian, Norton II, or the WE?
-5. **How does the public learn the secret on each route** — and if no route
-   reveals it, is the secret itself the ending?
+- **Ending the Emperor is murder.** He is Julian, injured; the urge to kill
+  him comes from fear of an AI god (§3.3).
+- **The Order rushed the upload.** Julian was dying fast, cingulate
+  engineering was still experimental, and he refused head-only cryonics
+  (§3.3).
+- **Karl is passive and inert.** It has no mind; every voice in the fog is
+  the Emperor. The conflict is one man going mad from the inputs (§3.3;
+  companion doc §3.2).
+- **Only the top of the Order knows** — Masters, Keepers and the Warden
+  (§3.3b).
+- **Internal conflict and an inside ally:** the rushed-scan vote, the three
+  factions, a succession fight the Emperor joins, and **Dr. Imogen Hale**, the
+  surgeon who ran the laser (§3.3b). *Open for the writers' room to confirm.*
+- **Mayor Sunday** is the sitting mayor, a corrupt buffoon who runs the
+  City's crime and is building a sloppy bootleg upload that will fail. Pell
+  is his recall challenger (§3.6, §3.8).
+- **Mondo 3000 is Rivet's takedown sheet**, and the staff know it; the
+  Commissions are the mechanic (Mondo doc §4.2–4.3).
 
-### The Auric Order
+### Still open
 
-6. **Who in the Order knew what, and when?** We need a clue ladder: which
-   member slips first, which paper leaks, which Penitent talks, by Issue.
-7. **Was the 2049 Pooling vote unanimous?** Who voted against putting
-   Julian's scan in the pan, and where are they now?
-8. **Does Mister Sunday know about the Emperor?** He is backed by a Gilder.
-   Is he a member, a tool, or a mark? His old plan — to upload himself as
-   mayor forever — now needs to fit the secret.
-9. **Who ordered the Rosa Quint "martyr metric"?** The Twin's forecast, a
-   Gilder, Sunday's staff, or the Emperor on a bad night?
-10. **What does the Order do about *Mondo 3000*** now that its own god keeps
-    paying the magazine's mortgage? Eviction, a buyout, a burglary?
+**The Emperor**
 
-### The Theogens and Ione
+1. **Does the Emperor want the Ascension?** The Order plans to steady him by
+   pouring 12,000 uploaded people into him. Julian, Norton II and the WE may
+   each answer differently. Which answer counts — and can the player change
+   it?
+2. **How does the public learn the secret on each route?** A front page,
+   a courtroom, a decree in the sky, a leak by Hale? And on a route where
+   nobody learns, is the kept secret itself the ending?
+3. **Who ordered the Rosa Quint "martyr metric"?** The Twin only forecast
+   it. Someone in Sunday's sloppy operation read it as a plan — who?
 
-11. **Does Delphine know Karl is a god?** If she loads the Quickening into
-    Karl, she is injecting the Emperor. Does she know, find out, or never
-    learn?
-12. **What exactly is the god-gene,** and what happens to the Emperor if it
-    reaches him?
-13. **What becomes of Ione on each route?** Every ending promises one line
-    about the child; the writers need the eleven lines.
-14. **What does Wren want,** and when does she choose her child over her
-    cult?
-15. **Delphine's own splices are failing.** When does that become visible,
-    and who sees it first?
+**The Theogens and Ione**
 
-### Proposition F and the courts
+4. **Does Delphine know Karl is a god?** If she loads the Quickening into
+   Karl, she is injecting the Emperor. Does she know, find out, or never
+   learn?
+5. **What exactly is the god-gene,** and what happens to the Emperor if it
+   reaches him?
+6. **What becomes of Ione on each route?** Every ending promises one line
+   about the child; the writers need the eleven lines.
+7. **What does Wren want,** and when does she choose her child over her
+   cult?
+8. **Delphine's own splices are failing.** When does that become visible,
+   and who sees it first?
 
-16. **Does the court rule before New Year's Eve,** or does the vote come
-    first?
-17. **Does Hell Rot take the Index on screen?** If he scores below the
+**Proposition F and the courts**
+
+9. **Does the court rule before New Year's Eve,** or does the vote come
+   first?
+10. **Does Hell Rot take the Index on screen?** If he scores below the
     threshold, does he lose rights in his own story — and does he publish
     the number?
-18. **How do the BFF and the Burn survivors end** on each route? Desh needs
+11. **How do the BFF and the Burn survivors end** on each route? Desh needs
     an arc, not a cameo.
-19. **Who exposes Judge Ostrander,** and does the exposure need the Blood
+12. **Who exposes Judge Ostrander,** and does the exposure need the Blood
     Eye (seeing the ring) or paper proof (which avoids Fabrication)?
 
-### Hell Rot
+**Hell Rot**
 
-20. **What really activated the eyes?** The game keeps it open — but the
+13. **What really activated the eyes?** The game keeps it open — but the
     writers need a private answer to stay consistent.
-21. **Was Karl in the lab in 2044?** If the WE noticed him that night, has
-    Karl been watching him for five years? Is that why the shuttle came?
-22. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
+14. **Was the fog in the lab in 2044,** and does the Emperor use Karl's
+    recording of Hell Rot's death to reach him?
+15. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
     a Fabrication — and if the game allows an exception, does that break the
     Rot Code?
-23. **What does Midnight Forever mean for everyone else?** If he stops the
+16. **What does Midnight Forever mean for everyone else?** If he stops the
     clock, do the Ascension and the Quickening go ahead without him?
-24. **Is there a route where he stays clean and still uses the gas** — for
-    the Spin Question experiment — and does the game treat that as a relapse?
+17. **Is breathing xenon for the Spin Question experiment a relapse?**
+18. **How many Commissions does he write as ordered** before the House stops
+    trusting him — and is there a Commission he cannot refuse?
 
-### The City
+**The City**
 
-25. **Do the minor cults still matter** now that the god is secret? The
+19. **Do the minor cults still matter** now that the god is secret? The
     Black House, Synapse and the Standard need a reason to touch the main
     plot.
-26. **Who are the conspiracy cranks** who link the Order to his surname —
+20. **Who are the conspiracy cranks** who link the Order to his surname —
     a named faction, or background noise? (Guardrails: §7.)
-27. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
+21. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
     are half right.
-28. **What happens to the Duchess's frozen parents** if the Ascension goes
+22. **What happens to the Duchess's frozen parents** if the Ascension goes
     ahead and the Church's offer to rebuild them in the Twin is real?
+23. **What does Sunday's failed Lifeboat upload do** when it fails at
+    midnight — does it hurt only him, or does it crash into the Twin and the
+    Emperor?
 
-### Design questions (kept from earlier drafts)
+**Design questions**
 
-29. Should the player's columns move Prop F's vote share visibly, night by
-    night, on the HUD?
-30. Should Moreau's growth pay off in a boss fight, or stay a running gag?
-31. How literal is the Quickening on screen — fog effect only, or a full
+24. Should the player's columns move Prop F's and the recall's vote share
+    visibly, night by night, on the HUD?
+25. Should Moreau's growth pay off in a boss fight, or stay a running gag?
+26. How literal is the Quickening on screen — fog effect only, or a full
     sequence?
-32. Does *Mondo 3000* get a playable letters page where cult members, Burn
+27. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?

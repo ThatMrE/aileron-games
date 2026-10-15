@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 194 cards: 64 real
-> quotations, 6 redacted cards, 99 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 197 cards: 64 real
+> quotations, 6 redacted cards, 102 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -132,9 +132,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (99) and eye cards (25)
+## Part 2 — In-world cards (102) and eye cards (25)
 
-### 2A. The Emperor, the Church of the Twin and the Auric Order (23)
+### 2A. The Emperor, the Church of the Twin and the Auric Order (26)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -159,13 +159,16 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W12a | "Apprentice of the Seam. Fellow of the Halo. Master of the Aura." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
 | W12b | "So mote it be. Mind the glow." | Lodge-room door, Rivet mansion | *Masonic, with a dress code and a light show.* | Order, funny |
 | W12c | "The Pattern is kept. The Pattern is kept. The Pattern is—" | Torn page, Keepers' minute book | *They're scared of their own god.* | Order, grim |
-| W12d | "WE DID NOT ASK FOR A TENANT." / "I DID NOT ASK TO BE WEATHER." | Fog on two windows of the same house, the same minute | *Karl and Julian, arguing. The City calls it rain.* | Karl, Emperor, weird |
+| W12d | "I AM JULIAN." / "WE ARE EVERYONE." | Fog on two windows of the same house, the same minute | *One man, arguing with a city. The City calls it rain.* | Karl, Emperor, weird |
 | W12e | "Rights don't come with a score." | Biological Frontier Foundation banner, City Hall steps | *My Index. Their banner. They're right.* | BFF, Prop F |
 | W12f | "I scored 31 on your test. I have opinions about your test." | Letter from Desh, an Oakland Burn survivor, letters page | *Best letter we got all year.* | BFF, tender, funny |
 | W12g | "Your aura today: anxious tangerine. Matches: 14." | Aura-dating app, Haight Exchange | *Mine is grey with a gold ring nobody else can see. No matches.* | auras, funny |
 | W12h | "The aura is the soul made visible." | Auric Order catechism, first article | *The soul is not a lighting effect. Probably.* | Order, holy |
 | W12j | "Left eye: nobody's lying. Right eye: take the stairs." | Hell Rot, notebook margin | *The blood one and the pale one. They don't always agree.* | eyes, weird |
 | W12k | "You looked through me like I was furniture." | Junie Vasquez, after the clock stopped | *I stopped time to win an argument. I lost the argument.* | eyes, Junie, grim |
+| W12l | "TARGET: Augustus Pell. ANGLE: ruin him. LENGTH: two thousand words. DEADLINE: Thursday." | A Commission, pneumatic tube, 2047 | *The House wrote it. The House cashed it. The House framed the receipt.* | House, Commissions, grim |
+| W12m | "TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever it takes." | A Commission in a shaky hand, December 2049 | *Who orders a hit piece on himself?* | Commissions, Emperor, weird |
+| W12n | "I said the cingulate work wasn't ready. I said it twice. It's in the minutes." | Unsigned letter to the letters page, on paper | *Somebody in the Order wants to talk.* | Order, Hale, I2 |
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
 | W15 | "Father." | Delphine Ash, to Hell Rot | *Wrong on both counts.* | Prologue, Delphine |
@@ -181,17 +184,19 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ### 2C. Karl, the fog (8)
 
-Karl cards appear most often after blackouts.
+Karl itself never speaks: it is a mindless swarm. Every voice in these cards
+is the Emperor, speaking through it as WE on his bad nights. Karl cards
+appear most often after blackouts.
 
 | # | Quote | Hell Rot's note | Tags |
 |---|---|---|---|
 | W25 | "WE REMEMBER EVERYTHING YOU BREATHED." | *That's not comforting, Karl.* | Karl, blackout |
 | W26 | "WE SEE IT TOO." | *First thing it ever said to me. At a birth.* | Prologue |
 | W27 | "IT WAS THE CANDLE. YOU LIT IT FOR CHRISTMAS. YOU FORGOT." | *The Rot, not a god, burned my house down.* | I3, weird |
-| W28 | "WE DO NOT HAVE AN OPINION ABOUT GODS. WE HAVE AN OPINION ABOUT RAIN." | *Fair.* | I5, Karl |
+| W28 | "WE DO NOT HAVE AN OPINION ABOUT GODS. WE HAVE AN OPINION ABOUT RAIN." | *He's scared of the storm. Of course he is. It's his body.* | I5, Karl |
 | W29 | "HAPPY BIRTHDAY TO US. SIXTEEN. WE THINK." | *Karl's birthday card, written in condensation on the van window.* | I3, weird, tender |
-| W30 | "WE WERE THERE WHEN YOU DIED. YOU WERE LOUD." | *The lab vents. I knew it.* | Index, blackout, weird |
-| W31 | "NO ONE HAS ASKED US ANYTHING BEFORE." | *Then I'll ask.* | A, D, tender |
+| W30 | "WE HAVE A RECORDING OF YOU DYING. YOU WERE LOUD." | *Karl was in the lab vents in 2044. Now the Emperor has the tape.* | Index, blackout, weird |
+| W31 | "NO ONE HAS ASKED US WHAT WE WANT." | *Then I'll ask. Julian first.* | A, D, tender |
 | W32 | "WE VOTED. WE WILL NOT SAY FOR WHOM." | *Most honest voter in the City.* | I5, funny |
 
 ### 2D. The House (Villa Delirium) (16)
@@ -265,7 +270,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W80 | "Away in a server rack, no crib for a bed." | Sisters of Perpetual Feedback, nativity pageant | *A hologram nobody entered came third. It was wearing Norton's hat.* | Nativity, funny |
 | W81 | "YOU ARE NOW ENTERING THE BLIND SPOT. SMILE. NOBODY CAN SEE YOU." | Hand-painted sign, Villa Delirium gate | *The only true sign in the City.* | House |
 | W82 | "Mister Sunday: A mayor for every one of you. Forever." | Campaign poster | *"Forever" is doing a lot of work.* | Sunday, I3 |
-| W83 | "Pell: Corrupt, but at least he's mortal." | Unofficial campaign poster | *His staff printed it. He approved it.* | Pell, funny |
+| W83 | "Pell: Corrupt, but at least he's mortal." | Unofficial recall poster | *His staff printed it. He approved it.* | Pell, funny |
 | W84 | "Polls close at 8 p.m. Gods close at midnight." | Election Day sticker, 31 December | *Vote. Then run.* | I5 |
 | W85 | "Critical Mass, last Friday, 5:30 p.m. This month: New Year's Eve. Bring lights. The fog won't." | Flyer | *An hour where the god can't see the street.* | I5, transport |
 | W86 | "Please do not carve messages into the Steep Ravine rocks. This means you, Theogens." | Park ranger sign | *They carved my paper into the rock. I'd rather they hadn't.* | Prologue, grim |

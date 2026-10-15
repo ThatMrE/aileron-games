@@ -1,4 +1,4 @@
-# Mondo 3000 — The Magazine, the House, the Patron & the Party (v0.1)
+# Mondo 3000 — The Magazine, the House, the Money & the Party (v0.2)
 
 > Companion to [hellrot-design.md](hellrot-design.md) (plot, mechanics, art)
 > and [hellrot-city-and-cults.md](hellrot-city-and-cults.md) (setting, cults,
@@ -8,8 +8,9 @@
 >
 > **One-line pitch:** *Mondo 3000* is a paper magazine, printed in a haunted
 > Berkeley mansion by a household of recovering futurists, about the Bay
-> Area's oldest export: religions about the future. Somebody pays the
-> mortgage. Nobody knows who.
+> Area's oldest export: religions about the future. A billionaire pays the
+> mortgage, and in return the magazine runs his hit pieces. Everybody in the
+> House knows. Everybody cashes the cheque.
 
 ---
 
@@ -87,6 +88,10 @@ and the game's two god-cults are the Bundle's two great descendants:
 The magazine covers the Bundle the way a war correspondent covers a front:
 from inside, often high, never neutral, always on paper.
 
+The dirty secret every staff member knows: since 2044 the magazine has also
+been the Rivet family's private **takedown sheet** (§4.2). The gossip column
+of the future is on a billionaire's payroll, and it shows.
+
 ---
 
 ## 3. History of *Mondo 3000*
@@ -126,7 +131,7 @@ the core of its credibility and a game mechanic:
 | 2042 | No. 14 | Exposé of a Bayes House that ran a member's life by coin-flip for a year. Yara's childhood home. She moves in at 16. |
 | 2043 | No. 27 | The first "Theogen" story — a splice clinic in the Loin. Circulation triples. |
 | 2044 | No. 37 | The Duchess publishes a 40-page interview with a reclusive heir: Julian Rivet V, whose family trust is building the Twin. He talks for six hours about death. |
-| 2044 | — | The **Patron** buys the mansion (§4). The magazine moves in. |
+| 2044 | — | Julian Rivet V pays the magazine's debts and buys the mansion through the Lacuna Trust. The magazine moves in, and the **Commissions** — Rivet hit pieces on Rivet enemies — begin (§4.2). |
 | 2045 | No. 49 | *"The Singularity Is Late."* The Bishop's stadium prophecy for 2045 fails (§5). He moves in. |
 | 2046 | No. 61 | The Ledger rates *Mondo 3000* "net-negative for civilization." The Duchess frames the letter. |
 | 2047 | No. 80 | Circulation peaks at 64,000 paper copies — the largest print run of any magazine in the Bay Area. |
@@ -134,7 +139,7 @@ the core of its credibility and a game mechanic:
 
 ---
 
-## 4. The Mansion and the Patron
+## 4. The Mansion and the Money
 
 ### 4.1 Villa Delirium
 
@@ -149,7 +154,7 @@ It is the game's hub (main doc §4.5). Its key rooms, from bottom to top:
 | Floor | Room | Function |
 |---|---|---|
 | Cellar | **The Press** | A restored risograph and an older offset press. The issue prints here at dawn after every column. |
-| Cellar | **The Locked Room** | Belongs to the Patron. Never opened. See §4.3. |
+| Cellar | **The Locked Room** | Belongs to the Lacuna Trust. Never opened. See §4.3. |
 | Ground | **The Salon** | The Duchess's court; editorial meetings (§6.3) |
 | Ground | **The Kitchen Lab** | Hell Rot's bench, unwillingly shared with Otto |
 | Ground | **The Garage** | Junie, the van, the bikes |
@@ -161,70 +166,95 @@ It is the game's hub (main doc §4.5). Its key rooms, from bottom to top:
 | Tower | **Hell Rot's room** | The only room with a view of the City. He keeps the curtains shut. |
 | Attic | **Nobody's** | Saint Nobody sleeps here, sometimes. Nobody has seen the bed used. |
 
-### 4.2 The deed: four conditions
+### 4.2 The deal everyone in the House knows about
 
-In 2044 an anonymous buyer paid cash for the house through a shell called the
-**Lacuna Trust** and leased it to *Mondo 3000* for **one peppercorn a year**.
-The lease has four conditions, carved over the Salon fireplace:
+*Mondo 3000* is not independent, and everybody who works there knows it.
 
-1. **The magazine prints on paper.**
-2. **The magazine covers the Bundle, without fear or favour.**
-3. **The House stays dark.** No sensors, no feeds, no Twin connection. The
-   Trust paid to seal the building: special glass, sealed vents, filtered air.
-   **Karl, the nanite fog, cannot enter.** Villa Delirium is the only blind
-   spot in the City — the one place the Emperor cannot see and Karl cannot hear.
-   That is why the hub is safe, and why every Night ends here.
+Since **2044** the magazine has been owned, in all but name, by **Julian
+Rivet V**. He paid its debts, bought Villa Delirium through a shell called
+the **Lacuna Trust**, leased it back for one peppercorn a year, and turned the
+City's last paper magazine into his **takedown sheet**: a beautifully
+designed weapon for gutting his enemies. Biotech rivals who competed with the
+Rivet labs (Delphine Ash's old company was the first target). Supervisors
+who tried to cap the Twin's budget. A police chief — Augustus Pell — who
+asked too many questions about the nanite contracts. Critics of Karl. Each
+one got a gorgeous, vicious, *Mondo 3000* cover story.
+
+The House takes the money because there is no other money. Paper is
+expensive, the Bay Area is more expensive, and nobody pays for a magazine.
+The Duchess calls it "the patronage system, darling — Michelangelo had a
+pope." Yara calls it what it is. Everyone cashes the cheques.
+
+**The lease, carved over the Salon fireplace** (the House reads it as a
+joke):
+
+1. **The magazine prints on paper** — so there is no digital trail of who
+   ordered what.
+2. **The magazine covers the Bundle, without fear or favour** — the line the
+   staff laugh at hardest.
+3. **The House stays dark.** No sensors, no feeds, no Twin connection; the
+   building is sealed and **Karl cannot enter**. Officially, to protect
+   sources. Really, so that nothing the Twin records can link Rivet money to
+   Rivet hit pieces. It is also why the House is the one place in the City
+   the Emperor cannot see — the hub's safety is a side effect of a
+   billionaire's paranoia.
 4. **The Locked Room stays locked** until the Trust says otherwise.
 
-Letters from the Trust arrive by pneumatic tube, on paper, unsigned except
-for a small stamp: an hourglass lying on its side — an infinity sign made of
-time.
+### 4.3 The Commissions (and the mystery that replaces the Patron)
 
-### 4.3 Who is the Patron? (the house mystery)
+**How it works.** Every few weeks a pneumatic-tube letter arrives on paper,
+stamped with the Trust's mark — an hourglass lying on its side, an infinity
+sign made of time — naming a target and an angle. The House calls them
+**Commissions**. The Duchess assigns them. Somebody writes them.
 
-The Patron is the hub's running mystery, solved across the five Issues the
-way *Hades* drip-feeds its family secrets: one clue per few Nights, from a
-different housemate each time.
+**Hell Rot's position.** He learns all of this on his first night, from Fax,
+in the van. He takes the job anyway: no house, no money, no lab, and a
+column is a column. The Commissions are the game's standing compromise, and
+the cleanest test of his Rule 2 (never fake the data).
 
-**Suspects (the red herrings):**
+**The mystery now.** Julian "died" in October. **The Commissions did not
+stop.** In November they changed: some targets are the Order's enemies (BFF
+lawyers, the Penitents' friends, anyone who asks about the nanite contracts);
+others make no sense at all — a 19th-century bridge engineer, the word
+"Frisco," the weather. And a few, in a shaky hand, order *Mondo 3000* to
+investigate the Rivet family itself. Who is sending them is the hub's
+running mystery, solved one clue at a time, *Hades*-style:
 
-| Suspect | Why the House suspects them | The clue that clears them |
+| Suspect | Why the House suspects them | What the clue shows |
 |---|---|---|
-| **Delphine Ash** | She quotes back issues no one else remembers | She never knew the House is sealed — she sent a Theogen courier who walked into the glass |
-| **Mayor Pell** | He hates both cults; he would pay to keep a critic alive | He tries to *buy* the magazine in Issue 3. You do not buy what you already own. |
-| **Karl** | The fog is older than the Trust, and stranger than anyone | Karl cannot enter the House. Why would it pay for a building it is locked out of? (Karl, asked: "WE WONDERED THAT TOO.") |
-| **The Ledger** | Effective altruists fund critics as "epistemic insurance" | Pru shows their books. They rate the magazine net-negative. |
-| **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? (The City's conspiracy cranks also suspect him because of his surname. The House treats that theory with the contempt it deserves.) | His bank records from 2044 show he had just dropped out of his PhD, was broke, and was buying canned beans and nothing else, on the mountain, getting clean |
+| **The Rivet trustees** | They inherited the Trust | True, in part: the Gilders in the Auric Order send the "enemy" Commissions |
+| **Mayor Sunday** | He would love a hit sheet | He tries to *buy* the magazine in Issue 3. You do not buy what you already own. |
+| **A forger** | The handwriting changes | The paper is real Trust stock, and the tube only runs from Rivet Hill |
+| **Julian himself** | The odd ones read like him | **The truth (Issue 4):** the strange Commissions — the bridge, "Frisco," *investigate the Rivets* — come from the Emperor, in his lucid hours, writing through the Trust's own machinery. The god is assigning stories about the Order that made him. |
 
-**The truth (revealed in Issue 4, all routes):** the Patron was **Julian
-Rivet V** — the last Rivet heir, the man whose secret upload into Karl became the Emperor. Two
-months after his six-hour interview with the Duchess in 2044, he set up the
-Lacuna Trust. He was a quiet longtermist (the Bundle's **L**). He was already
-finishing the Twin, and he knew it might become a god. He also believed that
-every god needs a heretic on retainer, and that the heretic needs a house the
-god cannot see into.
+**The Commissions as a mechanic.** Each Issue, alongside the Duchess's
+assignment, a Commission may arrive. The player can:
 
-**The twist inside the twist:** after Julian's "death," the Lacuna Trust
-passed to the Rivet trustees — and so, through them, to the Auric Order and the god it keeps. **The secret AI god now pays the mortgage
-on the only magazine in the City that is trying to find it.** The order wants
-the payments stopped. They cannot stop them: the trust deed says only Julian
-can, and in his lucid hours, through the fog, the Emperor keeps signing the
-cheques. Asked why, Norton II says an emperor must keep a court jester. The fragment of Julian inside it, when Hell Rot finally reaches him,
-says something else: *"I set it up so it couldn't be cancelled. Even by me.
-Especially by me."*
+- **Write it** as ordered — Ink and Duchess Patience go up, Vow goes down,
+  and if the angle needs a fact that isn't true, it is a Fabrication.
+- **Write it straight** — cover the target honestly. Sometimes the honest
+  story is worse for them than the hit piece; sometimes it clears them.
+- **Turn it** — investigate who sent it. Every turned Commission is a Lead
+  toward the Order.
+- **Refuse it** — Duchess Patience drops, and the House notices.
+
+The Emperor's own Commissions are different: following them leads, step by
+step, to the Order's lodge.
 
 **The Locked Room** holds Julian's handwritten journals from 2044 to 2049 —
-on paper, so the Emperor — who can read anything digital — has never read them. They are the key evidence of Route
-D, and the Trust's last letter (Issue 5) finally sends the key.
+the record of every Commission he ever sent and why, and of the upload he was
+planning. They are on paper, so the Emperor, who can read anything digital,
+has never read them. They are the key evidence of Route D, and the last
+Commission (Issue 5), in the shaky hand, sends the key.
 
-**What the reveal does to each route:**
+**What the truth does to each route:**
 
-| Route | Effect of the reveal |
+| Route | Effect |
 |---|---|
-| **A — Heresy** | The House votes on whether to keep taking the money. Refuse: the magazine becomes homeless for Issue 5 and prints from the van. Accept: Pru's numbers say it is fine; Yara's say it is not. |
-| **B — Merge** | The Emperor, by decree, offers to drop the lease and give the House outright. Accepting is the moment Hell Rot's Halo jumps to 10. |
-| **C — Splice** | Delphine offers to buy the Trust from the order. The House becomes a bargaining chip between two gods. |
-| **D — Communion** | Julian's journals are the evidence that breaks the Emperor's Certainty. The heretic on retainer does the job he was hired for. |
+| **A — Heresy** | The House votes on whether to keep taking Rivet money. Refuse: the magazine is homeless for Issue 5 and prints from the van. Accept: Pru's numbers say it is fine; Yara's say it is not. Either way, the final column can expose the Commissions themselves. |
+| **B — Merge** | The Emperor, by decree, offers to sign the House over outright. Accepting is the moment Hell Rot's Halo jumps to 10 — and the moment he becomes the god's own takedown writer. |
+| **C — Splice** | Delphine — the Commissions' first target — offers to buy the Trust from the Order, and turn the weapon around. |
+| **D — Communion** | Julian's journals break the Emperor's Certainty: they show a man who used a magazine to destroy people and then, as a god, ordered it to investigate himself. |
 
 ---
 
@@ -262,7 +292,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
 | **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — the Emperor asks him to preach at the Ascension |
 | **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | PALE EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that the Emperor does not monitor | The Theogens, who promise to grow him a brain that fits the future | *"Legacy Format"* — his jack starts receiving messages from something inside the Twin |
-| **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul | *"Marginal"* — Pru knows who the Patron is. She has known all along. |
+| **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul | *"Marginal"* — Pru handles the Commission payments, and knows the November cheques stopped coming from Julian's account. She has known all along that someone else is paying. |
 | **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
 | **Saint Nobody** | Contributing Editor (Pranks) | **Unknown.** Different costume every time. | THE CELEBRITY +1, REFLEX +1, KARL +1 | **Disruption:** turn the next door into a Dissonance door | None. That is what scares both cults. | *"Unmasked"* — never completed. The credits complete it. |
 | **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. The order wants a scan. | Grows one size per Issue (main doc §5.14) |
@@ -329,7 +359,7 @@ player's run:
 | **The Numbers** | Pru | Her rating of the column, which may be insulting |
 | **Then & Now** | Mary | The 20th-century precedent the player found |
 | **Corrections** | Yara | Every Fabrication risk the player took — printed, permanently |
-| **Letters** | The Greenhouse | Cult members, fans, and one anonymous letter from the Patron each Issue |
+| **Letters** | The Greenhouse | Cult members, fans, Burn survivors, and — if one came — the Issue's Commission, printed for the record when Hell Rot turns it |
 
 ### 6.3 Editorial meetings
 
