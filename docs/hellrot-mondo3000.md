@@ -129,7 +129,7 @@ the core of its credibility and a game mechanic:
 | Year | Issue | What happened |
 |---|---|---|
 | 2041 | No. 1 | *"The Singularity Is Coming (Again)."* Monthly, on paper. |
-| 2042 | No. 14 | Exposé of a Bayes House that ran a member's life by coin-flip for a year. Yara's childhood home. She moves in at 16. |
+| 2042 | No. 14 | Exposé of a Bayes House that ran a member's life by coin-flip for a year. Yara's childhood home. She leaves at 16, takes the name "Nyx," and moves into the Duchess's flat above the old *Mondo* office; she moves into the house when the patron buys it in 2044. |
 | 2043 | No. 27 | The first "Theogen" story — a splice clinic in the Loin. Circulation triples. |
 | 2044 | No. 37 | The Duchess publishes a 40-page interview with a reclusive heir: Julian Rivet V, whose family trust is building the Twin. He talks for six hours about death. |
 | 2044 | — | Julian Rivet V pays the magazine's debts, and the **Commissions** — Rivet hit pieces on Rivet enemies — begin (§4.2). The same year an anonymous patron buys Villa Delirium through the Lacuna Trust and leases it to the staff for a peppercorn. They move in (§4.4). |
@@ -372,7 +372,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 | Resident | Masthead title | Bundle past | Companion bonuses | Once-per-Night ability | Lure | Back Page story |
 |---|---|---|---|---|---|---|
 | **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** Born Theodora Nyquist, 50; "the Duchess" since a Dissonance Society night at 21. In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: The Emperor offers to *upload* her parents — a laser scan of their frozen brains into Karl | *"Cold Storage"* — see below |
-| **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Bayes Houses' new champion, which wants her to run the Emperor's forecast team | *"Priors"* — her parents' house is merging, as a household, and they want her to come |
+| **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Emperor's **forecast team** — the Twin's prediction engine, the same one that produced the martyr metric that nearly killed Rosa. The offer comes in Issue 4, after she has seen what the forecasts do. The temptation is not the Emperor; it is fixing the model from inside, so she could stop the next one | *"Priors"* — her parents' Bayes House is **merging as a household**: one shared personal AI for the whole family, deciding everything by expected value, forever — the coin-flip house made permanent. They want her home as the household's tie-breaking human. The ceremony is Thursday: she goes and tries to talk them out of it, or lets them go |
 | **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None.** She is the House's **control group**, and proud of it. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | The Merge: her knees are failing, and the Twin would let her skate forever | *"Jam"* — one last bout at the Cow Palace roller rink, and a choice about her body |
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |
 | **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early | *"Late"* — the Emperor asks him to preach at the Ascension |
@@ -393,7 +393,9 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   tempting).
 - **Rivalries** (banter pairs that develop over the game):
   - **Yara vs. Pru** — two quantitative minds, opposite conclusions. They share
-    a desk and do not speak until Issue 3.
+    a desk and do not speak until Issue 3. Their first spoken exchange is
+    about one number they have each calculated differently all week — and
+    both of them are right.
   - **The Bishop vs. Otto** — the man who wanted the future to arrive, and the
     woman who decided to stop waiting for it.
   - **Fax vs. the Greenhouse** — the plants keep reading his DNA out loud.

@@ -1170,7 +1170,7 @@ The Spin Question is the game's hardest Fabrication trap.
    experiment was run. The game never declares the science settled:
    - **Route A:** the data is noisy and honest. He publishes it as noisy and
      honest, with the error bars, and that alone breaks the Merge's claim of
-     certainty.
+     certainty. It is really Yara's column, and the byline can say so.
    - **Route B:** the Emperor offers to run the test on himself and passes. Hell
      Rot cannot tell whether the result is real or flattery.
    - **Route C:** the Theogens' scores are real, and they are terrifying: the
@@ -1193,7 +1193,7 @@ uncertainty on screen.
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
 | **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Born Theodora Nyquist, 50. Named herself "the Duchess" at 21 at a Dissonance Society event and never put the title down. Velvet and denim — the Order's cloth, without knowing it. Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). Her secret: she guessed years ago that the house's patron was Julian, and never asked (Mondo doc §4.4). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
-| **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
+| **Yara Nyx** | Companion: successor | The Duchess's niece, 23: born Yara Nyquist, the daughter of the Duchess's younger brother, raised in a Bayes House. She took the name "Nyx" the day she left at 16 — the only irrational choice she has ever made, and she knows it. Fact-checker, co-writer, trained statistician, the player's skeptic. Her creed is the error bar: *"I'm not against numbers. I'm against anyone who forgets the error bars."* She read the Theogenesis papers at 15 and has never told him. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. Speaks of themselves only as **"we"**; the narration says "they"; when they say "I," it is Julian. The first and only upload. |
@@ -1903,7 +1903,7 @@ both have to break.
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
 | 7 | **The Mob** | C | Refuse the splice with Venom ≥ 8 | He tells the Theogens to take the City. They do. He realizes too late that he has made the thing he swore never to be: a leader. |
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
-| 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. The credits roll over it. |
+| 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. Its first line tells him what she never did: that she read his Theogenesis papers at 15, inside the Bayes House, and that they are why she trusted a magazine enough to leave. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4; use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
 
@@ -3006,6 +3006,9 @@ Plot questions the writers' room must answer before Alpha.
   Julian and never asked; she holds the raw tapes of his 2044 interview. Her
   *"Cold Storage"* choice: let the Order laser-scan her frozen parents into
   Karl — the second and third uploads — or let them go (Mondo doc §4.4–4.5).
+- **Yara** is Yara Nyquist, 23, who took the name "Nyx" when she left the
+  Bayes House. Her temptation is the Emperor's forecast team; her quest,
+  *"Priors,"* is her family merging as a household (Mondo doc §5).
 - **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
   uses the recording to reach him (§3.3).
 - **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
