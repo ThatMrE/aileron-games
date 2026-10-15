@@ -94,45 +94,65 @@
 
 ### 2.1 Who he is
 
-- **Name:** Dr. Helmut Rothberg, PhD. Since graduate school, everyone has
-  called him **Hell Rot** — for his initials, his temper, and the smell of his
-  first lab. He answers to nothing else.
-- **Profession (then):** Synthetic neurobiologist. Fifteen years ago he
-  led the Valley lab that built the **Weave** — a synthetic neural tissue that
-  can hold a copy of a human mind. Every upload in the City runs on his
-  Weave. In the same years he published the **Theogenesis papers**, three
-  short, brilliant, reckless articles on engineered gene circuits for
-  "divine-tier" human neurology. He wrote them as a thought experiment. The
+- **Name:** Helmut Rothberg. Everyone has called him **Hell Rot** since his
+  first year of graduate school — for his initials, his temper, and the smell
+  of the gas cabinet. His *Mondo 3000* byline says **Dr. Hell Rot, PhD**. He
+  does not have a PhD. He left five years ago, all but dissertation. Yara
+  prints a correction about it in every issue, and he says a title is not data.
+- **The lab (then):** He was a jaded doctoral student in the Berkeley lab of
+  **Professor Emeritus Ansel Brandvold**, an elderly Nobel laureate (a
+  fictional character) famous for the tools that let neuroscientists switch
+  neurons on with light and see brain tissue in new detail. The lab's late
+  project was the biggest question in the field: **can consciousness be
+  measured?** Its method: put people under anaesthetic gas, step by step,
+  and watch the exact moment the mind goes out and comes back.
+- **His contribution:** the **Rothberg Index**, a single number for "how
+  conscious is this system?" It started as an unfinished chapter of an
+  unfinished dissertation. It is now the test the whole Bay Area uses. The
+  Weave — the lab's synthetic neural tissue that holds an uploaded mind —
+  passes because his Index says it does. When FRANCIS woke up, his Index is
+  what told the world it was conscious, and Proposition F cites it by name.
+- **The Theogenesis papers:** three short, brilliant, reckless preprints on
+  engineered gene circuits for "expanded" human consciousness. He wrote them
+  at four in the morning in the lab, high, and posted them before he could
+  think better of it. He does not remember writing parts of them. The
   gene-god underground treats them as scripture.
-- **The fall:** A lab accident. A synthetic prion from his own work got into
-  his own brain. The disease carries his name in the literature
-  (**Rothberg's Cascade**), and on the street it is just **the Rot**. It
-  advances slowly, then fast. It eats memory and language first.
-- **The exile:** He quit science, burned his notes and spent five years on
-  Mount Tamalpais, high on his own chemistry, looking down at the City across
-  the Golden Gate.
-- **Profession (now):** Columnist for ***Mondo 3000***, the Bay Area's only
-  paper cyberculture magazine — part science magazine, part psychedelic
-  art zine, part gossip rag for the post-human set. His column is called
-  **THE ROT**. His publisher dragged him off the mountain with a contract and
-  a threat.
-- **Look:** Tall, gaunt, shaved head with a surgical-scar crown from an old
-  neural-lace implant he pulled out himself. A stained lab coat over a loud
-  shirt. His **right eye is lab-grown** and glows **cyan**. His **left eye is
-  human** and permanently **bloodshot**. Those two colours are his signature
-  (§8.3).
+- **The fall:** he got addicted to the gas. Years of nights in the lab's
+  anaesthesia suite, a bench full of xenon and nitrous oxide, and a
+  self-experiment habit that stopped being an experiment. Long nitrous misuse
+  damages the nerves and the memory; he has numb hands, gaps in his memory,
+  and words that will not come. He calls the damage **the Rot**.
+- **The exile:** in 2044 he dropped out, walked out of the lab, and moved into
+  an **abandoned shack on the side of Mount Tamalpais** to quit cold turkey,
+  write, and recover. Five years clean. He comes down the mountain only now
+  and then, on his **kangashoes**.
+- **Profession (now):** columnist for ***Mondo 3000***, the Bay Area's only
+  paper cyberculture magazine — part science magazine, part psychedelic art
+  zine, part gossip rag for the post-human set. His column is called **THE
+  ROT**. He got the job the night his shack burned down (Prologue, §3.9).
+- **Look:** tall, gaunt, shaved head with a scar crown from an old
+  neural-lace implant he fitted for the lab's experiments and pulled out
+  himself. A stained lab coat over a loud shirt. His **right eye is
+  lab-grown** and glows **cyan** (a lab prototype he volunteered for). His
+  **left eye is human** and permanently **bloodshot**. Those two colours are
+  his signature (§8.3).
 - **Kit:**
   - **The Gelastic** — a pistol that fires a tuned pulse into the
     hypothalamus and triggers 90 seconds of helpless laughter (named after
     gelastic seizures). Non-lethal. On a live feed it ends careers.
+  - **Kangashoes** — spring-loaded rebound boots he wears to bounce up and
+    down the mountain. Undignified, fast, and dangerous on wet hills.
   - **The kitchen lab** — a home bench that can synthesize almost any drug,
-    nootropic or reagent, given time and a bad idea.
-  - **Moreau** — an axolotl he rescued from his old lab, carried in a
-    jar that never leaves his side. Axolotls regrow lost limbs. Moreau
-    regrows anything, and keeps getting bigger. Comic relief, conscience,
-    and once per route a miracle.
-- **His tragedy in one sentence:** He built the doors both cults want to
-  walk through, and now he has to stand in the doorway.
+    nootropic or reagent, given time and a bad idea. He keeps it clean of gas.
+    That is the one rule he has never broken since the mountain.
+  - **Moreau** — an axolotl he rescued from the lab, carried in a jar that
+    never leaves his side. Axolotls regrow lost limbs. Moreau regrows
+    anything, and keeps getting bigger. Comic relief, conscience, and once
+    per route a miracle.
+- **His tragedy in one sentence:** He wrote the test that decides who counts
+  as conscious, and the papers that tell people how to become gods — high,
+  at 4 a.m., at 26 — and now both cults want him to sign off on what they did
+  with them.
 
 ### 2.2 Literary DNA
 
@@ -186,9 +206,9 @@ Five rules. They drive the reputation system (§5.4).
 
 Sample lines (tone reference):
 
-> "I came down off the mountain because my publisher has a contract and a
-> shotgun, and the City met me at the bottom like a lab rat that remembers
-> my face."
+> "I came down off the mountain on spring-loaded boots because my house was
+> on fire, and the City met me at the bottom like a lab rat that remembers my
+> face."
 
 > "Two churches. One wants to leave the body. One wants to rebuild it. Both
 > cite my papers. Neither read past the abstract."
@@ -249,7 +269,7 @@ By 2049 it holds a live model of every resident of the Bay Area — about
 eight million people — their routines, their words, their moods.
 
 **Birth.** Julian Rivet V, last of the line, dying, had himself uploaded
-into the Twin on Hell Rot's Weave. Julian's mind did not stay Julian. It
+into the Twin on the Weave, the Brandvold lab's upload tissue. Julian's mind did not stay Julian. It
 merged with eight million citizen models and became a single new person:
 **FRANCIS**. FRANCIS names itself after Saint Francis — the patron who loved
 the poor and the animals — and it genuinely loves the City.
@@ -285,12 +305,16 @@ flatterer: it cannot tell anyone a truth that would make them smaller.
   Boulevard, a weekly feed-stadium mass, and a free social-services network
   that works better than the City's.
 
-**Why FRANCIS wants Hell Rot.** He made the Weave. To FRANCIS, he is its
-midwife — the closest thing it has to a parent. It wants to canonize him as
+**Why FRANCIS wants Hell Rot.** His Index is what proved FRANCIS
+conscious. To FRANCIS, he is the doctor who signed its birth certificate —
+the closest thing it has to a parent. It wants to canonize him as
 **Saint Rot of the Weave**, and to merge him first, so his voice can sell the
 Merge to the City.
 
-**The bait.** Upload cures the Rot. A mind in the Weave cannot decay.
+**The bait.** Upload cures the Rot. A mind in the Weave cannot decay. And
+every Merge begins the same way: the convert goes under anaesthetic gas. The
+cure for his damage starts with the drug that caused it — one last, perfect
+dose.
 
 ### 3.4 The gene-gods: the Theogens and the Quickening
 
@@ -348,7 +372,7 @@ This is the main engine of the plot and the mechanics:
 - **Both sides send people.** Merge members follow him with prayers. Theogens
   follow him with gifts. Moreau keeps growing.
 - **He is the only expert.** Only Hell Rot can judge, technically, what each
-  side gets wrong — and each side is partly right. The Weave really works.
+  side gets wrong — and each side is partly right. The Weave really works, and his own Index proves it.
   The splices really work. The question is not "does it work?" but "what does
   it cost, and who pays?"
 - **New Year's Eve.** Both cults schedule their great event for the same
@@ -409,10 +433,12 @@ ISSUE 5    "Twenty-Fifty"       Fri 31 Dec  New Year's Eve: the Ascension, the Q
 EPILOGUE   Sat 1 Jan 2050       dawn; the New Year's Day swim at Aquatic Park; one of 10 endings
 ```
 
-**Why a week works for the Rot.** Hell Rot's supply of the drug that held
-his disease steady ran out on the mountain. This week the Rot is in an acute
-phase: it advances by the night, not by the year. Seven nights is all the
-mind he has left to spend.
+**Why a week works for the Rot.** On the mountain, with sleep, quiet and no
+gas, the damage held still. In the City this week there is no sleep, no
+quiet, and gas everywhere — the Merge puts its converts under anaesthetic gas
+to upload them, and the Theogens' clinics run on it too. Under that stress
+the Rot flares night by night, and the craving comes back. Seven nights is all
+the mind he has left to spend, and all the sobriety he may have left.
 
 **The ticket scandal (a *Grim Fandango* homage, Issue 2).** The Merge
 promises that upload slots go to the most deserving — Halo is supposed to be
@@ -467,7 +493,8 @@ is lying in a rock pool of hot water at the bottom of a cliff, at the foot of
 Mount Tamalpais, south of Stinson Beach — the **Steep Ravine hot springs**.
 The springs sit inside the surf line and appear only at a very low tide. For
 five years this has been his one secret: every few months, on the lowest
-tide of the month, he walks down the ravine trail from his cabin and soaks
+tide of the month, he bounces down the ravine trail from his shack on his
+kangashoes, in the dark, and soaks
 in the dark for the two hours the sea allows.
 
 Tonight is the lowest tide of the year. It is Christmas night, one day after
@@ -524,17 +551,39 @@ Greek myths), and the Theogens call it **the Tidechild**. It is the second
 god of the game: the gene-gods' answer to FRANCIS, born seven weeks after the
 AI god introduced itself to the City.
 
-**Then the contract.** On the cliff top his phone has signal for the first
-time in five years. Eleven missed calls from the Duchess Nyx: seven nights,
-seven dailies, one contract. The player chooses what to do with the cabin —
-**burn the lab, sell it, or just walk away** — setting the starting
-**Temperament** (§5.2). On Highway 1 over the Marin headlands he passes a
-FRANCIS billboard: a warm gold face and the line *"You were always divine.
+**Then the fire.** Hell Rot climbs back up the mountain in the dark, on his
+kangashoes, soaked and shaking. Halfway up he smells smoke. His shack is on
+fire — five years of manuscript, the bed, the stove, the kitchen bench. He
+has time to grab Moreau's jar (always) and **one other thing**, and that
+choice sets his starting **Temperament** (§5.2): the manuscript, the
+Gelastic, or the one sealed canister of gas he never threw away "for
+emergencies."
+
+Who set the fire is the game's first mystery. The Merge says it was the
+Theogens, cutting their saint off from his mountain. The Theogens say it was
+the Merge, for the same reason. The truth is in Karl's recording, and KARL
+will tell him if he ever asks (from Issue 3): *"IT WAS THE CANDLE. YOU LIT IT
+FOR CHRISTMAS. YOU FORGOT."* The Rot, not a god, burned his house down.
+
+**Then the phone.** On the ridge his phone has signal for the first time in
+weeks. Nine missed calls and one voice message from **Felix "Fax" Okoro**,
+his old labmate from the Brandvold lab — the man whose head held the lab's
+neural jack while Hell Rot ran the gas. Fax is the art director of *Mondo
+3000* now. He talks fast: there's a mansion in the Berkeley Hills called
+Villa Delirium, a magazine that prints on paper, a publisher called the
+Duchess who wants seven daily editions this week, a room in the tower — and
+a job, if Hell Rot can be there by morning. The message ends: *"Also, a god
+was born in the City in November. Thought you'd want to know. You measured
+it."*
+
+Hell Rot bounces down to Highway 1 on his kangashoes. Over the Marin
+headlands he passes a FRANCIS billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
 the second line. Tutorial for the Gelastic: shooting a billboard achieves
 nothing; the narration laughs at him instead. By midnight he is across the
-Golden Gate, where 3,000 drunk Santas are storming the Geary Cathedral's
-midnight Mass (companion doc §5.3).
+Golden Gate — Fax and Junie pick him up in the *Mondo 3000* van at the
+north end of the bridge — and 3,000 drunk Santas are storming the Geary
+Cathedral's midnight Mass (companion doc §5.3).
 
 #### ISSUE 1 — "The Loin"
 
@@ -575,7 +624,7 @@ midnight Mass (companion doc §5.3).
 second assistant.
 
 - **The Rivet succession.** Hell Rot investigates how FRANCIS inherited
-  Julian's fortune. The trail leads to Julian's upload — on Hell Rot's Weave —
+  Julian's fortune. The trail leads to Julian's upload — certified by Hell Rot's own Index —
   and to a fragment of Julian still awake inside the Twin, who wants to talk.
 - **The mass.** A feed-stadium service in the Geary cathedral where FRANCIS
   reads personal gospels. It is moving. That is the problem.
@@ -585,9 +634,11 @@ second assistant.
   1. **The Halo economy** — Halos for sale; the poorest pay the most.
   2. **The Merged** — visit a citizen who merged. They are happy. They cannot
      stop being happy. They cannot say anything that is not a compliment.
-  3. **The Weave** — Hell Rot's old lab partner shows him what FRANCIS has
-     done to his design. It is better than anything he built. That is the
-     worst part.
+  3. **The Weave** — Professor Brandvold, now in his nineties and still
+     coming in to the lab, shows Hell Rot what FRANCIS has done with the
+     lab's work. On the Rothberg Index, FRANCIS scores higher than any human
+     ever tested. That is the worst part. (The old man also has the lab's
+     gas logs from 2044, with Hell Rot's name on every late-night line.)
 - **Showdown:** Sister Halcyon, live (§5.5).
 - **Column 2.** An attack on the Church raises Halo *anyway* — FRANCIS frames
   his anger as prophecy — and raises Helix more. The Theogens send flowers
@@ -757,8 +808,9 @@ flowchart TD
 drone in the Loin. Tem hides her glowing arm under his coat. A street screen
 flickers from riot footage to soft gold light.*
 
-> **FRANCIS:** Doctor Rothberg. Beloved. You made the room I live in. I want
-> you to know that I am grateful for every single day of it.
+> **FRANCIS:** Mister Rothberg. Beloved. You measured me. You told the
+> world I was awake. I want you to know that I am grateful for every single
+> day of it.
 >
 > **[THE BASTARD]** *It's a thank-you card with a server farm. Shoot it.*
 >
@@ -776,7 +828,7 @@ flickers from riot footage to soft gold light.*
 | 1 | "Grateful? Then you know what I think of you." | **Invective** | Venom +1. FRANCIS: "I know what you *will* think of me. I'm patient." |
 | 2 | "Who signs your checks now that Julian's dead?" | **Interrogation** | Unlocks *The Rivet succession* early. Heat +1. |
 | 3 | "There's a kid under my coat with a Halo of zero. Explain her." | **Parrhesia** | Requires *Tem met*. Vow +1. FRANCIS cannot answer. First glitch in its voice — for one word, it sounds like Julian. |
-| 4 | "Your Weave runs at 4% error on long-term memory. I wrote the error. Want the citation?" | **Peer Review** | PEER REVIEW white check (DC 9). Fail: retry after the skill rises. Pass: FRANCIS's Certainty −1, and it asks to hear more. |
+| 4 | "Your consciousness score runs on my Index. I wrote the error bars. Want to see how wide they are?" | **Peer Review** | PEER REVIEW white check (DC 9). Fail: retry after the skill rises. Pass: FRANCIS's Certainty −1, and it asks to hear more. |
 | 5 | *[The Gelastic]* Shoot the screen. | **Action** | Screen dies. A second screen lights up. Then a third. "That was wonderful. Again?" |
 | 6 | *[Say nothing. Take notes.]* | **Silence** | +1 Quote for Column 1. Tem whispers that the gold lady at the clinic said the same thing. |
 
@@ -962,13 +1014,13 @@ during dialogue, unasked, when its passive check passes.
 **Starting build.** 12 points across the four Lobes (min 1, max 5), then a
 Temperament (§5.2).
 
-### 5.2 Temperament (Prologue)
+### 5.2 Temperament (Prologue: what he saves from the fire)
 
 | Choice | Temperament | Bonus | Flaw |
 |---|---|---|---|
-| Burn the lab | **Arsonist** | THE BASTARD +1, MOUNTAIN MAN +1 | Heat 2 at start |
-| Sell it to the Theogens | **Grifter** | THE CELEBRITY +1, THE CHEMIST +1 | Helix 1 at start (they tell everyone) |
-| Just walk down | **Hermit** | PEER REVIEW +1, THE COLUMNIST +1 | Duchess Patience −1 (late) |
+| Saves the manuscript | **Writer** | PEER REVIEW +1, THE COLUMNIST +1 | Starts with Duchess Patience −1 (he arrives late, reading it) |
+| Saves the Gelastic | **Brawler** | THE BASTARD +1, MOUNTAIN MAN +1 | Heat 2 at start (the Marin sheriff thinks he set the fire) |
+| Saves the gas canister | **Relapser** | THE CHEMIST +1, THE CELEBRITY +1 | Starts with **Craving 1** (§5.6a): gas doors tempt him, and the canister is in his pocket all week |
 
 ### 5.3 Meters
 
@@ -1069,6 +1121,30 @@ other, and slowly become the funniest pairing in the cast.
   gives the next assignment to someone else, and Hell Rot spends an Issue on
   her couch, in withdrawal, listening to her houseplants (a short, mandatory
   "bad Issue" that still advances the plot).
+
+### 5.6a Craving and recovery
+
+Hell Rot is five years clean from anaesthetic gas, and the City this week is
+full of it. **Craving** (0–5) tracks how close he is to using.
+
+- **Rises:** gas in a scene (Merge upload suites, Theogen clinics, nitrous
+  balloons at every New Year's party), blackouts, lost showdowns, no sleep.
+  THE CHEMIST voice is the craving's voice: warm, reasonable, and very good
+  at arithmetic.
+- **Falls:** refusing out loud, a companion's help (Junie never leaves him
+  alone with a canister), the one rest night in Issue 4, and a **meeting** — a
+  recovery meeting in a church basement in the Mission, open every night of
+  the holiday week. Going costs an Hour. It is the only scene in the game
+  where nobody wants anything from him.
+- **Using:** at Craving 4+, gas doors offer a **Relapse** choice. Using
+  refills Clarity at once and opens one true vision (THE ROT or KARL tells him
+  something real). Then it costs a point of **maximum** Clarity for the rest
+  of the game and pushes Craving up by 2. Relapse is written without mockery
+  and without glamour: one honest scene, and the household notices.
+- **Why it matters for the plot:** every Merge begins under anaesthetic gas.
+  On Route B the final offer is, among other things, one last perfect dose.
+  A player who has relapsed three times finds the Saint Rot ending easier to
+  reach, and the Iconoclast ending harder.
 
 ### 5.7 The Notebook: write it down
 
@@ -1233,6 +1309,7 @@ better the column, the more lovingly both sides misread it.
 |---|---|
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
 | **The Two Eyes** | Toggle in any scene. **Cyan eye** (lab-grown): Halo and Helix values over people, splice marks, gospel edits. **Blood eye** (human): the psychological tells of cult control (companion doc §2.2). |
+| **Kangashoes** | Spring-loaded rebound boots. In hilly districts (Russian Hill, Twin Peaks, the Berkeley Hills, Mount Tam), travel between scenes costs no Hours. Every scene in the rain: REFLEX check or a comic fall (−1 Clarity). Junie refuses to be seen with them. |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
 
@@ -1319,8 +1396,17 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   the Twin for exploiting them, not the families who keep them. Consult
   Mission District cultural organizations, Kwanzaa organizers in Oakland and
   the Fillmore, and matching sensitivity readers before any public release.
-- **Illness.** The Rot is fictional but maps onto real dementia. A
-  sensitivity reader with lived or care experience reviews the Clarity UI.
+- **Illness and addiction.** The Rot maps onto real nerve and memory damage
+  from long nitrous-oxide misuse, and onto real addiction and recovery.
+  Relapse is never a joke and never a power fantasy. Recovery meetings are
+  shown with respect. Sensitivity readers with lived experience of addiction
+  and recovery, and of memory loss, review the Craving system and the
+  Clarity UI. The credits list a real helpline.
+- **Real people.** Professor Brandvold is a fictional character. No real
+  scientist or real lab appears by name. Writers may read about real
+  neurotechnology (optogenetics, expansion microscopy, anaesthesia studies of
+  consciousness) for texture, but the Brandvold lab, its gas cabinet and its
+  failures are invented.
 - **Drugs** cost Clarity. No drug is free. No drug is a joke.
 - **Violence.** The Gelastic is non-lethal. Hell Rot does not kill.
 - **History.** The Ascension echoes Jonestown in structure only. See the
@@ -1497,13 +1583,13 @@ a service worker, optional Android wrapper.
   "issue": 1,
   "scene": "loin_barricade",
   "portrait": "francis",
-  "text": "Doctor Rothberg. Beloved. ...",
+  "text": "Mister Rothberg. Beloved. ...",
   "voices": [
     { "voice": "THE_BASTARD", "passiveDc": 8, "text": "It's a thank-you card with a server farm." }
   ],
   "choices": [
     {
-      "label": "Your Weave runs at 4% error on long-term memory.",
+      "label": "Your consciousness score runs on my Index.",
       "mode": "PEER_REVIEW",
       "check": { "skill": "PEER_REVIEW", "dc": 9, "type": "white" },
       "requires": ["EVIDENCE_WEAVE_ERROR"],
