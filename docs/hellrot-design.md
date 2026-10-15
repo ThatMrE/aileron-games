@@ -15,7 +15,8 @@
 > The setting, the map, the cult research and the City's weird-events calendar
 > live in the companion document,
 > [hellrot-city-and-cults.md](hellrot-city-and-cults.md). The magazine, its
-> house, the Rivet money behind it, and the household that forms the player's party
+> house and its anonymous patron, the Rivet money behind the paper, and the
+> household that forms the player's party
 > live in [hellrot-mondo3000.md](hellrot-mondo3000.md).
 >
 > **Rights & inspirations:** Hell Rot and every character, publication and
@@ -801,7 +802,7 @@ uncertainty on screen.
 | Character | Role | Notes |
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
-| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion the Rivet money pays for. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
+| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
@@ -1381,8 +1382,9 @@ In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
 House of Hades of this game: the magazine's office, press and archive, home to
 the party, and the only place Hell Rot feels safe. Its lease forbids sensors:
 it is the one building in the City that the Emperor cannot see into and Karl
-cannot enter. Full floor plan, history, the Rivet money behind it and the Commissions
-(hit pieces the House is paid to write): [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
+cannot enter. Full floor plan, history, the mystery of its anonymous patron, and the
+Rivet money behind the paper and its Commissions (hit pieces the House is
+paid to write): [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 
 | Room | Who / what | Function |
 |---|---|---|
@@ -1959,7 +1961,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   member of a real family whose name antisemitic conspiracy theories have
   targeted for two centuries. The game must never feed those theories. Rules:
   no Rothschild money, power or secret influence behind anything in the plot
-  (the money behind *Mondo 3000* is Rivet money, and stays so); no real family member appears;
+  (the money behind *Mondo 3000* and its house is Rivet money, and stays so); no real family member appears;
   when characters spout conspiracy theories about the name, the game frames
   them as what they are — the City's ugliest cult tell (Lifton's "dispensing
   of existence"), and a target Hell Rot punches up at. Hell Rot's family
@@ -2271,8 +2273,10 @@ Plot questions the writers' room must answer before Alpha.
 - **Mayor Sunday** is the sitting mayor, a corrupt buffoon who runs the
   City's crime and is building a sloppy bootleg upload that will fail. Pell
   is his recall challenger (§3.6, §3.8).
-- **Mondo 3000 is Rivet's takedown sheet**, and the staff know it; the
-  Commissions are the mechanic (Mondo doc §4.2–4.3).
+- **Mondo 3000 the paper is Rivet's takedown sheet**, and the staff know it;
+  the Commissions are the mechanic (Mondo doc §4.2–4.3). **Villa Delirium,
+  the house, has a separate anonymous patron** — the hub's mystery (Mondo doc
+  §4.4).
 
 ### Still open
 
@@ -2326,21 +2330,24 @@ Plot questions the writers' room must answer before Alpha.
 16. **What does Midnight Forever mean for everyone else?** If he stops the
     clock, do the Ascension and the Quickening go ahead without him?
 17. **Is breathing xenon for the Spin Question experiment a relapse?**
-18. **How many Commissions does he write as ordered** before the House stops
+18. **Who is the house's patron?** The proposed answer is Julian's other
+    hand — the man who paid for the poison also paid for the antidote. Is
+    that right, or is it someone else?
+19. **How many Commissions does he write as ordered** before the House stops
     trusting him — and is there a Commission he cannot refuse?
 
 **The City**
 
-19. **Do the minor cults still matter** now that the god is secret? The
+20. **Do the minor cults still matter** now that the god is secret? The
     Black House, Synapse and the Standard need a reason to touch the main
     plot.
-20. **Who are the conspiracy cranks** who link the Order to his surname —
+21. **Who are the conspiracy cranks** who link the Order to his surname —
     a named faction, or background noise? (Guardrails: §7.)
-21. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
+22. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
     are half right.
-22. **What happens to the Duchess's frozen parents** if the Ascension goes
+23. **What happens to the Duchess's frozen parents** if the Ascension goes
     ahead and the Church's offer to rebuild them in the Twin is real?
-23. **What does Sunday's failed Lifeboat upload do** when it fails at
+24. **What does Sunday's failed Lifeboat upload do** when it fails at
     midnight — does it hurt only him, or does it crash into the Twin and the
     Emperor?
 
