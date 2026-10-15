@@ -721,16 +721,35 @@ splice is a prayer.
   public worship among Theogens appears as his **Helix** meter (§5.3).
 - **The cost.** Splices fail. Some members reject them. The failures live
   in the deepest tunnels, cared for by the cult, and kept off every feed.
-- **Their prophet: Delphine Ash.** A former biotech founder who spliced
-  herself first, in public, and survived. Brilliant, warm, funny, very
-  persuasive and certain. She has read every paper Hell Rot ever wrote,
+- **Their prophet: Delphine Ash.** A former biotech founder. In 2034, at 75,
+  she was dying of early-onset ALS. The Rivet labs held a treatment and
+  would not license it. So she spliced herself on a live feed, from Hell
+  Rot's first paper, as an act of defiance — and lived. She is a patient who
+  became a prophet, not a vain founder, and that makes her both sympathetic
+  and dangerous. Now 90 with the skin of a 30-year-old: brilliant, warm,
+  very persuasive and certain. She has read every paper Hell Rot ever wrote,
   footnotes included. She calls him **Father**.
+- **Her voice.** Lab-notebook scripture: precise, warm, never hurried. She
+  never raises her voice. She spliced out her laughter reflex years ago, so
+  she never laughs; she answers a joke with a pause.
+- **Her body is failing.** The cyan spiral under her skin is climbing
+  because her cells are rewriting themselves out of control. She needs the
+  god-gene to save herself, not only the City; that makes the Quickening
+  personal. Who sees it: the BLOOD EYE first, as a flicker in the spiral
+  (Issue 3, the Sutro tunnels); then Yara, when Delphine has to stop
+  mid-sermon (Issue 4); then everyone, when her skin goes dark on the
+  Golden Gate Bridge (Issue 6).
+- **What she does not know.** Delphine thinks Karl is dumb nanites — a
+  delivery system. She does not know the Emperor lives in the fog, or that
+  the Quickening would splice a man's mind. Learning it is the deepest crack
+  in her Conviction (§5.5). Hell Rot can tell her, with Blood Eye testimony
+  or Peer Review evidence; it opens the Mortal ending.
 
 **Why the Theogens want Hell Rot.** The Theogenesis papers are their
 scripture, and he is their author. If he endorses them, the City follows.
 
-**The Tidechild.** On Christmas night the Theogens deliver **Ione**, a
-child carrying their edits from conception, in a birth rite at the Steep
+**The Tidechild.** On Christmas night **Delphine herself** gives birth to
+**Ione**, a child carrying their edits from conception, in a birth rite at the Steep
 Ravine hot springs (Prologue, §3.9). To the cult, Ione is the first god born
 rather than made — and the reason for the Quickening: they want every child
 in the City to be Ione's kin. Hell Rot was in the pool when it happened, and
@@ -738,6 +757,8 @@ his Prologue choices decide the child's health. Ione appears in every Issue
 (a cry in the tunnels, a glow in the Baths, a name on Delphine's lips), and
 **every ending includes one line about what becomes of the child.** Ione is
 the clearest test of Rule 4 in the game: the smallest one of all, and a god.
+Delphine's real conflict is here: she loves Ione as a child and needs Ione
+as proof, and if the baby is sick, those two pull apart.
 
 **The bait.** A gene therapy for the Rot — a splice that rebuilds his
 neurons. It will probably work. It will also rewrite his brain, and nobody
@@ -828,9 +849,9 @@ uncertainty on screen.
 | **Judge Harlan Ostrander** | Presiding judge, BFF v. City | Fair, careful, respected — and a Fellow of the Halo. The biggest scoop in the game. |
 | **Margarethe "Mags" Oduya** | Lead counsel, Biological Frontier Foundation | Fights Proposition F (§3.3c). Funny, relentless, and the conscience of Route A. |
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid; the sharpest reader the magazine has. Under Prop F he would lose his rights. |
-| **Delphine Ash** | Prophet of the Theogens | The second boss and the second temptation. See §3.4. |
+| **Delphine Ash** | Prophet of the Theogens; Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. See §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. See §3.4. |
-| **Wren Castillo** | Ione's mother | A 24-year-old Theogen nurse. Believes her child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
+| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
@@ -1010,8 +1031,8 @@ Karl, the City's fog, sits thick on the water. There is no light at all.
 path — Theogens, their spliced skin colour-cycling cyan in the dark, the
 only light source in the scene (art §8.3). They have come for the same pools
 on the same tide, for a reason Hell Rot does not know yet: a **neo-ancient
-birth rite**. A young Theogen nurse, **Wren Castillo**, is in labour, and
-her child carries a full set of Theogen edits from conception. The Theogens
+birth rite**. **Delphine Ash**, the Theogens' 90-year-old prophet, is in
+labour, and her child carries a full set of Theogen edits from conception. The Theogens
 believe it is the first god born rather than made. They mean to deliver it
 in the hottest pool at the exact minute of the lowest water — *"when the sea
 draws back, the god comes forward."*
@@ -1021,14 +1042,14 @@ read too much: the darkness and the revealed child of the ancient Greek
 mysteries at Eleusis, the water births and hot-tub sacraments of the 1970s
 Big Sur human-potential scene, a stopwatch for the tide, and a chant that
 keeps time with the waves. On the flattest rock, someone has carved a line
-from Hell Rot's own Theogenesis papers. **Delphine Ash** presides as
-midwife-priestess. When she sees who is already in the pool, she smiles and
-calls him **Father** — and means it as a title. The cult sees his presence as
+from Hell Rot's own Theogenesis papers. A young Theogen nurse, **Wren
+Castillo**, is midwife. Between contractions, Delphine sees who is already
+in the pool, smiles and calls him **Father** — and means it as a title. The cult sees his presence as
 an omen. He sees a woman in labour in a tide pool in the dark.
 
 **The emergency (the tutorial).** The birth goes wrong. The child's spliced
 neurons fire in a seizure before it is even born — Hell Rot can see it in the
-light pattern under Wren's skin with his blood eye, and he recognizes the gene
+light pattern under Delphine's skin with his blood eye, and he recognizes the gene
 circuit: it is from his third paper. The tide has turned. The pools will be
 under the surf in under two hours. The Prologue teaches the core systems on
 this one problem:
@@ -1039,7 +1060,7 @@ this one problem:
   his bag; KARL speaks to him for the first time, from the fog over the water:
   *"WE SEE IT TOO."*
 - **A red check:** stabilize the child's seizure with what he carries (THE
-  CHEMIST) or by talking Wren through it (BLOOD EYE). It happens once, and
+  CHEMIST) or by talking Delphine through it (BLOOD EYE). It happens once, and
   its result follows the child through the whole game.
 - **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
   refuse and climb out (Venom +, the child's health is left to the cult);
@@ -1086,7 +1107,7 @@ waiting in the fog — the game's first stuck-in-the-middle choice and its
 introduction to getting around (§4.6). A gold **Ascension shuttle** that
 nobody ordered — the Church's dispatch log says the Twin sent it,
 because Karl saw everything: free, warm, and playing
-hymns. And — only if he helped at the birth — Wren's family in a dented
+hymns. And — only if he helped at the birth — Wren and the midwives in a dented
 Theogen ambulance that glows from the inside. He can take either, or walk
 toward the bridge. Over the Marin headlands he passes a Church of the Twin billboard: a warm gold face and the line *"You were always divine.
 Now you can stay that way."* The Dissonance Society has already re-painted
@@ -1229,7 +1250,8 @@ from the water to the riot.
   Flowers' glass.
 - **The Ocean Beach bonfire.** **Karl's Birthday** — sixteen years since the
   swarm was seeded. Bonfires in the drizzle, the New Breath's mass inhale,
-  Delphine and Sister Halcyon pretending not to see each other, and, for one
+  Delphine, with Ione asleep against her, and Sister Halcyon pretending not
+  to see each other, and, for one
   minute, everyone on the beach hearing the same recording at once.
 
 **ROUTE LOCK.** The game reads the three columns, **Halo**, **Helix**,
@@ -1248,7 +1270,9 @@ Common to all routes:
   him across the Mission murals as **the Father of the Helix**, glowing.
 - **Two offers.** The Church (and, through the fog, the Emperor): merge, and
   never decay. Delphine: splice, and heal. Both offers hold until midnight on
-  New Year's Eve.
+  New Year's Eve. Delphine makes hers in a sermon in the Mission, and stops
+  halfway, a hand on the wall, until the spiral at her throat stills. Yara
+  sees it.
 - **The ruined lab, Mission Bay, daytime.** The Brandvold lab's old
   Mission Bay annex — flooded, abandoned since the biotech crash — where Hell
   Rot died on the floor in 2044. The gas cabinet is still there. So are the
@@ -1306,7 +1330,8 @@ midnight coming.
   taken over the rotunda and lagoon for 12,000 uploads at midnight, at the
   edge of the Marina, on 1906 rubble.
 - **The Golden Gate Bridge climax** — the fog's front door, where the
-  Theogens load the Quickening into Karl as the storm comes in, and where
+  Theogens load the Quickening into Karl as the storm comes in — Delphine at
+  the south tower with Ione, her skin going dark — and where
   Hell Rot is standing when the **Midnight Quake** hits.
 - **The ending's ground** — **Baker Beach** (the bonfire and the gods'
   debate, Route D), **Mount Tamalpais** (the Mountain), or a man **frozen**
@@ -1841,8 +1866,9 @@ other, and slowly become the funniest pairing in the cast.
   *Interrogation*, *Silence* and *Peer Review* (on the Weave's error data)
   work. *Jeremiad* heals it. *Invective* makes it love him more.
 - **Delphine Ash** has Composure *and* a **Conviction** bar. Conviction drops
-  only under *Peer Review* with verified evidence of failed splices, and under
-  *Appeal* with Tem present. *Satire* heals her (she loves a good provocation).
+  only under *Peer Review* with verified evidence of failed splices, under
+  *Appeal* with Tem present, and — the biggest drop — under proof that the
+  Emperor lives in Karl. *Satire* heals her (she loves a good provocation).
   The Gelastic does nothing: she spliced out the laughter reflex years ago.
   It is the creepiest line in the game.
 
@@ -2351,7 +2377,8 @@ every pixel on the screen breathes.
   move.
 - **Pell:** heavy, rust-and-orange ramp. Ugly and *of the City*.
 - **Delphine Ash:** warm skin ramp with a cyan spiral that cycles slowly up her
-  throat. Beautiful. Her portrait never blinks.
+  throat — and climbs a few pixels higher each Issue as her splices fail.
+  Beautiful. Her portrait never blinks.
 - **The Emperor:** no face. A soft gold radiance with a ring, on the nearest
   screen. In Route D it tries to build a face, and gets it slightly wrong each
   time — until it borrows Julian Rivet's.
@@ -2547,6 +2574,12 @@ Plot questions the writers' room must answer before Alpha.
   thoughts** (§3.3).
 - **Sunday ordered the hit on Rosa Quint** because she turned whistleblower;
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
+- **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren
+  Castillo is her midwife (§3.4, Prologue).
+- **Delphine does not know Karl is the Emperor** until Hell Rot tells her;
+  it is the deepest crack in her Conviction (§3.4).
+- **Delphine's splices are failing:** the Blood Eye sees it in Issue 3, Yara
+  in Issue 4, everyone on the bridge in Issue 6 (§3.4).
 - **The public finds out in the Midnight Quake** — a quake the Emperor's
   convulsion triggers, and a fire that mirrors 1906 (§3.8b).
 - **Mondo 3000 the paper is Rivet's takedown sheet**, and the staff know it;
@@ -2558,17 +2591,11 @@ Plot questions the writers' room must answer before Alpha.
 
 **The Theogens and Ione**
 
-2. **Does Delphine know Karl is a god?** If she loads the Quickening into
-   Karl, she is injecting the Emperor. Does she know, find out, or never
-   learn?
 3. **What exactly is the god-gene,** and what happens to the Emperor if it
    reaches him?
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child; the writers need the eleven lines.
-5. **What does Wren want,** and when does she choose her child over her
-   cult?
-6. **Delphine's own splices are failing.** When does that become visible,
-   and who sees it first?
+5. **Who is Ione's father?** (Options under discussion.)
 
 **Proposition F and the courts**
 

@@ -484,7 +484,7 @@ habit of chemical self-experiment.*
 |---|---|
 | **Hook** | A free clinic in a basement in the Loin that will fix what the City will not: a bad knee, a failing liver, a child's genetic disease. It works. |
 | **Promise** | "You are not a god yet. You can be." A body that heals, glows, thinks faster and lasts longer. And **no upload**: you stay you, only more. |
-| **Proof** | Delphine herself, glowing, 90 years old with the skin of a 30-year-old, healing a cut on stage in seconds. |
+| **Proof** | Delphine herself, glowing, 90 years old with the skin of a 30-year-old, healing a cut on stage in seconds — and, this Christmas, a mother. |
 | **Price** | Your genome, your body, your tithe for the next splice. And the risk. |
 | **Ladder** | First Light (a small glow splice) → Mending (regeneration) → Cortex (added neurons) → the Last Splice, which nobody has finished. |
 | **Wall** | Your body. Splices cannot come out. Without the cult's clinics, a spliced body breaks down. Leaving is a medical problem. |

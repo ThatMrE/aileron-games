@@ -191,7 +191,8 @@ The House runs on two kinds of money, and only one of them is a secret.
 turned the City's last paper magazine into his **takedown sheet**: a
 beautifully designed weapon for gutting his enemies. Biotech rivals who
 competed with the Rivet labs (Delphine Ash's old company was the first
-target). Supervisors who tried to cap the Twin's budget. A police chief —
+target — she had gone public about the ALS treatment the Rivet labs would
+not license). Supervisors who tried to cap the Twin's budget. A police chief —
 Augustus Pell — who asked too many questions about the nanite contracts.
 Critics of Karl. Each one got a gorgeous, vicious cover story. The staff take
 the money because there is no other money; paper is expensive and nobody pays
