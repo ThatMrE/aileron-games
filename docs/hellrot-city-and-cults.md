@@ -1,7 +1,8 @@
 # The City: San Francisco, Mutated — Setting, Cults & Weird Calendar (v0.2)
 
 > Companion to [hellrot-design.md](hellrot-design.md). That document holds
-> the plot, mechanics and art. This one holds the **place**, the **cults**,
+> the plot, mechanics, play style (*Disco Elysium* × *Hades* × *Grim
+> Fandango*) and art. This one holds the **place**, the **cults**,
 > and the City's **weird calendar**.
 >
 > **One-line pitch:** The City is San Francisco in December 2999 — the hills
@@ -306,7 +307,7 @@ yet.
 
 | Cult | Source | Location | Pitch | Crack / game use | FRANCIS / Theogen relation |
 |---|---|---|---|---|---|
-| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending costs **8 Hours**; staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
+| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending takes **two whole Nights** (a special run with its own doors, set inside the ballroom); staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
 | **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder); *Silence* wins. | Recruiting contractor for the Merge |
 | **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
 | **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
@@ -389,6 +390,7 @@ the two cults. Each has a gameplay effect.
 | **The Parrots of Telegraph Hill** | The wild parrot flock | Theogen-spliced parrots that repeat Hell Rot's old columns, out of order, all day. | Ambient. As Clarity drops, the parrots remember his columns better than he does. |
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
 | **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
+| **Day of the Dead (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Issue 1 opens here. The game shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church of the Twin for projecting merged relatives onto the altars. | Issue 1 story scene. Never a Dissonance door. Consult the community before release (main doc §7). |
 | **Karl's Birthday** | The fog's nickname | The City throws the fog a birthday party. The foglets inside Karl attend. So does the New Breath, which inhales the guests. | Route D: the New Breath's key scene. |
 
 ### 5.4 Tone rule for Disruption Events

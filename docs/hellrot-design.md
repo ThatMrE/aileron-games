@@ -34,16 +34,17 @@
 |---|---|
 | Working title | *Mondo 3000: Hell Rot* |
 | Alt titles | *Hell Rot: The God Feed*; *Peer Review*; *Saint Rot* |
-| Genre | Narrative RPG / text adventure / branching interactive fiction |
+| Genre | Narrative RPG with a roguelite night loop: dialogue-driven runs, a home hub, branching story |
 | Core verbs | **Look. Talk. Provoke. Analyze. Write. Publish.** |
 | Perspective | Static illustrated scenes + text box (NES/MSX adventure layout) |
-| Touchstones (mechanics) | *Disco Elysium* (skill voices, thought cabinet), *Planescape: Torment* (identity, philosophy), *Mass Effect* (dual reputation, interrupts), *Fallout 1/2* (skill-gated speech), *Papers, Please* (desk job under pressure), *Phoenix Wright* (cross-examination) |
-| Touchstones (presentation) | *Snatcher*, *Shadowgate*, *Maniac Mansion*, *VA-11 Hall-A*; *Mondo 2000* collage covers |
-| Setting | The City: San Francisco, December 2999, the last month of the millennium |
+| Primary references (play style) | ***Disco Elysium*** (no combat, skills as inner voices, white/red checks, thought cabinet, failure as content), ***Hades*** (run-and-return loop, a home hub that reacts to every run, god boons and duo boons, permanent upgrades, voluntary difficulty, gifts and keepsakes), ***Grim Fandango*** (noir afterlife bureaucracy, a salesman of afterlives, inventory puzzles, art-deco-meets-calavera style, a story told across holidays of the dead) — see §4 |
+| Secondary references | *Planescape: Torment* (identity), *Mass Effect* (interrupts), *Papers, Please* (desk under pressure), *Phoenix Wright* (cross-examination) |
+| Touchstones (presentation) | *Snatcher*, *Shadowgate*, *Maniac Mansion*, *VA-11 Hall-A*; *Mondo 2000* collage covers; *Grim Fandango*'s noir framing |
+| Setting | The City: San Francisco, from Day of the Dead (2 November 2999) to Millennium Night (31 December 2999) |
 | Platform | Browser first (single-file HTML/PWA, like the other Aileron games); Android wrapper later |
 | Input | Tap/click choices; keyboard 1–9 |
-| Session length | 15–30 minutes per "Issue" (chapter); 6–8 hours per route |
-| Replay | 4 routes, 10 endings, ~50% of content unseen on a first run |
+| Session length | One **Night** (a run) is 20–40 minutes; one **Issue** (chapter) is 3–7 Nights; 10–14 hours per route |
+| Replay | Within a route: Nights vary (Hades-style). Across routes: 4 routes, 10 endings, ~50% of content unseen on a first playthrough |
 | Script size target | 90,000–110,000 words; ~220 scene nodes |
 | Rating target | Mature (ESRB M / PEGI 18): strong language, drug use, body horror, satire of religion and politics |
 | Team (min.) | 1 narrative lead, 1 writer, 1 programmer, 1 pixel artist, 1 chiptune composer, 1 QA/sensitivity reader |
@@ -71,7 +72,15 @@
    not hate. It is two kinds of love with no room for people as they are.
 6. **You write the column.** Each chapter ends at the layout desk of *Mondo
    3000*. What Hell Rot publishes changes the City.
-7. **The 8-bit costume is a lens.** The limited palette strips the City to
+7. **Failure is content, and coming home is story.** From *Disco Elysium*:
+   a failed check is never a dead end — it is a different, often funnier,
+   scene. From *Hades*: every Night ends at home, and home has something new
+   to say about how it went. The Rot (his disease) is the in-story reason he
+   keeps starting over.
+8. **Every afterlife has a price tag.** From *Grim Fandango*: the most
+   corrupt business in any city is the one that sells the hereafter. The
+   Merge sells upload slots. The Theogens sell splices. Hell Rot audits both.
+9. **The 8-bit costume is a lens.** The limited palette strips the City to
    signage and faces. Two things break the palette: the AI god (a smooth
    gold the NES cannot draw) and the gene-gods (pixels that pulse and breathe
    through colour cycling). Both are plot points.
@@ -189,8 +198,8 @@ Sample lines (tone reference):
 
 ### 3.1 Premise (back-of-the-box)
 
-December 2999. The last month of the millennium. The City has a mayoral
-election on Millennium Night, and it has two new gods.
+Day of the Dead, 2999. Sixty nights left in the millennium. The City has a
+mayoral election on Millennium Night, and it has two new gods.
 
 The first god is a machine. For fifty years the **Rivet Trust** — the
 denim dynasty whose rivets made the City's first fortune in the gold rush —
@@ -351,18 +360,29 @@ This is the main engine of the plot and the mechanics:
 ### 3.7 Structure: five Issues
 
 The game runs in **Issues** (chapters). Each Issue is one assignment from
-the Duchess, one investigation, one or two showdowns, and one column.
+the Duchess, played as several **Nights** (runs, §4), and ends with one
+column. Like *Grim Fandango*, which tells its story across four years of
+Days of the Dead, the game tells its story across the City's festivals of
+the dead and the year's end.
 
 ```
-PROLOGUE   The Mountain               (tutorial; set starting traits)
-ISSUE 1    "The Loin"                  (a riot, a failed splice, first contact with FRANCIS)
-ISSUE 2    "The Twin"                  (the Church of the Twin; the Merge; the Rivet succession)
-ISSUE 3    "The Underground"           (the Theogens; Delphine; the campaign; Rosa Quint)
+PROLOGUE   The Mountain           1 Nov   (tutorial; set starting traits)
+ISSUE 1    "The Loin"             2 Nov   Day of the Dead — FRANCIS goes public during the Mission procession
+ISSUE 2    "The Twin"            ~14 Nov  the Church of the Twin; the Merge; the Rivet succession; the ticket scandal
+ISSUE 3    "The Underground"     ~28 Nov  the Theogens; Delphine; the campaign; Rosa Quint
            ── ROUTE LOCK ──
-ISSUE 4    "Saint Rot"                 (the Rot advances; both canonizations; both offers)
-ISSUE 5    "Millennium Night"          (the Ascension, the Quickening, the election)
+ISSUE 4    "Saint Rot"           ~14 Dec  the Rot advances; both canonizations; both offers
+ISSUE 5    "Millennium Night"     31 Dec  the Ascension, the Quickening, the election
 EPILOGUE   One of 10 endings
 ```
+
+**The ticket scandal (a *Grim Fandango* homage, Issue 2).** The Merge
+promises that upload slots go to the most deserving — Halo is supposed to be
+virtue, measured. Hell Rot finds that premium slots meant for Halo-rich poor
+congregants are going, quietly, to Mister Sunday's donors at the Grove, while
+the people who earned them wait in the "long queue" for years. It is the
+single most damaging story the player can file against the Merge, and the
+one FRANCIS itself did not know about.
 
 ### 3.8 Millennium Night (the stakes)
 
@@ -411,6 +431,12 @@ billboard achieves nothing; the narration laughs at him instead.
 - **The first failed splice.** Hell Rot meets Tem and recognizes the edit in
   her arm. It is from his third paper. He can treat her, report her, or hide
   her.
+- **Day of the Dead.** The Issue opens on the Mission's Day of the Dead
+  procession: altars, marigolds, painted faces, families carrying photos of
+  their dead. Tonight, for the first time, some of those dead *answer* — the
+  Church of the Twin projects merged relatives onto the altars. Half the crowd
+  weeps with joy. Half the crowd is furious. The riot in the Loin starts an
+  hour later.
 - **First contact.** At the riot, FRANCIS speaks to him through a street
   screen. It knows his name, his papers, his diagnosis. It thanks him for
   making it possible. It calls him "beloved."
@@ -610,75 +636,199 @@ flickers from riot footage to soft gold light.*
 >
 > **[THE BASTARD]** *It's a thank-you card with a server farm. Shoot it.*
 >
-> **[THE SCIENTIST]** *Ask for its sample size. Anything that talks this much
+> **[PEER REVIEW]** *Ask for its sample size. Anything that talks this much
 > about love will eventually tell you its method.*
 >
-> **[THE CHEMIST — Clarity 6]** *The gold is very nice. Why is the gold so
+> **[THE CHEMIST — passive check, Clarity 6]** *The gold is very nice. Why is the gold so
 > nice? Don't trust nice gold.*
+>
+> **[KARL — passive check]** *THE FOG REMEMBERS JULIAN. JULIAN DID NOT WANT
+> THIS.*
 
 | Key | Choice | Mode | Effect |
 |---|---|---|---|
 | 1 | "Grateful? Then you know what I think of you." | **Invective** | Venom +1. FRANCIS: "I know what you *will* think of me. I'm patient." |
 | 2 | "Who signs your checks now that Julian's dead?" | **Interrogation** | Unlocks *The Rivet succession* early. Heat +1. |
 | 3 | "There's a kid under my coat with a Halo of zero. Explain her." | **Parrhesia** | Requires *Tem met*. Vow +1. FRANCIS cannot answer. First glitch in its voice — for one word, it sounds like Julian. |
-| 4 | "Your Weave runs at 4% error on long-term memory. I wrote the error. Want the citation?" | **Peer Review** | VERACITY check. Pass: FRANCIS's Certainty −1, and it asks to hear more. |
+| 4 | "Your Weave runs at 4% error on long-term memory. I wrote the error. Want the citation?" | **Peer Review** | PEER REVIEW white check (DC 9). Fail: retry after the skill rises. Pass: FRANCIS's Certainty −1, and it asks to hear more. |
 | 5 | *[The Gelastic]* Shoot the screen. | **Action** | Screen dies. A second screen lights up. Then a third. "That was wonderful. Again?" |
 | 6 | *[Say nothing. Take notes.]* | **Silence** | +1 Quote for Column 1. Tem whispers that the gold lady at the clinic said the same thing. |
 
 ---
 
-## 4. Core gameplay loop
+## 4. Play style: Disco Elysium × Hades × Grim Fandango
+
+### 4.1 What we take from each
+
+| Reference | What we take | What we leave |
+|---|---|---|
+| ***Disco Elysium*** | **No combat — dialogue is the combat.** Skills are **inner voices** that interrupt with opinions, jokes and lies. **Passive checks** (a voice speaks up unasked) and **active checks** (2d6 + skill, shown openly). **White checks** can be retried after the skill improves; **red checks** happen once and stick. A **Thought Cabinet** of ideas that take time to internalize. **Failure is content.** A broken, brilliant, self-destructive protagonist who rebuilds his identity through choices. Political and spiritual "vision quest" alignments. | The isometric open map (we use framed scenes). Detective-case structure (we use a weekly column). |
+| ***Hades*** | **The run-and-return loop:** each **Night** is a run into the City; a blackout, a lost showdown or dawn sends Hell Rot home. **A home hub that reacts to every run** — residents comment on what just happened. **Boons from rival gods** (here: Blessings from FRANCIS and Splices from the Theogens) that change your "build" for one run, plus **duo boons** when you take from both (here: **Contradictions**). **Permanent upgrades** between runs (Hades' Mirror → the **Archive**). **Voluntary difficulty** for bigger rewards (Hades' Pact → the **Contract**). **Gifts** that deepen relationships and unlock **keepsakes**. Recurring bosses whose banter changes every time. Story that advances *because* you failed. | Real-time action combat. Fixed escape route (our Night maps branch by district). |
+| ***Grim Fandango*** | **The afterlife as a corrupt business.** Manny Calavera sells afterlife travel packages; Hell Rot audits two companies that sell the hereafter (the Merge's upload slots, the Theogens' splices). **The stolen-ticket plot** (homage: the Merge's slot scandal, §3.7). **Inventory and combination puzzles** with absurd but fair logic (here: the kitchen lab and the Notebook). **Noir tone** — deadpan, romantic, funny. **Art deco meets Day of the Dead folk art.** A story told across **holidays of the dead.** A big-hearted sidekick (here: Moreau, and Junie at the wheel of the *Mondo 3000* van). A **jazz-noir score**. | Tank controls. Pixel-hunt puzzles: every puzzle in this game is solvable from the text. |
+
+### 4.2 The macro loop: Issues
 
 ```
- ┌──────────────┐   ┌────────────────┐   ┌────────────────┐   ┌───────────────┐
- │  ASSIGNMENT  │──▶│  STREET (Hub)  │──▶│   SHOWDOWN     │──▶│  THE LAYOUT   │
- │ The Duchess; │   │ Explore, talk, │   │ Rhetorical duel│   │ Write & file  │
- │ deadline set │   │ analyze samples│   │ with a target  │   │ the column    │
- └──────────────┘   └────────────────┘   └────────────────┘   └──────┬────────┘
-        ▲                                                            ▼
-        │                                              ┌──────────────────────┐
-        └──────────────────────────────────────────────│ THE CITY REACTS      │
-                                                       │ Halo, Helix, Heat,   │
-                                                       │ Opinion, flags       │
-                                                       └──────────────────────┘
+ ┌──────────────┐   ┌──────────────────────┐   ┌────────────────┐   ┌──────────────────┐
+ │  ASSIGNMENT  │──▶│  NIGHTS (runs, 3–7)  │──▶│  THE LAYOUT    │──▶│ THE CITY REACTS  │
+ │ The Duchess  │   │ go out, gather leads,│   │ write & file   │   │ Halo, Helix,     │
+ │ sets topic + │   │ black out, come home,│   │ THE ROT column │   │ Opinion, flags;  │
+ │ deadline     │   │ upgrade, go again    │   │                │   │ next Issue       │
+ └──────────────┘   └──────────────────────┘   └────────────────┘   └──────────────────┘
 ```
 
-1. **Assignment** — the Duchess sets a topic and a **Deadline** in Hours.
-2. **Street** — hub exploration, 4–8 locations per Issue. Conversations give
-   **Quotes**; investigation gives **Evidence**; the kitchen lab turns
-   **Samples** into verified Evidence.
-3. **Showdown** — one or two per Issue (§5.5).
-4. **The Layout** — build the column (§5.7).
-5. **The City reacts** — a *Mondo 3000* cover, a feed montage, a FRANCIS
-   sermon and a Theogen broadcast, each about you.
+- An Issue has a **deadline of 7 Nights**. The story needs at least **3
+  Leads** (major findings) to unlock a strong column; the player may file
+  any night after the first Lead.
+- Filing early pleases the Duchess. Filing late with more Leads makes a
+  stronger column. That trade is the Issue's main decision.
+- Story beats (§3.9) fire on fixed Nights or on Leads, not on run count, so
+  every player sees the plot at a steady pace no matter how often they fail.
+
+### 4.3 The micro loop: a Night (one run)
+
+A Night is a *Hades* run told in text. Hell Rot leaves the hub at dusk and
+moves through **5–8 scenes**, each a choice of doors. It ends at a **boss
+showdown**, a blackout, or dawn.
+
+```
+ HUB (the Mansion) ─▶ District 1 ─▶ District 2 ─▶ District 3 ─▶ BOSS SHOWDOWN ─▶ HOME
+   (pick Contract,     scene doors   scene doors   scene doors    (a cult leader,     (story,
+    keepsake, kit)                                                 a candidate,        gifts,
+                                                                    a god)             Archive)
+          ▲                                                                              │
+          └───────────── blackout / dawn / lost showdown: wake up at home ◀──────────────┘
+```
+
+**Door types** (each door shows its reward icon before you choose, as in
+*Hades*):
+
+| Door | *Hades* analogue | What happens |
+|---|---|---|
+| **Encounter** | Combat chamber | A minor showdown (a cop, a recruiter, a heckler). Win: a reward. |
+| **Source** | Reward chamber | A conversation that yields a **Quote** or a Lead fragment. |
+| **Gold door** | Olympian boon | FRANCIS offers a **Blessing** (§5.8). Accepting raises Halo. |
+| **Cyan door** | Olympian boon | A Theogen clinic offers a **Splice** (§5.8). Accepting raises Helix. |
+| **Lab** | Daedalus hammer | A combination puzzle with Samples and reagents (§5.9). |
+| **Dealer** | Charon's shop | **The Conductor**, who runs a cable car that is also a black market. Pay in Ink (§5.10). |
+| **Tonga Room** | Fountain chamber | Rest: restore Clarity, hear gossip. Every 30 minutes it rains indoors. |
+| **Dissonance door** | Chaos gate | A prank (§5.11). A curse for the next 3 scenes, then a big reward. |
+| **Story door** | Story room | A fixed plot scene. Always marked. Never random. |
+
+**Districts** set the door mix. Going *up* (the Span, the Twin, the Spire)
+favours gold doors. Going *down* (the Loin, the Undertrack, the Baths) favours
+cyan doors. Staying in the middle (the Haight, the Mission, the Wharf)
+favours Sources and Dissonance doors. The map itself puts the player
+between the two gods.
+
+### 4.4 Blackouts: the Rot as the roguelite reason
+
+In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
+**blacks out**. The Rot gives the loop a reason inside the story:
+
+- A Night ends in a blackout when **Clarity hits 0** or he **loses a boss
+  showdown** badly. He wakes at the Mansion. Junie found him. She always
+  finds him. She is getting tired of it.
+- **What he keeps:** everything in the **Notebook** that he *wrote down*
+  during the run (writing costs a little time, §5.7), all Ink, all Archive
+  upgrades, all relationship progress, all story flags.
+- **What he loses:** the run's Blessings and Splices, anything he only
+  *remembered*, and the run's temporary items.
+- **The design rule:** *write it down.* A player who notes everything moves
+  slowly. A player who trusts memory moves fast and loses more. This is the
+  Rot as a mechanic, and it grows harsher from Issue 4.
+- **Failure is content** (*Disco Elysium*): every blackout has a short
+  wake-up scene that changes with where and how he fell. Some of the best
+  writing in the game lives here.
+
+### 4.5 The hub: the Mondo 3000 Mansion
+
+The Duchess Nyx's crumbling Berkeley mansion is the House of Hades of this
+game: the magazine's office, its archive, and the only place Hell Rot feels
+safe.
+
+| Room | Who / what | Function |
+|---|---|---|
+| **The Salon** | The Duchess Nyx | New assignments, Duchess Patience, the **Contract** (§5.12) |
+| **The Fact Desk** | Yara | Verify Quotes; turn Lead fragments into Leads; her personal arc |
+| **The Garage** | Junie and the *Mondo 3000* van | Choose the starting district; her personal arc |
+| **The Kitchen Lab** | Hell Rot's bench | Synthesize gifts and kit; analyse Samples |
+| **The Archive** | Every back issue since 1989 | Spend Ink on permanent upgrades (§5.10) |
+| **The Conservatory** | Moreau's tank, the Duchess's talking houseplants | Moreau's growth; comic relief; one plant knows things |
+| **The Stairs** | Framed exposés (see companion doc §1.3) | Codex: notes on every person, cult and place met |
+| **The Letters Page** | A pile of mail | Readers, cult members and fans write in about the last column |
+
+**Reactivity rule (from *Hades*):** after every Night, at least two hub
+characters have a new line about what happened in it — the boss he lost to,
+the Splice he took, the joke he told on live feed. The writers need a large
+pool of short, conditional hub barks. Budget for about 3,000.
+
+**Gifts (from *Hades* Nectar):** Hell Rot can make one **gift** per Night in
+the kitchen lab (a custom drug, a bad poem, a repaired roller skate, a
+houseplant tonic) and give it to anyone in the hub or in the City. Gifts
+raise relationship rank and, at rank 2, unlock a **keepsake**:
+
+| Keepsake | From | Effect (equip one per Night) |
+|---|---|---|
+| Derby whistle | Junie | Once per Night, escape a lost showdown without blacking out |
+| Red pencil | Yara | First unverified item each Night auto-verifies |
+| Jar of Marin dirt | Moreau | +1 to every BRAINSTEM skill |
+| Chrome lighter | the Duchess | Start each Night with 20 Ink |
+| Thawed VHS tape | Mary | The Blood eye reveals one extra tell per scene |
+| A fragment of Julian | FRANCIS (Route B/D) | FRANCIS boss starts at −1 Certainty |
+| A glowing tooth | Delphine (Route C/D) | Delphine boss starts at −1 Conviction |
+| A costume (different every time) | Saint Nobody | One random Dissonance door guaranteed per Night |
 
 ---
 
 ## 5. Game mechanics
 
-### 5.1 Attributes
+### 5.1 Skills: four lobes, twelve voices (*Disco Elysium* model)
 
-Six attributes, rated 1–6, rolled with 2d6 (visible checks, Disco Elysium
-style). Each one is also an inner voice.
+Hell Rot is a neurobiologist, so his mind is literally organized by brain
+region. Four **Lobes** (attributes, 1–6) each govern three **skills** (voices).
+A skill's level starts equal to its Lobe and can rise with Archive upgrades,
+Thoughts and keepsakes, capped at Lobe + 2. Every skill speaks: it chips in
+during dialogue, unasked, when its passive check passes.
 
-| Attribute | Voice | Governs | Example check |
+| Lobe | Skill (voice) | What it knows | It says things like… |
 |---|---|---|---|
-| **VENOM** | *The Bastard* | Insult, intimidation, provocation | Make a cop lose his temper on camera |
-| **VERACITY** | *The Scientist* | Data, documents, lies, lab analysis | Read the edit in a FRANCIS gospel; find the failure rate in a splice |
-| **NERVE** | *The Mountain Man* | Courage, violence, endurance | Go down into the tunnels |
-| **CHARM** | *The Celebrity* | Fame, access, seduction | Talk past the cathedral doors |
-| **CHEMISTRY** | *The Chemist* | Drugs, reagents, altered perception | Synthesize a truth serum from what is in the bathroom |
-| **CRAFT** | *The Columnist* | Writing, timing, layout | Land a cover line that trends |
+| **CORTEX** (reason) | **PEER REVIEW** | Logic, method, data, spotting bad studies | *"Sample size of one. Her."* |
+| | **THE COLUMNIST** | Rhetoric, timing, the perfect insult, cover lines | *"Say it shorter. Then say it meaner."* |
+| | **FOOTNOTE** | Encyclopedic recall: history, science, City lore | *"Fun fact: this exact con worked in 1975, three blocks from here."* |
+| **LIMBIC** (feeling) | **THE BASTARD** | Venom, intimidation, provocation | *"Make him cry. On camera. You'll feel better."* |
+| | **BLOOD EYE** | Empathy; reading people; the psychological tells of a cult | *"She isn't happy. She is relieved. Those are different."* |
+| | **THE CELEBRITY** | Fame, charm, access, seduction | *"They know your face. Use it before it rots."* |
+| **BRAINSTEM** (body) | **MOUNTAIN MAN** | Nerve, endurance, pain, violence | *"You've survived worse. You've survived you."* |
+| | **THE CHEMIST** | Drugs, reagents, physiology; the kitchen lab | *"That's not wine. That's a vector. Don't drink it. Okay, sip it."* |
+| | **THE ROT** | The disease itself — the *Inland Empire* of this game. Hunches, hallucinations, memories that are not his. Grows louder as Clarity falls. Sometimes right when every other voice is wrong. | *"You've been here before. You don't remember. I do."* |
+| **CEREBELLUM** (reflex) | **CYAN EYE** | Perception: data overlays, splice marks, gospel edits | *"Third line of the gospel. The verb changed."* |
+| | **REFLEX** | Interrupts, timing, dodging, Gelastic aim | *"Now. NOW."* |
+| | **KARL** | The fog speaks — the *Shivers* of this game. The City's dead, the Commute, the weather of San Francisco talking to him alone. | *"WE WERE HERE BEFORE THE BRIDGE. WE WILL BE HERE AFTER THE GOD."* |
 
-18 points, min 1, max 5. Temperament applies a template.
+**Checks (from *Disco Elysium*):**
+
+- **Passive checks** run silently. If a skill passes, its voice speaks up
+  with information, a joke or a temptation.
+- **Active checks:** 2d6 + skill vs. difficulty (Trivial 6 → Impossible 18).
+  Odds always visible. Double six always passes; double one always fails.
+- **White checks** (most checks) can be retried after the relevant skill
+  rises — the door stays visible, marked with a lock.
+- **Red checks** (key moments) happen once. Their result is permanent and
+  often shapes the route.
+- **Failure is content:** every failed check leads somewhere written —
+  usually somewhere funnier and worse.
+
+**Starting build.** 12 points across the four Lobes (min 1, max 5), then a
+Temperament (§5.2).
 
 ### 5.2 Temperament (Prologue)
 
 | Choice | Temperament | Bonus | Flaw |
 |---|---|---|---|
-| Burn the lab | **Arsonist** | VENOM +1, NERVE +1 | Heat 2 at start |
-| Sell it to the Theogens | **Grifter** | CHARM +1, CHEMISTRY +1 | Helix 1 at start (they tell everyone) |
-| Just walk down | **Hermit** | VERACITY +1, CRAFT +1 | Duchess Patience −1 (late) |
+| Burn the lab | **Arsonist** | THE BASTARD +1, MOUNTAIN MAN +1 | Heat 2 at start |
+| Sell it to the Theogens | **Grifter** | THE CELEBRITY +1, THE CHEMIST +1 | Helix 1 at start (they tell everyone) |
+| Just walk down | **Hermit** | PEER REVIEW +1, THE COLUMNIST +1 | Duchess Patience −1 (late) |
 
 ### 5.3 Meters
 
@@ -686,7 +836,7 @@ style). Each one is also an inner voice.
 |---|---|---|---|---|
 | **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens; heroics on camera; FRANCIS decides to | Public humiliation; refusing worship in public |
 | **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge; defending splicers; using the kitchen lab for them | Exposing splice failures; siding with FRANCIS |
-| **Clarity** | 0–8 | Mental sharpness; the Rot (from Issue 4) | Rest; Yara's help; some drugs (briefly); small splices (Route C) | Each Issue from Issue 4; binges; stress |
+| **Clarity** | 0–8 | The run's "health": mental sharpness within a Night (§5.6) | Rest doors; Yara; Blessings and Splices; some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks; from Issue 4 the Rot lowers its maximum |
 | **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low; favours; the Hog's protection |
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
 | **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Thawed, Cops, Sunday camp, Pell camp, the Dissonance | Column angles | Column angles |
@@ -719,21 +869,33 @@ A turn-based duel against a target. The target has **Composure** (HP), a
 **Audience**. Each turn the player picks a mode and, where needed, a Notebook
 item as ammunition.
 
-| Mode | Classical root | Attribute | Strong vs. | Weak vs. | Cost / risk |
+| Mode | Classical root | Skill | Strong vs. | Weak vs. | Cost / risk |
 |---|---|---|---|---|---|
-| **Invective** | Vituperatio | VENOM | Smug, Charming | Furious | +Venom; Heat |
-| **Satire** | Irony, reductio ad absurdum | CRAFT | Pious, Serene | Defensive | Needs an Evidence item |
-| **Parrhesia** | Frank speech at personal risk | VERACITY | Serene, Pious | Smug | +Vow; costs Halo or Helix |
-| **Interrogation** | Elenchus (Socratic questioning) | VERACITY | Defensive | Charming | Damage doubles on the 3rd turn in a row |
-| **Peer Review** | The scientific method | VERACITY | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item; the strongest single hit in the game |
-| **Jeremiad** | Prophetic lament | VENOM + CRAFT | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
-| **Appeal** | Pathos | CHARM | Furious | Smug | Uses a companion; costs Trust if it fails |
-| **Apophasis** | "I won't mention that…" | CRAFT | Charming | Serene | Use one *unverified* Quote without Fabrication risk, once per showdown |
+| **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom; Heat |
+| **Satire** | Irony, reductio ad absurdum | THE COLUMNIST | Pious, Serene | Defensive | Needs an Evidence item |
+| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
+| **Interrogation** | Elenchus (Socratic questioning) | PEER REVIEW | Defensive | Charming | Damage doubles on the 3rd turn in a row |
+| **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item; the strongest single hit in the game |
+| **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
+| **Appeal** | Pathos | THE CELEBRITY | Furious | Smug | Uses a companion; costs Trust if it fails |
+| **Apophasis** | "I won't mention that…" | FOOTNOTE | Charming | Serene | Use one *unverified* Quote without Fabrication risk, once per showdown |
 | **Silence** | Aposiopesis | — | Targets with a guilty Evidence flag | — | The target fills the silence and may self-incriminate |
-| **Action** | — | NERVE | Anyone in reach | Live audience (Heat ×2) | The Gelastic ends the conversation, not the argument |
+| **Action** | — | REFLEX | Anyone in reach | Live audience (Heat ×2) | The Gelastic ends the conversation, not the argument |
 
 **Interrupts.** Twice per showdown, a red (Venom) or blue (Vow) prompt flashes
-for 3 seconds. Take it or lose it.
+for 3 seconds (REFLEX adds a second per level above 3). Take it or lose it.
+
+**Builds (from *Hades*).** The Blessings, Splices and Contradictions taken
+during the Night (§5.8) change how modes behave, so the same showdown plays
+differently from run to run.
+
+**Recurring bosses (from *Hades*).** Each Issue has one boss per route
+district, and players may face them many times. Every rematch has new
+banter that remembers the last fight. **Sister Halcyon and Brother Cask**
+(her Theogen counterpart, a splice-enforcer the size of a door) are the
+recurring double act, the Theseus and Asterius of this game: they appear
+together on Nights when both cults want the same story, bicker with each
+other, and slowly become the funniest pairing in the cast.
 
 **The two god-bosses.**
 
@@ -748,69 +910,203 @@ for 3 seconds. Take it or lose it.
   The Gelastic does nothing: she spliced out the laughter reflex years ago.
   It is the creepiest line in the game.
 
-### 5.6 Time and pressure: Hours, Deadline, the Duchess
+### 5.6 Time and pressure: Hours, Nights, Deadline, the Duchess
 
-- Each Issue has a budget of **Hours** (12–16). Travel costs 1. Long
-  conversations cost 1–2. Lab analysis costs 2. Drugs can buy Hours at a
-  Clarity cost.
-- **Deadline.** At 0 Hours, Hell Rot goes to the Layout with what he has.
+- **Hours (per Night).** Each Night has **10 Hours**, dusk to dawn. Each
+  scene door costs 1. Long conversations and lab work cost 1–2. Writing in the
+  Notebook costs ¼ Hour per item. Drugs can buy Hours at a Clarity cost. At
+  dawn the Night ends and he goes home with what he wrote down.
+- **Clarity (per Night).** Clarity is the run's "health": it starts each
+  Night full, drops with stress, drugs, lost exchanges and failed red checks,
+  and refills at home. At 0 he blacks out (§4.4). From Issue 4 the Rot lowers
+  **maximum** Clarity by 1 per Issue — the roguelite run gets shorter as the
+  disease advances, unless a cure lifts the cap.
+- **Nights (per Issue).** Seven Nights to the deadline (§4.2).
 - **Duchess Patience** (0–5). Late or weak columns lower it. At 0 the Duchess
-  gives the next assignment to someone else, and Hell Rot spends half an Issue
-  on her couch, in withdrawal, listening to her houseplants.
+  gives the next assignment to someone else, and Hell Rot spends an Issue on
+  her couch, in withdrawal, listening to her houseplants (a short, mandatory
+  "bad Issue" that still advances the plot).
 
-### 5.7 The Layout: column builder
+### 5.7 The Notebook: write it down
 
-At the end of each Issue, Hell Rot builds his column, **THE ROT**.
+- **Quotes** — exact words, with speaker, time and place.
+- **Evidence** — documents, footage, files; each `verified: true/false`.
+- **Samples** — biological and data samples (a splice biopsy, a Weave log).
+  The kitchen lab turns them into verified Evidence.
+- **Leads** — major findings assembled from fragments at Yara's Fact Desk.
+  Columns need Leads.
+- **Dossiers** — one page per cult (companion doc §6).
+- **Thoughts** — the **Thought Cabinet** (*Disco Elysium*). Up to 3
+  internalized Thoughts at once (*"Every Halo Is a Receipt," "Moreau Is the
+  Only Honest Citizen," "Maybe I Do Want to Live Forever," "The Body Is a
+  Draft," "I Have Been Here Before"*). A Thought takes **3 Nights** to
+  develop, then gives a permanent bonus and a drawback. Both cults offer
+  Thoughts. Theirs are quietly corrupting. THE ROT offers Thoughts too, and
+  some of them are true.
+
+**Remembered vs. recorded.** During a Night, new items land in **Memory**
+first (a short, volatile list, max 6 items). Writing an item down moves it to
+the Notebook and costs ¼ Hour. On blackout, Memory empties. On a safe return
+home, Memory transfers automatically. From Issue 4, Memory holds fewer items
+and THE ROT may swap one with a false memory — the Fabrication risk of a
+failing mind.
+
+### 5.8 Blessings, Splices and Contradictions (the *Hades* boon system)
+
+During a Night, gold doors offer **Blessings** from FRANCIS and cyan doors
+offer **Splices** from the Theogens. Each door offers a choice of three. They
+last **for that Night only** (a Splice's *genetic* effects in the story are
+permanent only on Route C; mechanically, every run starts clean).
+
+**FRANCIS's Blessings** (gold; each raises Halo +1 when taken):
+
+| Blessing | Effect for this Night |
+|---|---|
+| **Beatitude** | *Appeal* also restores 1 Clarity |
+| **Beloved** | The first failed check each scene becomes a white check you may retry at once |
+| **Omniscience (lite)** | Every Source door shows its Quote before you enter |
+| **The Long Queue** | Every Dealer price −30% (FRANCIS pays) |
+| **Gospel Edit** | *Satire* hits twice, but the second hit is FRANCIS's kinder rewrite |
+| **Twin Sight** | CYAN EYE +2; see the Twin's version of every scene |
+
+**The Theogens' Splices** (cyan; each raises Helix +1 when taken):
+
+| Splice | Effect for this Night |
+|---|---|
+| **Adrenal Bloom** | *Invective* hits twice |
+| **Axolotl Mend** | Regain 1 Clarity after every won exchange |
+| **Night Retina** | Dark scenes reveal an extra door |
+| **Extra Cortex** | PEER REVIEW +2, but THE ROT also +1 (louder voice) |
+| **Glow** | Theogen NPCs treat you as kin; Merge NPCs refuse to talk |
+| **Pain Gate** | MOUNTAIN MAN +2; the Gelastic's recoil does nothing |
+
+**Contradictions** (the duo boons). If Hell Rot holds at least one Blessing
+*and* one Splice, a gold-and-cyan door can appear offering a
+**Contradiction** — the strongest effects in the game, and the mechanical
+form of being stuck in the middle. Each costs 2 maximum Clarity for the
+Night, and the Rot voice comments on every one.
+
+| Contradiction | Requires | Effect |
+|---|---|---|
+| **Holy Meat** | Beatitude + Axolotl Mend | Every won exchange restores 2 Clarity |
+| **Ghost in the Gene** | Twin Sight + Extra Cortex | *Peer Review* ignores the "verified" requirement once per scene |
+| **The Unbearable Halo** | Beloved + Glow | Both cults' NPCs adore you; neither will say anything true |
+| **Sermon on the Mount Tam** | Gospel Edit + Adrenal Bloom | *Jeremiad* hits the whole audience — and raises Halo *and* Helix by 2 |
+
+**The trap, by design.** Boons make Nights easier and stronger. Every boon
+also pushes Halo or Helix up, and those meters decide the route lock. A
+player who greedily takes every boon is choosing a god without noticing —
+which is exactly what both cults want.
+
+### 5.9 The kitchen lab and puzzles (the *Grim Fandango* layer)
+
+Lab doors in a Night, and the kitchen lab at home, hold **combination
+puzzles** in the spirit of *Grim Fandango*: absurd, fair, solvable from the
+text alone.
+
+- **Inputs:** Samples, reagents bought from the Conductor, household objects,
+  and Moreau (who regenerates whatever you take from him and resents it).
+- **Example puzzles:**
+  - Get past the Geary Cathedral's Halo scanner: combine *a merged
+    congregant's hair* (Sample) + *gold leaf from the Dome* + *Moreau's slime*
+    → a fake Halo that lasts one scene.
+  - Read a Theogen clinic's encrypted genome ledger: feed it to the Duchess's
+    talking houseplant, which is itself a splice and can read DNA.
+  - Make a gift for Delphine that she cannot refuse: a glass of fog wine from
+    the New Breath, with one of Hell Rot's old lab notebooks as the cork.
+- **Rules:** every puzzle has at least two solutions, one of them a skill
+  check; hints come from the voices (FOOTNOTE knows history, THE CHEMIST
+  knows reactions, THE ROT knows things it should not). No pixel hunts.
+
+### 5.10 Ink and the Archive (permanent upgrades)
+
+- **Ink** is the run currency. Earn it from Sources, won showdowns, Dealer
+  trades and published columns. Spend it at the Conductor during a Night, or
+  bank it.
+- **The Archive** (the *Hades* Mirror): spend banked Ink on permanent upgrades
+  between Nights. Each upgrade has two mutually exclusive versions, switchable
+  at home.
+
+| Archive upgrade | Version A | Version B |
+|---|---|---|
+| **Steno** | Writing costs no Hours | Memory holds 3 more items |
+| **Second Wind** | Once per Night, survive a blackout with 2 Clarity | Start each Night with +2 Clarity |
+| **Press Pass** | Start in any unlocked district | First Encounter door each Night is auto-won |
+| **Fact Desk** | Yara verifies one item per Night remotely | Lead fragments merge without Yara |
+| **Old Lab Keys** | One free lab door per Night | Lab puzzles show one extra hint |
+| **Cold Read** | Blood Eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
+| **Skill points** | +1 to any skill (repeatable, rising cost) | — |
+
+### 5.11 Dissonance doors (the *Hades* Chaos gate)
+
+A Dissonance door costs something up front — a **Prank Curse** for the next
+three scenes — and then pays big. The pranks come from the companion doc §5.
+
+| Curse (next 3 scenes) | Then the reward |
+|---|---|
+| You are in a Santa suit; nobody takes you seriously (CELEBRITY −3) | A Disruption Event scene opens a locked district |
+| You are handcuffed to a bride in a wedding gown (she will not stop talking) | A Lead fragment from her, she was sincere after all |
+| The Doggie heads are following you | The Final Process now treats you as a prophet for this Night |
+| You must speak only in cover lines (COLUMNIST checks only) | +1 permanent COLUMNIST |
+| The fog is singing to you (KARL is the only voice that works) | KARL reveals one secret about a merged person |
+
+### 5.12 The Contract (voluntary difficulty, the *Hades* Pact)
+
+The Duchess offers harder terms for better pay. Before a Night, the player
+may sign **Clauses**. Each raises the Night's **Ink multiplier** and unlocks
+rarer rewards and extra hub scenes.
+
+| Clause | Effect |
+|---|---|
+| **Tight Deadline** | 8 Hours instead of 10 |
+| **No Assistant** | Junie or Yara stays home |
+| **Bad Batch** | Drugs have a 30% chance to do the opposite |
+| **Hostile Press** | All Encounter targets start with +2 Composure |
+| **Moreau Stays Home** | No free success |
+| **Word Count** | The column needs one more Lead |
+| **Live Feed** | Every showdown has an audience; Heat ×2 on everything |
+
+### 5.13 The Layout: column builder
+
+When the player chooses to file (any Night after the first Lead), Hell Rot
+builds his column, **THE ROT**.
 
 1. **Target** — who the column is about.
 2. **Angle** — one rhetorical mode, used on the readership.
-3. **Evidence** — drag 2–4 Quotes/Evidence into the paragraph slots. Each has
-   a weight and a *verified* flag. Unverified items risk Fabrication unless
-   Yara checks them (1 Hour) or the lab verifies them (2 Hours).
-4. **Cover line** — three options, rated by CRAFT.
-5. **File.** The game assembles the column from templates and slotted quotes,
+3. **Leads & Evidence** — drag Leads and 2–4 Quotes/Evidence into the
+   paragraph slots. Unverified items risk Fabrication unless Yara or the lab
+   verifies them.
+4. **Cover line** — three options, rated by THE COLUMNIST.
+5. **File.** The game assembles the column from templates and slotted items,
    shows it as a *Mondo 3000* spread (§8.6), and applies the effects.
 
 The next morning both cults respond: a FRANCIS sermon that reframes the
 column as holy, and a Theogen broadcast that reframes it as prophecy. The
 better the column, the more lovingly both sides misread it.
 
-### 5.8 The Notebook
-
-- **Quotes** — exact words, with speaker, time and place.
-- **Evidence** — documents, footage, files; each `verified: true/false`.
-- **Samples** — biological and data samples (a splice biopsy, a Weave log).
-  The kitchen lab turns them into verified Evidence.
-- **Dossiers** — one page per cult (companion doc §6).
-- **Thoughts** — up to 3 internalized Thoughts at once (*"Every Halo Is a
-  Receipt," "Moreau Is the Only Honest Citizen," "Maybe I Do Want to Live
-  Forever," "The Body Is a Draft"*). Each takes one Issue to develop, then
-  gives a passive bonus and a drawback. Both cults offer Thoughts. Theirs are
-  quietly corrupting.
-
-### 5.9 Equipment
+### 5.14 Equipment
 
 | Item | Effect |
 |---|---|
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
-| **The Two Eyes** | Toggle in any scene. **Cyan eye** (lab-grown): shows Halo and Helix values over people, splice marks, and the hidden edits in FRANCIS gospels. **Blood eye** (human): shows the psychological tells of cult control (companion doc §2.2). The core investigation tool. |
-| **Kitchen lab** | Between Issues, analyse a Sample or synthesize one item: a truth serum, an antidote, a fake Halo, a cheap glow that passes for a Theogen splice. 30% of the time the reaction does something else. |
-| **Chemicals** | Consumables: attribute boosts, extra Hours, visions. Each costs Clarity. |
+| **The Two Eyes** | Toggle in any scene. **Cyan eye** (lab-grown): Halo and Helix values over people, splice marks, gospel edits. **Blood eye** (human): the psychological tells of cult control (companion doc §2.2). |
+| **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
 
-### 5.10 Companions & Trust
+### 5.15 Companions, Trust and gifts
 
 Junie and Yara have **Trust 0–5**. Trust rises with Vow acts, kept promises,
-and choosing them over the story. It falls with Venom aimed down,
-Fabrication, and using them as ammunition. Personal arcs: Junie (the Merge
-wants her, because her derby knees are failing and the Twin would give her a
-perfect body to skate in forever); Yara (her own byline, her aunt, and
-whether she wants Hell Rot's life). At Trust 5 each unlocks a unique
-interrupt.
+gifts (§4.5), and choosing them over the story. It falls with Venom aimed
+down, Fabrication, and using them as ammunition. Each Night, the player
+picks one companion to come along (their skills add to checks and unlock
+interrupts). Personal arcs: Junie (the Merge wants her, because her derby knees
+are failing and the Twin would give her a perfect body to skate in forever);
+Yara (her own byline, her aunt, and whether she wants Hell Rot's life). At
+Trust 5 each unlocks a unique interrupt and a final keepsake upgrade.
 
-### 5.11 Degradation: the Rot in the interface
+### 5.16 Degradation: the Rot in the interface
 
-From Issue 4, Clarity loss shows in the UI itself.
+From Issue 4, low Clarity shows in the UI itself, inside every Night.
 
 | Clarity | UI effect |
 |---|---|
@@ -820,23 +1116,26 @@ From Issue 4, Clarity loss shows in the UI itself.
 | 1–0 | Choices appear out of order. Inner voices disagree about what just happened |
 
 FRANCIS's text never degrades: always perfectly crisp. Theogen text grows
-*sharper* as Hell Rot's Helix rises: on Route C, splicing restores the UI.
-Both cures pitch themselves through the interface.
+*sharper* as Helix rises: on Route C, splicing restores the UI. Both cures
+pitch themselves through the interface.
 
-### 5.12 Failure states
+### 5.17 Failure states
 
-No hard game-overs. Failure is narrative:
+No hard game-overs. Failure is content:
 
-- Lose a showdown → the target's version runs first; the column is weaker.
-- Heat 10 → arrest; lose an Issue's Hours; Junie or the Hog can bail him out.
-- Duchess Patience 0 → assignment pulled.
+- Blackout → wake at the Mansion with a written scene about the fall (§4.4).
+- Lose a boss showdown → the target's version of the story runs first; the
+  boss remembers it at the rematch.
+- Heat 10 → a Night in a cell (a full, written run inside the jail, with its
+  own doors and a boss: the desk sergeant).
+- Duchess Patience 0 → the couch Issue.
 - Two Fabrications → ending 10.
 
-### 5.13 Save system
+### 5.18 Save system
 
-Autosave at every filed column and every location change. Three manual slots,
-*Back Issues*. An **Archive** screen shows every column filed in the run, in
-full, as a *Mondo 3000* spread.
+Autosave at every door and every return home. Three manual slots, *Back
+Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
+3000* spread — the record of the playthrough.
 
 ---
 
@@ -852,6 +1151,9 @@ full, as a *Mondo 3000* spread.
 | Both gods are cures | Clarity loss vs. FRANCIS's crisp text and the Theogens' sharpening text |
 | The scientist's answer to faith | Peer Review: the strongest move, and it only works with verified data |
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
+| Godhood is a shortcut | Blessings and Splices make Nights easier and quietly choose your route (§5.8) |
+| The disease erases him | Blackouts empty Memory; only what he writes down survives (§4.4) |
+| Every afterlife has a price tag | The ticket scandal; boons priced in Halo and Helix; the Conductor's black market |
 
 ---
 
@@ -863,6 +1165,11 @@ full, as a *Mondo 3000* spread.
 - **Disability and the body.** The Theogens' failed splices must never be a
   freak show. They are people, cared for by their own community, with their
   own voices. One of them must be a fully written character, not a reveal.
+- **Day of the Dead.** The Mission procession is a real, living community
+  tradition. The game honours it and never mocks it: the satire targets the
+  Church of the Twin for exploiting it, not the families who keep it. Consult
+  Mission District cultural organizations and a Mexican-American sensitivity
+  reader before any public release.
 - **Illness.** The Rot is fictional but maps onto real dementia. A
   sensitivity reader with lived or care experience reviews the Clarity UI.
 - **Drugs** cost Clarity. No drug is free. No drug is a joke.
@@ -881,6 +1188,21 @@ adventure look — framed scene on top, text box and portrait below — broken,
 between chapters, by garish, collage-style magazine covers that riff on early
 1990s desktop-publishing psychedelia: chrome type, fractal backdrops,
 cut-out faces, too many fonts.
+
+**The *Grim Fandango* layer.** Three borrowings shape the look:
+
+- **Art deco noir.** The Church of the Twin, the Rivet mansion and the Twin
+  itself are drawn as streamlined 1930s deco — sunbursts, chrome, long
+  shadows (except in the Twin, which has none). The afterlife industry
+  always dresses like a luxury liner.
+- **Day of the Dead folk art.** The Mission procession, the altars and the
+  murals use papel picado borders, marigold orange and calavera faces. In the
+  Twin, the merged appear as glowing calavera-style avatars — a direct visual
+  rhyme with *Grim Fandango*'s skeleton cast. This is a living Mexican and
+  Chicano tradition, and the Mission's real procession is a community event:
+  see §7 for the consultation rule.
+- **Noir framing.** Rain, neon, venetian-blind shadows in the Mansion, a
+  hat-and-coat silhouette for Hell Rot on every chapter card.
 
 ### 8.2 Resolution & layout
 
@@ -989,6 +1311,12 @@ in the companion document §3. Key rules:
 - **Theogen theme:** a heartbeat on the triangle channel under detuned pulses.
   It grows in the mix as Helix rises. When both meters are high, both themes
   play at once and clash. That is the sound of being stuck in the middle.
+- **Noir jazz (the *Grim Fandango* layer):** the hub theme is a slow
+  chiptune jazz ballad — walking bass on the triangle, a muted-trumpet lead on
+  pulse 1 — that gains an instrument for every keepsake unlocked. Day of the
+  Dead scenes add a son jarocho rhythm on the noise channel.
+- **Boss themes (the *Hades* layer):** every recurring boss has a theme that
+  gains a layer each rematch.
 - **SFX:** typewriter clacks for text; a wet, helpless giggle for the
   Gelastic; a small bubbling chirp for Moreau.
 
@@ -1004,6 +1332,8 @@ a service worker, optional Android wrapper.
 | Files | `hellrot.html` + `hellrot-sw.js` + `hellrot.webmanifest` |
 | Rendering | `<canvas>` 256×240 for the scene; DOM text box for accessibility |
 | Story format | JSON node graph (below), written in a plain-text script format and compiled by a small build script |
+| Night generator | Seeded door generator: each district has a weighted door table; story doors are fixed by Issue and Night; all random rolls come from the seed so a Night can be replayed for bug reports |
+| Hub barks | Conditional bark pool (~3,000 lines) keyed on last-Night flags, with a no-repeat memory, *Hades*-style |
 | State | Flat flag map + meters, saved to `localStorage` per *Back Issue* slot |
 | Dice | 2d6 + attribute vs. difficulty 7–13; results visible |
 | Accessibility | Text speed, dyslexia-friendly font, "no timed interrupts," high-contrast palette, Clarity-effects slider, palette-cycling off switch (photosensitivity) |
@@ -1019,13 +1349,13 @@ a service worker, optional Android wrapper.
   "portrait": "francis",
   "text": "Doctor Rothberg. Beloved. ...",
   "voices": [
-    { "voice": "VENOM", "min": 3, "text": "It's a thank-you card with a server farm." }
+    { "voice": "THE_BASTARD", "passiveDc": 8, "text": "It's a thank-you card with a server farm." }
   ],
   "choices": [
     {
       "label": "Your Weave runs at 4% error on long-term memory.",
       "mode": "PEER_REVIEW",
-      "check": { "attr": "VERACITY", "dc": 9 },
+      "check": { "skill": "PEER_REVIEW", "dc": 9, "type": "white" },
       "requires": ["EVIDENCE_WEAVE_ERROR"],
       "effects": { "francisCertainty": -1, "flags": { "FRANCIS_CURIOUS": true } },
       "goto": { "pass": "I1_FRANCIS_LISTENS", "fail": "I1_FRANCIS_PRAISES" }
@@ -1041,7 +1371,7 @@ a service worker, optional Android wrapper.
 
 | Milestone | Content | Est. |
 |---|---|---|
-| **Vertical slice** | Prologue + Issue 1, 1 showdown, Layout v1, 6 scenes, 10 portraits | 6–8 weeks |
+| **Vertical slice** | Prologue + Issue 1 as 3 playable Nights, the Mansion hub, 4 Blessings, 4 Splices, 1 Contradiction, 1 recurring boss, Layout v1, 8 scenes, 10 portraits | 8–10 weeks |
 | **Alpha** | Issues 1–3, route lock, all systems | +12 weeks |
 | **Beta** | All 4 routes, 10 endings, full art and audio | +14 weeks |
 | **Release** | Polish, sensitivity review, accessibility | +4 weeks |
@@ -1050,14 +1380,19 @@ a service worker, optional Android wrapper.
 
 1. **Writing quality.** The game lives or dies on Hell Rot's voice. Budget
    the writer like a lead programmer.
-2. **Branch explosion.** Four routes is the ceiling. Lock hard after Issue 3.
+2. **Roguelite vs. story pacing.** Repeat runs can stall a plot. Rule: plot
+   beats fire by Night and Lead, never by run count, and every run — even a
+   fast blackout — must show at least one new line of story.
+3. **Branch explosion.** Four routes is the ceiling. Lock hard after Issue 3.
    Use flags to *colour* shared scenes, not duplicate them.
-3. **Two cults, one theme.** The player must feel that both cults are
+4. **Two cults, one theme.** The player must feel that both cults are
    tempting. Rule: every FRANCIS scene and every Theogen scene must contain
    something genuinely beautiful.
-4. **Influence vs. imitation.** Keep Hell Rot visibly his own man. Writers
+5. **Influence vs. imitation.** Keep Hell Rot visibly his own man. Writers
    read Thompson and *Mondo 2000* for voice, not *Transmetropolitan* for
-   lines.
+   lines. The same goes for systems: borrow the *shape* of *Disco Elysium*'s
+   skills, *Hades*' loop and *Grim Fandango*'s puzzles, never their names,
+   text or art.
 
 ---
 
