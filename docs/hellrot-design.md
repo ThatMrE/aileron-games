@@ -817,6 +817,22 @@ nerve damage, **he might score below the threshold himself**.
 - **The Burn survivors** are characters, not victims-of-the-week: one of them,
   **Desh**, writes letters to *Mondo 3000* with a typing aid, and is the
   sharpest reader the magazine has.
+- **Desh's arc: letter-writer, plaintiff, witness.** Desh scored 31 on the
+  Index and wrote in to say so. He is the BFF's star plaintiff. Like Tem, he
+  feels crowds too much — a lighter echo of the god-gene's first stage —
+  and in Issue 3 he mentors her. In Issue 5 he testifies. On New Year's Eve
+  he leads the thirty-one survivors to the Palace of Fine Arts to tell the
+  12,000 what the edit did to them: living proof that the god-gene kills.
+- **How the BFF and the survivors end:**
+
+  | Ending | What happens |
+  |---|---|
+  | Peer Review / The Hog's Bargain (A) | Desh's data is in the Open Dataset. The BFF wins on appeal; Prop F is struck down |
+  | Iconoclast (B) | Prop F narrowly fails. The BFF's slogan runs on the Church's own screens |
+  | Saint Rot (B) | Prop F passes. Desh is placed under guardianship and keeps writing letters nobody prints |
+  | New Flesh (C) | The Theogens offer Desh a repair splice. He takes it, glows, and stops writing |
+  | The Mob (C) | The BFF become the Theogens' lawyers |
+  | Mortal (D) | Prop F is rewritten. The Emperor's decree endorses it, and Desh writes the new law's first line: *"Rights don't come with a score."* |
 - **The judge's lodge membership** is the scoop that can sink Prop F — if
   Hell Rot can prove it without Fabrication. **The Blood Eye finds it;
   paper proves it.** Seeing the gold ring tells Hell Rot where to look, but
@@ -1840,6 +1856,17 @@ Route-specific content follows (§3.10).
   how Sunday's people forged the challenge — and, if she knows Hell Rot saved
   her, names the order he gave on the night of the dinner. Sunday smiles
   through it from the front row. If she died, her empty chair is the story.
+  **Hell Rot takes his own test.** On the stand, the City's lawyer demands
+  that the inventor of the Rothschild Index take it, live. The score
+  follows his Clarity: at 4 or more he scores just above the threshold; at
+  3 or less — likely by Thursday — he scores **below** it, which under Prop
+  F means guardianship (the Duchess or Yara named as guardian). For four
+  minutes in 2044 his Index read zero; now its inventor fails his own test,
+  while the Emperor scores near the top and Ione goes off the chart.
+  Publish the number: Vow up, Prop F loses votes, the BFF wins the argument.
+  Leave it out: not a Fabrication, but Yara Trust −1, and the other side
+  leaks it on Friday. If Prop F passes and he scored below the line, the
+  Epilogue opens with a court letter naming his guardian.
   Next door at the courthouse, **BFF v. City** reaches the
   bench, and Hell Rot takes the stand — the cross-examination showdown
   (§3.3c) — with Judge Ostrander presiding and a faint gold ring in his aura
@@ -3367,6 +3394,14 @@ Plot questions the writers' room must answer before Alpha.
 - **Sister Halcyon** is Hallie Kowalczyk, 44, a Merged ex-seminar trainer
   whose sermons the Twin drafts. She was Delphine's nurse in 2034. She can
   stop the Ascension herself if she learns the truth (§3.6c).
+- **Hell Rot takes the Index on the stand** (Issue 5). Below the line at
+  low Clarity; he chooses whether to publish it.
+- **Desh** is the BFF's star plaintiff and leads the Burn survivors to the
+  Palace on New Year's Eve; the BFF's ending follows the route (§3.3c).
+- **The House counts Commissions.** After three written as ordered it stops
+  trusting him; after five it votes him off the Fact Desk. The one he cannot
+  refuse is the last, from Julian: *the Rivet family, the truth* (Mondo doc
+  §4.3).
 - **Ostrander is exposed on paper,** not by the Blood Eye alone: the
   Presidio minute book or Dr. Hale's torn page, printed by Hell Rot with
   Yara's check (§3.3c).
@@ -3468,16 +3503,9 @@ Plot questions the writers' room must answer before Alpha.
 
 **Proposition F and the courts**
 
-8. **Does Hell Rot take the Index on screen?** If he scores below the
-    threshold, does he lose rights in his own story — and does he publish
-    the number?
-9. **How do the BFF and the Burn survivors end** on each route? Desh needs
-    an arc, not a cameo.
 
 **Hell Rot**
 
-16. **How many Commissions does he write as ordered** before the House stops
-    trusting him — and is there a Commission he cannot refuse?
 
 **The City**
 

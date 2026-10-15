@@ -259,6 +259,19 @@ assignment, a Commission may arrive. The player can:
   toward the Order.
 - **Refuse it** — Duchess Patience drops, and the House notices.
 
+**The House keeps count.** After the **third** Commission written as
+ordered, the House stops trusting him: every housemate's Trust −1, and Yara
+confronts him. After the **fifth**, the House votes him off the Fact Desk:
+Yara stops verifying for him, and Route A closes.
+
+**The Commission he cannot refuse.** The last one arrives at dusk on New
+Year's Eve: *"TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever
+it takes."* It is from Julian — set up before the upload, kept paid by the
+Emperor. He cannot refuse it because it is the true story: writing it is
+telling the truth on Rivet money, the House's standing compromise taken to
+its end. **As ordered**, it reads as Rivet's confession (Readers +). **His
+own way**, it is his column (Vow +).
+
 The Emperor's own Commissions are different: following them leads, step by
 step, to the Order's lodge.
 
