@@ -1851,6 +1851,8 @@ Taking it gets the data out faster and taints it.
 
 *Climax:* he publishes the data at midnight, and splits his time on
 New Year's Eve between both sites — the hardest timing puzzle in the game.
+With Bishop Trust ≥ 4, the Bishop can hold the Palace of Fine Arts for him
+(Mondo doc §5, *"Late"*) while Hell Rot is on the bridge.
 
 #### Route B — MERGE (the machine's saint)
 
@@ -1928,6 +1930,13 @@ holds the full set). Three set the tone:
 - **Saint Rot:** she prints the Emperor's columns under Hell Rot's byline,
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
+
+**The Bishop's line.** Two endings close on him:
+
+- **Mortal:** *"The Bishop preached one last sermon, to the Nortonians on
+  the Ferry Building steps: 'The future is late. Thank God.'"*
+- **Saint Rot:** *"The Bishop became the Emperor's bishop, for real. He
+  never booked another stadium. He never needed to."*
 
 **Otto's line.** Two endings close on her:
 
@@ -3077,6 +3086,11 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life; her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **The Bishop** is Absalom Knoll, 58, who took the name "Null" after 2045.
+  He was right: the Singularity came, four years late, in the fog. His
+  temptation is vindication. At the Ascension he can bless the crowd into
+  the fog or send them home, and he can hold the Palace for Hell Rot on
+  New Year's Eve (Mondo doc §5).
 - **Otto** is a pharmacologist who sat on Hell Rot's PhD committee. In 2045
   Brandvold told her the god-gene warning out loud; she is a living witness,
   if she can remember. In *"Expiry Date"* her heart stumbles in Issue 5 and
