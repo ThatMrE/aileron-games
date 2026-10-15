@@ -1943,7 +1943,9 @@ Hell Rot accepts the sainthood — as a weapon. If the City will only listen to 
 saint, he will be the saint who tells it the truth. The Emperor gives him
 everything: access, reach, a cure on request. The more he uses his Sainthood,
 the more his readers stop thinking, and the more his columns come back from
-the Emperor subtly improved. Junie is the conscience of this route. The Theogens
+the Emperor subtly improved — because he is wearing the Church's gold
+Halos, and the Twin is writing more of him every night (§5.14b). Junie is
+the conscience of this route. The Theogens
 become his enemies, and violent.
 
 *Climax:* at the Ascension, under the Palace of Fine Arts rotunda: merge or not?
@@ -1986,8 +1988,8 @@ both have to break.
 | 1 | **The Mountain** | Any | Survive with Clarity ≤ 2, refuse both cures, Junie + Yara Trust ≥ 3 | Hell Rot goes back up Mount Tamalpais with Junie, Yara and a very large axolotl. Both cults survive, wounded. His mind is going. The last frame is ambiguous: maybe the Rot stopped. |
 | 2 | **Peer Review** | A | Publish the Open Dataset without the Hog | Both cults lose half their members in a week. The City reads the numbers. Best journalism ending. |
 | 3 | **The Hog's Bargain** | A | Publish with Pell's help | Both cults fall. Pell wins the recall. Hell Rot wins, and his last column says how much he hates himself for it. |
-| 4 | **Saint Rot** | B | Merge | Hell Rot joins the Emperor. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
-| 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, at the Ascension, Hell Rot takes off the gold Halos the Church gave its saint, breaks them, and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
+| 4 | **Saint Rot** | B | Merge: Wear 5, jacked (§5.14b) | Hell Rot joins the Emperor. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
+| 5 | **Iconoclast** | B | Refuse the Merge, Wear ≤ 4, Junie Trust ≥ 4 | On live feed, at the Ascension, Hell Rot takes off the gold Halos the Church gave its saint, breaks them, and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
 | 7 | **The Mob** | C | Refuse the splice with Venom ≥ 8 | He tells the Theogens to take the City. They do. He realizes too late that he has made the thing he swore never to be: a leader. |
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
@@ -2699,6 +2701,48 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 - **Mixed eyes** (one pure, one corrupt) are the stuck-in-the-middle build:
   powerful, unstable, and the most fun to play.
 
+### 5.14b The gold Halos: letting the Twin in
+
+Hell Rot starts the game with no Halos: a citizen score of zero. In Issue 2
+the Church sends its new saint a gift — a pair of **gold Halos**. Wearing
+them is a choice, made again before every Run, and it is the Merge's quiet
+road to owning him. The track is **Wear (0–5)**. It only goes up.
+
+The Halos are the best cure for the Rot in the game. The AI remembers what
+he forgets, finds the street he lost, and fills the gaps in his notes. The
+worse the Rot gets, the more he needs them. That is the trap.
+
+| Wear | What the Halos do for him | What they take |
+|---|---|---|
+| **0** | Nothing. He is Halo zero, and the City's doors do not open | — |
+| **1** | Worn for a Run: maps, names, faces. +1 Clarity. City services open | The Twin sees what he sees for that Run |
+| **2** | They remember for him: one forgotten Notebook item restored per Run | The Twin reads his notes |
+| **3** | They **suggest**: one dialogue choice per screen glows gold — the Twin's pick. Taking it is always easier (+2 to the check) | Every gold choice taken adds Sainthood |
+| **4** | They **choose first**: the gold choice is pre-selected on a timer. Do nothing, and it happens. His columns come back "improved" | The inner voices go quiet one by one. THE BASTARD is the first to stop talking |
+| **5** | **Jacked.** Conditioning and a Church Halo implanted through a neural jack (Halo score 10). The player still sees every choice, but only the gold one can be picked. The Twin controls him and his choices | Him |
+
+**How Wear rises.** Putting the Halos on for a Run (+1, once per Issue).
+Leaving them on overnight (+1). Letting the Halo answer a showdown for him
+(+1). Accepting conditioning at the Church (to 4). The jack is offered on
+New Year's Eve, at the Ascension (to 5).
+
+**How the game shows it.** The Rot makes the interface fall apart (§5.16).
+The Halos make it *perfect*: crisp text, no swapped letters, choices in
+order — and gold. A player at Wear 4 is playing the cleanest-looking screen
+in the game, and has the least say in it.
+
+**Who notices.** Junie sees him stop crossing himself before hills when she
+does. Yara finds a sentence in his column she did not write and he does not
+remember writing. Fax can jam the Halos for one Run with his old jack. Mary
+keeps his real notes on paper. The Emperor, in a lucid hour, asks him to
+take them off.
+
+**Endings.** Wear 5 at midnight is the **Saint Rot** ending: the Twin writes
+his last column, and it is beautiful, and it is not his. Below 5 he can still
+take them off: **Iconoclast** needs Wear ≤ 4 — he breaks the gold Halos on
+live feed at the Ascension. At Wear 4 that scene costs him the AI's memory
+too: he walks out of the Palace not sure of his own name.
+
 ### 5.15 Companions, Trust and gifts
 
 The whole household of Villa Delirium is the party. Each Run, the player
@@ -2764,7 +2808,9 @@ From Issue 4, low Clarity shows in the UI itself, inside every Run.
 | 3–2 | Notebook entries lose their speaker. Quotes may show the wrong name (a real Fabrication risk) |
 | 1–0 | Choices appear out of order. Inner voices disagree about what just happened |
 
-The Church's text never degrades: always perfectly crisp. The Emperor's
+The Church's text never degrades: always perfectly crisp. With the gold
+Halos on, the whole interface turns crisp and gold — the Rot hidden, and
+the Twin choosing (§5.14b). The Emperor's
 decrees are the opposite: crisp one line, scrambled the next. Theogen text grows
 *sharper* as Helix rises: on Route C, splicing restores the UI. Both cures
 pitch themselves through the interface.
