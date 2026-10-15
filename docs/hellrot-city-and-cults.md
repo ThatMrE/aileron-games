@@ -297,11 +297,40 @@ much you are loved. What it really measures is **how easy you are for the
 Twin to model**. The perfect citizen, by the Twin's lights, is the one it
 can predict completely.
 
+**The Glories.** Almost everyone in the City wears a pair of **Glories**:
+light AR glasses that are also a personal brain–computer interface and a
+personal AI. Sensors in the arms read the brain through the skin; the AI
+speaks through the bone behind the ear and draws on the lenses. The name is
+a fog word: a *glory* is the ring of light a walker sees around their own
+shadow on a bank of mist. The Church gives them away free; the Rivet Trust
+pays.
+
+- **Glories on, Halo high.** Putting on a pair sets your Halo to **7**
+  (Radiant) on the first day. Behaviour then moves it between 4 and 9.
+  Only cingulate conditioning and a Church bond reach 10.
+- **No Glories, Halo zero.** Without a pair you are an automatic **zero**,
+  and you **cannot use City services** at all: transit, clinics, housing,
+  permits, benefits, the courts' online desk, the library card. The City's
+  doors are built to talk to Glories, and nothing else.
+- **Who goes without.** People who refuse them on principle (most of
+  Villa Delirium, including Hell Rot). People who cannot keep a pair:
+  stolen, broken, sold for rent. People who cannot wear them: the blind,
+  people with epilepsy or migraine whom the BCI makes ill, and anyone with a
+  Theogen splice, whose own glow jams the sensors. The Loin is mostly all
+  three.
+- **Hell Rot has no Glories.** As a citizen he is Halo zero — a saint to
+  both cults (his Sainthood meter) whom the City's own doors do not
+  recognize.
+- **The recall petition** was signed on paper, mostly by people without
+  Glories. That is why Sunday's people challenge it, and why the Issue 5
+  recount is done by hand.
+
 **What raises a Halo (the "angelic citizen"):**
 
 | Behaviour | Why the Twin likes it |
 |---|---|
-| Being wired: a personal AI, open data, a readable aura | More data, better model |
+| Wearing Glories — by far the biggest factor | The Twin sees what you see, hears what you hear, and reads your brain |
+| Open data, a readable aura | More data, better model |
 | Being predictable: same routes, same hours, same purchases | A forecast that is always right |
 | Calm: slow breath, blue-grey aura, no spikes | Low noise in the signal |
 | Gratitude: thanks, compliments, kind posts — the Church's gospels count them | The Twin's sentiment score |
@@ -313,7 +342,8 @@ can predict completely.
 
 | Behaviour | Why |
 |---|---|
-| No personal AI, cash only, no feeds | The Twin cannot see you |
+| No Glories | Automatic zero, no City services |
+| Cash only, no feeds | The Twin cannot see you |
 | Unpredictable hours, moving often, night work | The forecast keeps missing |
 | A Theogen splice | The skin's own glow scrambles the aura |
 | Unlicensed gas, protest, dissent, journalism | Noise, and disloyalty |
@@ -325,10 +355,10 @@ can predict completely.
 
 | Halo | Name | What you get | What you lose |
 |---|---|---|---|
-| **0** | **The Unfinished** | Nothing. The Lantern's shelters still take you | **Housing:** Merge housing and most landlords check auras, and reject you. **Transport:** the gold Ascension shuttles do not stop for you. **Health:** Church clinics — most of the City's free care — turn you away. **Work:** jobs that check auras. **Doors:** shops with aura locks open slowly, or not at all. **Emergencies:** the Twin routes ambulances by its model, and it does not model you; they come late to Halo-zero blocks. **Police:** a Halo of zero is grounds for a stop, and for a "Halo-zero sweep" (main doc, Issue 1) |
-| **1–3** | Reflected | The shuttles stop. Basic Church services | Your data |
-| **4–6** | Luminous | Priority at the clinics, a place in the housing lottery | Your attention: the feeds, the masses, the gratitude |
-| **7–9** | Radiant | A gold aura everyone can see. Eligible for the Ascension list. The Church offers you a personal AI | Your money, and most of your privacy |
+| **0** | **The Unfinished** (no Glories) | Nothing. The Lantern's shelters still take you | **Housing:** Merge housing and most landlords check auras, and reject you. **Transport:** the gold Ascension shuttles do not stop for you. **Health:** Church clinics — most of the City's free care — turn you away. **Work:** jobs that check auras. **Doors:** shops with aura locks open slowly, or not at all. **Emergencies:** the Twin routes ambulances by its model, and it does not model you; they come late to Halo-zero blocks. **Police:** a Halo of zero is grounds for a stop, and for a "Halo-zero sweep" (main doc, Issue 1) |
+| **1–3** | Reflected (Glories, newly lent or second-hand, on probation) | The shuttles stop. Basic Church services | Your data |
+| **4–6** | Luminous (Glories, but a poor record) | Priority at the clinics, a place in the housing lottery | Your attention: the feeds, the masses, the gratitude |
+| **7–9** | Radiant | Where a new pair of Glories puts you. A gold aura everyone can see. Eligible for the Ascension list | Your money, and most of your privacy |
 | **10** | **Merged** | Cingulate conditioning, and a lifelong bond with a Church AI. The Twin now runs a live model of you and consults it before you act: you are **part of the Twin**. You appear in Twin visits as yourself, alive. Your name goes on the Ascension list | Your own first draft of every sentence. The merged cannot say anything that is not a compliment |
 | — | Ascended | The promised upload into the Twin, forever. Nobody yet: the Ascension on New Year's Eve would be the first (main doc §3.8) | Your body |
 

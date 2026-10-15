@@ -399,7 +399,7 @@ faithful, not the rich, not the Order.
 conditioning**: weeks of neurostimulation and drugs that train the brain's
 anterior cingulate, the region that monitors conflict and errors and keeps a
 sense of "this is me acting." Its everyday purpose is to let a person work
-with their **personal AI** more fully — to think alongside an agent without
+with their **personal AI** — the AI in their **Glories**, the AR glasses nearly everyone wears (companion doc §3.2c) — more fully — to think alongside an agent without
 losing track of which thoughts are theirs. It is a crude, adult imitation of
 Professor Brandvold's **cingulate engineering** — the real thing, a
 developmental rebuild of the cingulate, was never built into anyone before
@@ -1986,7 +1986,7 @@ both have to break.
 | 2 | **Peer Review** | A | Publish the Open Dataset without the Hog | Both cults lose half their members in a week. The City reads the numbers. Best journalism ending. |
 | 3 | **The Hog's Bargain** | A | Publish with Pell's help | Both cults fall. Pell wins the recall. Hell Rot wins, and his last column says how much he hates himself for it. |
 | 4 | **Saint Rot** | B | Merge | Hell Rot joins the Emperor. His voice runs on every feed forever. It never says anything cruel again. The last column is beautiful. It is not his. Bad ending, played straight. |
-| 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, in the cathedral, Hell Rot tears the Halo implant out of his own scalp and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
+| 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, at the Ascension, Hell Rot takes off the gold Glories the Church gave its saint, breaks them, and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
 | 7 | **The Mob** | C | Refuse the splice with Venom ≥ 8 | He tells the Theogens to take the City. They do. He realizes too late that he has made the thing he swore never to be: a leader. |
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
@@ -2866,6 +2866,11 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   game's notes. Trans writers and sensitivity readers work on every scene,
   in consultation with Tenderloin community and history groups such as the
   Transgender District.
+- **Disability and the Glories.** The City's rule that you need Glories to
+  use public services shuts out blind people, people with epilepsy or
+  migraine, and others who cannot wear them. The game treats this as the
+  injustice it is: those characters are people with full lives, the satire
+  is aimed at the system, and disabled sensitivity readers review it.
 - **Mental illness.** The Emperor's breakdown is an injury — a mind uploaded
   without the brain region that sorts self from noise — not a portrait of
   schizophrenia. Real people with schizophrenia are far more often victims of
@@ -3208,6 +3213,9 @@ Plot questions the writers' room must answer before Alpha.
   supply chain (§3.6a).
 - **The Loin riot is an uprising,** an homage to Compton's Cafeteria (1966),
   started by Mama Rue's coffee at the Ghost Diner (Issue 1).
+- **The Glories.** AR glasses that are also a personal BCI and AI. Wearing
+  them sets your Halo to 7; without them you are an automatic zero and
+  cannot use City services. Hell Rot has none (companion doc §3.2c).
 - **Tem** is 15. Her splice was a tiny dose of cingulate engineering from
   Hell Rot's third paper. In crowds she loses the line. She is the bridge's
   canary on New Year's Eve (§3.6b).
