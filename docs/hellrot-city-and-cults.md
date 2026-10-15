@@ -174,9 +174,10 @@ the four.
   location; on Route B it becomes a second hub map.
 - **The Valley is a temple yard.** The peninsula south of the City is one
   continuous campus of server cathedrals.
-- **South City is the Cradle.** Half the South San Francisco biotech parks
-  emptied in the biotech crash of the mid-2040s. The Theogens moved into the
-  dead labs, and call them holy ground.
+- **Mission Bay is the Cradle.** Half the Mission Bay biotech labs emptied
+  in the biotech crash of the mid-2040s and sit behind the seawall, flooded
+  on king tides. The Theogens moved into the dead labs, and call them holy
+  ground. The Brandvold lab's annex, where Hell Rot died, is one of them.
 
 ### 3.2 Karl: the nanite fog
 
@@ -369,7 +370,7 @@ Quickening.
 | Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is the Twin's transmitter. Lately it hums tunes from the 1870s at night. The overlook sits above the fog line. | The Twin | Issue 5: the drug deal; Route D |
 | Mount Sutro | **The Forest** | Eucalyptus forest under the Trident; a disused university lab in the trees | Nobody, officially | Issue 5: the Spin Question experiment |
 | Sutro Baths ruins, Lands End | **The Baths** | The ruins are gone: the Rivet consortium built a Twin data center in the old pools, cooled by seawater. The tunnels under it, warm with its waste heat, are the Theogens' congregation | Twin engineers above; Theogens, Delphine below | Issue 3 |
-| South San Francisco biotech parks | **The Cradle** | Ruined labs; Theogen pilgrims | Theogens | Issue 3 / Route C |
+| Mission Bay biotech labs | **The Cradle** | Ruined, half-flooded labs behind the seawall; Theogen pilgrims; Otto's old company | Theogens | Issue 3 / Issue 4 / Route C |
 | Old BART tunnels | **The Undertrack** | Abandoned transit tunnels; Theogen clinics; the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
 | Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
 | Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists; Rosa Quint's old base | Issue 3 |
@@ -389,7 +390,7 @@ Quickening.
 | Golden Gate Park | **The Park** | The California Academy of Sciences (donor dinners under the living roof), the bison paddock, Hippie Hill, the Conservatory of Flowers | Donors, drummers, bison | Issue 3 |
 | Presidio | **The Presidio** | The old Army post; in a leased brick building, the Auric Order's lodge room, where the scan happened | The Order | Issue 4: the break-in |
 | Marina | **The Palace of Fine Arts** | The 1915 rotunda and lagoon on 1906 rubble, taken over by the Church for the Ascension | Church of the Twin | Issue 6: the Ascension |
-| Mission Bay | **The Brandvold annex** | The lab's old satellite, flooded and abandoned since the biotech crash; where Hell Rot died in 2044 | Nobody | Issue 4 |
+| Mission Bay (in the Cradle) | **The Brandvold annex** | The lab's old satellite, flooded and abandoned since the biotech crash; where Hell Rot died in 2044 | Nobody | Issue 4 |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
 
 ### 3.4b Alcatraz Longevity (the Rock)

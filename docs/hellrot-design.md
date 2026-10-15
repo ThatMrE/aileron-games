@@ -338,7 +338,7 @@ awake in the weather.
 
 The second god is born on Christmas night, in the first scene of the game.
 In the old transit tunnels and the ruins
-of the South City biotech parks, an underground called **the Theogens**
+of the Mission Bay biotech labs, an underground called **the Theogens**
 splices itself, a gene at a time, toward divinity: glowing skin, extra
 cortex, bodies that heal like an axolotl's. Their scripture is three old
 papers by a disgraced neurobiologist. Their prophet is a woman called
@@ -1789,7 +1789,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **Golden Gate Park** | The bison paddock in the fog; Hippie Hill; a glow rickshaw race; decrees on the Conservatory of Flowers | Core |
 | **Ocean Beach** | Karl's Birthday bonfire; the New Breath's mass inhale; one recording heard by everyone | Core |
 | **The Tomales Ward** | A Synapse Game — the hardest rhetorical fight in the game | Optional |
-| **The Cradle, South City** | Ruined biotech labs; Theogen pilgrims; Delphine's first company | Optional |
+| **The Cradle, Mission Bay** | Ruined biotech labs; Theogen pilgrims; Delphine's first company; Otto's old lab | Optional |
 
 **Issue 4 — Wednesday 29 December.**
 
@@ -1928,6 +1928,13 @@ holds the full set). Three set the tone:
 - **Saint Rot:** she prints the Emperor's columns under Hell Rot's byline,
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
+
+**Otto's line.** Two endings close on her:
+
+- **Mortal:** *"Otto died in April, in her own bed, having refused
+  everything. Her last Lab Notes are framed in the kitchen."*
+- **New Flesh:** *"Otto took the three splices. She left the House at
+  Easter, thirty again, and none of them has heard from her."*
 
 **Fax's line.** Two endings close on him:
 
@@ -3070,6 +3077,10 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life; her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Otto** is a pharmacologist who sat on Hell Rot's PhD committee. In 2045
+  Brandvold told her the god-gene warning out loud; she is a living witness,
+  if she can remember. In *"Expiry Date"* her heart stumbles in Issue 5 and
+  she refuses the splice (Mondo doc §5).
 - **Fax** is 34. He was jacked in on the night Hell Rot died and felt the
   four minutes. The voice in his jack is Julian. The Theogens' offer to him
   is an adult cingulate splice that would kill him (Mondo doc §5).
