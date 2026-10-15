@@ -834,7 +834,7 @@ uncertainty on screen.
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
-| **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
+| **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
 | **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years; now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
@@ -1272,7 +1272,12 @@ Route-specific content follows (§3.10).
 
 - **City Hall, daytime.** The **recount**: Sunday's people have challenged
   the recall petition's signatures, and the City is counting them again by
-  hand, on paper. Next door at the courthouse, **BFF v. City** reaches the
+  hand, on paper. If Rosa Quint lived through Issue 3, she **testifies at
+  the recount**: under oath, in the chamber, she tells the counting board
+  how Sunday's people forged the challenge — and, if she knows Hell Rot saved
+  her, names the order he gave on the night of the dinner. Sunday smiles
+  through it from the front row. If she died, her empty chair is the story.
+  Next door at the courthouse, **BFF v. City** reaches the
   bench, and Hell Rot takes the stand — the cross-examination showdown
   (§3.3c) — with Judge Ostrander presiding and a faint gold ring in his aura
   that only the Blood Eye can see.
@@ -1291,6 +1296,10 @@ Route-specific content follows (§3.10).
 See §3.8 and §3.8b. Every route converges on one night, one column and
 midnight coming.
 
+- **The recall result at City Hall** — if Rosa lived, she reads the
+  result from the podium in Sunday's place, as the last act of his chief of
+  staff. If she died, Sunday reads it himself, in black, with her photograph
+  beside him.
 - **Critical Mass on Market Street** — ten thousand bikes, the last Friday of
   the month, blind the Twin for an hour.
 - **The Ascension at the Palace of Fine Arts** — the Church of the Twin has
@@ -1377,7 +1386,7 @@ night to build Runs around. (District details: companion doc §3.)
 
 | Location | Set piece | Type |
 |---|---|---|
-| **City Hall** | The hand recount of the recall petition | Core |
+| **City Hall** | The hand recount of the recall petition; Rosa testifies (if alive) | Core |
 | **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
 | **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core |
 | **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident; the Emperor's clearest voice | Core |
@@ -1390,7 +1399,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **Market Street** | Critical Mass blinds the Twin for an hour | Core |
 | **The Palace of Fine Arts** | The Ascension: 12,000 uploads at midnight in the rotunda and around the lagoon | Core (Routes A, B, D) |
 | **The Golden Gate Bridge** | The Quickening loaded into Karl from the towers; the Midnight Quake hits (§3.8b) | Core |
-| **City Hall** | The recall count; Prop F results; Sunday at the podium | Core |
+| **City Hall** | The recall count; Prop F results; Rosa reads the result in Sunday's place (if alive) | Core |
 | **Coit Tower** | Sunday's Lifeboat upload fails, live | Optional |
 | **The Marina, Mission Bay and SoMa, burning** | The fire after the quake; rescues in the smoke; the Order's 1906 nightmare | Core |
 | **Baker Beach** | The bonfire and the Route D debate between the gods; or a man standing frozen at midnight | Core (Route D); Ending 11 |
