@@ -1,7 +1,7 @@
 # MONDO 3000: HELL ROT — Game Design Overview & Spec Sheet (v0.3)
 
 > **One-line pitch:** An 8-bit, text-driven, choice-based RPG. You are **Dr.
-> Hell Rot, PhD** — synthetic neurobiologist, disgraced inventor, gonzo
+> Hell Rot, PhD** — self-styled synthetic neurobiologist, PhD dropout, five years clean, gonzo
 > columnist for the cyberculture magazine *Mondo 3000*. It is the week between
 > Christmas and New Year's, 2049, and the Bay Area has two new religions. One wants to upload
 > into the AI god that the City just gave birth to. The other wants to splice
