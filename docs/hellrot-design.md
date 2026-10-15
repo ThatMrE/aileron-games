@@ -1219,7 +1219,7 @@ uncertainty on screen.
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
 | **Benny "Two-Tanks" Marchetti** | Old contact, dealer | 54, North Beach Italian-American, an ex-medical-gas driver. Sold Hell Rot gas in the lab years — and delivered the two tanks the night he died. Now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. Every scene with him raises Craving (§3.6a). |
 | **Mama Rue** | The Ghost Diner's queen | A trans woman in her sixties who has eaten at the Ghost Diner every night for forty years and runs its back booth like a court. She throws the coffee that starts the Loin uprising (Issue 1). Tem's protector. |
-| **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
+| **Tem** | Kid, the Loin | 15. A zero-Halo street kid with one failed splice (a glowing arm she hides). The splice was a tiny dose of cingulate engineering, from Hell Rot's own third paper. The barometer for Rule 4 — and the one person both cults want to "save" (§3.6b). |
 | **The Dissonance Society** | Chorus | The City's pranksters (see companion doc §5). Not a cult. Their motto: *"You are probably already a member."* |
 
 ### 3.6a Benny "Two-Tanks" Marchetti
@@ -1256,6 +1256,37 @@ I mean that as a compliment."*
 - **Endings.** **Mortal:** *"Benny goes to the North Beach meeting now. Back
   row. He brings the coffee."* **Fabrication:** *"Benny runs Sunday's whole
   trade now. He sends Hell Rot a tank every Christmas."*
+
+### 3.6b Tem
+
+Tem is 15. Her name comes from her old shelter wristband, which said
+**TEMP**: she kept the word and dropped a letter. Her parents are gone, and
+Mama Rue is the closest thing she has to family. She is quick, funny and
+suspicious. She has never had a Halo above zero and has never wanted one.
+Her line: *"Everybody wants to save me. Nobody wants to ask me."*
+
+- **Her splice was cingulate engineering.** Her edit comes from Hell Rot's
+  third paper — the paper that turned Brandvold's theory into a gene
+  circuit. An unlicensed clinic in the Loin injected a tiny dose into her
+  arm, which is why the arm glows where the needle went in. The dose was
+  small, so she got only a shadow of stage one of the god-gene's failure
+  (§3.4) — no rage, no seizures. In crowds she **loses the line**: she feels
+  everyone near her at once. Mama Rue brings her back by holding her hand
+  and saying her name. Tem is the living, gentle evidence that the god-gene
+  goes wrong outside the womb, beside Brandvold's notebook and Otto's
+  memory. For Hell Rot it is personal: it is his paper in her arm.
+- **Both cults want her.** The "gold lady" at the Church clinic offers a
+  Halo and a Church personal AI to "anchor" her. The Theogens want to finish
+  the splice — which would kill her.
+- **Her week.** Issue 1: Hell Rot meets her in the uprising. Issue 3: she
+  disappears into the Undertrack, and — if Yara's Trust is 2 or more — Yara
+  finds her in the deep wards, so that scene has a face the player knows.
+  Issue 6: on the bridge she is the canary. Near the Quickening's
+  canisters she feels the hive start before anyone else, and warns them.
+- **Endings.** **Mortal:** *"Tem enrolled at City College in January. She
+  sits in the back so nobody can stand behind her."* **Successor:** *"Tem is
+  Yara's intern now. She fact-checks the corrections."* **New Flesh:** *"The
+  Theogens finished Tem's splice. The deep wards have a new bed."*
 
 ### 3.7 Structure: a Prologue and seven Issues
 
@@ -1652,7 +1683,8 @@ from the water to the uprising.
   seawater. Under it, in tunnels warmed by its waste heat, **the Theogens**
   live. Delphine Ash shows Hell Rot a congregation of glowing, healthy, joyful
   people who cite his footnotes. Then — if Yara is present and Trust ≥ 2 —
-  Yara finds the deeper tunnels, where the failed splices live.
+  Yara finds the deeper tunnels, where the failed splices live — and Tem,
+  who went missing after the uprising (§3.6b).
 - **The California Academy of Sciences, evening.** A black-tie **donor
   dinner for Synapse**, the rehab church, under the museum's living roof and
   beside its aquarium tanks. Mayor Sunday attends. So does Rosa Quint, his
@@ -1770,7 +1802,8 @@ midnight coming.
 - **The Golden Gate Bridge climax** — the fog's front door, where the
   Theogens load the Quickening into Karl as the storm comes in — Delphine at
   the south tower with Ione, her skin going dark, and perhaps dying there
-  (§3.4) — and where
+  (§3.4). Tem, near the canisters, feels the hive start before anyone else
+  and shouts the warning (§3.6b). And it is where
   Hell Rot is standing when the **Midnight Quake** hits.
 - **The ending's ground** — **Baker Beach** (the bonfire and the gods'
   debate, Route D), **Mount Tamalpais** (the Mountain), or a man **frozen**
@@ -3175,6 +3208,9 @@ Plot questions the writers' room must answer before Alpha.
   supply chain (§3.6a).
 - **The Loin riot is an uprising,** an homage to Compton's Cafeteria (1966),
   started by Mama Rue's coffee at the Ghost Diner (Issue 1).
+- **Tem** is 15. Her splice was a tiny dose of cingulate engineering from
+  Hell Rot's third paper. In crowds she loses the line. She is the bridge's
+  canary on New Year's Eve (§3.6b).
 - **Saint Nobody is a role, not a person** — a Discordian title passed from
   hand to hand each night. That is why the Twin cannot score them. The
   credits show who wore it, including whoever chalked Revelation 13:1 at
