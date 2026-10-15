@@ -412,6 +412,24 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   knees that may not be hers by Thursday. What she does there — and whether Hell Rot is in the
   stands — shows which way she is leaning. She is the one person in the House
   who asks Hell Rot what he saw when he died, and listens to the answer.
+- **Saint Nobody.** They only ever ask questions: *"Who told you you had to
+  be one person?"*
+  - **A role, not a person.** "Saint Nobody" is a Discordian title, passed
+    from hand to hand each night like a relay baton — every person is a
+    Pope, so anyone can be a saint for a night. That is why the handwriting
+    changes, why the attic bed is never used, and why the motto is *"You are
+    probably already a member."*
+  - **Why both cults fear them.** The Twin gives every person one identity
+    and one Halo. It cannot score a person who is a dozen people. Saint
+    Nobody is the City's third blind spot, beside Villa Delirium and Ione.
+  - **"Unmasked" — the credits.** Every costume lines up, and so do the
+    people under them, all met during the week: the churro vendor at the
+    Wharf; the waitress at the Ghost Diner; the repo man who is a derby fan;
+    a Santa at the cathedral; the Nortonian street preacher; and **whoever
+    chalked Revelation 13:1 on the rock at Steep Ravine** — a Saint Nobody,
+    at the birth, playing a joke on the end of the world.
+  - **The last costume.** In the Epilogue's 2069 scene, adult Ione wears one
+    of the costumes. She is a member now.
 - **Mary.** Born in Oakland in 1973 to Nigerian immigrant parents. She made
   zines in 1990s Berkeley, then spent forty years as a public librarian at
   the main library's periodicals desk — hence the archive. She is the one
@@ -564,6 +582,8 @@ pays out in Trust and one useful item, Lead or contact.
 | | *"Prodigal"* | His father, a dying Pentecostal preacher in Fresno, calls every night this week. Go to Fresno for New Year's Eve, or stay and preach at the Palace. | Bishop Trust, changes who holds the Palace |
 | **Mary** | *"The Bunker"* | Her old Y2K cabin is full again — a preppers' cult stockpiling for 2050. She goes back to talk them down, as the woman who did it first. | A cult de-converted without a column, Mary Trust |
 | | *"Back Issues"* | Someone is buying every copy of *Mondo 2000* in the City. The buyer is the Church, training the Twin's gospels on the old cyberculture. | A Lead on how the gospels are written |
+| **Saint Nobody** | *"The Lost Costume"* | A Santa suit left behind at the cathedral riot has a note in the pocket — a Lead the Twin cannot see. | A Lead; Dissonance Opinion |
+| | *"Prank of the Year"* | Plan the New Year's Eve prank — swap the Ascension's hymn sheets for the error bars. Done well, it replaces one showdown. | One showdown won without a fight |
 | **Pru** | *"Audit"* | She audits the Ascension list and puts a number on the ticket scandal (main doc §3.7). | The scandal becomes publishable data |
 | | *"The Hedge"* | Steal the Ledger's allocation file at its office party in the Spire District on Wednesday night. | Proof of who pays for the Quickening's canisters |
 

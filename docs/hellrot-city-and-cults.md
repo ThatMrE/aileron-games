@@ -631,9 +631,10 @@ They are Hell Rot's chorus, his best sources, and his worst influence.
   changes the City for a few Hours and opens chances that do not exist on any
   other day.
 - Their contact is **Saint Nobody** (original), a person in a different
-  costume every scene. The player never learns their face. In the credits,
-  every costume lines up, and so do several characters the player thought were
-  someone else.
+  costume every scene. The player never learns their face, because there is
+  no one face: **Saint Nobody is a role, passed from hand to hand each night**
+  (Mondo doc §5). In the credits, every costume lines up, and so do several
+  characters the player thought were someone else.
 - **Discordian roots.** The Society has no creed, but it keeps the old
   forms as a joke it takes seriously:
   - **Every member is a Pope.** Hell Rot gets his Pope card in Issue 1. It

@@ -1737,7 +1737,8 @@ edition, printed before 6 a.m. in the cellar of Villa Delirium: the last
 column. Then dawn, smoke on the water, and the New Year's Day swim at Aquatic
 Park — or the Mountain, or Baker Beach — depending on the ending. The last
 scene jumps twenty years: in 2069, Ione, aged twenty, reads Hell Rot's last
-column aloud. It is the only time the game hears her voice.
+column aloud. It is the only time the game hears her voice. She is wearing
+one of Saint Nobody's costumes. She is a member now.
 
 ### 3.9b Set pieces by night
 
@@ -1930,6 +1931,11 @@ holds the full set). Three set the tone:
 - **Saint Rot:** she prints the Emperor's columns under Hell Rot's byline,
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
+
+**Saint Nobody's line.** One ending closes on them:
+
+- **Mortal:** *"Saint Nobody sent a card. It was blank. It was signed in
+  eleven different hands."*
 
 **Mary's line.** Two endings close on her:
 
@@ -3109,6 +3115,10 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life. Her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Saint Nobody is a role, not a person** — a Discordian title passed from
+  hand to hand each night. That is why the Twin cannot score them. The
+  credits show who wore it, including whoever chalked Revelation 13:1 at
+  Steep Ravine (Mondo doc §5).
 - **Mary** is a retired librarian who believed in Y2K and came back. She is
   Hell Rot's memory as the Rot advances. Her temptation is a 1999 in the
   Twin and an Ascension slot (Mondo doc §5).
@@ -3184,8 +3194,6 @@ Plot questions the writers' room must answer before Alpha.
 
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child. Three are drafted (§3.11), eight to go.
-4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
-    Nortonian, a Keeper of the Order, or someone the game never names?
 
 **Proposition F and the courts**
 
