@@ -1931,6 +1931,13 @@ holds the full set). Three set the tone:
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
 
+**Mary's line.** Two endings close on her:
+
+- **Mortal:** on 1 January 2050 she files a one-line piece: *"Nothing
+  happened. Everybody was very relieved."*
+- **Saint Rot:** *"Mary moved into the Twin's 1999. She stopped answering
+  letters."*
+
 **Pru's line.** Two endings close on her:
 
 - **Peer Review:** *"Pru's spreadsheet ran as the Open Dataset's appendix.
@@ -3093,6 +3100,9 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life; her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Mary** is a retired librarian who believed in Y2K and came back. She is
+  Hell Rot's memory as the Rot advances; her temptation is a 1999 in the
+  Twin and an Ascension slot (Mondo doc §5).
 - **Pru** is 29. She wrote the Ledger's 2046 letter about *Mondo 3000*,
   then quit and joined. Her letters to the Lacuna Trust are answered by the
   Emperor. The Ledger's hedge pays for the Quickening's canisters (Mondo

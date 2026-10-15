@@ -378,7 +378,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 | **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early — and, once he learns the secret, **vindication** (below) | *"Late"* — the Emperor asks him to preach at the Ascension (below) |
 | **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | PALE EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that the Emperor does not monitor | The Theogens, who promise to grow him a brain that fits the future. It is an adult cingulate splice — the god-gene — and it would kill him (main doc §3.4) | *"Legacy Format"* — his jack starts receiving messages from inside the Twin. The sender is Julian (below) |
 | **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul — and whose hedge pays for the Quickening (below) | *"Marginal"* — Pru handles the money, and has known all along that the house and the paper are paid from two different banks. She has never told anyone, and she knows more about the Lacuna Trust than she admits (below). |
-| **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
+| **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge: a Twin reconstruction of 1999 — her friends, the old Berkeley — on a headset, any night she likes; and an **Ascension slot**, the first real upload, into a 1999 that never ends | *"Y2K"* — she lived through one millennium panic; she wants to stop this one (below) |
 | **Saint Nobody** | Contributing Editor (Pranks) | **Unknown.** Different costume every time. | THE CELEBRITY +1, REFLEX +1, KARL +1 | **Disruption:** turn the next door into a Dissonance door | None. That is what scares both cults. | *"Unmasked"* — never completed. The credits complete it. |
 | **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. The order wants a scan. | Grows one size per Issue (main doc §5.14) |
 | **The Greenhouse** | Letters Editors | A colony of spliced houseplants the Duchess bought from a Theogen florist years ago. They read DNA and sort the mail. | — | Read one genome or one letter | They are a Theogen product, and the Theogens would like them back | Comic relief; a key lab puzzle (main doc §5.9) |
@@ -412,6 +412,21 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   knees that may not be hers by Thursday. What she does there — and whether Hell Rot is in the
   stands — shows which way she is leaning. She is the one person in the House
   who asks Hell Rot what he saw when he died, and listens to the answer.
+- **Mary.** Born in Oakland in 1973 to Nigerian immigrant parents. She made
+  zines in 1990s Berkeley, then spent forty years as a public librarian at
+  the main library's periodicals desk — hence the archive. She is the one
+  who told the Duchess what that crate of *Mondo 2000* was, and the House's
+  first hire. Warm, slow, unimpressed: *"Honey, I've seen the end of the
+  world twice. It's mostly paperwork."*
+  - **Her Y2K story: she believed it.** In 1999, at 26, she sold her flat,
+    bought a cabin in the Santa Cruz mountains and filled it with canned
+    food. At midnight nothing happened. She came home broke and laughed for
+    a week. She is the House's proof that you can be fooled by the end of
+    the world and come back — which is why she is gentle with cult members,
+    and why *"Y2K"* is her quest.
+  - **The Memory Desk.** As the Rot eats Hell Rot's memory, Mary becomes his
+    memory. Once per Issue she restores one Notebook item the Rot made him
+    forget. She is the archive for a man who is losing his.
 - **Pru.** She is 29, from old Marin money (hence the double-barrelled
   name), a Stanford economics dropout. Cardigans, a calculator watch,
   sticky notes on every surface. Hedged and numeric, with sudden bravery:
@@ -547,6 +562,8 @@ pays out in Trust and one useful item, Lead or contact.
 | | *"The Pill Drawer"* | She gives away fifty years of life-extension pills. To whom: the deep wards, the Lantern shelter, or the Old Guard who want her back? | Different allies by choice; Vow or Venom |
 | **The Bishop** | *"The T-Shirts"* | Thirty thousand unsold 2045 stadium T-shirts sit in a storage unit. The Church wants to buy them as relics. | Ink, or a Church contact, or a bonfire at Baker Beach |
 | | *"Prodigal"* | His father, a dying Pentecostal preacher in Fresno, calls every night this week. Go to Fresno for New Year's Eve, or stay and preach at the Palace. | Bishop Trust; changes who holds the Palace |
+| **Mary** | *"The Bunker"* | Her old Y2K cabin is full again — a preppers' cult stockpiling for 2050. She goes back to talk them down, as the woman who did it first. | A cult de-converted without a column; Mary Trust |
+| | *"Back Issues"* | Someone is buying every copy of *Mondo 2000* in the City. The buyer is the Church, training the Twin's gospels on the old cyberculture. | A Lead on how the gospels are written |
 | **Pru** | *"Audit"* | She audits the Ascension list and puts a number on the ticket scandal (main doc §3.7). | The scandal becomes publishable data |
 | | *"The Hedge"* | Steal the Ledger's allocation file at its office party in the Spire District on Wednesday night. | Proof of who pays for the Quickening's canisters |
 
