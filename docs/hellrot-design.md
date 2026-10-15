@@ -195,6 +195,17 @@
 
 ### 2.2 Literary DNA
 
+- **Spider Jerusalem** (*Transmetropolitan*, Warren Ellis and Darick
+  Robertson) — **Hell Rot mirrors his affect.** The rage at power, aimed
+  always up. The profane, precise eloquence. The misanthrope who cannot stop
+  defending the weak. The man who hates the City and would die for it. The
+  writer who treats the truth as a weapon and a sacrament. The parallels in
+  shape are deliberate: a reporter who comes down from a mountain to a City
+  he loathes, an editor who needs his copy, a column as a war, and a disease
+  that eats his memory while he works. What does **not** carry over:
+  Spider's look, his signature gear and pets, his assistants, his lines
+  and his catchphrases (see the rights note above). Hell Rot sounds like a
+  man who has read Spider, not like Spider.
 - **Hunter S. Thompson** — the gonzo method: the reporter inside the story
   who admits it, the chemicals, the political rage.
 - **Dr. Frankenstein & Dr. Moreau** — the creator who has to face what he
@@ -3299,9 +3310,10 @@ a service worker, optional Android wrapper.
 4. **Two cults, one theme.** The player must feel that both cults are
    tempting. Rule: every Emperor scene and every Theogen scene must contain
    something genuinely beautiful.
-5. **Influence vs. imitation.** Keep Hell Rot visibly his own man. Writers
-   read Thompson and *Mondo 2000* for voice, not *Transmetropolitan* for
-   lines. The same goes for systems: borrow the *shape* of *Disco Elysium*'s
+5. **Influence vs. imitation.** Keep Hell Rot visibly his own man. His
+   *affect* mirrors Spider Jerusalem's (§2.2) — the rage, the tenderness,
+   the eloquence — but writers read *Transmetropolitan* for attitude, never
+   for lines, and Thompson and *Mondo 2000* for voice. The same goes for systems: borrow the *shape* of *Disco Elysium*'s
    skills, *Hades*' loop and *Grim Fandango*'s puzzles, never their names,
    text or art.
 
