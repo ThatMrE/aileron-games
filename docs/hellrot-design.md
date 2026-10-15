@@ -807,7 +807,18 @@ nerve damage, **he might score below the threshold himself**.
   **Desh**, writes letters to *Mondo 3000* with a typing aid, and is the
   sharpest reader the magazine has.
 - **The judge's lodge membership** is the scoop that can sink Prop F — if
-  Hell Rot can prove it without Fabrication.
+  Hell Rot can prove it without Fabrication. **The Blood Eye finds it;
+  paper proves it.** Seeing the gold ring tells Hell Rot where to look, but
+  his readers cannot see what he sees, so it cannot be printed. In court
+  (Issue 5) he can use it to rattle Ostrander — a showdown move, not a
+  column. The proof is paper, by Thursday at 5 p.m.: the **minute book**
+  from the Wednesday break-in at the Presidio lodge, which records
+  Ostrander's initiation as a Fellow of the Halo; or **Dr. Hale**, who at
+  high Trust tears out the page and hands it over — her first deliberate
+  betrayal of the Order. Hell Rot prints it, with Yara's verification.
+  Before the ruling: Ostrander recuses and the vote comes first. After:
+  the ruling stands, and the exposure is the ground for an appeal in
+  2050.
 
 ### 3.4 The gene-gods: the Theogens and the Quickening
 
@@ -3344,6 +3355,9 @@ Plot questions the writers' room must answer before Alpha.
 - **Sister Halcyon** is Hallie Kowalczyk, 44, a Merged ex-seminar trainer
   whose sermons the Twin drafts. She was Delphine's nurse in 2034. She can
   stop the Ascension herself if she learns the truth (§3.6c).
+- **Ostrander is exposed on paper,** not by the Blood Eye alone: the
+  Presidio minute book or Dr. Hale's torn page, printed by Hell Rot with
+  Yara's check (§3.3c).
 - **The court rules Thursday at 5 p.m.** and upholds the Index — unless
   Ostrander's ring is exposed first, in which case the vote comes first
   (Issue 5).
@@ -3447,8 +3461,6 @@ Plot questions the writers' room must answer before Alpha.
     the number?
 9. **How do the BFF and the Burn survivors end** on each route? Desh needs
     an arc, not a cameo.
-10. **Who exposes Judge Ostrander,** and does the exposure need the Blood
-    Eye (seeing the ring) or paper proof (which avoids Fabrication)?
 
 **Hell Rot**
 
