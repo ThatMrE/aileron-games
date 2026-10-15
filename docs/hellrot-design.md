@@ -1743,9 +1743,11 @@ are the game's running argument with the Bay Area's history of building gods.
    its author's own later rejection of it, never through its contents.
 3. **Violent sources always carry a context line** that names the harm (who
    was hurt, how many). No card makes a violent person look wise or cool.
-4. **No quotes from Jim Jones.** Peoples Temple appears in the deck only as
-   history, in the voices of survivors' memorial projects or of the press
-   that exposed it.
+4. **Cult leaders, yes — with one line drawn.** Cult founders appear in
+   their own documented words (LaVey, Dederich, Leary, Kesey, Emperor Norton
+   and others). Leaders whose words led followers to their deaths — Jim Jones
+   above all — appear only as **redacted cards**: name, years, a black bar,
+   the harm, and Hell Rot's refusal to print them.
 5. **Recovery-aware.** Drug-positive cards (Leary, for example) are held back
    while Craving is 3 or higher; recovery and honesty cards take their place.
 6. **A settings toggle** hides all real-world quotes and shows only in-world
@@ -1754,50 +1756,12 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (FRANCIS cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**Starter deck (real quotations).**
-
-| # | Quote | Source | Context line | Hell Rot's marginal note |
-|---|---|---|---|---|
-| 1 | "We are as gods and might as well get good at it." | Stewart Brand, *Whole Earth Catalog* (1968) | The catalog that taught the Bay Area to buy its tools and its utopias by mail | *Both cults read the first half.* |
-| 2 | "all watched over / by machines of loving grace" | Richard Brautigan, poem printed and handed out free in San Francisco (1967) | | *FRANCIS has it embroidered on a pillow. I checked.* |
-| 3 | "Turn on, tune in, drop out." | Timothy Leary (1966–67) | Popularized at the Human Be-In, Golden Gate Park, January 1967 | *I did all three. Wrong order.* (Held back at Craving 3+.) |
-| 4 | "Reality is that which, when you stop believing in it, doesn't go away." | Philip K. Dick (1978) | A Bay Area science-fiction writer, in a talk on fake realities | *Peer review in one sentence.* |
-| 5 | "Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind." | John Perry Barlow, "A Declaration of the Independence of Cyberspace" (1996) | Written in Davos, at the World Economic Forum | *The new home of Mind is a server farm in Santa Clara with a mortgage.* |
-| 6 | "The Industrial Revolution and its consequences have been a disaster for the human race." | Theodore Kaczynski, "Industrial Society and Its Future" (1995) | The manifesto of a mail-bomber who killed three people and injured 23 between 1978 and 1995. His brother recognized the writing. | *He could not win the argument, so he mailed bombs. Do not mistake the first line for the rest.* |
-| 7 | "It should quickly and quietly go out of print." | William Powell (2013), on *The Anarchist Cookbook*, which he wrote at 19 | He spent decades asking for the book to be withdrawn. He never owned the rights. | *The only recipe in it worth keeping.* |
-| 8 | "Satan represents indulgence instead of abstinence!" | Anton LaVey, *The Satanic Bible* (1969) | Founder of the Church of Satan, San Francisco, 1966 | *Five years clean. I'll pass.* |
-| 9 | "Today is the first day of the rest of your life." | Attributed to Charles Dederich, founder of Synanon | A rehab program that became a church; in 1978 members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* |
-| 10 | "You gotta give 'em hope." | Harvey Milk (1978) | San Francisco supervisor, murdered at City Hall that November | *(No marginal note. He leaves this one alone.)* |
-| 11 | "I saw the best minds of my generation destroyed by madness" | Allen Ginsberg, *Howl* (City Lights, San Francisco, 1956) | | *Mine was destroyed by nitrous. Less poetic.* |
-| 12 | "There was madness in any direction, at any hour." | Hunter S. Thompson, *Fear and Loathing in Las Vegas* (1971), on San Francisco in the sixties | | *Still true. Now it has an app.* |
-| 13 | "We tell ourselves stories in order to live." | Joan Didion, *The White Album* (1979) | | *And cults tell us stories in order to collect.* |
-| 14 | "The only thing that makes life possible is permanent, intolerable uncertainty: not knowing what comes next." | Ursula K. Le Guin, *The Left Hand of Darkness* (1969) | Le Guin was born in Berkeley | *Put this on the Spin Question. Put it on my grave.* |
-| 15 | "Trying to define yourself is like trying to bite your own teeth." | Attributed to Alan Watts, who lived and taught on a Sausalito houseboat | | *Try measuring yourself. I did. I read zero.* |
-| 16 | "Be Here Now." | Ram Dass, book title (1971) | | *Easy for him. He wasn't on deadline.* |
-| 17 | "Stay hungry. Stay foolish." | Back cover of the final *Whole Earth Catalog* (1974) | | *Half the Valley stayed hungry. The other half bought the restaurants.* |
-| 18 | "You're either on the bus or off the bus." | Ken Kesey, as reported by Tom Wolfe in *The Electric Kool-Aid Acid Test* (1968) | | *Ascension shuttles are free. That's how you know.* |
-| 19 | "a rare and precious transcendental state" | Alexander & Ann Shulgin, *PiHKAL* (1991), describing a "++++" | | *I have had one. I was dead at the time.* |
-| 20 | "Nature loves courage." | Attributed to Terence McKenna | | *Nature also loves sneaker waves.* |
-
-**Starter deck (in-world cards).**
-
-| # | Quote | Source | Hell Rot's marginal note |
-|---|---|---|---|
-| 21 | "You were always divine. Now you can stay that way." | FRANCIS billboard, Marin headlands | *Someone painted over the second line. Hire them.* |
-| 22 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I ever wrote was worse than the person who wrote it.* |
-| 23 | "WE REMEMBER EVERYTHING YOU BREATHED." | Karl (shown only after a blackout) | *That's not comforting, Karl.* |
-| 24 | "THE FUTURE IS A RELIGION. WE ARE ITS GOSSIP COLUMN." | *Mondo 3000* masthead | *Ours, anyway.* |
-| 25 | "Mr. Rothschild does not hold a PhD." | Corrections, *Mondo 3000* (every issue) | *Neither did Socrates.* |
-| 26 | "Went to hell. It rots." | Lab notebook, Brandvold lab, 2044 | *Best thing I ever wrote. Shortest, too.* |
-| 27 | "You are probably already a member." | The Dissonance Society | *I'm not. Probably.* |
-| 28 | "Mind the gap between the god and the man." | Recorded announcement on the Skyline gondola, re-recorded by the Dissonance | — |
-
-The full deck targets about **150 cards**: roughly 60 real, 90 in-world. More
-real-source candidates for the writers to research and verify: Emperor
-Norton's proclamations, Kevin Kelly, Gary Snyder, Gregory Bateson, the
-Diggers' free-store broadsides, the *Mondo 2000* editorials, Ann Shulgin, the
-Sisters of Perpetual Indulgence, and the Peoples Temple survivors' oral
-histories (as history, never as slogans).
+**The full deck** — 156 cards: 62 real quotations from Bay Area cult
+leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
+88 in-world cards from FRANCIS, the Theogens, Karl, the House, Hell Rot's
+*GIHKAL*, the cults and the City — lives in
+[hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
+rules and verification notes.
 
 ---
 
