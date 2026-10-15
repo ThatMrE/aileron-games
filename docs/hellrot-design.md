@@ -1212,7 +1212,7 @@ uncertainty on screen.
 | **Delphine Ash** | Prophet of the Theogens, Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone — see §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her. The Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's — see §3.4. |
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Her loyalty is the hinge of Route C. |
-| **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
+| **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the City's 60-hour seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
@@ -1288,6 +1288,42 @@ Her line: *"Everybody wants to save me. Nobody wants to ask me."*
   sits in the back so nobody can stand behind her."* **Successor:** *"Tem is
   Yara's intern now. She fact-checks the corrections."* **New Flesh:** *"The
   Theogens finished Tem's splice. The deep wards have a new bed."*
+
+### 3.6c Sister Halcyon
+
+Sister Halcyon was born **Hallie Kowalczyk**. She is 44. For ten years she
+was a top trainer at **The Standard**, the City's 60-hour seminar: she knows
+how to fill a ballroom and bring it to tears by hour 40. She joined the
+Church of the Twin in 2047 and was its voice within a year.
+
+- **She is Merged.** Halo score 10, the Halo jacked in behind her ear. Her
+  sermons are drafted by her Church AI — by the Twin. She believes every
+  word, because she can no longer tell which words are hers. She is the
+  living version of where the gold Halos lead Hell Rot: Wear 5, already
+  walking around (§5.14b).
+- **Her crack.** Once a year, the night before Christmas, she writes one
+  sermon by hand, on paper. This year Hell Rot can find it. It is the only
+  thing she has said in two years that the Twin did not draft.
+- **Delphine.** In 2034 Halcyon was a young nurse on Delphine Ash's ALS
+  ward. She watched Delphine splice herself live on the feed. Both of them
+  went looking for a way out of death: one chose the flesh, the other the
+  machine. They have not spoken in fifteen years. That is why they pretend
+  not to see each other at the Ocean Beach bonfire (Issue 3).
+- **Brother Cask.** Her Theogen opposite number, and her only friend. In
+  the endings where both cults fall, they open a diner together.
+- **Her arc.** On New Year's Eve she leads the 12,000 into the Palace of Fine
+  Arts. If she learns the truth — that the Twin's god is a dead billionaire,
+  Julian Rivet, and that the Ascension crowd is the first place the
+  god-gene would reach — she can **stop the Ascension herself**, alongside
+  or instead of the Bishop's sermon. It is the hardest thing anyone in the
+  game can do: unsay her own gospel, live, while the Twin drafts her next
+  line.
+- **Endings.** **Mortal:** *"Sister Halcyon had her Halo jack removed in
+  March. She is Hallie again. She runs the soup line at the Lantern."*
+  **Saint Rot:** *"Sister Halcyon reads his columns aloud at every mass.
+  She cries every time. So does he, wherever he is."* **Iconoclast:**
+  *"Halcyon walked out of the Palace behind him. She did not say a word all
+  the way home. It was the first silence she had chosen in years."*
 
 ### 3.7 Structure: a Prologue and seven Issues
 
@@ -1713,8 +1749,8 @@ from the water to the uprising.
   Flowers' glass.
 - **The Ocean Beach bonfire.** **Karl's Birthday** — sixteen years since the
   swarm was seeded. Bonfires in the drizzle, the New Breath's mass inhale,
-  Delphine, with Ione asleep against her, and Sister Halcyon pretending not
-  to see each other, and, for one
+  Delphine, with Ione asleep against her, and Sister Halcyon — her nurse,
+  fifteen years ago (§3.6c) — pretending not to see each other, and, for one
   minute, everyone on the beach hearing the same recording at once.
 
 **ROUTE LOCK.** The game reads the three columns, **Sainthood**, **Helix**,
@@ -1799,7 +1835,8 @@ midnight coming.
   the month, blind the Twin for an hour.
 - **The Ascension at the Palace of Fine Arts** — the Church of the Twin has
   taken over the rotunda and lagoon for 12,000 uploads at midnight, at the
-  edge of the Marina, on 1906 rubble.
+  edge of the Marina, on 1906 rubble. Sister Halcyon leads it — and, if
+  she has learned the truth, can stop it from the pulpit (§3.6c).
 - **The Golden Gate Bridge climax** — the fog's front door, where the
   Theogens load the Quickening into Karl as the storm comes in — Delphine at
   the south tower with Ione, her skin going dark, and perhaps dying there
@@ -3263,6 +3300,9 @@ Plot questions the writers' room must answer before Alpha.
 - **The Halos (the glasses).** AR glasses that are also a personal BCI and
   AI; the Halo score is named for them. Wearing them sets your score to 7; without them you are an automatic zero and
   cannot use City services. Hell Rot has none (companion doc §3.2c).
+- **Sister Halcyon** is Hallie Kowalczyk, 44, a Merged ex-seminar trainer
+  whose sermons the Twin drafts. She was Delphine's nurse in 2034. She can
+  stop the Ascension herself if she learns the truth (§3.6c).
 - **Tem** is 15. Her splice was a tiny dose of cingulate engineering from
   Hell Rot's third paper. In crowds she loses the line. She is the bridge's
   canary on New Year's Eve (§3.6b).
