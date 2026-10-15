@@ -2101,9 +2101,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 187 cards: 64 real quotations from Bay Area cult
-leaders, prophets, poets, technologists and radicals; 6 redacted cards; 18 eye-power cards (one per
-power, §5.14a); and 99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+**The full deck** — 194 cards: 64 real quotations from Bay Area cult
+leaders, prophets, poets, technologists and radicals; 6 redacted cards; 25 eye cards (one per
+power, §5.14a, plus seven portraits of the eyes themselves); and 99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -2186,11 +2186,96 @@ a service worker, optional Android wrapper.
 
 ## 11. Open questions
 
-- Proposition F (the Continuity of Persons Act) is now on the New Year's Eve
-  ballot. Should the player's columns move its vote share visibly, night by
-  night, on the HUD?
-- Should Moreau's growth pay off in a boss fight, or stay a running gag?
-- How literal is the Quickening on screen — fog effect only, or a full
-  sequence?
-- Does *Mondo 3000* get a playable "letters page" where cult members write
-  back?
+Plot questions the writers' room must answer before Alpha. Grouped by
+thread; each one changes scenes, not just lore.
+
+### The Emperor and Karl
+
+1. **Is ending the Emperor murder?** He is Julian, in some sense. If the
+   storm scatters him (the Penitents' plan), or Hell Rot helps it, has he
+   killed a man — and does the game say so? If Prop F passes, the law will.
+2. **Did Julian consent to what he became?** He agreed to an upload. Did he
+   agree to skip cingulate engineering, or did the Order rush him?
+3. **Can the WE and the I be separated?** Does Karl want its tenant out? Is
+   there a route where Karl evicts Julian, or where they learn to share?
+4. **Does the Emperor want to be saved?** The Ascension's anchors would
+   steady him by absorbing 12,000 people. In his lucid hours, does he want
+   that? Who speaks for him — Julian, Norton II, or the WE?
+5. **How does the public learn the secret on each route** — and if no route
+   reveals it, is the secret itself the ending?
+
+### The Auric Order
+
+6. **Who in the Order knew what, and when?** We need a clue ladder: which
+   member slips first, which paper leaks, which Penitent talks, by Issue.
+7. **Was the 2049 Pooling vote unanimous?** Who voted against putting
+   Julian's scan in the pan, and where are they now?
+8. **Does Mister Sunday know about the Emperor?** He is backed by a Gilder.
+   Is he a member, a tool, or a mark? His old plan — to upload himself as
+   mayor forever — now needs to fit the secret.
+9. **Who ordered the Rosa Quint "martyr metric"?** The Twin's forecast, a
+   Gilder, Sunday's staff, or the Emperor on a bad night?
+10. **What does the Order do about *Mondo 3000*** now that its own god keeps
+    paying the magazine's mortgage? Eviction, a buyout, a burglary?
+
+### The Theogens and Ione
+
+11. **Does Delphine know Karl is a god?** If she loads the Quickening into
+    Karl, she is injecting the Emperor. Does she know, find out, or never
+    learn?
+12. **What exactly is the god-gene,** and what happens to the Emperor if it
+    reaches him?
+13. **What becomes of Ione on each route?** Every ending promises one line
+    about the child; the writers need the eleven lines.
+14. **What does Wren want,** and when does she choose her child over her
+    cult?
+15. **Delphine's own splices are failing.** When does that become visible,
+    and who sees it first?
+
+### Proposition F and the courts
+
+16. **Does the court rule before New Year's Eve,** or does the vote come
+    first?
+17. **Does Hell Rot take the Index on screen?** If he scores below the
+    threshold, does he lose rights in his own story — and does he publish
+    the number?
+18. **How do the BFF and the Burn survivors end** on each route? Desh needs
+    an arc, not a cameo.
+19. **Who exposes Judge Ostrander,** and does the exposure need the Blood
+    Eye (seeing the ring) or paper proof (which avoids Fabrication)?
+
+### Hell Rot
+
+20. **What really activated the eyes?** The game keeps it open — but the
+    writers need a private answer to stay consistent.
+21. **Was Karl in the lab in 2044?** If the WE noticed him that night, has
+    Karl been watching him for five years? Is that why the shuttle came?
+22. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
+    a Fabrication — and if the game allows an exception, does that break the
+    Rot Code?
+23. **What does Midnight Forever mean for everyone else?** If he stops the
+    clock, do the Ascension and the Quickening go ahead without him?
+24. **Is there a route where he stays clean and still uses the gas** — for
+    the Spin Question experiment — and does the game treat that as a relapse?
+
+### The City
+
+25. **Do the minor cults still matter** now that the god is secret? The
+    Black House, Synapse and the Standard need a reason to touch the main
+    plot.
+26. **Who are the conspiracy cranks** who link the Order to his surname —
+    a named faction, or background noise? (Guardrails: §7.)
+27. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
+    are half right.
+28. **What happens to the Duchess's frozen parents** if the Ascension goes
+    ahead and the Church's offer to rebuild them in the Twin is real?
+
+### Design questions (kept from earlier drafts)
+
+29. Should the player's columns move Prop F's vote share visibly, night by
+    night, on the HUD?
+30. Should Moreau's growth pay off in a boss fight, or stay a running gag?
+31. How literal is the Quickening on screen — fog effect only, or a full
+    sequence?
+32. Does *Mondo 3000* get a playable letters page where cult members, Burn
+    survivors and the Emperor write back?

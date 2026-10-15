@@ -5,9 +5,9 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 187 cards: 64 real
-> quotations, 6 redacted cards, 99 in-world cards and 18 eye-power
-> cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 194 cards: 64 real
+> quotations, 6 redacted cards, 99 in-world cards and 25 eye cards
+> (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -132,7 +132,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (99) and eye-power cards (18)
+## Part 2 — In-world cards (99) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (23)
 
@@ -272,7 +272,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W87 | "1 January 2050, Aquatic Park, 8 a.m. Swim if you survived." | New Year's Plunge flyer | *I'll be there. Probably.* | Epilogue, tender |
 | W88 | "This card is a loading screen. While you wait, the City is deciding what you are." | *Mondo 3000* house ad | *Keep the receipt.* | weird |
 
-### 2H. The Eyes (18)
+### 2H. The Eyes (25)
 
 One card for each eye's base power and each of its eight upgrades (main doc
 §5.14a). Each card shows the power's name and icon, a line in the voice of
@@ -308,6 +308,22 @@ their marginal note is in a shakier hand.
 | E16 | **Stopped Beat** | Corrupt 2 | "Between their word and yours, a pause only you can live in." | *I won the argument by cheating time. The argument still happened.* | eyes, corrupt |
 | E17 | **Stillness** | Corrupt 3 | "The room stops. The rain hangs in the air. Take what you came for." | *Karl noticed. The fog doesn't like holes in time.* | eyes, corrupt, Karl, weird |
 | E18 | **The Stopped Clock** | Corrupt 4 | "11:59:59. Hold it as long as you like. It will not hold you back." | *A perfect moment, forever. The Merge, for one.* | eyes, corrupt, I5, grim |
+
+**The eyes themselves — portrait cards**
+
+Full-screen close-ups of each eye, drawn large in pixel art, with the card
+line set over the iris. These cards track the player's build: the game shows
+the version that matches the current state of each eye.
+
+| # | Card | When it shows | Card line | Hell Rot's note | Tags |
+|---|---|---|---|---|---|
+| E19 | **The Blood Eye** (portrait) | Always available | A red so deep it is almost black, and one point of light at the bottom of it. "I see what you meant, not what you said." | *It came back from the four minutes with me. I didn't ask it to.* | eyes, portrait |
+| E20 | **The Pale Eye** (portrait) | Always available | Ice-white, almost no colour, looking slightly past you. "I see where you are about to step." | *It looks a second ahead. It's never once looked back.* | eyes, portrait |
+| E21 | **The Blood Eye, gilded** | Blood Eye Corruption 3+ | The same eye, its red now veined with Twin gold. "I see what they want to believe. I can give it to them." | *It used to show me the truth. Now it shows me the market for lies.* | eyes, portrait, corrupt |
+| E22 | **The Pale Eye, frosted** | Pale Eye Corruption 3+ | The white iris furred with frost, like a window in a cold car. "Everything is so slow from here." | *I can stop the world. I can't stop needing to.* | eyes, portrait, corrupt |
+| E23 | **Both eyes, clear** | Both eyes on the pure path at step 3+ | The two eyes side by side, red and white, perfectly steady. "Truth now. The good path next." | *Fax says I look like myself for the first time since 2044.* | eyes, portrait, pure, D |
+| E24 | **Both eyes, gone** | Both eyes on the corrupt path at step 3+ | Gold-veined red and frost-white, staring out of the card at the player. "We see everything. We decide what it means." | *That isn't my voice. That's the Order's. That's the Emperor's. That's me.* | eyes, portrait, corrupt, grim |
+| E25 | **One of each** | One eye pure, one corrupt, both at step 2+ | One eye clear, one eye tinted. Half the card is in focus. "Which of us are you listening to?" | *The blood one and the pale one, arguing. Stuck in the middle, as usual.* | eyes, portrait, weird |
 
 ---
 
