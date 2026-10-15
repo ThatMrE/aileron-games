@@ -95,7 +95,7 @@
 
 ### 2.1 Who he is
 
-- **Age:** **33** (born 2016). He died on the lab floor at 28.
+- **Age:** **30** (born 2019). He died on the lab floor at 25.
 - **Name:** **Eli Rothschild.** Everyone has called him **Hell Rot** since
   the night he died in the lab (see *The night he died*, below). His *Mondo
   3000* byline says **Dr. Hell Rot, PhD**. He does not have a PhD. He left
@@ -2619,7 +2619,7 @@ unlocks it on its own, and either of them can say no and mean it.
 - **Recovery is not a plot device.** Love does not cure him, and neither of
   them is there to fix him. The romance can survive a relapse; it cannot
   survive a lie about one.
-- **The age and power gap with Yara.** She is 23, he is 33,
+- **The age and power gap with Yara.** She is 23, he is 30,
   and her aunt is his publisher. The writing takes that seriously: she
   starts it, she sets the pace, and the game lets her end it.
 
