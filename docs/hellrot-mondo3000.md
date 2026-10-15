@@ -522,7 +522,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   - **Junie vs. everyone** — she is the only one who has never believed in
     anything, and she finds the rest of them exhausting and lovable.
 - **Romance.** Optional, slow, adult, and never transactional. The romance
-  options are **Junie, Yara, Fax, the Bishop and Otto** (main doc §5.15);
+  options are **Junie, Yara, Fax, the Bishop, Otto and Pru** (main doc §5.15);
   Junie's and Yara's arcs are the longest. Saint Nobody flirts with
   everyone and commits to no one.
 

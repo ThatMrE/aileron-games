@@ -2619,9 +2619,9 @@ Iconoclast ending, Yara's gates the Successor ending.
 
 #### Romance
 
-Five housemates are **romance options**: **Junie, Yara, Fax, the Bishop and
-Otto**. Junie and Yara, the two core companions, have the longest arcs
-(below); the other three have full but shorter ones. Romance is
+Six housemates are **romance options**: **Junie, Yara, Fax, the Bishop,
+Otto and Pru**. Junie and Yara, the two core companions, have the longest
+arcs (below); the other four have full but shorter ones. Romance is
 optional, slow, adult and never transactional: no gift buys it, no stat
 unlocks it on its own, and either of them can say no and mean it.
 
@@ -2634,12 +2634,12 @@ unlocks it on its own, and either of them can say no and mean it.
 | **Gate** | Junie Trust ≥ 4 and a sober Issue 5 | Yara Trust ≥ 4 and no Fabrication on the record |
 | **Ending colour** | In **The Mountain** and **Iconoclast**, she is the one beside him | In **Successor**, the byline is hers and so is the last line about him; it is the saddest version of that ending |
 
-| | **Fax** | **The Bishop** | **Otto** |
-|---|---|---|---|
-| **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part |
-| **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him |
-| **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel; New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory |
-| **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 |
+| | **Fax** | **The Bishop** | **Otto** | **Pru** |
+|---|---|---|---|---|
+| **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part | He is the only bet she has ever made that she cannot price |
+| **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him | He uses her numbers to justify something she rated as a catastrophe |
+| **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel; New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory | The Ledger's office party on Wednesday night, stealing the file together |
+| **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 | Pru Trust ≥ 4 |
 
 **Rules for writers.**
 
