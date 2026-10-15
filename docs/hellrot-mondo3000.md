@@ -295,6 +295,16 @@ an emperor must keep a court jester. The Julian inside him, when Hell Rot
 finally reaches him, says something else: *"I set it up so it couldn't be
 cancelled. Even by me. Especially by me."*
 
+**The Duchess knew — or guessed.** In 2044 Julian talked to her for six
+hours; 40 pages ran. She kept the raw tapes — paper transcripts and
+cassettes, out of the Emperor's reach — and the unpublished hours have him
+on Delphine, on "a house nobody can see into," and on uploading. She worked
+out years ago that the patron was Julian, and never asked, because asking
+would end the money. In Issue 4, when the truth comes out, the House learns
+she has known all along. It is her worst scene and her best: *"Darling, I
+run a magazine. Of course I didn't ask."* The tapes are a second key to
+Route D, alongside the journals.
+
 **The Locked Room** holds Julian's handwritten journals from 2044 to 2049 —
 every Commission he sent and why, the house he hid from himself, and the
 upload he was planning. They are on paper, so the Emperor, who can read
@@ -309,6 +319,27 @@ and the Lacuna Trust's last letter (Issue 6) finally sends the key.
 | **B — Merge** | The Emperor, by decree, offers to sign the House over outright. Accepting is the moment Hell Rot's Halo jumps to 10 — and the moment he becomes the god's own takedown writer. |
 | **C — Splice** | Delphine — the Commissions' first target — offers to buy the Trust from the Order, and turn the weapon around. |
 | **D — Communion** | Julian's journals break the Emperor's Certainty: they show a man who used a magazine to destroy people and then, as a god, ordered it to investigate himself. |
+
+### 4.5 *"Cold Storage"* — the Duchess's quest
+
+The dead in the Twin are only reconstructions, and the Duchess knows it;
+the Church's offer to "rebuild" her parents is a puppet show. But on the
+Issue 2 ferry home, through the fog, the Emperor makes a real offer: the
+Order can do for her parents what it did for Julian — **laser-scan their
+frozen brains into Karl**. They would be the **second and third uploads in
+history**: without conditioning, sick the way the Emperor is sick, two more
+minds drowning in a City's worth of senses. The Emperor offers it as a gift,
+and means it.
+
+Her choice, made by New Year's Eve, with Hell Rot's column as her only
+counsel:
+
+- **Yes:** two more mad gods for her parents' sake. The scan happens in the
+  Presidio lodge on Thursday night; at midnight Karl holds three voices that
+  cannot tell themselves apart, and the Midnight Quake is worse.
+- **No:** she stops paying the fees and lets them go. It costs her the last
+  thing she believed in, and it is the only ending of the quest in which she
+  sleeps.
 
 ---
 
@@ -340,7 +371,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 
 | Resident | Masthead title | Bundle past | Companion bonuses | Once-per-Night ability | Lure | Back Page story |
 |---|---|---|---|---|---|---|
-| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: The Emperor offers to rebuild her parents inside the Twin from their records | *"Cold Storage"* — find out what the Twin's copies of them really are |
+| **The Duchess Nyx** | Founder & Publisher | **C — Cosmism.** Born Theodora Nyquist, 50; "the Duchess" since a Dissonance Society night at 21. In her twenties she had her dying parents cryopreserved on the Rock, as a sacred duty to the dead, and spent her inheritance on the vault fees. Twenty years on, nobody has been revived. She stopped believing; she still pays the fees. | Hub only; joins one Night per Issue: THE CELEBRITY +2, FOOTNOTE +1 | **Old Money:** open any door in the Span or on Rivet Hill | The Merge: The Emperor offers to *upload* her parents — a laser scan of their frozen brains into Karl | *"Cold Storage"* — see below |
 | **Yara Nyx** | Research Editor & Fact-Checker | **R — Rationalism.** Raised in a Bayes House where every family decision ran on expected value. Left at 16. | PEER REVIEW +2, FOOTNOTE +1 | **Recheck:** verify one item on the spot | The Bayes Houses' new champion, which wants her to run the Emperor's forecast team | *"Priors"* — her parents' house is merging, as a household, and they want her to come |
 | **Junie Vasquez** | Head of Circulation (she delivers the paper by roller skate) & Security | **None.** She is the House's **control group**, and proud of it. | MOUNTAIN MAN +2, REFLEX +1 | **Bodycheck:** win one physical encounter outright | The Merge: her knees are failing, and the Twin would let her skate forever | *"Jam"* — one last bout at the Cow Palace roller rink, and a choice about her body |
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body |

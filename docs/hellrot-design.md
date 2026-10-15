@@ -1191,7 +1191,7 @@ uncertainty on screen.
 | Character | Role | Notes |
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
-| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
+| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Born Theodora Nyquist, 50. Named herself "the Duchess" at 21 at a Dissonance Society event and never put the title down. Velvet and denim — the Order's cloth, without knowing it. Founded the magazine in 2041 and runs it from **Villa Delirium**, a sealed Alamo Square Victorian leased to the staff by an anonymous patron. Assigns each Issue's story — and passes on the Rivet **Commissions** (hit pieces), because the cheques keep the paper alive. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). Her secret: she guessed years ago that the house's patron was Julian, and never asked (Mondo doc §4.4). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
@@ -1583,8 +1583,10 @@ from the water to the riot.
   Longevity**, past the **Nortonian shrine** at the Ferry Building, where the
   fog is writing decrees on the clock face and the Nortonians are singing to
   it. On the island, the Duchess's side quest: a visit to her **parents in
-  the cryo vault**, the Church's offer to "rebuild" them in the Twin, and the
-  place Julian Rivet refused to go. A Keeper's minute-book page, left in the
+  the cryo vault**, and the place Julian Rivet refused to go. The Church
+  offers to "rebuild" them in the Twin — only a reconstruction, and the
+  Duchess knows it. Then, through the fog, the Emperor makes the real offer
+  (Mondo doc §4.5, *"Cold Storage"*). A Keeper's minute-book page, left in the
   Duchess's coat on the ferry home, is the first message from Dr. Hale.
 - **Column 2.** An attack on the Church raises Halo *anyway* — the Church
   frames his anger as prophecy — and raises Helix more. The Theogens send
@@ -1913,6 +1915,14 @@ holds the full set). Three set the tone:
 - **New Flesh:** *"Ione stopped glowing on 3 January. The Theogens say she
   is resting."*
 - **Midnight Forever:** *"Wren says Ione has started watching the clock."*
+
+**The Duchess's line.** Three endings close on her:
+
+- **Mortal:** she stops paying the vault fees and buries her parents at
+  Colma, the cemetery town south of the City.
+- **Saint Rot:** she prints the Emperor's columns under Hell Rot's byline,
+  and never forgives herself.
+- **Successor:** she hands Yara the masthead.
 
 ### 3.12 Branching map (high level)
 
@@ -2992,6 +3002,10 @@ Plot questions the writers' room must answer before Alpha.
   poison also paid for the antidote (Mondo doc §4.4).
 - **Julian wants the Ascension; the Emperor, having become a god, has second
   thoughts** (§3.3).
+- **The Duchess** is Theodora Nyquist, 50. She guessed the patron was
+  Julian and never asked; she holds the raw tapes of his 2044 interview. Her
+  *"Cold Storage"* choice: let the Order laser-scan her frozen parents into
+  Karl — the second and third uploads — or let them go (Mondo doc §4.4–4.5).
 - **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
   uses the recording to reach him (§3.3).
 - **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
@@ -3082,8 +3096,6 @@ Plot questions the writers' room must answer before Alpha.
     a named faction, or background noise? (Guardrails: §7.)
 19. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
     are half right.
-20. **What happens to the Duchess's frozen parents** if the Ascension goes
-    ahead and the Church's offer to rebuild them in the Twin is real?
 21. **What does Sunday's failed Lifeboat upload do** when it fails at
     midnight — does it hurt only him, or does it crash into the Twin and the
     Emperor?
