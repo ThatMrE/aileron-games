@@ -517,7 +517,8 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   - **The first jack.** Fax's 2030s lab jack is the ancestor of the
     Church's Halo jack, the implant every Merged citizen carries. The Twin
     listens to every Church jack in the City. It cannot hear his: the format
-    died before the Twin was built.
+    died before the Church built its jacks, and the Twin was never taught
+    to read it.
   - **"Legacy Format."** The messages through his jack come from the
     Emperor's **"I"** — Julian — hiding in the one channel the rest of the
     god cannot hear. Fax is the secret line to the human inside the god, and
