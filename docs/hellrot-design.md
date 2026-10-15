@@ -833,8 +833,8 @@ uncertainty on screen.
 | **Wren Castillo** | Ione's mother | A 24-year-old Theogen nurse. Believes her child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
-| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. |
-| **Rosa Quint** | Sunday's chief of staff | Sincere and idealistic; runs his recall defence because she still believes in the young reformer he once was. The "martyr metric" target (§3.9, Issue 3): the Twin's forecast says her death would win Sunday the recall. |
+| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
+| **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
 | **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years; now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
@@ -1165,7 +1165,9 @@ from the water to the riot.
   blessing the brides together — Halcyon sincere, Sunday sloppy, both
   dangerous (§5.5). Mary Okafor, in the crowd, recognizes the pattern from
   1990s televangelism and becomes a source. Augustus Pell, the recall
-  challenger, watches from the back and offers Hell Rot a deal.
+  challenger, watches from the back and offers Hell Rot a deal. On the way
+  out, **Rosa Quint**, Sunday's chief of staff, presses a folded note into
+  Hell Rot's hand: *"The Haight. Ask about the test subjects. Then ask me."*
 - **The Haight, afternoon into night.** The Haight Exchange's dark side:
   human experiments and drugs. Behind the 1967 theme storefronts, **Sunday's
   operation** runs nitrous dens and recruits addicts as paid test subjects for
@@ -1205,17 +1207,20 @@ from the water to the riot.
   beside its aquarium tanks. Mayor Sunday attends; so does Rosa Quint, his
   chief of staff, who believes in the young reformer he used to be. Optional:
   Hell Rot is invited to play a Synapse Game at the table.
-- **The martyr metric.** At the dinner, Yara finds a Twin forecast in
-  Sunday's recall data: a sympathy surge for a mayor who suffers a "sacred
-  loss." Rosa is the sacred loss, and somebody in Sunday's sloppy operation
-  has read the forecast as a plan — tonight.
+- **The martyr metric.** Rosa has been leaking to *Mondo 3000* since the
+  Haight: the Lifeboat's test subjects, the nitrous money. Sunday knows. At
+  the dinner, Yara finds a Twin forecast in Sunday's recall data: a sympathy
+  surge for a mayor who suffers a "sacred loss." Sunday has turned it into an
+  order. Rosa is the sacred loss, and the forecast is his cover: a grieving
+  mayor wins the recall, and his whistleblower is silenced. He ordered it
+  himself, sloppily, on a phone the Twin logs — tonight.
 - **Key choice (timed interrupt):** warn Rosa, chase the leak, or file first.
   - **Warn Rosa:** she may survive (Junie Trust, Heat). If she does, she
-    becomes a whistleblower against Sunday.
-  - **Chase the leak:** Hell Rot gets the proof, Rosa dies, and the proof is
-    worth more because she died.
+    goes on the record — the first named source against Sunday.
+  - **Chase the leak:** Hell Rot gets the proof that Sunday gave the order,
+    Rosa dies, and the proof is worth more because she died.
   - **File first:** the column runs before the shot. The forecast flips to
-    "low yield" and Sunday's people cancel it. Rosa lives — and the Emperor
+    "low yield" and Sunday cancels the order. Rosa lives — and the Emperor
     learns that Hell Rot's column can change the forecasts, and wants him
     more.
 - **Golden Gate Park, night.** The chase or the walk west through the dark
@@ -1485,8 +1490,8 @@ flowchart TD
   I1 -->|Column 1| I2[Issue 2: The Twin]
   I2 -->|Column 2| I3[Issue 3: The Underground]
   I3 --> R{Rosa Quint interrupt}
-  R -->|Warn| I3a[Rosa lives, whistleblower]
-  R -->|Chase| I3b[Rosa dies, proof]
+  R -->|Warn| I3a[Rosa lives, on the record]
+  R -->|Chase| I3b[Rosa dies, proof Sunday ordered it]
   R -->|File first| I3c[Rosa lives, the Emperor fixates]
   I3a & I3b & I3c --> L{ROUTE LOCK<br/>Halo vs Helix + Venom/Vow + Trust}
   L -->|both low, Vow| A[Route A: HERESY]
@@ -2531,6 +2536,8 @@ Plot questions the writers' room must answer before Alpha.
   poison also paid for the antidote (Mondo doc §4.4).
 - **Julian wants the Ascension; the Emperor, having become a god, has second
   thoughts** (§3.3).
+- **Sunday ordered the hit on Rosa Quint** because she turned whistleblower;
+  the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
 - **The public finds out in the Midnight Quake** — a quake the Emperor's
   convulsion triggers, and a fire that mirrors 1906 (§3.8b).
 - **Mondo 3000 the paper is Rivet's takedown sheet**, and the staff know it;
@@ -2539,11 +2546,6 @@ Plot questions the writers' room must answer before Alpha.
   §4.4).
 
 ### Still open
-
-**The Emperor**
-
-1. **Who ordered the Rosa Quint "martyr metric"?** The Twin only forecast
-   it. Someone in Sunday's sloppy operation read it as a plan — who?
 
 **The Theogens and Ione**
 
