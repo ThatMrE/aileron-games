@@ -1929,6 +1929,12 @@ holds the full set). Three set the tone:
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
 
+**Fax's line.** Two endings close on him:
+
+- **Mortal:** he unplugs the jack for good and frames it.
+- **Saint Rot:** he designs the Emperor's covers, and they are the best work
+  of his life.
+
 ### 3.12 Branching map (high level)
 
 ```mermaid
@@ -2607,7 +2613,7 @@ unlocks it on its own, and either of them can say no and mean it.
 
 | | **Fax** | **The Bishop** | **Otto** |
 |---|---|---|---|
-| **What draws them** | He restarted Hell Rot's heart in 2044 and has never said what it cost him | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part |
+| **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable; she is wrong about the last part |
 | **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him |
 | **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel; New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory |
 | **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 |
@@ -3064,6 +3070,9 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life; her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Fax** is 34. He was jacked in on the night Hell Rot died and felt the
+  four minutes. The voice in his jack is Julian. The Theogens' offer to him
+  is an adult cingulate splice that would kill him (Mondo doc §5).
 - **Karl was in the lab in 2044** and recorded Hell Rot's death; the Emperor
   uses the recording to reach him (§3.3).
 - **Breathing xenon for the Spin Question is a relapse** if Hell Rot is the
