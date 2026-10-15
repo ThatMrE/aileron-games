@@ -2731,8 +2731,8 @@ The Halos make it *perfect*: crisp text, no swapped letters, choices in
 order — and gold. A player at Wear 4 is playing the cleanest-looking screen
 in the game, and has the least say in it.
 
-**Who notices.** Junie sees him stop crossing himself before hills when she
-does. Yara finds a sentence in his column she did not write and he does not
+**Who notices.** Junie notices he has stopped teasing her when she
+crosses herself before a hill: the Halo told him it was unkind. Yara finds a sentence in his column she did not write and he does not
 remember writing. Fax can jam the Halos for one Run with his old jack. Mary
 keeps his real notes on paper. The Emperor, in a lucid hour, asks him to
 take them off.
