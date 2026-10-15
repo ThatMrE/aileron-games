@@ -481,7 +481,7 @@ his tastes through a swarm:
 | Attended churches of every faith in turn | Attends every faith in turn through the fog: the Church's mass, a Theogen sermon, the Nortonian shrine — and the North Beach recovery meeting, where he stays at the window and says nothing |
 | Kept a reserved seat at opening nights | Reserves the front row at every opening — a screen with a gold ring, on the seat |
 | The City's famous dogs, Bummer and Lazarus, which legend gave to Norton | The fog parts for every dog in the City |
-| Stopped a riot, the story goes, by standing in front of the mob and reciting the Lord's Prayer | In Issue 1, the screen signed *Norton II* tries to calm the Loin riot the same way — and the BLOOD EYE sees how badly he wants it to work |
+| Stopped a riot, the story goes, by standing in front of the mob and reciting the Lord's Prayer | In Issue 1, the screen signed *Norton II* tries to calm the Loin uprising the same way — and the BLOOD EYE sees how badly he wants it to work |
 
 Norton died on a California Street corner in 1880, and the City turned out
 by the thousands for his funeral. Norton II knows the story. He hopes for
@@ -1217,9 +1217,45 @@ uncertainty on screen.
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
-| **Benny "Two-Tanks" Marchetti** | Old contact, dealer | Sold Hell Rot gas in the lab years. Now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. The best source in the Loin (Issue 1) and the seller of the Spin Question's xenon on Twin Peaks (Issue 5). Every scene with him raises Craving. |
+| **Benny "Two-Tanks" Marchetti** | Old contact, dealer | 54, North Beach Italian-American, an ex-medical-gas driver. Sold Hell Rot gas in the lab years — and delivered the two tanks the night he died. Now runs nitrous for Mayor Sunday's operation out of the Ghost Diner in the Tenderloin. Warm, funny, and the worst person in the City for Hell Rot to sit with. Every scene with him raises Craving (§3.6a). |
+| **Mama Rue** | The Ghost Diner's queen | A trans woman in her sixties who has eaten at the Ghost Diner every night for forty years and runs its back booth like a court. She throws the coffee that starts the Loin uprising (Issue 1). Tem's protector. |
 | **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
 | **The Dissonance Society** | Chorus | The City's pranksters (see companion doc §5). Not a cult. Their motto: *"You are probably already a member."* |
+
+### 3.6a Benny "Two-Tanks" Marchetti
+
+Benny is 54, from an Italian-American North Beach family, with a gut, a
+leather jacket and reading glasses on a chain. The jacket smells of nitrous,
+and that smell is the Craving trigger. His line: *"Kid. You look like hell.
+I mean that as a compliment."*
+
+- **Where the gas came from.** He was a medical-gas driver for the City's
+  hospitals. A cylinder or two came "off the truck."
+- **Why "Two-Tanks."** At 3 a.m. in 2044 he brought two tanks of xenon to the
+  Brandvold lab — one for the protocol, one for Hell Rot. It was the night
+  Hell Rot died. Hell Rot does not remember. Benny has never forgotten. His
+  warmth is guilt. He says so on Twin Peaks (Issue 5), selling him xenon
+  again.
+- **He has the Rot too.** A lifelong nitrous user with the same nerve
+  damage, untreated and worse: numb feet, a cane he is too proud to use. He
+  is what Hell Rot becomes without recovery.
+- **The line he will not cross.** Sunday asked Benny for the gas to stage
+  Rosa Quint's death as an overdose. Benny said no. That is why he tells
+  Hell Rot the sweep at the diner was bought: he wants out. If Hell Rot
+  chases the leak in Issue 3, Benny is the source.
+- **The canisters.** The Theogens bought the Quickening's canisters through
+  Benny's supply chain, as "medical gas." He does not know what is in them.
+  If the pocket outbreak comes through him (§3.4), his guilt arc ends in the
+  worst way. Exposing him in Issue 1 changes who holds the canisters later.
+- **The Twin Peaks deal.** He can sell the real xenon or mislabelled tanks,
+  by how much he trusts Hell Rot. A REFLEX or PEER REVIEW check catches the
+  fake. Printing results from fake gas is Fabrication.
+- **Side quests.** *"Last Delivery"* — trace who has been buying canisters
+  through him. *"Back Row"* — get him to the North Beach meeting. He sits at
+  the back, says nothing, and keeps coming back.
+- **Endings.** **Mortal:** *"Benny goes to the North Beach meeting now. Back
+  row. He brings the coffee."* **Fabrication:** *"Benny runs Sunday's whole
+  trade now. He sends Hell Rot a tank every Christmas."*
 
 ### 3.7 Structure: a Prologue and seven Issues
 
@@ -1243,7 +1279,7 @@ is right about almost everything.
 
 ```
 PROLOGUE   "Low Water"         Sat 25 Dec  Christmas night, king-tide low: a god is born at Steep Ravine; Highway 1; the Santas; safe at Villa Delirium
-ISSUE 1    "King Tide"          Sun 26 Dec  king-tide peak: North Beach, the Wharf, Laffing Sal, Chinatown, Union Square, the Loin riot
+ISSUE 1    "King Tide"          Sun 26 Dec  king-tide peak: North Beach, the Wharf, Laffing Sal, Chinatown, Union Square, the Loin uprising
 ISSUE 2    "The Twin"           Mon 27 Dec  City Hall brides and showdown; the Haight; night ferry to Alcatraz
 ISSUE 3    "The Underground"    Tue 28 Dec  Sutro Baths data center; Cal Academy dinner; Golden Gate Park; Ocean Beach bonfire
            ── ROUTE LOCK ──
@@ -1512,7 +1548,7 @@ days. The game's first save is his bed.
 The king tide peaks this morning. North Beach and the waterfront are
 ankle-deep in seawater, Boxing Day returns lines snake through the flood, and
 the first Kwanzaa candles are lit in the Fillmore. This Issue is a long walk
-from the water to the riot.
+from the water to the uprising.
 
 - **The meeting, North Beach.** The night opens in a church basement
   recovery meeting in flooded North Beach — folding chairs on pallets, coffee
@@ -1536,20 +1572,30 @@ from the water to the riot.
   never quite says they are not the real thing. Half the crowd weeps with joy. Half is
   furious. Some remember the Mission's Day of the Dead in November, when the
   fog formed faces over the altars.
-- **The diner.** In the Tenderloin, a 24-hour diner, the Ghost Diner, where
-  his **old contact** is waiting: **Benny "Two-Tanks" Marchetti**, who sold
-  him gas in the lab years and now runs nitrous for Mayor Sunday's operation.
-  Benny is the best source in the Loin and the worst person for Hell Rot to
-  sit with. He tells him the riot is bought and paid for. Craving +1, just
-  from the smell of his jacket.
-- **The Loin.** The riot kicks off — engineered by people who want the
-  district cleared for new Merge housing. The Church's Twin rates the Loin at
-  Halo zero: poor, unwired, spliced. Hell Rot meets **Tem** and recognizes
-  the edit in her glowing arm: it is from his third paper. He can treat her,
-  report her, or hide her.
-- **Key choices:** go into the riot or cover it from the feeds. Protect Tem
-  or protect the footage. Expose the police, the developers, Benny, or the
-  Theogen clinic that spliced Tem.
+- **The diner.** The **Ghost Diner** is a 24-hour diner on the corner of Turk
+  and Taylor — the corner where Compton's Cafeteria stood in 1966. It is the
+  Loin's living room: trans women, sex workers, spliced kids, night workers,
+  anyone the Twin rates at Halo zero. **Mama Rue** holds court in the back
+  booth. Hell Rot's **old contact** is waiting there: **Benny "Two-Tanks"
+  Marchetti** (§3.6a), the best source in the Loin and the worst person for
+  Hell Rot to sit with. Benny tells him the night's police sweep is bought
+  and paid for. Craving +1, just from the smell of his jacket.
+- **The Loin uprising.** At 2 a.m. Sunday's police arrive for a "Halo-zero
+  sweep" of the diner. The management called it in; developers paid for it,
+  to provoke a riot that would justify clearing the district for new Merge
+  housing. An officer grabs Mama Rue's arm. She throws her coffee in his
+  face. Then the sugar shakers, the trays, the plates, the front window —
+  and the diner spills into the street. It is the 1966 **Compton's Cafeteria
+  riot**, fought again by the same kind of people for the same reason
+  (companion doc §1.1). In the street Hell Rot meets **Tem**, a kid Mama Rue
+  looks after, and recognizes the edit in her glowing arm: it is from his
+  third paper. He can treat her, report her, or hide her.
+- **Key choices:** go into the street or cover it from the feeds. Protect
+  Tem or protect the footage. Expose the police, the developers, Benny, or
+  the Theogen clinic that spliced Tem. And **one word for Column 1**: the
+  buyers want *riot*; the people in the diner say *uprising*. The word the
+  player prints sets how the City — and the Loin — reads Hell Rot from then
+  on.
 - **Column 1.** Sets the City's baseline opinion of Hell Rot and starts both
   meters. Whichever cult the column hurts less raises its meter first. The
   player sees **Halo** and **Helix** appear on the HUD. This is the inciting
@@ -1765,8 +1811,8 @@ night to build Runs around. (District details: companion doc §3.)
 | **Fisherman's Wharf at high water** | Sea lions on the sidewalks, the Wet Line hydrofoils, Laffing Sal speaks, signed *Norton II* | Core |
 | **The Chinatown wet market** | Steam, fish tanks, roast ducks, a fishmonger's tip about the Theogens | Core |
 | **Union Square** | Merged relatives in the shop windows, the returns lines | Core |
-| **The Ghost Diner, Tenderloin** | Benny "Two-Tanks": the riot is bought and paid for, Craving +1 | Core |
-| **The Loin** | The riot, Tem's glowing arm, the street screen signed *Norton II* | Core |
+| **The Ghost Diner, Turk and Taylor** | Benny "Two-Tanks": the sweep is bought and paid for, Craving +1. Mama Rue's back booth | Core |
+| **The Loin** | The uprising (an echo of Compton's Cafeteria, 1966): Mama Rue's coffee, Tem's glowing arm, the street screen signed *Norton II* | Core |
 | **The Embarcadero and the Fill** | King-tide floodwater in the streets, the Order's Old Lodge awash | Optional |
 | **The Lantern shelter** | The only beds for zero-Halo people, Tem's hiding place | Optional |
 
@@ -2778,6 +2824,15 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   the game (the Nortonian preacher included) are sincere. Ione is an infant
   and is never shown doing harm. The game is about what adults project onto
   a child.
+- **The Loin uprising and trans history.** The Issue 1 uprising is an
+  homage to the 1966 Compton's Cafeteria riot, when trans women and queer
+  people in the Tenderloin fought back against police harassment — three
+  years before Stonewall. The game honours it: the people who fight back are
+  right, the trans characters (Mama Rue first) are full people with their
+  own stories, not victims or punchlines, and the real riot is named in the
+  game's notes. Trans writers and sensitivity readers work on every scene,
+  in consultation with Tenderloin community and history groups such as the
+  Transgender District.
 - **Mental illness.** The Emperor's breakdown is an injury — a mind uploaded
   without the brain region that sorts self from noise — not a portrait of
   schizophrenia. Real people with schizophrenia are far more often victims of
@@ -3115,6 +3170,11 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life. Her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Benny delivered the gas the night Hell Rot died.** He refused Sunday's
+  order to stage Rosa's death; the Quickening canisters came through his
+  supply chain (§3.6a).
+- **The Loin riot is an uprising,** an homage to Compton's Cafeteria (1966),
+  started by Mama Rue's coffee at the Ghost Diner (Issue 1).
 - **Saint Nobody is a role, not a person** — a Discordian title passed from
   hand to hand each night. That is why the Twin cannot score them. The
   credits show who wore it, including whoever chalked Revelation 13:1 at
