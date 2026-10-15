@@ -440,8 +440,12 @@ spread across a swarm. The pronoun is a tell the player learns to read:
   hears the Emperor say "I," it is a story beat.
 - **"WE"** in capitals — the WE: the swarm talking, nobody at the wheel.
 
-The design doc and the narration call him "he." The game never calls him
-"it," except in the mouths of people who want him switched off.
+**The narration calls the Emperor "they"** (they/them), in every line of
+in-game text. Julian, the man, is "he" — in the backstory and whenever "I"
+surfaces. Characters who respect the Emperor say "they"; the game never
+calls them "it," except in the mouths of people who want them switched off.
+(Older prose in this design doc still says "he" for the Emperor; in-game
+text follows this rule.)
 
 **Julian before the upload.** A collector of certainties. Rivet heir at 22,
 Master of the Aura at 40, he funded the Twin for twenty years to make the
@@ -1183,7 +1187,7 @@ uncertainty on screen.
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
-| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. Speaks of himself only as **"we"**; when he says "I," it is Julian. The first and only upload. |
+| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. Speaks of themselves only as **"we"**; the narration says "they"; when they say "I," it is Julian. The first and only upload. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. Ione's father, though he was uploaded without knowing a child was coming. |
 | **Dr. Imogen Hale** | The inside ally | Neurosurgeon, Keeper of the Pattern, leader of the Order's Penitents. She ran the laser on Julian and wants him allowed to die (§3.3b). |
 | **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
@@ -2983,8 +2987,8 @@ Plot questions the writers' room must answer before Alpha.
   have cingulate conditioning, to work more fully with their personal AIs;
   the Church's "merged" are conditioned and bonded to a Church AI, and the
   Ascension would be the first uploads (§3.3).
-- **The Emperor's pronoun is "we."** "I" is Julian surfacing; "WE" in capitals
-  is the swarm. He mirrors Emperor Norton's tastes, and his decrees are a
+- **The Emperor's pronoun is "we"** in their own mouth and **"they"** in the
+  narration. "I" is Julian surfacing; "WE" in capitals is the swarm. He mirrors Emperor Norton's tastes, and his decrees are a
   running bit (§3.3).
 - **Sunday ordered the hit on Rosa Quint** because she turned whistleblower;
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
