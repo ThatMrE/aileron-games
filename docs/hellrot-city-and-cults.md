@@ -257,12 +257,23 @@ winter, each lasting four to five days.
 
 | Night | Moon (evening sky) | Water | Game effect |
 |---|---|---|---|
-| Sat 25 Dec (Prologue) | 3% crescent, sets 6:32 p.m. | King tides building | Dark night; from Mount Tam, above the fog, the stars are out |
+| Sat 25 Dec (Prologue) | 3% crescent, sets into the sea at 6:32 p.m.; then no moon at all | King tides; the year's lowest evening low | **The birth at Steep Ravine** (below): the hot springs surface after dark, in total darkness, for about two hours |
 | Sun 26 Dec (Issue 1) | 9%, sets 7:45 p.m. | **King tide peak** (perigee night) | Morning flooding of the Fill and the Embarcadero is the news when the night begins; lower Undertrack doors are underwater |
 | Mon 27 Dec (Issue 2) | 17%, sets 8:57 p.m. | King tides | The Theogens are pushed up out of the flooded tunnels into the Baths — easier to find, angrier |
 | Tue 28 Dec (Issue 3) | 27%, sets 10:07 p.m. | Tides falling off | Karl's Birthday on Ocean Beach; the tunnels start to drain |
 | Wed 29 – Thu 30 Dec (Issue 4) | 38–50%, sets 11:15 p.m. – 12:22 a.m. | Normal | The Undertrack reopens; the Theogens go back down |
 | Fri 31 Dec (Issue 5) | ~60% waxing gibbous; at midnight it hangs about 15° above the western horizon, straight out over the Golden Gate; sets 1:27 a.m. | **Neap tide**; storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down |
+
+**The birth at Steep Ravine (Prologue).** Winter's lowest tides on the
+California coast fall in the afternoon and evening, and the deepest lows come
+around the new moon. One day after Christmas Eve's new moon, with the Moon
+hours from perigee, the year's lowest evening tide falls after sunset (4:59
+p.m.) and after the crescent moon sets (6:32 p.m.). Under Karl, with no moon,
+the Steep Ravine cove is completely dark. That is the Prologue: the springs
+surface, the Theogens arrive with only their own glowing skin for light, and
+the king tide gives them about two hours before the sea takes the pools back.
+(The exact low-tide clock time for 25 December 2049 is a writer's estimate
+consistent with the seasonal pattern, not a NOAA prediction.)
 
 **The midnight moon.** Under Karl, nobody in the City has seen the moon in
 years. At midnight on New Year's Eve a bright, gibbous moon sits low over the
@@ -278,6 +289,7 @@ Quickening.
 | Real place | Game district | What changed | Who lives there | Game use |
 |---|---|---|---|---|
 | Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue; ending 1 |
+| Steep Ravine hot springs, south of Stinson Beach | **Low Water** | Real geothermal springs in the rocks at the foot of Mount Tam, inside the surf line. Today they surface only on a low tide of about −1 foot or lower, for about two hours. With 2049's higher seas, only a handful of king-tide lows a year expose them. | Hell Rot's secret bath; the Theogens' birthing pool | Prologue (the birth of Ione); Route C return visit |
 | Golden Gate Bridge | **The Span** | A private glass skywalk under the roadway | The rich; the Grove | Issue 3 (donor party) |
 | Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
 | Haight-Ashbury | **The Haight Exchange** | A heritage zone where 1967 is rebuilt for tourists, with a 1990s cyberdelic wing for the nostalgic. Every corner has a recruiter. | Tourists, the Old Guard, cult row | Issue 2 hub |
@@ -593,15 +605,23 @@ worship — never at victims, ex-members or ordinary believers.
 5. **Levi Strauss & Co. and its founding family.** The Rivet Trust and Julian
    Rivet V are fictional. No real family member, brand name or logo appears
    in the game.
-6. **The "Zizians."** Not adapted. Active criminal cases, real victims.
-7. **Shelters.** Real charities that grew out of the Holy Order of MANS still
+6. **Steep Ravine and Coast Miwok land.** Steep Ravine is a real place in
+   Mount Tamalpais State Park, on the ancestral land of the Coast Miwok. The
+   Theogens' rite borrows from Greek mysteries and 1970s Bay Area bathing
+   culture only — the game must not invent or imitate Coast Miwok ceremony.
+   Credit the land in the game's credits and consult the Federated Indians of
+   Graton Rancheria. The springs are also genuinely dangerous (sneaker waves,
+   fast tides, cliff paths in the dark): the game must not present night
+   visits as safe, and the credits should say so.
+7. **The "Zizians."** Not adapted. Active criminal cases, real victims.
+8. **Shelters.** Real charities that grew out of the Holy Order of MANS still
    serve families in San Francisco. The Lantern must not share a real
    shelter's name.
-8. **Synanon survivors** include children raised inside it. The Synapse arc
+9. **Synanon survivors** include children raised inside it. The Synapse arc
    must include an ex-member who speaks for themselves.
-9. **Disability.** The Theogens' failed splices are people with their own
+10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
-10. **Sensitivity readers:** one with lived experience of a high-control
+11. **Sensitivity readers:** one with lived experience of a high-control
     group; one disability-community reader; one Bay Area historian.
 
 ---
@@ -687,6 +707,10 @@ Asilomar), §1 and §5 note the range.
 - [Floating Homes Association — king tide peak times at the San Francisco gauge](https://ft.floatinghomes.org/?p=33197)
 - [NOAA — Report projects a century of sea level rise in 30 years](https://noaa.gov/node/8641)
 - [San Francisco Chronicle — California sea level rise projections](https://preview-prod.w.sfchronicle.com/climate/article/california-sea-level-rise-18617459.php)
+- [California Beaches — Steep Ravine Beach](https://www.californiabeaches.com/beach/steep-ravine-beach/)
+- [California Hot Springs — Marin tidal hot springs (the −1 ft tide threshold)](https://calihotsprings.com/loc/san-francisco-ca/marin-tidal-hot-springs/)
+- [Stinson Beach Historical Society — Steep Ravine](https://stinsonbeachhistoricalsociety.org/ve/vex53/23AA9B00-C801-4959-A7CB-432030294831.htm)
+- [San Diego Reader — afternoon minus tides from mid-October](https://www.sandiegoreader.com/weblogs/outdoor-san-diego/2008/aug/26/warm-water-temps-low-tides-diminishing-high-tides-/)
 - Moon phases, perigee, perihelion, sunrise/sunset and moon positions for December 2049: computed with the PyEphem astronomy library for San Francisco. Tide heights for 2049 are estimates (today's king-tide heights plus projected sea-level rise), not NOAA predictions.
 
 **From general knowledge; verify before any public release:** Levi Strauss &

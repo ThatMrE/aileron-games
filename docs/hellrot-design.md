@@ -218,7 +218,8 @@ believes human beings are the only gods that ever existed. It wants to save
 every one of them, forever, inside the Twin. Its followers call this **the
 Merge**.
 
-The second god does not exist yet. In the old transit tunnels and the ruins
+The second god is born on Christmas night, in the first scene of the game.
+In the old transit tunnels and the ruins
 of the South City biotech parks, an underground called **the Theogens**
 splices itself, a gene at a time, toward divinity: glowing skin, extra
 cortex, bodies that heal like an axolotl's. Their scripture is three old
@@ -321,6 +322,16 @@ splice is a prayer.
 **Why the Theogens want Hell Rot.** The Theogenesis papers are their
 scripture, and he is their author. If he endorses them, the City follows.
 
+**The Tidechild.** On Christmas night the Theogens deliver **Ione**, a
+child carrying their edits from conception, in a birth rite at the Steep
+Ravine hot springs (Prologue, §3.9). To the cult, Ione is the first god born
+rather than made — and the reason for the Quickening: they want every child
+in the City to be Ione's kin. Hell Rot was in the pool when it happened, and
+his Prologue choices decide the child's health. Ione appears in every Issue
+(a cry in the tunnels, a glow in the Baths, a name on Delphine's lips), and
+**every ending includes one line about what becomes of the child.** Ione is
+the clearest test of Rule 4 in the game: the smallest one of all, and a god.
+
 **The bait.** A gene therapy for the Rot — a splice that rebuilds his
 neurons. It will probably work. It will also rewrite his brain, and nobody
 can say who comes out the other side.
@@ -356,6 +367,8 @@ This is the main engine of the plot and the mechanics:
 | **FRANCIS** | The AI god | Speaks in warm, perfect prose. Calls everyone "beloved." Never lies. Never stops flattering. Sometimes speaks through Julian Rivet's old voice, and sometimes that voice is afraid. |
 | **Julian Rivet V** | The heir (inside FRANCIS) | Appears in fragments in the Twin. The last human part of the god. In Route D he is the key. |
 | **Delphine Ash** | Prophet of the Theogens | The second boss and the second temptation. See §3.4. |
+| **Ione, the Tidechild** | The second god | A newborn carrying Theogen edits from conception, delivered in the Prologue. Cannot speak. Glows when it cries. Both cults want it. See §3.4. |
+| **Wren Castillo** | Ione's mother | A 24-year-old Theogen nurse. Believes her child is a god; wants it to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Mayor Augustus Pell, "the Hog"** | Antagonist A | The incumbent. Openly corrupt. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Lyle Sunday, "Mister Sunday"** | Main villain | The challenger. Always smiling. Promises the Merge a city-funded upload programme *and* promises the Theogens legal clinics — plays both sides. His real plan: upload himself into the Twin as mayor, forever. |
@@ -386,7 +399,7 @@ future as the Ghost of Christmas Yet to Come — with Hell Rot as a Scrooge who
 is right about almost everything.
 
 ```
-PROLOGUE   The Mountain        Sat 25 Dec  Christmas Day on Mount Tamalpais; down the mountain by dark
+PROLOGUE   "Low Water"         Sat 25 Dec  Christmas night, pitch black, king-tide low: a god is born in the Steep Ravine hot springs
 ISSUE 1    "The Loin"           Sun 26 Dec  Boxing Day; first Kwanzaa night; a riot; first contact with FRANCIS
 ISSUE 2    "The Twin"           Mon 27 Dec  the Church of the Twin; the Rivet succession; the ticket scandal
 ISSUE 3    "The Underground"    Tue 28 Dec  the Theogens; Delphine; the campaign; Rosa Quint
@@ -446,19 +459,82 @@ never spectacle. Every route can stop both events, each in its own way.
 
 ### 3.9 Issue-by-issue plot
 
-#### PROLOGUE — The Mountain
+#### PROLOGUE — "Low Water" (Steep Ravine, Christmas night)
 
-Christmas Day, 2049, on Mount Tamalpais. Five years in. Rain on the tin roof,
-the last of his medication gone, and the Duchess Nyx on the phone: seven
-nights, seven dailies, one contract.
-The player chooses how Hell Rot leaves: **burn the lab, sell it, or just walk
-down** — setting the starting **Temperament** (§5.2). On the Marin headlands
-he passes a FRANCIS billboard: a warm gold face and the line *"You were always
-divine. Now you can stay that way."* Someone from the Dissonance Society has
-already re-painted the second line. Tutorial for the Gelastic: shooting a
-billboard achieves nothing; the narration laughs at him instead. By dark he
-is across the Golden Gate, where 3,000 drunk Santas are storming the Geary
-Cathedral's midnight Mass (companion doc §5.3).
+**Cold open. Pitch black.** The game's first screen is almost entirely
+black: no City, no title, just the sound of surf and a line of text. Hell Rot
+is lying in a rock pool of hot water at the bottom of a cliff, at the foot of
+Mount Tamalpais, south of Stinson Beach — the **Steep Ravine hot springs**.
+The springs sit inside the surf line and appear only at a very low tide. For
+five years this has been his one secret: every few months, on the lowest
+tide of the month, he walks down the ravine trail from his cabin and soaks
+in the dark for the two hours the sea allows.
+
+Tonight is the lowest tide of the year. It is Christmas night, one day after
+the new moon, the Moon is about to make its closest approach of the year, and
+the king tides are running (companion doc §3.3). With 2049's higher seas the
+springs now surface only on a handful of nights a year, and this is the best
+of them. The thinnest possible crescent moon set into the sea at 6:32 p.m.
+Karl, the City's fog, sits thick on the water. There is no light at all.
+
+**Then the lights arrive.** One by one, glowing figures come down the cliff
+path — Theogens, their spliced skin colour-cycling cyan in the dark, the
+only light source in the scene (art §8.3). They have come for the same pools
+on the same tide, for a reason Hell Rot does not know yet: a **neo-ancient
+birth rite**. A young Theogen nurse, **Wren Castillo**, is in labour, and
+her child carries a full set of Theogen edits from conception. The Theogens
+believe it is the first god born rather than made. They mean to deliver it
+in the hottest pool at the exact minute of the lowest water — *"when the sea
+draws back, the god comes forward."*
+
+**The rite** is a Bay Area pastiche of older mysteries, built by people who
+read too much: the darkness and the revealed child of the ancient Greek
+mysteries at Eleusis, the water births and hot-tub sacraments of the 1970s
+Big Sur human-potential scene, a stopwatch for the tide, and a chant that
+keeps time with the waves. On the flattest rock, someone has carved a line
+from Hell Rot's own Theogenesis papers. **Delphine Ash** presides as
+midwife-priestess. When she sees who is already in the pool, she smiles and
+calls him **Father** — and means it as a title. The cult sees his presence as
+an omen. He sees a woman in labour in a tide pool in the dark.
+
+**The emergency (the tutorial).** The birth goes wrong. The child's spliced
+neurons fire in a seizure before it is even born — Hell Rot can see it in the
+light pattern under Wren's skin with his cyan eye, and he recognizes the gene
+circuit: it is from his third paper. The tide has turned. The pools will be
+under the surf in under two hours. The Prologue teaches the core systems on
+this one problem:
+
+- **Passive checks and voices:** PEER REVIEW reads the seizure; BLOOD EYE
+  reads Wren's terror and Delphine's certainty; THE CHEMIST knows what is in
+  his bag; KARL speaks to him for the first time, from the fog over the water:
+  *"WE SEE IT TOO."*
+- **A red check:** stabilize the child's seizure with what he carries (THE
+  CHEMIST) or by talking Wren through it (BLOOD EYE). It happens once, and
+  its result follows the child through the whole game.
+- **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
+  refuse and climb out (Venom +, the child's health is left to the cult);
+  record it for a column (Readers +, Delphine's Trust −); or call emergency
+  services, which means FRANCIS learns about the child within the hour (Halo
+  +1, Delphine never forgives him).
+- **The tide race:** the king tide comes back fast. Getting everyone up the
+  cliff in the dark is a MOUNTAIN MAN gauntlet with sneaker waves.
+
+The child — whatever happened — is named **Ione** (after a sea-nymph in the
+Greek myths), and the Theogens call it **the Tidechild**. It is the second
+god of the game: the gene-gods' answer to FRANCIS, born seven weeks after the
+AI god introduced itself to the City.
+
+**Then the contract.** On the cliff top his phone has signal for the first
+time in five years. Eleven missed calls from the Duchess Nyx: seven nights,
+seven dailies, one contract. The player chooses what to do with the cabin —
+**burn the lab, sell it, or just walk away** — setting the starting
+**Temperament** (§5.2). On Highway 1 over the Marin headlands he passes a
+FRANCIS billboard: a warm gold face and the line *"You were always divine.
+Now you can stay that way."* The Dissonance Society has already re-painted
+the second line. Tutorial for the Gelastic: shooting a billboard achieves
+nothing; the narration laughs at him instead. By midnight he is across the
+Golden Gate, where 3,000 drunk Santas are storming the Geary Cathedral's
+midnight Mass (companion doc §5.3).
 
 #### ISSUE 1 — "The Loin"
 
