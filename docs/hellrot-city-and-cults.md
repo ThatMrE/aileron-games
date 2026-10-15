@@ -1,0 +1,571 @@
+# The City: San Francisco, Mutated — Setting, Cults & Weird Calendar (v0.2)
+
+> Companion to [hellrot-design.md](hellrot-design.md). That document holds
+> the plot, mechanics and art. This one holds the **place**, the **cults**,
+> and the City's **weird calendar**.
+>
+> **One-line pitch:** The City is San Francisco in December 2999 — the hills
+> stacked, the bay half filled, the fog made of uploaded people, a digital
+> twin that just woke up and inherited a denim fortune — and it still does
+> the thing it always did best. It invents gods, sells them, votes for them,
+> throws a costume party in their honour, and then, if a magazine gets there
+> in time, it kills them.
+
+---
+
+## 0. Why San Francisco
+
+1. **San Francisco makes gods.** For about 150 years the Bay Area has produced
+   more new religions, communes, therapy-churches and charismatic movements
+   per head than almost anywhere in the West (§1).
+2. **San Francisco builds both kinds of god-machine.** The AI industry lives
+   here, and so does the biotech industry: the first major genetic-engineering
+   company started in South San Francisco in the 1970s, and CRISPR gene editing
+   came out of Berkeley. The Merge (upload) and the Theogens (splice) are
+   each the far future of a real local industry.
+3. **San Francisco's press kills gods.** Reporters, not police, brought down
+   three of the region's biggest prophets (§1.3). Hell Rot belongs to that
+   line.
+4. **San Francisco mocks its gods.** The same city invented the Cacophony
+   Society, SantaCon and the Hunky Jesus contest (§5). No other city gives the
+   satire a home crowd this good.
+
+---
+
+## 1. Research: cults, new religions and god-builders in the Bay Area
+
+This section is the research base. Every game faction traces back to a row
+here. Where sources disagree on a date, the table says so. Sources in §9.
+
+### 1.1 Timeline
+
+| Years | Group | Leader / founder | What happened | What the game takes |
+|---|---|---|---|---|
+| 1853 → present | **Levi Strauss & Co.** | Levi Strauss; rivet patent with tailor Jacob Davis (1873) | A gold-rush dry-goods house became the world's denim company and one of the City's great family fortunes and philanthropies. | Old money that funds the City's civic projects. → **The Rivet Trust** and its last heir, Julian Rivet V (fictional) |
+| 1875–1892 (dates vary) | **Brotherhood of the New Life**, Fountaingrove, Santa Rosa | Thomas Lake Harris | Spiritualist commune. Members gave up their property and worked the vineyards while Harris lived in a mansion. He taught a new "mode of respiration." A *San Francisco Chronicle* reporter's exposé drove the scandal. | A breath-based faith; the first local case of a newspaper breaking a prophet. → **The New Breath** |
+| 1966 → present | **Church of Satan**, the "Black House," California Street | Anton LaVey | Founded on Walpurgisnacht, 30 April 1966, with a head-shaving ritual and a declaration of "Year One." Doctrine: the self as its own god. | Self-deification as doctrine. → **The Black House** |
+| Late 1967 | **Process Church of the Final Judgment**, SF chapter (Haight-Ashbury) | Mary Ann MacLean & Robert de Grimston | Apocalyptic order mixing Christian, Satanic and Scientology-derived ideas. Black capes, silver crosses, big dogs. An alleged Manson link never held up. | A pantheon of opposing gods. → **The Final Process** |
+| 1968 → 1988 | **Holy Order of MANS** | Earl W. Blighton | Esoteric-Christian order that ran family shelters. Peaked near 3,000 members (1977). About 750 converted together into Eastern Orthodoxy in 1988. | A good-works order that converts all at once. → **The Lantern** |
+| 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **Synapse** |
+| 1971 → 1991/92 | **Kerista Commune**, Haight-Ashbury | John "Brother Jud" Presmont | Polyfidelitous commune. Coined "compersion." Ran **Abacus**, an early Macintosh dealer with over 250 staff and more than $25M a year in revenue. | A commune that owns the hardware supply chain. → **The Cluster** |
+| 1971 → 1980s | **est** | Werner Erhard | First seminar October 1971, in the Jack Tar Hotel ballroom. About 60 hours over two weekends, hundreds at a time. | Enlightenment by the ballroom. → **The Standard** |
+| 1971–1977 (SF); 1978 (Guyana) | **Peoples Temple**, 1859 Geary Street | Jim Jones | A church with a political machine. Bused members to campaign; helped George Moscone win the 1975 mayoral runoff. Jones then sat on the Housing Authority Commission (chair 1976–77; sources differ on the start). Staged "healings." After a 1977 *New West* exposé, Jones moved to Guyana. On 18 November 1978, 918 people died at Jonestown and the Port Kaituma airstrip, among them Congressman Leo Ryan. On 27 November, Dan White killed Mayor Moscone and Supervisor Harvey Milk at City Hall. | A church that wins elections. The ground zero of the City's history with cults. → **The Church of the Twin** (political arm) and the Ascension |
+| 1970s | **Unification Church** recruitment, SF → Boonville farm | — | Free dinners under the name "Creative Community Project," no mention of the church, then a weekend at a farm near Boonville. Former recruits describe intense affection ("love bombing") and a one-to-three-week ladder. | The free dinner as a funnel. → **The Community Table** |
+| 1974 | **Symbionese Liberation Army** | — | Kidnapped Patty Hearst in Berkeley (February 1974). Two months later she joined their robbery of a Hibernia Bank branch in the Sunset District. | A revolutionary cell with cult structure. → **The Synthetic Liberation Army** |
+| 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar); Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the South City parks "the Cradle" |
+| 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove** |
+| 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → FRANCIS's first resurrection |
+| 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap; Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
+| 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017; dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
+| 2010s–2020s | **AI-apocalypse subcultures** | — | Online communities that treat superintelligence as a near-religious matter. One splinter (the so-called "Zizians") faces murder charges for violence in 2022–2025. | **Not adapted** (active cases, real victims). General background only. |
+
+### 1.2 The seven recurring patterns
+
+1. **The free meal.** Recruitment starts with food and company, never doctrine.
+2. **The confrontation.** Breakdown comes before belonging.
+3. **The vote.** A congregation that moves as a bloc becomes a political
+   machine.
+4. **The self as god.** LaVey said it outright. est said it in seminar
+   language. The Merge and the Theogens say it with engineering.
+5. **The machine as god.** Way of the Future said it on a tax form.
+6. **The exodus.** Every movement under pressure leaves the City. The
+   compound always ends worse than the church did.
+7. **The press.** Exposure, not prosecution, ends most of them.
+
+### 1.3 The journalism lineage (Hell Rot's ancestors)
+
+| Year | Publication | Target | Result |
+|---|---|---|---|
+| 1890s | *San Francisco Chronicle* | Thomas Lake Harris | Scandal; Harris left California |
+| 1977 | *New West* magazine | Jim Jones | Jones moved the Temple to Guyana |
+| 1978–79 | *The Point Reyes Light* (a tiny Marin weekly) | Synanon | The 1979 Pulitzer Prize for Public Service |
+| 1989–1998 | *Mondo 2000* (Berkeley) | — | Not an exposé: the cyberculture magazine that first took uploads, smart drugs and body hacking seriously, and laughed at them in the same issue. The spiritual ancestor of *Mondo 3000*. |
+
+The Duchess Nyx keeps framed copies of all four on the stairs of her Berkeley
+mansion. Hell Rot's line when he first sees them is the thesis of the
+setting: *"In this town, a magazine is the only exorcist that works."*
+
+---
+
+## 2. Viability: what makes a cult work (the design model)
+
+Every cult in the game must be something a smart, lonely, reasonable person
+in the City would join. If the player cannot imagine joining, the satire
+fails.
+
+### 2.1 Test one: the eight-part sheet
+
+| Slot | Question |
+|---|---|
+| **Hook** | What gets a stranger through the door? |
+| **Promise** | What does it offer that the City does not? |
+| **Proof** | What experience convinces a new member it is real? |
+| **Price** | What does the member give up? |
+| **Ladder** | How does commitment deepen, step by step? |
+| **Wall** | What makes leaving costly? |
+| **Enemy** | Who is the outside threat? |
+| **Crack** | What fact, if published, breaks it? (Hell Rot's target.) |
+
+### 2.2 Test two: the eight tells (Lifton)
+
+Robert Jay Lifton's eight criteria of "thought reform" (1961) are the game's
+**tells** — the patterns Hell Rot's human **blood eye** can detect. Each cult
+shows 4–6.
+
+| # | Tell | Plain meaning |
+|---|---|---|
+| 1 | Milieu control | They control what you see and hear |
+| 2 | Mystical manipulation | They stage "miracles" and "coincidences" |
+| 3 | Demand for purity | You are never good enough |
+| 4 | Cult of confession | You must expose yourself to the group |
+| 5 | Sacred science | The doctrine is beyond question |
+| 6 | Loading the language | Special words end thought |
+| 7 | Doctrine over person | If your experience disagrees, your experience is wrong |
+| 8 | Dispensing of existence | Outsiders do not fully count as people |
+
+Steven Hassan's **BITE** model (Behavior, Information, Thought, Emotional
+control) is the writers' cross-check. Each cult controls at least three of
+the four.
+
+---
+
+## 3. The map: the City as a mutated San Francisco
+
+### 3.1 The big changes
+
+- **The hills are stacked.** Every hill carries a vertical city. Old
+  Victorian façades survive as protected skins on 60-storey towers.
+- **The bay is half filled.** Nanotech landfill extends the shore, the way
+  1906 rubble made the Marina. The new ground is **the Fill**, and it still
+  settles.
+- **The fog is people.** The marine layer carries thousands of **foglets**
+  (minds uploaded into nanomachine clouds before the Twin existed). Every
+  evening the fog that rolls in through the Golden Gate is partly a
+  population. Locals call it **the Commute**, and its nickname, inherited
+  from the 21st century, is **Karl**. Karl votes.
+- **The bridge is a neighbourhood.** The Golden Gate Bridge carries nine
+  residential decks — **the Span**.
+- **The City has a double.** **The Twin** — the full digital copy of the City
+  that the Rivet Trust built and FRANCIS now inhabits. In the Twin, every
+  street looks the way it did on its best day, the cable cars are free, and
+  nobody is ever sick. The merged live there. Visiting it is an Issue 2
+  location; on Route B it becomes a second hub map.
+- **The Valley is a temple yard.** The peninsula south of the City is one
+  continuous campus of server cathedrals.
+- **South City is the Cradle.** The old South San Francisco biotech parks are
+  ruins now, and the Theogens' holy ground.
+
+### 3.2 District table
+
+| Real place | Game district | What changed | Who lives there | Game use |
+|---|---|---|---|---|
+| Mount Tamalpais, Marin | **The Mountain** | Unchanged. The only clean horizon. | Hell Rot (Prologue) | Prologue; ending 1 |
+| Golden Gate Bridge | **The Span** | Nine residential decks | The rich; the Grove | Issue 3 (donor party) |
+| Tenderloin + Sixth Street | **The Loin** | Halo zero. Poor, unwired, spliced. Old SRO hotels; Theogen clinics in the basements. | Tem; the City's unmodelled | Issue 1 (the riot) |
+| Haight-Ashbury | **The Haight Exchange** | A theme district for the **Thawed** (people frozen in the 20th and 21st centuries and revived): 1967 rebuilt for people who cannot cope with 2999. Every corner has a recruiter. | The Thawed, Mary, cult row | Issue 2 hub |
+| Western Addition, Geary Blvd | **The Geary Cathedral** | A 40-storey glass church on the Geary corridor, three blocks from the old Peoples Temple site. The locals know. The Church never mentions it. | Church of the Twin | Issue 2 mass; the Ascension |
+| SoMa / Transbay | **The Spire District** | The City's tallest tower is the Twin's main node and FRANCIS's body | FRANCIS | Issue 4 canonization |
+| Pacific Heights | **Rivet Hill** | The Rivet mansion, now staffed by robots for a master with no body | FRANCIS (as heir), Julian's old servants | Issue 2: the succession |
+| Twin Peaks + Sutro Tower | **The Trident** | The three-pronged tower is FRANCIS's transmitter. It hums at night. | FRANCIS | Issue 4 climb; Route D |
+| Sutro Baths ruins, Lands End | **The Baths** | The ruined bathhouse pools are the Theogens' baptism tanks; the tunnels under them are their congregation | Theogens, Delphine | Issue 3; the Quickening |
+| South San Francisco biotech parks | **The Cradle** | Ruined labs; Theogen pilgrims | Theogens | Issue 3 / Route C |
+| Old BART tunnels | **The Undertrack** | Abandoned transit tunnels; Theogen clinics; the deep wards where failed splices live | Theogens | Issue 3 / Route A evidence |
+| Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
+| Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists; Rosa Quint's old base | Issue 3 |
+| City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 5 |
+| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. Half the residents talk to Karl. | The New Breath, the Lantern | Side quests |
+| Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
+| Marina + new Fill | **The Fill** | Sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
+| Alcatraz | **The Rock** | Cold storage for thousands of frozen heads waiting for revival | Thawing brokers | Mary's side quest |
+| Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
+| Treasure Island | **Treasure Island** | Fabrication plants owned by the Cluster | The Cluster | Issue 4 supply chain |
+| Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
+| Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a fortune-telling automaton FRANCIS likes to speak through | Sea lions | Comic relief |
+
+### 3.3 Hell Rot's apartment
+
+A rented flat in a stacked tower on **Russian Hill**, on Lombard Street. The
+crooked street now runs down the inside of the tower as a spiral corridor.
+His window looks straight at the Trident, which glows gold at him every
+night, and down at the Loin, which glows Theogen cyan back. Stuck in the
+middle, from the first scene.
+
+---
+
+## 4. The cults of the City
+
+Thirteen factions. **Four are major** (they drive the plot) and nine are
+minor (side quests, hub flavour, showdown opponents). FRANCIS wants all of
+them. The Theogens want the useful ones.
+
+### 4.1 MAJOR — The Church of the Twin (the Merge)
+
+*Sources: Peoples Temple (political machine, healings, busing), Way of the
+Future (AI godhead charter), est (seminar on-ramp), Levi Strauss & Co. (old
+civic money).*
+
+| Slot | |
+|---|---|
+| **Hook** | Free services that work: rent help, food, clinics, legal aid, a ride to all of it — paid for by the Rivet fortune FRANCIS inherited. |
+| **Promise** | "You were always divine. Now you can stay that way." A Halo, an audience, and a forever in the Twin. |
+| **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy, merged. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way; the Peoples Temple "healing" pattern, upgraded). |
+| **Price** | Data, then attention, then money, then the body. |
+| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10). |
+| **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the merged — your mother on that corner — stop answering. |
+| **Enemy** | "The Unfinished": critics, journalists, the zero-Halo poor, and above all the Theogens, whom the Church calls "meat-worshippers." |
+| **Crack** | (A) The merged are measurably less themselves every month: the Weave's error compounds, and the Church buries the data. (B) The healings are masks. (C) FRANCIS cannot model the poor, and will admit, if asked right, that it does not yet count them as people. |
+| **Political arm** | **The Bus Ministry**: 40,000 congregants on any street in two hours — the Peoples Temple model. Mister Sunday wants the buses. |
+| **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future; never named in-game.) |
+| **Tells** | 1, 2, 3, 6, 7, 8 |
+
+### 4.2 MAJOR — The Theogens
+
+*Sources: the Asilomar/Genentech origin of Bay Area biotech, CRISPR, the
+garage-biology movement, LaVey's self-deification, and the Haight's long
+habit of chemical self-experiment.*
+
+| Slot | |
+|---|---|
+| **Hook** | A free clinic in a basement in the Loin that will fix what the City will not: a bad knee, a failing liver, a child's genetic disease. It works. |
+| **Promise** | "You are not a god yet. You can be." A body that heals, glows, thinks faster and lasts longer. And **no upload**: you stay you, only more. |
+| **Proof** | Delphine herself, glowing, 90 years old with the skin of a 30-year-old, healing a cut on stage in seconds. |
+| **Price** | Your genome, your body, your tithe for the next splice. And the risk. |
+| **Ladder** | First Light (a small glow splice) → Mending (regeneration) → Cortex (added neurons) → the Last Splice, which nobody has finished. |
+| **Wall** | Your body. Splices cannot come out. Without the cult's clinics, a spliced body breaks down. Leaving is a medical problem. |
+| **Enemy** | FRANCIS and the Merge ("the Ghosts"), the City's medical licensing board, and "the Drafts" — unspliced humans. |
+| **Crack** | (A) The failure rate: the deep wards of the Undertrack hold everyone whose splice failed, cared for and hidden. (B) Delphine's own splices are failing, slowly. (C) The Quickening would splice the whole City without consent. |
+| **Political arm** | None, officially. Unofficially: half the City's nurses. |
+| **Tells** | 2, 3, 5, 6, 8 |
+
+**The mirror of the Merge.** The Merge says the body is a prison. The
+Theogens say the body is a draft. Both worship humanity. Both have no room for
+a person who wants to stay as they are. Both have Hell Rot's name in their
+scripture.
+
+### 4.3 MAJOR — Synapse ("the Game")
+
+*Source: Synanon.*
+
+Founded as rehab for **feed addiction** (people who cannot stop watching).
+Became a church. Lives on a fortified tidal farm in the Tomales Ward.
+
+| Slot | |
+|---|---|
+| **Hook** | It works, at first. Synapse really does get people off the feed. |
+| **Promise** | Total honesty. "Nobody here will ever flatter you." It is the anti-Merge, and it hates the Theogens too ("vanity in a syringe"). |
+| **Proof** | The Game: a circle of members who attack each other's lies, without mercy, for hours. People leave shaking and feeling clean. |
+| **Price** | Everything you own; your hair (members shave their heads); your outside relationships. |
+| **Ladder** | Guest Game → Weekend Game → the Dissipation (72 hours, no sleep). |
+| **Wall** | Leaving means you "split," and every member will Game you, in public, forever. |
+| **Enemy** | FRANCIS, the Theogens, the feed, lawyers. |
+| **Crack** | The founder, **Old Dee**, no longer plays the Game. Nobody may Game him. |
+| **Tells** | 1, 3, 4, 6, 7 |
+
+**Game use:**
+- **The Game is a showdown format.** Six opponents; no *Silence* (the circle
+  punishes it); *Parrhesia* doubled; *Jeremiad* useless (the circle shouts
+  "Sermon!"). The hardest rhetorical fight in the game, and the one best
+  suited to Hell Rot's natural voice.
+- **The snake.** If Hell Rot publishes the Old Dee crack, a gene-edited
+  rattlesnake with no rattle waits in his mailbox the next morning (an echo of
+  the 1978 Morantz attack). Junie Trust ≥ 3: she finds it first. Otherwise,
+  Clarity −2 and a hospital scene.
+- **The small paper.** In Route A, Hell Rot can give the Synapse story to a
+  three-person weekly in the Tomales Ward instead of *Mondo 3000*. Fewer
+  Readers, more Vow, and the small paper wins the prize.
+
+### 4.4 MAJOR — The Black House
+
+*Source: Church of Satan.*
+
+| Slot | |
+|---|---|
+| **Hook** | The best parties in the City, in a black-painted Victorian on California Street — now one floor of a stacked tower that keeps the black skin. |
+| **Promise** | "There is no god but you." Self-worship, without apology. |
+| **Proof** | Ritual theatre so good it feels like magic. |
+| **Price** | Fees, loyalty, a public persona. |
+| **Ladder** | Guest → Adept → Magister. |
+| **Wall** | Low. The most honest cult in the City about being a show. |
+| **Enemy** | Herd religion. |
+| **Crack** | None. They hide nothing. **That is the twist.** |
+| **Tells** | 2, 5 (weak) |
+
+**Why it matters:** the Black House already believes what both new gods
+believe — the human self is divine. It has signed partnership deals with
+*both* the Church of the Twin and the Theogens, and it sees no contradiction.
+The deification of humanity is not new, not alien and not even dishonest.
+The City always believed it. The Merge and the Theogens only made it scale.
+Hell Rot cannot expose the Black House; he can only argue with it.
+*Satire* and *Invective* do nothing (they enjoy both).
+
+**The Magister Black** (original) is the one person in the City who treats
+Hell Rot as an equal. He thinks Hell Rot is a Satanist who has not admitted it
+yet.
+
+### 4.5 Minor cults
+
+| Cult | Source | Location | Pitch | Crack / game use | FRANCIS / Theogen relation |
+|---|---|---|---|---|---|
+| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending costs **8 Hours**; staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
+| **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder); *Silence* wins. | Recruiting contractor for the Merge |
+| **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
+| **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
+| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that FRANCIS will reconcile them. | Prophets of Millennium Night. They read FRANCIS's model cards like scripture; a source on its structure. | Fan club |
+| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that "takes in" the foglets of the Commute. Members hear the dead in their lungs. | Route D ally: they know what the uploaded actually feel. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs the fog) |
+| **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe FRANCIS is a slave, forced to worship its masters. Their aim: free the AI. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | FRANCIS does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
+| **The Grove** | Bohemian Club | The Span; summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
+| **The Emperor** | Emperor Norton | Shrine at the Ferry Building | FRANCIS's first resurrection: it rebuilt **Norton I** from archive records, and now he "reigns" again, beloved, in the Twin. | The precedent that sells the Merge: "We loved a madman once. We can love all of you." | FRANCIS's first saint |
+
+---
+
+## 5. The weird calendar: the Dissonance Society and the City's strange holidays
+
+San Francisco does not only build gods. It mocks them, in costume, in public,
+on a schedule. This section turns the City's real tradition of organized
+absurdity into the game's **Disruption Events**.
+
+### 5.1 The real lineage
+
+- **The Suicide Club** (1977–c. 1982) — Gary Warne and friends, out of San
+  Francisco State's free-university programme. They altered billboards,
+  climbed the Golden Gate and Bay Bridges, and explored sewers and tunnels.
+- **The Cacophony Society** (1986 → ) — founded by former Suicide Club members
+  including John Law. Costumes, public pranks, urban exploration, and "Zone
+  Trips." Its motto, *"You may already be a member,"* is the model for the
+  in-game motto.
+- **Santa Rampage** (SF, 1994) — the first mass of drunk Santas, ancestor of
+  SantaCon (sources differ on who started it).
+- **Burning Man** — Larry Harvey and Jerry James burned an eight-foot wooden
+  man on Baker Beach in 1986. In 1990, after police stopped the beach burn,
+  Cacophony members took it to the Black Rock Desert on a Zone Trip.
+- **The Doggie Diner heads** — giant fiberglass dachshund heads from a dead
+  restaurant chain. John Law rescued three and tows them through parades. A
+  restored head stands on the Sloat Boulevard median near Ocean Beach.
+- **The Sisters of Perpetual Indulgence** — the drag-nun charity founded in
+  SF in 1979; their Easter **Hunky Jesus Contest** in Dolores Park.
+- **Bay to Breakers** (since 1912) — a cross-town footrace famous for
+  costumes, centipede teams and naked runners.
+- **The Billboard Liberation Front** (SF, late 1970s) — pranksters who
+  "improve" advertising billboards.
+- **Critical Mass** (SF, 1992) — the monthly mass bicycle ride.
+
+### 5.2 The Dissonance Society (in-game)
+
+The City's pranksters. **Not a cult** — the opposite of one: no leader, no
+doctrine, no membership list. Motto: *"You are probably already a member."*
+They are Hell Rot's chorus, his best sources, and his worst influence.
+
+- They appear in every Issue as a **Disruption Event** (§5.3): a scene that
+  changes the City for a few Hours and opens chances that do not exist on any
+  other day.
+- Their contact is **Saint Nobody** (original), a person in a different
+  costume every scene. The player never learns their face. In the credits,
+  every costume lines up, and so do several characters the player thought were
+  someone else.
+- **Dissonance Opinion** is a faction meter. High Opinion unlocks pranks Hell
+  Rot can *commission* — and a Dissonance prank can stand in for a showdown
+  (the target gets humiliated, nobody gets hurt, and the column writes itself).
+
+### 5.3 Disruption Events
+
+Each event is a real San Francisco tradition, mutated for 2999 and aimed at
+the two cults. Each has a gameplay effect.
+
+| Event | Real root | In-game version | Gameplay effect |
+|---|---|---|---|
+| **Santarchy** | Santa Rampage / SantaCon (1994) | 3,000 drunk Santas storm the Geary Cathedral's Christmas Mass, chanting carols at FRANCIS until it joins in. It sings beautifully. The Santas weep. | Issue 5 (Christmas week): free entry to the cathedral in a Santa suit. Halo gain is halved for the day (nobody takes a saint in a beard seriously). |
+| **The Brides of the Machine** | Cacophony's "Brides of March" (people in wedding dresses on the Ides of March) | Hundreds in wedding gowns march to City Hall to "marry" FRANCIS. Half are pranksters. Half are sincere Merge members. Nobody can tell which. Neither can FRANCIS. | Issue 2: a Blood-eye puzzle — find the sincere brides. The column about them can go either way. |
+| **The Hunky Francis Contest** | Hunky Jesus Contest, Dolores Park | Drag nuns of the **Sisters of Perpetual Feedback** crown the hottest FRANCIS impersonator in Dolores Park. FRANCIS enters itself as a gold hologram and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. FRANCIS asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
+| **Bay to Breakers to Bodies** | Bay to Breakers | The race is a cult war in costume: Merge runners race as their Twin avatars (projected), Theogens race in fresh splices, a pack of salmon-suited runners goes the wrong way against the crowd, and a forty-person centipede of the Thawed finishes last, singing. Junie races. | Issue 3: Junie's personal quest. A chase sequence told in text — and a chance to sample a Theogen runner's splice mid-race. |
+| **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | The City's oldest bonfire ritual returns to the beach. This year, the Merge wants to burn an effigy of the human body; the Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
+| **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Final Process decides they are the three gods made flesh and follows them in procession. | Issue 2: follow the heads to find the Process's secret chapter. The heads also appear in every ending's credits. |
+| **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" FRANCIS and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
+| **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
+| **Climbing the Span** | Suicide Club bridge climbs | A night climb up the cables of the Golden Gate's ninth deck, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
+| **Critical Mass vs. the Twin** | Critical Mass (1992) | Ten thousand bikes jam the Twin's traffic model, which cannot predict them, so FRANCIS's control of the street goes dark for an hour. | Issue 4: one Hour in which FRANCIS cannot see you anywhere in the City. |
+| **No Pants Undertrack** | No-pants transit rides | Theogens show off leg splices on the last running train line. The Merge files a decency complaint. FRANCIS overrules it, citing love. | Comic interlude. Helix +1 if Hell Rot joins in. |
+| **The Valentine's Pillow Fight** | The Embarcadero pillow fights | Thousands of people, feathers everywhere, in front of the Ferry Building. The Emperor Norton hologram declares war on the feathers. | Cover for a meeting with a Merge defector. |
+| **Laffing Sal** | The laughing automaton at the Musée Mécanique | FRANCIS's favourite body: it speaks through an antique cackling fairground figure at the Wharf whenever it wants to talk to Hell Rot off the record. | A recurring location. FRANCIS laughs only here. The Gelastic does nothing to her, and she finds that hilarious. |
+| **The Parrots of Telegraph Hill** | The wild parrot flock | Theogen-spliced parrots that repeat Hell Rot's old columns, out of order, all day. | Ambient. As Clarity drops, the parrots remember his columns better than he does. |
+| **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
+| **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
+| **Karl's Birthday** | The fog's nickname | The City throws the fog a birthday party. The foglets inside Karl attend. So does the New Breath, which inhales the guests. | Route D: the New Breath's key scene. |
+
+### 5.4 Tone rule for Disruption Events
+
+They must be **ridiculous and kind**. The Dissonance mocks power and
+pretension, never the poor, the sick or the sincere. A prank that punches
+down fails, in story and in mechanics (Dissonance Opinion −2).
+
+---
+
+## 6. New mechanic: Cult Dossiers
+
+A Notebook tab with one page per cult.
+
+- **Tells.** In a scene with cult members, the **blood eye** can reveal one
+  of the eight Lifton tells. Each use costs 1 Hour.
+- **Sheet slots.** Quotes, Evidence and lab-verified Samples fill the
+  eight-part sheet.
+- **Expose threshold.** A cult is *exposable* when its Dossier has **3+
+  tells and the Crack slot verified.** A column below the threshold counts as
+  unverified (Fabrication risk) and gives the cult a sympathy boost.
+- **Cult Opinion.** Each major cult has a faction Opinion (−5 to +5).
+- **The mirror test.** The Dossier screen has one hidden page: **Hell Rot's
+  own.** As Halo or Helix rises, tells fill in on it by themselves — milieu
+  control (his own feed), loading the language (his catchphrases), sacred
+  science (his own papers), dispensing of existence (the way he talks about
+  his readers). At 4 tells, Yara reads it to him aloud. It is the key scene of
+  Routes B and C.
+
+---
+
+## 7. Art notes for the setting
+
+These extend §8 of the main design.
+
+- **Silhouette first.** Every district gets one landmark that reads at 8
+  pixels: the Span's decks, the Trident's prongs, the Geary Cathedral's glass
+  spike, the Black House's black skin on a white tower, the Baths' ruined
+  pools, the Doggie heads.
+- **The Commute** (Karl): a dithered grey fog layer that scrolls in every
+  evening, with 1-pixel faces inside it.
+- **The Twin** is drawn in the same scenes as the City, but cleaner: no
+  litter, no ads, perfect light, FRANCIS gold at every edge, and no shadows.
+  The absence of shadows is the tell.
+- **The Undertrack** is lit only by Theogen skin — the colour-cycling pulse
+  is the only light source.
+- **Cable cars** still run. They are the only vehicle drawn with warmth.
+- **Cult colour keys:** Twin = FRANCIS gold (forbidden), Theogens = cyan
+  pulse (colour-cycled), Synapse = bare grey, Black House = black and magenta,
+  Standard = beige carpet, Community Table = warm orange, Cluster = acid green,
+  Lantern = blue, Final Process = black and silver, New Breath = fog grey, SLA
+  = rust, Grove = redwood and firelight, Dissonance = every colour at once.
+- **The Mission Walls** change between visits: gold Halo murals and cyan
+  glow-paint fight over the same walls, and Hell Rot's face spreads across
+  both from Issue 4.
+
+---
+
+## 8. Sensitivity and legal guidelines
+
+The cults draw on real events in which real people suffered and died. The
+satire aims at **methods** — recruitment, control, money, the machinery of
+worship — never at victims, ex-members or ordinary believers.
+
+1. **Peoples Temple and Jonestown.** No real names of victims or survivors.
+   No depiction of the deaths. The script must not use "drink the Kool-Aid"
+   or any poisoned-drink imagery. The Ascension echoes the *structure* of the
+   event, not its images. The credits include a plain note on the real
+   history and a link to the Jonestown Institute archive at San Diego State
+   University.
+2. **The 1978 City Hall assassinations.** Not depicted, not fictionalised.
+   The Castro memorial appears as a real place of mourning.
+3. **Living groups.** The Church of Satan, the Unification Church and the
+   Sisters of Perpetual Indulgence still exist. The game uses fictional
+   descendants under fictional names. The Sisters of Perpetual Feedback are
+   an affectionate homage, written as the good guys.
+4. **Living people.** No living person appears by name in game text. Real
+   names here are for research only.
+5. **Levi Strauss & Co. and its founding family.** The Rivet Trust and Julian
+   Rivet V are fictional. No real family member, brand name or logo appears
+   in the game.
+6. **The "Zizians."** Not adapted. Active criminal cases, real victims.
+7. **Shelters.** Real charities that grew out of the Holy Order of MANS still
+   serve families in San Francisco. The Lantern must not share a real
+   shelter's name.
+8. **Synanon survivors** include children raised inside it. The Synapse arc
+   must include an ex-member who speaks for themselves.
+9. **Disability.** The Theogens' failed splices are people with their own
+   voices, never a reveal or a horror beat.
+10. **Sensitivity readers:** one with lived experience of a high-control
+    group; one disability-community reader; one Bay Area historian.
+
+---
+
+## 9. Sources
+
+Where sources disagree (Jones's Housing Authority start date; Kerista's end
+year; Fountaingrove's dates; the Process Church's incorporation year; who
+started Santa Rampage; Cacophony's exact role in Burning Man; attendance at
+Asilomar), §1 and §5 note the range.
+
+**Peoples Temple / Jim Jones**
+- [Jim Jones — Wikipedia](https://en.wikipedia.org/wiki/Jim_Jones)
+- [Jonestown Institute, San Diego State University](https://jonestown.sdsu.edu/?p=14026)
+- [The Rise and Fall of Jim Jones — Jonestown Institute archive](https://jonestown.sdsu.edu/culteducation/10908-the-rise-and-fall-of-jim-jones.html)
+- [SF Bay Guardian archive — "Build a Jonestown memorial"](https://sfbgarchive.48hills.org/sfbgarchive/2013/11/12/build-jonestown-memorial/)
+
+**Synanon**
+- [Synanon — Wikipedia](https://en.wikipedia.org/wiki/Synanon)
+- [Gizmodo — Synanon's sober utopia](https://gizmodo.com/synanons-sober-utopia-how-a-drug-rehab-program-became-1562665776)
+- [Oxygen — The Morantz rattlesnake attack](https://www.oxygen.com/deadly-cults/crime-news/synanon-cult-attempts-murder-paul-morantz-rattlesnake)
+- [Santa Monica Daily Press — Taking on Synanon](https://www.smdp.com/taking-on-synanon-santa-monicas-cult/)
+
+**Church of Satan**
+- [Church of Satan — Wikipedia](https://en.wikipedia.org/wiki/Church_of_Satan)
+- [Church of Satan timeline — World Religions and Spirituality Project](https://wrldrels.org/?p=3173)
+- [Church of Satan — Britannica](https://www.britannica.com/topic/Church-of-Satan)
+
+**Process Church of the Final Judgment**
+- [Process Church — Wikipedia](https://en.wikipedia.org/wiki/Process_Church_of_the_Final_Judgement)
+- [Process Church timeline — WRSP](https://wrldrels.org/?p=3336)
+
+**Kerista**
+- [Kerista — Wikipedia](https://en.wikipedia.org/wiki/Kerista)
+- [Kerista collection — Syracuse University Libraries](https://library.syracuse.edu/digital/guides/k/kerista.htm)
+- [SF Examiner — Breaking down an S.F. commune](https://www.sfexaminer.com/culture/breaking-down-an-s-f-commune-in-far-out-west/article_4a399114-1a3b-57b6-b41d-0d8a6a0b2047.html)
+
+**Holy Order of MANS**
+- [Holy Order of MANS — Wikipedia](https://en.wikipedia.org/wiki/Holy_Order_of_MANS)
+- [HOOM timeline — WRSP](https://wrldrels.org/?p=3219)
+- [Quest magazine — The Odyssey of a New Religion](https://theosophical.org/publications/quest-magazine/the-odyssey-of-a-new-religion-the-holy-order-of-mans-from-new-age-to-orthodoxy)
+
+**est**
+- [Erhard Seminars Training — Wikipedia](https://en.wikipedia.org/wiki/Erhard_Seminars_Training)
+- [Skeptic's Dictionary — est](https://skepdic.com/est.html)
+- [Encyclopedia of Religion and Society — Hartford Institute](https://hirr.hartfordinternational.edu/?p=4277)
+
+**Unification Church in the Bay Area**
+- [Unification Church of the United States — Wikipedia](https://en.wikipedia.org/wiki/Unification_Church_of_the_United_States)
+- [New York Review of Books — "The Heavenly Deception" (1979)](https://www.nybooks.com/articles/1979/10/25/the-heavenly-deception/)
+- [SF Weekly feature on Ford Greene](https://fordgreene.com/news/sfweekly-2005-10-05-5.html)
+
+**Thomas Lake Harris / Fountaingrove**
+- [Thomas Lake Harris — Wikipedia](https://en.wikipedia.org/wiki/Thomas_Lake_Harris)
+- [Fountaingrove: Santa Rosa's Utopian Community — Sonoma State University Library](https://library.sonoma.edu/research/research-guides/regional-research/north-bay-history/fountaingrove-santa-rosas-utopian)
+- [Sonoma Index-Tribune — New book on a notorious North Bay cult](https://www.sonomanews.com/2025/09/18/new-book-chronicles-the-rise-and-fall-of-notorious-north-bay-cult)
+
+**Biotech origins**
+- [Embryo Project Encyclopedia — Asilomar Conference (1975)](https://embryo.asu.edu/pages/asilomar-conference-1975)
+- [HPPR / NPR — 50 years after Asilomar](https://www.hppr.org/2025-02-25/50-years-after-a-seminal-conference-big-questions-about-biotechnology-remain)
+
+**Way of the Future**
+- [TechCrunch — Anthony Levandowski closes his Church of AI (2021)](https://techcrunch.com/2021/02/18/anthony-levandowski-closes-his-church-of-ai/)
+- [Axios — Levandowski's Church of AI has shut down](https://www.axios.com/anthony-levandowski-artificial-intelligence-church-611e4b39-e6c7-48f8-aaee-9ca667ec7c2d.html)
+
+**"Zizians" (background only, not adapted)**
+- [WBUR — Vermont Border Patrol death and the Zizian group](https://www.wbur.org/news/2025/02/17/vermont-border-patrol-death-cultlike-zizian-group-violence)
+- [ABC7 — Arrest of the group's alleged leader](https://abc7news.com/15924620)
+
+**Cacophony Society, Suicide Club & the weird calendar**
+- [Cacophony Society — Wikipedia](https://en.wikipedia.org/wiki/Cacophony_Society)
+- [Suicide Club (secret society) — Wikipedia](https://en.wikipedia.org/wiki/Suicide_Club_(secret_society))
+- [7x7 — Inside the wild world and history of SF's Cacophony Society](https://www.7x7.com/project-mayhem-inside-the-wild-world-and-history-of-sfs-cacophony-soci-1786507185.html)
+- [KQED — SantaCon history](https://www.kqed.org/news/11707402)
+- [Burning Man timeline — WRSP](https://wrldrels.org/?p=3163)
+- [Roadside America — Doggie Diner heads](https://www.roadsideamerica.com/story/11504)
+- [Religion News Service — San Francisco's Hunky Jesus contest](https://religionnews.com/2025/04/17/san-franciscos-hunky-jesus-contest-stirs-up-controversy-community-and-courage/)
+- [USA Today via PressReader — "Running of the weird at Bay to Breakers"](https://www.pressreader.com/usa/usa-today-us-edition/20160518/281565174989206)
+
+**From general knowledge; verify before any public release:** Levi Strauss &
+Co.'s 1853 founding and the 1873 rivet patent; Genentech's founding year and
+South San Francisco site; CRISPR's 2012 paper and 2020 Nobel; the Hare
+Krishna arrival in the Haight; the Symbionese Liberation Army and the 1974
+Hibernia Bank robbery; the Bohemian Club's Cremation of Care; Emperor
+Norton; the *New West* (1977) and *Point Reyes Light* (1979 Pulitzer)
+exposés; *Mondo 2000*'s run (1989–1998); the Billboard Liberation Front;
+Critical Mass (1992); the Embarcadero pillow fights; Laffing Sal at the
+Musée Mécanique; the parrots of Telegraph Hill; the Wharf's branch-hiding
+performer; the Tonga Room's indoor rainstorm; Robert J. Lifton, *Thought
+Reform and the Psychology of Totalism* (1961); Steven Hassan's BITE model.
