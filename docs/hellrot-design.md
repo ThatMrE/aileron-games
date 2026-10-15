@@ -13,7 +13,9 @@
 > **Status:** Pre-production pitch, v0.2. Plot first, then mechanics, then art.
 > The setting, the map, the cult research and the City's weird-events calendar
 > live in the companion document,
-> [hellrot-city-and-cults.md](hellrot-city-and-cults.md).
+> [hellrot-city-and-cults.md](hellrot-city-and-cults.md). The magazine, its
+> house, its anonymous Patron and the household that forms the player's party
+> live in [hellrot-mondo3000.md](hellrot-mondo3000.md).
 >
 > **Rights & inspirations:** Hell Rot and every character, publication and
 > place here are original to this design. The game wears its influences
@@ -342,7 +344,7 @@ This is the main engine of the plot and the mechanics:
 | Character | Role | Notes |
 |---|---|---|
 | **Dr. Hell Rot, PhD** | Player character | See §2. |
-| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Runs the magazine from a crumbling Berkeley mansion full of art, servers and houseplants. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
+| **The Duchess Nyx** | Publisher of *Mondo 3000*, quest-giver | Founded the magazine in 2989 and runs it from **Villa Delirium**, a sealed Berkeley Hills mansion leased from an anonymous Patron. A lapsed Cosmist. Psychedelic, imperious, broke. Her **Patience** is a game resource (§5.6). |
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By Issue 5 he needs a bathtub. |
@@ -354,7 +356,8 @@ This is the main engine of the plot and the mechanics:
 | **Mayor Augustus Pell, "the Hog"** | Antagonist A | The incumbent. Openly corrupt. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Lyle Sunday, "Mister Sunday"** | Main villain | The challenger. Always smiling. Promises the Merge a city-funded upload programme *and* promises the Theogens legal clinics — plays both sides. His real plan: upload himself into the Twin as mayor, forever. |
 | **Rosa Quint** | Sunday's campaign manager | Sincere and idealistic. The "martyr metric" target (§3.9, Issue 3). |
-| **Mary Okafor** | Witness | One of the **Thawed**: a woman frozen in 1999 and revived in 2999. She remembers televangelists, dot-com prophets and the last millennium panic. Nobody listens to her. |
+| **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
+| **Mary Okafor** | Witness | One of the **Thawed**: a woman frozen in 1999 and revived in 2999. She remembers televangelists, dot-com prophets and the last millennium panic. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
 | **Tem** | Kid, the Loin | A zero-Halo street kid with one failed splice (a glowing arm she hides). The barometer for Rule 4 — and the one person both cults want to "save." |
 | **The Dissonance Society** | Chorus | The City's pranksters (see companion doc §5). Not a cult. Their motto: *"You are probably already a member."* |
 
@@ -743,11 +746,14 @@ In *Hades*, Zagreus dies and wakes in his father's house. Here, Hell Rot
   wake-up scene that changes with where and how he fell. Some of the best
   writing in the game lives here.
 
-### 4.5 The hub: the Mondo 3000 Mansion
+### 4.5 The hub: Villa Delirium (the House)
 
-The Duchess Nyx's crumbling Berkeley mansion is the House of Hades of this
-game: the magazine's office, its archive, and the only place Hell Rot feels
-safe.
+**Villa Delirium**, the *Mondo 3000* mansion in the Berkeley Hills, is the
+House of Hades of this game: the magazine's office, press and archive, home to
+the party, and the only place Hell Rot feels safe. Its lease forbids sensors:
+it is the one building in the City that FRANCIS cannot see into and Karl
+cannot enter. Full floor plan, history and the mystery of its anonymous
+Patron: [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 
 | Room | Who / what | Function |
 |---|---|---|
@@ -757,6 +763,7 @@ safe.
 | **The Kitchen Lab** | Hell Rot's bench | Synthesize gifts and kit; analyse Samples |
 | **The Archive** | Every back issue since 1989 | Spend Ink on permanent upgrades (§5.10) |
 | **The Conservatory** | Moreau's tank, the Duchess's talking houseplants | Moreau's growth; comic relief; one plant knows things |
+| **The Press** (cellar) | The risograph | Prints each issue at dawn after filing; paper is the only medium the Twin cannot edit |
 | **The Stairs** | Framed exposés (see companion doc §1.3) | Codex: notes on every person, cult and place met |
 | **The Letters Page** | A pile of mail | Readers, cult members and fans write in about the last column |
 
@@ -777,6 +784,10 @@ raise relationship rank and, at rank 2, unlock a **keepsake**:
 | Jar of Marin dirt | Moreau | +1 to every BRAINSTEM skill |
 | Chrome lighter | the Duchess | Start each Night with 20 Ink |
 | Thawed VHS tape | Mary | The Blood eye reveals one extra tell per scene |
+| Pocket watch, stopped | Otto | +1 maximum Clarity |
+| Stadium ticket, 2989 | the Bishop | First church scene each Night: one free check |
+| Floppy disk | Fax | One free trip through his Twin back door per Night |
+| Abacus bead | Pru | Shows odds on red checks before you commit |
 | A fragment of Julian | FRANCIS (Route B/D) | FRANCIS boss starts at −1 Certainty |
 | A glowing tooth | Delphine (Route C/D) | Delphine boss starts at −1 Conviction |
 | A costume (different every time) | Saint Nobody | One random Dissonance door guaranteed per Night |
@@ -1097,14 +1108,18 @@ better the column, the more lovingly both sides misread it.
 
 ### 5.15 Companions, Trust and gifts
 
-Junie and Yara have **Trust 0–5**. Trust rises with Vow acts, kept promises,
-gifts (§4.5), and choosing them over the story. It falls with Venom aimed
-down, Fabrication, and using them as ammunition. Each Night, the player
-picks one companion to come along (their skills add to checks and unlock
-interrupts). Personal arcs: Junie (the Merge wants her, because her derby knees
-are failing and the Twin would give her a perfect body to skate in forever);
-Yara (her own byline, her aunt, and whether she wants Hell Rot's life). At
-Trust 5 each unlocks a unique interrupt and a final keepsake upgrade.
+The whole household of Villa Delirium is the party. Each Night, the player
+picks **one companion** (two with the Archive upgrade *Plus One*). Every
+companion gives skill bonuses while present, one once-per-Night ability,
+banter, a **lure** (the cult that wants them back) and a **Back Page**
+loyalty story. Each has **Trust 0–5**: it rises with Vow acts, kept promises,
+gifts (§4.5) and choosing them over the story; it falls with Venom aimed
+down, Fabrication and using them as ammunition. At Trust 5 each unlocks a
+unique interrupt. Full roster, abilities, rivalries and the Millennium Night
+"crew" rule: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5.
+
+Junie and Yara stay the two core companions: Junie's Trust gates the
+Iconoclast ending, Yara's gates the Successor ending.
 
 ### 5.16 Degradation: the Rot in the interface
 
