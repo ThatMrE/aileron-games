@@ -2329,7 +2329,7 @@ Temperament (§5.2).
 
 | Meter | Range | Meaning | Rises when | Falls when |
 |---|---|---|---|---|
-| **Sainthood** | 0–10 | The Merge's worship of Hell Rot (not to be confused with a citizen's public **Halo score**, companion doc §3.2b) | Columns that hurt the Theogens. Heroics on camera. The Twin decides to (lately, with no explanation) | Public humiliation, refusing worship in public |
+| **Sainthood** | 0–10 | The Merge's worship of Hell Rot (not to be confused with a citizen's public **Halo score**, companion doc §3.2c) | Columns that hurt the Theogens. Heroics on camera. The Twin decides to (lately, with no explanation) | Public humiliation, refusing worship in public |
 | **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge, defending splicers, using the kitchen lab for them | Exposing splice failures, siding with the Emperor |
 | **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors, Yara, Blessings and Splices, some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks. From Issue 4 the Rot lowers its maximum |
 | **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low, favours, the Hog's protection |

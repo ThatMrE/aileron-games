@@ -277,6 +277,54 @@ faint, soft glow that the fog paints around them: an **aura**.
   character sprite, in the fog palette, with Twin gold reserved for high
   Halos and the Order's ring.
 
+### 3.2c The Halo score (the citizen score)
+
+The **Halo score** (0–10) is the Church of the Twin's public rating of every
+citizen, shown as the gold in their aura. The Church says it measures how
+much you are loved. What it really measures is **how easy you are for the
+Twin to model**. The perfect citizen, by the Twin's lights, is the one it
+can predict completely.
+
+**What raises a Halo (the "angelic citizen"):**
+
+| Behaviour | Why the Twin likes it |
+|---|---|
+| Being wired: a personal AI, open data, a readable aura | More data, better model |
+| Being predictable: same routes, same hours, same purchases | A forecast that is always right |
+| Calm: slow breath, blue-grey aura, no spikes | Low noise in the signal |
+| Gratitude: thanks, compliments, kind posts — the Church's gospels count them | The Twin's sentiment score |
+| Attending mass on the feed, volunteering at Church services | Visible devotion, logged |
+| Friends with high Halos | A clean social graph |
+| Donations, and Halo upgrades (*"Love is free. Halo upgrades are not."*) | Money |
+
+**What lowers it:**
+
+| Behaviour | Why |
+|---|---|
+| No personal AI, cash only, no feeds | The Twin cannot see you |
+| Unpredictable hours, moving often, night work | The forecast keeps missing |
+| A Theogen splice | The skin's own glow scrambles the aura |
+| Unlicensed gas, protest, dissent, journalism | Noise, and disloyalty |
+| Knowing zero-Halo people | Contagion in the social graph |
+| Illness (the aura flickers) | A body the model cannot trust |
+| Leaving the Church | Straight to zero, on every feed |
+
+**What each band gives you, and what zero costs:**
+
+| Halo | Name | What you get | What you lose |
+|---|---|---|---|
+| **0** | **The Unfinished** | Nothing. The Lantern's shelters still take you | **Housing:** Merge housing and most landlords check auras, and reject you. **Transport:** the gold Ascension shuttles do not stop for you. **Health:** Church clinics — most of the City's free care — turn you away. **Work:** jobs that check auras. **Doors:** shops with aura locks open slowly, or not at all. **Emergencies:** the Twin routes ambulances by its model, and it does not model you; they come late to Halo-zero blocks. **Police:** a Halo of zero is grounds for a stop, and for a "Halo-zero sweep" (main doc, Issue 1) |
+| **1–3** | Reflected | The shuttles stop. Basic Church services | Your data |
+| **4–6** | Luminous | Priority at the clinics, a place in the housing lottery | Your attention: the feeds, the masses, the gratitude |
+| **7–9** | Radiant | A gold aura everyone can see. Eligible for the Ascension list. The Church offers you a personal AI | Your money, and most of your privacy |
+| **10** | **Merged** | Cingulate conditioning, and a lifelong bond with a Church AI. The Twin now runs a live model of you and consults it before you act: you are **part of the Twin**. You appear in Twin visits as yourself, alive. Your name goes on the Ascension list | Your own first draft of every sentence. The merged cannot say anything that is not a compliment |
+| — | Ascended | The promised upload into the Twin, forever. Nobody yet: the Ascension on New Year's Eve would be the first (main doc §3.8) | Your body |
+
+**The satire, in one line:** the City's most "angelic" person is the one who
+has become completely predictable. The Loin is Halo zero not because it is
+wicked but because it is free, poor and hard to forecast — and the Twin
+treats that as the same thing.
+
 **The prophecy, real and in-world.** None of this came from nowhere. In
 **1986** the **Foresight Institute** was founded in Palo Alto, by Christine
 Peterson and K. Eric Drexler (some sources add James C. Bennett), to prepare
