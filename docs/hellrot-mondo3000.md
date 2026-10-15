@@ -377,7 +377,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 | **Dr. Ottoline "Otto" Prime** | Science Editor | **E — Extropianism.** 101 years old. She bought *PiHKAL* the week it came out in 1991, and went to Extropian conferences in the 1990s and spent fifty years on life-extension treatments. Ten years ago she stopped them all. She is ageing on purpose and enjoying it. | THE CHEMIST +2, PEER REVIEW +1 | **Second Opinion:** solve one lab puzzle instantly | The Theogens, who can give her back her youth in three splices | *"Expiry Date"* — her old Extropian colleagues hold an intervention, and so does her body (below) |
 | **Bishop Absalom Null** | Religion Correspondent | **S — Singularitarianism.** A preacher who prophesied the Singularity for 2045 — the most famous date in the movement — and filled a stadium in Santa Clara. It did not come. He wrote the cover story about his own failure for issue No. 49. | BLOOD EYE +2, THE COLUMNIST +1 | **Liturgy:** pass any check inside a church, cathedral or seminar | The Church of the Twin, which calls him the prophet who was only four years early — and, once he learns the secret, **vindication** (below) | *"Late"* — the Emperor asks him to preach at the Ascension (below) |
 | **Felix "Fax" Okoro** | Art Director | **T — Transhumanism.** Hell Rot's old labmate in the Brandvold lab. The lab fitted him with a 2030s neural jack for its consciousness experiments, and he sat under the gas while Hell Rot ran the numbers. The format died, and the jack still runs on an obsolete protocol. In 2044 he found Hell Rot dead on the lab floor and restarted his heart; he also read the notebook line that gave him his name. He left science for collage, and he is the one who phones Hell Rot the night the shack burns. | PALE EYE +2, REFLEX +1 | **Back Door:** his obsolete jack is the only way into the Twin that the Emperor does not monitor | The Theogens, who promise to grow him a brain that fits the future. It is an adult cingulate splice — the god-gene — and it would kill him (main doc §3.4) | *"Legacy Format"* — his jack starts receiving messages from inside the Twin. The sender is Julian (below) |
-| **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul | *"Marginal"* — Pru handles the money, and has known all along that the house and the paper are paid from two different banks. She has never told anyone, and she knows more about the Lacuna Trust than she admits. |
+| **Prudence "Pru" Abernathy-Vale** | Business Manager | **EA — Effective Altruism.** A former Ledger analyst who scored charities for a living. She does the magazine's books, rates every story's "expected impact," and is the only resident who corresponds with the Trust. | FOOTNOTE +2, THE COLUMNIST +1 | **Expected Value:** shows the odds and long-term effects of every choice in a scene — usually right, sometimes catastrophically wrong (a satirical overlay the player learns to distrust) | The Ledger, which wants her back to "allocate" the City's soul — and whose hedge pays for the Quickening (below) | *"Marginal"* — Pru handles the money, and has known all along that the house and the paper are paid from two different banks. She has never told anyone, and she knows more about the Lacuna Trust than she admits (below). |
 | **Mary Okafor** | Archivist ("the Memory Desk") | **None, but she was there.** 76 years old. She read *Mondo 2000* in Berkeley when it was new, and survived Y2K. | FOOTNOTE +2, BLOOD EYE +1 | **Been There:** name the 20th-century con that a cult is copying, for a free tell | The Merge, which offers to put her back in 1999, in the Twin, forever | *"Y2K"* — she lived through one millennium panic; she wants to stop this one |
 | **Saint Nobody** | Contributing Editor (Pranks) | **Unknown.** Different costume every time. | THE CELEBRITY +1, REFLEX +1, KARL +1 | **Disruption:** turn the next door into a Dissonance door | None. That is what scares both cults. | *"Unmasked"* — never completed. The credits complete it. |
 | **Moreau** | Mascot & Chief Regeneration Officer | An axolotl. | — (always present, never chosen) | Once per route: a free success | The Theogens want his genes. The order wants a scan. | Grows one size per Issue (main doc §5.14) |
@@ -412,6 +412,27 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   knees that may not be hers by Thursday. What she does there — and whether Hell Rot is in the
   stands — shows which way she is leaning. She is the one person in the House
   who asks Hell Rot what he saw when he died, and listens to the answer.
+- **Pru.** She is 29, from old Marin money (hence the double-barrelled
+  name), a Stanford economics dropout. Cardigans, a calculator watch,
+  sticky notes on every surface. Hedged and numeric, with sudden bravery:
+  *"There's a seventy per cent chance this is a terrible idea. I'm in."*
+  - **Why she left the Ledger.** In 2046 the Ledger rated a Theogen
+    deep-ward clinic "low impact" and cut its money. Forty failed splices
+    lost their care. She ran that number. The same year the Ledger rated
+    *Mondo 3000* "net-negative for civilization," and the Duchess framed the
+    letter. **Pru wrote that letter.** She quit a month later and came to
+    the House for a job. Only the Duchess knows.
+  - **"Marginal": she has been writing to the Emperor.** She writes to the
+    Lacuna Trust by bank message. Since Julian's "death," the Emperor keeps
+    the Trust paid in his lucid hours — so the polite, exact replies she
+    has had for three months come from the god in the fog. She does not
+    know. It is the Emperor's quietest relationship, and his most human.
+  - **Her temptation, sharpened.** The Ledger's "hedge" funds both cults —
+    including the **Quickening's canisters**. Its models rate the release
+    as positive expected value. Pru can trace the money. Once Brandvold's
+    notebook proves the god-gene kills, her numbers flip, and she must
+    choose: go back to the Ledger and stop it from inside, or burn it in
+    print.
 - **The Bishop.** Born **Absalom Knoll**, 58, the son of a Pentecostal
   preacher in Fresno. He took the name **"Null"** after 2045: *"I am the
   empty set."* Tall, in the silver suit he wore at the stadium — still the
@@ -491,8 +512,10 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
 - **Rivalries** (banter pairs that develop over the game):
   - **Yara vs. Pru** — two quantitative minds, opposite conclusions. They share
     a desk and do not speak until Issue 3. Their first spoken exchange is
-    about one number they have each calculated differently all week — and
-    both of them are right.
+    about one number they have each calculated differently all week — how
+    many people will die on New Year's Eve — and both of them are right,
+    because they assume different things about the god-gene. The gap
+    between their answers is Brandvold's notebook.
   - **The Bishop vs. Otto** — the man who wanted the future to arrive, and the
     woman who decided to stop waiting for it.
   - **Fax vs. the Greenhouse** — the plants keep reading his DNA out loud.
@@ -502,6 +525,30 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   options are **Junie, Yara, Fax, the Bishop and Otto** (main doc §5.15);
   Junie's and Yara's arcs are the longest. Saint Nobody flirts with
   everyone and commits to no one.
+
+### 5.3a Side quests by housemate
+
+Each housemate has a main loyalty quest (the table in §5.2) and two side
+quests. Side quests are optional, short (one to three doors), and each one
+pays out in Trust and one useful item, Lead or contact.
+
+| Housemate | Side quest | What happens | Pay-off |
+|---|---|---|---|
+| **The Duchess** | *"The Last Subscriber"* | The magazine's oldest paper subscriber, 98, in the Sunset, has stopped renewing. Hell Rot and the Duchess deliver the Dailies by hand. The subscriber has kept every issue — and every Commission, annotated in a Keeper's hand. | A contact in the Order's old guard; Duchess Trust |
+| | *"Michelangelo's Pope"* | After Julian's "death" the Rivet accounts freeze, and payroll is due. The Duchess must sell one framed magazine from the stairs. The player helps choose which — and finds who in the City is buying. | Ink; a buyer who is a Gilder |
+| **Yara** | *"Error Bars"* | Prop F's Board of Consciousness hires her to audit the Index thresholds. She finds the Board moved them to fit the Church's members. | A Lead for Route A; Yara Trust |
+| | *"Cold Read"* | She teaches Tem, from the Loin, to read her own data — a Halo of zero, explained line by line. | Tem as a source in the Loin; Vow |
+| **Junie** | *"The Repo Men"* | The two tired men from the knee lender keep turning up. One of them is a derby fan. Talk, bribe, or outskate them. | One extra week on the knees; a contact who knows every lien in the City |
+| | *"Midnight Mass, Again"* | Junie's childhood parish in the Excelsior holds a small Mass for the end of the year. She asks Hell Rot to come and not to say anything. | Junie Trust; a step in her trial of the soul |
+| | *"The Farm"* | (Existing.) Get her cousin back from the Community Table's farm before the three-week pledge (companion doc §5). | Junie Trust |
+| **Fax** | *"Cover Story"* | Collect one image from each district across the week for the New Year's Eve cover. Each image is a small scene. | The best cover in the game; THE COLUMNIST +1 for the last column |
+| | *"Dead Formats"* | His jack is failing. The last technician who can repair it lives in the Haight's 1990s cyberdelic wing, and wants payment in old floppy disks. | Keeps the Back Door open through Issue 6 |
+| **Otto** | *"The Rat"* | Her old lab's last long-life lab rat is still alive in the Cradle, thirty years old. Theogen pilgrims worship it. Get it out. | A Splice-free Blessing; Otto Trust |
+| | *"The Pill Drawer"* | She gives away fifty years of life-extension pills. To whom: the deep wards, the Lantern shelter, or the Old Guard who want her back? | Different allies by choice; Vow or Venom |
+| **The Bishop** | *"The T-Shirts"* | Thirty thousand unsold 2045 stadium T-shirts sit in a storage unit. The Church wants to buy them as relics. | Ink, or a Church contact, or a bonfire at Baker Beach |
+| | *"Prodigal"* | His father, a dying Pentecostal preacher in Fresno, calls every night this week. Go to Fresno for New Year's Eve, or stay and preach at the Palace. | Bishop Trust; changes who holds the Palace |
+| **Pru** | *"Audit"* | She audits the Ascension list and puts a number on the ticket scandal (main doc §3.7). | The scandal becomes publishable data |
+| | *"The Hedge"* | Steal the Ledger's allocation file at its office party in the Spire District on Wednesday night. | Proof of who pays for the Quickening's canisters |
 
 ### 5.4 Who stays and who goes on New Year's Eve
 

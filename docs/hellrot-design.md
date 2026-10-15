@@ -1931,6 +1931,13 @@ holds the full set). Three set the tone:
   and never forgives herself.
 - **Successor:** she hands Yara the masthead.
 
+**Pru's line.** Two endings close on her:
+
+- **Peer Review:** *"Pru's spreadsheet ran as the Open Dataset's appendix.
+  It is the most-cited thing* Mondo 3000 *ever printed."*
+- **The Hog's Bargain:** *"Pru runs Mayor Pell's budget office. She rates
+  him 'net-neutral.' He frames it."*
+
 **The Bishop's line.** Two endings close on him:
 
 - **Mortal:** *"The Bishop preached one last sermon, to the Nortonians on
@@ -3086,6 +3093,12 @@ Plot questions the writers' room must answer before Alpha.
   atheist with trials of faith. Her temptation is choosing death, not
   eternal life; her choice is whether to change her body, mind and soul
   (Mondo doc §5).
+- **Pru** is 29. She wrote the Ledger's 2046 letter about *Mondo 3000*,
+  then quit and joined. Her letters to the Lacuna Trust are answered by the
+  Emperor. The Ledger's hedge pays for the Quickening's canisters (Mondo
+  doc §5).
+- **Every housemate has two side quests** besides their loyalty quest
+  (Mondo doc §5.3a).
 - **The Bishop** is Absalom Knoll, 58, who took the name "Null" after 2045.
   He was right: the Singularity came, four years late, in the fog. His
   temptation is vindication. At the Ascension he can bless the crowd into
