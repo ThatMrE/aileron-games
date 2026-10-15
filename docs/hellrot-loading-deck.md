@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 166 cards: 64 real
-> quotations, 6 redacted cards and 96 in-world cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 167 cards: 64 real
+> quotations, 6 redacted cards and 97 in-world cards. Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -131,9 +131,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (96)
+## Part 2 — In-world cards (97)
 
-### 2A. The Emperor, the Church of the Twin and the Auric Order (20)
+### 2A. The Emperor, the Church of the Twin and the Auric Order (21)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -154,6 +154,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
+| W12i | "Whatever we find, we pool." | Auric Order oath, American River, 1849 | *Gold, then land, then patents, then people. Read the minute book.* | Order, grim |
 | W12a | "Apprentice of the Seam. Fellow of the Halo. Master of the Aura." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
 | W12b | "So mote it be. Mind the glow." | Lodge-room door, Rivet mansion | *Masonic, with a dress code and a light show.* | Order, funny |
 | W12c | "The Pattern is kept. The Pattern is kept. The Pattern is—" | Torn page, Keepers' minute book | *They're scared of their own god.* | Order, grim |

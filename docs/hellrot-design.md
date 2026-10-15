@@ -433,23 +433,37 @@ anaesthetic gas. The cure for his damage starts with the drug that caused it.
 ### 3.3b The Auric Order (the secret society)
 
 **The name.** *Auric* means "of gold" (from the Latin *aurum*) and it echoes
-*aura*. The order guards both: the Rivet gold, and the light that Karl paints
-around every person in the City (companion doc §3.2b). Members call it simply
-**the Order**. Outsiders who have heard rumours call it "the Gold Lodge."
+*aura*. The Order was named for gold in 1849 and has come to mean the light
+that Karl paints around every person in the City (companion doc §3.2b).
+Members call it simply **the Order**. Outsiders who have heard rumours call
+it "the Gold Lodge."
 
-**What it is, in one line:** a 176-year-old fraternal order in the mould of
-the Freemasons and the Knights Templar, which read the Bay Area's nanotech
-prophecies in the 1980s, spent forty years making them come true, and now
-keeps a mad god alive in the fog.
+**The rule, since 1849:** *whatever we find, we pool.* Every member puts
+what they find — gold, then land, then money, then patents, and now minds —
+into a shared collective, and the collective decides how it is used.
+
+**The identifiers:** **denim and gold.** In lodge, every member wears denim —
+work clothes, the uniform of the diggings — and something gold. Outside
+lodge, a Master can be spotted by a worn denim cuff and a plain gold ring, and
+by the gold ring in their aura that only Hell Rot's cyan eye can see.
+
+**What it is, in one line:** a gold-rush mining collective, exactly **200
+years old** this year, that grew into a fraternal order in the mould of the
+Freemasons and the Knights Templar, read the Bay Area's nanotech prophecies
+in the 1980s, spent forty years making them come true, and now keeps a mad
+god alive in the fog. The Order's bicentennial falls in December 2049. It had
+planned to celebrate with the Ascension.
 
 #### History
 
 | Year | Event |
 |---|---|
-| **1873** | Founded as the **Copper Rivet Lodge**, a business fraternity for the partners of the Rivet dry-goods house, in the year of the family's famous patent. Masonic forms: degrees, aprons, an oath, a lodge room above the warehouse. |
+| **1849** | **Founded as the Auric Order** in a canvas tent on the American River, during the gold rush, by eleven miners who swore to **pool whatever they found** into one shared collective and split it by vote. Most mining companies of the rush failed within a season. This one kept its books, kept its oath, and kept its gold. Its first meeting, rule and members' marks — a scrap of denim work cloth and a flake of gold — are in the minute book. |
+| **1850s** | The Order moves its pool to San Francisco and invests in the City instead of the diggings: wharves, lots, and a dry-goods house that outfits miners. The dry-goods family, the **Rivets**, join; within a generation they lead it. Masonic forms arrive with new members: degrees, aprons, a lodge room above the warehouse. |
+| **1873** | The Rivet family's riveted work trousers are patented. Riveted denim becomes the Order's lodge dress — the miner's cloth, made to last. |
 | **1906** | The earthquake and fire destroy the warehouse. The lodge's minute books survive in an iron box. The Order still opens every meeting by reading the 1906 entry. |
 | **1986** | In Palo Alto, the **Foresight Institute** is founded (by Christine Peterson and K. Eric Drexler) to prepare for molecular nanotechnology. The same year Drexler's book *Engines of Creation* describes molecular machines — and the risk of runaway self-copying ones, "grey goo." A young Rivet heir reads it and brings it to lodge. |
-| **1987** | The lodge refounds itself as **the Auric Order**, with a new purpose: to see the age of molecular machines coming, prepare for it, and make sure it serves the City — and the family. |
+| **1987** | The Order turns its pool toward a new purpose: to see the age of molecular machines coming, prepare for it, and make sure it serves the City — and the family. "Whatever we find, we pool" starts to mean something new. |
 | **1993** | J. Storrs Hall publishes "utility fog": a swarm of tiny robots, *foglets*, that could fill the air and become almost any material. The Order adopts the paper as scripture. Its inner circle starts calling the future swarm "the Fog." |
 | **2020s–2033** | The wildfire decades. Order members on city commissions and in Rivet philanthropy push the smoke-scrubbing nanite program. In **December 2033** Karl is seeded. The Order quietly holds the top-up and calibration contracts — it controls what the swarm is told to do. |
 | **2030s–2040s** | Karl's sensors start to show a faint glow around each person: the **auras** (§3.2b of the companion doc). The Order learns to tune them. The Church of the Twin later builds its Halo scores on them. |
@@ -461,8 +475,9 @@ keeps a mad god alive in the fog.
 
 1. **The aura is the soul made visible.** Karl's glow does not *represent*
    a person's inner state; to the Order, it *is* the self, finally readable.
-2. **Light should gather.** A city of separate auras is a draft. A city of
-   joined light — one great aura — is the finished work. (This is the Order's
+2. **Light should gather.** The 1849 rule, grown up. The miners pooled gold;
+   the Order now means to pool *people*. A city of separate auras is a draft.
+   A city of joined light — one great aura — is the finished work. (This is the Order's
    version of the Bundle: longtermist in its patience, Cosmist in its wish to
    keep everyone forever.)
 3. **The first Aureate.** The Emperor is the first mind to *become* an aura:
@@ -476,11 +491,11 @@ keeps a mad god alive in the fog.
 
 | Degree | Name | Who | Mark |
 |---|---|---|---|
-| 1° | **Apprentice of the Seam** | New members; mostly Rivet staff, engineers, lawyers | A plain denim apron |
+| 1° | **Apprentice of the Seam** | New members; mostly Rivet staff, engineers, lawyers | A plain denim apron and a flake of gold, as in 1849 |
 | 2° | **Fellow of the Halo** | Senior professionals: a Twin director, Church board members, a judge | Gold thread on the apron hem |
 | 3° | **Master of the Aura** | Rivet trustees and major donors | A gold ring, and a tuned aura |
 | Inner circle | **Keepers of the Pattern** | Seven Masters, sworn Templar-style to guard "the Pattern" — Julian's scan, now living in the fog | They do not wear the ring outside the lodge |
-| Head | **The Warden** | Currently **Cornelius Vail** | Holds the 1906 iron box |
+| Head | **The Warden** | Currently **Cornelius Vail** | Holds the 1849 pan and the iron box of minute books |
 
 **The tuned aura.** Every Master's Karl aura carries a faint **gold ring**,
 tuned in at their initiation. It is invisible to the naked eye and to the
@@ -495,12 +510,19 @@ reveal a ring, and each ring found is a verified Dossier entry.
   aura. They leave with the ring.
 - **The Quiet:** no devices, no feeds, no Twin in lodge. Minutes are kept on
   paper — the Order's great strength and its great weakness.
-- **The Reading:** every meeting opens with the 1906 minute-book entry, read
-  aloud by the Warden.
-- **Passwords** in 1870s dry-goods slang. Greeting: "So mote it be. Mind the
+- **The Reading:** every meeting opens with the 1849 oath — *whatever we
+  find, we pool* — and the 1906 entry, written the night the fire took the
+  warehouse, read aloud by the Warden.
+- **Passwords** in gold-rush miners' slang. Greeting: "So mote it be. Mind the
   glow."
-- **Regalia:** denim aprons stitched in gold thread; gold rings; a seal of a
-  gold rivet inside a mason's compass, ringed by a halo.
+- **Regalia:** denim and gold, always. Denim aprons stitched in gold thread;
+  plain gold rings; the **1849 pan** — the first members' gold pan, kept on
+  the lodge altar; a seal of a gold rivet inside a mason's compass, ringed by
+  a halo.
+- **The Pooling** (yearly rite, the anniversary of the 1849 oath): every
+  member places one thing they found that year into the pan — a gold flake,
+  a deed, a patent, a secret — and the lodge votes on its use. In 2049 the
+  Keepers placed Julian's scan in the pan.
 - **Lodges:** the room under the **Rivet mansion** (where the scan happened)
   and the **Old Lodge**, under a brick warehouse near the waterfront, which
   floods on king tides — a problem in Issues 1–2.
@@ -1995,9 +2017,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 166 cards: 64 real quotations from Bay Area cult
+**The full deck** — 167 cards: 64 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
-96 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+97 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
