@@ -5,8 +5,9 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 169 cards: 64 real
-> quotations, 6 redacted cards and 99 in-world cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 187 cards: 64 real
+> quotations, 6 redacted cards, 99 in-world cards and 18 eye-power
+> cards. Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -131,7 +132,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (99)
+## Part 2 — In-world cards (99) and eye-power cards (18)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (23)
 
@@ -271,6 +272,43 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W87 | "1 January 2050, Aquatic Park, 8 a.m. Swim if you survived." | New Year's Plunge flyer | *I'll be there. Probably.* | Epilogue, tender |
 | W88 | "This card is a loading screen. While you wait, the City is deciding what you are." | *Mondo 3000* house ad | *Keep the receipt.* | weird |
 
+### 2H. The Eyes (18)
+
+One card for each eye's base power and each of its eight upgrades (main doc
+§5.14a). Each card shows the power's name and icon, a line in the voice of
+the eye, and Hell Rot's note. **Pure cards** are printed clean, with the
+eye's colour as a thin border. **Corrupt cards** are printed tinted — the
+dark eye's bleed gold at the edges, the pale eye's frost over white — and
+their marginal note is in a shakier hand.
+
+**Dark eye — truth sight**
+
+| # | Power | Path | Card line | Hell Rot's note | Tags |
+|---|---|---|---|---|---|
+| E1 | **The Dark Eye** | Base | "Everyone in this room is telling a story. Look again." | *Since the four minutes, I can't stop seeing the seams.* | eyes, Index |
+| E2 | **Tell** | Pure 1 | "The lie flickers, like a bulb about to go." | *Most people lie about small things. Most people are fine.* | eyes, pure |
+| E3 | **Unmask** | Pure 2 | "Under the Halo: a tired woman. Under the glow: a scar. Under the gospel: the old verb." | *Every illusion in this City is made of true parts. I see the glue.* | eyes, pure, Twin |
+| E4 | **Under** | Pure 3 | "The wall is a door. The file is two files. The minute book has a second ink." | *The Order keeps its secrets on paper. Paper has layers.* | eyes, pure, Order |
+| E5 | **Witness** | Pure 4 | "For one breath, they cannot lie to you. Ask the right question." | *Most people, given one honest minute, say something kind. Not all.* | eyes, pure, tender |
+| E6 | **Fib** | Corrupt 1 | "The doorman believes you. Of course he does. Look at your eye." | *A small one. Doesn't count. That's what they all say.* | eyes, corrupt |
+| E7 | **Glamour** | Corrupt 2 | "Wear any light you like: a saint's gold, a splicer's glow, the Order's ring." | *I walked into the lodge with a ring I didn't earn. Nobody stopped me. That's the problem.* | eyes, corrupt, Order |
+| E8 | **Forgery** | Corrupt 3 | "Show them a page that was never printed. They will remember reading it." | *I could forge a source. I could forge a confession. Yara would know. Yara always knows.* | eyes, corrupt, Yara, grim |
+| E9 | **The Great Lie** | Corrupt 4 | "One illusion, ten thousand eyes. They will see whatever you need them to see." | *This is what the Church does. This is what the Order does. This is what I'd be.* | eyes, corrupt, I5, grim |
+
+**Pale eye — foresight**
+
+| # | Power | Path | Card line | Hell Rot's note | Tags |
+|---|---|---|---|---|---|
+| E10 | **The Pale Eye** | Base | "A breath ahead, one door is warmer than the others." | *Not the future. Just the next good step. That's plenty.* | eyes |
+| E11 | **The Good Path** | Pure 1 | "The best door shines. You do not have to take it. You usually should." | *Faster isn't the point. Kinder is. It's usually faster too.* | eyes, pure |
+| E12 | **Flash** | Pure 2 | "Before you choose, a picture of after." | *I saw Rosa alive in one of them. I took that door.* | eyes, pure, I3 |
+| E13 | **Sure Feet** | Pure 3 | "Your body knows the next second before it comes." | *I haven't tripped since Tuesday. Junie is suspicious.* | eyes, pure, funny |
+| E14 | **The Long Look** | Pure 4 | "Once a night, the end of the road, for a heartbeat." | *I saw the moon over the bridge. I'm walking toward it.* | eyes, pure, D, tender |
+| E15 | **Held Breath** | Corrupt 1 | "The night is an hour longer — for you. The Rot takes the difference." | *An extra hour at 4 a.m. Every addict knows that bargain.* | eyes, corrupt, recovery |
+| E16 | **Stopped Beat** | Corrupt 2 | "Between their word and yours, a pause only you can live in." | *I won the argument by cheating time. The argument still happened.* | eyes, corrupt |
+| E17 | **Stillness** | Corrupt 3 | "The room stops. The rain hangs in the air. Take what you came for." | *Karl noticed. The fog doesn't like holes in time.* | eyes, corrupt, Karl, weird |
+| E18 | **The Stopped Clock** | Corrupt 4 | "11:59:59. Hold it as long as you like. It will not hold you back." | *A perfect moment, forever. The Merge, for one.* | eyes, corrupt, I5, grim |
+
 ---
 
 ## Part 3 — Rotation rules (summary)
@@ -279,6 +317,11 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
   blackout, Karl and GIHKAL cards take half the draws.
 - **No repeats** within one Issue. The redacted cards (X1–X6) appear at most
   once per playthrough each, and never back to back.
+- **Eye cards:** an eye card enters the deck when its power is unlocked, and
+  is drawn more often right after the power is used. Locked eye cards on the
+  path the player is close to choosing appear once as a preview, tinted grey.
+  If either eye reaches Corruption 3, a corrupt eye card replaces every fourth
+  draw.
 - **Route tagging:** route-tagged cards appear only on their route after the
   route lock.
 - **Recovery filter:** `drugs+` cards hold while Craving ≥ 3. `recovery` cards

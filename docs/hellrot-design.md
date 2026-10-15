@@ -1794,6 +1794,8 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
   away: the Great Lie will work on the City, and he will want to use it.
 - **Pale eye corrupt at step 4** unlocks a new ending, **Midnight Forever**
   (ending 11, §3.11).
+- **Loading cards:** every eye power has its own loading-screen card,
+  clean for pure powers and tinted for corrupt ones (loading deck §2H).
 - **Mixed eyes** (one pure, one corrupt) are the stuck-in-the-middle build:
   powerful, unstable, and the most fun to play.
 
@@ -2099,9 +2101,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 169 cards: 64 real quotations from Bay Area cult
-leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
-99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+**The full deck** — 187 cards: 64 real quotations from Bay Area cult
+leaders, prophets, poets, technologists and radicals; 6 redacted cards; 18 eye-power cards (one per
+power, §5.14a); and 99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
