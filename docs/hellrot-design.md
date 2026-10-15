@@ -2128,14 +2128,26 @@ both have to break.
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. Time stops only for him: the City's midnight plays out exactly as it would without him — the Ascension if he had not stopped it, the Emperor holding the god-gene in as always, the Midnight Quake — and the epilogue tells it as if he were not there. |
 
-**Ione's line.** Every ending adds one line about Ione (open question 4
-holds the full set). Three set the tone:
+**Ione's line.** Every ending adds one line about Ione. Three set the tone:
 
 - **Mortal:** *"On New Year's Day, in the cold at Aquatic Park, Ione
   laughed. It was the first Theogen laugh anyone had heard in years."*
 - **New Flesh:** *"Ione stopped glowing on 3 January. The Theogens say she
   is resting."*
 - **Midnight Forever:** *"Wren says Ione has started watching the clock."*
+
+The rest of the set. Each line works whether Delphine lived or died:
+
+| Ending | Ione's line |
+|---|---|
+| **The Mountain** | *"Ione comes up the mountain on Sundays. Moreau watches her through the glass. Neither of them blinks."* |
+| **Peer Review** | *"Ione's genome is the only one missing from the Open Dataset. Yara redacted it by hand."* |
+| **The Hog's Bargain** | *"Mayor Pell's first act made Ione a ward of the City. Nobody asked her. Nobody ever will."* |
+| **Saint Rot** | *"The Church baptized Ione in the Twin on 6 January. It called her 'it.' Hell Rot's voice gave the blessing."* |
+| **Iconoclast** | *"Ione's first word was 'no.' Junie swears she heard it on the live feed."* |
+| **The Mob** | *"The Theogens carry Ione at the front of every march. She is the only one of them who never chants."* |
+| **Successor** | *"Yara's second column was about Ione. It had error bars."* |
+| **Fabrication** | *"Hell Rot printed that Ione was an ordinary child. It was his last lie, and the City believed that one too."* |
 
 **The Duchess's line.** Three endings close on her:
 
@@ -2357,7 +2369,7 @@ paid to write): [hellrot-mondo3000.md](hellrot-mondo3000.md) §4.
 | **The Conservatory** | Moreau's tank, the Duchess's talking houseplants | Moreau's growth, comic relief, one plant knows things |
 | **The Press** (cellar) | The risograph | Prints each issue at dawn after filing. Paper is the only medium the Twin cannot edit |
 | **The Stairs** | Framed exposés (see companion doc §1.3) | Codex: notes on every person, cult and place met |
-| **The Letters Page** | A pile of mail | Readers, cult members and fans write in about the last column |
+| **The Letters Page** | A pile of mail | Three letters each dawn. Answer one in print (§5.13a) |
 
 **Reactivity rule (from *Hades*):** after every Run, at least two hub
 characters have a new line about what happened in it — the boss he lost to,
@@ -2773,6 +2785,33 @@ builds his column, **THE ROT**.
 The next morning both sides respond: a Church of the Twin sermon that reframes the
 column as holy, and a Theogen broadcast that reframes it as prophecy. The
 better the column, the more lovingly both sides misread it.
+
+### 5.13a The Letters Page (one reply per dawn)
+
+After the press run, the Greenhouse sorts the mail. It costs no Hours.
+**Three letters** arrive each dawn:
+
+- **A reader**, on last night's column.
+- **A faction voice**, from whichever group's Opinion the column moved most:
+  a Church congregant, a Theogen nurse, Desh or another Burn survivor, a
+  Nortonian.
+- **A wildcard**: Dr. Hale's anonymous letter in Issue 2 (§3.3b), a letter
+  from the Greenhouse itself, a crank (background only).
+
+Hell Rot answers **one**, in one printed line, in one of three tones: Vow,
+Venom or the Gelastic. Answering a faction voice can open a defector Lead.
+Answering Desh moves the BFF thread. Unanswered letters cost nothing, but
+the pile grows, and the Duchess notices. A reply is printed, so the
+lying-in-print rules apply (§5.4): a false reply counts toward Fabrication.
+
+**The Emperor writes in.** Paper is the one medium he cannot edit, so his
+letters come through the Nortonians: a scribe at the Ferry Building shrine
+copies down the decrees in the fog, signs them *Norton II*, and posts them.
+The first arrives in Issue 2. Answering him is a Route D thread, and the
+only way to talk to him that the Twin cannot rewrite.
+
+**The last letters page.** The Epilogue prints one more page: replies to
+Hell Rot's last column from whoever is left.
 
 ### 5.14 Equipment
 
@@ -3551,15 +3590,10 @@ Plot questions the writers' room must answer before Alpha.
 - **The Quickening is fog only (was Q24, Q24a).** Nine seconds of still fog
   at midnight. The pocket outbreak is told through a closed door, voices and
   a list of names — no sprites, no gore, no combat (§3.4).
+- **A playable letters page (was Q25).** Three letters each dawn, one
+  printed reply. The Emperor writes in through the Nortonians (§5.13a).
+- **Ione has a line in every ending (was Q4)** (§3.11).
 
 ### Still open
 
-**The Theogens and Ione**
-
-4. **What becomes of Ione on each route?** Every ending promises one line
-   about the child. Three are drafted (§3.11), eight to go.
-
-**Design questions**
-
-25. Does *Mondo 3000* get a playable letters page where cult members, Burn
-    survivors and the Emperor write back?
+None. New questions go here as they come up.

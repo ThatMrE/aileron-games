@@ -630,7 +630,7 @@ One game Issue = one *Mondo 3000* issue. The cycle:
 4. **The Press** — printed at dawn in the cellar. The player hears it. The
    household watches the first copy come off the press, every time, and
    someone always has a line about it.
-5. **The Letters Page** — the Greenhouse sorts the replies.
+5. **The Letters Page** — the Greenhouse sorts the replies, and Hell Rot answers one in print (main doc §5.13a).
 
 ### 6.2 The magazine's sections (the cover-to-cover structure)
 
