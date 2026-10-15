@@ -23,7 +23,7 @@
 2. **San Francisco builds both kinds of god-machine.** The AI industry lives
    here, and so does the biotech industry: the first major genetic-engineering
    company started in South San Francisco in the 1970s, and CRISPR gene editing
-   came out of Berkeley. The Merge (upload) and the Theogens (splice) are
+   came out of Berkeley. The Merge (AI bond now, upload promised) and the Theogens (splice) are
    each the far future of a real local industry.
 3. **San Francisco's press kills gods.** Reporters, not police, brought down
    three of the region's biggest prophets (§1.3). Hell Rot belongs to that
@@ -168,7 +168,9 @@ the four.
 - **The City has a double.** **The Twin** — the full digital copy of the City
   that the Rivet Trust built, running on Karl's data. In the Twin, every
   street looks the way it did on its best day, the cable cars are free, and
-  nobody is ever sick. The merged live there. Visiting it is an Issue 2
+  nobody is ever sick. The **reconstructed dead** live there — Twin models
+  built from people's data, not minds; nobody has ever been uploaded into
+  it (main doc §3.3). Visiting it is an Issue 2
   location; on Route B it becomes a second hub map.
 - **The Valley is a temple yard.** The peninsula south of the City is one
   continuous campus of server cathedrals.
@@ -382,7 +384,7 @@ Quickening.
 | Alamo Square | **Villa Delirium** | A painted Victorian on the square, sealed against sensors; the *Mondo 3000* office, press and home (modelled loosely on the Embassy, a real SF community house — inspiration only) | *Mondo 3000* | Prologue end; every Issue's opening |
 | North Beach | **North Beach** | Flooded on king tides; cafés, strip clubs and a church basement that hosts a recovery meeting every night of the holiday week | Old beats, the sober | Issue 1 |
 | Chinatown | **Chinatown** | The wet markets still run at night: tanks, steam, gene-edited fish sold quietly to Theogens | Fishmongers, families | Issue 1 |
-| Union Square | **Union Square** | The shop windows show merged relatives wishing shoppers a merry Christmas by name | Shoppers, the Church | Issue 1 |
+| Union Square | **Union Square** | The shop windows show reconstructed dead relatives wishing shoppers a merry Christmas by name | Shoppers, the Church | Issue 1 |
 | Telegraph Hill | **Coit Tower** | Closed for "renovation": Sunday's Lifeboat rig, under the 1930s murals | Sunday's contractors | Issue 4; Issue 6 |
 | Golden Gate Park | **The Park** | The California Academy of Sciences (donor dinners under the living roof), the bison paddock, Hippie Hill, the Conservatory of Flowers | Donors, drummers, bison | Issue 3 |
 | Presidio | **The Presidio** | The old Army post; in a leased brick building, the Auric Order's lodge room, where the scan happened | The Order | Issue 4: the break-in |
@@ -465,12 +467,12 @@ civic money).*
 |---|---|
 | **Hook** | Free services that work: rent help, food, clinics, legal aid, a ride to all of it — paid for by Rivet Trust philanthropy. |
 | **Promise** | "You were always divine. Now you can stay that way." A Halo, an audience, and a forever in the Twin. |
-| **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy, merged. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way; the Peoples Temple "healing" pattern, upgraded). |
+| **Proof** | **Twin visits.** A believer puts on a headset and walks through the City as it is in the Twin: their dead mother waits on the corner, healthy — a reconstruction the Church lets them believe is her. And **Halo healings** on stage (nano-masked, not cured — the Church never says either way; the Peoples Temple "healing" pattern, upgraded). |
 | **Price** | Data, then attention, then money, then the body. |
-| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10). |
-| **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the merged — your mother on that corner — stop answering. |
+| **Ladder** | Guest → Reflected (Halo 1–3) → Luminous (4–6) → Radiant (7–9) → Merged (10: conditioned and bonded to a Church AI) → Ascended (the promised upload; nobody yet). |
+| **Wall** | Your Halo is public. Leaving drops it to zero on every feed. And the reconstructions — your mother on that corner — stop answering. |
 | **Enemy** | "The Unfinished": critics, journalists, the zero-Halo poor, and above all the Theogens, whom the Church calls "meat-worshippers." |
-| **Crack** | (A) The merged are measurably less themselves every month: the Weave's error compounds, and the Church buries the data. (B) The healings are masks. (C) the Twin cannot model the poor, and its own engineers will admit, if asked right, that it does not yet count them as people. |
+| **Crack** | (A) The merged are measurably less themselves every month: the Church AI drafts more of their thoughts each week, and the Church buries the data. (B) The healings are masks. (C) the Twin cannot model the poor, and its own engineers will admit, if asked right, that it does not yet count them as people. |
 | **Political arm** | **The Bus Ministry**: 40,000 congregants on any street in two hours — the Peoples Temple model. Mister Sunday wants the buses. |
 | **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future; never named in-game.) |
 | **Tells** | 1, 2, 3, 6, 7, 8 |

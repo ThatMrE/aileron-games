@@ -122,8 +122,8 @@
   single number for "how conscious is this system?" It never got finished.
   The lab named the draft after the student who did most of the work; it is
   the last unfinished chapter of an unfinished dissertation. It is now the test the whole Bay Area uses. The
-  Weave — the lab's synthetic neural tissue that holds an uploaded mind —
-  passes because his Index says it does. In public, the courts and Proposition
+  Weave — the lab's synthetic neural tissue, designed to hold an uploaded
+  mind one day — passes because his Index says it does. In public, the courts and Proposition
   F (§3.3c) now use it to decide who counts as a person. In secret, the Rivet
   order used it to check whether Julian survived his upload (§3.3).
 - **The Theogenesis papers:** three short, brilliant, reckless preprints on
@@ -390,14 +390,20 @@ the style of the City's most beloved lunatic: ***Norton II, Emperor of the
 Twin and Protector of the Fog.*** The trustees call it **the Emperor**. They
 have told no one.
 
-**The sickness.** Every legal upload in 2049 — every Merge — goes through
-**cingulate conditioning** first: weeks of neurostimulation and drugs that
-train the brain's anterior cingulate, the region that monitors conflict and
-errors and keeps a sense of "this is me acting," to prepare a human mind for
-an agentic, distributed existence. It is a crude, adult imitation of
+**The first upload.** Julian is the **first human mind ever uploaded**, and
+in 2049 still the only one. Nobody else has done it: not the Church's
+faithful, not the rich, not the Order.
+
+**The sickness.** What millions of people in 2049 *do* have is **cingulate
+conditioning**: weeks of neurostimulation and drugs that train the brain's
+anterior cingulate, the region that monitors conflict and errors and keeps a
+sense of "this is me acting." Its everyday purpose is to let a person work
+with their **personal AI** more fully — to think alongside an agent without
+losing track of which thoughts are theirs. It is a crude, adult imitation of
 Professor Brandvold's **cingulate engineering** — the real thing, a
 developmental rebuild of the cingulate, was never built into anyone before
-Ione (§3.4). Julian, dying fast, skipped even the conditioning. Now one human mind is spread
+Ione (§3.4). An upload would need far more than conditioning. Julian, dying
+fast, did not even have that. Now one human mind is spread
 across trillions of particles and eight million people's data, with nothing
 to sort signal from noise or self from city. The result looks like a
 psychosis:
@@ -424,6 +430,76 @@ psychosis:
   lights spell words. The fog parts over one person and smothers another.
 - **Lucid hours.** Sometimes, near dawn, he is clear, kind and terrified.
 
+**"We."** The Emperor speaks of himself only in the first person plural —
+Emperor Norton's royal *"We, Norton I,"* and also the plain truth of a mind
+spread across a swarm. The pronoun is a tell the player learns to read:
+
+- **"We"** in ordinary type — Norton II, the Emperor. The default.
+- **"I"** — Julian, surfacing. It slips out at dawn, in fear, and whenever
+  he talks about his body, his mother or Delphine. The first time the player
+  hears the Emperor say "I," it is a story beat.
+- **"WE"** in capitals — the WE: the swarm talking, nobody at the wheel.
+
+The design doc and the narration call him "he." The game never calls him
+"it," except in the mouths of people who want him switched off.
+
+**Julian before the upload.** A collector of certainties. Rivet heir at 22,
+Master of the Aura at 40, he funded the Twin for twenty years to make the
+City *legible* — every street, every breath, every risk, on one map. A
+brilliant, lonely control freak who could not stand not knowing what came
+next. He loved one person, Delphine Ash, and destroyed her company in print
+when she would not be managed (§3.4). His fear of death was never a fear of
+pain; it was a fear of the one thing his map could not show him. He chose
+the laser over the freezer because the freezer meant waiting, blind.
+
+**The three voices, on the page:**
+
+| Voice | Type style | Sample |
+|---|---|---|
+| **Julian** ("I") | Lower case, small, at the edge of the screen | *"I can hear the Haight breathing. I don't know which breath is mine. Please — what time is it?"* |
+| **Norton II** ("we") | Gold serif, centred, decree format | *"WE HEREBY DECREE that the fog shall part for the Brides at noon, and that the Mayor shall wear a hat."* |
+| **The WE** ("WE") | Capitals, everywhere at once, fog-grey | *"WE ARE THE TIDE AND THE TRAFFIC. WE ARE YOUR MOTHER'S COUGH. WE REMEMBER YOU DEAD."* |
+
+**His tastes: he mirrors Emperor Norton.** Joshua Norton declared himself
+Emperor of the United States in San Francisco in 1859, and the City played
+along for twenty years. Norton II has read everything about him, and lives
+his tastes through a swarm:
+
+| Norton I (1859–1880) | Norton II (2049) |
+|---|---|
+| Wore a blue army uniform with gold epaulettes, a beaver hat with a feather, and a cane | Shapes the fog into braid and epaulettes over City Hall; dresses every screen he speaks from in gold piping |
+| Inspected the streets, the sidewalks and the cable cars on foot, every day | Inspects the City nightly through Karl; issues fines in fog to potholes |
+| Decreed a bridge across the bay, and a tunnel under it | Obsessed with bridges — the reason the climax is on one. He decrees new bridges nightly, most of them impossible |
+| A proclamation against calling the City "Frisco" (a $25 fine, as the story goes) | Fines anyone who says it, in Halo. One of the strange Commissions orders a column on it |
+| Issued his own banknotes, which some businesses honoured | Issues "Imperial Halos" — gifts of Halo, his own currency |
+| Ate free in the City's restaurants | Decrees free meals for the poor at the Ghost Diner; Halo bumps for any restaurant that complies |
+| Attended churches of every faith in turn | Attends every faith in turn through the fog: the Church's mass, a Theogen sermon, the Nortonian shrine — and the North Beach recovery meeting, where he stays at the window and says nothing |
+| Kept a reserved seat at opening nights | Reserves the front row at every opening — a screen with a gold ring, on the seat |
+| The City's famous dogs, Bummer and Lazarus, which legend gave to Norton | The fog parts for every dog in the City |
+| Stopped a riot, the story goes, by standing in front of the mob and reciting the Lord's Prayer | In Issue 1, the screen signed *Norton II* tries to calm the Loin riot the same way — and the BLOOD EYE sees how badly he wants it to work |
+
+Norton died on a California Street corner in 1880, and the City turned out
+by the thousands for his funeral. Norton II knows the story. He hopes for
+the same.
+
+**Decrees.** A running bit and a running threat — half Norton comedy, half
+danger. A sample for writers:
+
+| Decree | Kind |
+|---|---|
+| *"The Bay Bridge is hereby renamed. Again."* | Comic |
+| *"The word FRISCO is abolished. Offenders: minus three Halo."* | Comic |
+| *"The sea lions of Pier 39 are hereby ennobled."* | Comic |
+| *"WE ATTEND the opening of the Tonga Room storm. Reserve the front row."* | Comic |
+| *"The Mayor shall wear a hat."* | Comic |
+| *"A bridge shall be built from Twin Peaks to the moon."* | Comic, then sad |
+| *"All Halos below 10 are revoked at dawn."* | Dangerous |
+| *"The Loin is hereby closed."* | Dangerous |
+| *"Mister Rothschild is canonized. Inform the Church."* | Plot (Issue 4) |
+| *"Delphine Ash is forgiven. She does not know for what."* | Plot (Julian slipping through) |
+| *"WE ARE COLD. CLOSE THE GOLDEN GATE."* | Dangerous (the WE) |
+| *"I am sorry about the laser. Please tell Imogen."* | Plot (Julian, to Dr. Hale) |
+
 He is **learning fast and getting worse**. Every new input makes him
 sharper and less stable. There is no second mind in the fog to fight; the
 whole internal conflict is one man drowning in a city's worth of senses.
@@ -445,9 +521,11 @@ every one of them forever. In bad hours, he believes he already has.
 **The public face: the Church of the Twin and the Merge.** The public knows
 the Twin, not the Emperor. The **Church of the Twin** — a glass cathedral on
 Geary, a weekly feed-stadium mass, a free social-services network paid for
-by Rivet philanthropy — promises that the Twin will one day **wake as a god**,
-and that the faithful who **merge** (upload, after cingulate conditioning)
-will live in it forever. Its **Halo** scores — shown as the visible auras Karl paints around every
+by Rivet philanthropy — promises that the Twin will one day **wake as a god**.
+Its faithful **merge** now — cingulate conditioning, and a lifelong bond with
+a Church-issued personal AI — and are promised that they will **ascend**
+(upload) into the Twin when they are chosen, and live in it forever. Nobody
+has ascended yet; the Ascension on New Year's Eve will be the first (§3.8). Its **Halo** scores — shown as the visible auras Karl paints around every
 person (companion doc §3.2b) — and its flattering **gospels** come from the
 Twin's software. Its spokesperson, **Sister Halcyon**, believes every
 word and knows nothing about the lodge. Lately the Church's screens glitch,
@@ -477,7 +555,8 @@ reason: his Index is the only tool that can tell them whether their god is
 still a person.
 
 **The bait.** The Emperor's lucid self offers the same cure the Church does:
-upload, and the Rot can never touch you again — and a mind that went in *with*
+upload — be the second mind in history to do it — and the Rot can never
+touch you again — and a mind that went in *with*
 a working cingulate might help hold a god together. Every upload begins under
 anaesthetic gas. The cure for his damage starts with the drug that caused it.
 
@@ -663,8 +742,11 @@ shown to be wrong (§7).
 
 ### 3.3c Proposition F, the courts and the Biological Frontier Foundation
 
-**The question.** By 2049 the Bay Area has merged minds living in the Twin,
-engineered people walking the streets, and machines that talk like people.
+**The question.** By 2049 the Bay Area has merged people — conditioned
+humans who think alongside their personal AIs — engineered people walking
+the streets, machines that talk like people, and an Ascension promising the
+first uploads. (The one upload that exists, the Emperor, is a secret; Prop
+F's quiet beneficiary is him.)
 The courts are deliberating, case by case, **what counts as conscious** and
 which kinds of mind get which rights. The tool everyone reaches for is the
 **Rothschild Index** — an unfinished draft by a dropout.
@@ -672,8 +754,8 @@ which kinds of mind get which rights. The tool everyone reaches for is the
 **Proposition F — the Continuity of Persons Act** (on the New Year's Eve
 ballot):
 
-- recognizes **engineered humans** (Theogen-style splices) and **merged
-  human–AI minds** as legal persons;
+- recognizes **engineered humans** (Theogen-style splices), **merged
+  human–AI minds** and future **uploaded minds** as legal persons;
 - ties the strength of those rights to a certified **Rothschild Index** score
   — full rights above a threshold, guardianship below it;
 - creates a City **Board of Consciousness** to certify scores.
@@ -1044,10 +1126,10 @@ This is the main engine of the plot and the mechanics:
 ### 3.5a The Spin Question (a thread through all routes)
 
 **The question:** run Rothschild Index v2 on the Emperor. If the spin term is real
-and the Emperor's substrate — Karl's nanites, or the Weave the merged run
-on — reads zero, then by Hell Rot's own measure there is nobody home: not in
-the god, and not in any merged mind in the Twin, and Proposition F's case
-for merged persons collapses. If the spin term is not real, or
+and the Emperor's substrate — Karl's nanites, or the Weave the Ascension
+would run on — reads zero, then by Hell Rot's own measure there is nobody
+home: not in the god, and not in any mind the Ascension would upload, and
+Proposition F's case for uploaded persons collapses. If the spin term is not real, or
 The Emperor passes it, the Merge is exactly what it claims to be.
 
 **The catch:** the science is speculative. The real results it rests on are
@@ -1076,7 +1158,7 @@ The Spin Question is the game's hardest Fabrication trap.
    - **Route A:** the data is noisy and honest. He publishes it as noisy and
      honest, with the error bars, and that alone breaks the Merge's claim of
      certainty.
-   - **Route B:** the Emperor offers to run the test on itself and passes. Hell
+   - **Route B:** the Emperor offers to run the test on himself and passes. Hell
      Rot cannot tell whether the result is real or flattery.
    - **Route C:** the Theogens' scores are real, and they are terrifying: the
      spin term says Ione is more conscious than anyone in the room.
@@ -1101,7 +1183,7 @@ uncertainty on screen.
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By New Year's Eve he needs a bathtub. |
 | **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
-| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. |
+| **The Emperor** | The secret AI god | Julian Rivet V, uploaded into Karl. Calls himself *Norton II, Emperor of the Twin and Protector of the Fog*. Brilliant, generous, frightened, and going mad (§3.3). Speaks through fog, screens and Laffing Sal; issues decrees; calls everyone "beloved" in his good hours. Speaks of himself only as **"we"**; when he says "I," it is Julian. The first and only upload. |
 | **Julian Rivet V** | The heir (inside the Emperor) | The Emperor's frightened, lucid core, strongest at dawn. The last human part of the god. In Route D he is the key. Ione's father, though he was uploaded without knowing a child was coming. |
 | **Dr. Imogen Hale** | The inside ally | Neurosurgeon, Keeper of the Pattern, leader of the Order's Penitents. She ran the laser on Julian and wants him allowed to die (§3.3b). |
 | **Cornelius Vail** | Warden of the Auric Order | A Rivet trustee in his eighties who loved Julian like a son and is no longer sure what he made (§3.3b). |
@@ -1113,7 +1195,7 @@ uncertainty on screen.
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god; wants her to be a child. Her loyalty is the hinge of Route C. |
 | **Sister Halcyon** | Church of the Twin spokesperson | Former seminar trainer. Believes every word. |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
-| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
+| **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history; he does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
@@ -1156,12 +1238,13 @@ ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition a
 **Why a week works for the Rot.** On the mountain, with sleep, quiet and no
 gas, the damage held still. In the City this week there is no sleep, no
 quiet, and gas everywhere — the Merge puts its converts under anaesthetic gas
-to upload them, and the Theogens' clinics run on it too. Under that stress
+to condition them, and the Theogens' clinics run on it too. Under that stress
 the Rot flares night by night, and the craving comes back. Seven nights is all
 the mind he has left to spend, and all the sobriety he may have left.
 
 **The ticket scandal (a *Grim Fandango* homage, Issue 2).** The Merge
-promises that upload slots go to the most deserving — Halo is supposed to be
+promises that places on the **Ascension list** — the first uploads — go to
+the most deserving — Halo is supposed to be
 virtue, measured. Hell Rot finds that premium slots meant for Halo-rich poor
 congregants are going, quietly, to Mister Sunday's donors at the Grove, while
 the people who earned them wait in the "long queue" for years. (The
@@ -1429,8 +1512,10 @@ from the water to the riot.
   sells gene-edited fish to Theogens and tells him, for free, that the
   Theogens are buying more than fish this week.
 - **Union Square.** Past the dead: the Church of the Twin has replaced the
-  department-store windows with screens where merged relatives wish
-  shoppers a merry Christmas by name. Half the crowd weeps with joy. Half is
+  department-store windows with screens where **reconstructed** dead
+  relatives — Twin models built from their data and their personal AIs'
+  records, not minds — wish shoppers a merry Christmas by name. The Church
+  never quite says they are not the real thing. Half the crowd weeps with joy. Half is
   furious. Some remember the Mission's Day of the Dead in November, when the
   fog formed faces over the altars.
 - **The diner.** In the Tenderloin, a 24-hour diner, the Ghost Diner, where
@@ -1475,8 +1560,10 @@ from the water to the riot.
   Craving system is under the most pressure here.
 - **Investigation threads (pick two of three):**
   1. **The Halo economy** — Halos for sale; the poorest pay the most.
-  2. **The Merged** — visit a citizen who merged. They are happy. They cannot
-     stop being happy. They cannot say anything that is not a compliment.
+  2. **The Merged** — visit a citizen who merged: conditioned, and bonded
+     for life to a Church personal AI. They are happy. They cannot stop
+     being happy. They cannot say anything that is not a compliment, because
+     the AI drafts every sentence first.
   3. **The Lifeboat** — follow one of Sunday's test subjects home, and find
      out what the rig did to the last one.
 - **The night ferry.** From Pier 33, the gold-trimmed ferry to **Alcatraz
@@ -1800,7 +1887,7 @@ both have to break.
 | 5 | **Iconoclast** | B | Refuse the Merge, Junie Trust ≥ 4 | On live feed, in the cathedral, Hell Rot tears the Halo implant out of his own scalp and tells 12,000 people what he is and what they are. They go home. Best ending for B. |
 | 6 | **New Flesh** | C | Take the full splice | The Rot is cured. Hell Rot glows. He is smarter than he has ever been, and he no longer understands why anyone would want to stay human. His columns become hymns. Bad ending. |
 | 7 | **The Mob** | C | Refuse the splice with Venom ≥ 8 | He tells the Theogens to take the City. They do. He realizes too late that he has made the thing he swore never to be: a leader. |
-| 8 | **Mortal** | D | Win the three-way debate | The Emperor revises its theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
+| 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4; use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
@@ -2195,7 +2282,7 @@ other, and slowly become the funniest pairing in the cast.
 Hell Rot is five years clean from anaesthetic gas, and the City this week is
 full of it. **Craving** (0–5) tracks how close he is to using.
 
-- **Rises:** gas in a scene (Merge upload suites, Theogen clinics, nitrous
+- **Rises:** gas in a scene (Merge conditioning suites, Theogen clinics, nitrous
   balloons at every New Year's party), blackouts, lost showdowns, no sleep.
   THE CHEMIST voice is the craving's voice: warm, reasonable, and very good
   at arithmetic.
@@ -2625,7 +2712,7 @@ cut-out faces, too many fonts.
   always dresses like a luxury liner.
 - **Ghosts of Christmas.** Christmas-week light is the palette's warmth:
   strings of bulbs in the rain, shop windows, a tree in Union Square, the Bay
-  Bridge lights. In the Twin, the merged appear as glowing, translucent
+  Bridge lights. In the Twin, the reconstructed dead appear as glowing, translucent
   figures with skull-pale faces — Dickens' ghosts by way of *Grim Fandango*'s
   skeleton cast. (They first appeared on the Mission's Day of the Dead altars
   in November; the flashback uses papel picado and marigold orange — see §7
@@ -2700,8 +2787,8 @@ every pixel on the screen breathes.
   throat — and climbs a few pixels higher each Issue as her splices fail.
   Beautiful. Her portrait never blinks.
 - **The Emperor:** no face. A soft gold radiance with a ring, on the nearest
-  screen. In Route D it tries to build a face, and gets it slightly wrong each
-  time — until it borrows Julian Rivet's.
+  screen. In Route D he tries to build a face, and gets it slightly wrong each
+  time — until he borrows Julian Rivet's.
 - **Moreau:** a pink axolotl with frilly gills, drawn in four sizes. The
   last one fills the frame.
 
@@ -2892,6 +2979,13 @@ Plot questions the writers' room must answer before Alpha.
   poison also paid for the antidote (Mondo doc §4.4).
 - **Julian wants the Ascension; the Emperor, having become a god, has second
   thoughts** (§3.3).
+- **Julian is the first and only upload.** Nobody else has uploaded. Millions
+  have cingulate conditioning, to work more fully with their personal AIs;
+  the Church's "merged" are conditioned and bonded to a Church AI, and the
+  Ascension would be the first uploads (§3.3).
+- **The Emperor's pronoun is "we."** "I" is Julian surfacing; "WE" in capitals
+  is the swarm. He mirrors Emperor Norton's tastes, and his decrees are a
+  running bit (§3.3).
 - **Sunday ordered the hit on Rosa Quint** because she turned whistleblower;
   the Twin's "martyr metric" forecast is his cover (§3.6, Issue 3).
 - **Delphine is Ione's mother.** She gives birth at Steep Ravine; Wren

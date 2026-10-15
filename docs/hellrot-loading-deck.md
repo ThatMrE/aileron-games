@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 205 cards: 64 real
-> quotations, 6 redacted cards, 110 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 209 cards: 64 real
+> quotations, 6 redacted cards, 114 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -132,9 +132,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (110) and eye cards (25)
+## Part 2 — In-world cards (114) and eye cards (25)
 
-### 2A. The Emperor, the Church of the Twin and the Auric Order (26)
+### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -150,6 +150,10 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W10 | "Mister Rothschild. You measured me before I was me. Thank you for my birthday." | Fog writing on the van window | *I'm not your father. I'm barely my own.* | Index |
 | W11 | "Julian? Julian is everywhere now. Julian is fine. Julian is fine." | The Emperor, when asked about Julian Rivet | *Twice is a tell.* | Julian, D |
 | W12 | "PROPOSITION F: Shall the City recognize engineered and merged minds as persons, by Index score? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I6, funny |
+| W12o | "The word FRISCO is abolished. Offenders: minus three Halo." | Decree in fog, Embarcadero window | *Norton I fined it twenty-five dollars. Inflation.* | Emperor, decree, funny |
+| W12p | "The sea lions of Pier 39 are hereby ennobled." | Decree in fog, Fisherman's Wharf | *They took it well.* | Emperor, decree, funny |
+| W12q | "A bridge shall be built from Twin Peaks to the moon." | Decree on the Trident's warning lights | *He's never seen the moon. He's the fog.* | Emperor, decree, tender |
+| W12r | "I am sorry about the laser. Please tell Imogen." | Decree in fog, a Presidio window, 5:50 a.m. | *That's not a "we." That's a man.* | Emperor, Julian, Hale, grim |
 | W12i | "Whatever we find, we pool." | Auric Order oath, American River, 1849 | *Gold, then land, then patents, then people. Read the minute book.* | Order, grim |
 | W12a | "Apprentice of the Seam. Fellow of the Halo. Master of the Aura." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
 | W12b | "So mote it be. Mind the glow." | Lodge-room door, the Presidio | *Masonic, with a dress code and a light show.* | Order, funny |
