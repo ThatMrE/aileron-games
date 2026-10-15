@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 167 cards: 64 real
-> quotations, 6 redacted cards and 97 in-world cards. Together they are the game's running argument with the Bay
+> needed, and **Hell Rot's marginal note** in red pencil. 169 cards: 64 real
+> quotations, 6 redacted cards and 99 in-world cards. Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
 ---
@@ -131,9 +131,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (97)
+## Part 2 — In-world cards (99)
 
-### 2A. The Emperor, the Church of the Twin and the Auric Order (21)
+### 2A. The Emperor, the Church of the Twin and the Auric Order (23)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -163,6 +163,8 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W12f | "I scored 31 on your test. I have opinions about your test." | Letter from Desh, an Oakland Burn survivor, letters page | *Best letter we got all year.* | BFF, tender, funny |
 | W12g | "Your aura today: anxious tangerine. Matches: 14." | Aura-dating app, Haight Exchange | *Mine is grey with a gold ring nobody else can see. No matches.* | auras, funny |
 | W12h | "The aura is the soul made visible." | Auric Order catechism, first article | *The soul is not a lighting effect. Probably.* | Order, holy |
+| W12j | "Left eye: nobody's lying. Right eye: take the stairs." | Hell Rot, notebook margin | *The dark one and the pale one. They don't always agree.* | eyes, weird |
+| W12k | "You looked through me like I was furniture." | Junie Vasquez, after the clock stopped | *I stopped time to win an argument. I lost the argument.* | eyes, Junie, grim |
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
 | W15 | "Father." | Delphine Ash, to Hell Rot | *Wrong on both counts.* | Prologue, Delphine |

@@ -47,7 +47,7 @@
 | Platform | Browser first (single-file HTML/PWA, like the other Aileron games); Android wrapper later |
 | Input | Tap/click choices; keyboard 1–9 |
 | Session length | One **Run** (a foray into the City) is 20–40 minutes; one **Issue** (one night, one edition) is 3–6 Runs; 10–14 hours per route |
-| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 10 endings, ~50% of content unseen on a first playthrough |
+| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 11 endings, ~50% of content unseen on a first playthrough |
 | Script size target | 90,000–110,000 words; ~220 scene nodes |
 | Rating target | Mature (ESRB M / PEGI 18): strong language, drug use, body horror, satire of religion and politics |
 | Team (min.) | 1 narrative lead, 1 writer, 1 programmer, 1 pixel artist, 1 chiptune composer, 1 QA/sensitivity reader |
@@ -145,6 +145,13 @@
   pen, he wrote one line in the lab notebook: *"Went to hell. It rots."* Fax
   read it out to the lab. "Eli Rothschild" became "Eli Roth" became **Hell
   Rot**, and it stuck.
+- **The eyes:** he woke from those four minutes with eyes that no longer
+  matched — and that no longer worked like eyes. The **dark eye** sees
+  through lies and illusions. The **pale eye** sees, for a breath ahead, the
+  good path through what is about to happen. Whether that is neurology (a
+  brain rewired by four minutes without oxygen), Karl (foglets from the lab
+  vents lodged in his irises), or something the game never names, is left
+  open. He has told no one but Fax. (Full system: §5.14a.)
 - **Why that night matters:** his own measure said he was not there, and he
   was more there than he had ever been. The number and the experience
   disagreed. Everything he has worked on since — the two scales and the spin
@@ -160,10 +167,11 @@
   ROT**. He got the job the night his shack burned down (Prologue, §3.9).
 - **Look:** tall, gaunt, shaved head with a scar crown from an old
   neural-lace implant he fitted for the lab's experiments and pulled out
-  himself. A stained lab coat over a loud shirt. His **right eye is
-  lab-grown** and glows **cyan** (a lab prototype he volunteered for). His
-  **left eye is human** and permanently **bloodshot**. Those two colours are
-  his signature (§8.3).
+  himself. A stained lab coat over a loud shirt. And the eyes: since the
+  night he died, he has **heterochromia** — one eye went **dark** (almost
+  black, with a pinpoint of light deep in it) and one went **pale** (ice-white
+  grey, nearly colourless). Those two eyes are his signature and his powers
+  (§2.1a, §5.14a).
 - **Kit:**
   - **The Gelastic** — a pistol that fires a tuned pulse into the
     hypothalamus and triggers 90 seconds of helpless laughter (named after
@@ -445,7 +453,7 @@ into a shared collective, and the collective decides how it is used.
 **The identifiers:** **denim and gold.** In lodge, every member wears denim —
 work clothes, the uniform of the diggings — and something gold. Outside
 lodge, a Master can be spotted by a worn denim cuff and a plain gold ring, and
-by the gold ring in their aura that only Hell Rot's cyan eye can see.
+by the gold ring in their aura that only Hell Rot's dark eye can see.
 
 **What it is, in one line:** a gold-rush mining collective, exactly **200
 years old** this year, that grew into a fraternal order in the mould of the
@@ -499,8 +507,8 @@ planned to celebrate with the Ascension.
 
 **The tuned aura.** Every Master's Karl aura carries a faint **gold ring**,
 tuned in at their initiation. It is invisible to the naked eye and to the
-Church's Halo screens — but **Hell Rot's cyan eye can see it.** This is the
-core investigation mechanic for the Order: a cyan-eye scan in any scene can
+Church's Halo screens — but **Hell Rot's dark eye can see it.** This is the
+core investigation mechanic for the Order: a dark-eye look in any scene can
 reveal a ring, and each ring found is a verified Dossier entry.
 
 #### Rites and regalia
@@ -788,7 +796,7 @@ ISSUE 3    "The Underground"    Tue 28 Dec  the Theogens; Delphine; the campaign
            ── ROUTE LOCK ──
 ISSUE 4    "Saint Rot"          Wed 29 – Thu 30 Dec (two nights)  the Rot advances; both canonizations; both offers
 ISSUE 5    "Twenty-Fifty"       Fri 31 Dec  New Year's Eve: the Ascension, the Quickening, the election, the storm
-EPILOGUE   Sat 1 Jan 2050       dawn; the New Year's Day swim at Aquatic Park; one of 10 endings
+EPILOGUE   Sat 1 Jan 2050       dawn; the New Year's Day swim at Aquatic Park; one of 11 endings
 ```
 
 **Why a week works for the Rot.** On the mountain, with sleep, quiet and no
@@ -886,17 +894,18 @@ an omen. He sees a woman in labour in a tide pool in the dark.
 
 **The emergency (the tutorial).** The birth goes wrong. The child's spliced
 neurons fire in a seizure before it is even born — Hell Rot can see it in the
-light pattern under Wren's skin with his cyan eye, and he recognizes the gene
+light pattern under Wren's skin with his dark eye, and he recognizes the gene
 circuit: it is from his third paper. The tide has turned. The pools will be
 under the surf in under two hours. The Prologue teaches the core systems on
 this one problem:
 
-- **Passive checks and voices:** PEER REVIEW reads the seizure; BLOOD EYE
-  reads Wren's terror and Delphine's certainty; THE CHEMIST knows what is in
+- **Passive checks and voices:** PEER REVIEW reads the seizure; DARK EYE
+  sees through Delphine's calm to her fear; PALE EYE shows, for a
+  heartbeat, the path where the child lives; THE CHEMIST knows what is in
   his bag; KARL speaks to him for the first time, from the fog over the water:
   *"WE SEE IT TOO."*
 - **A red check:** stabilize the child's seizure with what he carries (THE
-  CHEMIST) or by talking Wren through it (BLOOD EYE). It happens once, and
+  CHEMIST) or by talking Wren through it (DARK EYE). It happens once, and
   its result follows the child through the whole game.
 - **The choice:** help deliver the child (Vow +, Helix +1, Delphine owes him);
   refuse and climb out (Venom +, the child's health is left to the cult);
@@ -1132,7 +1141,7 @@ underground. Each god must face the human cost of its love.
 *Climax:* a three-way showdown. The Emperor's Certainty and Delphine's Conviction
 both have to break.
 
-### 3.11 Endings (10)
+### 3.11 Endings (11)
 
 | # | Name | Route | Condition | Summary |
 |---|---|---|---|---|
@@ -1146,6 +1155,7 @@ both have to break.
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises its theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
+| 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4; use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
 
 ### 3.12 Branching map (high level)
 
@@ -1174,6 +1184,7 @@ flowchart TD
   M --> X8[8 Mortal]
   M --> X9[9 Successor]
   I1 & I2 & I3 & M -.->|second Fabrication| X10[10 Fabrication]
+  M -.->|pale eye fully corrupt| X11[11 Midnight Forever]
 ```
 
 ### 3.13 Sample scene (vertical-slice excerpt)
@@ -1336,7 +1347,7 @@ raise relationship rank and, at rank 2, unlock a **keepsake**:
 | Red pencil | Yara | First unverified item each Run auto-verifies |
 | Jar of Marin dirt | Moreau | +1 to every BRAINSTEM skill |
 | Chrome lighter | the Duchess | Start each Run with 20 Ink |
-| VHS tape, labelled "Y2K" | Mary | The Blood eye reveals one extra tell per scene |
+| VHS tape, labelled "Y2K" | Mary | The dark eye reveals one extra tell per scene |
 | Pocket watch, stopped | Otto | +1 maximum Clarity |
 | Stadium ticket, 2045 | the Bishop | First church scene each Run: one free check |
 | Floppy disk | Fax | One free trip through his Twin back door per Run |
@@ -1387,14 +1398,14 @@ during dialogue, unasked, when its passive check passes.
 | | **THE COLUMNIST** | Rhetoric, timing, the perfect insult, cover lines | *"Say it shorter. Then say it meaner."* |
 | | **FOOTNOTE** | Encyclopedic recall: history, science, City lore | *"Fun fact: this exact con worked in 1975, three blocks from here."* |
 | **LIMBIC** (feeling) | **THE BASTARD** | Venom, intimidation, provocation | *"Make him cry. On camera. You'll feel better."* |
-| | **BLOOD EYE** | Empathy; reading people; the psychological tells of a cult | *"She isn't happy. She is relieved. Those are different."* |
+| | **DARK EYE** | Truth sight: lies, tells, illusions, edited gospels, hidden auras and the Order's gold ring (§5.14a) | *"She isn't happy. She is relieved. And she's lying about the second thing."* |
 | | **THE CELEBRITY** | Fame, charm, access, seduction | *"They know your face. Use it before it rots."* |
 | **BRAINSTEM** (body) | **MOUNTAIN MAN** | Nerve, endurance, pain, violence | *"You've survived worse. You've survived you."* |
 | | **THE CHEMIST** | Drugs, reagents, physiology; the kitchen lab | *"That's not wine. That's a vector. Don't drink it. Okay, sip it."* |
 | | **THE ROT** | The disease itself — the *Inland Empire* of this game. Hunches, hallucinations, memories that are not his. Grows louder as Clarity falls. Sometimes right when every other voice is wrong. | *"You've been here before. You don't remember. I do."* |
-| **CEREBELLUM** (reflex) | **CYAN EYE** | Perception: data overlays, splice marks, gospel edits | *"Third line of the gospel. The verb changed."* |
+| **CEREBELLUM** (reflex) | **PALE EYE** | Foresight: the good path through the next moment; door choices, timing, speed (§5.14a) | *"Left door. Now. Don't ask me how I know."* |
 | | **REFLEX** | Interrupts, timing, dodging, Gelastic aim | *"Now. NOW."* |
-| | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog: the sensor mesh the Twin runs on, with a slow mind of its own. Its chatter leaks into his cyan eye. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE GOD. WE WILL BE HERE AFTER IT."* |
+| | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog: the sensor mesh the Twin runs on, with a slow mind of its own. Its chatter leaks in through his mismatched eyes. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE GOD. WE WILL BE HERE AFTER IT."* |
 
 **Checks (from *Disco Elysium*):**
 
@@ -1463,7 +1474,7 @@ item as ammunition.
 |---|---|---|---|---|---|
 | **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom; Heat |
 | **Satire** | Irony, reductio ad absurdum | THE COLUMNIST | Pious, Serene | Defensive | Needs an Evidence item |
-| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
+| **Parrhesia** | Frank speech at personal risk | DARK EYE | Serene, Pious | Smug | +Vow; costs Halo or Helix |
 | **Interrogation** | Elenchus (Socratic questioning) | PEER REVIEW | Defensive | Charming | Damage doubles on the 3rd turn in a row |
 | **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item; the strongest single hit in the game |
 | **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
@@ -1591,7 +1602,7 @@ permanent only on Route C; mechanically, every run starts clean).
 | **Omniscience (lite)** | Every Source door shows its Quote before you enter |
 | **The Long Queue** | Every Dealer price −30% (the Church pays) |
 | **Gospel Edit** | *Satire* hits twice, but the second hit is the Twin's kinder rewrite |
-| **Twin Sight** | CYAN EYE +2; see the Twin's version of every scene |
+| **Twin Sight** | DARK EYE +2; see the Twin's version of every scene |
 
 **The Theogens' Splices** (cyan; each raises Helix +1 when taken):
 
@@ -1658,7 +1669,7 @@ text alone.
 | **Press Pass** | Start in any unlocked district | First Encounter door each Run is auto-won |
 | **Fact Desk** | Yara verifies one item per Run remotely | Lead fragments merge without Yara |
 | **Old Lab Keys** | One free lab door per Run | Lab puzzles show one extra hint |
-| **Cold Read** | Blood Eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
+| **Cold Read** | The dark eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
 | **Skill points** | +1 to any skill (repeatable, rising cost) | — |
 
 ### 5.11 Dissonance doors (the *Hades* Chaos gate)
@@ -1713,9 +1724,78 @@ better the column, the more lovingly both sides misread it.
 | Item | Effect |
 |---|---|
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
-| **The Two Eyes** | Toggle in any scene. **Cyan eye** (lab-grown): Halo and Helix values over people, splice marks, gospel edits. **Blood eye** (human): the psychological tells of cult control (companion doc §2.2). |
+| **The Eyes** | Not equipment — powers. The **dark eye** (truth) and the **pale eye** (foresight), each with a pure and a corrupt upgrade path (§5.14a). |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
+
+### 5.14a The Eyes: truth sight and foresight (powers)
+
+Hell Rot's heterochromia is the game's power system — his RPG "magic," and
+the most direct temptation in a game full of them. Each eye has a **pure
+path** and a **corrupt path**. Pure upgrades make him a better witness.
+Corrupt upgrades make him a better liar and a thief of time — and turn him,
+step by step, into the thing both cults are.
+
+**The two eyes at the start.**
+
+| Eye | Base power | In play |
+|---|---|---|
+| **Dark eye** (truth) | Sees through lies and illusions | Glance at anyone (¼ Hour): one tell, lie or hidden layer shows — a cult's Lifton tell, an edited gospel, a masked aura, the Order's gold ring, a Theogen splice under make-up |
+| **Pale eye** (foresight) | Sees the good path a breath ahead | In every scene, the door that leads toward the best outcome for the people in it shines faintly. Following it is faster: travel and door costs drop by ¼ Hour. In showdowns, interrupts last one second longer |
+
+**Upgrading.** Hell Rot earns **Sight** — from honest Shulgin entries, deep
+conversations with Karl, surviving a blackout, and the Spin Question
+experiments. Each eye has four upgrade steps on each path. At every step the
+player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
+(§5.6a) grants Sight that can only be spent on corrupt steps.
+
+**The dark eye.**
+
+| Step | Pure: the Witness | Corrupt: the Liar |
+|---|---|---|
+| 1 | **Tell** — every lie spoken in a scene shows as a flicker | **Fib** — small lies always pass with minor characters |
+| 2 | **Unmask** — see through illusions: the Twin's edits, false auras, disguises | **Glamour** — make one person see a false aura on you: a high Halo, a Theogen glow, the Order's gold ring (infiltration) |
+| 3 | **Under** — see what is hidden: sealed rooms, buried data, the truth under a gospel | **Forgery** — plant a false sight in one person's eyes: a document that is not there, a face that is not theirs |
+| 4 | **Witness** — once per Issue, a target cannot lie to you for one exchange | **The Great Lie** — once in the game, cast an illusion over a whole crowd (the Ascension, the Quickening, a courtroom) |
+
+**The pale eye.**
+
+| Step | Pure: the Seer | Corrupt: the Thief of Time |
+|---|---|---|
+| 1 | **The Good Path** — the base power, sharper: the best door shines brightly | **Held Breath** — the night lasts longer for him: +1 Hour per Issue |
+| 2 | **Flash** — preview the result of one choice per scene before you make it | **Stopped Beat** — in a showdown, freeze one turn and act twice |
+| 3 | **Sure Feet** — interrupts and REFLEX checks never fail | **Stillness** — stop time for one scene: walk past guards, take what you want, nobody saw |
+| 4 | **The Long Look** — once per Issue, see a flash of the ending you are heading toward | **The Stopped Clock** — on New Year's Eve, stop midnight itself for a few minutes: be at the Ascension *and* the Quickening |
+
+**What corruption costs.**
+
+- **Corruption** is tracked per eye (0–4). It adds to **Venom** and shows on
+  his portrait: the dark eye bleeds Twin gold; the pale eye frosts over white.
+- **The dark eye's corrupt powers are lies.** Using them is never a
+  Fabrication by itself — he lies to cops and cult leaders all the time — but
+  if anything he learned or showed through a corrupt power goes into a
+  column, it counts as a Fabrication (§5.4). At dark Corruption 3+, Yara
+  checks every column twice and says so.
+- **The pale eye's corrupt powers steal time from his own mind.** Every use
+  costs a point of **maximum Clarity**, and the City notices: clocks skip,
+  Karl stutters, and the Emperor — who feels every second of the City —
+  starts to ask who is stopping time.
+- **Companions react.** Yara distrusts the corrupt dark eye. Junie hates the
+  corrupt pale eye ("you looked through me like I was furniture"). Otto, who
+  has spent fifty years refusing to cheat time, has the only scene in the
+  game where she raises her voice.
+
+**How the eyes shape the endings.**
+
+- **Both eyes pure at step 4** is required for **Mortal** (ending 8): the
+  Witness lets him see the Emperor's truth, the Long Look lets him find the
+  path where nobody merges and nobody is spliced without consent.
+- **Dark eye corrupt at step 4** makes **Fabrication** (ending 10) one choice
+  away: the Great Lie will work on the City, and he will want to use it.
+- **Pale eye corrupt at step 4** unlocks a new ending, **Midnight Forever**
+  (ending 11, §3.11).
+- **Mixed eyes** (one pure, one corrupt) are the stuck-in-the-middle build:
+  powerful, unstable, and the most fun to play.
 
 ### 5.15 Companions, Trust and gifts
 
@@ -1776,7 +1856,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 | Worship kills thinking | High Halo / Helix make truthful columns weaker with believers |
 | Stuck in the middle | Every column raises the *other* cult's meter |
 | You cannot criticize a god that loves you | Jeremiad heals the Emperor; Satire heals Delphine; morning sermons reframe every column |
-| Flattery is made of true facts | Cyan eye shows gospel edits: true facts, false emphasis |
+| Flattery is made of true facts | The dark eye shows gospel edits: true facts, false emphasis |
 | Both gods are cures | Clarity loss vs. the Emperor's crisp text and the Theogens' sharpening text |
 | The scientist's answer to faith | Peer Review: the strongest move, and it only works with verified data |
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
@@ -1906,7 +1986,7 @@ forbidden effects**.
 | City base | Near-black, two greys, sodium orange, rust |
 | Neon / feed | Hot magenta, electric blue, acid green |
 | Skin & life | Three skin ramps, blood red |
-| Hell Rot's signature | **Eye cyan** and **eye blood-red** — reserved for his eyes, the Venom/Vow UI and the Two Eyes overlays |
+| Hell Rot's signature | **Dark-eye violet-black** and **pale-eye ice-white** — reserved for his eyes and the Eyes overlays. (Cyan now belongs to the Theogens alone.) |
 | Paper | Off-white glossy stock, ink black (Layout screens) |
 | **Forbidden 1: Twin gold** | A smooth gold gradient that the NES palette cannot produce |
 | **Forbidden 2: Theogen pulse** | Not a colour — a motion. Theogen skin and Helix marks **colour-cycle** (the classic 8-bit palette-cycling trick), so they appear to breathe |
@@ -1923,7 +2003,9 @@ every pixel on the screen breathes.
 - **Portraits:** 48 × 48, 3–4 expressions each. Hell Rot gets 10, including
   *high*, *writing*, *Clarity-low*, *Halo-gold*, *Helix-pulse*.
 - **Hell Rot:** silhouette first — tall, bald, scar crown, lab coat. The two
-  eyes (one cyan, one red) are the brightest pixels on screen.
+  eyes — one a black pool with a pinpoint of light, one ice-white — are the
+  most striking pixels on screen. As an eye corrupts (§5.14a), the dark one
+  bleeds gold and the pale one frosts over.
 - **Junie:** strong verticals, derby pads, a grin. The most expressive range
   in the cast.
 - **Yara:** tight framing. The only portrait that looks *straight* out at the
@@ -1953,8 +2035,8 @@ in the companion document §3. Key rules:
 
 ### 8.6 UI language
 
-- **Mode tags:** Invective = eye red, Parrhesia = blue, Peer Review = eye
-  cyan, Satire = magenta, Interrogation = electric blue, Jeremiad = Twin
+- **Mode tags:** Invective = blood red, Parrhesia = blue, Peer Review =
+  pale-eye white, Satire = magenta, Interrogation = electric blue, Jeremiad = Twin
   gold (a warning), Appeal = skin orange, Silence = grey.
 - **Inner voices:** indented italic lines with an 8 × 8 icon (a snake, a
   flask, a pill, a pen…).
@@ -2017,9 +2099,9 @@ are the game's running argument with the Bay Area's history of building gods.
    deck tracks the story (the Emperor cards near the Merge; Theogen cards near the
    splice; Karl cards after blackouts).
 
-**The full deck** — 167 cards: 64 real quotations from Bay Area cult
+**The full deck** — 169 cards: 64 real quotations from Bay Area cult
 leaders, prophets, poets, technologists and radicals; 6 redacted cards; and
-97 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
+99 in-world cards from the Emperor, the order, the BFF, the Theogens, Karl, the House, Hell Rot's
 *GIHKAL*, the cults and the City — lives in
 [hellrot-loading-deck.md](hellrot-loading-deck.md), with its tags, rotation
 rules and verification notes.
@@ -2077,7 +2159,7 @@ a service worker, optional Android wrapper.
 |---|---|---|
 | **Vertical slice** | Prologue + Issue 1 as 3 playable Runs, the Mansion hub, 4 Blessings, 4 Splices, 1 Contradiction, 1 recurring boss, Layout v1, 8 scenes, 10 portraits | 8–10 weeks |
 | **Alpha** | Issues 1–3, route lock, all systems | +12 weeks |
-| **Beta** | All 4 routes, 10 endings, full art and audio | +14 weeks |
+| **Beta** | All 4 routes, 11 endings, full art and audio | +14 weeks |
 | **Release** | Polish, sensitivity review, accessibility | +4 weeks |
 
 **Biggest risks:**
