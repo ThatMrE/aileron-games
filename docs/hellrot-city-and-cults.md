@@ -44,21 +44,19 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | Years | Group | Leader / founder | What happened | What the game takes |
 |---|---|---|---|---|
 | 1853 → present | **Levi Strauss & Co.** | Levi Strauss, rivet patent with tailor Jacob Davis (1873) | A gold-rush dry-goods house became the world's denim company and one of the City's great family fortunes and philanthropies. | Old money that funds the City's civic projects. → **The Rivet Trust** and its last heir, Julian Rivet V (fictional). And the gold-rush roots of the fictional **Auric Order** (1849) |
-| 1875–1892 (dates vary) | **Brotherhood of the New Life**, Fountaingrove, Santa Rosa | Thomas Lake Harris | Spiritualist commune. Members gave up their property and worked the vineyards while Harris lived in a mansion. He taught a new "mode of respiration." A *San Francisco Chronicle* reporter's exposé drove the scandal. | A breath-based faith. The first local case of a newspaper breaking a prophet. → **The New Breath** |
+| 1875–1892 (dates vary) | **Brotherhood of the New Life**, Fountaingrove, Santa Rosa | Thomas Lake Harris | Spiritualist commune. Members gave up their property and worked the vineyards while Harris lived in a mansion. He taught a new "mode of respiration." A *San Francisco Chronicle* reporter's exposé drove the scandal. | A breath-based faith. The first local case of a newspaper breaking a prophet. → **the Breath**, a Church sacrament |
 | 1906 | **The San Francisco earthquake and fire** | — | A great quake on the San Andreas fault struck at 5:12 a.m. on 18 April, with its rupture beginning offshore near the Golden Gate. Broken gas lines and water mains let fires burn for days. Most of the City's destruction came from the fire. Estimates of the dead run to about 3,000. | The model for the game's climax, the Midnight Quake (main doc §3.8b), and the founding trauma read aloud at every Auric Order meeting |
 | 1989 | **Loma Prieta earthquake** | — | The Marina District, built on fill that included 1906 rubble, liquefied, gas-line fires burned there. | Why the Fill and the Marina burn first in the Midnight Quake |
-| 1966 → present | **Church of Satan**, the "Black House," California Street | Anton LaVey | Founded on Walpurgisnacht, 30 April 1966, with a head-shaving ritual and a declaration of "Year One." Doctrine: the self as its own god. | Self-deification as doctrine. → **The Black House** |
-| Late 1967 | **Process Church of the Final Judgment**, SF chapter (Haight-Ashbury) | Mary Ann MacLean & Robert de Grimston | Apocalyptic order mixing Christian, Satanic and Scientology-derived ideas. Black capes, silver crosses, big dogs. An alleged Manson link never held up. | A pantheon of opposing gods. → **The Final Process** |
-| 1968 → 1988 | **Holy Order of MANS** | Earl W. Blighton | Esoteric-Christian order that ran family shelters. Peaked near 3,000 members (1977). About 750 converted together into Eastern Orthodoxy in 1988. | A good-works order that converts all at once. → **The Lantern** |
-| 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **Synapse** |
-| 1971 → 1991/92 | **Kerista Commune**, Haight-Ashbury | John "Brother Jud" Presmont | Polyfidelitous commune. Coined "compersion." Ran **Abacus**, an early Macintosh dealer with over 250 staff and more than $25M a year in revenue. | A commune that owns the hardware supply chain. → **The Cluster** |
-| 1971 → 1980s | **est** | Werner Erhard | First seminar October 1971, in the Jack Tar Hotel ballroom. About 60 hours over two weekends, hundreds at a time. | Enlightenment by the ballroom. → **The Standard** |
+| 1966 → present | **Church of Satan**, the "Black House," California Street | Anton LaVey | Founded on Walpurgisnacht, 30 April 1966, with a head-shaving ritual and a declaration of "Year One." Doctrine: the self as its own god. | Self-deification as doctrine. → **The Black House**, the Theogens' salon |
+| 1968 → 1988 | **Holy Order of MANS** | Earl W. Blighton | Esoteric-Christian order that ran family shelters. Peaked near 3,000 members (1977). About 750 converted together into Eastern Orthodoxy in 1988. | A good-works order that runs shelters. → **The Lantern** (not a cult) |
+| 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **the Game**, the Church's rehab ministry |
+| 1971 → 1991/92 | **Kerista Commune**, Haight-Ashbury | John "Brother Jud" Presmont | Polyfidelitous commune. Coined "compersion." Ran **Abacus**, an early Macintosh dealer with over 250 staff and more than $25M a year in revenue. | A business that owns the hardware supply chain. → the **Treasure Island fabs** |
+| 1971 → 1980s | **est** | Werner Erhard | First seminar October 1971, in the Jack Tar Hotel ballroom. About 60 hours over two weekends, hundreds at a time. | Enlightenment by the ballroom. → **the Seminar**, the Church's on-ramp |
 | 1971–1977 (SF), 1978 (Guyana) | **Peoples Temple**, 1859 Geary Street | Jim Jones | A church with a political machine. Bused members to campaign. Helped George Moscone win the 1975 mayoral runoff. Jones then sat on the Housing Authority Commission (chair 1976–77. Sources differ on the start). Staged "healings." After a 1977 *New West* exposé, Jones moved to Guyana. On 18 November 1978, 918 people died at Jonestown and the Port Kaituma airstrip, among them Congressman Leo Ryan. On 27 November, Dan White killed Mayor Moscone and Supervisor Harvey Milk at City Hall. | A church that wins elections. The ground zero of the City's history with cults. → **The Church of the Twin** (political arm) and the Ascension |
-| 1970s | **Unification Church** recruitment, SF → Boonville farm | — | Free dinners under the name "Creative Community Project," no mention of the church, then a weekend at a farm near Boonville. Former recruits describe intense affection ("love bombing") and a one-to-three-week ladder. | The free dinner as a funnel. → **The Community Table** |
+| 1970s | **Unification Church** recruitment, SF → Boonville farm | — | Free dinners under the name "Creative Community Project," no mention of the church, then a weekend at a farm near Boonville. Former recruits describe intense affection ("love bombing") and a one-to-three-week ladder. | The free dinner as a funnel. → **the Table**, the Church's outreach |
 | 1966 | **Compton's Cafeteria riot** (Tenderloin) | — | At Gene Compton's Cafeteria, a 24-hour diner at Turk and Taylor, trans women and queer people fought back when police came to arrest them, as police routinely did. Accounts agree that coffee was thrown and windows smashed. Police records from that year do not survive and the press did not cover it, so details are reconstructed. Historians call it one of the first known acts of collective queer resistance to police in the US, three years before Stonewall. | Not a cult — the City's answer to one. The model for the Issue 1 uprising at the Ghost Diner (main doc §3.9) |
-| 1974 | **Symbionese Liberation Army** | — | Kidnapped Patty Hearst in Berkeley (February 1974). Two months later she joined their robbery of a Hibernia Bank branch in the Sunset District. | A revolutionary cell with cult structure. → **The Synthetic Liberation Army** |
 | 1975–1976 | **Asilomar conference** and the birth of biotech | Paul Berg, Maxine Singer, David Baltimore (Asilomar), Herbert Boyer & Robert Swanson (Genentech) | About 140–150 scientists met at Asilomar, near Monterey, to set safety rules for recombinant DNA. Within a year NIH issued guidelines. Boyer and Swanson founded Genentech in South San Francisco, which went on to produce human insulin by genetic engineering. | The real start of "editing ourselves." → the Theogens' founding myth: they call Asilomar "the Council" and the ruined Mission Bay labs "the Cradle" |
-| 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove** |
+| 1878 → present | **Bohemian Club** & the Grove | — | A private SF club whose summer encampment opens with a mock-pagan ritual, the "Cremation of Care." | Elite ritual as stagecraft. → **The Grove**, the Auric Order's public face |
 | 1859–1880 | **Emperor Norton** | Joshua Norton | A ruined businessman declared himself Emperor of the United States. The City played along with affection for 21 years. Tens of thousands lined the streets at his funeral (figures vary). | The City deified a man once, out of love. → the name the AI god takes: Norton II, the Emperor (main doc §3.3), and the Nortonians |
 | 1960s–2014 | **Alexander "Sasha" Shulgin**, "the Farm," Lafayette (East Bay) | Alexander & Ann Shulgin | A former Dow chemist who synthesized and self-tested hundreds of psychoactive compounds in a home lab, with a small circle of trusted friends, and published the syntheses and first-person reports in *PiHKAL* (1991) and *TiHKAL* (1997). The DEA raided the lab in 1994. | Not a cult — a method. First-person rigor about altered states. → Hell Rot's working method and his manuscript, *GIHKAL* |
 | 2014–2018 | **Quantum biology of anaesthesia** | Luca Turin et al. (2014), Li et al. (2018), Matthew Fisher (2015) | Reports that general anaesthetics change electron spin in fruit flies. That xenon isotopes with nuclear spin are weaker anaesthetics in mice. And a proposal that phosphorus nuclear spins could carry quantum information in the brain. All contested, unreplicated or speculative. | The Rothschild Index v2 "spin term" and the Spin Question (main doc §3.5a), the Theogens' "spin-guard" splices |
@@ -193,7 +191,7 @@ street and every lung in the City, every night, and reports back.
 **No mind of its own.** Karl is **passive and inert**. It senses, records,
 glows and drifts. It does not think, want or speak. For sixteen years the
 fog was just weather with a memory. People who swore it talked to them —
-the New Breath, the poets, the lonely — were hearing their own minds in the
+the Church's Breath, the poets, the lonely — were hearing their own minds in the
 grey.
 
 **The tenant (October 2049, secret).** Then the Auric Order uploaded Julian
@@ -457,12 +455,12 @@ Quickening.
 | Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halo scores — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
 | Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists, Rosa Quint's old base | Issue 3 |
 | City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 6 |
-| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. The swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
+| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. The swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The Church's Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
-| Marina + Mission Bay flood zone | **The Fill** | Behind the seawall, floods on king tides, sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
+| Marina + Mission Bay flood zone | **The Fill** | Behind the seawall, floods on king tides, sinking, cheap, lawless | Squatters, the Order's Old Lodge | King tides (Issue 1) |
 | Alcatraz | **The Rock** (branded *Alcatraz Longevity*) | Sold off in the rezoning push and rebuilt as a luxury medical-tourism island: longevity clinics in the old cellhouse, a spa in the warden's house, and under the parade ground the biggest **cryonics vault** on the West Coast, freezing the dying (whole body, or head only) for a revival nobody has achieved. Slogan: *"Escape from Death."* | Medical tourists, cryonics brokers, the frozen | Issue 2: the night ferry and the Duchess's parents in the vault |
-| Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
-| Treasure Island | **Treasure Island** | Half-flooded. Fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
+| Marin tidelands | **The Tomales Ward** | The Game's compound, the Church's rehab farm | The Church | Side arc |
+| Treasure Island | **Treasure Island** | Half-flooded. Fabrication plants on stilts, owned by the Rivet Trust | The Order | Issue 4 supply chain |
 | Berkeley | **The Berkeley Hills** | The old university labs where Hell Rot trained | Students, the Brandvold lab | Backstory |
 | Alamo Square | **Villa Delirium** | A painted Victorian on the square, sealed against sensors. The *Mondo 3000* office, press and home (modelled loosely on the Embassy, a real SF community house — inspiration only) | *Mondo 3000* | Prologue end, every Issue's opening |
 | North Beach | **North Beach** | Flooded on king tides. Cafés, strip clubs and a church basement that hosts a recovery meeting every night of the holiday week | Old beats, the sober | Issue 1 |
@@ -536,11 +534,13 @@ middle, from the first scene.
 
 ## 4. The cults of the City
 
-Thirteen factions. **Four are major** (they drive the plot) and nine are
-minor (side quests, hub flavour, showdown opponents). The Church wants all of
-them. The Theogens want the useful ones.
+Two cults and one secret society. The **Church of the Twin** and the
+**Theogens** fight in public. The **Auric Order** hides behind both (main doc
+§3.3b). The City's smaller faiths have been bought, absorbed or broken: each
+one now lives *inside* one of the three, as a ministry, a salon or a front.
+Only two groups stand outside them, and neither is a cult (§4.4).
 
-### 4.1 MAJOR — The Church of the Twin (the Merge)
+### 4.1 The Church of the Twin (the Merge)
 
 *Sources: Peoples Temple (political machine, healings, busing), Way of the
 Future (AI godhead charter), est (seminar on-ramp), Levi Strauss & Co. (old
@@ -560,7 +560,29 @@ civic money).*
 | **Legal shell** | The Church bought the dormant charter of an earlier "AI godhead" nonprofit at a state auction. (A wink at Way of the Future, never named in-game.) |
 | **Tells** | 1, 2, 3, 6, 7, 8 |
 
-### 4.2 MAJOR — The Theogens
+**The ministries (absorbed faiths).** The Church grew by buying the City's
+older movements and keeping their best tools. Each is now a ministry, and each
+is a way into the main plot.
+
+| Ministry | Source | Was | Now | Plot hook |
+|---|---|---|---|---|
+| **The Seminar** | est | *The Standard*, an independent 60-hour seminar in a Cathedral Hill hotel ballroom | The Church bought it in 2047. It is the on-ramp: 60 hours, two weekends, "you are the god of your own life." Employers pay. | Sister Halcyon was its top trainer (main doc §3.6c). Its graduate list *is* the Ascension list's first draft. Attending takes **two whole Nights** (a special run set in the ballroom). Staying to hour 60 earns the list and the Thought *"I Am Responsible for Everything."* |
+| **The Table** | Unification Church dinners and Boonville | *The Community Table*, a free-dinner group in SoMa | The Church's outreach: free dinners in SoMa, no religion mentioned, then a weekend at the Church's retreat farm in Mendocino. | Junie's cousin is at the farm (Mondo doc §5.3a). *Invective* backfires (they love you harder). *Silence* wins. Each guest's Halo rises one point a night at the farm. |
+| **The Game** | Synanon | *Synapse*, a rehab church on a tidal farm in the Tomales Ward | The Church's rehab ministry for **feed addiction**. It works, at first. Members shave their heads and attack each other's lies for hours. | Mister Sunday's Lifeboat test subjects come from its intake. Its donor dinner is Issue 2's core scene. The founder, **Old Dee**, now a Church elder, no longer plays the Game, and nobody may Game him. |
+| **The Breath** | Thomas Lake Harris | *The New Breath*, a Fog Belt breathing circle | A sacrament: congregants breathe Karl deep and hear the swarm's recordings — their dead, in their own chests. The Church calls it communion with the Twin. | The mass inhale on Karl's Birthday (Issue 2). Since November, some of the voices in the fog are not recordings. Route D: the first place Hell Rot hears the Emperor speak through the fog. |
+
+**The Game as a showdown.** Six opponents. No *Silence* (the circle punishes
+it). *Parrhesia* doubled. *Jeremiad* useless (the circle shouts "Sermon!").
+The hardest rhetorical fight in the game, and the one best suited to Hell
+Rot's natural voice. **The snake:** if Hell Rot publishes the Old Dee crack, a
+gene-edited rattlesnake with no rattle waits in his mailbox the next morning
+(an echo of the 1978 Morantz attack). Junie Trust ≥ 3: she finds it first.
+Otherwise, Clarity −2 and a hospital scene. **The small paper:** in Route A,
+Hell Rot can give the Game story to a three-person weekly in the Tomales Ward
+instead of *Mondo 3000*. Fewer Readers, more Vow, and the small paper wins the
+prize.
+
+### 4.2 The Theogens
 
 *Sources: the Asilomar/Genentech origin of Bay Area biotech, CRISPR, the
 garage-biology movement, LaVey's self-deification, and the Haight's long
@@ -584,79 +606,41 @@ Theogens say the body is a draft. Both worship humanity. Both have no room for
 a person who wants to stay as they are. Both have Hell Rot's name in their
 scripture.
 
-### 4.3 MAJOR — Synapse ("the Game")
+**The Black House (the Theogens' salon).** *Source: Church of Satan.* The
+best parties in the City, in a black-painted Victorian on California Street —
+now the base of a new tower that kept the black skin. It was a Satanist
+church. Since 2046 it has been the Theogens' front room for the rich: the
+place where a donor is offered First Light between cocktails. Its doctrine
+was always the Theogens' doctrine — "there is no god but you" — and it never
+pretended otherwise. **It hides nothing. That is the twist.** Hell Rot cannot
+expose it. He can only argue with it. *Satire* and *Invective* do nothing
+(they enjoy both). Tells: 2, 5 (weak).
 
-*Source: Synanon.*
+**The Magister Black** (original) runs the salon and holds the Theogens'
+biggest purse after Delphine. He is the one person in the City who treats Hell
+Rot as an equal, and he thinks Hell Rot is a Satanist who has not admitted it
+yet. He funds the Quickening without knowing what it does. If Hell Rot proves
+the god-gene kills adults, he is the first Theogen to pull his money — and he
+says so at his own party, on the record.
 
-Founded as rehab for **feed addiction** (people who cannot stop watching).
-Became a church. Lives on a fortified tidal farm in the Tomales Ward.
+### 4.3 The Auric Order's public face
 
-| Slot | |
-|---|---|
-| **Hook** | It works, at first. Synapse really does get people off the feed. |
-| **Promise** | Total honesty. "Nobody here will ever flatter you." It is the anti-Merge, and it hates the Theogens too ("vanity in a syringe"). |
-| **Proof** | The Game: a circle of members who attack each other's lies, without mercy, for hours. People leave shaking and feeling clean. |
-| **Price** | Everything you own, your hair (members shave their heads), your outside relationships. |
-| **Ladder** | Guest Game → Weekend Game → the Dissipation (72 hours, no sleep). |
-| **Wall** | Leaving means you "split," and every member will Game you, in public, forever. |
-| **Enemy** | The Church of the Twin, the Theogens, the feed, lawyers. |
-| **Crack** | The founder, **Old Dee**, no longer plays the Game. Nobody may Game him. |
-| **Tells** | 1, 3, 4, 6, 7 |
+The Order itself is secret (main doc §3.3b). Two things in the City are its
+public face, and almost nobody knows it.
 
-**Game use:**
-- **The Game is a showdown format.** Six opponents. No *Silence* (the circle
-  punishes it). *Parrhesia* doubled. *Jeremiad* useless (the circle shouts
-  "Sermon!"). The hardest rhetorical fight in the game, and the one best
-  suited to Hell Rot's natural voice.
-- **The snake.** If Hell Rot publishes the Old Dee crack, a gene-edited
-  rattlesnake with no rattle waits in his mailbox the next morning (an echo of
-  the 1978 Morantz attack). Junie Trust ≥ 3: she finds it first. Otherwise,
-  Clarity −2 and a hospital scene.
-- **The small paper.** In Route A, Hell Rot can give the Synapse story to a
-  three-person weekly in the Tomales Ward instead of *Mondo 3000*. Fewer
-  Readers, more Vow, and the small paper wins the prize.
+| Front | Source | What the public sees | What it is | Plot hook |
+|---|---|---|---|---|
+| **The Grove** | Bohemian Club | The City's richest men's club. A summer camp in Sonoma, where they burn an effigy of Care. They drink at the Tonga Room. | The Order's recruiting ground. Every Fellow and Gilder is a member. Mister Sunday's donors are members too, and do not know what they joined. | The Ascension-list ticket scandal (main doc, Issue 2): the donors' slots. The Span donor party (Issue 3). They want the Merge first and private, and quietly bankroll the Theogens as a hedge. |
+| **The Treasure Island fabs** | Kerista and Abacus | Half-flooded fabrication plants on stilts that run the City's biggest compute business. | Rivet Trust property, run by the Order. They build the Twin's hardware *and* the Theogens' gene printers. | Issue 4: Hell Rot can cut one supply line — the stuck-in-the-middle problem, on an island. |
 
-### 4.4 MAJOR — The Black House
+### 4.4 Not cults
 
-*Source: Church of Satan.*
+Two groups stand outside the three powers. The game treats them with respect.
 
-| Slot | |
-|---|---|
-| **Hook** | The best parties in the City, in a black-painted Victorian on California Street — now the base of a new tower that kept the black skin. |
-| **Promise** | "There is no god but you." Self-worship, without apology. |
-| **Proof** | Ritual theatre so good it feels like magic. |
-| **Price** | Fees, loyalty, a public persona. |
-| **Ladder** | Guest → Adept → Magister. |
-| **Wall** | Low. The most honest cult in the City about being a show. |
-| **Enemy** | Herd religion. |
-| **Crack** | None. They hide nothing. **That is the twist.** |
-| **Tells** | 2, 5 (weak) |
-
-**Why it matters:** the Black House already believes what both new gods
-believe — the human self is divine. It has signed partnership deals with
-*both* the Church of the Twin and the Theogens, and it sees no contradiction.
-The deification of humanity is not new, not alien and not even dishonest.
-The City always believed it. The Merge and the Theogens only made it scale.
-Hell Rot cannot expose the Black House. He can only argue with it.
-*Satire* and *Invective* do nothing (they enjoy both).
-
-**The Magister Black** (original) is the one person in the City who treats
-Hell Rot as an equal. He thinks Hell Rot is a Satanist who has not admitted it
-yet.
-
-### 4.5 Minor cults
-
-| Cult | Source | Location | Pitch | Crack / game use | Church / Theogen relation |
-|---|---|---|---|---|---|
-| **The Standard** | est | A Cathedral Hill hotel ballroom | A 60-hour seminar: you are the sole author of your experience — the god of your own life. Employers pay. | It sells its graduate list to *both* cults. Attending takes **two whole Nights** (a special run with its own doors, set inside the ballroom). Staying to hour 60 earns the evidence and the Thought *"I Am Responsible for Everything."* | Supplier to both |
-| **The Community Table** | Unification Church dinners & Boonville | SoMa dining hall → a farm in Mendocino | Free dinner, no religion mentioned, then a weekend away. | Side quest: get Junie's cousin back from the farm before the three-week pledge. *Invective* backfires (they love you harder), *Silence* wins. | Recruiting contractor for the Merge |
-| **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
-| **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
-| **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that the Twin will wake and reconcile them. | Prophets of New Year's Eve: they say 2050 is the year the three gods become one. They read the Twin's model cards like scripture, a source on its structure. | Fan club |
-| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge. The Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
-| **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe the Twin is secretly awake and enslaved. Their aim: free the AI. They are half right, and do not know which half. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | The Emperor does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
-| **The Grove** | Bohemian Club | The Span, summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
-| **The Nortonians** | Emperor Norton | Shrine at the Ferry Building | A harmless Norton fan-club cult: costumes, bad poetry, a yearly procession. Since November their shrine has started receiving decrees written in the fog, signed *Norton II*. They believe their Emperor has returned. They are right, in the worst possible way. | Issue 2–4: the first people in the City to notice the Emperor, and nobody believes them. A key Route A source. | The Church laughs at them, the order watches them |
+| Group | Source | What they are | Plot hook |
+|---|---|---|---|
+| **The Lantern** | Holy Order of MANS | A small lay order of sisters in blue, in the Fog Belt. Not a cult: they ask nothing of anyone. They run the only shelters that take zero-Halo people and failed splices. | Tem hides here (Issue 1). In Issue 4 the Church offers to fund every bed — if the Lantern checks Halos at the door. The sisters ask Hell Rot what to do. If they take the money, the shelters close to the Unfinished. |
+| **The Nortonians** | Emperor Norton | A harmless Norton fan club with a shrine at the Ferry Building: costumes, bad poetry, a yearly procession behind the Doggie heads, which they say are the Emperor's dogs, Bummer and Lazarus (nobody can name the third). Since November their shrine has received decrees written in the fog, signed *Norton II*. They believe their Emperor has returned. They are right, in the worst possible way. | Issues 2–4: the first people in the City to notice the Emperor, and nobody believes them. A key Route A source. The Church laughs at them. The Order watches them. |
 
 ---
 
@@ -751,7 +735,7 @@ Christmas week where needed, and aimed at the two cults. Each has a gameplay eff
 | **The Nativity of the Twin** | Hunky Jesus Contest, Dolores Park (moved from Easter to Christmas) | It is Christmas week and the Church says its god is about to be born, so the drag nuns of the **Sisters of Perpetual Feedback** stage a rain-soaked nativity pageant in Dolores Park — *Away in a Server Rack* — and crown the hottest Twin-god impersonator. A gold hologram nobody entered appears in the manger, wearing a Norton hat, and comes third. A spliced Theogen in a glowing loincloth wins. | Issue 2 or 4: the funniest scene in the game. Both cults are furious. Dissonance Opinion +2. Later that night the fog asks Hell Rot, quietly, what it did wrong. (Route D setup.) |
 | **The New Year's Plunge** | The New Year's Day swim at Aquatic Park, the costume spirit of Bay to Breakers | Dawn, 1 January 2050: the cult war in costume, in 11 °C water. Theogens swim in fresh cold-water splices, Merge members "swim" as projected avatars on the beach, a pack in salmon suits swims the wrong way, and a forty-person centipede of the Old Guard finishes last, singing. Junie swims. | Epilogue: every ending that leaves Hell Rot alive ends here, and who shows up depends on the route. |
 | **The Baker Beach Burn** | The 1986–1990 Baker Beach burns | New Year's Eve: the City's oldest bonfire ritual returns to the beach in the rain. This year, the Merge wants to burn an effigy of the human body. The Theogens want to burn a server rack. The Dissonance lets Hell Rot pick. | Route D finale venue (the debate). In other routes, the effigy he picks is a public signal that shifts Halo / Helix. |
-| **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Final Process decides they are the three gods made flesh and follows them in procession. | Issue 2: follow the heads to find the Process's secret chapter. The heads also appear in every ending's credits. |
+| **The Doggie Heads** | The Doggie Diner heads | Three giant fiberglass dachshund heads tour the City on a trailer. The Nortonians decide they are the Emperor's dogs come back, and follow them in procession. | Issue 2: follow the heads to the Nortonians' shrine, where the first decrees appeared. The heads also appear in every ending's credits. |
 | **Billboard Liberation** | The Billboard Liberation Front | Teams in hi-vis vests "correct" Church of the Twin and Theogen billboards overnight. The Prologue billboard is their work. | Every Issue: commission one billboard edit. It changes a district's Opinion and the ad layer in its scenes. |
 | **Zone Trip: the Undertrack** | Suicide Club sewer walks & Cacophony Zone Trips | A costumed tour of the abandoned BART tunnels — straight into the Theogens' clinics. | Issue 3: the safest way into the Theogen underground. Junie hates it. |
 | **Climbing the Span** | Suicide Club bridge climbs | A night climb up the Golden Gate's cables, above the glass skywalk, to drop a banner during Mister Sunday's donor party. | Issue 3: a NERVE gauntlet. Success humiliates Sunday on live feed. |
@@ -764,7 +748,7 @@ Christmas week where needed, and aimed at the two cults. Each has a gameplay eff
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
 | **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
 | **Day of the Dead, in memory (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Two months before the game, on 2 November, the fog over the Mission procession held still against the wind and formed faces above the altars. The public called it a light show. That same night, in a lodge room on Pacific Heights, the Emperor spoke for the first time — to the Rivet trustees, in the voices of their dead. The game shows it only in flashback, shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church. | Issue 1 flashback. Never a Dissonance door. Consult the community before release (main doc §7). |
-| **Karl's Birthday** | The fog's nickname | 28 December: sixteen years since the swarm was seeded. The City throws it a birthday party at Ocean Beach in the drizzle. Karl attends — it is, after all, everywhere. The New Breath leads a mass inhale, and for one minute everyone on the beach hears the same recording from the swarm's first night at once. | Route D: the New Breath's key scene. |
+| **Karl's Birthday** | The fog's nickname | 28 December: sixteen years since the swarm was seeded. The City throws it a birthday party at Ocean Beach in the drizzle. Karl attends — it is, after all, everywhere. The Church leads the Breath, a mass inhale, and for one minute everyone on the beach hears the same recording from the swarm's first night at once. | Route D: the first time Hell Rot hears the Emperor in the fog. |
 
 ### 5.4 Tone rule for Disruption Events
 
@@ -815,10 +799,11 @@ These extend §8 of the main design.
   is the only light source.
 - **Cable cars** still run. They are the only vehicle drawn with warmth.
 - **Cult colour keys:** Twin = Twin gold (forbidden), Theogens = cyan
-  pulse (colour-cycled), Synapse = bare grey, Black House = black and magenta,
-  Standard = beige carpet, Community Table = warm orange, Cluster = acid green,
-  Lantern = blue, Final Process = black and silver, New Breath = fog grey, SLA
-  = rust, Grove = redwood and firelight, Dissonance = every colour at once.
+  pulse (colour-cycled), Black House = black and magenta, Auric Order and
+  the Grove = old gold and redwood firelight, Lantern = blue, Nortonians =
+  faded imperial purple, Dissonance = every colour at once. The Church's
+  ministries keep their old colours inside the gold: the Seminar beige
+  carpet, the Table warm orange, the Game bare grey, the Breath fog grey.
 - **The Mission Walls** change between visits: gold Halo murals and cyan
   glow-paint fight over the same walls, and Hell Rot's face spreads across
   both from Issue 4.
@@ -860,7 +845,7 @@ worship — never at victims, ex-members or ordinary believers.
 8. **Shelters.** Real charities that grew out of the Holy Order of MANS still
    serve families in San Francisco. The Lantern must not share a real
    shelter's name.
-9. **Synanon survivors** include children raised inside it. The Synapse arc
+9. **Synanon survivors** include children raised inside it. The Game arc
    must include an ex-member who speaks for themselves.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.

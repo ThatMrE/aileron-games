@@ -41,20 +41,20 @@
 | R2 | "Satan represents vital existence, instead of spiritual pipe dreams!" | LaVey, *The Satanic Bible* | | *The Merge is a spiritual pipe dream with a server bill.* | Black House, Merge |
 | R3 | "Satan represents vengeance, instead of turning the other cheek!" | LaVey, *The Satanic Bible* | | *Rule 1: punch up. Rule 1a: cheeks are optional.* | Black House |
 | R4 | "Satan has been the best friend the Church has ever had, as he has kept it in business all these years!" | LaVey, *The Satanic Bible* | The ninth of his Nine Satanic Statements | *Every church needs a villain. The Emperor picked me.* | Black House, funny, I4 |
-| R5 | "Today is the first day of the rest of your life." | Attributed to Charles "Chuck" Dederich, founder of Synanon | A rehab program that became a church. In 1978 its members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* | Synapse, recovery |
-| R6 | "Synanon" | The name itself (1958) | By the group's own story, a new member slurred "symposium" and "seminar" together, and Dederich kept the word | *A cult named after a man too high to pronounce "seminar." Respect.* | Synapse, weird |
+| R5 | "Today is the first day of the rest of your life." | Attributed to Charles "Chuck" Dederich, founder of Synanon | A rehab program that became a church. In 1978 its members put a rattlesnake in a lawyer's mailbox | *The greeting-card line came from the snake people.* | Game, recovery |
+| R6 | "Synanon" | The name itself (1958) | By the group's own story, a new member slurred "symposium" and "seminar" together, and Dederich kept the word | *A cult named after a man too high to pronounce "seminar." Respect.* | Game, weird |
 | R7 | "Turn on, tune in, drop out." | Timothy Leary (1966–67) | Popularized at the Human Be-In, Golden Gate Park, January 1967. In 1966 Leary also founded a religion, the League for Spiritual Discovery | *I did all three. Wrong order.* | drugs+, Haight |
 | R8 | "Think for yourself and question authority." | Attributed to Timothy Leary | | *Including Timothy Leary.* | |
 | R9 | "You're either on the bus or off the bus." | Ken Kesey, leader of the Merry Pranksters, as reported in Tom Wolfe's *The Electric Kool-Aid Acid Test* (1968) | | *Ascension shuttles are free. That's how you know.* | Merge, transport |
 | R10 | "...do hereby declare and proclaim myself Emperor of these United States" | Joshua Norton, proclamation (1859) | The City played along for 21 years | *A cult of one, and the whole town joined. The Emperor wants that, but bigger.* | Emperor, holy |
 | R11 | A decree fining anyone who says the "abominable word 'Frisco'" twenty-five dollars | Attributed to Emperor Norton (1872) | Widely quoted. Historians doubt that Norton ever issued it. | *A fake decree from a fake emperor, and it is the most-obeyed law in the City.* | Emperor, funny |
 | R12 | A decree ordering a bridge from Oakland to San Francisco by way of Goat Island | Emperor Norton (1872) | The Bay Bridge opened in 1936 on almost exactly that route | *He was mad, and he was right about the bridge. Hold both thoughts.* | Emperor, weird |
-| R13 | "compersion" | Coined in the Kerista Commune, Haight-Ashbury (1970s–80s) | The joy you feel when someone you love is happy with someone else | *The Cluster's sacrament. Also the only cult word worth keeping.* | Cluster, tender |
-| R14 | "Monday Night Class" | Stephen Gaskin's weekly open talks in San Francisco (1966–70) | They grew to fill a hall of more than a thousand. In 1970 Gaskin led a caravan of buses out of the City to found the Farm, a commune in Tennessee | *Every cult in this town starts as a free class.* | Standard, Community Table |
+| R13 | "compersion" | Coined in the Kerista Commune, Haight-Ashbury (1970s–80s) | The joy you feel when someone you love is happy with someone else | *A Haight commune word. The only cult word worth keeping.* | tender |
+| R14 | "Monday Night Class" | Stephen Gaskin's weekly open talks in San Francisco (1966–70) | They grew to fill a hall of more than a thousand. In 1970 Gaskin led a caravan of buses out of the City to found the Farm, a commune in Tennessee | *Every cult in this town starts as a free class.* | Seminar, Table |
 | R15 | "a rare and precious transcendental state" | Alexander & Ann Shulgin, *PiHKAL* (1991), describing a "++++" | | *I have had one. I was dead at the time.* | GIHKAL, holy |
 | R16 | "We're all just walking each other home." | Attributed to Ram Dass | Former Harvard psychologist, Leary's partner, later a teacher in Marin and Maui | *Junie walks me home most nights. Literally.* | tender, recovery |
 | R17 | "Be Here Now." | Ram Dass, book title (1971) | | *Easy for him. He wasn't on deadline.* | funny |
-| R18 | "Free because it's yours." | The Diggers, Haight-Ashbury free store (1966–67) | They gave away food every day in the Panhandle | *The Community Table copied the free dinner and forgot the free.* | Community Table |
+| R18 | "Free because it's yours." | The Diggers, Haight-Ashbury free store (1966–67) | They gave away food every day in the Panhandle | *The Church's Table copied the free dinner and forgot the free.* | Table |
 | R19 | "Radical self-reliance" | One of Burning Man's Ten Principles, written by co-founder Larry Harvey (2004) | | *Radically relied on by a billion-dollar ticket industry.* | Dissonance, funny |
 | R20a | "Hail Eris! All hail Discordia!" | Discordian greeting, from the *Principia Discordia* tradition (1960s) | The religion founded as a joke, and kept one on purpose | *The only cult in this deck that has never asked me for anything.* | Discordian, funny |
 | R20b | "Kallisti." | The word on Eris's golden apple in the Greek myth: "to the prettiest one" | The apple that started the Trojan War, and the Discordians' sign | *Somebody left one on the Church's altar and one at the Baths. Same handwriting.* | Discordian, Nobody |
@@ -68,9 +68,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 |---|---|---|---|---|
 | X1 | **JIM JONES** (1931–1978) ███████████ | Peoples Temple, 1859 Geary Boulevard. 918 people died at Jonestown and Port Kaituma on 18 November 1978. | *I don't print his words. Read the names of the people he killed instead. The Jonestown Institute keeps the list.* | Twin, grim, I2 |
 | X2 | **CHARLES MANSON** (1934–2017) ███████████ | Recruited his first followers in the Haight in 1967 | *No. Next card.* | grim |
-| X3 | **THOMAS LAKE HARRIS** (1823–1906) ███████████ | Ran the Fountaingrove commune in Santa Rosa, his followers worked his vineyards for free | *A San Francisco Chronicle reporter took him apart in print. Reprint the reporter, not him.* | New Breath, I3 |
-| X4 | **SYNANON'S LATE SERMONS** ███████████ | In its last years Synanon armed a private guard and its founder made threats on tape | *The first line was a greeting card. The last lines were threats. That's the arc.* | Synapse, grim |
-| X5 | **THE PROCESS** ███████████ | Black capes, silver crosses, German shepherds on Haight Street, 1967 | *They wrote beautifully. That's the problem with all of them.* | Final Process, weird |
+| X3 | **THOMAS LAKE HARRIS** (1823–1906) ███████████ | Ran the Fountaingrove commune in Santa Rosa, his followers worked his vineyards for free | *A San Francisco Chronicle reporter took him apart in print. Reprint the reporter, not him.* | Breath, I3 |
+| X4 | **SYNANON'S LATE SERMONS** ███████████ | In its last years Synanon armed a private guard and its founder made threats on tape | *The first line was a greeting card. The last lines were threats. That's the arc.* | Game, grim |
+| X5 | **THE PROCESS** ███████████ | Black capes, silver crosses, German shepherds on Haight Street, 1967 | *They wrote beautifully. That's the problem with all of them.* | weird |
 | X6 | **THE NEXT ONE** ███████████ | A blank card with the year 2049 | *There is always a next one. This week there are two.* | B, C, grim, I6 |
 
 ### 1C. Writers, poets and philosophers of the Bay (18)
@@ -121,8 +121,8 @@ These leaders appear by name only. The bar is black. The note is the card.
 |---|---|---|---|---|---|
 | R51 | "The Industrial Revolution and its consequences have been a disaster for the human race." | Theodore Kaczynski, "Industrial Society and Its Future" (1995) | A mail-bomber who killed three people and injured 23 between 1978 and 1995. His brother recognized the writing. | *He couldn't win the argument, so he mailed bombs. Don't mistake the first line for the rest.* | grim |
 | R52 | "It should quickly and quietly go out of print." | William Powell (2013), on *The Anarchist Cookbook*, which he wrote at 19 | He spent decades asking for the book to be withdrawn. He never owned the rights. | *The only recipe in it worth keeping.* | recovery, grim |
-| R53 | "Death to the fascist insect that preys upon the life of the people!" | Slogan of the Symbionese Liberation Army (1973–75) | A Bay Area cell that murdered Oakland schools superintendent Marcus Foster and kidnapped Patty Hearst | *They had a slogan, a cobra logo and a body count. The Synthetic Liberation Army kept the logo.* | SLA, grim, I3 |
-| R54 | "All power to the people." | Black Panther Party, Oakland (1966–) | The party also ran free breakfasts for children and free health clinics | *The free breakfast is the part the cults keep copying.* | Community Table |
+| R53 | "Death to the fascist insect that preys upon the life of the people!" | Slogan of the Symbionese Liberation Army (1973–75) | A Bay Area cell that murdered Oakland schools superintendent Marcus Foster and kidnapped Patty Hearst | *They had a slogan, a cobra logo and a body count. Every revolution in this town ends as a brand.* | grim |
+| R54 | "All power to the people." | Black Panther Party, Oakland (1966–) | The party also ran free breakfasts for children and free health clinics | *The free breakfast is the part the cults keep copying.* | Table |
 | R55 | "You gotta give 'em hope." | Harvey Milk (1978) | San Francisco supervisor, murdered at City Hall that November | *(No note. He leaves this one alone.)* | tender, Castro |
 | R56 | "Somebody has to do something, and it's just incredibly pathetic that it has to be us." | Attributed to Jerry Garcia | | *The Mondo 3000 mission statement.* | House, funny |
 | R57 | "Put your good where it will do the most!" | Attributed to Wavy Gravy, Hog Farm commune | Clown, activist, and the man who ran the free kitchen at Woodstock | *Pru would like to calculate that.* | Pru, tender |
@@ -249,16 +249,16 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
-| W57 | "Nobody here will ever flatter you. You look terrible." | Synapse welcome sign | *Honest. Also a cult.* | Synapse, funny |
-| W58 | "Old Dee does not play the Game. Old Dee is the Game." | Synapse saying | *The one man exempt from honesty. Every time.* | Synapse, grim |
+| W57 | "Nobody here will ever flatter you. You look terrible." | Welcome sign, the Game | *Honest. Also a ministry.* | Game, funny |
+| W58 | "Old Dee does not play the Game. Old Dee is the Game." | Saying in the Game | *The one man exempt from honesty. Every time.* | Game, grim |
 | W59 | "There is no god but you. Dress code: black." | Black House invitation | *Most honest cult in town. Still a cult.* | Black House |
-| W60 | "Hour 51. You are responsible for everything. Including the bathroom break you do not get." | Trainer, the Standard | *Hour 60 is where they sell your list.* | Standard, funny |
-| W61 | "Free dinner. No catch. Weekend in Mendocino optional (strongly encouraged)." | Community Table flyer | *The catch is in the parentheses.* | Community Table |
-| W62 | "We share everything: love, rent and compute." | The Cluster, Treasure Island | *And now the gods' supply chain.* | Cluster |
-| W63 | "Judge. Lightbringer. Devourer. Midnight makes them one." | Final Process liturgy | *They follow the Doggie heads. Weigh that.* | Final Process, weird |
-| W64 | "Breathe in the City. Breathe out the self." | New Breath practice card | *Breathe out the nanites first.* | New Breath, Karl |
-| W65 | "Free the god! Free the god! (The god said no.)" | Synthetic Liberation Army banner, amended | *The god does not want freedom. It wants to serve. That's the scary part.* | SLA, funny |
-| W66 | "Cremation of Care: black tie, RSVP to the Span." | Grove invitation | *They burn Care every year. It shows.* | Grove |
+| W60 | "Hour 51. You are responsible for everything. Including the bathroom break you do not get." | Trainer, the Seminar | *Hour 60 is where your name goes on the Ascension list.* | Seminar, funny |
+| W61 | "Free dinner. No catch. Weekend in Mendocino optional (strongly encouraged)." | Church flyer for the Table | *The catch is in the parentheses.* | Table |
+| W62 | "Night shift, fab 3. Tonight: Twin boards. Tomorrow: gene printers." | Shift board, Treasure Island | *One factory, both gods. Same owner.* | Order |
+| W63 | "Bummer. Lazarus. And the third one. Make way for the Emperor's dogs!" | Nortonian chant | *They follow the Doggie heads. Weigh that.* | Nortonians, weird |
+| W64 | "Breathe in the City. Breathe out the self." | Church card for the Breath | *Breathe out the nanites first.* | Breath, Karl |
+| W65 | "Free the god! Free the god! (The god said no.)" | Dissonance banner, amended | *The god does not want freedom. It wants to serve. That's the scary part.* | Dissonance, funny |
+| W66 | "Cremation of Care: black tie, RSVP to the Span." | Grove invitation | *They burn Care every year. It shows.* | Grove, Order |
 | W67 | "We, Norton II, Emperor of the Twin and Protector of the Fog, do hereby forbid the word 'merge' before noon." | Decree no. 4, written in fog on the Ferry Building clock | *The first sane law of the week.* | Emperor, funny |
 | W68 | "We, Norton II, do hereby declare war on the feathers." | Decree no. 9, in fog over the Midnight Pillow Fight | *Lost. Gracefully.* | Emperor, I6, funny |
 | W69 | "The lamp is lit for anyone the Halo cannot see." | Lantern shelter door | *The best people in this game wear blue robes and sleep four hours a night.* | Lantern, tender |

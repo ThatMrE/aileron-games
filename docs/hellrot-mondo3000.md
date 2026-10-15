@@ -591,7 +591,7 @@ pays out in Trust and one useful item, Lead or contact.
 | | *"Cold Read"* | She teaches Tem, from the Loin, to read her own data — a Halo of zero, explained line by line. | Tem as a source in the Loin, Vow |
 | **Junie** | *"The Repo Men"* | The two tired men from the knee lender keep turning up. One of them is a derby fan. Talk, bribe, or outskate them. | One extra week on the knees. A contact who knows every lien in the City |
 | | *"Midnight Mass, Again"* | Junie's childhood parish in the Excelsior holds a small Mass for the end of the year. She asks Hell Rot to come and not to say anything. | Junie Trust. A step in her trial of the soul |
-| | *"The Farm"* | (Existing.) Get her cousin back from the Community Table's farm before the three-week pledge (companion doc §5). | Junie Trust |
+| | *"The Farm"* | (Existing.) Get her cousin back from the Church's retreat farm in Mendocino, run by its Table ministry, before the three-week pledge (companion doc §4.1). | Junie Trust |
 | **Fax** | *"Cover Story"* | Collect one image from each district across the week for the New Year's Eve cover. Each image is a small scene. | The best cover in the game, THE COLUMNIST +1 for the last column |
 | | *"Dead Formats"* | His jack is failing. The last technician who can repair it lives in the Haight's 1990s cyberdelic wing, and wants payment in old floppy disks. | Keeps the Back Door open through Issue 6 |
 | **Otto** | *"The Rat"* | Her old lab's last long-life lab rat is still alive in the Cradle, thirty years old. Theogen pilgrims worship it. Get it out. | A Splice-free Blessing, Otto Trust |

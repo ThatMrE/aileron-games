@@ -1250,7 +1250,7 @@ uncertainty on screen.
 | **Delphine Ash** | Prophet of the Theogens, Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone — see §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her. The Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's — see §3.4. |
 | **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Her loyalty is the hinge of Route C. |
-| **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the City's 60-hour seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
+| **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the 60-hour seminar the Church bought and made its on-ramp, the Seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
@@ -1331,8 +1331,10 @@ Her line: *"Everybody wants to save me. Nobody wants to ask me."*
 
 Sister Halcyon was born **Hallie Kowalczyk**. She is 44. For ten years she
 was a top trainer at **The Standard**, the City's 60-hour seminar: she knows
-how to fill a ballroom and bring it to tears by hour 40. She joined the
-Church of the Twin in 2047 and was its voice within a year.
+how to fill a ballroom and bring it to tears by hour 40. When the Church of
+the Twin bought the Standard in 2047 and made it **the Seminar**, its
+on-ramp (companion doc §4.1), she came with it, and was the Church's voice
+within a year.
 
 - **She is Merged.** Halo score 10, the Halo jacked in behind her ear. Her
   sermons are drafted by her Church AI — by the Twin. She believes every
@@ -1406,7 +1408,7 @@ the mind he has left to spend, and all the sobriety he may have left.
 promises that places on the **Ascension list** — the first uploads — go to
 the most deserving — Halo is supposed to be
 virtue, measured. Hell Rot finds that premium slots meant for Halo-rich poor
-congregants are going, quietly, to Mister Sunday's donors at the Grove, while
+congregants are going, quietly, to Mister Sunday's donors at the Grove — the rich men's club that is the Auric Order's public face — while
 the people who earned them wait in the "long queue" for years. (The
 Merge began taking applications when the Church opened in 2047. The
 queue already runs to 2061.) It is the
@@ -1773,12 +1775,12 @@ from the water to the uprising.
   Yara finds the deeper tunnels, where the failed splices live — and Tem,
   who went missing after the uprising (§3.6b).
 - **The California Academy of Sciences, evening.** A black-tie **donor
-  dinner for Synapse**, the rehab church, under the museum's living roof and
+  dinner for the Game**, the Church's rehab ministry for feed addicts, under the museum's living roof and
   beside its aquarium tanks. Mayor Sunday attends. So does Rosa Quint, his
   chief of staff, who believes in the young reformer he used to be. Optional:
-  Hell Rot is invited to play a Synapse Game at the table.
+  Hell Rot is invited to play the Game at the table.
 - **The martyr metric.** Rosa has been leaking to *Mondo 3000* since the
-  Haight: the Lifeboat's test subjects, the nitrous money. Sunday knows. At
+  Haight: the Lifeboat's test subjects (drawn from the Game's intake), the nitrous money. Sunday knows. At
   the dinner, Yara finds a Twin forecast in Sunday's recall data: a sympathy
   surge for a mayor who suffers a "sacred loss." Sunday has turned it into an
   order. Rosa is the sacred loss, and the forecast is his cover: a grieving
@@ -1798,7 +1800,7 @@ from the water to the uprising.
   rickshaw race, and the Emperor's decrees written on the Conservatory of
   Flowers' glass.
 - **The Ocean Beach bonfire.** **Karl's Birthday** — sixteen years since the
-  swarm was seeded. Bonfires in the drizzle, the New Breath's mass inhale,
+  swarm was seeded. Bonfires in the drizzle, the Church's Breath (a mass inhale of the fog),
   Delphine, with Ione asleep against her, and Sister Halcyon — her nurse,
   fifteen years ago (§3.6c) — pretending not to see each other, and, for one
   minute, everyone on the beach hearing the same recording at once.
@@ -1968,10 +1970,10 @@ night to build Runs around. (District details: companion doc §3.)
 | Location | Set piece | Type |
 |---|---|---|
 | **The Sutro Baths data center** | Twin servers cooled by seawater. Delphine's glowing congregation in the warm tunnels beneath. The deep wards | Core |
-| **The California Academy of Sciences** | The Synapse donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
+| **The California Academy of Sciences** | The Game's donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
 | **Golden Gate Park** | The bison paddock in the fog, Hippie Hill, a glow rickshaw race, decrees on the Conservatory of Flowers | Core |
-| **Ocean Beach** | Karl's Birthday bonfire, the New Breath's mass inhale, one recording heard by everyone | Core |
-| **The Tomales Ward** | A Synapse Game — the hardest rhetorical fight in the game | Optional |
+| **Ocean Beach** | Karl's Birthday bonfire, the Church's mass inhale, one recording heard by everyone | Core |
+| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game | Optional |
 | **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
 
 **Issue 4 — Wednesday 29 December.**
@@ -1983,8 +1985,8 @@ night to build Runs around. (District details: companion doc §3.)
 | **Coit Tower** | Sunday's Lifeboat rig among the 1930s murals | Core |
 | **The Sutro tunnels** | Ione is taken, LOST flyers across the Mission | Core |
 | **The Auric lodge, the Presidio** | A break-in, the 1849 gold pan, the minute book, Dr. Hale | Core (Routes A, D), Optional (B, C) |
-| **Treasure Island** | The Cluster's fabrication plant on stilts, the supply-chain choice | Optional |
-| **The Lantern** | The order's conversion vote | Optional |
+| **Treasure Island** | The Rivet Trust's fabrication plants on stilts, which build for both gods: the supply-chain choice | Optional |
+| **The Lantern** | The Church offers to fund every bed if the shelter checks Halos at the door | Optional |
 
 **Issue 5 — Thursday 30 December.**
 
@@ -2371,7 +2373,7 @@ is a choice on the map screen, and most have a catch.
 | **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour, arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
 | **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free, random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
 | **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour, only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
-| **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free, destination is a Dissonance door | The Final Process follows the heads in procession, chanting. |
+| **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free, destination is a Dissonance door | The Nortonians follow the heads in procession, chanting the names of the Emperor's dogs. |
 | **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line, shop while you ride | It only goes where cable cars go. |
 | **On foot** | Hell Rot's own legs, and the old stairways of the hills | 1 Hour per district, nobody owns you | Rain, fog, numb feet (the Rot). The only ride on which no god hears you. |
 
@@ -2661,7 +2663,7 @@ text alone.
   - Read a Theogen clinic's encrypted genome ledger: feed it to the Duchess's
     talking houseplant, which is itself a splice and can read DNA.
   - Make a gift for Delphine that she cannot refuse: a glass of fog wine from
-    the New Breath, with one of Hell Rot's old lab notebooks as the cork.
+    the Church's Breath ministry, with one of Hell Rot's old lab notebooks as the cork.
 - **Rules:** every puzzle has at least two solutions, one of them a skill
   check. Hints come from the voices (FOOTNOTE knows history, THE CHEMIST
   knows reactions, THE ROT knows things it should not). No pixel hunts.
@@ -2698,7 +2700,7 @@ three scenes — and then pays big. The pranks come from the companion doc §5.
 |---|---|
 | You are in a Santa suit, nobody takes you seriously (CELEBRITY −3) | A Disruption Event scene opens a locked district |
 | You are handcuffed to a bride in a wedding gown (she will not stop talking) | A Lead fragment from her, she was sincere after all |
-| The Doggie heads are following you | The Final Process now treats you as a prophet for this Run |
+| The Doggie heads are following you | The Nortonians now treat you as the Emperor's herald for this Run |
 | You must speak only in cover lines (COLUMNIST checks only) | +1 permanent COLUMNIST |
 | The fog is singing to you (KARL is the only voice that works) | KARL reveals one secret about a merged person |
 
@@ -3493,6 +3495,13 @@ Plot questions the writers' room must answer before Alpha.
   the Commissions are the mechanic (Mondo doc §4.2–4.3). **Villa Delirium,
   the house, has a separate anonymous patron** — the hub's mystery (Mondo doc
   §4.4).
+- **No minor cults (was Q17, Q19).** The City has two cults and one secret
+  society. The smaller faiths now live inside them: the Seminar, the Table,
+  the Game and the Breath are Church ministries, the Black House is the
+  Theogens' salon, and the Grove and the Treasure Island fabs are the Auric
+  Order's public face. The Final Process and the Synthetic Liberation Army
+  are cut. The Lantern and the Nortonians stay, as groups that are not
+  cults (companion doc §4).
 
 ### Still open
 
@@ -3509,13 +3518,8 @@ Plot questions the writers' room must answer before Alpha.
 
 **The City**
 
-17. **Do the minor cults still matter** now that the god is secret? The
-    Black House, Synapse and the Standard need a reason to touch the main
-    plot.
 18. **Who are the conspiracy cranks** who link the Order to his surname —
     a named faction, or background noise? (Guardrails: §7.)
-19. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
-    are half right.
 
 **Design questions**
 
