@@ -370,11 +370,60 @@ Quickening.
 | Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
 | Marina + Mission Bay flood zone | **The Fill** | Behind the seawall; floods on king tides; sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
-| Alcatraz | **The Rock** | A cryonics vault: about two thousand patients frozen since the 1970s, still waiting for the first revival. The Church has offered to rebuild them in the Twin from their records instead. | Cryonics brokers | The Duchess's side quest (her parents are here) |
+| Alcatraz | **The Rock** (branded *Alcatraz Longevity*) | Sold off in the rezoning push and rebuilt as a luxury medical-tourism island: longevity clinics in the old cellhouse, a spa in the warden's house, and under the parade ground the biggest **cryonics vault** on the West Coast, freezing the dying (whole body, or head only) for a revival nobody has achieved. Slogan: *"Escape from Death."* | Medical tourists, cryonics brokers, the frozen | The Duchess's side quest (her parents are in the vault); Issue 4 set piece; Sunday's Lifeboat (Issue 5) |
 | Marin tidelands | **The Tomales Ward** | Synapse's compound | Synapse | Side arc |
 | Treasure Island | **Treasure Island** | Half-flooded; fabrication plants on stilts, owned by the Cluster | The Cluster | Issue 4 supply chain |
 | Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a laughing automaton that something in the fog likes to speak through | Sea lions | Comic relief |
+
+### 3.4b Alcatraz Longevity (the Rock)
+
+**How it happened.** In the 2030s and 2040s the City ran the biggest
+rezoning push in its history — towers on every hill, ferries to every pier,
+and anything the City or its partners could lease, leased. Alcatraz was the
+prize. A Rivet-backed consortium won the lease and rebuilt the island as a
+**medical-tourism destination** for people rich enough to try not to die.
+
+**What is there now.**
+
+- **The ferry**: a gold-trimmed catamaran from Pier 33 with a champagne bar and
+  a pre-op consultation on board.
+- **The Cellhouse Clinic**: the old cell blocks, gutted and glassed in, now
+  longevity suites. Guests sleep in renovated cells "for the history."
+- **The Warden's Spa**: hot pools on the cliff, looking back at the City
+  through Karl.
+- **The Vault**: under the old parade ground, the largest cryonics facility on
+  the West Coast — about two thousand patients, frozen whole or as heads only,
+  in rows of steel dewars. Nobody has ever been revived. The marketing says
+  *soon*.
+- **The tour**: a polished history walk that tells the prison story and the
+  famous escape attempt — and leaves out the **1969–71 Occupation of Alcatraz
+  by Indians of All Tribes**. (See the sensitivity note below.)
+
+**Who is frozen there.** The Duchess Nyx's parents (since the 2020s). The
+first wealthy "early adopters." Dozens of Merge applicants who could not wait
+for the queue. And the place Julian Rivet refused to go: the Order offered him
+a head-only freeze in October, and he chose the laser instead.
+
+**Why it matters to the plot.**
+
+- **The Church's offer:** the Church of the Twin has offered to "rebuild" the
+  frozen from their records inside the Twin — a Merge for the dead. The vault
+  owners love it: it turns an embarrassing promise into a product.
+- **Sunday's Lifeboat:** the mayor's bootleg upload rig is being built in the
+  island's operating theatre, by cheap contractors, with stolen Twin access
+  and cryo gear on loan. It will fail.
+- **The fog:** Karl is thinnest over the open bay; on the island the Emperor
+  sees poorly, and Hell Rot can talk without being heard — or the other way
+  round.
+
+**Sensitivity note.** The real Alcatraz is a National Park site and the site
+of the 1969–71 Occupation by Indians of All Tribes, a landmark of Native
+American activism. The game's privatized island is satire of rezoning and
+medical tourism. The resort's tour erasing the Occupation is a target of the
+satire, never the game's own view: a character (or the Dissonance) restores
+that history on the island, and the credits point to it. Consult Native
+American cultural advisers on every Alcatraz scene.
 
 ### 3.5 Hell Rot's apartment
 

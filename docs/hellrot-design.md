@@ -365,7 +365,9 @@ live model of every resident of the Bay Area — about eight million people.
 **The upload (October 2049, secret).** Julian Rivet V, last of the line, was
 dying, and fast. The Order had two choices. The first was the old one:
 freeze him, which at his stage meant cutting off his head and storing it on
-the Rock, hoping for a revival nobody has ever achieved. Julian refused. The
+the Rock — now Alcatraz Longevity, the medical-tourism island with the West
+Coast's biggest cryonics vault — hoping for a revival nobody has ever
+achieved. Julian refused. The
 second was to upload him now — before **cingulate engineering** (below) was
 ready. The procedure was still experimental, it took weeks, and he had days.
 The Order rushed him. In a lodge room under the Rivet mansion, the **Auric Order** (§3.3b) put him under xenon — the Brandvold lab's protocol, with
@@ -1146,6 +1148,94 @@ See §3.8. Every route converges on Hell Rot at a layout desk, with a live
 feed, one column, and midnight coming. It is the last Friday of the month,
 so ten thousand Critical Mass riders are in the streets. The storm is an hour
 out. The fireworks barges are in position off the Embarcadero.
+
+### 3.9b Set pieces by night
+
+The candidate **set-piece locations** for each night: the places a night's
+big scenes can happen. **Core** set pieces fire on every route; **Optional**
+ones depend on Runs, routes and choices. Writers pick two or three per
+night to build Runs around. (District details: companion doc §3.)
+
+**Prologue — Saturday 25 December (Christmas night).**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **Steep Ravine hot springs** | Cold open in total darkness; the king-tide low; the birth of Ione | Core |
+| **The cliff path and the shack, Mount Tam** | The tide race up the cliff; the shack on fire; what to save | Core |
+| **Highway 1, Marin headlands** | Two rides waiting in the fog; the Church billboard; the Gelastic tutorial | Core |
+| **The Geary Cathedral** | 3,000 drunk Santas storm the midnight Mass (Santarchy) | Core |
+
+**Issue 1 — Sunday 26 December (Boxing Day; king-tide peak; first night of Kwanzaa).**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **Villa Delirium** | First night in the House; Fax explains the Commissions in the van; the sealed rooms | Core |
+| **Union Square** | Merged relatives in the shop windows; the returns lines; the first riot rumours | Core |
+| **The Loin** | The riot; Tem's glowing arm; the street screen signed *Norton II* | Core |
+| **The Embarcadero and the Fill** | King-tide floodwater in the streets; the Wet Line hydrofoils; the Order's Old Lodge awash | Optional |
+| **The Lantern shelter** | The only beds for zero-Halo people; Tem's hiding place | Optional |
+| **Laffing Sal, Fisherman's Wharf** | The automaton laughs, and the fog first calls him beloved | Optional |
+| **The Mission recovery meeting** | A church basement where nobody wants anything from him | Optional |
+
+**Issue 2 — Monday 27 December.**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **The Geary Cathedral** | The feed-stadium mass; Sister Halcyon live showdown; a glitch signed *Norton II* | Core |
+| **Rivet Hill** | The "cremated" heir's mansion; the denim apron in the dumpster; the succession trail | Core |
+| **The Brandvold lab, Berkeley** | The old gas cabinet; the October xenon order; an Index readout nobody can explain | Core |
+| **The Ferry Building shrine** | The Nortonians receive decrees in the fog; nobody believes them | Optional |
+| **City Hall** | The Brides of the Machine year-end wedding march | Optional |
+| **The Haight Exchange** | Aura readers, the Final Process and the Doggie heads procession | Optional |
+| **Alcatraz Longevity** | The Duchess's side quest: a night ferry to visit her frozen parents | Optional |
+
+**Issue 3 — Tuesday 28 December.**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **The Sutro Baths and the Undertrack** | Delphine's glowing congregation; the deep wards of failed splices | Core |
+| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown); the judge's aura | Core |
+| **Sunday's recall office, City Hall** | The martyr metric; the Rosa Quint timed interrupt | Core |
+| **Ocean Beach** | Karl's Birthday in the drizzle; the New Breath's mass inhale | Optional |
+| **The Span** | The donor party on the glass skywalk; the banner climb | Optional |
+| **The Tonga Room** | Eavesdropping between indoor rainstorms | Optional |
+| **The Tomales Ward** | A Synapse Game — the hardest rhetorical fight in the game | Optional |
+| **The Cradle, South City** | Ruined biotech labs; Theogen pilgrims; Delphine's first company | Optional |
+
+**Issue 4 — Wednesday 29 and Thursday 30 December (two nights).**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **The Mission Walls** | Both canonizations on the same walls: gold Halo murals vs. cyan glow-paint | Core |
+| **Alcatraz Longevity** | Night ferry; the cellhouse clinic; the cryo vault; Sunday's Lifeboat rig in the operating theatre; the place Julian refused to go | Core |
+| **The Auric Order lodge, under Rivet Hill** | A break-in; the 1849 gold pan; the minute book; Dr. Hale | Core (Routes A, D); Optional (B, C) |
+| **The Brandvold lab** | The Spin Question experiment — two kinds of xenon, and a subject | Optional |
+| **The Trident, Twin Peaks** | The climb above the fog line; the Emperor's clearest voice | Optional |
+| **Treasure Island** | The Cluster's fabrication plant on stilts; the supply-chain choice | Optional |
+| **The Lantern** | The order's conversion vote | Optional |
+| **Villa Delirium** | The one rest night of the game | Optional |
+
+**Issue 5 — Friday 31 December (New Year's Eve).**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **Market Street** | Critical Mass blinds the Twin for an hour | Core |
+| **The Geary Cathedral** | The Ascension: 12,000 uploads at midnight | Core (Routes A, B, D) |
+| **Ocean Beach and the Fog Belt** | The Quickening: the god-gene loaded into Karl | Core (Routes A, C, D) |
+| **City Hall** | The recall count; Prop F results; Sunday at the podium | Core |
+| **Alcatraz Longevity** | Sunday's Lifeboat upload fails, live, on the island | Optional |
+| **Baker Beach** | The bonfire and the Route D debate between the gods | Core (Route D) |
+| **The Embarcadero** | The fireworks barge; the Midnight Pillow Fight | Optional |
+| **The Skyline gondola** | Above the fog: the moon over the bridge at the stroke of 2050 | Optional |
+| **Villa Delirium, the cellar** | The last column, filed at the press before 6 a.m. | Core |
+
+**Epilogue — Saturday 1 January 2050.**
+
+| Location | Set piece | Type |
+|---|---|---|
+| **Aquatic Park** | The New Year's Day swim — who shows up depends on the route | Core (living endings) |
+| **Mount Tamalpais** | The Mountain ending | Ending 1 |
+| **Baker Beach** | A man standing frozen at midnight | Ending 11 |
 
 ### 3.10 The four routes
 
