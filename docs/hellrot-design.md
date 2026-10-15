@@ -2484,6 +2484,10 @@ text alone.
 
 ### 5.11 Dissonance doors (the *Hades* Chaos gate)
 
+Dissonance doors are the Discordians' gift to the game (companion doc §5.1):
+Eris's chaos, played as a joke that pays. By the Law of Fives, every fifth
+Run offers one.
+
 A Dissonance door costs something up front — a **Prank Curse** for the next
 three scenes — and then pays big. The pranks come from the companion doc §5.
 
@@ -2785,6 +2789,11 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   rescue, containment and witness, and there is never a weapon that makes it
   fun. A content warning precedes the outbreak scene, and the player is told
   it is coming.
+- **Discordianism** is a real, living parody religion with real
+  practitioners. The game borrows its forms with affection — Eris, the
+  golden apple, the Pope cards, the Law of Fives, the calendar — and
+  never depicts its founders. The joke is on the cults, never on the
+  Discordians.
 - **Secret societies.** The Auric Order is fictional. It borrows
   the *forms* of the Freemasons and the Knights Templar (degrees, aprons,
   lodges, a guarded relic), and must not present real Masonic or Templar

@@ -586,6 +586,18 @@ absurdity into the game's **Disruption Events**.
 
 ### 5.1 The real lineage
 
+- **Discordianism** (late 1950s → ) — the religion that started as a joke and
+  stayed one on purpose. Greg Hill and Kerry Thornley wrote its scripture,
+  the *Principia Discordia* (first printed in the 1960s; sources give 1963,
+  1965 or later). Its goddess is **Eris**, Greek goddess of discord, and its
+  sign is the golden apple marked *Kallisti* ("to the prettiest one"). It
+  has no hierarchy and no fixed creed: every person is a Pope. The **Law of
+  Fives** says everything comes in fives, if you look hard enough. The
+  Discordian calendar has five seasons of 73 days — Chaos, Discord,
+  Confusion, Bureaucracy and the Aftermath. Robert Shea and Robert Anton
+  Wilson's *Illuminatus!* trilogy (1975) carried it into the
+  counterculture. Its spirit — mock the gods so nobody can own them — runs
+  through every group below.
 - **The Suicide Club** (1977–c. 1982) — Gary Warne and friends, out of San
   Francisco State's free-university programme. They altered billboards,
   climbed the Golden Gate and Bay Bridges, and explored sewers and tunnels.
@@ -611,7 +623,7 @@ absurdity into the game's **Disruption Events**.
 
 ### 5.2 The Dissonance Society (in-game)
 
-The City's pranksters. **Not a cult** — the opposite of one: no leader, no
+The City's pranksters: Discordians, gone civic. **Not a cult** — the opposite of one: no leader, no
 doctrine, no membership list. Motto: *"You are probably already a member."*
 They are Hell Rot's chorus, his best sources, and his worst influence.
 
@@ -622,6 +634,24 @@ They are Hell Rot's chorus, his best sources, and his worst influence.
   costume every scene. The player never learns their face. In the credits,
   every costume lines up, and so do several characters the player thought were
   someone else.
+- **Discordian roots.** The Society has no creed, but it keeps the old
+  forms as a joke it takes seriously:
+  - **Every member is a Pope.** Hell Rot gets his Pope card in Issue 1. It
+    is accepted nowhere and opens one door.
+  - **Eris** is the only deity in the game that nobody is trying to make
+    real. Her golden apple, marked *Kallisti*, turns up wherever the cults
+    are about to fight over something.
+  - **The Law of Fives.** Every fifth Run, a Dissonance door appears.
+    Somebody always counts.
+  - **The Discordian date.** The week runs from **Prickle-Prickle, the
+    Aftermath 67** (25 December) to **Setting Orange, the Aftermath 73**
+    (31 December): the last days of the last season of 3215 YOLD. The
+    Epilogue is **Sweetmorn, Chaos 1, 3216 YOLD**. Saint Nobody dates every
+    note this way.
+  - **Saint Nobody** is a Discordian saint. The Society canonizes people
+    the way the Church of the Twin does — but as a prank on canonization.
+    When the Church announces "Saint Rot" in Issue 4, the Society
+    canonizes a parking meter the same morning.
 - **Dissonance Opinion** is a faction meter. High Opinion unlocks pranks Hell
   Rot can *commission* — and a Dissonance prank can stand in for a showdown
   (the target gets humiliated, nobody gets hurt, and the column writes itself).
@@ -758,10 +788,17 @@ worship — never at victims, ex-members or ordinary believers.
 
 ## 9. Sources
 
-Where sources disagree (Jones's Housing Authority start date. Kerista's end
-year. Fountaingrove's dates. The Process Church's incorporation year. Who
-started Santa Rampage. Cacophony's exact role in Burning Man. Attendance at
-Asilomar), §1 and §5 note the range.
+Where sources disagree (Jones's Housing Authority start date, Kerista's end
+year, Fountaingrove's dates, the Process Church's incorporation year, who
+started Santa Rampage, Cacophony's exact role in Burning Man, attendance at
+Asilomar, the first printing of the *Principia Discordia*), §1 and §5 note
+the range.
+
+**Discordianism**
+- [Principia Discordia — Wikipedia](https://en.wikipedia.org/wiki/Principia_Discordia)
+- [Kerry Wendell Thornley — Wikipedia](https://en.wikipedia.org/wiki/Kerry_Wendell_Thornley)
+- [Discordianism timeline — World Religions and Spirituality Project](https://wrldrels.org/?p=3185)
+- [Eris and the Discordians — Spiral Nature](https://www.spiralnature.com/spirituality/erisandthediscordians/)
 
 **Peoples Temple / Jim Jones**
 - [Jim Jones — Wikipedia](https://en.wikipedia.org/wiki/Jim_Jones)

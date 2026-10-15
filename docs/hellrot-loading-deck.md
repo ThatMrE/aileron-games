@@ -5,7 +5,7 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 209 cards: 64 real
+> needed, and **Hell Rot's marginal note** in red pencil. 211 cards: 66 real
 > quotations, 6 redacted cards, 114 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
@@ -31,9 +31,9 @@
 
 ---
 
-## Part 1 — Real quotations (64) and redacted cards (6)
+## Part 1 — Real quotations (66) and redacted cards (6)
 
-### 1A. Cult leaders, prophets and founders of things (20)
+### 1A. Cult leaders, prophets and founders of things (22)
 
 | # | Quote | Source | Context | Hell Rot's note | Tags |
 |---|---|---|---|---|---|
@@ -56,6 +56,8 @@
 | R17 | "Be Here Now." | Ram Dass, book title (1971) | | *Easy for him. He wasn't on deadline.* | funny |
 | R18 | "Free because it's yours." | The Diggers, Haight-Ashbury free store (1966–67) | They gave away food every day in the Panhandle | *The Community Table copied the free dinner and forgot the free.* | Community Table |
 | R19 | "Radical self-reliance" | One of Burning Man's Ten Principles, written by co-founder Larry Harvey (2004) | | *Radically relied on by a billion-dollar ticket industry.* | Dissonance, funny |
+| R20a | "Hail Eris! All hail Discordia!" | Discordian greeting, from the *Principia Discordia* tradition (1960s) | The religion founded as a joke, and kept one on purpose | *The only cult in this deck that has never asked me for anything.* | Discordian, funny |
+| R20b | "Kallisti." | The word on Eris's golden apple in the Greek myth: "to the prettiest one" | The apple that started the Trojan War, and the Discordians' sign | *Somebody left one on the Church's altar and one at the Baths. Same handwriting.* | Discordian, Nobody |
 | R20 | "You may already be a member." | Motto of the Cacophony Society (1986–) | | *The best recruitment line ever written, and it was a joke.* | Dissonance |
 
 ### 1B. The redacted cards (6)
