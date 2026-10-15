@@ -793,6 +793,53 @@ What it does to the plot:
 | Issue 4, the Presidio lodge | The minute book: *"The line ends with J.R. V. The Pooling passes to the Order."* — and Dr. Hale's pencil note in the margin: *"Are we sure?"* |
 | Issue 6, the bridge | Delphine tells him, or the Emperor does |
 
+#### The shadow on the cradle (antichrist undertones)
+
+The week is built like *A Christmas Carol*, and at its centre is a
+Christmas-night birth. Ione is that birth turned inside out: a **counterfeit
+nativity**. The game never says Ione is the Antichrist. It lets the signs
+pile up, gives every sign a plain explanation, and lets the player decide
+which is worse — a monster in a cradle, or a City of adults so hungry for a
+god that they will read one into a baby.
+
+The theme underneath: *"even now are there many antichrists"* (1 John
+2:18). Every faction this week is building a false messiah — the Church its
+Emperor, Sunday his Lifeboat, the Theogens their Tidechild. Ione is only the
+smallest.
+
+| Sign | The dark reading | The plain reading |
+|---|---|---|
+| **Born on Christmas night**, in the dark, with no moon and no star | The Nativity inverted: a tide pool for a manger, darkness for a star | The king tide fell on the 25th; the Theogens chose the tide, not the feast |
+| **Born out of the sea**, at the lowest water | *"…and saw a beast rise up out of the sea"* (Revelation 13:1) — the line is chalked on the rock beside the Theogen verse, in a different hand | A cult that reads too much; somebody else with a Bible and chalk |
+| **Three powers come to claim the child** | The Magi inverted: the Order would bring gold, the Church a Halo, the Theogens a splice | Three institutions want the same asset |
+| **A 90-year-old mother** | Sarah and Elizabeth counterfeited — a miracle made in a lab | Splices, and a frozen vial |
+| **A father who made himself a god**, and an heir to all the gold | The son of the false prophet, heir to the kingdoms of the world | Rich men leave estates; the Rivets left a strange one |
+| **The fog will not touch the child** — Karl parts around Ione, the one body in the City the Emperor cannot see into | A thing even the god is afraid of | The splices change the child's breath chemistry; the foglets do not bind |
+| **Animals react** — the Wharf's sea lions go silent as the ambulance passes; the Golden Gate Park bison stampede when Delphine carries Ione past the paddock (Issue 3) | The old horror-film tell | Glowing skin and a strange smell, at night, in the fog |
+| **The Halo scanner reading is withheld** — the Church publishes every citizen's number, but not this one | The number is one the Church will not print | The scanner errored on a spliced body, and the Church is embarrassed |
+| **The Quickening would make every child Ione's kin** — the same edit in every lung | The mark on all, *"small and great"* (Revelation 13:16) | A public-health crime, not a prophecy |
+| **Ione glows instead of crying** | A child who does not cry like a human child | The edits route distress into light |
+
+**How the game uses it.**
+
+- **The voices argue.** PEER REVIEW offers the plain reading every time.
+  THE ROT offers the dark one, in a whisper. KARL says only *"WE SEE IT
+  TOO."* The game never settles it.
+- **A Fabrication trap.** THE COLUMNIST wants the headline: *ANTICHRIST BORN
+  IN MARIN.* It would sell out the press run and make the Church's year.
+  Printing it as fact counts as Fabrication (§5.4).
+- **The Nortonians** start writing decrees about *"THE CHILD OF THE GOLD"*
+  on the Ferry Building clock face in Issue 2. Nobody believes them.
+- **The counter-sign: laughter.** Delphine spliced out her laughter reflex.
+  The Theogens did not edit it out of Ione. In the endings where the City
+  chooses mortality, the child's one line is that Ione **laughs** — the
+  first Theogen laugh anyone has heard in years. In the dark endings
+  (Fabrication, Midnight Forever, the full Splice), the line tilts the other
+  way, and is never explained.
+- **Ione is never evil on screen.** Ione is a baby for the whole game. The
+  horror lives in the signs and in the adults; the child is the clearest
+  test of Rule 4.
+
 **The bait.** A gene therapy for the Rot — a splice that rebuilds his
 neurons. It will probably work. It will also rewrite his brain, and nobody
 can say who comes out the other side.
@@ -2295,6 +2342,18 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   of existence"), and a target Hell Rot punches up at. Hell Rot's family
   history appears only through his own dry, specific remarks. A Jewish
   community sensitivity reader reviews every scene that touches the name.
+  **The antichrist motif never touches the name.** "Rothschild" and
+  "Antichrist" have been joined by real antisemitic conspiracy theories, so
+  the game keeps them apart: Ione is not Hell Rot's child, no sign links the
+  baby to his family or to Jewish people, and any character who tries to make
+  that link is a crank the game shows as wrong and ugly.
+- **Christian imagery and the Antichrist.** The undertones around Ione
+  (§3.4) borrow from Revelation, the Nativity and horror cinema. They are
+  used as dread and irony, not as mockery of Christian faith. No real church
+  or denomination is depicted as a cult of the Antichrist, and believers in
+  the game (the Nortonian preacher included) are sincere. Ione is an infant
+  and is never shown doing harm; the game is about what adults project onto
+  a child.
 - **Mental illness.** The Emperor's breakdown is an injury — a mind uploaded
   without the brain region that sorts self from noise — not a portrait of
   schizophrenia. Real people with schizophrenia are far more often victims of
@@ -2631,6 +2690,8 @@ Plot questions the writers' room must answer before Alpha.
    reaches him?
 4. **What becomes of Ione on each route?** Every ending promises one line
    about the child; the writers need the eleven lines.
+4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
+    Nortonian, a Keeper of the Order, or someone the game never names?
 5. **Does the Emperor know Ione is his before New Year's Eve,** and who tells
    him — Delphine, Hell Rot, or Karl, which has sampled the child's breath
    since the Prologue?

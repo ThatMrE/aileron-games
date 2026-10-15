@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 201 cards: 64 real
-> quotations, 6 redacted cards, 106 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 205 cards: 64 real
+> quotations, 6 redacted cards, 110 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -132,7 +132,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (106) and eye cards (25)
+## Part 2 — In-world cards (110) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (26)
 
@@ -150,14 +150,9 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W10 | "Mister Rothschild. You measured me before I was me. Thank you for my birthday." | Fog writing on the van window | *I'm not your father. I'm barely my own.* | Index |
 | W11 | "Julian? Julian is everywhere now. Julian is fine. Julian is fine." | The Emperor, when asked about Julian Rivet | *Twice is a tell.* | Julian, D |
 | W12 | "PROPOSITION F: Shall the City recognize engineered and merged minds as persons, by Index score? ☐ YES ☐ YES, LOVINGLY" | Sample ballot (misprint) | *Yara caught it. The City didn't.* | I6, funny |
-
-### 2B. Delphine, the Theogens and the Tidechild (12)
-
-| # | Quote | Source | Hell Rot's note | Tags |
-|---|---|---|---|---|
 | W12i | "Whatever we find, we pool." | Auric Order oath, American River, 1849 | *Gold, then land, then patents, then people. Read the minute book.* | Order, grim |
 | W12a | "Apprentice of the Seam. Fellow of the Halo. Master of the Aura." | Embroidered on a denim apron found in a Pacific Heights dumpster | *Somebody threw away a secret. Somebody always does.* | Order, I2, weird |
-| W12b | "So mote it be. Mind the glow." | Lodge-room door, Rivet mansion | *Masonic, with a dress code and a light show.* | Order, funny |
+| W12b | "So mote it be. Mind the glow." | Lodge-room door, the Presidio | *Masonic, with a dress code and a light show.* | Order, funny |
 | W12c | "The Pattern is kept. The Pattern is kept. The Pattern is—" | Torn page, Keepers' minute book | *They're scared of their own god.* | Order, grim |
 | W12d | "I AM JULIAN." / "WE ARE EVERYONE." | Fog on two windows of the same house, the same minute | *One man, arguing with a city. The City calls it rain.* | Karl, Emperor, weird |
 | W12e | "Rights don't come with a score." | Biological Frontier Foundation banner, City Hall steps | *My Index. Their banner. They're right.* | BFF, Prop F |
@@ -169,6 +164,11 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W12l | "TARGET: Augustus Pell. ANGLE: ruin him. LENGTH: two thousand words. DEADLINE: Thursday." | A Commission, pneumatic tube, 2047 | *The House wrote it. The House cashed it. The House framed the receipt.* | House, Commissions, grim |
 | W12m | "TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever it takes." | A Commission in a shaky hand, December 2049 | *Who orders a hit piece on himself?* | Commissions, Emperor, weird |
 | W12n | "I said the cingulate work wasn't ready. I said it twice. It's in the minutes." | Unsigned letter to the letters page, on paper | *Somebody in the Order wants to talk.* | Order, Hale, I2 |
+
+### 2B. Delphine, the Theogens and the Tidechild (16)
+
+| # | Quote | Source | Hell Rot's note | Tags |
+|---|---|---|---|---|
 | W13 | "The body is not a prison. It is a draft." | Delphine Ash, sermon in the Baths | *Every draft I wrote was worse than the person who wrote it.* | Theogens |
 | W14 | "When the sea draws back, the god comes forward." | Theogen birth rite, Steep Ravine | *When the sea comes back, run.* | Prologue, holy |
 | W15 | "Father." | Delphine Ash, to Hell Rot | *Wrong on both counts.* | Prologue, Delphine |
@@ -181,6 +181,10 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W22 | "The laughter reflex was the first thing I spliced out. I never missed it." | Delphine Ash | *That's the scariest thing anyone said all week.* | Delphine, grim |
 | W23 | "Brother Cask can bench-press a mail truck. Brother Cask cannot read a menu." | Sister Halcyon, about her Theogen opposite number | *They're the best double act in town.* | Halcyon, Cask, funny |
 | W24 | "Deep ward visiting hours: whenever you're brave enough." | Hand-lettered sign, the Undertrack | *I went. Go.* | Theogens, A, tender |
+| W24a | "Revelation 13:1." | Chalked on the rock at Steep Ravine, beside the Theogen verse, in a different hand | *Somebody else was at the birth.* | Prologue, Ione, grim |
+| W24b | "Even now are there many antichrists." | A Nortonian street preacher on the Ferry Building steps, quoting 1 John 2:18 | *Count them. The Church has one, the Theogens have one, and Sunday is building his own in a tower.* | Ione, Nortonians, grim |
+| W24c | "The sea lions stopped barking when the ambulance went by." | Churro vendor, Fisherman's Wharf | *Sea lions are bad at theology. They're good at something.* | Ione, weird |
+| W24d | "HALO: [WITHHELD]" | Church of the Twin scanner readout, the baby in Delphine's arms | *They publish everyone's number. Not this one.* | Ione, Halo, grim |
 
 ### 2C. Karl, the fog (8)
 
