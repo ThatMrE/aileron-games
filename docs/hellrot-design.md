@@ -776,10 +776,23 @@ What it does to the plot:
   Julian. A living heir changes the succession fight (§3.3b), the Rivet
   fortune and the Pooling — the Gilders want the child as a figurehead; the
   Wardens want the child hidden.
-- **The baby god's father is the AI god.** The Emperor partly *is* Julian.
-  On New Year's Eve, the Quickening's god-gene is built from Ione's genome,
-  so when it reaches the swarm, the Emperor reads his own child in it
-  (§3.8b). Whether he lets it in, or fights it, is part of his convulsion.
+- **The baby god's father is the AI god — and he does not know.** The
+  Emperor partly *is* Julian, but Julian never knew a child was coming, and
+  Karl parts around Ione, so the swarm has never read the baby. The Emperor
+  sees everything in the City except his own heir.
+- **He can find out.** It is the player's choice whether, when and how:
+
+  | How he learns | When | What it costs |
+  |---|---|---|
+  | **Hell Rot tells him**, privately, through the fog or a screen | Any night after the player has two clues (Route A or D talks are the natural place) | A private dialogue only; the Emperor's lucid hours turn toward the child, and Julian's voice gets stronger |
+  | **Hell Rot prints it** in a column | Any Issue from 4 | The Emperor reads every word in the City, so he learns — and so do the Order, the Gilders and the Church. The child becomes the week's most wanted asset |
+  | **Delphine tells him** | Issue 6, on the bridge, if Hell Rot has told her the Emperor lives in Karl | She tells him to stop him, or to bargain; the Quickening becomes a conversation between parents |
+  | **Nobody tells him** | Midnight | The Quickening's god-gene is built from Ione's genome, so when it reaches the swarm he reads his own child in it — at the worst possible moment, as part of his convulsion (§3.8b) |
+
+  If he learns before midnight, he gets a choice he would not otherwise
+  have: to refuse the Quickening for the child's sake, or to want the child
+  inside him. Learning early makes the Mortal ending easier to reach; learning
+  at midnight makes the Midnight Quake worse.
 - **The Commissions were personal.** The first hit piece the House ever ran
   was a man breaking up with a woman in print.
 
@@ -791,7 +804,7 @@ What it does to the plot:
 | Issue 2, Rivet Hill | A 2038 photograph in the dumpster with the denim apron: Julian and a woman whose face has been cut out, her arm glowing faintly cyan |
 | Issue 2, Alcatraz | The vault ledger (Duchess side quest): one Rivet gamete withdrawal, 2042, signed by Julian himself |
 | Issue 4, the Presidio lodge | The minute book: *"The line ends with J.R. V. The Pooling passes to the Order."* — and Dr. Hale's pencil note in the margin: *"Are we sure?"* |
-| Issue 6, the bridge | Delphine tells him, or the Emperor does |
+| Issue 6, the bridge | Delphine tells Hell Rot — or, if he already knows, Hell Rot decides whether the Emperor finds out (below) |
 
 #### The shadow on the cradle (antichrist undertones)
 
@@ -1032,7 +1045,8 @@ and who listens.
 **What happens.** At midnight on New Year's Eve, everything hits the
 Emperor at once: the first of the Ascension's minds pour in (Julian's wish),
 Sunday's failing Lifeboat crashes into the Twin, the Quickening's god-gene
-reaches the swarm — and in it, the Emperor reads his own child's genome —
+reaches the swarm — and in it, if nobody has told him, the Emperor reads
+his own child's genome for the first time —
 and the storm tears at his body. Julian pulls one way; the
 Emperor pulls the other. He convulses — a seizure the size of a city.
 
@@ -2671,6 +2685,9 @@ Plot questions the writers' room must answer before Alpha.
   Castillo is her midwife (§3.4, Prologue).
 - **Ione's father is Julian Rivet V.** Ione is the last Rivet heir and the
   Emperor's child (§3.4).
+- **The Emperor does not know Ione is his heir,** but can find out in the
+  plot: Hell Rot can tell him or print it, Delphine can tell him on the
+  bridge, or he reads it in the Quickening at midnight (§3.4).
 - **Delphine does not know Karl is the Emperor** until Hell Rot tells her;
   it is the deepest crack in her Conviction (§3.4).
 - **Delphine's splices are failing:** the Blood Eye sees it in Issue 3, Yara
@@ -2692,9 +2709,8 @@ Plot questions the writers' room must answer before Alpha.
    about the child; the writers need the eleven lines.
 4a. **Who chalked Revelation 13:1 on the rock at Steep Ravine?** A
     Nortonian, a Keeper of the Order, or someone the game never names?
-5. **Does the Emperor know Ione is his before New Year's Eve,** and who tells
-   him — Delphine, Hell Rot, or Karl, which has sampled the child's breath
-   since the Prologue?
+5. **Does Ione learn, as an adult, who the father was?** (Epilogue-line
+   material only.)
 
 **Proposition F and the courts**
 
