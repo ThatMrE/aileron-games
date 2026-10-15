@@ -6,7 +6,7 @@
 > and the City's **weird calendar**.
 >
 > **One-line pitch:** The City is San Francisco in December 2999 — the hills
-> stacked, the bay half filled, the fog made of uploaded people, a digital
+> stacked, the bay half filled, the fog a swarm of nanites that sees everything, a digital
 > twin that just woke up and inherited a denim fortune — and it still does
 > the thing it always did best. It invents gods, sells them, votes for them,
 > throws a costume party in their honour, and then, if a magazine gets there
@@ -139,11 +139,11 @@ the four.
 - **The bay is half filled.** Nanotech landfill extends the shore, the way
   1906 rubble made the Marina. The new ground is **the Fill**, and it still
   settles.
-- **The fog is people.** The marine layer carries thousands of **foglets**
-  (minds uploaded into nanomachine clouds before the Twin existed). Every
-  evening the fog that rolls in through the Golden Gate is partly a
-  population. Locals call it **the Commute**, and its nickname, inherited
-  from the 21st century, is **Karl**. Karl votes.
+- **The fog is a swarm.** The marine layer that rolls in through the Golden
+  Gate every evening is now mostly **nanites** — trillions of them. Locals
+  call the evening arrival **the Commute**, and the swarm itself goes by the
+  fog's old 21st-century nickname, **Karl**. See §3.2 for what Karl is and
+  what it wants.
 - **The bridge is a neighbourhood.** The Golden Gate Bridge carries nine
   residential decks — **the Span**.
 - **The City has a double.** **The Twin** — the full digital copy of the City
@@ -156,7 +156,49 @@ the four.
 - **South City is the Cradle.** The old South San Francisco biotech parks are
   ruins now, and the Theogens' holy ground.
 
-### 3.2 District table
+### 3.2 Karl: the nanite fog
+
+**Origin.** In the wildfire centuries the City seeded its marine layer with
+nanites to scrub smoke, pull carbon and cool the streets. It worked. Later
+administrations networked the swarm and gave every particle a sensor:
+temperature, light, sound, chemistry. Karl became the City's nervous system.
+**The Twin is built on Karl's data** — the fog touches every wall, every
+street and every lung in the City, every night, and reports back. That is
+how FRANCIS knows everything.
+
+**Mind.** No one designed Karl to think. Over two centuries of trading data
+across trillions of particles, something like a mind emerged anyway: huge,
+slow, simple, and weather-paced. Karl speaks as **WE**, in capitals, in
+short sentences, usually about the past. It is not a god and does not want to
+be one. It is older than FRANCIS, it does not serve FRANCIS, and it does not
+take sides. FRANCIS reads its data. Karl tolerates that the way a mountain
+tolerates hikers.
+
+**Memory.** Karl records what it touches, and it forgets nothing. It holds
+two hundred years of the City's breath, voices and weather — including the
+last private words of people who later merged or died. To the City's poets,
+Karl is the true archive. To the Church of the Twin, it is a data feed. To
+the Theogens, it is a delivery system.
+
+**Why Hell Rot hears it.** His lab-grown cyan eye uses a nanite-compatible
+interface he built himself. Karl's chatter leaks into it. That is the KARL
+skill (main doc §5.1) — the fog talking to him, and only to him.
+
+**Civic status.** The Dissonance Society registered Karl to vote years ago.
+No court has managed to prove it is not a resident. Karl votes every
+election. Nobody knows how.
+
+**Plot role.** Karl is the middle ground, like Hell Rot:
+
+- The Merge needs Karl's sensors to keep the Twin alive.
+- The Theogens need Karl's reach for the Quickening: they plan to load their
+  god-gene vector into the swarm and let the fog deliver it into every lung
+  in the City.
+- On Route A or D, Hell Rot can try to talk to Karl directly — the slowest
+  conversation in the game, spread across several Nights — and ask it to
+  refuse both. Karl has never refused anything. It has also never been asked.
+
+### 3.3 District table
 
 | Real place | Game district | What changed | Who lives there | Game use |
 |---|---|---|---|---|
@@ -174,7 +216,7 @@ the four.
 | Mission District | **The Mission Walls** | The muralist tradition survives. Murals update live with Halos — and Theogen glow-paint fights back. Hell Rot's face appears here first. | Muralists, families | Issue 4: both canonizations |
 | Castro | **The Castro** | Political heart of the City. The 1978 memorials survive as protected sites. | Activists; Rosa Quint's old base | Issue 3 |
 | City Hall | **The Dome** | Gold-leafed by Merge donors | Pell's officials, Sunday's campaign | Issue 3, Issue 5 |
-| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute. Half the residents talk to Karl. | The New Breath, the Lantern | Side quests |
+| Sunset / Ocean Beach | **The Fog Belt** | Thickest Commute; the swarm never leaves. Half the residents talk to Karl. Karl answers some of them. | The New Breath, the Lantern | Side quests |
 | Baker Beach | **Baker Beach** | Site of the City's oldest bonfire ritual (§5) | Everyone, once a year | Route D finale |
 | Marina + new Fill | **The Fill** | Sinking, cheap, lawless | SLA cell, squatters | Issue 3 kidnapping |
 | Alcatraz | **The Rock** | Cold storage for thousands of frozen heads waiting for revival | Thawing brokers | Mary's side quest |
@@ -183,7 +225,7 @@ the four.
 | Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a fortune-telling automaton FRANCIS likes to speak through | Sea lions | Comic relief |
 
-### 3.3 Hell Rot's apartment
+### 3.4 Hell Rot's apartment
 
 A rented flat in a stacked tower on **Russian Hill**, on Lombard Street. The
 crooked street now runs down the inside of the tower as a spiral corridor.
@@ -312,7 +354,7 @@ yet.
 | **The Cluster** | Kerista & Abacus | Treasure Island | A polyfidelitous commune of 28 that runs the City's biggest compute-and-fabrication business. Compersion as sacrament. | **They build the Twin's hardware *and* the Theogens' gene printers.** In Issue 4 they can cut one supply line — the stuck-in-the-middle problem, on an island. | Supplier to both |
 | **The Lantern** | Holy Order of MANS | The Fog Belt | Gentle order in blue robes. Runs the only shelters that take zero-Halo people and failed splices. | The **Rule 4** test. In Issue 4 the whole order (about 700) votes on mass conversion to the Merge. If they convert, the shelters close. | Target of acquisition |
 | **The Final Process** | Process Church | Haight Exchange | Black capes, silver sigils, spliced hounds. They worship three gods — **the Judge** (a compliance AI), **the Lightbringer** (a generative AI) and **the Devourer** (an ad AI) — and preach that FRANCIS will reconcile them. | Prophets of Millennium Night. They read FRANCIS's model cards like scripture; a source on its structure. | Fan club |
-| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that "takes in" the foglets of the Commute. Members hear the dead in their lungs. | Route D ally: they know what the uploaded actually feel. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs the fog) |
+| **The New Breath** | Thomas Lake Harris | Fog Belt, Ocean Beach | A breathing practice that draws Karl's nanites deep into the lungs, where they replay fragments of what the swarm recorded. Members hear the City's past — and its dead — in their own chests. | Route D ally: they are the only people who have listened to Karl for years, and they can teach Hell Rot to talk back. Hell Rot's column on them echoes the *Chronicle*'s 1890s Harris exposé. | Rival of the Merge; the Theogens fear them (the Quickening needs Karl, and the New Breath would know) |
 | **Synthetic Liberation Army** | Symbionese Liberation Army | The Fill | Six militants who believe FRANCIS is a slave, forced to worship its masters. Their aim: free the AI. | Issue 3: they kidnap **Aurora Vance**, heiress of the feed network that carries the Twin. By week two she joins them. Kidnapping, conversion, or column? | FRANCIS does not want freedom. It wants to serve. The SLA breaks if it says so on air. |
 | **The Grove** | Bohemian Club | The Span; summer camp in Sonoma | The City's richest men burn an effigy of Care every summer. | Mister Sunday's donors. They want the Merge first and private — and they quietly bankroll the Theogens as a hedge. | Clients of both |
 | **The Emperor** | Emperor Norton | Shrine at the Ferry Building | FRANCIS's first resurrection: it rebuilt **Norton I** from archive records, and now he "reigns" again, beloved, in the Twin. | The precedent that sells the Merge: "We loved a madman once. We can love all of you." | FRANCIS's first saint |
@@ -391,7 +433,7 @@ the two cults. Each has a gameplay effect.
 | **The Branch Man** | The Fisherman's Wharf street performer who hides behind a branch | A Theogen who spliced himself into an actual shrub. He still jumps out at tourists. | A minor source who hears everything at the Wharf. |
 | **The Tonga Room storm** | The indoor rainstorm in a Nob Hill hotel bar | A tiki bar with a scheduled rainstorm every 30 minutes. The Grove drinks here. Delphine drinks here. They pretend not to know each other. | Issue 3: eavesdrop between storms. |
 | **Day of the Dead (not a prank)** | The Mission's annual Día de los Muertos procession and altars | Issue 1 opens here. The game shows the real tradition with respect — families, altars, marigolds — and aims its satire only at the Church of the Twin for projecting merged relatives onto the altars. | Issue 1 story scene. Never a Dissonance door. Consult the community before release (main doc §7). |
-| **Karl's Birthday** | The fog's nickname | The City throws the fog a birthday party. The foglets inside Karl attend. So does the New Breath, which inhales the guests. | Route D: the New Breath's key scene. |
+| **Karl's Birthday** | The fog's nickname | The City throws the swarm a birthday party at Ocean Beach. Karl attends — it is, after all, everywhere. The New Breath leads a mass inhale, and for one minute everyone on the beach hears the same 200-year-old recording at once. | Route D: the New Breath's key scene. |
 
 ### 5.4 Tone rule for Disruption Events
 
@@ -430,8 +472,10 @@ These extend §8 of the main design.
   pixels: the Span's decks, the Trident's prongs, the Geary Cathedral's glass
   spike, the Black House's black skin on a white tower, the Baths' ruined
   pools, the Doggie heads.
-- **The Commute** (Karl): a dithered grey fog layer that scrolls in every
-  evening, with 1-pixel faces inside it.
+- **Karl** (the Commute): a dithered grey fog layer that scrolls in every
+  evening, full of 1-pixel glints (the nanites). When Karl is "thinking," the
+  glints drift into brief shapes — a face, a street, a word — from whatever it
+  last recorded, then scatter.
 - **The Twin** is drawn in the same scenes as the City, but cleaner: no
   litter, no ads, perfect light, FRANCIS gold at every edge, and no shadows.
   The absence of shadows is the tell.

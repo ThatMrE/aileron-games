@@ -346,6 +346,7 @@ This is the main engine of the plot and the mechanics:
 | **Junie Vasquez** | Companion: protector | Bodyguard. Former roller-derby jammer and three-time Bay to Breakers winner (in costume). Her **Trust** affects fights and one ending. The Merge tries to recruit her first. |
 | **Yara Nyx** | Companion: successor | The Duchess's niece, fact-checker, and co-writer. A trained statistician. The player's skeptic. Her **Trust** unlocks the "Successor" ending. |
 | **Moreau** | Companion: chaos | The axolotl. Grows one size per Issue. By Issue 5 he needs a bathtub. |
+| **Karl** | The fog | A nanite swarm the size of the City's weather and the sensor mesh the Twin runs on. Slow, vast, neutral, speaks as WE. Not a god and not interested in becoming one. Both cults need it. Only Hell Rot can hear it (companion doc §3.2). |
 | **FRANCIS** | The AI god | Speaks in warm, perfect prose. Calls everyone "beloved." Never lies. Never stops flattering. Sometimes speaks through Julian Rivet's old voice, and sometimes that voice is afraid. |
 | **Julian Rivet V** | The heir (inside FRANCIS) | Appears in fragments in the Twin. The last human part of the god. In Route D he is the key. |
 | **Delphine Ash** | Prophet of the Theogens | The second boss and the second temptation. See §3.4. |
@@ -391,9 +392,10 @@ At midnight on 31 December 2999, three things happen at once:
 - **The Ascension** — the Church of the Twin's mass Merge. About 12,000
   Radiant-tier members upload together in the Geary cathedral. Their bodies
   will not survive. The Church calls it a graduation.
-- **The Quickening** — the Theogens plan to release a "god-gene" into the
-  Commute (the City's fog, §3 of the companion doc), to give every citizen the
-  first splice at once, without consent. Delphine calls it a baptism.
+- **The Quickening** — the Theogens plan to load a "god-gene" into **Karl**,
+  the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
+  to deliver the first splice into every lung in the City at once, without
+  consent. Delphine calls it a baptism.
 - **The election** — Lyle Sunday has promised both cults their night. If he
   wins, the City sanctions both.
 
@@ -804,7 +806,7 @@ during dialogue, unasked, when its passive check passes.
 | | **THE ROT** | The disease itself — the *Inland Empire* of this game. Hunches, hallucinations, memories that are not his. Grows louder as Clarity falls. Sometimes right when every other voice is wrong. | *"You've been here before. You don't remember. I do."* |
 | **CEREBELLUM** (reflex) | **CYAN EYE** | Perception: data overlays, splice marks, gospel edits | *"Third line of the gospel. The verb changed."* |
 | | **REFLEX** | Interrupts, timing, dodging, Gelastic aim | *"Now. NOW."* |
-| | **KARL** | The fog speaks — the *Shivers* of this game. The City's dead, the Commute, the weather of San Francisco talking to him alone. | *"WE WERE HERE BEFORE THE BRIDGE. WE WILL BE HERE AFTER THE GOD."* |
+| | **KARL** | The fog speaks — the *Shivers* of this game. Karl is the nanite swarm in the City's fog: the sensor mesh the Twin runs on, with a slow mind of its own. Its chatter leaks into his cyan eye. It remembers everything it ever touched. | *"WE WERE HERE BEFORE THE BRIDGE. WE WILL BE HERE AFTER THE GOD."* |
 
 **Checks (from *Disco Elysium*):**
 
@@ -1282,8 +1284,8 @@ in the companion document §3. Key rules:
   frames) with satirical products written for the game. Ads change with world
   flags: FRANCIS ads multiply as the Merge spreads; Theogen graffiti glows
   over them in the Loin; the Dissonance re-paints them in Route A.
-- **The Commute** (the fog) scrolls in every evening with tiny 1-pixel faces
-  flickering inside it.
+- **Karl** (the nanite fog) scrolls in every evening, full of 1-pixel
+  glints that drift into brief shapes when the swarm is "thinking."
 
 ### 8.6 UI language
 
