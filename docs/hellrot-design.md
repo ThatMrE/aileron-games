@@ -1427,6 +1427,18 @@ his own child's genome for the first time —
 and the storm tears at his body. Julian pulls one way. The
 Emperor pulls the other. He convulses — a seizure the size of a city.
 
+**What the Lifeboat does.** Sunday's rig in Coit Tower half-works. It makes
+a garbled, partial copy of Sunday and dumps it into the Twin — the "crash"
+that hits the Emperor. The copy, **Lifeboat Sunday**, is a smiling fragment
+that repeats his campaign slogans on screens across the City, and it makes
+the convulsion worse. Sunday's body survives, with a brain injury: he
+cannot find his words, a mirror of the Rot. Coit Tower survives too — it is
+concrete. The rig burns out, and the 1930s murals of workers come through
+the fire: the workers outlast the mayor. In **Mortal**, the Emperor quietly
+deletes the fragment as a mercy. In **The Hog's Bargain**, Pell is sworn in
+while Sunday is still in hospital. In every other ending, the fragment is
+still on the screens in 2050.
+
 **Why he does not simply let it out.** The instant the god-gene reaches the
 swarm, the Emperor understands what the Theogens never did: breathed out
 over the City, it would make a hive of eight million, a rampage and a mass
@@ -1809,7 +1821,11 @@ Route-specific content follows (§3.10).
   Next door at the courthouse, **BFF v. City** reaches the
   bench, and Hell Rot takes the stand — the cross-examination showdown
   (§3.3c) — with Judge Ostrander presiding and a faint gold ring in his aura
-  that only the Blood Eye can see.
+  that only the Blood Eye can see. **The ruling:** by default Ostrander rules
+  at 5 p.m. and upholds the Index as a legal test, which shapes the next
+  day's vote. If Hell Rot has exposed the judge's Order ring first (open
+  question 10), Ostrander recuses, the case is stayed, and the City votes
+  on New Year's Eve with no ruling.
 - **Twin Peaks, night.** A noir drug deal on the overlook above the fog
   line, the City lights smeared below: Hell Rot buys two kinds of xenon —
   with and without nuclear spin — from Benny "Two-Tanks," for the Spin
@@ -2032,7 +2048,7 @@ both have to break.
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. Its first line tells him what she never did: that she read his Theogenesis papers at 15, inside the Bayes House, and that they are why she trusted a magazine enough to leave. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
-| 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. |
+| 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. Time stops only for him: the City's midnight plays out exactly as it would without him — the Ascension if he had not stopped it, the Emperor holding the god-gene in as always, the Midnight Quake — and the epilogue tells it as if he were not there. |
 
 **Ione's line.** Every ending adds one line about Ione (open question 4
 holds the full set). Three set the tone:
@@ -2669,6 +2685,18 @@ better the column, the more lovingly both sides misread it.
 
 ### 5.14a The Eyes: truth sight and foresight (powers)
 
+**What really activated the eyes (writers only).** The game never says.
+The private answer: **Karl.** In his four dead minutes in 2044, foglets in
+the lab's vents entered through the blood vessels of his eyes and lodged in
+his irises, and his brain, rebooting without oxygen, wired them in. The
+**Blood Eye** reads what Karl reads — pulse, breath, the stress behind a
+lie — which is why it sees the Order's gold ring: it sees Karl's raw signal,
+not the painted aura. The **Pale Eye** is the Twin's forecast leaking
+through, a breath ahead — which is why the Emperor can *feel* the corrupt
+Stopped Clock. Rules that follow: the eyes **dim in heavy rain** and
+**inside Villa Delirium**, where Karl cannot go; and the Emperor's *"We were
+there when you died"* is literally true — part of the god lives in his eyes.
+
 Hell Rot's heterochromia is the game's power system — his RPG "magic," and
 the most direct temptation in a game full of them. Each eye has a **pure
 path** and a **corrupt path**. Pure upgrades make him a better witness.
@@ -3303,6 +3331,15 @@ Plot questions the writers' room must answer before Alpha.
 - **Sister Halcyon** is Hallie Kowalczyk, 44, a Merged ex-seminar trainer
   whose sermons the Twin drafts. She was Delphine's nurse in 2034. She can
   stop the Ascension herself if she learns the truth (§3.6c).
+- **The court rules Thursday at 5 p.m.** and upholds the Index — unless
+  Ostrander's ring is exposed first, in which case the vote comes first
+  (Issue 5).
+- **The eyes are Karl** (writers only): foglets lodged in his irises in
+  2044. They dim in rain and inside Villa Delirium (§5.14a).
+- **Midnight Forever** stops time only for Hell Rot; the City's midnight
+  plays out without him (§3.11).
+- **The Lifeboat** makes a garbled copy of Sunday in the Twin; Sunday
+  survives with a brain injury; Coit Tower and its murals survive (§3.8b).
 - **Tem** is 15. Her splice was a tiny dose of cingulate engineering from
   Hell Rot's third paper. In crowds she loses the line. She is the bridge's
   canary on New Year's Eve (§3.6b).
@@ -3388,8 +3425,6 @@ Plot questions the writers' room must answer before Alpha.
 
 **Proposition F and the courts**
 
-7. **Does the court rule before New Year's Eve,** or does the vote come
-   first?
 8. **Does Hell Rot take the Index on screen?** If he scores below the
     threshold, does he lose rights in his own story — and does he publish
     the number?
@@ -3400,13 +3435,9 @@ Plot questions the writers' room must answer before Alpha.
 
 **Hell Rot**
 
-11. **What really activated the eyes?** The game keeps it open — but the
-    writers need a private answer to stay consistent.
 13. **Can he lie to save lives?** Is the Great Lie at the Ascension ever not
     a Fabrication — and if the game allows an exception, does that break the
     Rot Code?
-14. **What does Midnight Forever mean for everyone else?** If he stops the
-    clock, do the Ascension and the Quickening go ahead without him?
 16. **How many Commissions does he write as ordered** before the House stops
     trusting him — and is there a Commission he cannot refuse?
 
@@ -3419,9 +3450,6 @@ Plot questions the writers' room must answer before Alpha.
     a named faction, or background noise? (Guardrails: §7.)
 19. **Do the SLA find the Emperor?** They believe the Twin is enslaved. They
     are half right.
-21. **What does Sunday's failed Lifeboat upload do** when it fails at
-    midnight — does it hurt only him, or does it crash into the Twin and the
-    Emperor?
 
 **Design questions**
 
