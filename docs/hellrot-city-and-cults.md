@@ -582,6 +582,50 @@ Hell Rot can give the Game story to a three-person weekly in the Tomales Ward
 instead of *Mondo 3000*. Fewer Readers, more Vow, and the small paper wins the
 prize.
 
+**Old Dee** (original), the Game's founder.
+
+- **Who he is.** Born **Dewitt "Dee" Lomax**, 79. In the 2010s and 2020s he
+  designed engagement loops for a feed company: he built the addiction.
+  When it cost him his marriage and his son, he founded Synapse in 2031 to
+  cure it. He built the disease, then the cure, and believes the cure
+  squares the account.
+- **His look.** A shaved head like every member's, a grey bathrobe, and a
+  chair on a low dais outside the circle. He never raises his voice. The
+  circle shouts for him.
+- **The real crack.** When the Church bought Synapse in 2047, it paid Old
+  Dee in Halos. He is the only person on the farm allowed a feed. The
+  founder of the feed-addiction cure is back on the feed, deeper than ever.
+  That is why nobody may Game him: one honest session would show it.
+- **The Lifeboat link.** He sold Mister Sunday his intake members as test
+  subjects, and told them it was a "Weekend Game." It is the part of Rosa's
+  leak with a name on it, so exposing Old Dee and saving Rosa feed each
+  other.
+- **The mirror of Hell Rot.** Two addicts in recovery. One relapsed into a
+  god. Old Dee offers Hell Rot real help: *"You're an addict. We cure
+  addicts."* A session in the Game gives Craving −1, Sainthood +1 (it is the
+  Church) and the Thought *"Nobody Here Will Flatter You."* It works, at
+  first. That is the trap.
+- **The Quiet Squad.** Six shaved-head members who guard the farm and never
+  speak in the circle. They send the snake, on a hint from Old Dee, never an
+  order, so he can deny it.
+- **Make him play.** With the Halo evidence, and one exchange won with
+  *Parrhesia*, Hell Rot can call Old Dee into the circle. **Win:** the circle
+  turns on its founder, the members walk out, the Church loses its rehab
+  ministry and the Lifeboat's subjects go free. **Lose:** Hell Rot is the one
+  Gamed, live, for an hour. Clarity −2, and the circle reads out everything
+  he has never admitted.
+- **Where he appears.** Issue 3: the honoree at the Cal Academy dinner,
+  where the optional Game at the table is played in front of him. Issue 3,
+  optional: the Tomales Ward farm, the full showdown and the Quiet Squad.
+  Issue 6: a sighting only, a guest of honour at the Ascension in gold
+  Halos.
+
+**Marisol Reyes** (original), the ex-member. She is 26, grew up on the farm
+and "split" at 19. The Game has Gamed her in public every week since. She
+writes to the Letters Page in Issue 2. A reply makes her a source. She
+speaks for herself, and refuses to be anyone's victim on the record. She
+works the soup line at the Lantern.
+
 ### 4.2 The Theogens
 
 *Sources: the Asilomar/Genentech origin of Bay Area biotech, CRISPR, the
@@ -878,7 +922,8 @@ worship — never at victims, ex-members or ordinary believers.
    serve families in San Francisco. The Lantern must not share a real
    shelter's name.
 9. **Synanon survivors** include children raised inside it. The Game arc
-   must include an ex-member who speaks for themselves.
+   must include an ex-member who speaks for themselves: Marisol Reyes
+   (§4.1). Her lines go to the sensitivity reader with lived experience.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **The Church of Satan** is a real, living organisation. The fictional

@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 213 cards: 66 real
-> quotations, 6 redacted cards, 116 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 215 cards: 66 real
+> quotations, 6 redacted cards, 118 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -134,7 +134,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (116) and eye cards (25)
+## Part 2 — In-world cards (118) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
@@ -245,12 +245,14 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W55 | "The Tube capsule, pressurised. Panic, then the East Bay." | + | *Do not take the Tube.* | GIHKAL, transport, funny |
 | W56 | "Rain on New Year's Eve with the fog gone and the moon out." | (unrated) | *Some things you don't score.* | GIHKAL, I6, tender |
 
-### 2F. The cults of the City (16)
+### 2F. The cults of the City (18)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
 | W57 | "Nobody here will ever flatter you. You look terrible." | Welcome sign, the Game | *Honest. Also a ministry.* | Game, funny |
 | W58 | "Old Dee does not play the Game. Old Dee is the Game." | Saying in the Game | *The one man exempt from honesty. Every time.* | Game, grim |
+| W58a | "I built the hook. I built the cure. You're welcome." | Old Dee, at the Cal Academy dinner | *He wants a medal for both. The Church gave him a Halo.* | Game, I3 |
+| W58b | "I split at nineteen. They Game me every Sunday. I still go to the window to listen." | Marisol Reyes, letter to the Letters Page | *Printed it as she wrote it. Not a word changed.* | Game, tender |
 | W59 | "There is no god but you. Dress code: black." | Black House invitation | *Most honest cult in town. Still a cult.* | Black House |
 | W60 | "Hour 51. You are responsible for everything. Including the bathroom break you do not get." | Trainer, the Seminar | *Hour 60 is where your name goes on the Ascension list.* | Seminar, funny |
 | W61 | "Free dinner. No catch. Weekend in Mendocino optional (strongly encouraged)." | Church flyer for the Table | *The catch is in the parentheses.* | Table |

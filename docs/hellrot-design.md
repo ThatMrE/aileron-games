@@ -1271,6 +1271,8 @@ uncertainty on screen.
 | **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the 60-hour seminar the Church bought and made its on-ramp, the Seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
+| **Old Dee** | Founder of the Game, Church elder | Born Dewitt Lomax, 79. Built the feed addiction, then the cure, then went back on the feed for a Halo. Sold Sunday his members as Lifeboat test subjects (companion doc §4.1). |
+| **Marisol Reyes** | Ex-member of the Game | 26. Grew up on the farm, split at 19, Gamed in public every week since. Writes to the Letters Page. Works at the Lantern (companion doc §4.1). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
@@ -1805,8 +1807,9 @@ from the water to the uprising.
 - **The California Academy of Sciences, evening.** A black-tie **donor
   dinner for the Game**, the Church's rehab ministry for feed addicts, under the museum's living roof and
   beside its aquarium tanks. Mayor Sunday attends. So does Rosa Quint, his
-  chief of staff, who believes in the young reformer he used to be. Optional:
-  Hell Rot is invited to play the Game at the table.
+  chief of staff, who believes in the young reformer he used to be. The
+  honoree is **Old Dee**, the Game's founder. Optional: Hell Rot is invited
+  to play the Game at the table, in front of him.
 - **The martyr metric.** Rosa has been leaking to *Mondo 3000* since the
   Haight: the Lifeboat's test subjects (drawn from the Game's intake), the nitrous money. Sunday knows. At
   the dinner, Yara finds a Twin forecast in Sunday's recall data: a sympathy
@@ -1935,7 +1938,8 @@ midnight coming.
 - **The Ascension at the Palace of Fine Arts** — the Church of the Twin has
   taken over the rotunda and lagoon for 12,000 uploads at midnight, at the
   edge of the Marina, on 1906 rubble. Sister Halcyon leads it — and, if
-  she has learned the truth, can stop it from the pulpit (§3.6c).
+  she has learned the truth, can stop it from the pulpit (§3.6c). Old
+  Dee sits in the front row in gold Halos.
 - **The Golden Gate Bridge climax** — the fog's front door, where the
   Theogens load the Quickening into Karl as the storm comes in — Delphine at
   the south tower with Ione, her skin going dark, and perhaps dying there
@@ -2005,7 +2009,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **The California Academy of Sciences** | The Game's donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
 | **Golden Gate Park** | The bison paddock in the fog, Hippie Hill, a glow rickshaw race, decrees on the Conservatory of Flowers | Core |
 | **Ocean Beach** | Karl's Birthday bonfire, the Church's mass inhale, one recording heard by everyone | Core |
-| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game | Optional |
+| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game. Old Dee, the Quiet Squad, and the chance to make him play | Optional |
 | **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
 | **The Black House** | The Magister Black's salon, the open donor ledger, the obituary request | Optional |
 
@@ -2210,6 +2214,15 @@ The rest of the set. Each line works whether Delphine lived or died:
 - **The Mob:** he becomes the Theogens' treasurer, and hates the job.
 - **Saint Rot:** he sends one note: *"You were one of us. Now you're
   nobody's."*
+
+**Old Dee's line.** Three endings close on him (or on the Game):
+
+- **Peer Review:** *"Old Dee was Gamed on live feed by his own members. He
+  cried. It was the first honest thing he had said since 2047."*
+- **Saint Rot:** *"Old Dee leads the Game in the Twin now. Nobody there
+  flatters anyone. Nobody there is anyone."*
+- **Mortal:** *"Marisol Reyes bought the farm in the Tomales Ward at
+  auction. It grows oysters. Nobody shaves their head."*
 
 ### 3.12 Branching map (high level)
 
@@ -2809,7 +2822,7 @@ After the press run, the Greenhouse sorts the mail. It costs no Hours.
 - **A reader**, on last night's column.
 - **A faction voice**, from whichever group's Opinion the column moved most:
   a Church congregant, a Theogen nurse, Desh or another Burn survivor, a
-  Nortonian.
+  Nortonian, or Marisol Reyes, who left the Game.
 - **A wildcard**: Dr. Hale's anonymous letter in Issue 2 (§3.3b), a letter
   from the Greenhouse itself, a crank (background only).
 
