@@ -276,7 +276,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W76 | "Squawk. Went to hell. Squawk. It rots." | A parrot, Telegraph Hill | *They memorized my notebook. Somebody stop them.* | parrots, weird |
 | W77 | "Boo." | The Branch Man, Fisherman's Wharf | *Still gets me.* | Wharf, funny |
 | W78 | "LOST: one god-child, glows when crying. If found, do NOT call the Church." | Flyer, Mission telephone pole | *Taped over a FOUND flyer from the Church.* | Ione, I4 |
-| W79 | "SANTA SUITS FOR RENT — CATHEDRAL ACCESS GUARANTEED — NO REFUNDS AFTER MASS" | Shop window, Geary | *Halo gain halved. Worth it.* | Santarchy, funny |
+| W79 | "SANTA SUITS FOR RENT — CATHEDRAL ACCESS GUARANTEED — NO REFUNDS AFTER MASS" | Shop window, Geary | *Sainthood gain halved. Worth it.* | Santarchy, funny |
 | W80 | "Away in a server rack, no crib for a bed." | Sisters of Perpetual Feedback, nativity pageant | *A hologram nobody entered came third. It was wearing Norton's hat.* | Nativity, funny |
 | W81 | "YOU ARE NOW ENTERING THE BLIND SPOT. SMILE. NOBODY CAN SEE YOU." | Hand-painted sign, Villa Delirium gate | *The only true sign in the City.* | House |
 | W82 | "Mister Sunday: A mayor for every one of you. Forever." | Campaign poster | *"Forever" is doing a lot of work.* | Sunday, I3 |

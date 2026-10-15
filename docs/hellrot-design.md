@@ -1126,7 +1126,7 @@ This is the main engine of the plot and the mechanics:
 
 - **Every column cuts both ways.** A column that attacks the Merge raises
   his **Helix** (the Theogens celebrate). A column that attacks the
-  Theogens raises his **Halo** (the Church celebrates). Attacking both at once is
+  Theogens raises his **Sainthood** (the Church celebrates). Attacking both at once is
   possible, but harder and slower.
 - **Both cures stay on the table.** Each Issue, each cult raises its offer.
 - **Both sides send people.** Merge members follow him with prayers. Theogens
@@ -1511,7 +1511,7 @@ this one problem:
   refuse and climb out (Venom +, the child's health is left to the cult);
   record it for a column (Readers +, Delphine's Trust −). Or call emergency
   services, which means the Twin logs the child within the hour (and the
-  Emperor notices) (Halo
+  Emperor notices) (Sainthood
   +1, Delphine never forgives him).
 - **The tide race:** the king tide comes back fast. Getting everyone up the
   cliff in the dark is a MOUNTAIN MAN gauntlet with sneaker waves.
@@ -1629,7 +1629,7 @@ from the water to the uprising.
   on.
 - **Column 1.** Sets the City's baseline opinion of Hell Rot and starts both
   meters. Whichever cult the column hurts less raises its meter first. The
-  player sees **Halo** and **Helix** appear on the HUD. This is the inciting
+  player sees **Sainthood** and **Helix** appear on the HUD. This is the inciting
   incident.
 
 #### ISSUE 2 — "The Twin" (Monday 27 December)
@@ -1670,7 +1670,7 @@ from the water to the uprising.
   Duchess knows it. Then, through the fog, the Emperor makes the real offer
   (Mondo doc §4.5, *"Cold Storage"*). A Keeper's minute-book page, left in the
   Duchess's coat on the ferry home, is the first message from Dr. Hale.
-- **Column 2.** An attack on the Church raises Halo *anyway* — the Church
+- **Column 2.** An attack on the Church raises Sainthood *anyway* — the Church
   frames his anger as prophecy — and raises Helix more. The Theogens send
   flowers that glow. The player learns the trap.
 
@@ -1716,7 +1716,7 @@ from the water to the uprising.
   to see each other, and, for one
   minute, everyone on the beach hearing the same recording at once.
 
-**ROUTE LOCK.** The game reads the three columns, **Halo**, **Helix**,
+**ROUTE LOCK.** The game reads the three columns, **Sainthood**, **Helix**,
 **Venom/Vow** and Trust, and locks one of four routes.
 
 #### ISSUE 4 — "Saint Rot" (Wednesday 29 December)
@@ -1920,7 +1920,7 @@ night to build Runs around. (District details: companion doc §3.)
 
 #### Route A — HERESY (no gods)
 
-*Lock:* low Halo, low Helix, high Vow, Yara Trust ≥ 3.
+*Lock:* low Sainthood, low Helix, high Vow, Yara Trust ≥ 3.
 
 Hell Rot goes to war with both cults as a scientist and a journalist at once.
 His weapon is **peer review**: he builds the **Open Dataset** — the
@@ -1936,11 +1936,11 @@ With Bishop Trust ≥ 4, the Bishop can hold the Palace of Fine Arts for him
 
 #### Route B — MERGE (the machine's saint)
 
-*Lock:* high Halo, Halo > Helix, any Trust.
+*Lock:* high Sainthood, Sainthood > Helix, any Trust.
 
-Hell Rot accepts the Halo — as a weapon. If the City will only listen to a
+Hell Rot accepts the sainthood — as a weapon. If the City will only listen to a
 saint, he will be the saint who tells it the truth. The Emperor gives him
-everything: access, reach, a cure on request. The more he uses his Halo,
+everything: access, reach, a cure on request. The more he uses his Sainthood,
 the more his readers stop thinking, and the more his columns come back from
 the Emperor subtly improved. Junie is the conscience of this route. The Theogens
 become his enemies, and violent.
@@ -1949,7 +1949,7 @@ become his enemies, and violent.
 
 #### Route C — SPLICE (the flesh's father)
 
-*Lock:* high Helix, Helix > Halo, any Trust.
+*Lock:* high Helix, Helix > Sainthood, any Trust.
 
 Hell Rot goes underground with the Theogens. Delphine treats him like a
 returning king. He takes the first, small splice (cyan light under his skin)
@@ -1963,7 +1963,7 @@ the release or not.
 
 #### Route D — COMMUNION (put the gods in a room)
 
-*Lock:* Halo and Helix both ≥ 4 and within 2 of each other, balanced
+*Lock:* Sainthood and Helix both ≥ 4 and within 2 of each other, balanced
 reputation, private dialogues completed with both the Emperor and Delphine, and
 Clarity ≥ 4.
 
@@ -2061,9 +2061,9 @@ flowchart TD
   R -->|Warn| I3a[Rosa lives, on the record]
   R -->|Chase| I3b[Rosa dies, proof Sunday ordered it]
   R -->|File first| I3c[Rosa lives, the Emperor fixates]
-  I3a & I3b & I3c --> L{ROUTE LOCK<br/>Halo vs Helix + Venom/Vow + Trust}
+  I3a & I3b & I3c --> L{ROUTE LOCK<br/>Sainthood vs Helix + Venom/Vow + Trust}
   L -->|both low, Vow| A[Route A: HERESY]
-  L -->|Halo high| B[Route B: MERGE]
+  L -->|Sainthood high| B[Route B: MERGE]
   L -->|Helix high| C[Route C: SPLICE]
   L -->|both mid, balanced| D[Route D: COMMUNION]
   A & B & C & D --> I4[Issue 4: Saint Rot] --> I5[Issue 5: The Count] --> M[Issue 6: Twenty-Fifty]
@@ -2127,7 +2127,7 @@ flickers from riot footage to soft gold light.*
 ```
  ┌──────────────┐   ┌──────────────────────┐   ┌────────────────┐   ┌──────────────────┐
  │  ASSIGNMENT  │──▶│  RUNS (3–6 a night)  │──▶│  THE LAYOUT    │──▶│ THE CITY REACTS  │
- │ The Duchess, │   │ go out, gather leads,│   │ write & file   │   │ Halo, Helix,     │
+ │ The Duchess, │   │ go out, gather leads,│   │ write & file   │   │ Sainthood, Helix,│
  │ at dusk      │   │ black out, come home,│   │ by 6 a.m.      │   │ Opinion, flags;  │
  │              │   │ upgrade, go again    │   │ press time     │   │ next night       │
  └──────────────┘   └──────────────────────┘   └────────────────┘   └──────────────────┘
@@ -2169,7 +2169,7 @@ Hour. A Run ends at a **boss showdown**, a blackout, or when he heads home.
 |---|---|---|
 | **Encounter** | Combat chamber | A minor showdown (a cop, a recruiter, a heckler). Win: a reward. |
 | **Source** | Reward chamber | A conversation that yields a **Quote** or a Lead fragment. |
-| **Gold door** | Olympian boon | The Church of the Twin offers a **Blessing** (§5.8). Accepting raises Halo. |
+| **Gold door** | Olympian boon | The Church of the Twin offers a **Blessing** (§5.8). Accepting raises Sainthood. |
 | **Cyan door** | Olympian boon | A Theogen clinic offers a **Splice** (§5.8). Accepting raises Helix. |
 | **Lab** | Daedalus hammer | A combination puzzle with Samples and reagents (§5.9). |
 | **Dealer** | Charon's shop | **The Conductor**, who runs a cable car that is also a black market. Pay in Ink (§5.10). |
@@ -2259,7 +2259,7 @@ is a choice on the map screen, and most have a catch.
 | Ride | What it is | Cost & effect | The catch |
 |---|---|---|---|
 | **The *Mondo 3000* van** | A 30-year-old electric van with the magazine's masthead hand-painted on the side, and a small crucifix below the mirror. Junie drives. | ½ Hour across the City, the safe default | Only when Junie is the night's companion. She plays roller-derby punk at full volume. |
-| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free, ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Halo +1 per ride. The Emperor hears everything said inside. |
+| **Ascension shuttles** | Gold, driverless, free minibuses that the Church of the Twin runs all over the City. They take anyone anywhere, as long as the route passes a church. | Free, ¼ Hour inside the City | A hymn, a sermon about you, and a "gentle conversation" about merging. Sainthood +1 per ride. The Emperor hears everything said inside. |
 | **Glow rickshaws** | Theogen runners with spliced legs and lungs who pull two-seat rickshaws through the Undertrack tunnels, lit by their own skin | ¼ Hour, and the only way to reach the deep tunnels | Helix +1 per ride. The runners want to talk about your papers. |
 | **The Tube** | The Rivet Trust's old pneumatic parcel network, built to carry packages between the wharves and the City's hills. Human-sized freight capsules still fit one curled-up adult. | ¼ Hour from the House's cellar hatch to any Tube station, the fastest ride in the game | Illegal, unlit and very cramped. A REFLEX check or you arrive upside-down (−1 Clarity). Not for anyone with Craving 3+ (the capsules are pressurized with gas). |
 | **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
@@ -2329,14 +2329,14 @@ Temperament (§5.2).
 
 | Meter | Range | Meaning | Rises when | Falls when |
 |---|---|---|---|---|
-| **Halo** | 0–10 | The Merge's worship of Hell Rot | Columns that hurt the Theogens. Heroics on camera. The Twin decides to (lately, with no explanation) | Public humiliation, refusing worship in public |
+| **Sainthood** | 0–10 | The Merge's worship of Hell Rot (not to be confused with a citizen's public **Halo score**, companion doc §3.2b) | Columns that hurt the Theogens. Heroics on camera. The Twin decides to (lately, with no explanation) | Public humiliation, refusing worship in public |
 | **Helix** | 0–10 | The Theogens' worship of Hell Rot | Columns that hurt the Merge, defending splicers, using the kitchen lab for them | Exposing splice failures, siding with the Emperor |
 | **Clarity** | 0–8 | The run's "health": mental sharpness within a Run (§5.6) | Rest doors, Yara, Blessings and Splices, some drugs (briefly) | Stress, lost exchanges, drugs, failed red checks. From Issue 4 the Rot lowers its maximum |
 | **Heat** | 0–10 | How badly cops, candidates and cults want him stopped | Exposés, violence, trespass | Lying low, favours, the Hog's protection |
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
 | **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Old Guard (people who remember the 1990s), Cops, Sunday's machine, Pell's recall, the Dissonance | Column angles | Column angles |
 
-**Halo and Helix are the tension meters.** Each makes social checks easier
+**Sainthood and Helix are the tension meters.** Each makes social checks easier
 with its own cult and makes truthful columns *less* effective with that cult's
 members ("Your readers believe you. They no longer check."). The HUD shows
 them as a gold bar and a pulsing cyan spiral, side by side, pulling against
@@ -2368,10 +2368,10 @@ item as ammunition.
 |---|---|---|---|---|---|
 | **Invective** | Vituperatio | THE BASTARD | Smug, Charming | Furious | +Venom, Heat |
 | **Satire** | Irony, reductio ad absurdum | THE COLUMNIST | Pious, Serene | Defensive | Needs an Evidence item |
-| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow, costs Halo or Helix |
+| **Parrhesia** | Frank speech at personal risk | BLOOD EYE | Serene, Pious | Smug | +Vow, costs Sainthood or Helix |
 | **Interrogation** | Elenchus (Socratic questioning) | PEER REVIEW | Defensive | Charming | Damage doubles on the 3rd turn in a row |
 | **Peer Review** | The scientific method | PEER REVIEW | Any target that cites evidence (Theogens, seminar trainers, technocrats) | Pure faith (Pious with no data) | Needs a *verified* Evidence item, the strongest single hit in the game |
-| **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Halo or Helix**, whichever cult is watching. The trap. |
+| **Jeremiad** | Prophetic lament | THE BASTARD + THE COLUMNIST | Big audiences | Private scenes | **Raises Sainthood or Helix**, whichever cult is watching. The trap. |
 | **Appeal** | Pathos | THE CELEBRITY | Furious | Smug | Uses a companion, costs Trust if it fails |
 | **Apophasis** | "I won't mention that…" | FOOTNOTE | Charming | Serene | Use one *unverified* Quote without Fabrication risk, once per showdown |
 | **Silence** | Aposiopesis | — | Targets with a guilty Evidence flag | — | The target fills the silence and may self-incriminate |
@@ -2488,7 +2488,7 @@ offer **Splices** from the Theogens. Each door offers a choice of three. They
 last **for that Run only** (a Splice's *genetic* effects in the story are
 permanent only on Route C. Mechanically, every run starts clean).
 
-**The Twin's Blessings** (gold. Each raises Halo +1 when taken):
+**The Twin's Blessings** (gold. Each raises Sainthood +1 when taken):
 
 | Blessing | Effect for this Run |
 |---|---|
@@ -2521,10 +2521,10 @@ Run, and the Rot voice comments on every one.
 | **Holy Meat** | Beatitude + Axolotl Mend | Every won exchange restores 2 Clarity |
 | **Ghost in the Gene** | Twin Sight + Extra Cortex | *Peer Review* ignores the "verified" requirement once per scene |
 | **The Unbearable Halo** | Beloved + Glow | Both cults' NPCs adore you, neither will say anything true |
-| **Sermon on the Mount Tam** | Gospel Edit + Adrenal Bloom | *Jeremiad* hits the whole audience — and raises Halo *and* Helix by 2 |
+| **Sermon on the Mount Tam** | Gospel Edit + Adrenal Bloom | *Jeremiad* hits the whole audience — and raises Sainthood *and* Helix by 2 |
 
 **The trap, by design.** Boons make Runs easier and stronger. Every boon
-also pushes Halo or Helix up, and those meters decide the route lock. A
+also pushes Sainthood or Helix up, and those meters decide the route lock. A
 player who greedily takes every boon is choosing a god without noticing —
 which is exactly what both cults want.
 
@@ -2733,9 +2733,9 @@ unlocks it on its own, and either of them can say no and mean it.
 | | **Fax** | **The Bishop** | **Otto** | **Pru** |
 |---|---|---|---|---|
 | **What draws them** | He restarted Hell Rot's heart in 2044, and he was jacked in that night: he felt the four minutes too, and has never said so | Two men who were each wrong in public about the future, and lived | She is 101 and finds him young, sad and fixable, she is wrong about the last part | He is the only bet she has ever made that she cannot price |
-| **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Halo: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him | He uses her numbers to justify something she rated as a catastrophe |
+| **What breaks it** | Hell Rot treating him as the labmate who held the jack, not the man | Sainthood: the Bishop cannot love a saint, only a man | Any cure for the Rot she did not choose with him | He uses her numbers to justify something she rated as a catastrophe |
 | **Key scene** | The neural-jack scar, the Collage Room, 4 a.m. | The Chapel that is not a chapel. New Year's Eve, praying to nothing in particular | Ageing on purpose, together, in the Conservatory | The Ledger's office party on Wednesday night, stealing the file together |
-| **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Halo ≤ 5 | Otto Trust ≥ 4 | Pru Trust ≥ 4 |
+| **Gate** | Fax Trust ≥ 4 | Bishop Trust ≥ 4 and Sainthood ≤ 5 | Otto Trust ≥ 4 | Pru Trust ≥ 4 |
 
 **Rules for writers.**
 
@@ -2792,8 +2792,8 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 
 | Theme beat | Mechanic |
 |---|---|
-| Worship is seductive | High Halo / Helix make social checks easy |
-| Worship kills thinking | High Halo / Helix make truthful columns weaker with believers |
+| Worship is seductive | High Sainthood / Helix make social checks easy |
+| Worship kills thinking | High Sainthood / Helix make truthful columns weaker with believers |
 | Stuck in the middle | Every column raises the *other* cult's meter |
 | You cannot criticize a god that loves you | Jeremiad heals the Emperor, Satire heals Delphine, morning sermons reframe every column |
 | Flattery is made of true facts | The blood eye shows gospel edits: true facts, false emphasis |
@@ -2802,7 +2802,7 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
 | Humans are not gods, and that is the point | Certainty and Conviction only drop when shown real human cost |
 | Godhood is a shortcut | Blessings and Splices make Runs easier and quietly choose your route (§5.8) |
 | The disease erases him | Blackouts empty Memory, only what he writes down survives (§4.4) |
-| Every afterlife has a price tag | The ticket scandal, boons priced in Halo and Helix, the Conductor's black market |
+| Every afterlife has a price tag | The ticket scandal, boons priced in Sainthood and Helix, the Conductor's black market |
 
 ---
 
@@ -2941,7 +2941,7 @@ cut-out faces, too many fonts.
 
 ```
 ┌────────────────────────────────────────┐
-│ ISS.2  THE TWIN     ⏱ 09h  ✦HALO 4 ⌇HELIX 3│ ← HUD bar
+│ ISS.2  THE TWIN     ⏱ 09h ✦SAINT 4 ⌇HELIX 3│ ← HUD bar
 ├────────────────────────────────────────┤
 │                                        │
 │        [ SCENE ILLUSTRATION ]          │ ← 256×136 scene
@@ -2976,7 +2976,7 @@ forbidden effects**.
 
 **The forbidden effects are the design.** The Twin is the only thing on screen
 that is smooth. The Theogens are the only things that move while standing
-still. As Halo rises, gold creeps into Hell Rot's portrait. As Helix rises,
+still. As Sainthood rises, gold creeps into Hell Rot's portrait. As Helix rises,
 his portrait begins to pulse. Players see the meters on his face before they
 read the HUD. On ending 4 the final screen turns to smooth gold. On ending 6
 every pixel on the screen breathes.
@@ -2984,7 +2984,7 @@ every pixel on the screen breathes.
 ### 8.4 Character art
 
 - **Portraits:** 48 × 48, 3–4 expressions each. Hell Rot gets 10, including
-  *high*, *writing*, *Clarity-low*, *Halo-gold*, *Helix-pulse*.
+  *high*, *writing*, *Clarity-low*, *Sainthood-gold*, *Helix-pulse*.
 - **Hell Rot:** silhouette first — tall, bald, scar crown, lab coat. The two
   eyes — one a blood-red pool with a pinpoint of light, one ice-white — are the
   most striking pixels on screen. As an eye corrupts (§5.14a), the blood one
@@ -3039,7 +3039,7 @@ in the companion document §3. Key rules:
 - **Layout theme:** a single pulse channel, typewriter tempo, faster as Hours
   run out.
 - **The Emperor theme:** the only music with reverb and a sustained pad. It grows in
-  the mix as Halo rises.
+  the mix as Sainthood rises.
 - **Theogen theme:** a heartbeat on the triangle channel under detuned pulses.
   It grows in the mix as Helix rises. When both meters are high, both themes
   play at once and clash. That is the sound of being stuck in the middle.

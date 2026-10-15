@@ -316,7 +316,7 @@ and the Lacuna Trust's last letter (Issue 6) finally sends the key.
 | Route | Effect |
 |---|---|
 | **A — Heresy** | The House votes on whether to keep taking Rivet money. Refuse: the magazine is homeless for Issue 6 and prints from the van. Accept: Pru's numbers say it is fine. Yara's say it is not. Either way, the final column can expose the Commissions themselves. |
-| **B — Merge** | The Emperor, by decree, offers to sign the House over outright. Accepting is the moment Hell Rot's Halo jumps to 10 — and the moment he becomes the god's own takedown writer. |
+| **B — Merge** | The Emperor, by decree, offers to sign the House over outright. Accepting is the moment Hell Rot's Sainthood jumps to 10 — and the moment he becomes the god's own takedown writer. |
 | **C — Splice** | Delphine — the Commissions' first target — offers to buy the Trust from the Order, and turn the weapon around. |
 | **D — Communion** | Julian's journals break the Emperor's Certainty: they show a man who used a magazine to destroy people and then, as a god, ordered it to investigate himself. |
 
@@ -391,7 +391,7 @@ got out. Each one knows one cult from the inside. Each one is tempted back.
   Nobody toward chaos. **Junie leans toward no faction at all** — the only
   pull she feels, against her own atheism, is toward **Jesus Christ**: not
   the Church of the Twin, not the cults, but the faith the nuns taught her.
-  Taking her on a Night shifts neither Halo nor Helix. Party choice each Night quietly shifts Halo and Helix
+  Taking her on a Night shifts neither Sainthood nor Helix. Party choice each Night quietly shifts Sainthood and Helix
   (a pulled companion makes their side's doors cheaper and its boons more
   tempting).
 - **Junie's trials of faith (*"Jam"*).** Christmas week is the worst week

@@ -706,7 +706,7 @@ A Notebook tab with one page per cult.
   unverified (Fabrication risk) and gives the cult a sympathy boost.
 - **Cult Opinion.** Each major cult has a faction Opinion (−5 to +5).
 - **The mirror test.** The Dossier screen has one hidden page: **Hell Rot's
-  own.** As Halo or Helix rises, tells fill in on it by themselves — milieu
+  own.** As Sainthood or Helix rises, tells fill in on it by themselves — milieu
   control (his own feed), loading the language (his catchphrases), sacred
   science (his own papers), dispensing of existence (the way he talks about
   his readers). At 4 tells, Yara reads it to him aloud. It is the key scene of
