@@ -459,6 +459,12 @@ Merge members will upload together (§3.8). The public believes they go to
 the Twin. The order plans to route them into Karl: 12,000 cingulate-conditioned
 minds as **anchors**, to lend the Emperor the working cingulate he never had
 and stop his collapse. The Church does not know. The faithful do not know.
+And the order is wrong about its own plan in a way it cannot see: conditioned
+minds would steady him only if they stayed themselves, but the moment the
+Theogens' god-gene is in the fog, every anchor near it stops being a self at
+all (§3.4). The two secret plans for midnight — the order's and the
+Theogens' — run on the same crowd in the same fog, and neither group knows
+about the other.
 The god does not agree with himself: Julian wants it, the Emperor is no
 longer sure. That argument — a man against the god he became — is the
 Emperor's arc, and the player's best lever on him.
@@ -791,19 +797,59 @@ Ione is the first human being with cingulate engineering, and it works:
 
 **The catch: it only works in a fetus.** Cingulate engineering is a
 developmental program. It works only in a brain that is still being built.
-In an adult brain the same edits tear the finished wiring apart: seizures,
-then death. Brandvold knew. The warning is in his unpublished notebook, in
-the ruined Mission Bay lab (Issue 4) — never in print, so Delphine, who has
-read every published footnote, has never seen it. The Oakland Burn was a
-small, home-brewed version of the same mistake.
+In an adult brain the edits cannot build new structure — they only cut into
+the wiring that is already there, and they cut toward one thing: the
+cingulate's border between *self* and *not-self*. The brain stops being able
+to tell its own thoughts from the signals around it. In three stages, over
+minutes to hours:
 
-**So the Quickening would kill the City.** Delphine means to load the
-god-gene into Karl's foglets as a virus and give every lung — every mind —
-what Ione has, and save her own failing body with it. Breathed by adults,
-it would **kill everyone who breathed it**. She does not know. Proving it to
-her (the notebook, Peer Review with the Burn data, or Ione herself, who
-remembers the seizure in the womb) is a Conviction crack second only to
-learning that the Emperor lives in Karl.
+1. **The Merge (the hive).** The border dissolves. The afflicted lose the
+   line between themselves and everyone near them. They move together,
+   speak in chorus, finish each other's sentences, turn their heads at
+   once. For a few minutes it looks like peace — the thing every cult in
+   this game promised.
+2. **The Rage.** With no self to protect and no other to recognize, the
+   hive turns on everything outside it: strangers, walls, each other,
+   itself. It is not strategic and it does not stop. This is the stretch
+   the game treats as horror, not as a boss fight.
+3. **The Seizure, and death.** The overdriven cingulate burns out. Seizures,
+   then death, within the hour. Nobody has ever survived stage two to reach
+   a calm stage three.
+
+Brandvold knew it ended this way; it is why he never built it. The warning
+is in his unpublished notebook, in the ruined Mission Bay lab (Issue 4) —
+never in print, so Delphine, who has read every published footnote, has
+never seen it. The Oakland Burn was a small, home-brewed taste of stage
+one and stage three; the thirty-one survivors never reached a crowd, so the
+City never saw stage two.
+
+**So the Quickening is a doomsday device nobody knows is one.** Delphine
+means to load the god-gene into Karl's foglets as a virus and give every
+lung — every mind — what Ione has, and to save her own failing body with
+it. What it would actually do is turn the City into one hive that goes mad,
+tears itself apart and dies by dawn (stages one to three, above). **It is a
+death cult, and not even its prophet knows it.** The Theogens believe they
+are midwifing heaven. There is no villain with a plan to end the world;
+there is a grieving mother with a beautiful, wrong idea, and a City full of
+people who will breathe whatever the fog carries.
+
+This is the game's quietest horror and its hardest journalism problem:
+Hell Rot may be the only person who can read the notebook and understand it,
+and the only proof is a dead man's handwriting plus thirty-one brain-injured
+witnesses the City already wrote off. Proving it to Delphine — the notebook,
+Peer Review with the Burn data, or Ione herself, who remembers the seizure
+in the womb — is a Conviction crack second only to learning that the Emperor
+lives in Karl.
+
+**It can play out.** The release is not only a fail-state abstraction. On
+some paths a small, local dose gets out before midnight — a cracked canister
+in the Sutro tunnels, a dose Benny sold on, a Theogen true believer who
+will not wait — and the game shows one **pocket outbreak**: a handful of
+people in a closed space going through the three stages while Hell Rot
+watches and cannot stop it. It is a contained, survivable-for-the-player
+scene that makes the midnight stakes real and literal. Whether it happens,
+and whether Hell Rot can wall it off or has to leave people inside, is a
+choice with its own blackout and its own column.
 
 If the god-gene is released into the City, the run fails: a black screen,
 a count of the dead, and the night begins again from dusk (§4). The
@@ -1129,9 +1175,14 @@ one that, when he learns of it, sends the Emperor into his worst night.
 At midnight on 31 December 2049, as the City turns to 2050, four things happen at once:
 
 - **The Ascension** — the Church of the Twin's mass Merge. About 12,000
-  Radiant-tier members upload together in the **Palace of Fine Arts**,
-  which the Church has taken over for the night. Their bodies
-  will not survive. The Church calls it a graduation.
+  Radiant-tier members gather in the **Palace of Fine Arts**, which the
+  Church has taken over for the night, to upload. Their bodies will not
+  survive. The Church calls it a graduation. The order's real plan is worse,
+  and the Church does not know it: the "anchors" that are meant to steady the
+  Emperor are not a special volunteer class — once the god-gene is in the
+  fog, *anyone the foglets reach becomes an anchor*, and the densest crowd
+  under the thickest fog is the 12,000 in the Palace. They are the first
+  lungs the Quickening would fill (§3.4, §3.8b).
 - **The Quickening** — from the towers of the **Golden Gate Bridge**, where
   the fog pours into the City, the Theogens plan to load a "god-gene" into **Karl**,
   the nanite swarm in the City's fog (companion doc §3.2), and use the swarm
@@ -1170,6 +1221,16 @@ reaches the swarm — and in it, if nobody has told him, the Emperor reads
 his own child's genome for the first time —
 and the storm tears at his body. Julian pulls one way; the
 Emperor pulls the other. He convulses — a seizure the size of a city.
+
+**Why he does not simply let it out.** The instant the god-gene reaches the
+swarm, the Emperor understands what the Theogens never did: breathed out
+over the City, it would make a hive of eight million, a rampage and a mass
+death (§3.4). The 12,000 in the Palace are the nearest lungs; they would go
+first. Whether he holds it in, breathes it out, or is too far gone to choose
+is the hinge of the finale, and it depends on the player — on what Hell Rot
+has told him, whether the child is near, and which of the three selves is in
+control at midnight. Holding it is what breaks him into the convulsion that
+follows.
 
 For sixteen years every storm has rained Karl's foglets down into the soil:
 into the Fill, the old 1906 rubble under the Marina, the wet ground along the
@@ -2517,6 +2578,16 @@ Issues*. The **Archive** room shows every column filed, in full, as a *Mondo
   synonym for "dangerous," never play his symptoms for cheap horror, and
   must show his suffering and his lucid hours as fully as his decrees.
   Sensitivity readers with lived experience of psychosis review his scenes.
+  The god-gene's hive and rampage (§3.4) are science-fiction body horror,
+  not a depiction of any real illness; the stages borrow the look of a mass
+  casualty event, not of psychiatric symptoms, and the people in a pocket
+  outbreak are named, mourned, and never the butt of the scene.
+- **Mass-casualty imagery.** The pocket outbreak and the midnight stakes
+  deal in the death of crowds. The game keeps it restrained: no gore for its
+  own sake, the victims are people the player knows, the only responses are
+  rescue, containment and witness, and there is never a weapon that makes it
+  fun. A content warning precedes the outbreak scene, and the player is told
+  it is coming.
 - **Secret societies.** The Auric Order is fictional. It borrows
   the *forms* of the Freemasons and the Knights Templar (degrees, aprons,
   lodges, a guarded relic), and must not present real Masonic or Templar
@@ -2827,8 +2898,13 @@ Plot questions the writers' room must answer before Alpha.
   Castillo is her midwife (§3.4, Prologue).
 - **The god-gene is cingulate engineering** — Brandvold's theory, built
   only into Ione, by Delphine, as a fetus. It works only in a developing
-  brain; as a virus in the foglets it would kill everyone. The Emperor holds
-  it inside Karl at midnight; it cannot heal him (§3.4).
+  brain. As a virus in the foglets it would make a hive mind that goes mad,
+  rampages, seizes and dies — stages one to three (§3.4). The Quickening is
+  therefore a doomsday device, and **not even its prophet knows it**: a death
+  cult with no villain. The Ascension's 12,000 are the first lungs it reaches
+  (§3.3, §3.8b). A smaller release can play out as a contained pocket
+  outbreak before midnight. The Emperor holds the god-gene inside Karl at
+  midnight; it cannot heal him.
 - **Ione is a girl;** the Church and the Order call her "it." Her health
   is set in the Prologue; she is taken in Issue 4 (by the Gilders or the
   Church) and rescued at Mount Sutro in Issue 5; as an adult in 2069 she
@@ -2910,6 +2986,12 @@ Plot questions the writers' room must answer before Alpha.
     visibly, night by night, on the HUD?
 23. Should Moreau's growth pay off in a boss fight, or stay a running gag?
 24. How literal is the Quickening on screen — fog effect only, or a full
-    sequence?
+    sequence? (Now tied to §3.4: the pocket outbreak needs an on-screen
+    depiction of the three stages — hive, rage, seizure — kept contained and
+    never gratuitous.)
+24a. **How is the pocket outbreak staged** so it reads as tragedy, not a
+    zombie shooter? The hive is made of named, sympathetic people; the
+    Gelastic and every weapon are useless; Hell Rot's only tools are a door
+    and his voice. Sensitivity review covers the mass-death imagery.
 25. Does *Mondo 3000* get a playable letters page where cult members, Burn
     survivors and the Emperor write back?
