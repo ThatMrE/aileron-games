@@ -142,16 +142,21 @@ the four.
   1906 earthquake rubble — and Mission Bay flood on king tides, and the
   low ground behind the wall is **the Fill**: cheap, wet, half-abandoned, and
   still settling.
-- **It is winter.** Real San Francisco fog is a summer thing; December is
-  the rainy season, short days and long nights, with sunset just before 5 p.m.
-  This week an **atmospheric river** — a long band of Pacific storm — is
-  forecast to make landfall on New Year's Eve.
+- **It is winter.** December is the rainy season: short days, long nights,
+  sunset just before 5 p.m. and sunrise around 7:25 a.m. This week an
+  **atmospheric river** — a long band of Pacific storm — is forecast to make
+  landfall on New Year's Eve. (Tides, moon and sky for the week: §3.3.)
 - **The fog is a swarm.** The marine layer that rolls in through the Golden
   Gate every evening is now mostly **nanites** — trillions of them. Locals
   call the evening arrival **the Commute**, and the swarm itself goes by the
-  fog's old 2010s nickname, **Karl**. Karl does not do seasons: it hangs
-  over the City year-round now, thin and low in winter. See §3.2 for what Karl is and
-  what it wants.
+  fog's old 2010s nickname, **Karl**. Real San Francisco fog is a summer
+  thing. Karl does not do seasons: since the swarm was seeded, the City has
+  lived under **thick fog all year**, December included — grey at noon,
+  white-out at midnight, streetlights as smudges, foghorns all night. Only the
+  high ground breaks through: Twin Peaks, Mount Tamalpais, the tops of the
+  tallest towers. Above the fog line the sky is clear and the stars are out.
+  Below it, the City has not seen the moon in years. See §3.2 for what Karl is
+  and what it wants.
 - **The bridge has a private deck.** A glass skywalk slung under the Golden
   Gate's roadway in the 2040s, leased for parties at a price nobody prints —
   **the Span**.
@@ -209,7 +214,66 @@ election. Nobody knows how.
   conversation in the game, spread across several Nights — and ask it to
   refuse both. Karl has never refused anything. It has also never been asked.
 
-### 3.3 District table
+**What thins Karl.** Only heavy rain. A big storm scrubs the nanites out of
+the air for a few hours, and the City sees its own sky. That is why the New
+Year's Eve atmospheric river matters so much (§3.3).
+
+### 3.3 Sky and water: 25 December 2049 – 1 January 2050
+
+The week's sky is real astronomy (computed for San Francisco, times in PST).
+The tides follow from it. Writers should use these facts; they are part of
+the plot.
+
+**The astronomy.**
+
+- **New moon:** Friday 24 December, 9:51 a.m. — Christmas Eve. The game
+  opens in the darkest nights of the month.
+- **Lunar perigee:** Sunday 26 December, about 1 a.m., at roughly 360,900 km —
+  a close approach, only two days after new moon.
+- **Perihelion** (Earth closest to the Sun): about 5 January 2050.
+- **First quarter:** Friday 31 December, 12:52 a.m. — New Year's Eve.
+
+**The tides: king tides at the start, neap tides at the end.**
+
+A new moon, a close perigee and the near-perihelion Earth all line up in the
+first days of the game. That is the recipe for **king tides** — the highest
+tides of the year, which the Bay Area usually gets three or four times each
+winter, each lasting four to five days.
+
+- **San Francisco tides are mixed:** two highs and two lows a day, of unequal
+  height. In a winter king-tide window the biggest high comes in the
+  **morning**; today's king tides reach about 7 feet at the San Francisco
+  gauge.
+- **Sea level in 2049** is roughly **0.8 feet (about 25 cm) higher** than in
+  the 2020s (California's intermediate projection for San Francisco; NOAA's
+  national projection is 10–12 inches by 2050). So the week's king tides
+  peak near **8 feet** — over the Embarcadero seawall's weak spots, into the
+  Fill and the Marina, and into the lower end of the Undertrack.
+- **By New Year's Eve the moon is at first quarter, so the tides are at neap**
+  — the smallest range of the fortnight. The water threat on the last night is
+  the storm (rain, runoff and surge), not the tide.
+
+**What it does in the game.**
+
+| Night | Moon (evening sky) | Water | Game effect |
+|---|---|---|---|
+| Sat 25 Dec (Prologue) | 3% crescent, sets 6:32 p.m. | King tides building | Dark night; from Mount Tam, above the fog, the stars are out |
+| Sun 26 Dec (Issue 1) | 9%, sets 7:45 p.m. | **King tide peak** (perigee night) | Morning flooding of the Fill and the Embarcadero is the news when the night begins; lower Undertrack doors are underwater |
+| Mon 27 Dec (Issue 2) | 17%, sets 8:57 p.m. | King tides | The Theogens are pushed up out of the flooded tunnels into the Baths — easier to find, angrier |
+| Tue 28 Dec (Issue 3) | 27%, sets 10:07 p.m. | Tides falling off | Karl's Birthday on Ocean Beach; the tunnels start to drain |
+| Wed 29 – Thu 30 Dec (Issue 4) | 38–50%, sets 11:15 p.m. – 12:22 a.m. | Normal | The Undertrack reopens; the Theogens go back down |
+| Fri 31 Dec (Issue 5) | ~60% waxing gibbous; at midnight it hangs about 15° above the western horizon, straight out over the Golden Gate; sets 1:27 a.m. | **Neap tide**; storm surge and rain | The Quickening needs Karl aloft and the storm wants to knock it down |
+
+**The midnight moon.** Under Karl, nobody in the City has seen the moon in
+years. At midnight on New Year's Eve a bright, gibbous moon sits low over the
+Golden Gate — visible only from above the fog line (the Trident on Twin
+Peaks, the Span, Mount Tam), *unless* the storm scrubs Karl out of the air.
+If the storm wins, the whole City sees the moon over the bridge at the stroke
+of 2050 for the first time in sixteen years. Several endings use that image,
+and whether it happens depends on what the player did about Karl and the
+Quickening.
+
+### 3.4 District table
 
 | Real place | Game district | What changed | Who lives there | Game use |
 |---|---|---|---|---|
@@ -236,7 +300,7 @@ election. Nobody knows how.
 | Berkeley | **The Berkeley Hills** | The Duchess Nyx's mansion and the *Mondo 3000* office; the old university labs where Hell Rot trained | *Mondo 3000* | Every Issue's opening |
 | Fisherman's Wharf | **The Wharf** | Sea lions with union cards; a fortune-telling automaton FRANCIS likes to speak through | Sea lions | Comic relief |
 
-### 3.4 Hell Rot's apartment
+### 3.5 Hell Rot's apartment
 
 A rented flat in a new tower on **Russian Hill**, on Lombard Street. The
 crooked street now runs down the inside of the tower as a spiral corridor.
@@ -484,8 +548,9 @@ These extend §8 of the main design.
   pixels: the Span's glass skywalk, the Trident's prongs, the Geary Cathedral's glass
   spike, the Black House's black skin on a white tower, the Baths' ruined
   pools, the Doggie heads.
-- **Karl** (the Commute): a dithered grey fog layer that scrolls in every
-  evening, full of 1-pixel glints (the nanites). When Karl is "thinking," the
+- **Karl**: a thick, dithered grey fog layer over every street-level scene,
+  all year, densest after dark (the evening thickening is still called the
+  Commute), full of 1-pixel glints (the nanites). When Karl is "thinking," the
   glints drift into brief shapes — a face, a street, a word — from whatever it
   last recorded, then scatter.
 - **The Twin** is drawn in the same scenes as the City, but cleaner: no
@@ -615,6 +680,14 @@ Asilomar), §1 and §5 note the range.
 - [Roadside America — Doggie Diner heads](https://www.roadsideamerica.com/story/11504)
 - [Religion News Service — San Francisco's Hunky Jesus contest](https://religionnews.com/2025/04/17/san-franciscos-hunky-jesus-contest-stirs-up-controversy-community-and-courage/)
 - [USA Today via PressReader — "Running of the weird at Bay to Breakers"](https://www.pressreader.com/usa/usa-today-us-edition/20160518/281565174989206)
+
+**Tides and sea level**
+- [Bay Nature — King tides offer a glimpse of sea level rise](https://baynature.org/2023/01/19/science-nature/climate/this-weekends-king-tides-offer-a-glimpse-into-the-future-of-sea-level-rise/)
+- [KQED — Where and when to see king tides in the Bay Area](https://www.kqed.org/science/1954745/where-and-when-to-see-king-tides-in-the-bay-area-this-weekend)
+- [Floating Homes Association — king tide peak times at the San Francisco gauge](https://ft.floatinghomes.org/?p=33197)
+- [NOAA — Report projects a century of sea level rise in 30 years](https://noaa.gov/node/8641)
+- [San Francisco Chronicle — California sea level rise projections](https://preview-prod.w.sfchronicle.com/climate/article/california-sea-level-rise-18617459.php)
+- Moon phases, perigee, perihelion, sunrise/sunset and moon positions for December 2049: computed with the PyEphem astronomy library for San Francisco. Tide heights for 2049 are estimates (today's king-tide heights plus projected sea-level rise), not NOAA predictions.
 
 **From general knowledge; verify before any public release:** Levi Strauss &
 Co.'s 1853 founding and the 1873 rivet patent; Genentech's founding year and

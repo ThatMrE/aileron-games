@@ -426,8 +426,13 @@ At midnight on 31 December 2049, as the City turns to 2050, four things happen a
   in October to merge), plus **Proposition F**, which would make FRANCIS a
   legal person. Lyle Sunday has promised both cults their night. If he and
   Prop F win, the City sanctions both.
-- **The storm** — an atmospheric river makes landfall around 11 p.m. The rain
-  knocks Karl down out of the air. The Theogens need Karl aloft at midnight,
+- **The storm** — an atmospheric river makes landfall around 11 p.m. Heavy
+  rain is the only thing that thins Karl, the thick fog the City lives under
+  all year; it scrubs the swarm out of the air. It is a neap-tide night, so
+  the water threat is rain and surge, not tide (companion doc §3.3).
+  If the storm wins, the whole City sees the moon for the first time in
+  sixteen years: a bright gibbous moon low over the Golden Gate at the
+  stroke of 2050. The Theogens need Karl aloft at midnight,
   which makes the storm the hardest deadline in the game, and the weather
   report the most important document in Issue 5.
 
@@ -1351,8 +1356,8 @@ in the companion document §3. Key rules:
   frames) with satirical products written for the game. Ads change with world
   flags: FRANCIS ads multiply as the Merge spreads; Theogen graffiti glows
   over them in the Loin; the Dissonance re-paints them in Route A.
-- **Karl** (the nanite fog) scrolls in every evening, full of 1-pixel
-  glints that drift into brief shapes when the swarm is "thinking."
+- **Karl** (the nanite fog) covers every street-level scene, thick all year,
+  full of 1-pixel glints that drift into brief shapes when the swarm is "thinking."
 
 ### 8.6 UI language
 
