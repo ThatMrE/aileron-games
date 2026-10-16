@@ -1,4 +1,4 @@
-# Mondo 3000: Hell Rot — The Loading-Screen Deck (v1.0)
+# Godsplice — The Loading-Screen Deck (v1.0)
 
 > Companion to [hellrot-design.md](hellrot-design.md) §8.8, which holds the
 > deck's rules. This document holds the **cards**.

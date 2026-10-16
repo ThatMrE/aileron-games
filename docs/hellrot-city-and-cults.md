@@ -1,4 +1,4 @@
-# The City: the Bay Area, 2049 — Setting, Cults & Weird Calendar (v0.3)
+# Godsplice — The City: the Bay Area, 2049 — Setting, Cults & Weird Calendar (v0.3)
 
 > Companion to [hellrot-design.md](hellrot-design.md). That document holds
 > the plot, mechanics, play style (*Disco Elysium* × *Hades* × *Grim

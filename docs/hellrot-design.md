@@ -1,4 +1,4 @@
-# MONDO 3000: HELL ROT — Game Design Overview & Spec Sheet (v0.3)
+# GODSPLICE — Game Design Overview & Spec Sheet (v0.3)
 
 > **One-line pitch:** An 8-bit, text-driven, choice-based RPG. You are **Dr.
 > Hell Rot, PhD** — self-styled synthetic neurobiologist, PhD dropout, five years clean, gonzo
@@ -36,8 +36,10 @@
 
 | Field | Value |
 |---|---|
-| Working title | *Mondo 3000: Hell Rot* |
-| Alt titles | *Hell Rot: The God Feed*, *Peer Review*, *Saint Rot* |
+| Title | ***Godsplice*** |
+| Why | Both gods are splices: the Emperor is a man spliced into a machine, and the Theogens splice the god-gene into people. Hell Rot wrote the paper that made the splice possible. |
+| Former working title | *Mondo 3000: Hell Rot*. *Mondo 3000* stays the magazine's name inside the game, and Hell Rot stays the hero. |
+| Alt titles | *Hell Rot: The Blind Spot*, *Kill Fee*, *Hell Rot: Copy for the Gods*, *Peer Review*, *Saint Rot* |
 | Genre | Narrative RPG with a roguelite night loop: dialogue-driven runs, a home hub, branching story |
 | Core verbs | **Look. Talk. Provoke. Analyze. Write. Publish.** |
 | Perspective | Static illustrated scenes + text box (NES/MSX adventure layout) |

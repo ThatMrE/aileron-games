@@ -1,4 +1,4 @@
-# Mondo 3000: Hell Rot — Playtest Report (rules simulation)
+# Godsplice — Playtest Report (rules simulation)
 
 > Companion to [hellrot-design.md](hellrot-design.md). The game has no build
 > yet, so this playtest runs the **design's rules** in a small simulator: the

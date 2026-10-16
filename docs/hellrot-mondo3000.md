@@ -1,4 +1,4 @@
-# Mondo 3000 — The Magazine, the House, the Patron & the Party (v0.2)
+# Godsplice — Mondo 3000: the Magazine, the House, the Patron & the Party (v0.2)
 
 > Companion to [hellrot-design.md](hellrot-design.md) (plot, mechanics, art)
 > and [hellrot-city-and-cults.md](hellrot-city-and-cults.md) (setting, cults,
