@@ -191,6 +191,30 @@ which fits those routes.
 - **Fabrication rates in the random batch are high** only because the random
   model lies often. They say nothing about real players.
 
+## 6b. The playable wireframe, played by a bot
+
+A playable HTML wireframe of the game (the City map, the House, scenes,
+showdowns, the Layout, the route lock and all 17 endings) was played end to
+end by a browser bot: 18 full games from the Prologue to midnight on New
+Year's Eve, with four play styles (follow the rails, never sleep, ride the
+Church's shuttles, take every boon). The final 18 games ran with no errors.
+The test found four real problems, all fixed:
+
+1. **The rails steered.** The ★ "fastest ride" was almost always the
+   Church's shuttle, so every rail-following player drifted to Saint Rot.
+   The ★ now marks the fastest ride with no strings (design §4.6).
+2. **Softlocks.** A player could be stranded on the Rock or Treasure Island
+   with no legal ride home. The return ferry is now free, the night bus
+   links the edges of the map, and ▶ NEXT routes through the right pier.
+3. **No way to stay up.** After filing, the only next step was sleep. "Stay
+   up and work an hour" now lets a player push toward the 48-hour delirium
+   on purpose.
+4. **Delirium broke clicking.** The delirium wobble shook the buttons. Now
+   only the scene art wobbles.
+
+The two never-sleep games both hit delirium, were sent home to sleep 6
+hours, and still finished the week.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a

@@ -2514,17 +2514,24 @@ flickers from riot footage to soft gold light.*
   fail. **A timed beat comes to him** (a phone call, a runner, a voice in
   the fog) wherever he is: he can be late to it, but he can never miss it
   by being in the wrong district.
-- **The day segment.** Scenes the plot marks "daytime" (City Hall in Issues 2
-  and 5, the Sutro Baths, the ruined lab, the canonizations) play in a
-  short **day segment** before dusk. It is off the clock: one or two fixed
-  scenes, no Runs, no Hours spent. The night's 13 Hours start at dusk.
+- **The full 24 hours (after the wireframe test).** The clock never stops.
+  Each Issue's **night** runs from dusk (5 p.m.) to the 6 a.m. press. The
+  **day** runs from the press to the next dusk: the player can sleep, travel,
+  play the scenes the plot marks "daytime" (City Hall in Issues 2 and 5, the
+  Sutro Baths, the ruined lab, the canonizations), or wait for dusk. At dusk
+  the next Issue begins wherever Hell Rot is. On New Year's Eve the deadline
+  is midnight, not 6 a.m. The HUD shows a 24-hour strip (night blue, day
+  amber, the press and midnight marked) and the week's calendar.
 
 ### 4.3 The micro loop: a Run
 
 A Run is a *Hades* run told in text. Hell Rot leaves the House (Junie drives
-the van, or he takes whatever ride the map offers, §4.6) and moves
-through **4–7 scenes**, each a choice of doors. An ordinary door costs
-½ Hour and a Story door 1 Hour (§5.6). A Run ends at a **boss showdown**, a blackout, or when he heads home.
+the van, or he takes whatever ride the map offers, §4.6) and visits
+locations. **Each location is an 8-bit point-and-click interior** (§4.7):
+he walks the room and clicks **hotspots** instead of picking doors. **Only
+travel between locations costs time.** Everything inside a location is
+free, and each hotspot works once per Issue, so a room cannot be farmed. A
+Run ends at a **boss showdown**, a blackout, or when he heads home.
 
 ```
  HUB (the Mansion) ─▶ District 1 ─▶ District 2 ─▶ District 3 ─▶ BOSS SHOWDOWN ─▶ HOME
@@ -2535,8 +2542,8 @@ through **4–7 scenes**, each a choice of doors. An ordinary door costs
           └───────────── blackout / lost showdown / heading home: back to the House ◀──────────────┘
 ```
 
-**Door types** (each door shows its reward icon before you choose, as in
-*Hades*):
+**Hotspot types** (the *Hades* doors, placed in the room: each shows its
+reward icon on hover, and works once per Issue):
 
 | Door | *Hades* analogue | What happens |
 |---|---|---|
@@ -2638,6 +2645,7 @@ is a choice on the map screen, and most have a catch.
 | **Fog-surfing** | A Dissonance trick: a wide, light parafoil that rides the rising air where Karl's thick, warm fog meets cold air on the hills | Free between hilltops (Twin Peaks, Russian Hill, Sutro, Mount Sutro, the Berkeley Hills) | MOUNTAIN MAN check. Karl talks to you the whole way. In the New Year's Eve storm it is suicide. |
 | **The Skyline gondola** | A 2040s aerial cable car from the Embarcadero to the top of Twin Peaks, built so tourists could ride up above the fog line | ½ Hour, arrives above Karl, under open sky | Owned by the Grove's donors. Tickets cost Ink. The only public place in the City where you can see the moon. |
 | **Drone-kiting** | Clipping a harness to a heavy-lift delivery drone and letting it carry you along its route | Free, random destination from the drone's route | Illegal. Heat +1. The drones belong to the Rivet Trust's estate. Something in the fog notices, and finds it charming. |
+| **Night bus** | Golden Gate Transit and the Transbay bus | 1½ Hours to Marin, ¾ Hour to Berkeley or Treasure Island, only to and from the Span (Marin) or the Embarcadero | Slow, cheap, nobody's. The way back from the edges of the map, so no player is ever stranded |
 | **The Wet Line** | Hydrofoil water taxis that skim over the flooded streets of the Fill and Mission Bay at king tide, then out across the bay | ½ Hour, only on king-tide nights (Issues 1–2) | Wet. Sea lions with union cards ride for free and will not move. |
 | **The Doggie heads** | The Dissonance Society's flatbed trailer carrying three giant fiberglass dachshund heads, which goes wherever the prank is tonight | Free, destination is a Dissonance door | The Nortonians follow the heads in procession, chanting the names of the Emperor's dogs. |
 | **Cable car** | The Conductor's cable car — black market and ride in one (§4.3) | ¼ Hour on its line, shop while you ride | It only goes where cable cars go. |
@@ -2646,6 +2654,52 @@ is a choice on the map screen, and most have a catch.
 **Design intent:** almost every fast ride belongs to someone — a god, a cult,
 the rich, or the pranksters. Walking is slow and free. The map screen is one
 more place where the player is stuck in the middle.
+
+**Map rules (after the wireframe test).**
+
+- **Every ride shows its arrival time and its strings** (+1 Sainthood, +1
+  Helix, +1 Heat, Ink) in the colour of whoever owns it.
+- **The ★ never steers.** It marks the fastest ride *with no strings*. In the
+  first test build it marked the fastest ride of any kind, which was usually
+  the Church's shuttle, and every rail-following player drifted to Saint Rot.
+- **No player is ever stranded.** The night ferry back from the Rock is free,
+  and the night bus links Marin, Berkeley and Treasure Island to the City.
+
+### 4.7 Interiors: point-and-click locations
+
+Every location on the map opens into a single 8-bit **interior**, drawn at
+256 × 144 like a classic point-and-click room: Hell Rot's sprite walks to
+whatever the player clicks.
+
+- **Hotspots** are the room's people and objects. Each has a type (the table
+  above): talk to a person, search an object, a gold altar, a cyan clinic
+  door, a fight, a bed to rest on, the gas, the exit back to the map. Each
+  hotspot works **once per Issue** and costs no time.
+- **Tonight's scene** is a hotspot too. It appears only on the Issue the plot
+  sets, and it pulses.
+- **Every location has its own room.** The Ghost Diner has booths, a
+  counter and a jukebox. The Geary Cathedral has pews and a giant screen.
+  The Musée Mécanique has arcade cabinets and Laffing Sal. The Rock has a
+  cryo vault, the Tomales Ward a terrarium and a circle of chairs. Villa
+  Delirium is a cutaway of the whole house: each room is a hotspot.
+- **Keyboard and touch:** every hotspot is also listed as a button under the
+  picture, so the game never needs pixel-hunting.
+
+### 4.8 Rails and indicators (after the wireframe test)
+
+Players of the first test build could not tell what to do. The fix puts
+every choice on rails from the first click, without taking choices away.
+
+- **The plan.** Each night (and each day) has a numbered plan in the side
+  panel: ✓ done, ▶ next, ○ to do, · optional. It follows the order in the
+  Issue plots (Issue 1 ends at the uprising, it does not start there).
+- **▶ NEXT.** One button takes the player to the next step: the right room,
+  the map with the destination selected, or the hotspot itself.
+- **Glow.** The next thing to click always glows orange: a room, a ride, a
+  hotspot, the File button. On the map a ▼ NEXT arrow marks the place.
+- **Change tags.** Every change shows as a tag in the corner: +1 SAINTHOOD,
+  −1 CLARITY, +½ HR · 5:30 PM.
+- **The Key.** A screen explains every colour, line and icon.
 
 ---
 
@@ -2821,12 +2875,14 @@ other, and slowly become the funniest pairing in the cast.
 ### 5.6 Time and pressure: Hours, Runs, press time, the Duchess
 
 - **Hours (per night).** Each night runs from dusk (about 5 p.m.) to press
-  time (6 a.m.): **13 Hours**. An ordinary door costs ½ Hour, a Story door
-  1 Hour. Long conversations and lab work cost 1–2. Writing in the Notebook
-  costs ¼ Hour per item. Travel follows the ride table (§4.6): ¼ Hour
-  between neighbouring districts, ½ Hour across the City, more on foot.
-  (Playtest: at the old 1 Hour per door, the core story alone needed 14–16
-  Hours in Issues 1, 4 and 6.) A blackout costs 2
+  time (6 a.m.): **13 Hours**, and the clock runs on through the day (§4.2).
+  **Only travel between locations costs time** (the ride table, §4.6: ¼
+  Hour between neighbouring districts, ½ Hour across the City, more on
+  foot). Everything inside a location is free: talking, searching,
+  showdowns, the kitchen lab, the Fact Desk, writing in the Notebook, the
+  Layout. The only other things that move the clock are sleeping and
+  staying up. (Playtest: at the old 1 Hour per door, the core story alone
+  needed 14–16 Hours in Issues 1, 4 and 6.) A blackout costs 2
   Hours of recovery. Drugs can buy Hours at a Clarity cost. At 6 a.m. the
   press runs, filed or not.
 - **Clarity (per Run).** Clarity is the run's "health": it starts each
@@ -2835,6 +2891,14 @@ other, and slowly become the funniest pairing in the cast.
   **maximum** Clarity by 1 per Issue — the roguelite run gets shorter as the
   disease advances, unless a cure lifts the cap.
 - **Runs (per night).** As many as the Hours allow — usually 2 to 4.
+- **Awake time and Delirium.** The HUD tracks hours awake (green, then
+  orange at 36). At **48 hours awake** Hell Rot becomes **delirious**: the
+  screen tints red, the scene art wobbles, the voices argue about what day
+  it is, and every ride except the one home is closed. Only **6 hours of
+  sleep** in the Tower Room ends it. Sleeping 6 hours anywhere in the House
+  resets awake time and refills Clarity. A one-hour nap refills Clarity but
+  does not reset awake time. "Stay up and work an hour" lets a player push
+  on deliberately.
 - **Clarity floor.** The Rot and relapses cannot push maximum Clarity
   below 3. Only printed lies and the corrupt Pale Eye can take it lower: a
   player who relapses three times plays a hard game, not an impossible one.
@@ -2892,7 +2956,8 @@ full of it. **Craving** (0–5) tracks how close he is to using.
 
 **Remembered vs. recorded.** During a Run, new items land in **Memory**
 first (a short, volatile list, max 6 items). Writing an item down moves it to
-the Notebook and costs ¼ Hour. On blackout, Memory empties. On a safe return
+the Notebook and costs no time (only travel does), but it is a deliberate
+act: what is not written down is lost if he blacks out. On blackout, Memory empties. On a safe return
 home, Memory transfers automatically. From Issue 4, Memory holds fewer items
 and THE ROT may swap one with a false memory — the Fabrication risk of a
 failing mind.
@@ -2976,7 +3041,7 @@ text alone.
 
 | Archive upgrade | Version A | Version B |
 |---|---|---|
-| **Steno** | Writing costs no Hours | Memory holds 3 more items |
+| **Steno** | THE ROT cannot swap a written-down item | Memory holds 3 more items |
 | **Second Wind** | Once per Run, survive a blackout with 2 Clarity | Start each Run with +2 Clarity |
 | **Press Pass** | Start in any unlocked district | First Encounter door each Run is auto-won |
 | **Fact Desk** | Yara verifies one item per Run remotely | Lead fragments merge without Yara |
