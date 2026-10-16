@@ -243,6 +243,23 @@ Two findings:
    only Clarity limits a player (story scenes, Dissonance and showdowns
    cost it). Each hotspot works once per Issue, so a room can't be farmed.
 
+### Third pass: walking the rooms
+
+The interiors became top-down rooms walked with WASD (design §4.7). The
+bot played 7 more games on the walking version:
+
+| Style | Games | Result |
+|---|---|---|
+| Mixed (buttons) | 4 | Endings 14, 13, 13, 13 |
+| Never sleeps | 2 | Endings 6 and 4. Both hit delirium and recovered. |
+| Click a tile, walk there | 1 | Ending 14 |
+
+There were no errors. The clock moved inside a room only on a blackout. A
+scripted test walked to the Duchess with the keys, opened the Salon, left
+by the ▼ exit, rode to North Beach and played the story by clicking it.
+On an emulated phone the D-pad moved Hell Rot and the page did not scroll
+sideways.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
