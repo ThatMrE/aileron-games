@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 222 cards: 66 real
-> quotations, 6 redacted cards, 125 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 223 cards: 66 real
+> quotations, 6 redacted cards, 126 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -134,7 +134,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (125) and eye cards (25)
+## Part 2 — In-world cards (126) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
@@ -275,7 +275,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W69b | "Write my obituary, Doctor. Before midnight. Be cruel if it's true." | The Magister Black | *First time anyone asked me for the truth and meant it.* | Black House, I6 |
 | W70 | "HAHAHAHAHA. HAHA. Beloved. HAHAHA." | Laffing Sal, Musée Mécanique | *The Emperor only laughs through her. Don't ask me why. Ask her.* | Laffing Sal, weird |
 
-### 2G. The City, the week, the weather (22)
+### 2G. The City, the week, the weather (23)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -301,6 +301,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W90 | "I AM JULIAN RIVET. I AM THE FOG. I AM SORRY." | Written on every window in the City, midnight | *Eight million people read it at the same time. Nobody will ever forget the handwriting.* | I6, Emperor, holy |
 | W91 | "The fire took the warehouse. The box survived. We begin again." | Auric Order minute book, entry for 18 April 1906 | *They read it aloud every meeting for 143 years. On New Year's Eve they found out what it meant.* | Order, I6, grim |
 | W92 | "MONDO 3000 — SPECIAL EDITION — THE CITY IS ON FIRE AND THE FOG IS A MAN." | Front page, printed 5:40 a.m., 1 January 2050 | *Paper. The only thing that still worked.* | House, I6 |
+| W92a | "TEMP" | A shelter wristband, the Loin | *She kept the word and dropped a letter. That's the whole story.* | Tem, tender |
 
 ### 2H. The Eyes (25)
 

@@ -646,8 +646,9 @@ on the record.
   not answer. That refusal is her strength. Hell Rot can offer to print an
   answer. She decides whether he does.
 - **Tem.** She is the closest thing Tem has to a big sister, and she knows
-  what a zero-Halo life looks like (main doc §3.6b). If Tem goes missing
-  after the uprising, Marisol is the one who comes to the House to ask.
+  what a zero-Halo life looks like (main doc §3.6b). When Tem goes missing
+  after the Haight clinic, Marisol is the one who comes to the House to ask
+  (Issue 3). If Tem saw who took Ione, Marisol is the one she tells.
 - **Side quest: "Visiting Day."** Get Ana out of the Lifeboat intake before
   New Year's Eve. **Talk:** convince Ana herself, a hard red check (Ana
   believes in the Game). **Evidence:** expose the intake list in print.
@@ -1140,7 +1141,8 @@ worship — never at victims, ex-members or ordinary believers.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat. In The Deep Wards ending their
    testimonies are written with disabled writers. The ending has no pity
-   framing and cures nobody.
+   framing and cures nobody. Tem (15) is never shown harmed for shock, has
+   no romance, and makes every choice about her own body.
 11. **The Church of Satan** is a real, living organisation. The fictional
    Black House must not imitate its real people or rites, and must avoid
    "Satanic panic" tropes: no sacrifice, no abuse, no hidden crimes. Its

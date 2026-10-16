@@ -820,7 +820,8 @@ nerve damage, **he might score below the threshold himself**.
 - **Desh's arc: letter-writer, plaintiff, witness.** Desh scored 31 on the
   Index and wrote in to say so. He is the BFF's star plaintiff. Like Tem, he
   feels crowds too much — a lighter echo of the god-gene's first stage —
-  and in Issue 3 he mentors her. In Issue 5 he testifies. On New Year's Eve
+  and in Issue 2 he mentors her, the last person to see her before she
+  vanishes (§3.6b). In Issue 5 he testifies. On New Year's Eve
   he leads the thirty-one survivors to the Palace of Fine Arts to tell the
   12,000 what the edit did to them: living proof that the god-gene kills.
 - **How the BFF and the survivors end:**
@@ -1333,7 +1334,7 @@ Tem is 15. Her name comes from her old shelter wristband, which said
 **TEMP**: she kept the word and dropped a letter. Her parents are gone, and
 Mama Rue is the closest thing she has to family, and Marisol Reyes, from
 the Lantern soup line, is the closest thing she has to a big sister. When
-Tem disappears in Issue 3, Marisol is the one who comes to the House to ask
+Tem disappears after Issue 2, Marisol is the one who comes to the House to ask
 (companion doc §4.1). If Pip Okada turns, he hides at the Lantern too, and
 the two of them become friends: Tem teaches him to curse, and he teaches
 Tem farm signs. She is quick, funny and
@@ -1353,15 +1354,86 @@ Her line: *"Everybody wants to save me. Nobody wants to ask me."*
 - **Both cults want her.** The "gold lady" at the Church clinic offers a
   Halo and a Church personal AI to "anchor" her. The Theogens want to finish
   the splice — which would kill her.
-- **Her week.** Issue 1: Hell Rot meets her in the uprising. Issue 3: she
-  disappears into the Undertrack, and — if Yara's Trust is 2 or more — Yara
-  finds her in the deep wards, so that scene has a face the player knows.
-  Issue 6: on the bridge she is the canary. Near the Quickening's
-  canisters she feels the hive start before anyone else, and warns them.
-- **Endings.** **Mortal:** *"Tem enrolled at City College in January. She
-  sits in the back so nobody can stand behind her."* **Successor:** *"Tem is
-  Yara's intern now. She fact-checks the corrections."* **New Flesh:** *"The
-  Theogens finished Tem's splice. The deep wards have a new bed."*
+- **Her week.**
+  - **Issue 1:** Hell Rot meets her in the uprising.
+  - **Issue 2:** the gold lady's offer at the Geary mass (below). At dusk
+    Desh sits with her and teaches her how he handles crowds. He is the last
+    person to see her. That night she walks into the Theogen trial clinic in
+    the Haight and asks them to take the glow *out*.
+  - **Issue 3:** Marisol comes to the House to say Tem is gone. Delphine's
+    people took her down to the deep wards to "finish" her. Wren refused to
+    do it and hid her there. If Yara is with Hell Rot and her Trust is 2 or
+    more, Yara finds Tem at the Baths, and Tem comes up that night to the
+    Lantern. If not, the player plays Tem's escape (below).
+  - **Issue 4:** if she is still underground, she sees who takes Ione from
+    the tunnels, climbs out and tells Marisol: a Lead for the Ione search.
+    Either way she is at the Lantern by now, where Pip finds her.
+  - **Issue 6:** on the bridge she is the canary. Near the Quickening's
+    canisters she feels the hive start before anyone else, and warns them.
+- **What Hell Rot does in Issue 1 matters.** One flag tracks her view of
+  him: *trusts him*, *wary* or *gone*.
+  - **Treat her:** a CHEMIST check. He teaches her a breathing trick for
+    losing the line. *Trusts him.*
+  - **Report her:** the Twin logs her, and the gold lady's Issue 2 offer is
+    made by name (Sainthood +1). *Wary* until he apologizes in print, which
+    takes a paragraph of a column.
+  - **Hide her:** Heat +1. *Trusts him*, and she becomes a source in the
+    Loin.
+
+  *Gone* means she will not speak to him. It happens if he reports her and
+  never apologizes, or if he prints her name without asking.
+- **The gold lady at the Geary mass (Issue 2).** In front of 12,000 people,
+  the Church puts Tem on the big screen and offers her a Halo. She says no,
+  live. Hell Rot can amplify her refusal (Readers up, Tem's face on every
+  feed) or shield her from the cameras (no story, her trust). He cannot do
+  both.
+- **"So you're the one who should ask."** Once she trusts him, he can tell
+  her it was his paper in her arm (*Parrhesia*, Vow +1). Then she asks *him*
+  questions, and the player answers each one: honest answers keep her
+  trust, a dodge costs it. Her own line becomes a mechanic.
+- **Tem's escape (playable).** If Yara does not find her in Issue 3, the
+  player controls Tem for one top-down room in the deep wards. The tunnels
+  are dark, and her arm is the only light, which helps her see and lets
+  them see her. She slips past Cask's runners to reach Wren. This is the
+  only time the player is not Hell Rot. The deep wards are seen through her
+  eyes, not his.
+- **Never decided for her.** She is 15. There is no romance, and harm to
+  her is never shown for shock. Any treatment is her choice, and she can
+  say no. Her failed splice and losing the line go to the
+  disability-community reader. No ending cures her.
+- **Endings.** One line for each:
+  - **The Mountain:** *"Tem visits on Sundays. Moreau likes her better."*
+  - **Peer Review:** *"Tem's genome is in the Open Dataset. She signed the
+    consent form herself, in capitals."*
+  - **The Hog's Bargain:** *"Mayor Pell's census found Tem in a week. She
+    moved to the Fog Belt in two."*
+  - **Saint Rot:** *"Tem still has a Halo of zero. She is the only person in
+    the Loin the saint's voice never mentions."*
+  - **Iconoclast:** *"Tem broke her first Halo at fifteen. It wasn't even
+    hers."*
+  - **New Flesh:** *"The Theogens finished Tem's splice. The deep wards have
+    a new bed."*
+  - **The Mob:** *"Tem walked at the front of the first march. She walked
+    off after a block."*
+  - **Mortal:** *"Tem enrolled at City College in January. She sits in the
+    back so nobody can stand behind her."*
+  - **Successor:** *"Tem is Yara's intern now. She fact-checks the
+    corrections."*
+  - **Fabrication:** *"Hell Rot printed that Tem's arm was a tattoo. She
+    stopped coming to the diner."*
+  - **Midnight Forever:** *"Tem was the first to notice he had stopped. She
+    sat with him on the sand until Junie came."*
+  - **Spiked:** *"Tem's interview is in the Fact Desk drawer too. She asked
+    for it back."*
+  - **The Unfinished:** *"Tem and Hell Rot both have a Halo of zero now. She
+    shows him which diners still serve you."*
+  - **Draft:** *"Tem still drops by the House. She brings her own coffee."*
+  - **Hung Jury:** *"Tem lost the line on the bridge at midnight. Mama Rue
+    said her name until she came back."*
+  - **Truce:** *"Both gods sent Tem a letter. She used them to light the
+    Lantern stove."*
+  - **The Deep Wards:** *"Tem read her own testimony on the radio. She
+    didn't lose the line once."*
 
 ### 3.6c Sister Halcyon
 
@@ -1789,7 +1861,11 @@ from the water to the uprising.
   the Game. Two doors down, an unlicensed **Theogen
   trial clinic** offers free splices to anyone who signs a waiver. The Haight
   has done this before — the doc's real-history notes cover the 1960s. The
-  Craving system is under the most pressure here.
+  Craving system is under the most pressure here. Tem walks into that
+  clinic tonight (§3.6b).
+- **The Geary Cathedral mass (optional).** The Church's gold lady puts Tem
+  on the big screen and offers her a Halo. Tem says no, live. Hell Rot can
+  amplify it or shield her, not both (§3.6b).
 - **Investigation threads (pick two of three):**
   1. **The Halo economy** — Halos for sale. The poorest pay the most.
   2. **The Merged** — visit a citizen who merged: conditioned, with a Church
@@ -1825,7 +1901,8 @@ from the water to the uprising.
   live. Delphine Ash shows Hell Rot a congregation of glowing, healthy, joyful
   people who cite his footnotes. Then — if Yara is present and Trust ≥ 2 —
   Yara finds the deeper tunnels, where the failed splices live — and Tem,
-  who went missing after the uprising (§3.6b).
+  who went missing the night before (§3.6b). If Yara does not find her, the
+  player plays Tem's escape.
 - **The California Academy of Sciences, evening.** A black-tie **donor
   dinner for the Game**, the Church's rehab ministry for feed addicts, under the museum's living roof and
   beside its aquarium tanks. Mayor Sunday attends. So does Rosa Quint, his
@@ -1906,7 +1983,8 @@ Common to all routes:
   mother ("Visiting Day," companion doc §4.1).
 - **Ione is taken.** Sometime in the day, the Tidechild disappears from the
   tunnels under the Sutro Baths. Delphine's Conviction cracks. LOST flyers
-  go up across the Mission (§3.4).
+  go up across the Mission (§3.4). If Tem is still underground, she sees
+  who took Ione and brings it to Marisol: a Lead (§3.6b).
 - **The Auric lodge, the Presidio, night.** The break-in: the Order's lodge
   in an old brick military building in the Presidio, where Julian's scan
   happened. The 1849 gold pan on the altar. The minute book with the vote on
