@@ -1272,7 +1272,7 @@ uncertainty on screen.
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Old Dee** | Founder of the Game, Church elder | Born Dewitt Lomax, 79. Built the feed addiction, then the cure, then went back on the feed for a Halo. Sold Sunday his members as Lifeboat test subjects (companion doc §4.1). |
-| **Marisol Reyes** | Ex-member of the Game | 26. Grew up on the farm, split at 19, Gamed in public every week since. Writes to the Letters Page. Works at the Lantern (companion doc §4.1). |
+| **Marisol Reyes** | Ex-member of the Game | 26. Grew up on the farm, split at 19, Gamed in public every week since. Zero Halo. Works the Lantern soup line, a big sister to Tem. Her mother Ana is on the Lifeboat's intake list. Writes to the Letters Page (companion doc §4.1). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
@@ -1320,7 +1320,10 @@ I mean that as a compliment."*
 
 Tem is 15. Her name comes from her old shelter wristband, which said
 **TEMP**: she kept the word and dropped a letter. Her parents are gone, and
-Mama Rue is the closest thing she has to family. She is quick, funny and
+Mama Rue is the closest thing she has to family, and Marisol Reyes, from
+the Lantern soup line, is the closest thing she has to a big sister. When
+Tem disappears in Issue 3, Marisol is the one who comes to the House to ask
+(companion doc §4.1). She is quick, funny and
 suspicious. She has never had a Halo above zero and has never wanted one.
 Her line: *"Everybody wants to save me. Nobody wants to ask me."*
 
@@ -1872,7 +1875,9 @@ Common to all routes:
 - **Coit Tower.** Mayor Sunday's **Lifeboat** rig is being built inside Coit
   Tower — cheap contractors, stolen Twin access, borrowed cryo gear, murals
   of 1930s workers watching from the walls. It is a sloppy, dangerous mess. It
-  will fail, and on New Year's Eve it will hurt more than Sunday.
+  will fail, and on New Year's Eve it will hurt more than Sunday. Its test
+  subjects are the Game's intake. One of them is Ana Reyes, Marisol's
+  mother ("Visiting Day," companion doc §4.1).
 - **Ione is taken.** Sometime in the day, the Tidechild disappears from the
   tunnels under the Sutro Baths. Delphine's Conviction cracks. LOST flyers
   go up across the Mission (§3.4).
@@ -2222,7 +2227,18 @@ The rest of the set. Each line works whether Delphine lived or died:
 - **Saint Rot:** *"Old Dee leads the Game in the Twin now. Nobody there
   flatters anyone. Nobody there is anyone."*
 - **Mortal:** *"Marisol Reyes bought the farm in the Tomales Ward at
-  auction. It grows oysters. Nobody shaves their head."*
+  auction. It grows oysters. Nobody shaves their head."* Until it opens,
+  she works the Lantern soup line beside Hallie, who used to be Sister
+  Halcyon: two women out of the Church, one ladle each.
+
+**Marisol's line.** Three more endings close on her:
+
+- **Iconoclast:** *"Marisol's mother came home on 2 January. They argued
+  for six hours. Neither of them shouted."*
+- **Saint Rot:** *"Marisol stopped writing to us. The Game still Games her
+  every Sunday, in the Twin now. She doesn't go to the window any more."*
+- **Peer Review:** *"Marisol testified at the hearing on the Game. She wore
+  her hair down."*
 
 ### 3.12 Branching map (high level)
 

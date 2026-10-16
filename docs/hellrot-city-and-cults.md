@@ -621,10 +621,40 @@ prize.
   Halos.
 
 **Marisol Reyes** (original), the ex-member. She is 26, grew up on the farm
-and "split" at 19. The Game has Gamed her in public every week since. She
-writes to the Letters Page in Issue 2. A reply makes her a source. She
-speaks for herself, and refuses to be anyone's victim on the record. She
-works the soup line at the Lantern.
+and "split" at 19. She speaks for herself, and refuses to be anyone's victim
+on the record.
+
+- **Her history.** Born 2023. Her mother joined Synapse in 2031 and brought
+  her, aged 8. On the farm the children were raised together in "the
+  School," not by their parents. She split in 2042, five years before the
+  Church bought the Game. She has had no Halos since: a Halo score of zero.
+  She works the soup line at the Lantern, and sleeps there.
+- **Her mother is still inside.** **Ana Reyes**, 58, a member for eighteen
+  years, is on the intake list Old Dee sold to Mister Sunday as Lifeboat
+  test subjects. Marisol's first letter to the Letters Page (Issue 2) is
+  not about herself. It asks whether anyone knows where the "Weekend Game"
+  volunteers went. A reply makes her a source, and ties her to Rosa's leak,
+  to Sunday and to Coit Tower.
+- **Look and voice.** Long hair, grown out on purpose since she split.
+  Blunt, fast and very funny. She can take anyone's lie apart the way the
+  Game taught her, and chooses not to. When she catches herself being
+  cruel, she says *"That's the Game talking,"* and stops.
+- **The Sunday sessions.** Every Sunday the Game streams a "split session"
+  about her on the Church feed. She listens from the Lantern window and does
+  not answer. That refusal is her strength. Hell Rot can offer to print an
+  answer. She decides whether he does.
+- **Tem.** She is the closest thing Tem has to a big sister, and she knows
+  what a zero-Halo life looks like (main doc §3.6b). If Tem goes missing
+  after the uprising, Marisol is the one who comes to the House to ask.
+- **Side quest: "Visiting Day."** Get Ana out of the Lifeboat intake before
+  New Year's Eve. **Talk:** convince Ana herself, a hard red check (Ana
+  believes in the Game). **Evidence:** expose the intake list in print.
+  **Bargain:** if Rosa is alive, she can pull Ana's name. If all fail, Ana
+  is in Coit Tower when the Lifeboat runs.
+- **She coaches the showdown.** Before the Game at the Tomales Ward:
+  *"I was raised by every one of them. I know their lies."* She reveals one
+  weak point per circle member and gives *Parrhesia* +1 for that fight. She
+  will not come into the circle, and the game never makes her.
 
 ### 4.2 The Theogens
 
@@ -924,6 +954,10 @@ worship — never at victims, ex-members or ordinary believers.
 9. **Synanon survivors** include children raised inside it. The Game arc
    must include an ex-member who speaks for themselves: Marisol Reyes
    (§4.1). Her lines go to the sensitivity reader with lived experience.
+   Her past is never a reveal or a twist. She never retells abuse in detail
+   on screen, and the player cannot push her for her story: she tells what
+   she chooses. Her Sunday sessions are heard only as sound through a
+   window, never shown as a scene.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **The Church of Satan** is a real, living organisation. The fictional
