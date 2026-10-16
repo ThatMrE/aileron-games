@@ -2588,8 +2588,9 @@ flickers from riot footage to soft gold light.*
 
 A Run is a *Hades* run told in text. Hell Rot leaves the House (Junie drives
 the van, or he takes whatever ride the map offers, §4.6) and visits
-locations. **Each location is an 8-bit point-and-click interior** (§4.7):
-he walks the room and clicks **hotspots** instead of picking doors. **Only
+locations. **Each location is an 8-bit top-down interior** (§4.7): the
+player walks Hell Rot around the room with WASD, like *The Legend of Zelda*
+or *Pokémon*, and uses **hotspots** instead of picking doors. **Only
 travel between locations costs time.** Everything inside a location is
 free, and each hotspot works once per Issue, so a room cannot be farmed. A
 Run ends at a **boss showdown**, a blackout, or when he heads home.
@@ -2726,25 +2727,48 @@ more place where the player is stuck in the middle.
 - **No player is ever stranded.** The night ferry back from the Rock is free,
   and the night bus links Marin, Berkeley and Treasure Island to the City.
 
-### 4.7 Interiors: point-and-click locations
+### 4.7 Interiors: walk the room
 
-Every location on the map opens into a single 8-bit **interior**, drawn at
-256 × 144 like a classic point-and-click room: Hell Rot's sprite walks to
-whatever the player clicks.
+Every location on the map opens into a single 8-bit **interior**: a
+top-down room of 16 × 9 tiles, 16 pixels each (256 × 144), in the style of
+the NES *Legend of Zelda* and the Game Boy *Pokémon* games.
 
+- **Walking.** WASD or the arrow keys move Hell Rot one tile at a time, with
+  a two-frame walk. Walls, people and objects block him. **Space** or **E**
+  uses the person or object he faces. The player can also click or tap a
+  tile: he walks there on the shortest path, and if the tile holds a
+  hotspot he uses it when he arrives. On a phone, an on-screen D-pad and an
+  **A** button appear.
+- **Sprites.** Every character has a 16 × 16 sprite in four directions,
+  drawn from the same spec as their portrait (skin, hair, clothes,
+  glasses, beard, crucifix), with a dark NES outline and a belt in their
+  faction's colour. People turn to face Hell Rot when he comes near.
+  Moreau, Ione and Karl have their own sprites.
 - **Hotspots** are the room's people and objects. Each has a type (the table
   above): talk to a person, search an object, a gold altar, a cyan clinic
-  door, a fight, a bed to rest on, the gas, the exit back to the map. Each
-  hotspot works **once per Issue** and costs no time.
+  door, a fight, a bed to rest on, the gas. Each hotspot works **once per
+  Issue** and costs no time. A marker floats over each one in its type's
+  colour, and a ✓ replaces it once used. The bar at the top names whatever
+  Hell Rot faces.
+- **Layout.** Doors, windows, screens and murals sit in the back wall.
+  People stand in the middle rows, objects in the rows around them. The
+  row below the back wall and the bottom rows stay clear, so every hotspot
+  can be reached. The exit is the ▼ gap in the bottom wall: walking onto it
+  goes back to the map.
 - **Tonight's scene** is a hotspot too. It appears only on the Issue the plot
-  sets, and it pulses.
-- **Every location has its own room.** The Ghost Diner has booths, a
-  counter and a jukebox. The Geary Cathedral has pews and a giant screen.
-  The Musée Mécanique has arcade cabinets and Laffing Sal. The Rock has a
-  cryo vault, the Tomales Ward a terrarium and a circle of chairs. Villa
-  Delirium is a cutaway of the whole house: each room is a hotspot.
-- **Keyboard and touch:** every hotspot is also listed as a button under the
-  picture, so the game never needs pixel-hunting.
+  sets, and it has a glowing frame.
+- **Every location has its own room.** The floor and border change with the
+  place: the Ghost Diner's checkerboard and neon, the Geary Cathedral's
+  red carpet and stained glass, trees around the Park, water around the
+  piers. The Ghost Diner has a counter and a jukebox. The Musée Mécanique
+  has arcade cabinets and Laffing Sal. The Rock has a cryo vault, the
+  Tomales Ward a circle of chairs.
+- **Villa Delirium** is walkable too: one floor with a corner for each
+  housemate (the Duchess's sofa, Yara's desk, Otto's stove, Mary's
+  shelves, Moreau's tank, Fax's press, Junie's van) and Hell Rot's bed in
+  the top right. Talking to a housemate opens their room.
+- **No pixel-hunting:** every hotspot is also listed as a button under the
+  picture, so the game can be played without walking at all.
 
 ### 4.8 Rails and indicators (after the wireframe test)
 
