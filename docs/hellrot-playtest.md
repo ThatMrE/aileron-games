@@ -165,7 +165,9 @@ which fits those routes.
 - **Most random players get a dark ending.** The Unfinished (14%) and
   Draft (11%) are now the commonest endings for players who drift. This is
   the design's "taking boons chooses your god" theme, but it may feel
-  punishing. Consider lowering Iconoclast's Junie gate to Trust ≥ 3.
+  punishing. **Iconoclast's Junie gate is now Trust ≥ 3** (was 4). A re-run
+  shows the rates barely move: drifting players never raise Junie's Trust
+  at all, so the gate is not the bottleneck. Earning her Trust is.
 - **Route D is rare without intent** (under 5% of random players). It is the
   "secret best route" by design, so the Duchess's Issue 3 reading and the
   *Long Look* are its signposts.
