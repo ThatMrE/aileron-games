@@ -49,7 +49,7 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1989 | **Loma Prieta earthquake** | — | The Marina District, built on fill that included 1906 rubble, liquefied, gas-line fires burned there. | Why the Fill and the Marina burn first in the Midnight Quake |
 | 1966 → present | **Church of Satan**, the "Black House," California Street | Anton LaVey | Founded on Walpurgisnacht, 30 April 1966, with a head-shaving ritual and a declaration of "Year One." Doctrine: the self as its own god. | Self-deification as doctrine. → **The Black House**, the Theogens' salon |
 | 1968 → 1988 | **Holy Order of MANS** | Earl W. Blighton | Esoteric-Christian order that ran family shelters. Peaked near 3,000 members (1977). About 750 converted together into Eastern Orthodoxy in 1988. | A good-works order that runs shelters. → **The Lantern** (not a cult) |
-| 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **the Game**, the Church's rehab ministry |
+| 1968 → c. 1991 | **Synanon**, HQ near Marshall, Marin County | Charles "Chuck" Dederich | Drug rehab that became a church. "The Game" grew from group therapy into marathon verbal-attack sessions (up to 72 hours by some accounts). In 1978 members put a de-rattled rattlesnake in attorney Paul Morantz's mailbox. Its armed guard was called the "Imperial Marines." *The Point Reyes Light* exposed the group. | Ritual verbal combat. → **the Game**, the Church's rehab ministry. Its guard → **the Quiet Squad** |
 | 1971 → 1991/92 | **Kerista Commune**, Haight-Ashbury | John "Brother Jud" Presmont | Polyfidelitous commune. Coined "compersion." Ran **Abacus**, an early Macintosh dealer with over 250 staff and more than $25M a year in revenue. | A business that owns the hardware supply chain. → the **Treasure Island fabs** |
 | 1971 → 1980s | **est** | Werner Erhard | First seminar October 1971, in the Jack Tar Hotel ballroom. About 60 hours over two weekends, hundreds at a time. | Enlightenment by the ballroom. → **the Seminar**, the Church's on-ramp |
 | 1971–1977 (SF), 1978 (Guyana) | **Peoples Temple**, 1859 Geary Street | Jim Jones | A church with a political machine. Bused members to campaign. Helped George Moscone win the 1975 mayoral runoff. Jones then sat on the Housing Authority Commission (chair 1976–77. Sources differ on the start). Staged "healings." After a 1977 *New West* exposé, Jones moved to Guyana. On 18 November 1978, 918 people died at Jonestown and the Port Kaituma airstrip, among them Congressman Leo Ryan. On 27 November, Dan White killed Mayor Moscone and Supervisor Harvey Milk at City Hall. | A church that wins elections. The ground zero of the City's history with cults. → **The Church of the Twin** (political arm) and the Ascension |
@@ -606,8 +606,8 @@ prize.
   Church) and the Thought *"Nobody Here Will Flatter You."* It works, at
   first. That is the trap.
 - **The Quiet Squad.** Six shaved-head members who guard the farm and never
-  speak in the circle. They send the snake, on a hint from Old Dee, never an
-  order, so he can deny it.
+  speak. They send the snake, on a hint from Old Dee, never an order, so he
+  can deny it (see below).
 - **Make him play.** With the Halo evidence, and one exchange won with
   *Parrhesia*, Hell Rot can call Old Dee into the circle. **Win:** the circle
   turns on its founder, the members walk out, the Church loses its rehab
@@ -688,6 +688,39 @@ on the record.
 - **If she is in Coit Tower.** The Lifeboat scans its test subjects to
   calibrate the upload. When it fails, they are hurt as Sunday is: Ana loses
   most of her words, a mirror of the Rot. She survives.
+
+**The Quiet Squad** (original), the Game's guard. Six members.
+
+- **Origin.** Formed in 2037 from the members the Game had broken hardest.
+  They took a vow of silence, and Old Dee made them his guard. (The echo is
+  Synanon's armed guard, the "Imperial Marines.")
+- **Their rule, the second crack.** They never speak, never Game anyone and
+  are never Gamed. Like Old Dee, they are exempt from the honesty the Game
+  demands. The Game's honesty stops at its muscle.
+- **Huck Baptiste**, 44, leads them. A former Oakland bouncer: huge, and
+  gentle with animals. He keeps the farm's terrarium. He speaks only in
+  hand-lettered cards. The one he uses most says *"NO."*
+- **Pip Okada**, 19, the youngest, grew up in the School beside Marisol, who
+  was a big sister to him. He is the only witness who heard Old Dee's
+  "hint" about the snake. Turning him takes Marisol's Trust and an exchange
+  won with *Silence*. When he turns, he speaks for the first time in four
+  years, and his words are the evidence that ties Old Dee to the snake.
+- **The snake.** Gene-edited, its rattle spliced off at the Theogens'
+  unlicensed clinic in the Haight. The Church's muscle uses the Theogens'
+  lab: the two cults trade more than they admit.
+- **Escalation by Heat.** **Heat 3:** one of them stands across the street
+  from wherever Hell Rot is, all night. **Heat 5:** they follow the van.
+  **Heat 7, or the Old Dee crack in print:** the snake. They intimidate.
+  They never kill on screen.
+- **The silent standoff.** They are silence made solid, so Hell Rot's
+  *Silence* works on them: the one place the game rewards saying nothing.
+  *Invective* and *Satire* fail. **Win:** they step aside. **Lose:** Heat +2
+  and a long walk home.
+- **Where they appear.** Issue 2: if Hell Rot answered Marisol's letter,
+  one stands outside the Lantern. Issue 3: the farm in the Tomales Ward.
+  The morning after the Old Dee crack runs: the snake. Issue 6: Sunday
+  hires them to guard the Lifeboat's test subjects at Coit Tower, so the
+  Evidence and Bargain routes of "Visiting Day" go past them.
 
 ### 4.2 The Theogens
 
@@ -992,7 +1025,10 @@ worship — never at victims, ex-members or ordinary believers.
    she chooses. Her Sunday sessions are heard only as sound through a
    window, never shown as a scene. Her mother Ana's part in the Game is
    written with compassion, never as a twist or a villain beat, and Ana's
-   moderator years are spoken of, never shown.
+   moderator years are spoken of, never shown. The 1978 attack had a real
+   victim, Paul Morantz. The game keeps only its outline (a snake with no
+   rattle, in a mailbox) and adds no other real detail. The credits name
+   the real case.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **The Church of Satan** is a real, living organisation. The fictional

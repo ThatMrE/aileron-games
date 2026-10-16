@@ -1274,6 +1274,7 @@ uncertainty on screen.
 | **Old Dee** | Founder of the Game, Church elder | Born Dewitt Lomax, 79. Built the feed addiction, then the cure, then went back on the feed for a Halo. Sold Sunday his members as Lifeboat test subjects (companion doc §4.1). |
 | **Marisol Reyes** | Ex-member of the Game | 26. Grew up on the farm, split at 19, Gamed in public every week since. Zero Halo. Works the Lantern soup line, a big sister to Tem. Her mother Ana is on the Lifeboat's intake list. Writes to the Letters Page (companion doc §4.1). |
 | **Ana Reyes** | Game elder, Lifeboat test subject | 58. Marisol's mother. A former feed content moderator who joined Synapse in 2031. Has Gamed her own daughter in public. Volunteered for the "Weekend Game" (companion doc §4.1). |
+| **The Quiet Squad** | The Game's guard | Six silent members, led by Huck Baptiste. They send the snake. Pip Okada, 19, the youngest, can be turned, and his first words in four years tie Old Dee to it (companion doc §4.1). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
@@ -2052,7 +2053,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **The Palace of Fine Arts** | The Ascension: 12,000 uploads at midnight in the rotunda and around the lagoon | Core (Routes A, B, D) |
 | **The Golden Gate Bridge** | The Quickening loaded into Karl from the towers, the Midnight Quake hits (§3.8b) | Core |
 | **City Hall** | The recall count. Prop F results. Rosa reads the result in Sunday's place (if alive) | Core |
-| **Coit Tower** | Sunday's Lifeboat upload fails, live | Optional |
+| **Coit Tower** | Sunday's Lifeboat upload fails, live. The Quiet Squad guards the test subjects | Optional |
 | **The Marina, Mission Bay and SoMa, burning** | The fire after the quake, rescues in the smoke, the Order's 1906 nightmare | Core |
 | **Baker Beach** | The bonfire and the Route D debate between the gods, or a man standing frozen at midnight | Core (Route D), Ending 11 |
 | **Mount Tamalpais** | The Mountain | Ending 1 |
@@ -2224,8 +2225,12 @@ The rest of the set. Each line works whether Delphine lived or died:
 - **Saint Rot:** he sends one note: *"You were one of us. Now you're
   nobody's."*
 
-**Old Dee's line.** Three endings close on him (or on the Game):
+**Old Dee's line.** These endings close on him and the Game:
 
+- **Peer Review (the Quiet Squad):** *"The Quiet Squad were charged. Five
+  said nothing in court. Pip said everything."*
+- **Mortal (the Quiet Squad):** *"Pip works at Marisol's oyster farm. He
+  talks all day. Nobody minds."*
 - **Peer Review:** *"Old Dee was Gamed on live feed by his own members. He
   cried. It was the first honest thing he had said since 2047."*
 - **Saint Rot:** *"Old Dee leads the Game in the Twin now. Nobody there
