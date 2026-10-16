@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 218 cards: 66 real
-> quotations, 6 redacted cards, 121 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 219 cards: 66 real
+> quotations, 6 redacted cards, 122 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -134,7 +134,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (121) and eye cards (25)
+## Part 2 — In-world cards (122) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
@@ -245,7 +245,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W55 | "The Tube capsule, pressurised. Panic, then the East Bay." | + | *Do not take the Tube.* | GIHKAL, transport, funny |
 | W56 | "Rain on New Year's Eve with the fog gone and the moon out." | (unrated) | *Some things you don't score.* | GIHKAL, I6, tender |
 
-### 2F. The cults of the City (21)
+### 2F. The cults of the City (22)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -256,6 +256,7 @@ Hell Rot's own Shulgin-style entries. Each carries a plus rating.
 | W58c | "Ask me anything. I'll tell you the truth. That's the one thing they gave me I kept." | Marisol Reyes, at the Lantern | *She meant it. Then she asked me one back, and I lied.* | Game, tender |
 | W58d | "I watched the worst of the world for eight years. Then the Game told me I was the worst of it. It was a relief." | Ana Reyes, in the circle | *The saddest sentence anyone said to me all week. She said it like good news.* | Game, grim |
 | W58e | " " | The Quiet Squad, at the Tomales Ward gate | *Six people saying nothing, very loudly.* | Game, weird |
+| W58f | "She came back." | Pip Okada, his first words in four years | *Three words. Best quote I got all week.* | Game, tender |
 | W59 | "There is no god but you. Dress code: black." | Black House invitation | *Most honest cult in town. Still a cult.* | Black House |
 | W60 | "Hour 51. You are responsible for everything. Including the bathroom break you do not get." | Trainer, the Seminar | *Hour 60 is where your name goes on the Ascension list.* | Seminar, funny |
 | W61 | "Free dinner. No catch. Weekend in Mendocino optional (strongly encouraged)." | Church flyer for the Table | *The catch is in the parentheses.* | Table |

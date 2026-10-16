@@ -1331,7 +1331,9 @@ Tem is 15. Her name comes from her old shelter wristband, which said
 Mama Rue is the closest thing she has to family, and Marisol Reyes, from
 the Lantern soup line, is the closest thing she has to a big sister. When
 Tem disappears in Issue 3, Marisol is the one who comes to the House to ask
-(companion doc §4.1). She is quick, funny and
+(companion doc §4.1). If Pip Okada turns, he hides at the Lantern too, and
+the two of them become friends: Tem teaches him to curse, and he teaches
+Tem farm signs. She is quick, funny and
 suspicious. She has never had a Halo above zero and has never wanted one.
 Her line: *"Everybody wants to save me. Nobody wants to ask me."*
 
@@ -2328,6 +2330,13 @@ The rest of the set. Each line works whether Delphine lived or died:
   said nothing in court. Pip said everything."*
 - **Mortal (the Quiet Squad):** *"Pip works at Marisol's oyster farm. He
   talks all day. Nobody minds."*
+- **Saint Rot (Pip):** *"Pip went back to the farm. He hasn't said a word
+  since."*
+- **Iconoclast (Pip):** *"Pip read the Lifeboat subjects' names aloud on the
+  City Hall steps. All of them. His voice held."*
+- **Any ending, if Pip's name ran and nobody protected him:** *"Pip is in
+  Oregon now, under another name. He writes to Marisol every week, on
+  paper."*
 - **Peer Review:** *"Old Dee was Gamed on live feed by his own members. He
   cried. It was the first honest thing he had said since 2047."*
 - **Saint Rot:** *"Old Dee leads the Game in the Twin now. Nobody there

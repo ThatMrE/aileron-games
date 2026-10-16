@@ -703,9 +703,9 @@ on the record.
   hand-lettered cards. The one he uses most says *"NO."*
 - **Pip Okada**, 19, the youngest, grew up in the School beside Marisol, who
   was a big sister to him. He is the only witness who heard Old Dee's
-  "hint" about the snake. Turning him takes Marisol's Trust and an exchange
-  won with *Silence*. When he turns, he speaks for the first time in four
-  years, and his words are the evidence that ties Old Dee to the snake.
+  "hint" about the snake. When he turns, he speaks for the first time in
+  four years, and his words are the evidence that ties Old Dee to the
+  snake. See below.
 - **The snake.** Gene-edited, its rattle spliced off at the Theogens'
   unlicensed clinic in the Haight. The Church's muscle uses the Theogens'
   lab: the two cults trade more than they admit.
@@ -722,6 +722,40 @@ on the record.
   The morning after the Old Dee crack runs: the snake. Issue 6: Sunday
   hires them to guard the Lifeboat's test subjects at Coit Tower, so the
   Evidence and Bargain routes of "Visiting Day" go past them.
+
+**Pip Okada** (original), the Quiet Squad's youngest. 19.
+
+- **History.** Born 2030, he came to the farm as a baby. His father split in
+  2038 and left him behind, and the Game kept him as "the School's child."
+  He was 12 when Marisol split. She promised to come back for him and could
+  not: the Game turns away any visit from a splitter.
+- **Why he went silent.** At 15 he asked about Marisol in a session and was
+  Gamed for it for three days. He took the vow the next morning: silence was
+  the only place nobody could attack him. The Quiet Squad took him in, and
+  Huck became the nearest thing to a father he has.
+- **Look and voice.** Slight, shaved head, an apron from the farm's animal
+  pens. He and Huck talk in farm signs they invented. He whistles to the
+  terrarium snakes. Once he speaks, his voice is rusty, then he cannot
+  stop: precise about animals, and funnier than anyone expects.
+- **The snake is his.** He raised it from a hatchling. By the terrarium he
+  heard Old Dee say, *"Somebody should give the doctor something to think
+  about in his mailbox."* Huck delivered the box. Pip carried it to the
+  truck. That guilt is why he can be turned.
+- **Turning him, in three steps.** **The letter:** Marisol asks after him on
+  the Letters Page, so he knows she remembers. **The standoff:** at the farm
+  in Issue 4, a silent standoff won with *Silence*. **The card:** Hell Rot
+  hands him a card in Marisol's hand. His first words in four years: *"She
+  came back."*
+- **After he turns.** He hides at the Lantern with Marisol. The Quiet Squad
+  hunt him: Heat +1 each night he is hidden. With Junie Trust ≥ 3, she
+  guards the door.
+- **The source choice.** Print Pip's name, and the Old Dee story is
+  unanswerable (Vow +2), but the Squad find him that night. Keep him
+  anonymous, and the story is weaker — Old Dee calls it "a splitter's lie" —
+  but Pip is safe. It is the game's clearest choice between protecting a
+  source and landing the story.
+- **Tem.** At the Lantern he and Tem become friends: two kids who learned to
+  hide. Tem teaches him to curse. He teaches Tem farm signs.
 
 ### 4.2 The Theogens
 
@@ -1029,7 +1063,10 @@ worship — never at victims, ex-members or ordinary believers.
    moderator years are spoken of, never shown. The 1978 attack had a real
    victim, Paul Morantz. The game keeps only its outline (a snake with no
    rattle, in a mailbox) and adds no other real detail. The credits name
-   the real case.
+   the real case. Pip's silence is a vow, a choice: not selective mutism
+   and not a disability. The game never treats speaking as a "cure" and
+   never plays his silence for laughs. His upbringing goes to the same
+   reader as Marisol's.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **The Church of Satan** is a real, living organisation. The fictional
