@@ -48,7 +48,7 @@
 | Platform | Browser first (single-file HTML/PWA, like the other Aileron games), Android wrapper later |
 | Input | Tap/click choices, keyboard 1–9 |
 | Session length | One **Run** (a foray into the City) is 20–40 minutes. One **Issue** (one night, one edition) is 3–6 Runs. 10–14 hours per route |
-| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 11 endings, ~50% of content unseen on a first playthrough |
+| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 16 endings, ~50% of content unseen on a first playthrough |
 | Script size target | 90,000–110,000 words, ~220 scene nodes |
 | Rating target | Mature (ESRB M / PEGI 18): strong language, drug use, body horror, satire of religion and politics |
 | Team (min.) | 1 narrative lead, 1 writer, 1 programmer, 1 pixel artist, 1 chiptune composer, 1 QA/sensitivity reader |
@@ -187,7 +187,7 @@
   - **Moreau** — an axolotl he rescued from the lab, carried in a jar that
     never leaves his side. Axolotls regrow lost limbs. Moreau regrows
     anything, and keeps getting bigger. Comic relief, conscience, and once
-    per route a miracle.
+    per Issue a miracle.
 - **His tragedy in one sentence:** He wrote the test that decides who counts
   as conscious, and the papers that tell people how to become gods — high,
   at 4 a.m., at 26 — and now both cults want him to sign off on what they did
@@ -1053,7 +1053,10 @@ Bridge at midnight unless something stops her first. She **lives** if:
   and calls off the Quickening by her own choice (Route D, the Mortal
   ending), or
 - Hell Rot and Wren carry her off the south tower before the Midnight Quake
-  (a MOUNTAIN MAN red check, Wren Trust ≥ 3).
+  (a MOUNTAIN MAN red check, Wren Trust ≥ 3). **Wren Trust** (0–5): +1 for
+  helping at the birth, +1 for visiting the Sutro tunnels, +1 for a column
+  that defends splicers, +1 for joining the search for Ione in Issue 4, +1
+  for bringing Ione back from Mount Sutro.
 
 Otherwise she **dies** on the bridge: in the convulsion if the Quickening
 runs, or in the storm if it is stopped by force. If she dies, **Wren raises
@@ -1427,7 +1430,7 @@ ISSUE 3    "The Underground"    Tue 28 Dec  Sutro Baths data center; Cal Academy
 ISSUE 4    "Saint Rot"          Wed 29 Dec  the ruined Mission Bay lab; Sunday's rig in Coit Tower; the Presidio lodge break-in
 ISSUE 5    "The Count"          Thu 30 Dec  the City Hall recount; a Twin Peaks drug deal; the Mount Sutro experiment
 ISSUE 6    "Twenty-Fifty"       Fri 31 Dec  Critical Mass; the Ascension at the Palace of Fine Arts; the Golden Gate Bridge climax
-ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition at dawn; one of 11 endings
+ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition at dawn; one of 16 endings
 ```
 
 **Why a week works for the Rot.** On the mountain, with sleep, quiet and no
@@ -1841,8 +1844,11 @@ from the water to the uprising.
     goes on the record — the first named source against Sunday.
   - **Chase the leak:** Hell Rot gets the proof that Sunday gave the order,
     Rosa dies, and the proof is worth more because she died.
-  - **File first:** the column runs before the shot. The forecast flips to
-    "low yield" and Sunday cancels the order. Rosa lives — and the Emperor
+  - **File first:** the press does not run until 6 a.m., so "filing" here
+    means a one-page **extra**: the Duchess runs it off the risograph in
+    minutes, and the Dissonance pastes it up around Civic Center. Karl's
+    cameras read the posters, the Twin recalculates, and the forecast flips
+    to "low yield." Sunday cancels the order. Rosa lives — and the Emperor
     learns that Hell Rot's column can change the forecasts, and wants him
     more.
 - **Golden Gate Park, night.** The chase or the walk west through the dark
@@ -2145,6 +2151,20 @@ When each thread opens, its deadline, and where it pays off.
 
 ### 3.10 The four routes
 
+**How the lock works (after playtest).** The lock reads the meters at the end
+of Issue 3 and checks the routes in this order: **D** (if its conditions
+hold and the player has done both private talks), **A** (Sainthood ≤ 3,
+Helix ≤ 3, Vow ≥ 5, Yara Trust ≥ 3), **B** (Sainthood ≥ 5 and higher than
+Helix), **C** (Helix ≥ 5 and higher than Sainthood). **If none match**, the
+higher worship meter decides (B or C), and a tie goes to A. No player
+reaches Issue 4 without a route.
+
+**The lock is never a surprise.** At dusk on Issue 3 the Duchess reads the
+player where they stand: *"The Church thinks you're a saint. The Theogens
+think you're their father. Yara thinks you're a journalist. By morning one
+of them will be right."* The HUD shows which route the meters point to that
+night, and the Pale Eye's *Long Look* shows it on earlier nights.
+
 #### Route A — HERESY (no gods)
 
 *Lock:* low Sainthood, low Helix, high Vow, Yara Trust ≥ 3.
@@ -2169,7 +2189,7 @@ With Bishop Trust ≥ 4, the Bishop can hold the Palace of Fine Arts for him
 
 #### Route B — MERGE (the machine's saint)
 
-*Lock:* high Sainthood, Sainthood > Helix, any Trust.
+*Lock:* Sainthood ≥ 5 and Sainthood > Helix, any Trust.
 
 Hell Rot accepts the sainthood — as a weapon. If the City will only listen to a
 saint, he will be the saint who tells it the truth. The Emperor gives him
@@ -2190,7 +2210,7 @@ intervention in the van.
 
 #### Route C — SPLICE (the flesh's father)
 
-*Lock:* high Helix, Helix > Sainthood, any Trust.
+*Lock:* Helix ≥ 5 and Helix > Sainthood, any Trust.
 
 Hell Rot goes underground with the Theogens. Delphine treats him like a
 returning king. He takes the first, small splice (cyan light under his skin)
@@ -2209,7 +2229,7 @@ the release or not.
 
 #### Route D — COMMUNION (put the gods in a room)
 
-*Lock:* Sainthood and Helix both ≥ 4 and within 2 of each other, balanced
+*Lock:* Sainthood and Helix both ≥ 3 and within 3 of each other, balanced
 reputation, private dialogues completed with both the Emperor and Delphine, and
 Clarity ≥ 4. The private dialogues are fixed scenes. **The Emperor:**
 Laffing Sal (Issue 1) and the fog on the Alcatraz ferry (Issue 2).
@@ -2232,7 +2252,7 @@ underground. Each god must face the human cost of its love.
 *Climax:* a three-way showdown. The Emperor's Certainty and Delphine's Conviction
 both have to break.
 
-### 3.11 Endings (11)
+### 3.11 Endings (16)
 
 | # | Name | Route | Condition | Summary |
 |---|---|---|---|---|
@@ -2246,7 +2266,26 @@ both have to break.
 | 8 | **Mortal** | D | Win the three-way debate | The Emperor revises his theology: humans are not gods, they are better, because they can change. In a lucid decree he calls off the Ascension and tells the Church to switch off the Halos. Delphine cancels the Quickening and brings the failed splices up into the light. Both gods ask him to keep writing to them. Best ending in the game. |
 | 9 | **Successor** | Any | Yara Trust = max, Clarity ≤ 1 at the final desk | Hell Rot cannot finish the column. Yara finishes it. Her byline. Its first line tells him what she never did: that she read his Theogenesis papers at 15, inside the Bayes House, and that they are why she trusted a magazine enough to leave. The credits roll over it. |
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
+| 12 | **Spiked** | A | Never publish the Open Dataset | The data dies in the Fact Desk drawer. Both cults survive intact. The Duchess runs a crossword in its place. Yara leaves in March. Quiet, bitter, and the most common way Route A fails. |
+| 13 | **The Unfinished** | B | Refuse the Merge with Junie Trust < 4 | He says no, alone, and nobody hears it: no live feed, no crowd. He takes the Halos off in a Palace toilet and walks out with a Halo of zero. City services close to him. He ends the week in the Loin, writing for the Ghost Diner's wall. |
+| 14 | **Draft** | C | Refuse the full splice with Venom < 8 | He refuses gently, and the Theogens excommunicate him gently. The Rot goes on. He keeps writing, smaller, for a readership that no longer prays to him. The most human of the dark endings. |
+| 15 | **Hung Jury** | D | Lose the three-way debate | Neither god moves. The Quake comes at full strength. He files the transcript as his last column, and it is the most-read thing *Mondo 3000* ever printed, and it changes nothing. |
+| 16 | **Truce** | D | Win the debate without pure eyes (§5.14a) | The gods agree to a truce he cannot see the far side of. The Ascension is postponed, not cancelled. Delphine stops the Quickening and keeps splicing. A good ending with a long shadow. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. Time stops only for him: the City's midnight plays out exactly as it would without him — the Ascension if he had not stopped it, the Emperor holding the god-gene in as always, the Midnight Quake — and the epilogue tells it as if he were not there. |
+
+**Playtest.** The route lock, the endings and the Hour costs were tested in
+a rules simulation of 20 playthroughs and 2,000 random ones:
+[hellrot-playtest.md](hellrot-playtest.md).
+
+**Ending precedence (after playtest).** In 19% of simulated playthroughs
+two or more endings qualified at once. The game resolves them in this
+order: **10 Fabrication**, then **11 Midnight Forever**, then **4 Saint Rot**
+(the jack removes his say), then **1 The Mountain** (a choice offered at the
+final desk when its conditions hold, so a deliberate choice beats an
+automatic one), then **9 Successor** (automatic when he cannot finish the
+column), then the route's own ending: 2 or 3 or 12 on Route A, 5 or 13 on
+Route B, 6, 7 or 14 on Route C, 8, 15 or 16 on Route D. Every playthrough
+ends in exactly one ending.
 
 **Ione's line.** Every ending adds one line about Ione. Three set the tone:
 
@@ -2268,6 +2307,11 @@ The rest of the set. Each line works whether Delphine lived or died:
 | **The Mob** | *"The Theogens carry Ione at the front of every march. She is the only one of them who never chants."* |
 | **Successor** | *"Yara's second column was about Ione. It had error bars."* |
 | **Fabrication** | *"Hell Rot printed that Ione was an ordinary child. It was his last lie, and the City believed that one too."* |
+| **Spiked** | *"Ione's file is still in the Fact Desk drawer, under the crossword."* |
+| **The Unfinished** | *"Ione has a Halo of zero too. Mama Rue says it suits her."* |
+| **Draft** | *"Ione glows when she laughs. Nobody has decided yet what that means."* |
+| **Hung Jury** | *"Ione slept through the debate. Everyone else wishes they had."* |
+| **Truce** | *"Both gods sent Ione a birthday present. Wren burned one of them. She won't say which."* |
 
 **The Duchess's line.** Three endings close on her:
 
@@ -2393,6 +2437,11 @@ flowchart TD
   M --> X9[9 Successor]
   I1 & I2 & I3 & M -.->|second Fabrication| X10[10 Fabrication]
   M -.->|pale eye fully corrupt| X11[11 Midnight Forever]
+  M --> X12[12 Spiked]
+  M --> X13[13 The Unfinished]
+  M --> X14[14 Draft]
+  M --> X15[15 Hung Jury]
+  M --> X16[16 Truce]
 ```
 
 ### 3.13 Sample scene (vertical-slice excerpt)
@@ -2459,14 +2508,20 @@ flickers from riot footage to soft gold light.*
   night's main decision.
 - Story beats (§3.9) fire on fixed clock times or on Leads, not on run count,
   so every player sees the plot at a steady pace no matter how often they
-  fail.
+  fail. **A timed beat comes to him** (a phone call, a runner, a voice in
+  the fog) wherever he is: he can be late to it, but he can never miss it
+  by being in the wrong district.
+- **The day segment.** Scenes the plot marks "daytime" (City Hall in Issues 2
+  and 5, the Sutro Baths, the ruined lab, the canonizations) play in a
+  short **day segment** before dusk. It is off the clock: one or two fixed
+  scenes, no Runs, no Hours spent. The night's 13 Hours start at dusk.
 
 ### 4.3 The micro loop: a Run
 
 A Run is a *Hades* run told in text. Hell Rot leaves the House (Junie drives
-the van over the Bay Bridge, or he takes the train under the bay) and moves
-through **4–7 scenes**, each a choice of doors. Each scene costs about an
-Hour. A Run ends at a **boss showdown**, a blackout, or when he heads home.
+the van, or he takes whatever ride the map offers, §4.6) and moves
+through **4–7 scenes**, each a choice of doors. An ordinary door costs
+½ Hour and a Story door 1 Hour (§5.6). A Run ends at a **boss showdown**, a blackout, or when he heads home.
 
 ```
  HUB (the Mansion) ─▶ District 1 ─▶ District 2 ─▶ District 3 ─▶ BOSS SHOWDOWN ─▶ HOME
@@ -2651,6 +2706,16 @@ Temperament (§5.2).
 | **Readers** | 0–∞ | Circulation, the "XP" of the game | Good columns | Bad columns, missed deadlines |
 | **Opinion** | per faction, −5 to +5 | Merge, Theogens, the Loin, the Old Guard (people who remember the 1990s), Cops, Sunday's machine, Pell's recall, the Dissonance | Column angles | Column angles |
 
+**Starting values.** Sainthood 0, Helix 0, Clarity 8, Heat 0, Craving 0,
+Ink 30, Duchess Patience 3, Venom 0, Vow 0 (Venom and Vow run 0–10). The
+Temperament (§5.2) and the Prologue's choices adjust them.
+
+**Worship cools (after playtest).** In 73% of simulated playthroughs a
+worship meter hit 10 by New Year's Eve, and the meters stopped meaning
+anything. Two rules fix it: **boons stop at 7** (Blessings and Splices
+cannot push a meter above 7; only columns and public acts can), and
+**worship cools overnight**: at dusk, each meter above 5 falls by 1.
+
 **Sainthood and Helix are the tension meters.** Each makes social checks easier
 with its own cult and makes truthful columns *less* effective with that cult's
 members ("Your readers believe you. They no longer check."). The HUD shows
@@ -2684,7 +2749,14 @@ The Rot Code (§2.4) is enforced here:
   starts to remember the lie instead of the truth), **Yara Trust −2**, and
   a **Corrections** entry the day someone checks. The first time, Yara
   confronts him and he can print a retraction (big Readers loss, flag
-  cleared, but the Clarity stays lost). The second time locks ending 10.
+  cleared, but the Clarity stays lost). A retracted lie does not count
+  toward ending 10. The second unretracted lie locks it, and the Layout
+  screen warns him before he files it: *"This would be your second."*
+- **The Rot is not a liar.** From Issue 4 THE ROT can swap a Memory item for
+  a false one (§5.7). Printing a swapped item is an honest mistake, not a
+  Fabrication: it costs a Correction and Readers, never maximum Clarity,
+  and never counts toward ending 10. The Blood Eye's *Tell* shows a
+  flicker on a swapped item.
 - **Lies that save lives.** A printed lie can work. On New Year's Eve, a
   false column — *"The Ascension is cancelled"*, *"The canisters are
   empty"* — can send people home and save them. It still counts as a
@@ -2746,10 +2818,12 @@ other, and slowly become the funniest pairing in the cast.
 ### 5.6 Time and pressure: Hours, Runs, press time, the Duchess
 
 - **Hours (per night).** Each night runs from dusk (about 5 p.m.) to press
-  time (6 a.m.): **13 Hours**. Each scene door costs 1. Long conversations
-  and lab work cost 1–2. Writing in the Notebook costs ¼ Hour per item.
-  Travel between the House on Alamo Square and a district costs ½ Hour each
-  way (the van, a shuttle, or the Muni). A blackout costs 2
+  time (6 a.m.): **13 Hours**. An ordinary door costs ½ Hour, a Story door
+  1 Hour. Long conversations and lab work cost 1–2. Writing in the Notebook
+  costs ¼ Hour per item. Travel follows the ride table (§4.6): ¼ Hour
+  between neighbouring districts, ½ Hour across the City, more on foot.
+  (Playtest: at the old 1 Hour per door, the core story alone needed 14–16
+  Hours in Issues 1, 4 and 6.) A blackout costs 2
   Hours of recovery. Drugs can buy Hours at a Clarity cost. At 6 a.m. the
   press runs, filed or not.
 - **Clarity (per Run).** Clarity is the run's "health": it starts each
@@ -2757,7 +2831,10 @@ other, and slowly become the funniest pairing in the cast.
   and refills at home. At 0 he blacks out (§4.4). From Issue 4 the Rot lowers
   **maximum** Clarity by 1 per Issue — the roguelite run gets shorter as the
   disease advances, unless a cure lifts the cap.
-- **Runs (per night).** As many as the Hours allow — usually 3 to 6.
+- **Runs (per night).** As many as the Hours allow — usually 2 to 4.
+- **Clarity floor.** The Rot and relapses cannot push maximum Clarity
+  below 3. Only printed lies and the corrupt Pale Eye can take it lower: a
+  player who relapses three times plays a hard game, not an impossible one.
 - **Duchess Patience** (0–5). Late or weak columns lower it. At 0 the Duchess
   gives the next assignment to someone else, and Hell Rot spends an Issue on
   her couch, in withdrawal, listening to her houseplants (a short, mandatory
@@ -2902,6 +2979,7 @@ text alone.
 | **Fact Desk** | Yara verifies one item per Run remotely | Lead fragments merge without Yara |
 | **Old Lab Keys** | One free lab door per Run | Lab puzzles show one extra hint |
 | **Cold Read** | The blood eye reveals tells at no Hour cost | +1 to all LIMBIC skills |
+| **Plus One** | Take two companions on a Run | Your companion's once-per-Run ability recharges once |
 | **Skill points** | +1 to any skill (repeatable, rising cost) | — |
 
 ### 5.11 Dissonance doors (the *Hades* Chaos gate)
@@ -2989,7 +3067,7 @@ Hell Rot's last column from whoever is left.
 | **The Gelastic** | Ends a physical encounter. *Giggle* (humiliate) or *Hysteria* (incapacitate). Never lethal. Heat ×2 on a live feed. Useless on Delphine. |
 | **The Eyes** | Not equipment — powers. The **blood eye** (truth) and the **pale eye** (foresight), each with a pure and a corrupt upgrade path (§5.14a). |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
-| **Moreau** | Once per route, a free success on any failed check. He grows one size every Issue. |
+| **Moreau** | Once per Issue, a free success on any failed check. He grows one size every Issue. |
 
 ### 5.14a The Eyes: truth sight and foresight (powers)
 
@@ -3021,7 +3099,12 @@ step by step, into the thing both cults are.
 **Upgrading.** Hell Rot earns **Sight** — from honest Shulgin entries, deep
 conversations with Karl, surviving a blackout, and the Spin Question
 experiments. Each eye has four upgrade steps on each path. At every step the
-player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
+player chooses pure or corrupt. A corrupt step is always cheaper: pure
+steps cost **1, 1, 2, 2** Sight, corrupt steps **1** each. **Income:** one
+honest Shulgin entry a night (+1), a deep talk with Karl (+1, once a night),
+surviving a blackout (+1), and the Spin Question experiment (+2). A
+player can earn about 12 Sight in the week: enough for one eye fully pure
+and the other half-way, or both fully corrupt. Relapsing
 (§5.6a) grants Sight that can only be spent on corrupt steps.
 
 **The blood eye.**
@@ -3062,9 +3145,12 @@ player chooses pure or corrupt. A corrupt step is always cheaper. Relapsing
 
 **How the eyes shape the endings.**
 
-- **Both eyes pure at step 4** is required for **Mortal** (ending 8): the
+- **Both eyes pure** — no corrupt step on either, and at least **5 pure
+  steps** between them — is required for **Mortal** (ending 8): the
   Witness lets him see the Emperor's truth, the Long Look lets him find the
-  path where nobody merges and nobody is spliced without consent.
+  path where nobody merges and nobody is spliced without consent. (The old
+  rule, both eyes at step 4, cost 12 Sight and was unreachable in
+  playtest.) Win the debate without it, and the ending is **Truce** (16).
 - **Blood eye corrupt at step 4** makes **Fabrication** (ending 10) one choice
   away: the Great Lie will work on the City, and he will want to use it.
 - **Pale eye corrupt at step 4** unlocks a new ending, **Midnight Forever**
@@ -3568,7 +3654,7 @@ a service worker, optional Android wrapper.
 |---|---|---|
 | **Vertical slice** | Prologue + Issue 1 as 3 playable Runs, the Mansion hub, 4 Blessings, 4 Splices, 1 Contradiction, 1 recurring boss, Layout v1, 8 scenes, 10 portraits | 8–10 weeks |
 | **Alpha** | Issues 1–3, route lock, all systems | +12 weeks |
-| **Beta** | All 4 routes, 11 endings, full art and audio | +14 weeks |
+| **Beta** | All 4 routes, 16 endings, full art and audio | +14 weeks |
 | **Release** | Polish, sensitivity review, accessibility | +4 weeks |
 
 **Biggest risks:**
