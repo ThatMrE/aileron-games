@@ -1273,6 +1273,7 @@ uncertainty on screen.
 | **Mayor Lyle Sunday, "Mister Sunday"** | Main villain (comic until he isn't) | The sitting mayor: a corrupt buffoon who smiles through everything and runs the City's crime — the nitrous trade, the shuttle franchise, the permits. Promises the Merge a city upload programme *and* promises the Theogens legal clinics. His real plan is a sloppy, bootleg upload of himself into the Twin — "the Lifeboat" — built by cheap contractors with stolen access. He wants to be the first upload in history. He does not know he would be the second. It will fail. Faces a recall on New Year's Eve. The buffoonery is real, and so is the menace: when his own chief of staff turns whistleblower, he orders her killed (Issue 3). |
 | **Old Dee** | Founder of the Game, Church elder | Born Dewitt Lomax, 79. Built the feed addiction, then the cure, then went back on the feed for a Halo. Sold Sunday his members as Lifeboat test subjects (companion doc §4.1). |
 | **Marisol Reyes** | Ex-member of the Game | 26. Grew up on the farm, split at 19, Gamed in public every week since. Zero Halo. Works the Lantern soup line, a big sister to Tem. Her mother Ana is on the Lifeboat's intake list. Writes to the Letters Page (companion doc §4.1). |
+| **Ana Reyes** | Game elder, Lifeboat test subject | 58. Marisol's mother. A former feed content moderator who joined Synapse in 2031. Has Gamed her own daughter in public. Volunteered for the "Weekend Game" (companion doc §4.1). |
 | **Rosa Quint** | Sunday's chief of staff, whistleblower | Sincere and idealistic. If she lives, she testifies at the Issue 5 recount and reads the recall result on New Year's Eve in Sunday's place. A Castro organizer who knocked doors for Sunday when he was a young reformer, and has covered for him for twelve years. She runs his recall defence — until she sees what the Lifeboat does to the Haight test subjects. In Issue 2 she starts leaking to *Mondo 3000*. Sunday finds out and **orders her killed**, using the Twin's "martyr metric" forecast as cover: her death would win him the recall (Issue 3). |
 | **The House** | The rest of the party | Otto Prime (science editor, lapsed Extropian), Bishop Null (religion correspondent, failed Singularity prophet), Fax Okoro (art director, obsolete neural jack), Pru Abernathy-Vale (business manager, ex-Effective Altruist), Saint Nobody, and the Greenhouse. Full profiles: [hellrot-mondo3000.md](hellrot-mondo3000.md) §5. |
 | **Mary Okafor** | Witness | A 76-year-old Berkeley local who read *Mondo 2000* when it was new. She remembers televangelists, dot-com prophets and the Y2K panic of the last millennium. Nobody listens to her — except the House, where she lives as the magazine's archivist. |
@@ -1771,7 +1772,9 @@ from the water to the uprising.
 - **The Haight, afternoon into night.** The Haight Exchange's dark side:
   human experiments and drugs. Behind the 1967 theme storefronts, **Sunday's
   operation** runs nitrous dens and recruits addicts as paid test subjects for
-  his bootleg upload, the Lifeboat. Two doors down, an unlicensed **Theogen
+  his bootleg upload, the Lifeboat. The Game's intake comes from the same
+  streets: the test subjects are one pool, Haight addicts who went through
+  the Game. Two doors down, an unlicensed **Theogen
   trial clinic** offers free splices to anyone who signs a waiver. The Haight
   has done this before — the doc's real-history notes cover the 1960s. The
   Craving system is under the most pressure here.
@@ -1782,7 +1785,8 @@ from the water to the uprising.
      being happy. They cannot say anything that is not a compliment, because
      the AI drafts every sentence first.
   3. **The Lifeboat** — follow one of Sunday's test subjects home, and find
-     out what the rig did to the last one.
+     out what the rig did to the last one. If Hell Rot answered Marisol's
+     letter, the subject is her mother, **Ana Reyes**.
 - **The night ferry.** From Pier 33, the gold-trimmed ferry to **Alcatraz
   Longevity**, past the **Nortonian shrine** at the Ferry Building, where the
   fog is writing decrees on the clock face and the Nortonians are singing to
@@ -2014,7 +2018,7 @@ night to build Runs around. (District details: companion doc §3.)
 | **The California Academy of Sciences** | The Game's donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
 | **Golden Gate Park** | The bison paddock in the fog, Hippie Hill, a glow rickshaw race, decrees on the Conservatory of Flowers | Core |
 | **Ocean Beach** | Karl's Birthday bonfire, the Church's mass inhale, one recording heard by everyone | Core |
-| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game. Old Dee, the Quiet Squad, and the chance to make him play | Optional |
+| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game. Old Dee, the Quiet Squad, Ana Reyes in the circle, and the chance to make him play | Optional |
 | **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
 | **The Black House** | The Magister Black's salon, the open donor ledger, the obituary request | Optional |
 
@@ -2239,6 +2243,9 @@ The rest of the set. Each line works whether Delphine lived or died:
   every Sunday, in the Twin now. She doesn't go to the window any more."*
 - **Peer Review:** *"Marisol testified at the hearing on the Game. She wore
   her hair down."*
+- **Any ending, if "Visiting Day" failed:** *"Ana came home from hospital on
+  9 January. She can't find the words for most things. She found 'sorry' on
+  the first day."*
 
 ### 3.12 Branching map (high level)
 

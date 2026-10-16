@@ -656,6 +656,39 @@ on the record.
   weak point per circle member and gives *Parrhesia* +1 for that fight. She
   will not come into the circle, and the game never makes her.
 
+**Ana Reyes** (original), Marisol's mother. 58.
+
+- **Who she was.** Born 1991 in Salinas. In the 2020s she was a **content
+  moderator** for a feed company: eight hours a day of the worst the feed
+  carried. Afterwards she numbed herself with the feed itself. Old Dee built
+  the feed, and Ana cleaned up after it. She met him in 2031 and believed
+  him.
+- **What the Game made her.** A Game elder and one of its best players.
+  Some weeks she has led the Sunday split session about her own daughter,
+  and she believes every word was love, said to bring Marisol home. She is
+  how a high-control group turns its victims into its enforcers: a person,
+  never a villain.
+- **Why she volunteered.** Old Dee told her the "Weekend Game" was a
+  Dissipation retreat with a gift at the end: a copy of her clean self,
+  kept forever — the Ascension's promise in the Game's words. She
+  half-suspects it is a lie. She goes anyway, because doubting Dee would
+  mean eighteen years were wasted.
+- **Look and voice.** Shaved head, grey sweats. A moderator's old habit: she
+  covers her eyes with her hand when a screen shows something bad. She
+  talks in Game phrases: *"I hear you. Now hear this."* No Halo: her score
+  is zero, like her daughter's.
+- **Where Hell Rot meets her.** Issue 2, the Haight: if he answered
+  Marisol's letter, the test subject he follows home is Ana. Issue 3, the
+  Tomales Ward: she is one of the six in the circle, and the hardest
+  opponent after Old Dee, because she Games him about his own relapse.
+- **The Talk route ("Visiting Day").** A red check. It is easier if Hell
+  Rot has already exposed Old Dee's Halo: she cannot unsee it. *Invective*
+  fails. *Parrhesia* works. With Marisol present the check is harder, but
+  success plays the full mother-and-daughter scene, not a quiet goodbye.
+- **If she is in Coit Tower.** The Lifeboat scans its test subjects to
+  calibrate the upload. When it fails, they are hurt as Sunday is: Ana loses
+  most of her words, a mirror of the Rot. She survives.
+
 ### 4.2 The Theogens
 
 *Sources: the Asilomar/Genentech origin of Bay Area biotech, CRISPR, the
@@ -957,7 +990,9 @@ worship — never at victims, ex-members or ordinary believers.
    Her past is never a reveal or a twist. She never retells abuse in detail
    on screen, and the player cannot push her for her story: she tells what
    she chooses. Her Sunday sessions are heard only as sound through a
-   window, never shown as a scene.
+   window, never shown as a scene. Her mother Ana's part in the Game is
+   written with compassion, never as a twist or a villain beat, and Ana's
+   moderator years are spoken of, never shown.
 10. **Disability.** The Theogens' failed splices are people with their own
    voices, never a reveal or a horror beat.
 11. **The Church of Satan** is a real, living organisation. The fictional
