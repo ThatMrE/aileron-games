@@ -215,6 +215,12 @@ input[type=radio], input[type=checkbox] { accent-color: var(--sodium); }
 body.delirium #screen { box-shadow: inset 0 0 60px #d32f3f66; }
 body.delirium .scene-art, body.delirium .big { animation: wob 3s ease-in-out infinite; }
 body.delirium .hud { border-color: var(--blood); }
+body.booting .hud, body.booting .tabs, body.booting .side { display: none; }
+body.booting .grid { grid-template-columns: minmax(0, 1fr); }
+.startart { aspect-ratio: 256 / 144; }
+.startbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; padding: 14px; text-align: center; }
+.startbar .note { flex-basis: 100%; margin: 0; }
+.tw { min-height: 1em; }
 /* animations (all off under prefers-reduced-motion, above) */
 #screen.enter > * { animation: scrIn .3s steps(5) both; }
 @keyframes scrIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -731,6 +737,71 @@ function side() {
 }
 
 /* ---------- title & creation ---------- */
+let BOOT = true;
+function typeOut() {   // new story lines type themselves out; click the text to finish
+  const els = [...document.querySelectorAll("#screen .tw")]; if (REDUCE || !els.length) return;
+  const nodes = []; els.forEach(el => { const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { nodes.push([n, n.nodeValue]); n.nodeValue = ""; } });
+  let i = 0, done = false; const fin = () => { done = true; nodes.forEach(([n, v]) => n.nodeValue = v); };
+  els.forEach(el => el.closest(".say") && el.closest(".say").addEventListener("click", fin, { once: true }));
+  const step = () => { if (done) return; let k = 3; while (k-- > 0 && i < nodes.length) { const [n, v] = nodes[i]; n.nodeValue = v.slice(0, n.nodeValue.length + 1); if (n.nodeValue.length >= v.length) i++; } if (i < nodes.length) setTimeout(step, 12); };
+  step();
+}
+function scrStart() {
+  const has = S && S.issue > 0;
+  return `<canvas class="scene-art startart" data-start="1" width="256" height="144" aria-label="Godsplice. San Francisco, Christmas week 2049."></canvas>
+    <div class="startbar">
+      ${has ? `<button class="btn primary nextglow" data-act="start" data-arg="continue"><span class="t">▶ CONTINUE<em>Issue ${S.issue}</em></span></button><button class="btn" data-act="start" data-arg="new"><span class="t">NEW GAME</span></button>`
+            : `<button class="btn primary nextglow" data-act="start" data-arg="new"><span class="t">▶ PRESS START</span></button>`}
+      <p class="note">Enter or Space to start. An 8-bit narrative RPG: six nights, six columns, two gods.</p>
+    </div>`;
+}
+const GLYPH = { G:["01110","10001","10000","10111","10001","10001","01111"], O:["01110","10001","10001","10001","10001","10001","01110"], D:["11110","10001","10001","10001","10001","10001","11110"],
+  S:["01111","10000","10000","01110","00001","00001","11110"], P:["11110","10001","10001","11110","10000","10000","10000"], L:["10000","10000","10000","10000","10000","10000","11111"],
+  I:["11111","00100","00100","00100","00100","00100","11111"], C:["01111","10000","10000","10000","10000","10000","01111"], E:["11111","10000","10000","11110","10000","10000","11111"] };
+let START_T0 = null;
+function drawStart(cv) {
+  const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false;
+  const now = performance.now(); if (START_T0 == null) START_T0 = now; const t = REDUCE ? 9 : (now - START_T0) / 1000, f = Math.floor(t * 6);
+  // sky in 8-bit bands, stars, moon
+  ["#0d0a14","#120d1c","#171124","#1c142c","#221832"].forEach((c, i) => rect(g, 0, i * 18, 256, 18, c));
+  for (let i = 0; i < 46; i++) { const x = (i * 53 + 7) % 256, y = (i * 29 + 3) % 70; if ((i + f) % 9) P2(g, x, y, i % 5 ? "#e8f4ff" : "#fff3aa"); }
+  rect(g, 228, 8, 12, 12, "#efe7f0"); rect(g, 232, 8, 8, 8, "#d8d0e0"); rect(g, 226, 10, 2, 8, "#efe7f0");
+  // the City: Sutro's Trident, the Spire, skyline with lit windows
+  rect(g, 20, 54, 2, 40, "#d32f3f"); rect(g, 28, 54, 2, 40, "#d32f3f"); rect(g, 36, 54, 2, 40, "#d32f3f"); rect(g, 18, 62, 22, 2, "#efe7f0"); if (f % 6 < 3) P2(g, 29, 52, "#d32f3f");
+  let x = 44; let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  while (x < 150) { const w = 7 + Math.floor(rnd() * 10), h = 18 + Math.floor(rnd() * 30); rect(g, x, 104 - h, w, h, "#1a1226"); for (let wy = 106 - h; wy < 100; wy += 4) for (let wx = x + 2; wx < x + w - 1; wx += 3) if (rnd() < .3) P2(g, wx, wy, (wx + wy + f) % 17 ? "#f29b3a" : "#3a3048"); x += w + 1; }
+  rect(g, 96, 58, 8, 46, "#2a3a5a"); for (let y = 62; y < 100; y += 4) P2(g, 99, y, (y + f) % 3 ? "#f0bd3e" : "#6a5a2a"); rect(g, 99, 52, 2, 6, "#f0bd3e"); if (f % 4 < 2) P2(g, 99, 51, "#fff3aa");
+  // the bridge, red towers and cables
+  rect(g, 170, 46, 5, 58, "#c0392b"); rect(g, 232, 46, 5, 58, "#c0392b"); rect(g, 150, 88, 106, 3, "#8a2a20");
+  for (let xx = 150; xx < 256; xx++) { const k = xx < 172 ? (172 - xx) / 22 : xx < 234 ? Math.abs((xx - 203) / 31) : (xx - 234) / 22; P2(g, xx, Math.round(47 + (xx > 172 && xx < 234 ? (1 - k * k) * 30 : k * 30)), "#c0392b"); }
+  // the bay, with moving glints
+  rect(g, 0, 104, 256, 40, "#0b1a26"); for (let i = 0; i < 26; i++) rect(g, (i * 37 + f * 2) % 256, 108 + (i * 13) % 34, 5, 1, i % 3 ? "#14394a" : "#3f8cf2");
+  for (let i = 0; i < 5; i++) P2(g, 99, 106 + i * 3, (i + f) % 3 ? "#f0bd3e88" : "#f0bd3e");
+  rect(g, 0, 122, 256, 22, "#2a2430"); rect(g, 0, 122, 256, 1, "#5a5260"); for (let xx = 4; xx < 256; xx += 12) rect(g, xx, 118, 1, 4, "#5a5260"); rect(g, 0, 118, 256, 1, "#5a5260");
+  // the double helix: one gold strand, one cyan, under the logo
+  const hy = 66, ph = t * 2.2;
+  for (let xx = 30; xx < 226; xx += 2) { const a = Math.sin(xx * .08 + ph), b = Math.sin(xx * .08 + ph + Math.PI), front = Math.cos(xx * .08 + ph) > 0;
+    if (xx % 8 === 0) for (let yy = Math.min(a, b) * 8; yy < Math.max(a, b) * 8; yy += 2) P2(g, xx, Math.round(hy + yy), "#5a5070");
+    P2(g, xx, Math.round(hy + a * 8), front ? "#f0bd3e" : "#8a6a2a"); P2(g, xx + 1, Math.round(hy + a * 8), front ? "#f0bd3e" : "#8a6a2a");
+    P2(g, xx, Math.round(hy + b * 8), front ? "#8ac9c2" : "#3fe3d4"); P2(g, xx + 1, Math.round(hy + b * 8), front ? "#8ac9c2" : "#3fe3d4"); }
+  // Karl: dithered fog rolling in from the west
+  for (let y = 70; y < 144; y += 2) for (let xx = (y / 2) % 2 ? 1 : 0; xx < 256; xx += 2) { const v = Math.sin(xx * .035 - t * .9 + y * .05) + Math.cos(y * .09 + t * .5) + (256 - xx) / 256; if (v > 1.25) P2(g, xx, y, "#b9b4c466"); }
+  for (let i = 0; i < 5; i++) P2(g, (i * 61 + Math.floor(t * 20)) % 256, 92 + (i * 7) % 30, f % 2 ? "#fff3aa" : "#f29b3a");
+  // the logo: letters drop in one at a time, GOD in gold, SPLICE in cyan; now and then the word splices apart
+  const word = "GODSPLICE", lw = 18, x0 = Math.round((256 - (word.length * lw - 3)) / 2), y0 = 18;
+  const glitch = t > 2.2 && (t % 4.5) < .28, off = glitch ? 5 : 0;
+  [...word].forEach((ch, i) => { const ti = t - .15 - i * .12; if (ti < 0) return; const k = Math.min(1, ti / .35), bounce = k < 1 ? -40 * (1 - k) * (1 - k) + Math.sin(k * Math.PI) * -3 : 0;
+    const col = i < 3 ? ["#f0bd3e", "#c99a2a"] : ["#3fe3d4", "#1fa89d"];
+    GLYPH[ch].forEach((row, r) => [...row].forEach((bit, c) => { if (bit !== "1") return; const sx = (r < 3 ? off : -off); const px = x0 + i * lw + c * 3 + sx, py = Math.round(y0 + r * 3 + bounce);
+      rect(g, px + 1, py + 1, 3, 3, "#0d0a14"); rect(g, px, py, 3, 3, r < 3 ? col[0] : col[1]); if (r === 0) rect(g, px, py, 3, 1, "#fff3aa"); })); });
+  if (glitch) { rect(g, x0 - 6, y0 + 9, word.length * lw + 6, 1, "#3fe3d4"); rect(g, x0 - 6, y0 + 10, word.length * lw + 6, 1, "#e33f9c"); }
+  // subtitle and the blinking start prompt
+  if (t > 1.5) { g.font = "8px monospace"; g.fillStyle = "#b9b4c4"; const sub = "SAN FRANCISCO · CHRISTMAS WEEK 2049"; g.fillText(sub, Math.round(128 - g.measureText(sub).width / 2), 50); }
+  // Hell Rot walks in along the waterline and stops
+  const hx = Math.min(120, -16 + t * 52), walking = hx < 120; g.fillStyle = "#00000066"; g.fillRect(Math.round(hx) + 3, 133, 10, 2);
+  g.drawImage(nesSprite("hellrot", walking ? "right" : "down", walking ? f % 2 : 0), Math.round(hx), 119);
+  if (t > 2.6 && f % 6 < 4) { g.font = "8px monospace"; g.fillStyle = "#f29b3a"; const ps = "▶ PRESS START"; g.fillText(ps, Math.round(128 - g.measureText(ps).width / 2), 114); }
+}
 function scrTitle() {
   const spent = Object.values(S.lobes).reduce((a, b) => a + b, 0);
   return `<div class="pad">
@@ -746,13 +817,13 @@ function scrPrologue() {
   const node = { id:"lowwater", f:"theogen", k:"beach" };
   let body = "", ch = "";
   if (p === "birth") {
-    body = `<p>Steep Ravine, Christmas night. The lowest tide of the year. You lie in a hot spring in total darkness. Then the lights come down the cliff: Theogens, glowing. Delphine Ash is in labour, and the child's spliced neurons fire in a seizure before it is born. You know the gene circuit. It's from your third paper.</p>`;
+    body = PROLOGUE.birth.map(t => `<p class="tw">${esc(t)}</p>`).join("");
     ch = [["help","Help deliver the child","Vow +1, Helix +1, Delphine owes you. A red check to stabilize her.","#3fe3d4"],["refuse","Refuse and climb out","Venom +1. The child's health is left to the cult.","#d32f3f"],["record","Record it for a column","Readers +, Delphine's Trust −.","#f29b3a"],["emergency","Call emergency services","Sainthood +1. The Twin logs the child; the Emperor notices.","#f0bd3e"]].map(([a,t,d,c]) => `<button class="btn" style="--c:${c}" data-act="birth" data-arg="${a}"><span class="t">${t}</span><span class="d">${d}</span></button>`).join("");
   } else if (p === "fire") {
-    body = `<p>${esc(S.flags.birthText || "")}</p><p>The child is named <b>Ione</b>, the Tidechild. You climb back up the mountain soaked and shaking. Halfway up you smell smoke. Your shack is on fire. You grab Moreau's jar (always) and <b>one other thing</b>.</p>`;
+    body = `<p class="tw">${esc(S.flags.birthText || "")}</p>` + PROLOGUE.fire.map(t => `<p class="tw">${esc(t)}</p>`).join("");
     ch = Object.entries(TEMPS).map(([k, v]) => `<button class="btn" data-act="temp" data-arg="${k}"><span class="t">Save ${v.save}</span><span class="d">${v.n}: ${Object.entries(v.b).map(([s, n]) => `${s} +${n}`).join(", ")}. ${v.flaw}</span></button>`).join("");
   } else {
-    body = `<p>On the ridge your phone finds a signal: nine missed calls from Fax. A job at Mondo 3000, a room in a sealed Victorian on Alamo Square. On Highway 1, rides are waiting in the fog.</p>`;
+    body = PROLOGUE.ride.map(t => `<p class="tw">${esc(t)}</p>`).join("");
     ch = [["shuttle","A gold Ascension shuttle nobody ordered","Free, warm, hymns. Sainthood +1.",true],["ambulance","Wren's glowing Theogen ambulance","Helix +1. Only if you helped at the birth.", S.birth === "help"],["walk","Walk toward the bridge","Slow. No god hears you.",true]].map(([a,t,d,ok]) => `<button class="btn" data-act="ride" data-arg="${a}" ${ok ? "" : "disabled"}><span class="t">${t}</span><span class="d">${d}</span></button>`).join("");
   }
   return `<canvas class="scene-art" data-scene="lowwater" width="256" height="136" aria-label="Steep Ravine at night"></canvas>
@@ -950,7 +1021,8 @@ function voice(node) {
 }
 function scrScene() {
   const sc = S.scene, node = BY[sc.node], npc = C[node.npc];
-  const lines = sc.lines.slice(-6).map(l => l.voice ? `<p class="voice"><b style="--c:${l.c}">${l.voice}</b>${esc(l.txt)}</p>` : `<p>${l.who ? `<b style="color:var(--sodium)">${esc(l.who)}:</b> ` : ""}${esc(l.txt)}</p>`).join("");
+  const start = Math.max(0, sc.lines.length - 8), seen = sc.seen ?? 0; setTimeout(() => { if (S.scene === sc) sc.seen = sc.lines.length; }, 0);
+  const lines = sc.lines.slice(start).map((l, j) => { const tw = start + j >= seen ? " tw" : ""; return l.voice ? `<p class="voice${tw}"><b style="--c:${l.c}">${l.voice}</b>${esc(l.txt)}</p>` : `<p class="${tw}">${l.who ? `<b style="color:var(--sodium)">${esc(l.who)}:</b> ` : ""}${esc(l.txt)}</p>`; }).join("");
   const sps = spotsFor(node);
   const btns = sps.map(sp => { const [n, c, why] = SPOT[sp.t]; const nx = sp.t === "story" && !sp.used && isNext("node", node.id);
     return `<button class="btn door spot${nx ? " nextglow" : ""}" style="--c:${sp.used ? "#4a4250" : c}" data-act="spot" data-arg="${sp.i}" data-t="${sp.t}" ${S.delirium || sp.used ? "disabled" : ""}><span class="t">${nx ? "▶ NEXT · " : ""}${sp.used ? "✓ " : ""}${esc(sp.label)}<em>${n}</em></span><span class="d">${sp.used ? "Done this Issue." : sp.t === "look" ? esc(why) : why}</span></button>`; }).join("");
@@ -1191,6 +1263,7 @@ function drawSpark(g) {
   g.globalAlpha = 1;
 }
 function interact() {
+  if (!PL.dir || !DV[PL.dir]) return;
   const [dx, dy] = DV[PL.dir], t = thingAt(PL.c + dx, PL.r + dy); if (!t) { FLASH = ["Nothing there.", 40]; return; }
   if (t.house && !REDUCE) SPARK = { c: PL.c + dx, r: PL.r + dy, col: "#ff8ba2", t: performance.now() };
   if (t.house) { if (S.delirium && t.house.room !== "rest") { FLASH = ["You can't think. Go to your bed in the Tower Room.", 90]; return; } return dispatch("room", t.house.room); }
@@ -1288,15 +1361,18 @@ function walkLoop() {
   const cv = document.querySelector("canvas.walk");
   if (cv && S) { const place = cv.dataset.int || "house"; if (PL.node !== place) plReset(place); plUpdate();
     const cv2 = document.querySelector("canvas.walk"); if (cv2) { if (cv2.dataset.int) drawInterior(cv2, BY[cv2.dataset.int]); else drawHouse(cv2); } }
+  const st = document.querySelector("canvas[data-start]"); if (st) drawStart(st);
   requestAnimationFrame(walkLoop);
 }
 window.__spots = () => S && S.scene ? spotsFor(BY[S.scene.node]) : [];   // test hook
 window.__pl = () => PL;                                                   // test hook
 const dpad = () => `<div class="dpad" aria-label="Walk controls"><button data-pad="left" aria-label="Walk left">◀</button><button data-pad="up" aria-label="Walk up">▲</button><button data-pad="down" aria-label="Walk down">▼</button><button data-pad="right" aria-label="Walk right">▶</button><button data-pad="a" class="abtn" aria-label="Use what you face">A</button></div>`;
 
+const SCENES = {"loin:1": [["", "The Ghost Diner smells of burnt coffee and wet wool. Every booth faces the door."], ["benny", "Benny slides into your booth without asking. \"Cops clear the hotels tonight. For the developers. Two a.m.\" He taps the table twice and leaves you his bill."], ["", "At two the door bangs open. A cop grabs a kid by the collar, and her sleeve rides up. Her wrist glows cyan."], ["mamarue", "Mama Rue stands up slowly, like a queen leaving her throne. She looks the cop in the eye. She throws her coffee in his face."], ["", "The cup is still in the air when the whole diner stands up."]], "haight:2": [["", "Tie-dye in the windows, nitrous in the air. Every shop on Haight sells 1967 by the gram."], ["", "Behind a poster shop, twenty people sit in rows of folding chairs. Each one has a mask over the face and a number written on the back of the hand."], ["", "Number 31 stands up, sways and walks out. You follow him six blocks to a room with no furniture."], ["", "He sits on the floor and recites the Lifeboat's terms of service, word for word, smiling. On his wall someone has written his name eleven times, each time a little smaller."]], "geary:2": [["", "Twelve thousand people in the glass cathedral, and every one of them looks up at their own face on the screen. The Twin has made each face a little more beautiful."], ["halcyon", "Sister Halcyon lifts her hands. \"You were always divine.\" Twelve thousand Halos chime at once."], ["", "In the front row a girl with a glowing arm keeps her sleeve pulled down to her knuckles."], ["", "Then the screen stutters. For one frame every face becomes the same old man in a dented crown. Gold letters: WE APOLOGIZE FOR THE INCONVENIENCE. NORTON II."], ["", "The congregation applauds. They think it is part of the show."]], "spire:6": [["", "Market Street at dusk, and a thousand bicycles fill it from wall to wall. Bells, horns, a sound system on a cargo bike."], ["", "On every screen in the Spire, the Twin's feed freezes on a blur of wheels. It cannot follow this many faces this fast."], ["pru", "Pru checks her watch. \"One hour. Whatever you need to do where it can't see you, do it now.\""]], "rivet:2": [["", "Every window on Rivet Hill is lit. Nobody lives here but robots, and the robots still lay the table for one."], ["", "In the dumpster behind the kitchen, under gold-rimmed takeout boxes, there is a denim apron. Rivet denim, 1873 stitching, the family's first product."], ["", "A name tag is sewn into the pocket: JULIAN. The thread is new. The date on the receipt is November, a month after the funeral."]], "blackhouse:3": [["", "The Black House has no curtains. Every room is lit, and anyone on the street can look in."], ["magister", "\"Read anything you like,\" the Magister says, and waves at a lectern. \"We are not ashamed of our money.\""], ["", "The ledger is open. On the third page you understand it. Every donor to the Theogen clinics has also paid for a seat at the Ascension. They are buying both gods."]], "blackhouse:6": [["", "Black candles, black champagne, and a cake shaped like a tombstone. Your name is on it, in icing."], ["magister", "\"We write everyone's obituary before midnight,\" the Magister says. \"It is a kindness. Would you like to read yours?\""], ["", "The card has two endings written on it. Neither one is crossed out."]], "trident:5": [["", "Fog below you, stars above, the City's lights blurred like a wet photograph. The transmitter's legs hum through your shoes."], ["benny", "Benny holds out two canisters. \"This one helps you remember. This one helps you forget. Same price.\" His hands shake. He does not say which is which."]], "forest:5": [["", "The eucalyptus drip like slow rain. In the trees stands a disused lab with one lit window."], ["", "Through the glass: a baby in a padded cradle, wires on her scalp, and two people in Auric gold reading her numbers like a stock price."], ["", "She is not crying. She is watching the window. She is watching you."]], "baths:3": [["", "Warm air rises from the old pools. Under the data center's hum, a hundred people glow softly in the dark like a reef."], ["delphine", "Delphine walks beside you, barefoot on the wet stone. \"They read your papers,\" she says. \"Footnotes and all.\""], ["", "A woman in the congregation quotes your third paper back to you. She gets one word wrong. You do not correct her."], ["", "Further down, past a door with no sign, the glow gets uneven. Someone is singing to keep from shaking."]], "baths:4": [["", "The cradle in the tunnels is empty. The blanket is still warm. The mobile above it is still turning."], ["delphine", "Delphine does not scream. She stands very straight, and the light under her skin flickers like a bad bulb."], ["", "By dawn the Mission is papered with LOST. The flyers have no photo. Delphine says the Twin would only use it."]], "cradle:3": [["", "Half the lab is underwater. Small fish move between the benches."], ["otto", "Otto touches a dry bench with two fingers, the way people touch a headstone. \"This is where she was brilliant,\" she says. \"Before she was holy.\""], ["", "On the wall, a peeling startup logo: a double helix wearing a crown. Under it, in marker: SHIP IT."]], "cradle:4": [["", "The Brandvold annex smells of rust and something sweet. The gas cabinet's door hangs open."], ["", "The 2044 logs are still on the screen. The last entry is yours. You do not remember writing it."], ["", "In a drawer there is a notebook in a careful hand. One line is underlined twice."]], "mission:4": [["", "The murals update live. On one wall your face is in gold leaf, with a halo. On the wall across the street your face glows cyan, with a double helix where your heart should be."], ["", "Painters on both sides work through the night. Nobody has asked you to sit for it."], ["cask", "Brother Cask studies the gold wall with his arms folded. \"They got your nose wrong,\" he says. \"We got it right.\""]], "dome:2": [["", "Forty brides in white climb the Dome steps, each with a Halo pinned to her veil. They are marrying the Twin before the year runs out."], ["sunday", "Mayor Sunday blesses them from a cue card. He reads \"until death do you part,\" laughs, and then stops laughing."], ["halcyon", "Sister Halcyon means every word. That is worse."]], "dome:5": [["", "The recount room smells of toner. A clerk hands you a clipboard: the Index test, the one the BFF are suing over."], ["", "Twenty questions. You answer honestly. The machine prints your score, and the clerk folds the paper before you can read it."], ["desh", "Down the hall Desh is testifying through his typing aid. Every keystroke is loud in the silence."]], "dome:6": [["", "The rotunda is full and nobody is sitting. The result comes in on paper, because nobody trusts a screen tonight."], ["", "The clerk reads it twice, the second time slower, as if the number might change."]], "fogbelt:1": [["", "The Lantern is a church hall with blue curtains and forty cots. Every cot is taken."], ["marisol", "Marisol ladles soup without looking up. \"No Halo, no problem. We just ask your name. You can lie.\""], ["", "At the end table a man talks to the fog through the window. The fog seems to answer."]], "fogbelt:3": [["", "Three hundred people stand on Ocean Beach around a fire built from Christmas trees. Somebody has made Karl a birthday cake out of sand."], ["", "At midnight they all breathe in at once. The fog pours into three hundred mouths, and everyone on the beach laughs at the same joke."], ["", "You do not know what the joke was. You laughed too."]], "fogbelt:4": [["", "A gold-edged Church envelope sits on the soup table, unopened. Inside is enough money for every bed for ten years."], ["", "One condition, in small print: a Halo reader at the door."], ["marisol", "The sisters look at you. \"You write things down,\" one says. \"What would you do?\""]], "baker:6": [["", "Baker Beach, New Year's Eve. The bonfire is three storeys tall, built from everything the City wants to forget this year."], ["saintnobody", "Saint Nobody hands you a marker and a dead Halo. \"Write what you're burning.\""], ["", "Behind the flames, the bridge goes into the fog one light at a time."]], "fill:1": [["", "The king tide comes over the seawall at sundown, quiet as a cat. By eight it is knee-deep in the Fill."], ["", "The Auric Order's Old Lodge has its doors open and its basement full. Men in gold-trimmed waders carry boxes up the stairs. Not furniture. Paper."], ["pell", "Augustus Pell watches from a dry step, smoking. \"Funny what people save first.\""]], "palace:6": [["", "Twelve thousand people in white stand in rows around the old rotunda. Each one holds a Halo in both hands like a candle."], ["halcyon", "Sister Halcyon walks the rows touching foreheads. Her hands are shaking. She smiles anyway."], ["", "On the dome, a countdown. On the lagoon, the reflection of the countdown, a little behind."]], "presidio:4": [["", "One lamp lights the lodge room. On the altar sits an 1849 gold pan, polished for so long that the bottom is thin as foil."], ["", "The minute book lies beside it. One page has been cut out with a razor, very neatly."], ["hale", "Dr. Hale steps out of the dark in her coat. \"I cut it,\" she says. \"I've been waiting for someone to notice.\""]], "span:6": [["", "The glass skywalk sways under the bridge. Wind goes through the cables like a held note."], ["", "On the south tower, canisters glow cyan in a row, hooked to the fog intakes. Theogens in white open the valves one by one."], ["wren", "Wren holds Ione inside her coat. She sees you and does not hide it. \"She's cried since the first valve,\" she says. \"Delphine says it's joy.\""]], "wharf:1": [["", "Sea lions sleep on the sidewalk. The tide laps at the doors of the Musée Mécanique."], ["", "Laffing Sal's glass case is dark. You put in a coin anyway. She does not laugh. Her head turns, slowly, toward you."], ["laffingsal", "\"WE KNOW YOUR NAME, HELL ROT,\" says a voice that is not hers. \"WE HAVE ALWAYS LIKED YOUR WORK.\" Then she laughs, and laughs, and does not stop."]], "northbeach:1": [["", "Water on the floor, folding chairs on pallets, a coffee urn plugged in with a very long cord."], ["", "Twelve people. Nobody looks at a phone. A woman says she has nineteen days, and everybody claps as if it were a hundred years."], ["junie", "Junie sits next to you and says nothing. She does not have to."]], "chinatown:1": [["", "Steam, red lanterns, and Cantonese opera from a radio under a tarp."], ["", "The fishmonger's tank holds fish that glow faintly at the gills."], ["", "\"For the Theogens,\" the fishmonger says, and nets one. \"Cash. They take them down Geary in a cooler, every Tuesday.\" He wraps it in yesterday's Mondo 3000, your column face up."]], "union:1": [["", "In every shop window on Union Square a dead relative waves. Grandmothers in sweaters, fathers in Santa hats, all a little too smooth."], ["", "A girl presses her hand to the glass. Her mother, on the other side, presses back half a second late."], ["", "Around the corner the returns line runs all the way down Stockton. Nobody in it is holding a sweater."]], "coit:4": [["", "The 1934 murals look down on workers, farmers, a man reading a newspaper, and a steel chair with straps and a crown of electrodes."], ["huck", "Huck Baptiste stands guard and says nothing. His eyes go to the chair and away, over and over."], ["", "On the floor lies a wristband: TEST SUBJECT 31. You have seen that number before."]], "coit:6": [["", "The feed is live. Sunday shakes hands with the test subject in the chair. The lights dim as the rig draws power."], ["", "The woman in the chair opens her mouth. Out comes Sunday's campaign slogan, over and over, in her own voice."], ["", "The feed cuts to a test pattern. Somebody in the crowd starts to cry."]], "park:3": [["", "Black tie under the Academy's living roof, penguins in the tank behind the bar. Old Dee receives a crystal award shaped like an open hand."], ["olddee", "\"We tell each other the truth here,\" he says, and the whole room laughs as if it were a joke."], ["rosa", "Across the room Rosa Quint checks her phone too often. A waiter has refilled her glass three times. She has not touched it."]], "ferry:2": [["", "The clock face on the Ferry Building is writing in fog. Letters form, hold and blow apart: WE DECREE A HAT FOR THE MAYOR."], ["emperor", "Under it, two hundred Nortonians in paper crowns sing the decree to the tune of a carol. They take it very seriously. They are having the time of their lives."]], "ferry:6": [["", "Feathers everywhere. A thousand people beat each other with pillows on the Embarcadero, and the fireworks barge waits for midnight."], ["", "A pillow bursts over your head. Somebody shouts HAPPY NEW YEAR an hour early, and nobody corrects them."]], "rock:2": [["", "The ferry docks in fog. Alcatraz Longevity's sign is lit gold. The cells are clinics now, and they have waiting lists."], ["duchess", "In the vault the Duchess stands at two steel doors with her parents' names on them. She touches the frost with one glove. \"They hated each other,\" she says. \"Now they share a wall forever.\""], ["", "The fog comes in through a vent and writes on the frost: WE COULD GIVE THEM BACK TO YOU. She wipes it off with her sleeve."]], "treasure:4": [["", "The plant runs all night. One line makes gold Halos. The next line over makes cyan splice canisters. Same robots. Same lunch room."], ["vail", "Cornelius Vail shows you both with the same smile. \"We are not a church,\" he says. \"We are a supplier.\""]], "tomales:4": [["", "Six shaved heads at the gate wave you in. Nobody speaks. The farm smells of cut grass and woodsmoke."], ["ana", "In the barn, a circle of chairs. A woman sits in the middle while the others shout at her. It is Ana Reyes. She nods along."], ["olddee", "Old Dee pats your shoulder. \"You'll sit in the middle one day,\" he says. \"Everybody does.\""]]};
+const PROLOGUE = {"birth": ["Steep Ravine, Christmas night. The tide is so low the rocks are bare to the waterline. You lie in the hot spring with your eyes shut, and for once nothing in your head is talking.", "Then lights come down the cliff path: forty people, glowing faintly blue, singing in time with the waves.", "A woman in the next pool grips the stone and breathes through her teeth. Delphine Ash. She sees you and smiles. \"Father,\" she says.", "Her belly lights up from the inside. It flickers. It flickers again, too fast. You know that rhythm. You drew it as a graph in your third paper. It is a seizure, and the child has not been born yet."], "fire": ["They name her Ione. You climb the mountain in wet clothes with your teeth chattering, and you smell the smoke before you see it.", "Your shack is burning. Moreau's jar is on the windowsill, glowing orange in the firelight. You have time to grab it and one other thing."], "ride": ["On the ridge your phone finds one bar. Nine missed calls from Fax, and one voicemail: \"Job's yours. Room's yours. The Duchess says don't die first.\"", "Down on Highway 1, three sets of lights wait in the fog."]};
 function storyBeat(node) {
   const sc = S.scene, L = t => sc.lines.push({ txt: t }); S.done.push(node.id);
-  L(node.t[S.issue]);
+  (SCENES[node.id + ":" + S.issue] || [["", node.t[S.issue]]]).forEach(([w, t]) => sc.lines.push(w && C[w] && t.startsWith("\"") ? { who: C[w].n, txt: t } : { txt: t }));
   remember({ kind:"lead", text:`${node.n}: ${node.t[S.issue].split(".")[0]}` });
   S.clar -= 1;
   if (node.id === "wharf" || node.id === "rock") { S.talksE++; L("The Emperor speaks to you through the fog. (A private talk: Route D needs two.)"); }
@@ -1646,18 +1722,18 @@ function scrCast() {
    ===================================================================== */
 function render() {
   S.next = nextObjective(objectives());
-  document.body.classList.toggle("delirium", !!S.delirium);
+  document.body.classList.toggle("delirium", !!S.delirium); document.body.classList.toggle("booting", BOOT);
   hud(); tabs(); side();
   const s = S.screen;
   let html = "";
-  if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
+  if (BOOT) html = scrStart(); else if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
   else if (s === "scene") { html = scrScene(); const sc = S.scene; if (sc.offer) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${sc.offer.k === "gold" ? "THE TWIN'S BLESSINGS · SAINTHOOD +1" : "THE THEOGENS' SPLICES · HELIX +1"} · THIS RUN ONLY</div><div class="choices" style="padding:0">${sc.offer.items.map((b, i) => `<button class="btn" style="--c:${sc.offer.k === "gold" ? "#f0bd3e" : "#3fe3d4"}" data-act="boon" data-arg="${i}"><span class="t">${b[0]}</span><span class="d">${b[1]}</span></button>`).join("")}<button class="btn" data-act="noboon"><span class="t">Refuse</span><span class="d">Stay yourself.</span></button></div></div>`;
     if (sc.choice) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${esc(sc.choice.q).toUpperCase()}</div><div class="choices" style="padding:0">${sc.choice.opts.map(([v, t, d]) => `<button class="btn" style="--c:#f29b3a" data-act="beat" data-arg="${v}"><span class="t">${t}</span><span class="d">${d}</span></button>`).join("")}</div></div>`;
     if (sc.offer || sc.choice) html = html.replace(/data-act="spot"/g, 'data-act="spot" disabled'); }
   else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
   else if (s === "final") html = scrFinal(); else if (s === "ending") html = scrEnding(); else if (s === "notebook") html = scrNotebook(); else if (s === "cast") html = scrCast(); else if (s === "key") html = scrKey();
-  $("screen").innerHTML = html; const scr = $("screen"); if (LASTSCREEN !== s) { scr.classList.remove("enter"); void scr.offsetWidth; scr.classList.add("enter"); LASTSCREEN = s; clearTimeout(ENTER_T); ENTER_T = setTimeout(() => scr.classList.remove("enter"), 950); }
-  if (s === "map") drawMap();
+  $("screen").innerHTML = html; typeOut(); const scr = $("screen"); if (LASTSCREEN !== s) { scr.classList.remove("enter"); void scr.offsetWidth; scr.classList.add("enter"); LASTSCREEN = s; clearTimeout(ENTER_T); ENTER_T = setTimeout(() => scr.classList.remove("enter"), 950); }
+  if (s === "map" && !BOOT) drawMap();
   paintScenes(); paintPortraits(); save();
 }
 function paintScenes() { document.querySelectorAll("canvas[data-scene]").forEach(cv => drawScene(cv, BY[cv.dataset.scene] || { id: cv.dataset.scene, f: "theogen", k: "beach" }, FRAME)); }
@@ -1665,6 +1741,7 @@ function paintScenes() { document.querySelectorAll("canvas[data-scene]").forEach
 const ACT = {
   go(a) { if (a === "house" && S.at !== "house") return; if (S.screen === "cast" || S.screen === "notebook") S.prev = S.prev || "house"; S.screen = a; if (a === "map") S.sel = S.sel || S.at; render(); },
   restart() { S = newState(); render(); },
+  start(a) { if (a === "new") { if (S.issue > 0 && !confirm("Start a new game? Your current week is lost.")) return; S = newState(); } BOOT = false; START_T0 = null; render(); },
   lobe(a) { const [L, d] = a.split(":"); const spent = Object.values(S.lobes).reduce((x, y) => x + y, 0); const v = S.lobes[L] + (+d); if (v < 1 || v > 5 || (+d > 0 && spent >= 12)) return; S.lobes[L] = v; render(); },
   begin() { S.screen = "prologue"; S.flags.prologue = "birth"; render(); },
   birth(a) { S.birth = a; let t = "";
@@ -1723,6 +1800,7 @@ function dispatch(name, arg) {
 document.addEventListener("click", e => { const cv = e.target.closest("canvas.walk"); if (cv && S) { const [c, r] = canvasTile(cv, e); walkTo(c, r); cv.focus(); return; }
   const b = e.target.closest("[data-act]"); if (!b || b.disabled || b.hasAttribute("disabled")) return; if (b.tagName === "INPUT") { dispatch(b.dataset.act, b.dataset.arg); return; } e.preventDefault(); dispatch(b.dataset.act, b.dataset.arg); });
 document.addEventListener("mousemove", e => { const cv = e.target.closest && e.target.closest("canvas.walk"); HOVER = cv ? canvasTile(cv, e) : null; });
+document.addEventListener("keydown", e => { if (BOOT && (e.key === "Enter" || e.key === " ") && !e.target.closest("button")) { e.preventDefault(); e.stopImmediatePropagation(); dispatch("start", S.issue > 0 ? "continue" : "new"); } });
 document.addEventListener("keydown", e => { if (!document.querySelector("canvas.walk") || e.target.matches("input, textarea, select")) return; const k = e.key.toLowerCase();
   if (KMAP[k]) { KEYS[KMAP[k]] = true; e.preventDefault(); return; }
   const onCanvas = e.target === document.body || e.target.matches("canvas.walk");
