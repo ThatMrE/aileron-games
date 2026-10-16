@@ -167,7 +167,13 @@ which fits those routes.
   the design's "taking boons chooses your god" theme, but it may feel
   punishing. **Iconoclast's Junie gate is now Trust ≥ 3** (was 4). A re-run
   shows the rates barely move: drifting players never raise Junie's Trust
-  at all, so the gate is not the bottleneck. Earning her Trust is.
+  at all, so the gate is not the bottleneck. Earning her Trust is. **Fix:**
+  Junie's steady rule (design §5.15): Trust +1 for each night she rides
+  along with no Venom aimed down, and −1 for a night he uses. Re-run on
+  2,000 random players: Iconoclast 5.3% → 9.4%, The Unfinished 14.2% →
+  9.2%, The Mountain 1.7% → 3.0%. The Relapser still cannot reach
+  Iconoclast (his Junie Trust ends at 0), which keeps the design's rule
+  that relapses make it harder.
 - **Route D is rare without intent** (under 5% of random players). It is the
   "secret best route" by design, so the Duchess's Issue 3 reading and the
   *Long Look* are its signposts.

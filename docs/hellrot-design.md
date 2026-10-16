@@ -3217,6 +3217,11 @@ unique interrupt. Full roster, abilities, rivalries and the New Year's Eve
 Junie and Yara stay the two core companions: Junie's Trust gates the
 Iconoclast ending, Yara's gates the Successor ending.
 
+**Junie's steady rule (after playtest).** Junie Trust +1 for each night she
+is the companion and Hell Rot aims no Venom down. A night he uses gas
+instead costs her Trust −1: she finds it. Without this rule, players who
+never chased her Trust could not reach Iconoclast at all.
+
 #### Romance
 
 Six housemates are **romance options**: **Junie, Yara, Fax, the Bishop,
