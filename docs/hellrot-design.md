@@ -2327,7 +2327,12 @@ The rest of the set. Each line works whether Delphine lived or died:
 **Old Dee's line.** These endings close on him and the Game:
 
 - **Peer Review (the Quiet Squad):** *"The Quiet Squad were charged. Five
-  said nothing in court. Pip said everything."*
+  said nothing in court. Pip said everything. Huck's card said 'GUILTY.'"*
+- **Mortal (Huck):** *"Huck runs an animal shelter in the Fog Belt. Every
+  card on the cages says 'ADOPT ME.' He said one thing to me, once. I'm
+  keeping it."*
+- **Saint Rot (Huck):** *"Huck guards the Game's door in the Twin. Nobody
+  there needs guarding."*
 - **Mortal (the Quiet Squad):** *"Pip works at Marisol's oyster farm. He
   talks all day. Nobody minds."*
 - **Saint Rot (Pip):** *"Pip went back to the farm. He hasn't said a word

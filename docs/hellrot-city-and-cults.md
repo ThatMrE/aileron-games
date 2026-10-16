@@ -700,7 +700,7 @@ on the record.
   demands. The Game's honesty stops at its muscle.
 - **Huck Baptiste**, 44, leads them. A former Oakland bouncer: huge, and
   gentle with animals. He keeps the farm's terrarium. He speaks only in
-  hand-lettered cards. The one he uses most says *"NO."*
+  hand-lettered cards. The one he uses most says *"NO."* See below.
 - **Pip Okada**, 19, the youngest, grew up in the School beside Marisol, who
   was a big sister to him. He is the only witness who heard Old Dee's
   "hint" about the snake. When he turns, he speaks for the first time in
@@ -746,9 +746,9 @@ on the record.
   in Issue 4, a silent standoff won with *Silence*. **The card:** Hell Rot
   hands him a card in Marisol's hand. His first words in four years: *"She
   came back."*
-- **After he turns.** He hides at the Lantern with Marisol. The Quiet Squad
-  hunt him: Heat +1 each night he is hidden. With Junie Trust ≥ 3, she
-  guards the door.
+- **After he turns.** He hides at the Lantern with Marisol. Unless Huck
+  stands the Squad down (below), they hunt him: Heat +1 each night he is
+  hidden. With Junie Trust ≥ 3, she guards the door.
 - **The source choice.** Print Pip's name, and the Old Dee story is
   unanswerable (Vow +2), but the Squad find him that night. Keep him
   anonymous, and the story is weaker — Old Dee calls it "a splitter's lie" —
@@ -756,6 +756,41 @@ on the record.
   source and landing the story.
 - **Tem.** At the Lantern he and Tem become friends: two kids who learned to
   hide. Tem teaches him to curse. He teaches Tem farm signs.
+
+**Huck Baptiste** (original), leader of the Quiet Squad. 44.
+
+- **History.** Born 2005 in West Oakland. In the 2030s he worked the door
+  at a club that livestreamed fights for a feed that paid per punch. In
+  2034 a man he hit on stream died. He pleaded to manslaughter and served
+  three years. The death is never shown and never sensationalised.
+- **Why he obeys Old Dee.** Dee was the only person who visited him in
+  prison. When Huck got out in 2037, Dee gave him a bed, the animals, and
+  the Quiet Squad, founded that year. Huck owes him everything, and knows
+  it.
+- **Why he is silent.** He believes his voice and his hands both hurt
+  people. The vow is penance, not obedience, and he keeps it more strictly
+  than anyone.
+- **The cards.** About forty index cards, hand-lettered, worn soft. Most
+  used: *"NO."* Others: *"NOT TODAY," "GO HOME," "HE IS SAFE,"* and, almost
+  never, *"THANK YOU."* With the Blood Eye, Hell Rot can see which card he
+  is about to show: a small tell in a standoff.
+- **The snake.** He hates what the clinic did to it. He named it *Quiet*.
+  He carried out Old Dee's "hint" anyway, and it is the worst thing he has
+  done since 2034.
+- **His choice: Pip.** If Pip turns, Huck decides whether to hunt him. If
+  Hell Rot has shown him proof of Old Dee's Halo — the man who demands
+  honesty is lying — Huck letters a new card, *"ENOUGH,"* and stands the
+  Squad down. In Issue 6 they walk away from Coit Tower, and the Evidence
+  and Bargain routes of "Visiting Day" get easier. Otherwise he hunts Pip,
+  slowly and unwillingly.
+- **The hardest standoff.** A silent standoff with Huck himself is the
+  hardest *Silence* check in the game: he can wait longer than anyone. If
+  Moreau is in the van, it is one step easier. Huck cannot stay hard around
+  an axolotl.
+- **One spoken line.** He breaks the vow once, in the Mortal ending only, to
+  say *"I'm sorry"* to Hell Rot.
+- **Not the silent brute.** He has an inner life, humour and tenderness. His
+  art never makes him a menacing giant.
 
 ### 4.2 The Theogens
 
