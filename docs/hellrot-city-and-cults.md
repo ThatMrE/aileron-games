@@ -63,6 +63,7 @@ here. Where sources disagree on a date, the table says so. Sources in §9.
 | 1986–1993 | **The Foresight Institute** and the nanotech prophets | Christine Peterson & K. Eric Drexler (Foresight, Palo Alto, 1986), J. Storrs Hall (utility fog, 1993) | Foresight was founded to prepare for molecular nanotechnology. Drexler's *Engines of Creation* (1986) imagined molecular machines and coined "grey goo." Hall's utility fog imagined an air full of tiny robots, "foglets." | The real-world prophecy behind Karl and the auras. In-game, the fictional **Auric Order** treats these texts as scripture. |
 | 2012 → | **CRISPR** gene editing | Jennifer Doudna (UC Berkeley) & Emmanuelle Charpentier | The 2012 paper that made precise gene editing cheap, Nobel Prize in Chemistry, 2020. | The tool the Theogens worship. Hell Rot's Theogenesis papers are the fictional heirs of this line of work. |
 | 2015–2021 | **Way of the Future** | Anthony Levandowski | A registered religious nonprofit with the stated mission to develop and promote "a Godhead based on Artificial Intelligence." Public in 2017. Dissolved by 2021, its $175,172 given to the NAACP Legal Defense Fund. | A church of AI is not science fiction. → the Church of the Twin's legal shell |
+| 2018–2020 | **Content moderators' trauma lawsuit** (*Scola v. Facebook*) | — | Moderators who reviewed violent and abusive posts for the platform sued over psychological harm. The case settled in 2020 for $52 million. *Fact-check and add a source before release.* | The real ground under **Ana Reyes**'s moderator years (§4.1) |
 | 2010s–2020s | **AI-apocalypse subcultures** | — | Online communities that treat superintelligence as a near-religious matter. One splinter (the so-called "Zizians") faces murder charges for violence in 2022–2025. | **Not adapted** (active cases, real victims). General background only. |
 
 ### 1.2 The seven recurring patterns
@@ -664,6 +665,32 @@ on the record.
   carried. Afterwards she numbed herself with the feed itself. Old Dee built
   the feed, and Ana cleaned up after it. She met him in 2031 and believed
   him.
+- **The moderator years (2022–2030, aged 31 to 39).** Told only as numbers,
+  routines and habits. Nothing she reviewed is ever described.
+  - **Where.** An outsourcing contractor in an Oakland business park, on
+    contract to **Scrollhouse**, the feed company where Old Dee designed the
+    engagement loops. She never met him then. His name was on the building.
+  - **The work.** 600 flagged items a shift. An accuracy score: hers was
+    99.1%, the best on the floor. Nine "wellness minutes" a shift. Her
+    eye-covering habit began at that desk: she covered the bottom of the
+    screen so she could read the label before she saw the picture.
+  - **Marisol.** Ana raised her alone; Marisol's father left in 2024.
+    Marisol's earliest memory, told only if she chooses: her mother asleep
+    on the sofa with a hand over her eyes.
+  - **How it ended.** In 2030 Scrollhouse replaced its moderators with an AI
+    classifier **trained on their labels** — hers most of all, because she
+    was the most accurate. She was laid off with two weeks' notice. That
+    year she froze at her desk for six hours.
+  - **The quiet link.** The Scrollhouse classifier was later bought into the
+    Twin's content layer. The Twin's sense of "harmful" was learned partly
+    from Ana's judgments. Yara can find this. On Route D the Emperor knows
+    her: *"WE KNOW YOUR HANDS."*
+  - **The price of membership.** In 2031 the moderators' class action
+    settled for $1,900 each. Ana gave hers to Synapse as her entry tithe.
+  - **Why she believed Old Dee.** He spoke at a support meeting for
+    ex-moderators in 2031 and admitted he had designed the loops she had
+    spent eight years cleaning up after. It was the most honest thing she
+    had heard a powerful man say. She followed him.
 - **What the Game made her.** A Game elder and one of its best players.
   Some weeks she has led the Sunday split session about her own daughter,
   and she believes every word was love, said to bring Marisol home. She is
@@ -679,13 +706,18 @@ on the record.
   talks in Game phrases: *"I hear you. Now hear this."* No Halo: her score
   is zero, like her daughter's.
 - **Where Hell Rot meets her.** Issue 2, the Haight: if he answered
-  Marisol's letter, the test subject he follows home is Ana. Issue 4, the
-  Tomales Ward: she is one of the six in the circle, and the hardest
-  opponent after Old Dee, because she Games him about his own relapse.
+  Marisol's letter, the test subject he follows home is Ana. Her room has no
+  screens at all. Issue 4, the Tomales Ward: she is one of the six in the
+  circle, and the hardest opponent after Old Dee. She Games him about his
+  own relapse with a moderator's speed: she finds the worst thing in a
+  person in seconds, the skill that made her the best on the floor.
 - **The Talk route ("Visiting Day").** A red check. It is easier if Hell
   Rot has already exposed Old Dee's Halo: she cannot unsee it. *Invective*
-  fails. *Parrhesia* works. With Marisol present the check is harder, but
-  success plays the full mother-and-daughter scene, not a quiet goodbye.
+  fails. *Parrhesia* works. If Yara has found the classifier link, the
+  check is easier, and the *Parrhesia* line is: *"You trained the machine
+  that judges you. Then you let the man who built the first one judge you
+  again."* With Marisol present the check is harder, but success plays the
+  full mother-and-daughter scene, not a quiet goodbye.
 - **If she is in Coit Tower.** The Lifeboat scans its test subjects to
   calibrate the upload. When it fails, they are hurt as Sunday is: Ana loses
   most of her words, a mirror of the Rot. She survives.
@@ -1095,7 +1127,10 @@ worship — never at victims, ex-members or ordinary believers.
    she chooses. Her Sunday sessions are heard only as sound through a
    window, never shown as a scene. Her mother Ana's part in the Game is
    written with compassion, never as a twist or a villain beat, and Ana's
-   moderator years are spoken of, never shown. The 1978 attack had a real
+   moderator years are spoken of, never shown. No content she reviewed is
+   described, even in text: only numbers, routines and her body's habits.
+   Her trauma is not a twist and not the whole of her. Consult a content
+   moderators' advocacy group in sensitivity review. The 1978 attack had a real
    victim, Paul Morantz. The game keeps only its outline (a snake with no
    rattle, in a mailbox) and adds no other real detail. The credits name
    the real case. Pip's silence is a vow, a choice: not selective mutism
