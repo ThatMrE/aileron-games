@@ -1051,7 +1051,7 @@ Bridge at midnight unless something stops her first. She **lives** if:
 
 - she learns the Emperor lives in Karl, or that the god-gene kills adults,
   and calls off the Quickening by her own choice (Route D, the Mortal
-  ending), or
+  ending, or Route C, The Deep Wards), or
 - Hell Rot and Wren carry her off the south tower before the Midnight Quake
   (a MOUNTAIN MAN red check, Wren Trust ≥ 3). **Wren Trust** (0–5): +1 for
   helping at the birth, +1 for visiting the Sutro tunnels, +1 for a column
@@ -2271,7 +2271,7 @@ both have to break.
 | 14 | **Draft** | C | Refuse the full splice with Venom < 8 and Yara Trust < 3 | He refuses gently, and the Theogens excommunicate him gently. The Rot goes on. He keeps writing, smaller, for a readership that no longer prays to him. The most human of the dark endings. |
 | 15 | **Hung Jury** | D | Lose the three-way debate | Neither god moves. The Quake comes at full strength. He files the transcript as his last column, and it is the most-read thing *Mondo 3000* ever printed, and it changes nothing. |
 | 16 | **Truce** | D | Win the debate without pure eyes (§5.14a) | The gods agree to a truce he cannot see the far side of. The Ascension is postponed, not cancelled. Delphine stops the Quickening and keeps splicing. A good ending with a long shadow. |
-| 17 | **The Deep Wards** | C | Refuse the full splice with Yara Trust ≥ 3 (and Venom < 8) | With Yara beside him on the south tower, he refuses the splice and stops the release. Then he prints the failed splices' own words, the people Delphine kept underground, under their own names. The Theogens split. The deep wards come up into the light. Route C's good ending, and the mirror of Iconoclast. |
+| 17 | **The Deep Wards** | C | Refuse the full splice with Yara Trust ≥ 3 (and Venom < 8) | With Yara beside him on the south tower, he refuses the splice and talks Delphine into calling off the release herself. His last column is not his: twelve people from the deep wards write it, under their own names. The Theogens split. The deep wards come up into the light. Route C's good ending, and the mirror of Iconoclast (details below the table). |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. Time stops only for him: the City's midnight plays out exactly as it would without him — the Ascension if he had not stopped it, the Emperor holding the god-gene in as always, the Midnight Quake — and the epilogue tells it as if he were not there. |
 
 **Playtest.** The route lock, the endings and the Hour costs were tested in
@@ -2313,7 +2313,7 @@ The rest of the set. Each line works whether Delphine lived or died:
 | **Draft** | *"Ione glows when she laughs. Nobody has decided yet what that means."* |
 | **Hung Jury** | *"Ione slept through the debate. Everyone else wishes they had."* |
 | **Truce** | *"Both gods sent Ione a birthday present. Wren burned one of them. She won't say which."* |
-| **The Deep Wards** | *"Ione's first friend is a girl from the deep wards with a glowing hand. They are building a fort."* |
+| **The Deep Wards** | *"Ione's first friend was born in the deep wards. She has a glowing hand. They are building a fort."* |
 
 **The Duchess's line.** Three endings close on her:
 
@@ -2408,6 +2408,67 @@ The rest of the set. Each line works whether Delphine lived or died:
 - **Any ending, if "Visiting Day" failed:** *"Ana came home from hospital on
   9 January. She can't find the words for most things. She found 'sorry' on
   the first day."*
+
+#### The Deep Wards (ending 17) in detail
+
+The deep wards hold everyone whose splice failed, cared for and hidden in
+the old BART tunnels under the Sutro Baths. Yara finds them in Issue 3,
+with Tem. This ending gives them the last word.
+
+**How he stops the release.** Not by force. On the south tower he faces
+Delphine in a showdown, and three things lower her Conviction (§5.5):
+
+- *Peer Review* with Yara's verified data on the failed splices.
+- *Appeal* with Tem present.
+- Brandvold's notebook from the Cradle: *"In adult tissue: lethal."*
+
+When her Conviction breaks, Delphine calls off the Quickening herself. If
+he stops the release by force instead, the ending is **Draft** (14).
+
+**Delphine lives.** She called it off by her own choice, so she lives
+(§3.4). Her splices still fail. She goes down into the deep wards as a
+patient, not a prophet, and lets Wren treat her.
+
+**The last column is not his.** He gives the space to twelve people from
+the deep wards. They write in their own words, under their own names, with
+a shared byline. Yara edits it and changes nothing. It is the best-selling
+edition *Mondo 3000* ever printed.
+
+**The Theogens split.** Wren leads the half that turns the clinics into
+hospitals that ask for consent first. Delphine's last faithful stay
+underground and wait for a prophet who is not coming. If the Magister Black
+has the proof, his money goes to Wren.
+
+**The quake.** Stopping the Quickening removes one shock (§3.8b). The
+Emperor still holds the god-gene inside Karl, as in every ending, so the
+quake is real but smaller.
+
+**Hell Rot.** No splice and no cure, so the Rot goes on. The last frame:
+every Sunday he goes down into the wards with a notebook and takes
+dictation. The man who keeps forgetting writes down what other people say.
+
+**The epilogue swim.** At the New Year's Plunge at Aquatic Park, the deep
+wards come up to swim in daylight for the first time in years. Some of them
+can't swim, so the Old Guard's forty-person centipede carries them in.
+
+**Lines.**
+
+- **Yara:** *"Yara edited every testimony and changed nothing. She says it
+  was the hardest job of her life."* If she is his romance, she holds the
+  notebook when his hands shake.
+- **Tem:** *"Tem read her own testimony on the radio. She didn't lose the
+  line once."*
+- **Delphine:** *"Delphine lives in the deep wards now, on the same ward as
+  everyone she hid. She asked for no special bed. She got none."*
+- **Wren:** *"Wren runs the first clinic in the City that asks first."*
+- **Otto**, if she gave her pill drawer to the deep wards ("The Pill
+  Drawer"): *"Otto's pills ran out in March. Nobody minded. They had
+  something better: daylight."*
+
+**Sensitivity.** The ending's emotional peak belongs to the failed splices,
+not to Hell Rot's heroism. Their testimonies are written with disabled
+writers and checked by the disability-community reader. There is no pity
+framing, and the ending "cures" none of them.
 
 ### 3.12 Branching map (high level)
 

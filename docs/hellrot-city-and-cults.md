@@ -1138,7 +1138,9 @@ worship — never at victims, ex-members or ordinary believers.
    never plays his silence for laughs. His upbringing goes to the same
    reader as Marisol's.
 10. **Disability.** The Theogens' failed splices are people with their own
-   voices, never a reveal or a horror beat.
+   voices, never a reveal or a horror beat. In The Deep Wards ending their
+   testimonies are written with disabled writers. The ending has no pity
+   framing and cures nobody.
 11. **The Church of Satan** is a real, living organisation. The fictional
    Black House must not imitate its real people or rites, and must avoid
    "Satanic panic" tropes: no sacrifice, no abuse, no hidden crimes. Its

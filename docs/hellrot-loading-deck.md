@@ -5,8 +5,8 @@
 >
 > Every load, blackout and 6 a.m. press run shows one card, styled as a
 > *Mondo 3000* pull quote: the quote, its source, a context line where one is
-> needed, and **Hell Rot's marginal note** in red pencil. 221 cards: 66 real
-> quotations, 6 redacted cards, 124 in-world cards and 25 eye cards
+> needed, and **Hell Rot's marginal note** in red pencil. 222 cards: 66 real
+> quotations, 6 redacted cards, 125 in-world cards and 25 eye cards
 > (18 powers, 7 portraits). Together they are the game's running argument with the Bay
 > Area's oldest habit — building gods, and then selling tickets.
 
@@ -134,7 +134,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 
 ---
 
-## Part 2 — In-world cards (124) and eye cards (25)
+## Part 2 — In-world cards (125) and eye cards (25)
 
 ### 2A. The Emperor, the Church of the Twin and the Auric Order (30)
 
@@ -171,7 +171,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W12m | "TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever it takes." | A Commission in a shaky hand, December 2049 | *Who orders a hit piece on himself?* | Commissions, Emperor, weird |
 | W12n | "I said the cingulate work wasn't ready. I said it twice. It's in the minutes." | Unsigned letter to the letters page, on paper | *Somebody in the Order wants to talk.* | Order, Hale, I2 |
 
-### 2B. Delphine, the Theogens and the Tidechild (16)
+### 2B. Delphine, the Theogens and the Tidechild (17)
 
 | # | Quote | Source | Hell Rot's note | Tags |
 |---|---|---|---|---|
@@ -191,6 +191,7 @@ These leaders appear by name only. The bar is black. The note is the card.
 | W24b | "Even now are there many antichrists." | A Nortonian street preacher on the Ferry Building steps, quoting 1 John 2:18 | *Count them. The Church has one, the Theogens have one, and Sunday is building his own in a tower.* | Ione, Nortonians, grim |
 | W24c | "The sea lions stopped barking when the ambulance went by." | Churro vendor, Fisherman's Wharf | *Sea lions are bad at theology. They're good at something.* | Ione, weird |
 | W24d | "HALO: [WITHHELD]" | Church of the Twin scanner readout, the baby in Delphine's arms | *They publish everyone's number. Not this one.* | Ione, Halo, grim |
+| W24e | "Print my name. Spell it right." | A patient in the deep wards | *Twelve names. I checked every spelling twice.* | Theogens, C, tender |
 
 ### 2C. Karl, the fog (8)
 
