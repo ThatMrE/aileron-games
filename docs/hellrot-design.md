@@ -2868,6 +2868,33 @@ off when the player's system asks for reduced motion.
 - **The morning paper:** the front page spins in, like an old film.
 - **Endings:** the ending's name types out.
 - **Screens** slide in when they change.
+- **Story text** types itself out, three letters at a time. A click on the
+  text box shows the rest at once.
+
+### 4.7c The start screen
+
+The game opens on a title screen before character creation. It plays
+every time the game loads.
+
+- **The City at night:** the Trident's red legs, the Twin's Spire with its
+  gold light, the skyline's windows, the bridge, and the bay with moving
+  glints. Karl rolls in from the west as dithered fog.
+- **The logo** drops in one letter at a time: GOD in Church gold, SPLICE in
+  Theogen cyan. Every few seconds the word splits along its middle, the top
+  and bottom slide apart, and it snaps back. The splice is the title.
+- **A double helix** runs under the logo, one gold strand and one cyan,
+  turning slowly. The two gods, wound together.
+- **Hell Rot walks in** along the Embarcadero railing and stops under the
+  title, facing the player. Then *PRESS START* blinks.
+- **Controls:** Enter, Space or a tap starts. With a saved week, the screen
+  offers *Continue* first and *New game* second.
+
+### 4.7d Writing: show, don't tell
+
+Every story beat is a short scene written to show, not tell: what Hell Rot
+sees and hears, and what people do and say. The scenes, and the rules for
+writing them, are in the scene script:
+[hellrot-scenes.md](hellrot-scenes.md).
 
 ### 4.8 Rails and indicators (after the wireframe test)
 
