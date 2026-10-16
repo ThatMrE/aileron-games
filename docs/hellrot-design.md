@@ -1034,6 +1034,12 @@ the player:
 - **The Church of the Twin** otherwise: it wants to scan the one body in
   the City its Twin cannot read.
 
+**If the rescue fails,** the kidnappers bring Ione to midnight
+themselves. The Church holds her at the Ascension as its "proof." The
+Gilders hold her at the bridge as their bargaining chip with Delphine.
+Either way she is on the board in Issue 6, held by someone else, and every
+ending line still works.
+
 Either way, the kidnappers need a lab that can read her spin term, and the
 only one off the books is the disused lab on **Mount Sutro**. So the Issue 5
 rescue Run and the Spin Question experiment happen in the same building, on
@@ -1796,7 +1802,10 @@ from the water to the uprising.
   offers to "rebuild" them in the Twin — only a reconstruction, and the
   Duchess knows it. Then, through the fog, the Emperor makes the real offer
   (Mondo doc §4.5, *"Cold Storage"*). A Keeper's minute-book page, left in the
-  Duchess's coat on the ferry home, is the first message from Dr. Hale.
+  Duchess's coat on the ferry home, is the first message from Dr. Hale. It
+  carries the first clue to the strange Commissions: the tube machine at
+  Rivet Hill logged them at hours when the mansion was empty (Mondo doc
+  §4.3).
 - **Column 2.** An attack on the Church raises Sainthood *anyway* — the Church
   frames his anger as prophecy — and raises Helix more. The Theogens send
   flowers that glow. The player learns the trap.
@@ -1853,6 +1862,10 @@ from the water to the uprising.
 
 #### ISSUE 4 — "Saint Rot" (Wednesday 29 December)
 
+**Assignment:** Profile the City's new saint. The joke is that the saint
+is Hell Rot. **Commission:** *investigate the Rivets*, in a shaky hand. It
+leads to the lodge (Mondo doc §4.3).
+
 Common to all routes:
 
 - **The Rot advances.** Hell Rot diagnoses his own decline with his own
@@ -1892,11 +1905,18 @@ Common to all routes:
   the rush. Denim aprons on hooks. And **Dr. Imogen Hale**, waiting in the
   dark, who has been expecting him.
 
-Route-specific content follows (§3.10).
+Each route also has its own core scene this Issue and next (§3.10,
+*"Issues 4–5"*). The **Tomales Ward** showdown (companion doc §4.1) is an
+optional daytime trip this Issue.
 
 #### ISSUE 5 — "The Count" (Thursday 30 December)
 
-- **City Hall, daytime.** The **recount**: Sunday's people have challenged
+**Assignment:** Cover the count. **Commission:** at dusk, Julian's last,
+the one he cannot refuse (Mondo doc §4.3). **The patron is revealed** in the
+House tonight, and the Duchess's worst scene follows (Mondo doc §4.4).
+
+- **City Hall, daytime (one Run).** The recount and the court share one
+  Run: the courthouse is across Civic Center Plaza. The **recount**: Sunday's people have challenged
   the recall petition's signatures, and the City is counting them again by
   hand, on paper. If Rosa Quint lived through Issue 3, she **testifies at
   the recount**: under oath, in the chamber, she tells the counting board
@@ -1922,8 +1942,8 @@ Route-specific content follows (§3.10).
   day's vote. If Hell Rot has exposed the judge's Order ring first (open
   question 10), Ostrander recuses, the case is stayed, and the City votes
   on New Year's Eve with no ruling.
-- **Twin Peaks, night.** A noir drug deal on the overlook above the fog
-  line, the City lights smeared below: Hell Rot buys two kinds of xenon —
+- **Twin Peaks, night (optional if Hell Rot already holds both kinds of
+  xenon).** A noir drug deal on the overlook above the fog line, the City lights smeared below: Hell Rot buys two kinds of xenon —
   with and without nuclear spin — from Benny "Two-Tanks," for the Spin
   Question experiment. The canisters are in his hands. Craving is at its
   highest of the game.
@@ -1939,6 +1959,32 @@ Route-specific content follows (§3.10).
 See §3.8 and §3.8b. Every route converges on one night, one column and
 midnight coming.
 
+**Assignment:** The last column, filed live to every feed at midnight.
+
+**Running order.** The night's clock, in game Hours. Hell Rot can be at one
+midnight site in person. Anything else needs an ally (the Bishop at the
+Palace on Route A, Junie at the bridge, Marisol at Coit Tower).
+
+| Time | Event |
+|---|---|
+| 4:55 p.m. | Sunset. The Lacuna Trust's last letter: the Locked Room key (Mondo doc §4.4) |
+| 6 p.m. | Critical Mass gathers on Market Street |
+| 7–8 p.m. | The Twin's blind hour: the Emperor cannot see anyone in the City |
+| 8 p.m. | Polls close |
+| 10 p.m. | The recall result at City Hall (Rosa, or Sunday in black) |
+| 10:30 p.m. | The Ascension's gates open: 12,000 file into the Palace |
+| 11 p.m. | The storm makes landfall. The Theogens load the canisters on the bridge towers. The Midnight Pillow Fight starts |
+| 11:30 p.m. | The Ascension liturgy. The Lifeboat powers up in Coit Tower. The Baker Beach Burn is lit |
+| 11:59:59 p.m. | The Stopped Clock, if he uses it (ending 11) |
+| Midnight | The Ascension, the Quickening, the Lifeboat and the vote, all at once. The Midnight Quake |
+| 1 a.m. | The rain band passes. Dry wind. The fires spread |
+| 5:40 a.m. | The special edition prints in the cellar |
+
+**Travel between the midnight sites:** the Palace to the bridge, ¼ Hour.
+Baker Beach to the bridge, ¼ Hour. City Hall to the Palace, ½ Hour. Coit
+Tower to the Palace, ½ Hour. After 11 p.m. the storm doubles every ride
+except the Tube.
+
 - **The recall result at City Hall** — if Rosa lived, she reads the
   result from the podium in Sunday's place, as the last act of his chief of
   staff. If she died, Sunday reads it himself, in black, with her photograph
@@ -1949,7 +1995,8 @@ midnight coming.
   taken over the rotunda and lagoon for 12,000 uploads at midnight, at the
   edge of the Marina, on 1906 rubble. Sister Halcyon leads it — and, if
   she has learned the truth, can stop it from the pulpit (§3.6c). Old
-  Dee sits in the front row in gold Halos.
+  Dee sits in the front row in gold Halos. If the Church took Ione and the
+  rescue failed, she is here, on the altar, as its "proof" (§3.4).
 - **The Golden Gate Bridge climax** — the fog's front door, where the
   Theogens load the Quickening into Karl as the storm comes in — Delphine at
   the south tower with Ione, her skin going dark, and perhaps dying there
@@ -1967,8 +2014,11 @@ edition, printed before 6 a.m. in the cellar of Villa Delirium: the last
 column. Then dawn, smoke on the water, and the New Year's Day swim at Aquatic
 Park — or the Mountain, or Baker Beach — depending on the ending. The last
 scene jumps twenty years: in 2069, Ione, aged twenty, reads Hell Rot's last
-column aloud. It is the only time the game hears her voice. She is wearing
-one of Saint Nobody's costumes. She is a member now.
+column aloud. It is the only time the game hears her voice. What she wears
+depends on the ending. In the endings where the City kept its laughter
+(Mortal, Iconoclast, Peer Review, The Mountain), she wears one of Saint
+Nobody's costumes: she is a member now. In Saint Rot and Fabrication she
+wears Church gold and reads it flat. In the others, plain clothes.
 
 ### 3.9b Set pieces by night
 
@@ -2019,7 +2069,6 @@ night to build Runs around. (District details: companion doc §3.)
 | **The California Academy of Sciences** | The Game's donor dinner, the martyr metric, the Rosa Quint timed interrupt | Core |
 | **Golden Gate Park** | The bison paddock in the fog, Hippie Hill, a glow rickshaw race, decrees on the Conservatory of Flowers | Core |
 | **Ocean Beach** | Karl's Birthday bonfire, the Church's mass inhale, one recording heard by everyone | Core |
-| **The Tomales Ward** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game. Old Dee, the Quiet Squad, Ana Reyes in the circle, and the chance to make him play | Optional |
 | **The Cradle, Mission Bay** | Ruined biotech labs, Theogen pilgrims, Delphine's first company, Otto's old lab | Optional |
 | **The Black House** | The Magister Black's salon, the open donor ledger, the obituary request | Optional |
 
@@ -2034,14 +2083,14 @@ night to build Runs around. (District details: companion doc §3.)
 | **The Auric lodge, the Presidio** | A break-in, the 1849 gold pan, the minute book, Dr. Hale | Core (Routes A, D), Optional (B, C) |
 | **Treasure Island** | The Rivet Trust's fabrication plants on stilts, which build for both gods: the supply-chain choice | Optional |
 | **The Lantern** | The Church offers to fund every bed if the shelter checks Halos at the door | Optional |
+| **The Tomales Ward (by day)** | The Game, on the Church's rehab farm — the hardest rhetorical fight in the game. Old Dee, the Quiet Squad, Ana Reyes in the circle, and the chance to make him play. Moved from Issue 3, which was too full | Optional |
 
 **Issue 5 — Thursday 30 December.**
 
 | Location | Set piece | Type |
 |---|---|---|
-| **City Hall** | The hand recount of the recall petition, Rosa testifies (if alive) | Core |
-| **The courthouse** | *BFF v. City*: Hell Rot on the stand (cross-examination showdown), the judge's aura | Core |
-| **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core |
+| **City Hall and the courthouse** | One Run across Civic Center Plaza: the hand recount (Rosa testifies, if alive), Hell Rot's Index test, *BFF v. City* (cross-examination showdown), the judge's aura, the 5 p.m. ruling | Core |
+| **The Twin Peaks overlook** | A noir drug deal with Benny: two kinds of xenon | Core, unless he already holds both |
 | **Mount Sutro** | The Spin Question experiment in a disused lab under the Trident, the rescue of Ione, the Emperor's clearest voice | Core |
 | **The Skyline gondola** | Above the fog line, under open sky | Optional |
 
@@ -2069,6 +2118,29 @@ night to build Runs around. (District details: companion doc §3.)
 | **Mount Tamalpais** | The Mountain ending | Ending 1 |
 | **Baker Beach** | Dawn on the frozen man | Ending 11 |
 
+### 3.9c Threads by Issue
+
+When each thread opens, its deadline, and where it pays off.
+
+| Thread | Opens | Deadline | Pays off |
+|---|---|---|---|
+| **Ione** | Prologue (her health) | Issue 5, the Mount Sutro rescue | The bridge (Issue 6), the 2069 Epilogue |
+| **Tem** | Issue 1, the uprising | Issue 3, the deep wards | The bridge warning (Issue 6) |
+| **Rosa Quint** | Issue 2, the note | Issue 3, the timed interrupt | The recount (Issue 5), the result (Issue 6) |
+| **The Commissions** | Issue 2 | Issue 5, Julian's last | The last column |
+| **The patron** | Prologue, the sealed house | Issue 5, the reveal | The Locked Room key (Issue 6) |
+| **Dr. Hale** | Issue 2, the minute-book page | Issue 4, the lodge | Routes A and D |
+| **Judge Ostrander's ring** | Issue 3 or 4 (Blood Eye) | Issue 5, 5 p.m. ruling | Stay or ruling |
+| **The Spin Question** | Issue 4, the ruined lab | Issue 5, Mount Sutro | Route D, the Index results |
+| **Sister Halcyon** | Issue 2, City Hall | Issue 6, the pulpit | The Ascension |
+| **The Game and Old Dee** | Issue 3, the dinner | Issue 4, the Tomales Ward | The Ascension sighting, endings |
+| **The Quiet Squad and Pip** | Issue 2 (Heat 3) | Issue 4, turn Pip at the farm | Peer Review |
+| **"Visiting Day" (Ana)** | Issue 2, Marisol's letter | Midnight, Issue 6, Coit Tower | Epilogue lines |
+| **"The Obituary"** | Issue 3, the Black House | Midnight, Issue 6 | The Magister's party |
+| **Housemate side quests** | Issue 1 onward | Issue 6 | Endings (Mondo doc §5.3a) |
+| **The Letters Page** | Issue 1, the first dawn | The Epilogue | The last letters page |
+| **Moreau** | Prologue, the first fire | Issue 6, the second fire | The Epilogue |
+
 ### 3.10 The four routes
 
 #### Route A — HERESY (no gods)
@@ -2081,6 +2153,12 @@ Merge's real outcomes (what the merged actually say, measured) and the
 Theogens' real outcomes (every failed splice, counted). Allies: Mary, the old
 lab partner, the families of the failed splices. Mayor Pell offers help.
 Taking it gets the data out faster and taints it.
+
+*Issues 4–5:* **Issue 4:** an all-nighter at the Fact Desk, building the
+Open Dataset with Pru and Yara, while Pell's offer comes back with a
+deadline. **Issue 5:** Mary and the families of the failed splices go on
+the record, and the House votes on the Rivet money after the patron
+reveal (Mondo doc §4.4).
 
 *Climax:* he publishes the data at midnight, and splits his time on
 New Year's Eve between both sites — the hardest timing puzzle in the game.
@@ -2100,6 +2178,12 @@ Halos, and the Twin is writing more of him every night (§5.14b). Junie is
 the conscience of this route. The Theogens
 become his enemies, and violent.
 
+*Issues 4–5:* **Issue 4:** the saint's tour — a gold shuttle procession
+through the Mission, a Halo ceremony with Sister Halcyon (Wear +1), and a
+crowd that touches his coat. **Issue 5:** a private audience with the
+Emperor through Laffing Sal, a cure offered on request, and Junie's
+intervention in the van.
+
 *Climax:* at the Ascension, under the Palace of Fine Arts rotunda: merge or not?
 
 #### Route C — SPLICE (the flesh's father)
@@ -2113,6 +2197,11 @@ power fantasy: the more he splices, the better he thinks, and the less he
 recognizes his own old columns. Yara is the conscience of this route. The
 Merge declares him a heretic.
 
+*Issues 4–5:* **Issue 4:** First Light — the first, small splice, in the
+deep wards, with Delphine as host and the failed splices watching.
+**Issue 5:** the Cortex offer, Delphine's own splices faltering in front of
+him, and Yara's intervention at the Fact Desk.
+
 *Climax:* at the Quickening, on the Golden Gate Bridge in the fog: take the full splice or not, and stop
 the release or not.
 
@@ -2120,7 +2209,15 @@ the release or not.
 
 *Lock:* Sainthood and Helix both ≥ 4 and within 2 of each other, balanced
 reputation, private dialogues completed with both the Emperor and Delphine, and
-Clarity ≥ 4.
+Clarity ≥ 4. The private dialogues are fixed scenes. **The Emperor:**
+Laffing Sal (Issue 1) and the fog on the Alcatraz ferry (Issue 2).
+**Delphine:** the birth (Prologue) and the Sutro tunnels (Issue 3). Missing
+either pair closes Route D.
+
+*Issues 4–5:* **Issue 4:** the dawn summit — Julian is strongest at dawn,
+and Hell Rot meets him at Laffing Sal before the Wharf opens. **Issue 5:**
+the Delphine summit in the Sutro tunnels, with Ione gone, and the Locked
+Room journals and the Duchess's tapes as evidence.
 
 The strangest route. Hell Rot refuses to choose a side, and instead does
 the one thing neither god expects: he makes them **debate each other**,
@@ -2256,8 +2353,10 @@ The rest of the set. Each line works whether Delphine lived or died:
 
 ```mermaid
 flowchart TD
-  P[Prologue: The Mountain] --> I1[Issue 1: King Tide]
-  I1 -->|Column 1| I2[Issue 2: The Twin]
+  P[Prologue: The Mountain] --> H{Ione's health<br/>stabilized / partly / left to the cult}
+  H --> I1[Issue 1: King Tide]
+  I1 --> W{Column 1: riot or uprising}
+  W --> I2[Issue 2: The Twin]
   I2 -->|Column 2| I3[Issue 3: The Underground]
   I3 --> R{Rosa Quint interrupt}
   R -->|Warn| I3a[Rosa lives, on the record]

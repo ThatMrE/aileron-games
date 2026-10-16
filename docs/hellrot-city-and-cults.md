@@ -615,8 +615,9 @@ prize.
   Gamed, live, for an hour. Clarity −2, and the circle reads out everything
   he has never admitted.
 - **Where he appears.** Issue 3: the honoree at the Cal Academy dinner,
-  where the optional Game at the table is played in front of him. Issue 3,
-  optional: the Tomales Ward farm, the full showdown and the Quiet Squad.
+  where the optional Game at the table is played in front of him. Issue 4,
+  optional, by day: the Tomales Ward farm, the full showdown and the Quiet
+  Squad.
   Issue 6: a sighting only, a guest of honour at the Ascension in gold
   Halos.
 
@@ -678,7 +679,7 @@ on the record.
   talks in Game phrases: *"I hear you. Now hear this."* No Halo: her score
   is zero, like her daughter's.
 - **Where Hell Rot meets her.** Issue 2, the Haight: if he answered
-  Marisol's letter, the test subject he follows home is Ana. Issue 3, the
+  Marisol's letter, the test subject he follows home is Ana. Issue 4, the
   Tomales Ward: she is one of the six in the circle, and the hardest
   opponent after Old Dee, because she Games him about his own relapse.
 - **The Talk route ("Visiting Day").** A red check. It is easier if Hell
@@ -717,7 +718,7 @@ on the record.
   *Invective* and *Satire* fail. **Win:** they step aside. **Lose:** Heat +2
   and a long walk home.
 - **Where they appear.** Issue 2: if Hell Rot answered Marisol's letter,
-  one stands outside the Lantern. Issue 3: the farm in the Tomales Ward.
+  one stands outside the Lantern. Issue 4: the farm in the Tomales Ward.
   The morning after the Old Dee crack runs: the snake. Issue 6: Sunday
   hires them to guard the Lifeboat's test subjects at Coit Tower, so the
   Evidence and Bargain routes of "Visiting Day" go past them.

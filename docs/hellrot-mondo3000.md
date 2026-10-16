@@ -246,7 +246,7 @@ running mystery, solved one clue at a time, *Hades*-style:
 | **The Rivet trustees** | They inherited the Trust | True, in part: the Gilders in the Auric Order send the "enemy" Commissions |
 | **Mayor Sunday** | He would love a hit sheet | He tries to *buy* the magazine in Issue 3. You do not buy what you already own. |
 | **A forger** | The handwriting changes | The paper is real Rivet stock, and the tube only runs from Rivet Hill |
-| **Julian himself** | The odd ones read like him | **The truth (Issue 4):** the strange Commissions — the bridge, "Frisco," *investigate the Rivets* — come from the Emperor, in his lucid hours, writing through the Trust's own machinery. The god is assigning stories about the Order that made him. |
+| **Julian himself** | The odd ones read like him | **The truth (clue in Issue 2, answer in Issue 4):** Dr. Hale's first page shows the Rivet Hill tube machine sent them when the mansion was empty. Then the lodge itself: the strange Commissions — the bridge, "Frisco," *investigate the Rivets* — come from the Emperor, in his lucid hours, writing through the Trust's own machinery. The god is assigning stories about the Order that made him. |
 
 **The Commissions as a mechanic.** Each Issue, alongside the Duchess's
 assignment, a Commission may arrive. The player can:
@@ -264,8 +264,20 @@ ordered, the House stops trusting him: every housemate's Trust −1, and Yara
 confronts him. After the **fifth**, the House votes him off the Fact Desk:
 Yara stops verifying for him, and Route A closes.
 
-**The Commission he cannot refuse.** The last one arrives at dusk on New
-Year's Eve: *"TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever
+**Commissions by Issue.**
+
+| Issue | Commission | Sent by |
+|---|---|---|
+| 1 | None. His first night | — |
+| 2 | *TARGET: Mags Oduya, BFF lead counsel. ANGLE: she is a fraud.* | The Gilders |
+| 3 | *TARGET: the bridge. ANGLE: who first asked for it.* (Emperor Norton decreed a bay bridge in 1872.) | The Emperor |
+| 4 | *Investigate the Rivets*, in a shaky hand. It leads to the lodge | The Emperor |
+| 5 | *TARGET: the Biological Frontier Foundation. ANGLE: the Index is settled science.* Then, at dusk, Julian's last | The Gilders, then Julian |
+| 6 | None. The last column is his own | — |
+
+**The Commission he cannot refuse.** The last one arrives at dusk on
+Thursday 30 December (Issue 5), so he has one night to report it before the
+last column: *"TARGET: the Rivet family. ANGLE: the truth. LENGTH: whatever
 it takes."* It is from Julian — set up before the upload, kept paid by the
 Emperor. He cannot refuse it because it is the true story: writing it is
 telling the truth on Rivet money, the House's standing compromise taken to
@@ -291,7 +303,7 @@ secrets: one clue every few Runs, from a different housemate each time.
 | **Dr. Imogen Hale** | A sealed house is exactly what a Penitent would want | She did not join the Order's inner circle until 2046, two years after the purchase |
 | **Hell Rot himself** | The Rot eats memory. Did he buy it and forget? (The City's conspiracy cranks also suspect him because of his surname. The House treats that theory with the contempt it deserves.) | His bank records from 2044 show he had just dropped out of his PhD, was broke, and was buying canned beans and nothing else, on the mountain, getting clean |
 
-**The truth (Issue 4):** the patron was also **Julian Rivet V** — his
+**The truth (Issue 5):** the patron was also **Julian Rivet V** — his
 other hand. In public, through the Rivet
 accounts, he bankrolled the magazine as a weapon. In private, through the
 Lacuna Trust, he bought its writers a house the Twin he was building could
@@ -313,7 +325,7 @@ hours. 40 pages ran. She kept the raw tapes — paper transcripts and
 cassettes, out of the Emperor's reach — and the unpublished hours have him
 on Delphine, on "a house nobody can see into," and on uploading. She worked
 out years ago that the patron was Julian, and never asked, because asking
-would end the money. In Issue 4, when the truth comes out, the House learns
+would end the money. In Issue 5, when the truth comes out, the House learns
 she has known all along. It is her worst scene and her best: *"Darling, I
 run a magazine. Of course I didn't ask."* The tapes are a second key to
 Route D, alongside the journals.
