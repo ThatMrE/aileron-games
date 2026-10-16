@@ -30,6 +30,8 @@ Then lights come down the cliff path: forty people, glowing faintly blue, singin
 
 A woman in the next pool grips the stone and breathes through her teeth. Delphine Ash. She sees you and smiles. "Father," she says.
 
+A young nurse kneels on the rock beside her, a thin glow-line on one wrist. She lays a hand on the belly. "This will sting. Is that all right?" she asks it, and waits, as if it might answer.
+
 Her belly lights up from the inside. It flickers. It flickers again, too fast. You know that rhythm. You drew it as a graph in your third paper. It is a seizure, and the child has not been born yet.
 
 **The fire.**
@@ -43,6 +45,8 @@ Your shack is burning. Moreau's jar is on the windowsill, glowing orange in the 
 On the ridge your phone finds one bar. Nine missed calls from Fax, and one voicemail: "Job's yours. Room's yours. The Duchess says don't die first."
 
 Down on Highway 1, three sets of lights wait in the fog.
+
+**If he helps at the birth.** The nurse hands you gloves without asking if you're qualified. "You've got the hands," Wren says. "Ask questions later."
 
 ## Issue 1 — King Tide (Sunday 26 December)
 
@@ -180,6 +184,8 @@ A woman in the congregation quotes your third paper back to you. She gets one wo
 
 Further down, past a door with no sign, the glow gets uneven. Someone is singing to keep from shaking.
 
+Wren is at a steel sink by the door, washing her hands. She is still washing them when you walk back past, ten minutes later.
+
 ### The Cradle
 
 Half the lab is underwater. Small fish move between the benches.
@@ -211,6 +217,8 @@ Across the room Rosa Quint checks her phone too often. A waiter has refilled her
 The cradle in the tunnels is empty. The blanket is still warm. The mobile above it is still turning.
 
 Delphine does not scream. She stands very straight, and the light under her skin flickers like a bad bulb.
+
+Wren's scrubs are on inside out. She has not slept. She folds the same blanket, unfolds it, and folds it again.
 
 By dawn the Mission is papered with LOST. The flyers have no photo. Delphine says the Twin would only use it.
 
@@ -284,6 +292,8 @@ Through the glass: a baby in a padded cradle, wires on her scalp, and two people
 
 She is not crying. She is watching the window. She is watching you.
 
+When the door gives, Wren goes past you to the cradle. She unclips the wires from Ione's scalp one at a time, and says each one's name as it comes off.
+
 ### The Dome
 
 The recount room smells of toner. A clerk hands you a clipboard: the Index test, the one the BFF are suing over.
@@ -339,6 +349,8 @@ The glass skywalk sways under the bridge. Wind goes through the cables like a he
 On the south tower, canisters glow cyan in a row, hooked to the fog intakes. Theogens in white open the valves one by one.
 
 Wren holds Ione inside her coat. She sees you and does not hide it. "She's cried since the first valve," she says. "Delphine says it's joy."
+
+*At Wren Trust 3 or more:* **Wren Castillo:** "Take her down. I'll stay with Delphine." The player takes Ione down, or tells Wren to go.
 
 ### Coit Tower
 

@@ -1278,7 +1278,7 @@ uncertainty on screen.
 | **Desh** | Survivor of the Oakland Burn | Writes to *Mondo 3000* with a typing aid. The sharpest reader the magazine has. Under Prop F he would lose his rights. |
 | **Delphine Ash** | Prophet of the Theogens, Ione's mother | The second boss and the second temptation. Ninety years old with the skin of a thirty-year-old. In 2034, dying of ALS, she spliced herself live on a feed from Hell Rot's first paper, and lived. On Christmas night she gives birth to Ione in the Steep Ravine pools. Her own splices are failing, and she believes Karl is only a delivery system. The father is **Julian Rivet V**, her lover in the late 2030s — a secret she has kept from everyone — see §3.4. |
 | **Ione, the Tidechild** | The second god | A newborn girl carrying Theogen edits from conception, delivered in the Prologue. The first person ever born with cingulate engineering: speaks within a day, remembers everything, more conscious than anyone alive. Glows instead of crying. Both cults want her. The Church and the Order call her "it." Taken in Issue 4 (§3.4). Secretly the **last Rivet heir**: Julian Rivet V's child, and so, in a way, the Emperor's — see §3.4. |
-| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Her loyalty is the hinge of Route C. |
+| **Wren Castillo** | Delphine's midwife | A 24-year-old Theogen nurse who delivers Ione and loves the baby more than the prophecy. Believes the child is a god. Wants her to be a child. Grew up in Oakland after the Burn. Her creed: *ask first*. Her loyalty is the hinge of Route C (§3.6d). |
 | **The Magister Black** | Theogen patron, host of the Black House | Born Desmond Achterberg, 61. A former stage mentalist in a white suit with a magenta splice. The Theogens' second purse, and the one person who treats Hell Rot as an equal. Hides nothing (companion doc §4.2). |
 | **Sister Halcyon** | Church of the Twin spokesperson | Born Hallie Kowalczyk, 44. A former trainer at The Standard, the 60-hour seminar the Church bought and made its on-ramp, the Seminar. Merged: Halo score 10, the Halo jacked in. Believes every word — because she can no longer tell which words are hers (§3.6c). |
 | **Augustus Pell, "the Hog"** | Antagonist A | A former police chief running in the New Year's Eve recall to replace Sunday. Openly corrupt, but at least mortal. Wants both cults dead — you cannot bribe a god, and you cannot bribe a man who regrows his kidneys. Hell Rot's most uncomfortable possible ally. |
@@ -1474,6 +1474,77 @@ within a year.
   She cries every time. So does he, wherever he is."* **Iconoclast:**
   *"Halcyon walked out of the Palace behind him. She did not say a word all
   the way home. It was the first silence she had chosen in years."*
+
+### 3.6d Wren Castillo
+
+Wren is 24. She grew up in Oakland after the Burn, the same disaster Desh
+survived. No hospital would take her mother; a Theogen clinic did. Wren
+joined at 14, and Delphine trained her. The faint glow-line on her wrist is
+a small splice she asked for, one of the rare ones that worked. So she
+believes in splicing, but only with consent. She does not believe in the
+Quickening, which asks nobody.
+
+Her line is *"Ask first. Always ask first."* The game shows it before it
+says it.
+
+- **The creed, shown.** Before every injection she asks Ione: *"This will
+  sting. Is that all right?"* The baby cannot answer, and Wren waits anyway.
+  The player sees this three times (the birth, the tunnels, the Forest)
+  before anyone explains it.
+- **The Prologue.** If Hell Rot helps at the birth, she hands him gloves
+  without asking if he is qualified: *"You've got the hands. Ask questions
+  later."* (Wren Trust 1.)
+- **Issue 3, the Baths.** She is the nurse who hid Tem in the deep wards.
+  Hell Rot finds her washing her hands at a steel sink by the door. Ten
+  minutes later she is still washing them.
+- **Issue 4, Ione is taken** on her shift. Her scrubs are on inside out, she
+  has not slept, and she folds the same blanket again and again. Joining the
+  search is +1 Wren Trust.
+- **Issue 5, the Forest.** When the lab door gives, she goes past Hell Rot to
+  the cradle and unclips the wires from Ione's scalp one at a time, saying
+  each one's name.
+- **Issue 6, the bridge choice.** At Wren Trust 3 or more she holds Ione out
+  to him on the south tower: *"Take her down. I'll stay with Delphine."* The
+  player chooses: take the baby down, or tell Wren to go. Either way one of
+  them stays on the tower with Delphine for the quake. This is the one
+  moment Route C hangs on Wren, and it is the player's call.
+- **If she raises Ione,** the last frame is a clinic with a crib behind the
+  front desk, and a sign on the door: WE ASK FIRST.
+- **No romance.** She is not a housemate, and her story is about Ione.
+- **Endings.** One line for each:
+  - **The Mountain:** *"Wren sends a photo up the mountain every Sunday. Ione,
+    a little bigger each time."*
+  - **Peer Review:** *"Wren read the Open Dataset at the clinic sink. Then she
+    asked every patient if they wanted to be in the next one."*
+  - **The Hog's Bargain:** *"Mayor Pell licensed every splice clinic in the
+    City. Wren's licence came with a camera. She hung a towel over it."*
+  - **Saint Rot:** *"The Church offered Wren a Halo and a job. She sent back
+    the Halo."*
+  - **Iconoclast:** *"Wren watched the Ascension break on a clinic screen. She
+    went back to work before it ended."*
+  - **New Flesh:** *"Wren left the Theogens on 2 January. She took the
+    clinic's key and nothing else."*
+  - **The Mob:** *"Wren ran a first-aid tent at every march. She treated both
+    sides and asked each of them first."*
+  - **Mortal:** *"Wren delivered forty babies in 2050. She asked every one of
+    them first."*
+  - **Successor:** *"Yara's third column was an interview with Wren. It ran
+    with no corrections."*
+  - **Fabrication:** *"Hell Rot printed that Wren stole the baby. She never
+    spoke to him again."*
+  - **Midnight Forever:** *"Wren says Ione has started watching the clock."*
+  - **Spiked:** *"Wren waited all spring for the story that would explain
+    her. It never came."*
+  - **The Unfinished:** *"Wren's clinic took Hell Rot in when his Halo hit
+    zero. She asked first."*
+  - **Draft:** *"Wren still sends the House a card at Christmas. It is always
+    a photograph of a tide pool."*
+  - **Hung Jury:** *"Wren carried Ione down the bridge stairs while the
+    gods were still arguing."*
+  - **Truce:** *"Both gods sent Ione a birthday present. Wren burned one of
+    them. She won't say which."*
+  - **The Deep Wards:** *"Wren runs the first clinic in the City that asks
+    first."*
 
 ### 3.7 Structure: a Prologue and seven Issues
 
