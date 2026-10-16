@@ -215,6 +215,34 @@ The test found four real problems, all fixed:
 The two never-sleep games both hit delirium, were sent home to sleep 6
 hours, and still finished the week.
 
+### Second pass: point-and-click interiors
+
+Every location is now an 8-bit interior with fixed hotspots (design §4.7).
+Villa Delirium is a cutaway of its eight rooms. Only travel moves the clock.
+
+The bot played 16 more games:
+
+| Style | Games | Result |
+|---|---|---|
+| Mixed (buttons) | 4 | Endings 6, 13, 13, 13 |
+| Canvas clicks only | 3 | Endings 14, 13, 13 |
+| Takes every boon | 4 | Endings 14, 13, 15, 13 |
+| Never sleeps | 3 | Endings 14, 13, 4. All three hit delirium and recovered. |
+| Church shuttle every ride | 2 | Ending 4 both times |
+
+There were no errors and no stuck games. The bot checked the clock after
+each hotspot click. The clock moved only on a blackout, which counts as the
+ride home (2 Hours).
+
+Two findings:
+
+1. **Memory fills fast.** Free hotspots fill the 6 Memory slots in one or
+   two locations. Writing down is free now, so this is a click, not a cost.
+   Watch that Memory still feels like a risk in a real playtest.
+2. **The gate is the hotspot count, not the clock.** Inside a location,
+   only Clarity limits a player (story scenes, Dissonance and showdowns
+   cost it). Each hotspot works once per Issue, so a room can't be farmed.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
