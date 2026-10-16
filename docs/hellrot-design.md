@@ -48,7 +48,7 @@
 | Platform | Browser first (single-file HTML/PWA, like the other Aileron games), Android wrapper later |
 | Input | Tap/click choices, keyboard 1–9 |
 | Session length | One **Run** (a foray into the City) is 20–40 minutes. One **Issue** (one night, one edition) is 3–6 Runs. 10–14 hours per route |
-| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 16 endings, ~50% of content unseen on a first playthrough |
+| Replay | Within a route: Runs vary (Hades-style). Across routes: 4 routes, 17 endings, ~50% of content unseen on a first playthrough |
 | Script size target | 90,000–110,000 words, ~220 scene nodes |
 | Rating target | Mature (ESRB M / PEGI 18): strong language, drug use, body horror, satire of religion and politics |
 | Team (min.) | 1 narrative lead, 1 writer, 1 programmer, 1 pixel artist, 1 chiptune composer, 1 QA/sensitivity reader |
@@ -1430,7 +1430,7 @@ ISSUE 3    "The Underground"    Tue 28 Dec  Sutro Baths data center; Cal Academy
 ISSUE 4    "Saint Rot"          Wed 29 Dec  the ruined Mission Bay lab; Sunday's rig in Coit Tower; the Presidio lodge break-in
 ISSUE 5    "The Count"          Thu 30 Dec  the City Hall recount; a Twin Peaks drug deal; the Mount Sutro experiment
 ISSUE 6    "Twenty-Fifty"       Fri 31 Dec  Critical Mass; the Ascension at the Palace of Fine Arts; the Golden Gate Bridge climax
-ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition at dawn; one of 16 endings
+ISSUE 7    "Special Edition"    Sat 1 Jan 2050  the Epilogue: the last edition at dawn; one of 17 endings
 ```
 
 **Why a week works for the Rot.** On the mountain, with sleep, quiet and no
@@ -2252,7 +2252,7 @@ underground. Each god must face the human cost of its love.
 *Climax:* a three-way showdown. The Emperor's Certainty and Delphine's Conviction
 both have to break.
 
-### 3.11 Endings (16)
+### 3.11 Endings (17)
 
 | # | Name | Route | Condition | Summary |
 |---|---|---|---|---|
@@ -2268,9 +2268,10 @@ both have to break.
 | 10 | **Fabrication** | Any | Publish a known falsehood twice | Fail state. Hell Rot wins every fight by faking the data, and the City believes him because he is a saint to both sides. Then he realizes he and the gods are the same thing. Short, quiet, horrible. |
 | 12 | **Spiked** | A | Never publish the Open Dataset | The data dies in the Fact Desk drawer. Both cults survive intact. The Duchess runs a crossword in its place. Yara leaves in March. Quiet, bitter, and the most common way Route A fails. |
 | 13 | **The Unfinished** | B | Refuse the Merge with Junie Trust < 3 | He says no, alone, and nobody hears it: no live feed, no crowd. He takes the Halos off in a Palace toilet and walks out with a Halo of zero. City services close to him. He ends the week in the Loin, writing for the Ghost Diner's wall. |
-| 14 | **Draft** | C | Refuse the full splice with Venom < 8 | He refuses gently, and the Theogens excommunicate him gently. The Rot goes on. He keeps writing, smaller, for a readership that no longer prays to him. The most human of the dark endings. |
+| 14 | **Draft** | C | Refuse the full splice with Venom < 8 and Yara Trust < 3 | He refuses gently, and the Theogens excommunicate him gently. The Rot goes on. He keeps writing, smaller, for a readership that no longer prays to him. The most human of the dark endings. |
 | 15 | **Hung Jury** | D | Lose the three-way debate | Neither god moves. The Quake comes at full strength. He files the transcript as his last column, and it is the most-read thing *Mondo 3000* ever printed, and it changes nothing. |
 | 16 | **Truce** | D | Win the debate without pure eyes (§5.14a) | The gods agree to a truce he cannot see the far side of. The Ascension is postponed, not cancelled. Delphine stops the Quickening and keeps splicing. A good ending with a long shadow. |
+| 17 | **The Deep Wards** | C | Refuse the full splice with Yara Trust ≥ 3 (and Venom < 8) | With Yara beside him on the south tower, he refuses the splice and stops the release. Then he prints the failed splices' own words, the people Delphine kept underground, under their own names. The Theogens split. The deep wards come up into the light. Route C's good ending, and the mirror of Iconoclast. |
 | 11 | **Midnight Forever** | Any | Pale eye corrupt at step 4. Use the Stopped Clock at midnight and never let it go | Hell Rot stops the clock at 11:59:59 on New Year's Eve and refuses to start it again. For him, the moment holds forever: the moon over the bridge, the rain in the air, everyone he loves mid-breath. For everyone else, 2050 arrives and a man stands frozen on Baker Beach, staring at nothing, until Junie carries him home. The mirror of the Merge: he chose a perfect moment over a life. Time stops only for him: the City's midnight plays out exactly as it would without him — the Ascension if he had not stopped it, the Emperor holding the god-gene in as always, the Midnight Quake — and the epilogue tells it as if he were not there. |
 
 **Playtest.** The route lock, the endings and the Hour costs were tested in
@@ -2284,7 +2285,7 @@ order: **10 Fabrication**, then **11 Midnight Forever**, then **4 Saint Rot**
 final desk when its conditions hold, so a deliberate choice beats an
 automatic one), then **9 Successor** (automatic when he cannot finish the
 column), then the route's own ending: 2 or 3 or 12 on Route A, 5 or 13 on
-Route B, 6, 7 or 14 on Route C, 8, 15 or 16 on Route D. Every playthrough
+Route B, 6, 7, 17 or 14 on Route C, 8, 15 or 16 on Route D. Every playthrough
 ends in exactly one ending.
 
 **Ione's line.** Every ending adds one line about Ione. Three set the tone:
@@ -2312,6 +2313,7 @@ The rest of the set. Each line works whether Delphine lived or died:
 | **Draft** | *"Ione glows when she laughs. Nobody has decided yet what that means."* |
 | **Hung Jury** | *"Ione slept through the debate. Everyone else wishes they had."* |
 | **Truce** | *"Both gods sent Ione a birthday present. Wren burned one of them. She won't say which."* |
+| **The Deep Wards** | *"Ione's first friend is a girl from the deep wards with a glowing hand. They are building a fort."* |
 
 **The Duchess's line.** Three endings close on her:
 
@@ -2442,6 +2444,7 @@ flowchart TD
   M --> X14[14 Draft]
   M --> X15[15 Hung Jury]
   M --> X16[16 Truce]
+  M --> X17[17 The Deep Wards]
 ```
 
 ### 3.13 Sample scene (vertical-slice excerpt)
@@ -3222,6 +3225,11 @@ is the companion and Hell Rot aims no Venom down. A night he uses gas
 instead costs her Trust −1: she finds it. Without this rule, players who
 never chased her Trust could not reach Iconoclast at all.
 
+**Yara's steady rule (after playtest).** Yara Trust +1 for each night she is
+the companion and the column carries no Fabrication. It gates Route C's good
+ending, **The Deep Wards** (17), the mirror of Junie and Iconoclast on
+Route B.
+
 #### Romance
 
 Six housemates are **romance options**: **Junie, Yara, Fax, the Bishop,
@@ -3659,7 +3667,7 @@ a service worker, optional Android wrapper.
 |---|---|---|
 | **Vertical slice** | Prologue + Issue 1 as 3 playable Runs, the Mansion hub, 4 Blessings, 4 Splices, 1 Contradiction, 1 recurring boss, Layout v1, 8 scenes, 10 portraits | 8–10 weeks |
 | **Alpha** | Issues 1–3, route lock, all systems | +12 weeks |
-| **Beta** | All 4 routes, 16 endings, full art and audio | +14 weeks |
+| **Beta** | All 4 routes, 17 endings, full art and audio | +14 weeks |
 | **Release** | Polish, sensitivity review, accessibility | +4 weeks |
 
 **Biggest risks:**

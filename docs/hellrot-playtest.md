@@ -92,7 +92,7 @@ which fits those routes.
    the splice with Venom below 8, and Route D losing the debate (or winning
    without pure eyes). **Fix:** five new endings (§3.11): **12 Spiked,
    13 The Unfinished, 14 Draft, 15 Hung Jury, 16 Truce**, each with an Ione
-   line. The game now has 16 endings.
+   line. The game now has 16 endings (17 after the Route C fix in §6).
 2. **No precedence.** The "Any" endings overlap each other and the route
    endings. **Fix:** an ending precedence rule (§3.11). The Mountain is now
    a choice offered at the final desk, so it beats the automatic Successor.
@@ -174,6 +174,15 @@ which fits those routes.
   9.2%, The Mountain 1.7% → 3.0%. The Relapser still cannot reach
   Iconoclast (his Junie Trust ends at 0), which keeps the design's rule
   that relapses make it harder.
+- **Route C had no good refusal.** Refusing the splice gave only The Mob
+  (Venom ≥ 8) or Draft, so Draft took 11% of random players. **Fix,** mirroring
+  Route B: Yara's steady rule (Trust +1 a night she rides along with no
+  Fabrication) and a new ending, **17 The Deep Wards**, for refusing with
+  Yara Trust ≥ 3. Re-run on 2,000 random players: Draft 11.0% → 4.8%, The
+  Deep Wards 4.8%, no run without an ending. A Route C player who never
+  takes Yara along still gets Draft. Side effect: Successor rises from 5.0%
+  to 8.8%, because Yara's Trust reaches 5 more often. That fits Successor
+  (her byline), but watch it.
 - **Route D is rare without intent** (under 5% of random players). It is the
   "secret best route" by design, so the Duchess's Issue 3 reading and the
   *Long Look* are its signposts.
