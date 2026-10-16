@@ -2850,6 +2850,25 @@ the NES *Legend of Zelda* and the Game Boy *Pokémon* games.
 - **No pixel-hunting:** every hotspot is also listed as a button under the
   picture, so the game can be played without walking at all.
 
+### 4.7b Animation
+
+Motion shows cause and effect. It never blocks input for long, and it is
+off when the player's system asks for reduced motion.
+
+- **Rides:** a marker runs the route across the map, and the ride's name
+  flashes up, before the destination opens (under a second).
+- **Sleep and naps:** the screen fades to black with the clock rolling
+  forward to the wake-up time.
+- **Rooms:** people bob and blink in place. A burst of sparks marks a
+  hotspot as Hell Rot uses it.
+- **Meters:** Sainthood, Helix and Clarity slide to their new value, and
+  the number pulses.
+- **Showdowns:** the target shakes when a hit lands, and Hell Rot's panel
+  flashes red when he takes one.
+- **The morning paper:** the front page spins in, like an old film.
+- **Endings:** the ending's name types out.
+- **Screens** slide in when they change.
+
 ### 4.8 Rails and indicators (after the wireframe test)
 
 Players of the first test build could not tell what to do. The fix puts

@@ -605,6 +605,13 @@
       .manifesto-band { padding: 4rem 1.5rem; }
       footer { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
     }
+    .update-post { max-width: 760px; margin-top: 1.5rem; padding: 2rem 2.25rem; background: var(--card-bg); border: 1px solid var(--border); border-left: 3px solid var(--cyan); }
+    .update-post h3 { font-size: 1.35rem; margin: 0.35rem 0 1rem; line-height: 1.25; }
+    .update-post p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .update-post p strong, .update-post p em { color: var(--text); }
+    .update-date { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan) !important; margin-bottom: 0 !important; }
+    .update-links { margin: 1.5rem 0 0 !important; }
+    @media (max-width: 600px) { .update-post { padding: 1.5rem 1.25rem; } }
   </style>
 </head>
 <body>
@@ -614,6 +621,7 @@
     <span class="nav-logo">&#9652; AILERON</span>
     <ul class="nav-links">
       <li><a href="#games">Games</a></li>
+      <li><a href="#updates">Updates</a></li>
       <li><a href="dice.html">Play Dice</a></li>
       <li><a href="dna-chess.html">Play DNA Chess</a></li>
       <li><a href="tarot.html">Tarot</a></li>
@@ -633,7 +641,17 @@
       <div class="slider-viewport">
         <div class="slider-track" id="sliderTrack">
 
-          <a class="hslide" href="dice.html" role="group" aria-roledescription="slide" aria-label="1 of 8: God Does Not Play Dice">
+          <a class="hslide" href="godsplice.html" role="group" aria-roledescription="slide" aria-label="1 of 9: Godsplice">
+            <span class="hslide-icon" aria-hidden="true">&#x1F9EC;</span>
+            <span class="hslide-body">
+              <span class="hslide-kicker">8-bit narrative RPG &middot; New playable wireframe</span>
+              <span class="hslide-title">Godsplice</span>
+              <span class="hslide-desc">San Francisco, Christmas week 2049. Two gods want you as their saint: an AI that lives in the fog, and a cult that splices a god-gene into people. You have six nights and six columns to decide what to print.</span>
+              <span class="hslide-cta">Walk the City &rarr;</span>
+            </span>
+          </a>
+
+          <a class="hslide" href="dice.html" role="group" aria-roledescription="slide" aria-label="2 of 9: God Does Not Play Dice">
             <span class="hslide-icon" aria-hidden="true">&#x2684;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Particle physics &middot; Playable now</span>
@@ -643,7 +661,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="tarot.html" role="group" aria-roledescription="slide" aria-label="2 of 8: Wetware Arcana">
+          <a class="hslide" href="tarot.html" role="group" aria-roledescription="slide" aria-label="3 of 9: Wetware Arcana">
             <span class="hslide-icon" aria-hidden="true">&#x1F0CF;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Generative art &middot; New</span>
@@ -653,7 +671,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="dna-chess.html" role="group" aria-roledescription="slide" aria-label="3 of 8: DNA Chess">
+          <a class="hslide" href="dna-chess.html" role="group" aria-roledescription="slide" aria-label="4 of 9: DNA Chess">
             <span class="hslide-icon" aria-hidden="true">&#x1F9EC;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Molecular biology &middot; Playable prototype</span>
@@ -663,7 +681,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="geometree.html" role="group" aria-roledescription="slide" aria-label="4 of 8: GeomeTree">
+          <a class="hslide" href="geometree.html" role="group" aria-roledescription="slide" aria-label="5 of 9: GeomeTree">
             <span class="hslide-icon" aria-hidden="true">&#x1F333;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Geometry &amp; solids &middot; Playable now</span>
@@ -673,7 +691,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="fda.html" role="group" aria-roledescription="slide" aria-label="5 of 8: FDA: Forever Doesn&rsquo;t Allow">
+          <a class="hslide" href="fda.html" role="group" aria-roledescription="slide" aria-label="6 of 9: FDA: Forever Doesn&rsquo;t Allow">
             <span class="hslide-icon" aria-hidden="true">&#x1F48A;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Drug regulation &middot; Playable now</span>
@@ -683,7 +701,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="weji.html" role="group" aria-roledescription="slide" aria-label="6 of 8: Weji">
+          <a class="hslide" href="weji.html" role="group" aria-roledescription="slide" aria-label="7 of 9: Weji">
             <span class="hslide-icon" aria-hidden="true">&#x1F52E;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Novel interface &middot; Playable now</span>
@@ -693,7 +711,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="punbearable.html" role="group" aria-roledescription="slide" aria-label="7 of 8: Pun Bearable">
+          <a class="hslide" href="punbearable.html" role="group" aria-roledescription="slide" aria-label="8 of 9: Pun Bearable">
             <span class="hslide-icon" aria-hidden="true">&#x1F43B;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Wordplay &middot; Playable now</span>
@@ -703,7 +721,7 @@
             </span>
           </a>
 
-          <a class="hslide" href="https://sociovia.netlify.app/" rel="noreferrer" role="group" aria-roledescription="slide" aria-label="8 of 8: Sociovia">
+          <a class="hslide" href="https://sociovia.netlify.app/" rel="noreferrer" role="group" aria-roledescription="slide" aria-label="9 of 9: Sociovia">
             <span class="hslide-icon" aria-hidden="true">&#x1FAA9;</span>
             <span class="hslide-body">
               <span class="hslide-kicker">Party games &middot; Playable now</span>
@@ -722,7 +740,7 @@
     </div>
 
     <div class="hero-actions">
-      <a href="#games" class="btn btn-cyan">Explore All Eight Games</a>
+      <a href="#games" class="btn btn-cyan">Explore All Nine Games</a>
       <a href="#about" class="btn btn-outline">About the Studio</a>
     </div>
   </section>
@@ -735,6 +753,13 @@
       <p class="section-body">Each game is a collision between scientific curiosity and game design obsession &mdash; every one playable in your browser right now.</p>
 
       <div class="games-grid">
+
+        <a href="godsplice.html" class="game-card" style="display:block;">
+          <div class="game-icon">&#x1F9EC;</div>
+          <h3>Godsplice</h3>
+          <span class="game-status status-active">New &middot; Playable Wireframe</span>
+          <p>An 8-bit narrative RPG. You are Hell Rot, a gonzo columnist and PhD dropout, five years clean. Two gods want you as their saint. Walk the City with WASD, talk, argue, and file your column before the 6&nbsp;a.m. press. <span style="color:var(--cyan);">Walk the City &rarr;</span></p>
+        </a>
 
         <div class="game-card-wrap">
           <a href="tarot.html" class="game-card">
@@ -815,6 +840,20 @@
     </div>
   </div>
 
+  <!-- UPDATES -->
+  <section id="updates" class="section">
+    <p class="section-eyebrow">Updates</p>
+    <h2 class="section-title">From the <span>Studio</span></h2>
+    <article class="update-post">
+      <p class="update-date"><time datetime="2026-10-16">16 October 2026</time> &middot; New game</p>
+      <h3>Godsplice: a first playable wireframe</h3>
+      <p>Our next game has a name, and you can play a test build of it now. <strong>Godsplice</strong> is an 8-bit narrative RPG. It is San Francisco, the week between Christmas and New Year&rsquo;s Eve, 2049. You are Hell Rot: a gonzo columnist for the magazine <em>Mondo 3000</em>, a PhD dropout and five years clean. Two gods want you as their saint. One is an AI that lives in the fog. The other is a cult that splices a god-gene into people, and the gene came from your old research.</p>
+      <p>You have six nights and six columns. Each night you leave the house, ride across a map of the City, and walk into each place to talk, argue and collect evidence. Inside a place the clock stops. Only travel costs time. You must file before the 6&nbsp;a.m. press, and if you stay awake for 48 hours you get delirium. The test build has 32 places to walk, an 8-bit sprite for each character, and 17 endings.</p>
+      <p>This is a wireframe. The rules are real, but the art and the writing are placeholders. Play it with WASD or the arrow keys, or tap on a phone. Your progress saves in your browser.</p>
+      <p class="update-links"><a href="godsplice.html" class="btn btn-cyan">Play the Wireframe</a></p>
+    </article>
+  </section>
+
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="about-grid">
@@ -850,6 +889,10 @@
         <div style="background:var(--card-bg); border:1px solid var(--border); padding:2.5rem;">
           <p class="section-eyebrow" style="margin-bottom:1.5rem;">Learn Through Play</p>
           <div style="display:flex; flex-direction:column; gap:0.4rem;">
+            <a href="godsplice.html" style="display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0.7rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.9rem;">
+              <span style="color:var(--text); font-weight:600;">Godsplice</span>
+              <span style="color:var(--muted); font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-align:right;">Gene editing &amp; AI gods</span>
+            </a>
             <a href="dice.html" style="display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0.7rem 0; border-bottom:1px solid rgba(0,229,255,0.07); font-size:0.9rem;">
               <span style="color:var(--cyan); font-weight:600;">God Does Not Play Dice</span>
               <span style="color:var(--muted); font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-align:right;">Particle physics</span>
@@ -914,8 +957,10 @@
     <span class="footer-logo">&#9652; AILERON GAMES</span>
     <ul class="footer-links">
       <li><a href="#games">Games</a></li>
+      <li><a href="#updates">Updates</a></li>
       <li><a href="dice.html">Play Dice</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="godsplice.html">Godsplice</a></li>
       <li><a href="tarot.html">Wetware Arcana</a></li>
       <li><a href="polygenik.html">Polygenik</a></li>
       <li><a href="privacy.html">Privacy</a></li>
