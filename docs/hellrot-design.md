@@ -3953,6 +3953,13 @@ in the companion document §3. Key rules:
   cover screen, the game's chapter card.
 - **Degradation** uses honest pixel effects — swapped glyphs, dropped lines,
   wrong speaker names — not blur.
+- **Crisp type, no blur.** Text inside the 8-bit pictures uses a 3 × 5
+  bitmap font, drawn pixel by pixel, so it scales up as sharp as the art.
+  Interface labels use an NES-style pixel font (Press Start 2P) at exact
+  multiples of 8 px (8, 16, 24), with no letter-spacing and no font
+  smoothing, so every glyph pixel lands on a screen pixel. Body text uses
+  VT323. A pixel font at an in-between size (9 or 11 px) blurs, so the
+  game never uses one.
 
 ### 8.7 Audio direction
 
