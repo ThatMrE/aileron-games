@@ -105,6 +105,7 @@ button { font: inherit; color: inherit; }
 .dpad { display: grid; grid-template-columns: repeat(3, 56px) 1fr 72px; grid-template-rows: 44px 44px; gap: 6px; padding: 10px 14px; border-bottom: 2px solid var(--line); touch-action: none; user-select: none; }
 .dpad button { font-family: var(--display); font-size: 16px; background: var(--night); color: var(--text); border: 2px solid var(--line); cursor: pointer; }
 .dpad [data-pad=up] { grid-column: 2; grid-row: 1; } .dpad [data-pad=left] { grid-column: 1; grid-row: 2; } .dpad [data-pad=down] { grid-column: 2; grid-row: 2; } .dpad [data-pad=right] { grid-column: 3; grid-row: 2; }
+.dpad .bbtn { grid-column: 4; grid-row: 2; justify-self: end; width: 56px; border-radius: 50%; background: #3a3442; }
 .dpad .abtn { grid-column: 5; grid-row: 1 / 3; border-radius: 50%; background: #d32f3f; border-color: #8a1a2a; font-size: 20px; }
 @media (hover: hover) and (pointer: fine) { .dpad { display: none; } }
 .intbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 6px 14px; border-bottom: 2px solid var(--line); font-family: var(--display); font-size: 10px; letter-spacing: .08em; color: var(--sodium); }
@@ -443,7 +444,7 @@ const FOES = {
    ===================================================================== */
 const KEY = "hellrot-wireframe-v1";
 function newState() {
-  return { screen:"title", issue:0, T:0, awake:5, delirium:false, queue:[], at:"house", sel:"house", comp:"junie",
+  return { screen:"intro", introI:0, field:"cabin", fieldSay:"", board:null, arrive:null, issue:0, T:0, awake:5, delirium:false, queue:[], at:"house", sel:"house", comp:"junie",
     lobes:{ CORTEX:3, LIMBIC:3, BRAINSTEM:3, CEREBELLUM:3 }, temp:"manuscript", birth:null,
     saint:0, helix:0, clar:8, heat:0, crave:0, venom:0, vow:0, ink:30, readers:4200, patience:3, wear:0, halosOn:false,
     trust:{ junie:1, yara:0, fax:1, otto:1, bishop:1, pru:1, mary:1, saintnobody:1, wren:0 },
@@ -698,7 +699,7 @@ function px2(g, x, y, c) { g.fillStyle = c; g.fillRect(x, y, 1, 1); }
    ===================================================================== */
 let LASTSCREEN = null, LASTHUD = null, ENTER_T = null;
 function hud() {
-  if (S.screen === "title" || S.screen === "prologue") { $("hud").innerHTML = `<div class="brand">GODSPLICE<small>PLAYABLE WIREFRAME · DESIGN TEST BUILD</small></div><p class="note">A test build of the design docs: every rule here comes from the design, simplified. Progress saves in this browser.</p>`; return; }
+  if (["title","prologue","intro","field"].includes(S.screen)) { $("hud").innerHTML = `<div class="brand">GODSPLICE<small>PLAYABLE WIREFRAME · DESIGN TEST BUILD</small></div><p class="note">A test build of the design docs: every rule here comes from the design, simplified. Progress saves in this browser.</p>`; return; }
   const iss = ISSUES[S.issue] || ["", ""];
   const LH = LASTHUD || {}, mv = k => LASTHUD && LH[k] !== S[k] ? 'class="chg"' : "", bump = k => LASTHUD && LH[k] !== S[k] ? " bump" : "";
   const pips = (v, max, c) => `<div class="pips" style="--c:${c}">${Array.from({ length: max }, (_, i) => `<i class="${i < v ? "on" : ""}"></i>`).join("")}</div>`;
@@ -721,7 +722,7 @@ function hud() {
     </div>`;
 }
 function tabs() {
-  const busy = ["scene","showdown","prologue","title","layout","morning","lock","final","ending"].includes(S.screen);
+  const busy = ["scene","showdown","prologue","title","intro","field","layout","morning","lock","final","ending"].includes(S.screen);
   const t = [["house","Villa Delirium", S.at === "house" && !busy], ["map","City map", !busy], ["notebook","Notebook", S.screen !== "title"], ["cast","Cast", true], ["key","Key", true]];
   $("tabs").innerHTML = t.map(([id, n, ok]) => `<button class="tab" data-act="go" data-arg="${id}" ${S.screen === id ? 'aria-current="page"' : ""} ${ok ? "" : "disabled"}>${n.toUpperCase()}</button>`).join("") + `<button class="tab" data-act="restart">NEW GAME</button>`;
 }
@@ -897,7 +898,7 @@ function mapPanel() {
   const tonight = n.t[S.issue];
   let rides = "";
   if (!here) {
-    const opts = MODES.map(m => { const ok = rideOk(m, BY[S.at], n); let h = m.time(BY[S.at], n); if (S.issue === 6 && nightT() >= 6 && nightT() < 7 && m.id !== "tube") h *= 2; return { m, ok, h }; });
+    const opts = MODES.filter(m => !S.board || m.id === S.board).map(m => { const ok = rideOk(m, BY[S.at], n); let h = m.time(BY[S.at], n); if (S.issue === 6 && nightT() >= 6 && nightT() < 7 && m.id !== "tube") h *= 2; return { m, ok, h }; });
     // the ★ never steers: it marks the fastest ride with no strings (no worship, no Heat, no check)
     const clean = o => o.ok === true && !(o.m.fx && (o.m.fx.saint || o.m.fx.helix || o.m.fx.heat)) && !o.m.check && !o.m.random;
     const pool = opts.filter(clean).length ? opts.filter(clean) : opts.filter(o => o.ok === true);
@@ -907,7 +908,8 @@ function mapPanel() {
       const cost = m.fx ? [m.fx.saint && `<b style="color:#f0bd3e">+1 SAINTHOOD</b>`, m.fx.helix && `<b style="color:#3fe3d4">+1 HELIX</b>`, m.fx.heat && `<b style="color:#d32f3f">+1 HEAT</b>`, m.fx.ink && `<b style="color:#c48f52">${m.fx.ink} INK</b>`].filter(Boolean).join(" ") : "";
       return `<button class="btn${fast ? " nextglow" : ""}" style="--c:${m.c}" data-act="travel" data-arg="${n.id}:${m.id}" ${ok !== true ? "disabled" : ""}><span class="t">${fast ? "★ " : ""}${m.name}<em>${ok === true ? hrs(h) + " Hr → " + clockStr(S.T + h) : "—"}</em></span><span class="d">${ok === true ? (cost ? cost + " · " : "") + m.why + (fast ? " Fastest with no strings." : "") : ok}</span></button>`; }).join("");
   }
-  el.innerHTML = `<div class="textbox" style="padding:0">${portrait(n.npc)}<div class="say"><div class="eyebrow">${here ? "YOU ARE HERE" : (n.off ? "OFF THE CITY MAP" : "THE CITY")} · ${FACNAME[n.f].toUpperCase()}</div><h2>${esc(n.n)}</h2><p>${esc(n.d)}</p>${tonight ? `<p class="warn">Tonight${S.done.includes(n.id) ? " (done)" : ""}: ${esc(tonight)}</p>` : ""}</div></div>
+  const boardNote = S.board && S.sel !== S.at ? `<p class="note warn">You are at the ${esc(STATION_NAME[S.board])}: only this ride goes from here. For other rides, step back inside and use the street door.</p>` : "";
+  el.innerHTML = boardNote + `<div class="textbox" style="padding:0">${portrait(n.npc)}<div class="say"><div class="eyebrow">${here ? "YOU ARE HERE" : (n.off ? "OFF THE CITY MAP" : "THE CITY")} · ${FACNAME[n.f].toUpperCase()}</div><h2>${esc(n.n)}</h2><p>${esc(n.d)}</p>${tonight ? `<p class="warn">Tonight${S.done.includes(n.id) ? " (done)" : ""}: ${esc(tonight)}</p>` : ""}</div></div>
     ${here ? (n.id === "house" ? `<button class="btn primary" data-act="go" data-arg="house"><span class="t">ENTER VILLA DELIRIUM</span></button>` : `<button class="btn primary" data-act="enter"><span class="t">ENTER THE SCENE</span></button>`) : `<div class="eyebrow">GET THERE FROM ${esc(BY[S.at].n).toUpperCase()}</div><div class="choices" style="padding:0">${rides}</div>`}`;
   paintPortraits();
 }
@@ -1027,7 +1029,7 @@ function scrScene() {
   const btns = sps.map(sp => { const [n, c, why] = SPOT[sp.t]; const nx = sp.t === "story" && !sp.used && isNext("node", node.id);
     return `<button class="btn door spot${nx ? " nextglow" : ""}" style="--c:${sp.used ? "#4a4250" : c}" data-act="spot" data-arg="${sp.i}" data-t="${sp.t}" ${S.delirium || sp.used ? "disabled" : ""}><span class="t">${nx ? "▶ NEXT · " : ""}${sp.used ? "✓ " : ""}${esc(sp.label)}<em>${n}</em></span><span class="d">${sp.used ? "Done this Issue." : sp.t === "look" ? esc(why) : why}</span></button>`; }).join("");
   return `<canvas class="scene-art interior walk" data-int="${node.id}" width="256" height="144" tabindex="0" aria-label="${esc(node.n)}. Walk with WASD or the arrow keys, press Space or E to use what you face, or click where to go. The buttons below do the same."></canvas>
-    <div class="intbar"><span>${esc(node.n).toUpperCase()} · ${clockStr(S.T)}</span><span class="note">WASD or arrows to walk · Space or E (A on a phone) to talk and use · or click where to go. The clock stops in here; ▼ at the bottom leaves.</span></div>${dpad()}
+    <div class="intbar"><span>${esc(node.n).toUpperCase()} · ${clockStr(S.T)}</span><span class="note">WASD or arrows to walk · Space or E (A on a phone) to talk and use · or click where to go. Shift runs. The clock stops in here. Portals: ▼ the street door (every ride), lettered doors in the walls are stations (T Tube, C cable car, F ferry…).</span></div>${dpad()}
     <div class="textbox">${portrait(npc.id)}<div class="say"><div class="speaker">${esc(npc.n).toUpperCase()}</div>${lines}</div></div>
     <div class="choices">${btns}
       <button class="btn${S.delirium || (S.next && S.next.go.type === "node" && S.next.go.arg !== S.scene.node) ? " nextglow" : ""}" data-act="go" data-arg="map"><span class="t">◀ Exit to the map<em>travel costs time</em></span><span class="d">Memory stays in your head until you write it down or get home.</span></button>
@@ -1228,10 +1230,46 @@ function floorProp(g, kind, x, y, c, frame) {
   }
 }
 /* ---------- the player and the place ---------- */
-let PL = { node: null }, HOVER = null, FLASH = null;
-function plReset(place) { PL = { node: place, c: 7, r: 7, x: 112, y: 112, dir: "up", moving: false, step: 0, path: [], act: null, tc: 7, tr: 7 }; }
+/* ---------- portals: every place has doors to somewhere ----------
+   The street door (bottom) opens the City map with every ride. A station portal
+   (Tube, cable car, ferry dock...) opens the map with only that ride, and a
+   ride that ends at a place with the same station drops you at that station. */
+const STATIONS = {
+  tube: n => TUBE.includes(n) || n === "house", cable: n => CABLE.some(l => l.includes(n)), rickshaw: n => UNDER.includes(n),
+  ferryboat: n => n === "wharf" || n === "rock", gondola: n => n === "ferry" || n === "trident",
+  bus: n => !!(BY[n] && (BY[n].off || n === "treasure")), surf: n => HILLS.includes(n)
+};
+const STATION_NAME = { tube: "Tube station", cable: "Cable car stop", rickshaw: "Rickshaw rank (the Undertrack)", ferryboat: "Ferry dock, Pier 33", gondola: "Gondola station", bus: "Night bus stop", surf: "Fog-surf launch" };
+const STATION_ICON = { tube: "T", cable: "C", rickshaw: "R", ferryboat: "F", gondola: "G", bus: "B", surf: "S" };
+const PORTAL_SLOTS = [[0, 3], [15, 3], [0, 5], [15, 5], [2, 8], [13, 8]];
+function portalsFor(place) {
+  if (place && place.startsWith("field:")) return (FIELDS[place.slice(6)].portals || []);
+  const out = [{ c: EXIT[0], r: EXIT[1], mode: null, label: place === "house" ? "Front door: out into the City" : "Street door: the City map, every ride" }];
+  let k = 0;
+  for (const m of Object.keys(STATIONS)) if (STATIONS[m](place) && k < PORTAL_SLOTS.length) { const [c, r] = PORTAL_SLOTS[k++]; out.push({ c, r, mode: m, label: STATION_NAME[m] }); }
+  return out;
+}
+const curPlace = () => PL.node;
+const portalAt = (c, r) => portalsFor(curPlace() || "").find(p => p.c === c && p.r === r) || null;
+const inward = p => p.c === 0 ? [1, p.r, "right"] : p.c === 15 ? [14, p.r, "left"] : p.r === 0 ? [p.c, 1, "down"] : [p.c, 7, "up"];
+
+/* ---------- the player (Pokemon-style: tap to turn, hold to walk, Shift to run) ---------- */
+let PL = { node: null }, HOVER = null, FLASH = null, FADE = null;
+function plReset(place) {
+  let c = 7, r = 7, dir = "up";
+  if (place && place.startsWith("field:")) { const sp = S.fieldSpawn || FIELDS[place.slice(6)].spawn; [c, r, dir] = sp; S.fieldSpawn = null; }
+  else if (place && S.arrive) { const p = portalsFor(place).find(q => q.mode === S.arrive); if (p) [c, r, dir] = inward(p); S.arrive = null; }
+  PL = { node: place, c, r, x: c * 16, y: r * 16, dir, moving: false, step: 0, path: [], act: null, tc: c, tr: r, turnT: 0, bump: 0, spd: 2 };
+}
 const KEYS = {}, DV = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
 const KMAP = { w: "up", arrowup: "up", s: "down", arrowdown: "down", a: "left", arrowleft: "left", d: "right", arrowright: "right" };
+function fadeTo(fn) { if (REDUCE) return fn(); if (FADE && FADE.phase === "out") return; FADE = { t: performance.now(), phase: "out", fn }; }
+function fadeIn() { if (!REDUCE) FADE = { t: performance.now(), phase: "in" }; }
+function drawFade(g) {   // a Pokemon-style wipe: black bars close in, then open
+  if (!FADE) return; const k = Math.min(1, (performance.now() - FADE.t) / 220), a = FADE.phase === "out" ? k : 1 - k;
+  const bars = 9; g.fillStyle = "#000"; for (let i = 0; i < bars; i++) { const h = Math.ceil(16 * a); g.fillRect(0, i * 16 + (16 - h) / 2, 256, h); }
+  if (k >= 1) { if (FADE.phase === "out") { const fn = FADE.fn; FADE = { t: performance.now(), phase: "in" }; fn(); } else FADE = null; }
+}
 const HSPOT = [
   { room: "salon", c: 3, r: 2, who: "duchess", furn: [[2,1,"sofa"],[3,1,"sofa"],[4,1,"sofa"]] },
   { room: "desk", c: 6, r: 2, who: "yara", furn: [[6,1,"desk"]] },
@@ -1243,17 +1281,24 @@ const HSPOT = [
   { room: "garage", c: 11, r: 5, who: "junie", furn: [[10,6,"van"],[11,6,"van"],[12,6,"van"],[13,6,"van"]] }
 ];
 const HZONE = { salon: [1,1,4,3], desk: [5,1,2,3], lab: [8,1,3,3], archive: [11,1,2,3], rest: [13,1,2,3], conservatory: [1,4,3,3], press: [4,4,3,3], garage: [9,4,5,3] };
-const inHouse = () => !!document.querySelector("canvas.walk[data-house]");
+const inHouse = () => PL.node === "house";
+const inField = () => !!(PL.node && PL.node.startsWith("field:"));
+const fieldDef = () => FIELDS[PL.node.slice(6)];
 function thingAt(c, r) {   // what occupies a tile in the current place
+  if (inField()) { const t = fieldThings().find(t => t.c === c && t.r === r); return t ? { field: t } : null; }
   if (inHouse()) { for (const h of HSPOT) { if (h.who && h.c === c && h.r === r) return { house: h }; if (h.furn.some(f => f[0] === c && f[1] === r)) return { house: h }; } return null; }
   if (!S.scene) return null; const sp = spotsFor(BY[S.scene.node]).find(s => s.c === c && s.r === r); return sp ? { spot: sp } : null;
 }
-function walkable(c, r) { if (c === EXIT[0] && r === EXIT[1]) return true; if (c < 1 || c > 14 || r < 1 || r > 7) return false; return !thingAt(c, r); }
+function walkable(c, r) {
+  if (portalAt(c, r)) return true;
+  if (inField()) { const row = fieldDef().map[r]; if (!row || c < 0 || c > 15) return false; return FIELD_WALK.includes(row[c]) && !thingAt(c, r); }
+  if (c < 1 || c > 14 || r < 1 || r > 7) return false; return !thingAt(c, r);
+}
 function bfs(goal, toAdjacent) {
   const key = (c, r) => c + "," + r, start = key(PL.c, PL.r), prev = { [start]: null }, q = [[PL.c, PL.r]];
   const done = (c, r) => toAdjacent ? Math.abs(c - goal[0]) + Math.abs(r - goal[1]) === 1 : c === goal[0] && r === goal[1];
   while (q.length) { const [c, r] = q.shift(); if (done(c, r)) { const path = []; let k = key(c, r); while (k !== start) { path.unshift(k.split(",").map(Number)); k = prev[k]; } return path; }
-    for (const [dx, dy] of Object.values(DV)) { const nc = c + dx, nr = r + dy, k = key(nc, nr); if (prev[k] !== undefined || !walkable(nc, nr)) continue; if (nc === EXIT[0] && nr === EXIT[1] && !(goal[0] === nc && goal[1] === nr)) continue; prev[k] = key(c, r); q.push([nc, nr]); } }
+    for (const [dx, dy] of Object.values(DV)) { const nc = c + dx, nr = r + dy, k = key(nc, nr); if (prev[k] !== undefined || !walkable(nc, nr)) continue; if (portalAt(nc, nr) && !(goal[0] === nc && goal[1] === nr)) continue; prev[k] = key(c, r); q.push([nc, nr]); } }
   return null;
 }
 let SPARK = null;
@@ -1264,8 +1309,10 @@ function drawSpark(g) {
   g.globalAlpha = 1;
 }
 function interact() {
-  if (!PL.dir || !DV[PL.dir]) return;
-  const [dx, dy] = DV[PL.dir], t = thingAt(PL.c + dx, PL.r + dy); if (!t) { FLASH = ["Nothing there.", 40]; return; }
+  if (!PL.dir || !DV[PL.dir] || FADE) return;
+  const [dx, dy] = DV[PL.dir], t = thingAt(PL.c + dx, PL.r + dy);
+  if (!t) { const p = portalAt(PL.c + dx, PL.r + dy); FLASH = [p ? `${p.label}. Walk into it to go.` : "Nothing there.", 60]; return; }
+  if (t.field) return fieldUse(t.field);
   if (t.house && !REDUCE) SPARK = { c: PL.c + dx, r: PL.r + dy, col: "#ff8ba2", t: performance.now() };
   if (t.house) { if (S.delirium && t.house.room !== "rest") { FLASH = ["You can't think. Go to your bed in the Tower Room.", 90]; return; } return dispatch("room", t.house.room); }
   const sp = t.spot; if (sp.used) { FLASH = ["Done this Issue.", 60]; return; }
@@ -1274,24 +1321,36 @@ function interact() {
   if (!REDUCE) SPARK = { c: sp.c, r: sp.r, col: SPOT[sp.t][1], t: performance.now() };
   dispatch("spot", String(sp.i));
 }
-function leavePlace() {
-  if (inHouse()) { if (S.delirium) { FLASH = ["Delirium: sleep first (the bed, top right).", 90]; PL.dir = "up"; return; } plReset(null); return dispatch("go", "map"); }
-  if (S.scene.offer || S.scene.choice) { FLASH = ["Answer the choice below first.", 80]; return; }
-  plReset(null); dispatch("go", "map");
+function usePortal(p) {   // stepped onto a door, a station or the end of a path
+  const back = () => { const [c, r, dir] = inward(p); PL.c = PL.tc = c; PL.r = PL.tr = r; PL.x = c * 16; PL.y = r * 16; PL.dir = dir; };
+  if (inField()) {
+    if (p.need && !S.flags[p.need]) { FLASH = [p.needMsg, 110]; return back(); }
+    return fadeTo(() => { S.field = p.to; S.fieldSpawn = [p.tc, p.tr, p.dir]; plReset("field:" + p.to); dispatch("fieldenter", p.to); });
+  }
+  if (inHouse() && S.delirium) { FLASH = ["Delirium: sleep first (the bed, top right).", 90]; return back(); }
+  if (!inHouse() && S.scene && (S.scene.offer || S.scene.choice)) { FLASH = ["Answer the choice below first.", 80]; return back(); }
+  fadeTo(() => { plReset(null); dispatch("board", p.mode || ""); });
 }
 function plUpdate() {
   if (FLASH && --FLASH[1] <= 0) FLASH = null;
-  if (PL.moving) { const [dx, dy] = DV[PL.dir]; PL.x += dx * 2; PL.y += dy * 2; PL.step++;
-    if (PL.x === PL.tc * 16 && PL.y === PL.tr * 16) { PL.moving = false; PL.c = PL.tc; PL.r = PL.tr; if (PL.c === EXIT[0] && PL.r === EXIT[1]) return leavePlace(); } return; }
-  let want = ["up", "down", "left", "right"].find(d => KEYS[d]);
+  if (FADE && FADE.phase === "out") return;
+  if (PL.bump > 0) PL.bump--;
+  if (PL.moving) { const [dx, dy] = DV[PL.dir]; PL.x += dx * PL.spd; PL.y += dy * PL.spd; PL.step++;
+    if (PL.x === PL.tc * 16 && PL.y === PL.tr * 16) { PL.moving = false; PL.c = PL.tc; PL.r = PL.tr; if (inField()) S.flags.tutMoved = true; const p = portalAt(PL.c, PL.r); if (p) return usePortal(p); } return; }
+  let want = ["up", "down", "left", "right"].find(d => KEYS[d]), keyed = !!want;
   if (want) { PL.path = []; PL.act = null; }
   else if (PL.path.length) { const [c, r] = PL.path.shift(); want = c > PL.c ? "right" : c < PL.c ? "left" : r > PL.r ? "down" : "up"; }
   else if (PL.act) { const [c, r] = PL.act; PL.act = null; PL.dir = c > PL.c ? "right" : c < PL.c ? "left" : r > PL.r ? "down" : "up"; return interact(); }
-  if (!want) return;
+  if (!want) { PL.turnT = 0; return; }
+  // tap a new direction to turn on the spot; keep holding it to walk
+  if (keyed && PL.dir !== want) { PL.dir = want; PL.turnT = 6; return; }
+  if (keyed && PL.turnT > 0) { PL.turnT--; return; }
   PL.dir = want; const [dx, dy] = DV[want], nc = PL.c + dx, nr = PL.r + dy;
-  if (walkable(nc, nr)) { PL.tc = nc; PL.tr = nr; PL.moving = true; }
+  if (walkable(nc, nr)) { PL.tc = nc; PL.tr = nr; PL.moving = true; PL.spd = KEYS.run ? 4 : 2; }
+  else if (!PL.bump) PL.bump = 10;
 }
 function walkTo(c, r) {
+  if (FADE) return;
   if (thingAt(c, r)) { const p = bfs([c, r], true); if (p) { PL.path = p; PL.act = [c, r]; } return; }
   if (walkable(c, r)) { const p = bfs([c, r], false); if (p) PL.path = p; }
 }
@@ -1299,15 +1358,16 @@ function facing() { const [dx, dy] = DV[PL.dir]; return thingAt(PL.c + dx, PL.r 
 function barText(place) {
   if (FLASH) return [FLASH[0], "#f29b3a"];
   const f = facing(), h = HOVER;
-  const label = t => t.house ? [`${ROOMS.find(x => x[0] === t.house.room)[1].toUpperCase()}: ${ROOMS.find(x => x[0] === t.house.room)[3]}`, "#ff8ba2"] : [`${SPOT[t.spot.t][0].toUpperCase()}: ${t.spot.label}${t.spot.used ? " ✓" : ""}`, t.spot.used ? "#6a6270" : SPOT[t.spot.t][1]];
-  if (h) { const t = thingAt(h[0], h[1]); if (t) return label(t); if (h[0] === EXIT[0] && h[1] === EXIT[1]) return ["▼ EXIT TO THE MAP", "#efe7f0"]; }
+  const label = t => t.field ? [t.field.label.toUpperCase(), "#efe7f0"] : t.house ? [`${ROOMS.find(x => x[0] === t.house.room)[1].toUpperCase()}: ${ROOMS.find(x => x[0] === t.house.room)[3]}`, "#ff8ba2"] : [`${SPOT[t.spot.t][0].toUpperCase()}: ${t.spot.label}${t.spot.used ? " ✓" : ""}`, t.spot.used ? "#6a6270" : SPOT[t.spot.t][1]];
+  if (h) { const t = thingAt(h[0], h[1]); if (t) return label(t); const p = portalAt(h[0], h[1]); if (p) return ["▶ " + p.label.toUpperCase(), "#efe7f0"]; }
   if (f) { const [t, c] = label(f); return [`SPACE ▸ ${t}`, c]; }
-  return [`${place} · ${clockStr(S.T)} · WASD TO WALK`, "#8d8496"];
+  return [`${place}${inField() ? "" : " · " + clockStr(S.T)} · WASD TO WALK · SHIFT TO RUN`, "#8d8496"];
 }
 function drawPlayerAndPeople(g, people, frame) {
   const ents = people.map(p => ({ y: p.r * 16, draw: () => g.drawImage(nesSprite(p.who, p.dir || "down", 0), p.c * 16, p.r * 16 - 2 - ((frame + p.c * 3 + p.r) % 6 === 0 ? 1 : 0)) }));
-  const pstep = PL.moving ? Math.floor(PL.step / 4) % 2 : 0;
-  ents.push({ y: PL.y, draw: () => { g.fillStyle = "#00000055"; g.fillRect(PL.x + 3, PL.y + 13, 10, 3); g.drawImage(nesSprite("hellrot", PL.dir, pstep), PL.x, PL.y - 2); } });
+  const pstep = PL.moving ? Math.floor(PL.step / (PL.spd > 2 ? 2 : 4)) % 2 : 0;
+  const [bx, by] = PL.bump ? DV[PL.dir].map(v => v * (PL.bump > 5 ? 1 : 0)) : [0, 0];
+  ents.push({ y: PL.y, draw: () => { g.fillStyle = "#00000055"; g.fillRect(PL.x + 3, PL.y + 13, 10, 3); g.drawImage(nesSprite("hellrot", PL.dir, pstep), PL.x + bx, PL.y - 2 + by); } });
   ents.sort((a, b) => a.y - b.y).forEach(e => e.draw());
 }
 const towardPlayer = (c, r) => { const dx = PL.c - c, dy = PL.r - r; if (Math.abs(dx) + Math.abs(dy) > 2) return "down"; return Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? "right" : "left") : (dy > 0 ? "down" : "up"); };
@@ -1316,12 +1376,20 @@ function marker(g, x, y, col, used, frame, story) {
   const b = frame % 2; g.fillStyle = col; g.beginPath(); g.moveTo(x + 4, y - 6 + b); g.lineTo(x + 12, y - 6 + b); g.lineTo(x + 8, y - 1 + b); g.fill();
   if (story) { g.strokeStyle = frame % 2 ? "#f29b3a" : "#fff3aa"; g.lineWidth = 1; g.strokeRect(x - .5, y - .5, 17, 17); }
 }
+function drawPortal(g, p, st, frame) {   // a doorway or a station sign set into the wall
+  const x = p.c * 16, y = p.r * 16;
+  if (!p.mode) { floorTile(g, st, p.c, p.r, x, y, frame); rect(g, x + 2, y + 4, 12, 10, OUTDOOR[st] ? "#4a4030" : "#5a2a2a"); g.fillStyle = "#efe7f0"; g.font = "8px monospace"; g.fillText("▼", x + 4, y + 13); return; }
+  const m = MODES.find(q => q.id === p.mode), col = m ? m.c : "#efe7f0";
+  rect(g, x, y, 16, 16, "#0a0810"); rect(g, x + 2, y + 2, 12, 12, col + "55"); rect(g, x + 3, y + 3, 10, 10, "#0d0a14");
+  g.fillStyle = col; g.font = "bold 9px monospace"; g.fillText(STATION_ICON[p.mode], x + 5, y + 12);
+  if (frame % 4 < 2) { g.fillStyle = col; g.fillRect(x + 7, p.r === 8 ? y - 2 : y + 14, 2, 2); }
+}
 function drawGrid(g, st, frame) {
   for (let r = 0; r < GH; r++) for (let c = 0; c < GW; c++) {
     const x = c * 16, y = r * 16, border = r === 0 || r === GH - 1 || c === 0 || c === GW - 1;
-    if (c === EXIT[0] && r === EXIT[1]) { floorTile(g, st, c, r, x, y, frame); rect(g, x + 2, y + 4, 12, 10, OUTDOOR[st] ? "#4a4030" : "#5a2a2a"); g.fillStyle = "#efe7f0"; g.font = "8px monospace"; g.fillText("▼", x + 4, y + 13); }
-    else if (border) borderTile(g, st, c, r, x, y, frame); else floorTile(g, st, c, r, x, y, frame);
+    if (border) borderTile(g, st, c, r, x, y, frame); else floorTile(g, st, c, r, x, y, frame);
   }
+  portalsFor(PL.node || "").forEach(p => drawPortal(g, p, st, frame));
 }
 function drawInterior(cv, node) {
   const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false;
@@ -1342,7 +1410,8 @@ function drawInterior(cv, node) {
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.lineWidth = 1; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
   const west = ["fogbelt","baths","baker","park","forest","presidio","span","mountain"].includes(node.id) ? .9 : .35;
   for (let y = 0; y < 144; y += 3) for (let x = (y / 3) % 2 ? 1 : 0; x < 256; x += 3) { const v = Math.sin(x * .03 + frame * .15 + y * .02) + Math.cos(y * .05 - frame * .1); if (v * west > 1) P2(g, x, y, "#b9b4c433"); }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText(node.n.toUpperCase()); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 52), 3, 8);
+  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText(node.n.toUpperCase()); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  drawFade(g);
 }
 function drawHouse(cv) {
   const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false; const frame = FRAME;
@@ -1355,19 +1424,169 @@ function drawHouse(cv) {
   drawSpark(g);
   if (nx) marker(g, (nx.who ? nx.c : nx.furn[0][0]) * 16, (nx.who ? nx.r : nx.furn[0][1]) * 16, "#f29b3a", false, frame, true);
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText("VILLA DELIRIUM"); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 52), 3, 8);
+  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText("VILLA DELIRIUM"); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  drawFade(g);
+}
+
+/* ---------- the Prologue walk: the shack, the trail, the cliff stairs, the springs ---------- */
+const FIELD_WALK = ".,:s=D";
+const FIELDS = {
+  cabin: { name: "The shack, Mount Tamalpais", spawn: [3, 3, "down"], style: "cabin",
+    map: ["################", "#..............#", "#..............#", "#..............#", "#..............#", "#..............#", "#..............#", "#..............#", "#######D########"],
+    things: [
+      { c: 2, r: 1, kind: "bed", label: "Your cot", text: "The blanket still has the shape of you. Five winters on this cot, and it has never once been warm." },
+      { c: 2, r: 2, kind: "bed", label: "Your cot", text: "The blanket still has the shape of you. Five winters on this cot, and it has never once been warm." },
+      { c: 5, r: 1, kind: "desk", label: "Your desk and the Shulgin notebook", text: "The last entry, in your own cramped hand: \"Day 1,826. Clean. ++ The fog sounded like a choir tonight. Write that down before you forget it.\" You have no memory of writing it." },
+      { c: 9, r: 1, kind: "stove", label: "The wood stove", text: "Cold. You let it go out at noon. There is a mug on top with a skin of coffee on it." },
+      { c: 12, r: 1, kind: "shelf", label: "The shelf of lab notebooks", text: "Nine Brandvold lab notebooks, stolen the day you left. The spines say 2041 to 2044. The last one has a burn mark the shape of a thumb." },
+      { c: 13, r: 3, kind: "jar", label: "Moreau, in his jar on the windowsill", act: "moreau", text: "Moreau presses one small pink hand to the glass. You pick up the jar. You never go anywhere without him." },
+      { c: 4, r: 5, kind: "cabinet", label: "The old tackle box", text: "Five years ago there were canisters in here. Now there are fishhooks, and a photo of the lab with your face scratched out. You close it again." }
+    ],
+    portals: [{ c: 7, r: 8, to: "trail", tc: 7, tr: 1, dir: "down", label: "The door: out to the trail", need: "moreau", needMsg: "You never leave without Moreau. His jar is on the windowsill." }] },
+  trail: { name: "Steep Ravine Trail", spawn: [7, 1, "down"], style: "forest",
+    map: ["TTTTTTTDTTTTTTTT", "T,,,,,,::,,,,,TT", "T,,T,,,:,,,,T,,T", "T,,,,,::,,,,,,,T", "T,r,,,:,,,,,,r,T", "T,,,,,::::::,,,T", "TT,,,,,,,,,:,,,T", "T,,,T,,,,,,:,,TT", "TTTTTTTTTTTDTTTT"],
+    things: [
+      { c: 9, r: 1, kind: "sign", label: "Trail sign", text: "STEEP RAVINE TRAIL ↓  DIPSEA →. Under it, scratched into the wood: WATCH THE FOG. IT WATCHES BACK." },
+      { c: 3, r: 5, kind: "rail", label: "The lookout", text: "Far below, the City glows across the water. A bank of fog crosses the bay against the wind, which fog does not do." },
+      { c: 12, r: 3, kind: "pile", label: "A dead delivery drone", text: "A 2030s delivery drone, crashed years ago. Wildflowers grow through the rotors. Somebody has left a coin on it." }
+    ],
+    portals: [{ c: 7, r: 0, to: "cabin", tc: 7, tr: 7, dir: "up", label: "Back up to the shack" }, { c: 11, r: 8, to: "cliff", tc: 11, tr: 1, dir: "down", label: "Down the trail to the cliff stairs" }] },
+  cliff: { name: "The cliff stairs above Steep Ravine", spawn: [11, 1, "down"], style: "cliff",
+    map: ["TTTTTTTTTTTD~~~~", "T,,,,,,,,,,:,~~~", "T,,,r,,,,,=:,~~~", "T,,,,,,,,==,,~~~", "Tr,,,,,,==,,r~~~", "T,,,,,,==,,,,~~~", "T,,,,,==,,,,,~~~", "T,,,,==,,,,r,~~~", "TTTTTDTTTTTTT~~~"],
+    things: [
+      { c: 2, r: 1, kind: "sign", label: "A park sign", text: "STEEP RAVINE HOT SPRINGS. UNCOVERED AT LOW TIDE ONLY. TONIGHT: −1.9 FT." },
+      { c: 12, r: 3, kind: "lantern", label: "A blue light on the stairs", text: "Lights move down the stairs ahead of you, slow as a procession. Somebody below is singing in time with the waves." },
+      { c: 9, r: 6, kind: "lantern", label: "A blue light", text: "It is not a lantern. It is a woman's hand, glowing faintly from the inside. She does not look back." }
+    ],
+    portals: [{ c: 11, r: 0, to: "trail", tc: 11, tr: 7, dir: "up", label: "Back up the trail" }, { c: 5, r: 8, to: "springs", tc: 5, tr: 1, dir: "down", label: "Down the last steps to the springs" }] },
+  springs: { name: "The hot springs, Steep Ravine", spawn: [5, 1, "down"], style: "beach",
+    map: ["rrrrrDrrrrrrrrrr", "rssss:sssssssssr", "rsshhssrssshhhsr", "rsshhsssssshhhsr", "rssssssrssssssss", "rsrsssssssssssrr", "ssssssssssssssss", "~~~~~~~~~~~~~~~~", "~~~~~~~~~~~~~~~~"],
+    things: [
+      { c: 3, r: 3, kind: "none", label: "Your pool", act: "birth", text: "" },
+      { c: 4, r: 3, kind: "none", label: "Your pool", act: "birth", text: "" },
+      { c: 12, r: 4, kind: "person", who: "delphine", label: "A woman in labour in the far pool", act: "birth", text: "" },
+      { c: 13, r: 4, kind: "person", who: "wren", label: "A young nurse with a glowing wrist", act: "birth", text: "" },
+      { c: 9, r: 1, kind: "lantern", label: "Singers with blue lights", text: "Forty people stand in a ring on the rocks, glowing faintly, singing a chant that keeps time with the waves." }
+    ],
+    portals: [{ c: 5, r: 0, to: "cliff", tc: 5, tr: 7, dir: "up", label: "Back up the cliff stairs" }] }
+};
+const fieldThings = id => FIELDS[id || (inField() ? PL.node.slice(6) : S.field)].things.filter(t => !(t.act === "moreau" && S.flags.moreau));
+function fieldUse(t) {
+  S.flags.tutLooked = true;
+  if (!REDUCE) SPARK = { c: t.c, r: t.r, col: "#fff3aa", t: performance.now() };
+  if (t.act === "moreau") { S.flags.moreau = true; return dispatch("fieldsay", t.text); }
+  if (t.act === "birth") return fadeTo(() => dispatch("tobirth"));
+  dispatch("fieldsay", t.text);
+}
+function tutHint() {
+  const id = PL.node && PL.node.startsWith("field:") ? PL.node.slice(6) : S.field;
+  if (id === "cabin") return !S.flags.tutMoved ? "Walk with WASD or the arrow keys. Tap a direction to turn without moving."
+    : !S.flags.tutLooked ? "Face something and press Space (or E) to look at it. Try the desk."
+    : !S.flags.moreau ? "Pick up Moreau's jar from the windowsill (right)."
+    : "Walk out the door at the bottom. Doors, paths and stairs are portals to the next area.";
+  if (id === "trail") return "Hold Shift to run. Follow the path to the gap at the bottom edge.";
+  if (id === "cliff") return "Down the stone steps. Somebody is singing at the springs.";
+  return "Get into your pool, or walk over to the singing.";
+}
+function fieldTile(g, ch, c, r, frame, map) {
+  const x = c * 16, y = r * 16, R = (a, b, w, h, col) => rect(g, x + a, y + b, w, h, col);
+  const grass = () => { R(0, 0, 16, 16, "#1c3320"); if ((c * 3 + r) % 2) { P2(g, x + 3, y + 5, "#2f5a33"); P2(g, x + 11, y + 10, "#2f5a33"); } };
+  switch (ch) {
+    case "#": R(0, 0, 16, 16, "#3a2414"); for (let i = 0; i < 16; i += 4) R(0, i, 16, 1, "#24160c"); if (r === 0 && c % 5 === 2) { R(4, 4, 8, 7, "#1a2a44"); P2(g, x + 6, y + 6, "#e8f4ff"); } break;
+    case ".": R(0, 0, 16, 16, "#6a4a2a"); for (let i = 0; i < 16; i += 4) R(0, i, 16, 1, "#4a3018"); R((c * 5) % 12, ((r * 3) % 4) * 4, 1, 4, "#4a3018"); break;
+    case ",": grass(); break;
+    case ":": R(0, 0, 16, 16, "#5a4632"); if ((c + r) % 3 === 0) P2(g, x + 6, y + 9, "#7a6448"); break;
+    case "T": R(0, 0, 16, 16, "#10200f"); R(2, 1, 12, 10, "#24402a"); R(4, 0, 8, 3, "#33573a"); R(7, 11, 2, 5, "#4a3a2a"); break;
+    case "r": if (S.field === "springs") R(0, 0, 16, 16, "#bfa871"); else grass(); R(2, 4, 12, 10, "#5a5260"); R(3, 4, 10, 3, "#7a7280"); break;
+    case "~": R(0, 0, 16, 16, "#0b2230"); R(((frame + c * 2) * 2) % 12, 5 + (r % 2) * 5, 4, 1, "#3f8cf2"); break;
+    case "=": R(0, 0, 16, 16, "#5a5260"); R(0, 7, 16, 1, "#3a3442"); R(0, 15, 16, 1, "#3a3442"); break;
+    case "s": R(0, 0, 16, 16, "#bfa871"); if ((c * 3 + r * 5) % 4 === 0) P2(g, x + 6, y + 6, "#a08a58"); break;
+    case "h": R(0, 0, 16, 16, "#1fa89d"); if (map && map[r - 1] && map[r - 1][c] !== "h") R(0, 0, 16, 2, "#5a5260"); if (map && map[r + 1] && map[r + 1][c] !== "h") R(0, 14, 16, 2, "#5a5260"); if (map && map[r][c - 1] !== "h") R(0, 0, 2, 16, "#5a5260"); if (map && map[r][c + 1] !== "h") R(14, 0, 2, 16, "#5a5260"); R(4, 5 + frame % 2, 5, 1, "#b8fff8"); for (let i = 0; i < 3; i++) P2(g, x + 3 + i * 4, y + ((frame * 2 + i * 5) % 12), "#e8f4ff88"); break;
+    case "D": R(0, 0, 16, 16, S.field === "cabin" ? "#3a2414" : "#5a4632"); R(2, 2, 12, 12, "#1a1208"); g.fillStyle = "#efe7f0"; g.font = "8px monospace"; g.fillText(r === 0 ? "▲" : "▼", x + 4, y + 12); break;
+  }
+}
+function drawField(cv, id) {
+  const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false; const frame = FRAME, F = FIELDS[id];
+  F.map.forEach((row, r) => [...row].forEach((ch, c) => fieldTile(g, ch, c, r, frame, F.map)));
+  const people = [];
+  fieldThings(id).forEach(t => { if (t.kind === "person") people.push({ c: t.c, r: t.r, who: t.who, dir: towardPlayer(t.c, t.r) }); else if (t.kind === "jar") { rect(g, t.c * 16 + 4, t.r * 16 + 3, 8, 11, "#9fc6e055"); rect(g, t.c * 16 + 4, t.r * 16 + 3, 8, 1, "#9fc6e0"); rect(g, t.c * 16 + 6, t.r * 16 + 8, 4, 3, "#f7a6c2"); P2(g, t.c * 16 + 5, t.r * 16 + 7, "#e33f9c"); P2(g, t.c * 16 + 10, t.r * 16 + 7, "#e33f9c"); } else if (t.kind !== "none") floorProp(g, t.kind, t.c * 16, t.r * 16, "#555", frame); });
+  drawPlayerAndPeople(g, people, frame); drawSpark(g);
+  if (id === "cabin" && !S.flags.moreau) { const j = F.things.find(t => t.act === "moreau"); marker(g, j.c * 16, j.r * 16, "#f7a6c2", false, frame, false); }
+  if (id === "springs") marker(g, 3 * 16, 3 * 16, "#3fe3d4", false, frame, true);
+  if (id !== "cabin") { g.fillStyle = "#0a1230"; g.globalAlpha = .28; g.fillRect(0, 0, 256, 144); g.globalAlpha = 1; }   // night
+  for (let y = 0; y < 144; y += 3) for (let x = (y / 3) % 2 ? 1 : 0; x < 256; x += 3) { const v = Math.sin(x * .03 + frame * .15 + y * .02) + Math.cos(y * .05 - frame * .1); if (v * (id === "cabin" ? .2 : .8) > 1) P2(g, x, y, "#b9b4c444"); }
+  if (HOVER) { g.strokeStyle = "#ffffff99"; g.lineWidth = 1; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
+  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText(F.name.toUpperCase()); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  drawFade(g);
+  const hint = document.getElementById("tuthint"), h = tutHint(); if (hint && hint.textContent !== h) hint.textContent = h;
+}
+function scrField() {
+  const F = FIELDS[S.field], fresh = S.fieldSayFresh; S.fieldSayFresh = false;
+  const looks = fieldThings(S.field).filter((t, i, a) => a.findIndex(u => u.label === t.label) === i);
+  return `<canvas class="scene-art interior walk" data-field="${S.field}" width="256" height="144" tabindex="0" aria-label="${esc(F.name)}. Walk with WASD or the arrow keys, Shift to run, Space to look. The buttons below do the same."></canvas>
+    <div class="intbar"><span>PROLOGUE · ${esc(F.name).toUpperCase()}</span><span class="note" id="tuthint">${esc(tutHint())}</span></div>${dpad()}
+    <div class="textbox">${portrait("hellrot")}<div class="say"><div class="speaker">CHRISTMAS NIGHT, 2049</div><p class="${fresh ? "tw" : ""}" id="fieldsay">${esc(S.fieldSay || "")}</p></div></div>
+    <div class="choices">${looks.map(t => `<button class="btn" data-act="fieldlook" data-arg="${F.things.indexOf(t)}"><span class="t">${t.act === "birth" ? "▶ " : ""}${esc(t.label)}<em>${t.act === "birth" ? "go" : "look"}</em></span></button>`).join("")}
+      ${F.portals.map((p, i) => `<button class="btn" data-act="fieldgo" data-arg="${i}" ${p.need && !S.flags[p.need] ? "disabled" : ""}><span class="t">${esc(p.label)}<em>portal</em></span></button>`).join("")}
+      <button class="btn" data-act="tobirth"><span class="t">Skip the walk<em>tutorial</em></span><span class="d">Go straight to the springs.</span></button></div>`;
 }
 function canvasTile(cv, e) { const b = cv.getBoundingClientRect(); return [Math.floor((e.clientX - b.left) / b.width * 16), Math.floor((e.clientY - b.top) / b.height * 9)]; }
 function walkLoop() {
   const cv = document.querySelector("canvas.walk");
-  if (cv && S) { const place = cv.dataset.int || "house"; if (PL.node !== place) plReset(place); plUpdate();
-    const cv2 = document.querySelector("canvas.walk"); if (cv2) { if (cv2.dataset.int) drawInterior(cv2, BY[cv2.dataset.int]); else drawHouse(cv2); } }
+  if (cv && S) { const place = cv.dataset.int || (cv.dataset.field ? "field:" + cv.dataset.field : "house"); if (PL.node !== place) plReset(place); plUpdate();
+    const cv2 = document.querySelector("canvas.walk"); if (cv2) { if (cv2.dataset.int) drawInterior(cv2, BY[cv2.dataset.int]); else if (cv2.dataset.field) drawField(cv2, cv2.dataset.field); else drawHouse(cv2); } }
   const st = document.querySelector("canvas[data-start]"); if (st) drawStart(st);
+  const it = document.querySelector("canvas[data-intro]"); if (it) drawIntro(it, +it.dataset.intro);
   requestAnimationFrame(walkLoop);
 }
+
+/* ---------- the intro: how Hell Rot came to be on the mountain ---------- */
+function drawIntro(cv, i) {
+  const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false; const f = FRAME, t = performance.now() / 1000;
+  if (i === 0) {   // Berkeley, 2044: the anaesthesia suite, the Index reading zero
+    rect(g, 0, 0, 256, 144, "#0d0f12"); for (let x = 0; x < 256; x += 10) for (let y = 0; y < 104; y += 10) rect(g, x, y, 9, 9, "#14181c"); rect(g, 0, 104, 256, 40, "#1a1e22");
+    for (let k = 0; k < 4; k++) { rect(g, 20 + k * 14, 50, 10, 54, "#4a5a6a"); rect(g, 22 + k * 14, 46, 6, 4, "#8d8496"); rect(g, 20 + k * 14, 70, 10, 2, "#3fe3d4"); }
+    rect(g, 140, 30, 80, 52, "#0a0810"); rect(g, 144, 34, 72, 40, "#06140c"); g.strokeStyle = "#a6e23f"; g.lineWidth = 1; g.beginPath();
+    for (let x = 0; x < 72; x++) { const flat = (x + Math.floor(t * 30)) % 72 > 30; g.lineTo(144 + x, 56 + (flat ? 0 : Math.round(Math.sin(x * 1.3) * (x % 9 === 0 ? 10 : 2)))); } g.stroke();
+    g.fillStyle = f % 4 < 2 ? "#d32f3f" : "#5a1a1a"; g.font = "8px monospace"; g.fillText("ROTHSCHILD INDEX 0.00", 146, 44); g.fillStyle = "#a6e23f"; g.fillText("04:00", 146, 72);
+    rect(g, 92, 112, 34, 8, "#e8e4dc"); rect(g, 86, 111, 9, 9, "#f6cfae"); P2(g, 88, 114, "#d32f3f"); P2(g, 91, 114, "#e8f4ff"); rect(g, 126, 113, 10, 4, "#1c1824");
+    rect(g, 140, 116, 6, 3, "#9fc6e055"); rect(g, 142, 114, 3, 3, "#f7a6c2");
+  } else if (i === 1) {   // the notebook
+    rect(g, 0, 0, 256, 144, "#1a1410"); rect(g, 40, 12, 176, 124, "#efe7d0"); rect(g, 126, 12, 4, 124, "#c8bfa8");
+    for (let y = 26; y < 132; y += 8) { rect(g, 46, y, 76, 1, "#b8c8e0"); rect(g, 134, y, 76, 1, "#b8c8e0"); }
+    g.fillStyle = "#3a3442"; g.font = "7px monospace"; ["xenon 0.6 MAC  04:00", "index 0.31 -> 0.12", "index 0.04", "index 0.00", "index 0.00", "index 0.00", "index 0.00"].forEach((s, k) => g.fillText(s, 48, 32 + k * 8));
+    const msg = "WENT TO HELL.", msg2 = "IT ROTS.", n = Math.min(msg.length + msg2.length, Math.floor((performance.now() % 6000) / 140));
+    g.fillStyle = "#c0392b"; g.font = "bold 10px monospace"; g.fillText(msg.slice(0, n), 138, 64); g.fillText(msg2.slice(0, Math.max(0, n - msg.length)), 150, 84);
+    rect(g, 196, 96, 3, 30, "#c0392b"); rect(g, 196, 126, 3, 3, "#3a2a2a");
+  } else if (i === 2) {   // the mountain: a shack, a lit window, a man with a jar on the trail
+    ["#0d0a14","#110d1c","#151124"].forEach((c, k) => rect(g, 0, k * 24, 256, 24, c)); for (let k = 0; k < 30; k++) P2(g, (k * 53) % 256, (k * 29) % 60, "#e8f4ff");
+    g.fillStyle = "#1c2a1c"; g.beginPath(); g.moveTo(0, 144); g.lineTo(60, 70); g.lineTo(120, 40); g.lineTo(150, 52); g.lineTo(256, 110); g.lineTo(256, 144); g.fill();
+    for (let k = 0; k < 14; k++) { const x = 20 + k * 17, y = 120 - Math.abs(k - 6) * 6; rect(g, x, y - 12, 6, 12, "#10200f"); rect(g, x + 2, y, 2, 4, "#2a1a10"); }
+    rect(g, 128, 52, 22, 14, "#3a2a1e"); g.fillStyle = "#2a1a10"; g.beginPath(); g.moveTo(125, 53); g.lineTo(139, 44); g.lineTo(153, 53); g.fill(); rect(g, 134, 56, 5, 4, f % 6 ? "#f29b3a" : "#f0bd3e");
+    const wx = 60 + ((t * 8) % 60), wy = 108 - ((t * 8) % 60) * .9; g.drawImage(nesSprite("hellrot", "right", Math.floor(t * 4) % 2), Math.round(wx), Math.round(wy - 14));
+    for (let y = 80; y < 144; y += 2) for (let x = (y / 2) % 2 ? 1 : 0; x < 256; x += 2) { const v = Math.sin(x * .03 - t * .6 + y * .05) + (256 - x) / 300; if (v > 1.1) P2(g, x, y, "#b9b4c455"); }
+  } else {   // Christmas night: the lowest tide, the springs uncovered, lights on the cliff
+    ["#0d0a14","#120d1c","#171124"].forEach((c, k) => rect(g, 0, k * 22, 256, 22, c)); for (let k = 0; k < 36; k++) P2(g, (k * 41) % 256, (k * 23) % 60, k % 5 ? "#e8f4ff" : "#fff3aa");
+    rect(g, 0, 66, 256, 78, "#0b1a26"); rect(g, 196, 64, 14, 2, "#3a3048"); for (let k = 0; k < 20; k++) rect(g, (k * 37 + f * 2) % 256, 70 + (k * 11) % 30, 5, 1, "#14394a");
+    g.fillStyle = "#2a2430"; g.beginPath(); g.moveTo(0, 144); g.lineTo(0, 60); g.lineTo(40, 70); g.lineTo(70, 100); g.lineTo(256, 112); g.lineTo(256, 144); g.fill();
+    for (const [x, y] of [[90, 110], [130, 114], [170, 112]]) { rect(g, x, y, 24, 8, "#1fa89d"); for (let k = 0; k < 3; k++) P2(g, x + 4 + k * 8, y - 3 - ((f + k * 3) % 8), "#e8f4ff88"); }
+    for (let k = 0; k < 7; k++) { const p = (t * .15 + k / 7) % 1; P2(g, Math.round(18 + p * 52), Math.round(62 + p * 40), (f + k) % 2 ? "#3fe3d4" : "#b8fff8"); }
+    g.fillStyle = "#b9b4c4"; g.font = "8px monospace"; g.fillText("25 DEC 2049 · STEEP RAVINE · TIDE −1.9 FT", 8, 138);
+  }
+  rect(g, 0, 0, 256, 11, "#0d0a14dd"); g.fillStyle = "#8d8496"; g.font = "8px monospace"; g.fillText(["BERKELEY, 2044", "THE LAB NOTEBOOK", "MOUNT TAMALPAIS, 2044–2049", "CHRISTMAS NIGHT, 2049"][i], 3, 8);
+}
+function scrIntro() {
+  const i = S.introI || 0, last = i >= INTRO.length - 1;
+  return `<canvas class="scene-art" data-intro="${i}" width="256" height="144" aria-label="${esc(INTRO[i])}"></canvas>
+    <div class="textbox">${portrait("hellrot")}<div class="say"><div class="speaker">HELL ROT · ${i + 1} OF ${INTRO.length}</div><p class="tw">${esc(INTRO[i])}</p></div></div>
+    <div class="choices"><button class="btn primary nextglow" data-act="intronext"><span class="t">${last ? "▶ WHO ARE YOU NOW?" : "▶ NEXT"}</span></button><button class="btn" data-act="introskip"><span class="t">Skip the intro</span></button></div>`;
+}
+
+const INTRO = ["Berkeley, 2044. Three in the morning in the anaesthesia suite: a bench of xenon tanks, and a monitor that measures how conscious you are. You built the measure. You are testing it on yourself. The number drops to zero and stays there for four minutes. So does your heart.", "Fax finds you on the floor and brings you back. When you can hold a pen, you write one line in the lab notebook: WENT TO HELL. IT ROTS. By breakfast the whole lab calls you Hell Rot. One of your eyes has gone a red so dark it is almost black. The other has gone almost white.", "A month later you walk out of the lab with an axolotl in a jar, and you keep walking until the road runs out, at a shack nobody wants on the side of Mount Tamalpais. You quit the gas the hard way. Your hands go numb. Words go missing. You call it the Rot.", "Five years clean. Three papers you wrote high at four in the morning, and barely remember, have become somebody's scripture. Tonight is Christmas, and the lowest tide of the year. Down at Steep Ravine the hot springs will be uncovered, and warm."];
+const FIELD_ENTER = {"cabin": "The shack is cold. The window rattles. Outside, the fog is coming up the mountain faster than fog should.", "trail": "Cold air, eucalyptus, and the sea somewhere below. The trail drops away under your boots.", "cliff": "The stairs are wet. Below you the tide has pulled so far back that rocks you have never seen stand in the starlight. The moon set an hour ago.", "springs": "Steam rises from the pools. Forty people stand on the rocks, glowing faintly blue. In the far pool a woman grips the stone and breathes through her teeth."};
 window.__spots = () => S && S.scene ? spotsFor(BY[S.scene.node]) : [];   // test hook
 window.__pl = () => PL;                                                   // test hook
-const dpad = () => `<div class="dpad" aria-label="Walk controls"><button data-pad="left" aria-label="Walk left">◀</button><button data-pad="up" aria-label="Walk up">▲</button><button data-pad="down" aria-label="Walk down">▼</button><button data-pad="right" aria-label="Walk right">▶</button><button data-pad="a" class="abtn" aria-label="Use what you face">A</button></div>`;
+const dpad = () => `<div class="dpad" aria-label="Walk controls"><button data-pad="left" aria-label="Walk left">◀</button><button data-pad="up" aria-label="Walk up">▲</button><button data-pad="down" aria-label="Walk down">▼</button><button data-pad="right" aria-label="Walk right">▶</button><button data-pad="run" class="bbtn" aria-label="Hold to run">B</button><button data-pad="a" class="abtn" aria-label="Use what you face">A</button></div>`;
 
 const SCENES = {"loin:1": [["", "The Ghost Diner smells of burnt coffee and wet wool. Every booth faces the door."], ["benny", "Benny slides into your booth without asking. \"Cops clear the hotels tonight. For the developers. Two a.m.\" He taps the table twice and leaves you his bill."], ["", "At two the door bangs open. A cop grabs a kid by the collar, and her sleeve rides up. Her wrist glows cyan."], ["mamarue", "Mama Rue stands up slowly, like a queen leaving her throne. She looks the cop in the eye. She throws her coffee in his face."], ["", "The cup is still in the air when the whole diner stands up."]], "haight:2": [["", "Tie-dye in the windows, nitrous in the air. Every shop on Haight sells 1967 by the gram."], ["", "Behind a poster shop, twenty people sit in rows of folding chairs. Each one has a mask over the face and a number written on the back of the hand."], ["", "Number 31 stands up, sways and walks out. You follow him six blocks to a room with no furniture."], ["", "He sits on the floor and recites the Lifeboat's terms of service, word for word, smiling. On his wall someone has written his name eleven times, each time a little smaller."]], "geary:2": [["", "Twelve thousand people in the glass cathedral, and every one of them looks up at their own face on the screen. The Twin has made each face a little more beautiful."], ["halcyon", "Sister Halcyon lifts her hands. \"You were always divine.\" Twelve thousand Halos chime at once."], ["", "In the front row a girl with a glowing arm keeps her sleeve pulled down to her knuckles."], ["", "Then the screen stutters. For one frame every face becomes the same old man in a dented crown. Gold letters: WE APOLOGIZE FOR THE INCONVENIENCE. NORTON II."], ["", "The congregation applauds. They think it is part of the show."]], "spire:6": [["", "Market Street at dusk, and a thousand bicycles fill it from wall to wall. Bells, horns, a sound system on a cargo bike."], ["", "On every screen in the Spire, the Twin's feed freezes on a blur of wheels. It cannot follow this many faces this fast."], ["pru", "Pru checks her watch. \"One hour. Whatever you need to do where it can't see you, do it now.\""]], "rivet:2": [["", "Every window on Rivet Hill is lit. Nobody lives here but robots, and the robots still lay the table for one."], ["", "In the dumpster behind the kitchen, under gold-rimmed takeout boxes, there is a denim apron. Rivet denim, 1873 stitching, the family's first product."], ["", "A name tag is sewn into the pocket: JULIAN. The thread is new. The date on the receipt is November, a month after the funeral."]], "blackhouse:3": [["", "The Black House has no curtains. Every room is lit, and anyone on the street can look in."], ["magister", "\"Read anything you like,\" the Magister says, and waves at a lectern. \"We are not ashamed of our money.\""], ["", "The ledger is open. On the third page you understand it. Every donor to the Theogen clinics has also paid for a seat at the Ascension. They are buying both gods."]], "blackhouse:6": [["", "Black candles, black champagne, and a cake shaped like a tombstone. Your name is on it, in icing."], ["magister", "\"We write everyone's obituary before midnight,\" the Magister says. \"It is a kindness. Would you like to read yours?\""], ["", "The card has two endings written on it. Neither one is crossed out."]], "trident:5": [["", "Fog below you, stars above, the City's lights blurred like a wet photograph. The transmitter's legs hum through your shoes."], ["benny", "Benny holds out two canisters. \"This one helps you remember. This one helps you forget. Same price.\" His hands shake. He does not say which is which."]], "forest:5": [["", "The eucalyptus drip like slow rain. In the trees stands a disused lab with one lit window."], ["", "Through the glass: a baby in a padded cradle, wires on her scalp, and two people in Auric gold reading her numbers like a stock price."], ["", "She is not crying. She is watching the window. She is watching you."], ["wren", "When the door gives, Wren goes past you to the cradle. She unclips the wires from Ione's scalp one at a time, and says each one's name as it comes off."]], "baths:3": [["", "Warm air rises from the old pools. Under the data center's hum, a hundred people glow softly in the dark like a reef."], ["delphine", "Delphine walks beside you, barefoot on the wet stone. \"They read your papers,\" she says. \"Footnotes and all.\""], ["", "A woman in the congregation quotes your third paper back to you. She gets one word wrong. You do not correct her."], ["", "Further down, past a door with no sign, the glow gets uneven. Someone is singing to keep from shaking."], ["wren", "Wren is at a steel sink by the door, washing her hands. She is still washing them when you walk back past, ten minutes later."]], "baths:4": [["", "The cradle in the tunnels is empty. The blanket is still warm. The mobile above it is still turning."], ["delphine", "Delphine does not scream. She stands very straight, and the light under her skin flickers like a bad bulb."], ["wren", "Wren's scrubs are on inside out. She has not slept. She folds the same blanket, unfolds it, and folds it again."], ["", "By dawn the Mission is papered with LOST. The flyers have no photo. Delphine says the Twin would only use it."]], "cradle:3": [["", "Half the lab is underwater. Small fish move between the benches."], ["otto", "Otto touches a dry bench with two fingers, the way people touch a headstone. \"This is where she was brilliant,\" she says. \"Before she was holy.\""], ["", "On the wall, a peeling startup logo: a double helix wearing a crown. Under it, in marker: SHIP IT."]], "cradle:4": [["", "The Brandvold annex smells of rust and something sweet. The gas cabinet's door hangs open."], ["", "The 2044 logs are still on the screen. The last entry is yours. You do not remember writing it."], ["", "In a drawer there is a notebook in a careful hand. One line is underlined twice."]], "mission:4": [["", "The murals update live. On one wall your face is in gold leaf, with a halo. On the wall across the street your face glows cyan, with a double helix where your heart should be."], ["", "Painters on both sides work through the night. Nobody has asked you to sit for it."], ["cask", "Brother Cask studies the gold wall with his arms folded. \"They got your nose wrong,\" he says. \"We got it right.\""]], "dome:2": [["", "Forty brides in white climb the Dome steps, each with a Halo pinned to her veil. They are marrying the Twin before the year runs out."], ["sunday", "Mayor Sunday blesses them from a cue card. He reads \"until death do you part,\" laughs, and then stops laughing."], ["halcyon", "Sister Halcyon means every word. That is worse."]], "dome:5": [["", "The recount room smells of toner. A clerk hands you a clipboard: the Index test, the one the BFF are suing over."], ["", "Twenty questions. You answer honestly. The machine prints your score, and the clerk folds the paper before you can read it."], ["desh", "Down the hall Desh is testifying through his typing aid. Every keystroke is loud in the silence."]], "dome:6": [["", "The rotunda is full and nobody is sitting. The result comes in on paper, because nobody trusts a screen tonight."], ["", "The clerk reads it twice, the second time slower, as if the number might change."]], "fogbelt:1": [["", "The Lantern is a church hall with blue curtains and forty cots. Every cot is taken."], ["marisol", "Marisol ladles soup without looking up. \"No Halo, no problem. We just ask your name. You can lie.\""], ["", "At the end table a man talks to the fog through the window. The fog seems to answer."]], "fogbelt:3": [["", "Three hundred people stand on Ocean Beach around a fire built from Christmas trees. Somebody has made Karl a birthday cake out of sand."], ["", "At midnight they all breathe in at once. The fog pours into three hundred mouths, and everyone on the beach laughs at the same joke."], ["", "You do not know what the joke was. You laughed too."]], "fogbelt:4": [["", "A gold-edged Church envelope sits on the soup table, unopened. Inside is enough money for every bed for ten years."], ["", "One condition, in small print: a Halo reader at the door."], ["marisol", "The sisters look at you. \"You write things down,\" one says. \"What would you do?\""]], "baker:6": [["", "Baker Beach, New Year's Eve. The bonfire is three storeys tall, built from everything the City wants to forget this year."], ["saintnobody", "Saint Nobody hands you a marker and a dead Halo. \"Write what you're burning.\""], ["", "Behind the flames, the bridge goes into the fog one light at a time."]], "fill:1": [["", "The king tide comes over the seawall at sundown, quiet as a cat. By eight it is knee-deep in the Fill."], ["", "The Auric Order's Old Lodge has its doors open and its basement full. Men in gold-trimmed waders carry boxes up the stairs. Not furniture. Paper."], ["pell", "Augustus Pell watches from a dry step, smoking. \"Funny what people save first.\""]], "palace:6": [["", "Twelve thousand people in white stand in rows around the old rotunda. Each one holds a Halo in both hands like a candle."], ["halcyon", "Sister Halcyon walks the rows touching foreheads. Her hands are shaking. She smiles anyway."], ["", "On the dome, a countdown. On the lagoon, the reflection of the countdown, a little behind."]], "presidio:4": [["", "One lamp lights the lodge room. On the altar sits an 1849 gold pan, polished for so long that the bottom is thin as foil."], ["", "The minute book lies beside it. One page has been cut out with a razor, very neatly."], ["hale", "Dr. Hale steps out of the dark in her coat. \"I cut it,\" she says. \"I've been waiting for someone to notice.\""]], "span:6": [["", "The glass skywalk sways under the bridge. Wind goes through the cables like a held note."], ["", "On the south tower, canisters glow cyan in a row, hooked to the fog intakes. Theogens in white open the valves one by one."], ["wren", "Wren holds Ione inside her coat. She sees you and does not hide it. \"She's cried since the first valve,\" she says. \"Delphine says it's joy.\""]], "wharf:1": [["", "Sea lions sleep on the sidewalk. The tide laps at the doors of the Musée Mécanique."], ["", "Laffing Sal's glass case is dark. You put in a coin anyway. She does not laugh. Her head turns, slowly, toward you."], ["laffingsal", "\"WE KNOW YOUR NAME, HELL ROT,\" says a voice that is not hers. \"WE HAVE ALWAYS LIKED YOUR WORK.\" Then she laughs, and laughs, and does not stop."]], "northbeach:1": [["", "Water on the floor, folding chairs on pallets, a coffee urn plugged in with a very long cord."], ["", "Twelve people. Nobody looks at a phone. A woman says she has nineteen days, and everybody claps as if it were a hundred years."], ["junie", "Junie sits next to you and says nothing. She does not have to."]], "chinatown:1": [["", "Steam, red lanterns, and Cantonese opera from a radio under a tarp."], ["", "The fishmonger's tank holds fish that glow faintly at the gills."], ["", "\"For the Theogens,\" the fishmonger says, and nets one. \"Cash. They take them down Geary in a cooler, every Tuesday.\" He wraps it in yesterday's Mondo 3000, your column face up."]], "union:1": [["", "In every shop window on Union Square a dead relative waves. Grandmothers in sweaters, fathers in Santa hats, all a little too smooth."], ["", "A girl presses her hand to the glass. Her mother, on the other side, presses back half a second late."], ["", "Around the corner the returns line runs all the way down Stockton. Nobody in it is holding a sweater."]], "coit:4": [["", "The 1934 murals look down on workers, farmers, a man reading a newspaper, and a steel chair with straps and a crown of electrodes."], ["huck", "Huck Baptiste stands guard and says nothing. His eyes go to the chair and away, over and over."], ["", "On the floor lies a wristband: TEST SUBJECT 31. You have seen that number before."]], "coit:6": [["", "The feed is live. Sunday shakes hands with the test subject in the chair. The lights dim as the rig draws power."], ["", "The woman in the chair opens her mouth. Out comes Sunday's campaign slogan, over and over, in her own voice."], ["", "The feed cuts to a test pattern. Somebody in the crowd starts to cry."]], "park:3": [["", "Black tie under the Academy's living roof, penguins in the tank behind the bar. Old Dee receives a crystal award shaped like an open hand."], ["olddee", "\"We tell each other the truth here,\" he says, and the whole room laughs as if it were a joke."], ["rosa", "Across the room Rosa Quint checks her phone too often. A waiter has refilled her glass three times. She has not touched it."]], "ferry:2": [["", "The clock face on the Ferry Building is writing in fog. Letters form, hold and blow apart: WE DECREE A HAT FOR THE MAYOR."], ["emperor", "Under it, two hundred Nortonians in paper crowns sing the decree to the tune of a carol. They take it very seriously. They are having the time of their lives."]], "ferry:6": [["", "Feathers everywhere. A thousand people beat each other with pillows on the Embarcadero, and the fireworks barge waits for midnight."], ["", "A pillow bursts over your head. Somebody shouts HAPPY NEW YEAR an hour early, and nobody corrects them."]], "rock:2": [["", "The ferry docks in fog. Alcatraz Longevity's sign is lit gold. The cells are clinics now, and they have waiting lists."], ["duchess", "In the vault the Duchess stands at two steel doors with her parents' names on them. She touches the frost with one glove. \"They hated each other,\" she says. \"Now they share a wall forever.\""], ["", "The fog comes in through a vent and writes on the frost: WE COULD GIVE THEM BACK TO YOU. She wipes it off with her sleeve."]], "treasure:4": [["", "The plant runs all night. One line makes gold Halos. The next line over makes cyan splice canisters. Same robots. Same lunch room."], ["vail", "Cornelius Vail shows you both with the same smile. \"We are not a church,\" he says. \"We are a supplier.\""]], "tomales:4": [["", "Six shaved heads at the gate wave you in. Nobody speaks. The farm smells of cut grass and woodsmoke."], ["ana", "In the barn, a circle of chairs. A woman sits in the middle while the others shout at her. It is Ana Reyes. She nods along."], ["olddee", "Old Dee pats your shoulder. \"You'll sit in the middle one day,\" he says. \"Everybody does.\""]]};
 const PROLOGUE = {"birth": ["Steep Ravine, Christmas night. The tide is so low the rocks are bare to the waterline. You lie in the hot spring with your eyes shut, and for once nothing in your head is talking.", "Then lights come down the cliff path: forty people, glowing faintly blue, singing in time with the waves.", "A woman in the next pool grips the stone and breathes through her teeth. Delphine Ash. She sees you and smiles. \"Father,\" she says.", "A young nurse kneels on the rock beside her, a thin glow-line on one wrist. She lays a hand on the belly. \"This will sting. Is that all right?\" she asks it, and waits, as if it might answer.", "Her belly lights up from the inside. It flickers. It flickers again, too fast. You know that rhythm. You drew it as a graph in your third paper. It is a seizure, and the child has not been born yet."], "fire": ["They name her Ione. You climb the mountain in wet clothes with your teeth chattering, and you smell the smoke before you see it.", "Your shack is burning. Moreau's jar is on the windowsill, glowing orange in the firelight. You have time to grab it and one other thing."], "ride": ["On the ridge your phone finds one bar. Nine missed calls from Fax, and one voicemail: \"Job's yours. Room's yours. The Duchess says don't die first.\"", "Down on Highway 1, three sets of lights wait in the fog."]};
@@ -1420,7 +1639,7 @@ function travel(dest, modeId) {
   let note = `${m.name} to ${BY[to].n}: ${hrs(h)} Hr.`;
   if (m.check) { const r = check(m.check[0], m.check[1]); note += ` ${r.txt}.`; if (!r.ok) S.clar += m.check[2]; }
   say(note, m.c);
-  S.at = to; S.sel = to;
+  S.at = to; S.sel = to; S.arrive = m.id; S.board = null; fadeIn();
   if (to === "house") { S.notebook.push(...S.memory); if (S.memory.length) say(`Home safe: ${S.memory.length} Memory item${S.memory.length === 1 ? "" : "s"} go into the Notebook.`, "#ff8ba2"); S.memory = []; S.boons = []; S.clar = maxClar(); S.screen = "house"; }
   else enterScene(to);
   if (S.clar <= 0) return blackout(); render();
@@ -1731,7 +1950,7 @@ function render() {
   hud(); tabs(); side();
   const s = S.screen;
   let html = "";
-  if (BOOT) html = scrStart(); else if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
+  if (BOOT) html = scrStart(); else if (s === "intro") html = scrIntro(); else if (s === "field") html = scrField(); else if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
   else if (s === "scene") { html = scrScene(); const sc = S.scene; if (sc.offer) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${sc.offer.k === "gold" ? "THE TWIN'S BLESSINGS · SAINTHOOD +1" : "THE THEOGENS' SPLICES · HELIX +1"} · THIS RUN ONLY</div><div class="choices" style="padding:0">${sc.offer.items.map((b, i) => `<button class="btn" style="--c:${sc.offer.k === "gold" ? "#f0bd3e" : "#3fe3d4"}" data-act="boon" data-arg="${i}"><span class="t">${b[0]}</span><span class="d">${b[1]}</span></button>`).join("")}<button class="btn" data-act="noboon"><span class="t">Refuse</span><span class="d">Stay yourself.</span></button></div></div>`;
     if (sc.choice) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${esc(sc.choice.q).toUpperCase()}</div><div class="choices" style="padding:0">${sc.choice.opts.map(([v, t, d]) => `<button class="btn" style="--c:#f29b3a" data-act="beat" data-arg="${v}"><span class="t">${t}</span><span class="d">${d}</span></button>`).join("")}</div></div>`;
     if (sc.offer || sc.choice) html = html.replace(/data-act="spot"/g, 'data-act="spot" disabled'); }
@@ -1744,11 +1963,19 @@ function render() {
 function paintScenes() { document.querySelectorAll("canvas[data-scene]").forEach(cv => drawScene(cv, BY[cv.dataset.scene] || { id: cv.dataset.scene, f: "theogen", k: "beach" }, FRAME)); }
 
 const ACT = {
-  go(a) { if (a === "house" && S.at !== "house") return; if (S.screen === "cast" || S.screen === "notebook") S.prev = S.prev || "house"; S.screen = a; if (a === "map") S.sel = S.sel || S.at; render(); },
+  go(a) { if (a === "house" && S.at !== "house") return; if (a === "map") S.board = null; if (S.screen === "cast" || S.screen === "notebook") S.prev = S.prev || "house"; S.screen = a; if (a === "map") S.sel = S.sel || S.at; render(); },
   restart() { S = newState(); render(); },
   start(a) { if (a === "new") { if (S.issue > 0 && !confirm("Start a new game? Your current week is lost.")) return; S = newState(); } BOOT = false; START_T0 = null; render(); },
   lobe(a) { const [L, d] = a.split(":"); const spent = Object.values(S.lobes).reduce((x, y) => x + y, 0); const v = S.lobes[L] + (+d); if (v < 1 || v > 5 || (+d > 0 && spent >= 12)) return; S.lobes[L] = v; render(); },
-  begin() { S.screen = "prologue"; S.flags.prologue = "birth"; render(); },
+  begin() { S.screen = "field"; S.field = "cabin"; S.fieldSay = FIELD_ENTER.cabin; S.fieldSayFresh = true; render(); },
+  intronext() { if ((S.introI || 0) >= INTRO.length - 1) { S.screen = "title"; } else S.introI = (S.introI || 0) + 1; render(); },
+  introskip() { S.screen = "title"; render(); },
+  fieldsay(t) { S.fieldSay = t; S.fieldSayFresh = true; render(); },
+  fieldenter(id) { S.field = id; S.screen = "field"; S.fieldSay = FIELD_ENTER[id] || ""; S.fieldSayFresh = true; render(); },
+  fieldlook(i) { const t = FIELDS[S.field].things[+i]; if (t) fieldUse(t); },
+  fieldgo(i) { const p = FIELDS[S.field].portals[+i]; if (!p) return; if (p.need && !S.flags[p.need]) { FLASH = [p.needMsg, 110]; return; } fadeTo(() => { S.field = p.to; S.fieldSpawn = [p.tc, p.tr, p.dir]; plReset("field:" + p.to); dispatch("fieldenter", p.to); }); },
+  tobirth() { S.screen = "prologue"; S.flags.prologue = "birth"; render(); },
+  board(m) { S.board = m || null; S.screen = "map"; S.sel = S.at; render(); },
   birth(a) { S.birth = a; let t = "";
     if (a === "help") { S.vow++; S.helix++; S.trust.wren = 1; S.talksD++; const r = check(S.lobes.BRAINSTEM >= S.lobes.LIMBIC ? "THE CHEMIST" : "BLOOD EYE", 9); S.ione = r.ok ? "stabilized" : "partly stabilized"; t = `The nurse hands you gloves without asking if you're qualified. "You've got the hands," Wren says. "Ask questions later." ${r.txt}. The child is ${S.ione}. Delphine calls you Father, and means it as a title.`; }
     if (a === "refuse") { S.venom++; S.ione = "left to the cult"; t = "You climb out. Behind you the light patterns flicker wrong."; }
@@ -1807,10 +2034,11 @@ document.addEventListener("click", e => { const cv = e.target.closest("canvas.wa
 document.addEventListener("mousemove", e => { const cv = e.target.closest && e.target.closest("canvas.walk"); HOVER = cv ? canvasTile(cv, e) : null; });
 document.addEventListener("keydown", e => { if (BOOT && (e.key === "Enter" || e.key === " ") && !e.target.closest("button")) { e.preventDefault(); e.stopImmediatePropagation(); dispatch("start", S.issue > 0 ? "continue" : "new"); } });
 document.addEventListener("keydown", e => { if (!document.querySelector("canvas.walk") || e.target.matches("input, textarea, select")) return; const k = e.key.toLowerCase();
+  if (k === "shift") { KEYS.run = true; return; }
   if (KMAP[k]) { KEYS[KMAP[k]] = true; e.preventDefault(); return; }
   const onCanvas = e.target === document.body || e.target.matches("canvas.walk");
   if ((k === "e" || ((k === " " || k === "enter") && onCanvas)) && !e.repeat && !PL.moving) { e.preventDefault(); interact(); } });
-document.addEventListener("keyup", e => { const k = e.key.toLowerCase(); if (KMAP[k]) KEYS[KMAP[k]] = false; });
+document.addEventListener("keyup", e => { const k = e.key.toLowerCase(); if (k === "shift") KEYS.run = false; if (KMAP[k]) KEYS[KMAP[k]] = false; });
 window.addEventListener("blur", () => { for (const k in KEYS) KEYS[k] = false; });
 document.addEventListener("pointerdown", e => { const b = e.target.closest("[data-pad]"); if (!b) return; e.preventDefault(); if (b.dataset.pad === "a") interact(); else KEYS[b.dataset.pad] = true; });
 for (const ev of ["pointerup", "pointercancel"]) document.addEventListener(ev, () => { for (const k in KEYS) KEYS[k] = false; });

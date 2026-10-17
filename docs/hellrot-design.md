@@ -1735,6 +1735,38 @@ earthquake-preparedness resources.
 
 #### PROLOGUE — "Low Water" (Steep Ravine, Christmas night)
 
+**The intro (before character creation).** Four short panels, each a
+moving 8-bit picture with one paragraph under it, tell how Hell Rot came to
+be on the mountain (§2.1):
+
+1. **Berkeley, 2044.** The anaesthesia suite at three in the morning, the
+   xenon bench, and the monitor reading *ROTHSCHILD INDEX 0.00* for four
+   minutes. So does his heart.
+2. **The lab notebook.** The readings run down to zero, and then the line
+   he writes in red: WENT TO HELL. IT ROTS. By breakfast he is Hell Rot,
+   and his eyes no longer match.
+3. **Mount Tamalpais, 2044–2049.** A shack with one lit window, and a man
+   with a jar climbing the trail. He quits the gas the hard way. His hands
+   go numb. Words go missing. He calls it the Rot.
+4. **Christmas night, 2049.** Five years clean, the lowest tide of the
+   year, and the springs at Steep Ravine uncovered.
+
+The player can skip it. Then comes character creation (the four lobes).
+
+**The walk down (the tutorial).** The player then walks Hell Rot from the
+shack to the springs, across four small areas joined by portals:
+
+| Area | What it teaches |
+|---|---|
+| **The shack** | Walking, turning on the spot, and looking (Space). The desk holds the Shulgin notebook and its last entry, which he does not remember writing. The door will not open until he picks up Moreau's jar: *you never leave without Moreau*. |
+| **Steep Ravine Trail** | Running (Shift) and leaving through the edge of an area. A trail sign scratched WATCH THE FOG; a lookout where a fog bank crosses the bay against the wind. |
+| **The cliff stairs** | Following a path. Blue lights move down the steps ahead of him: a woman's hand, glowing from the inside. |
+| **The hot springs** | Choosing what to use. Forty glowing singers on the rocks, Delphine in labour in the far pool, Wren beside her. Getting into his own pool starts the birth. |
+
+Each area opens with one line of what he notices. A hint line under the
+picture says what to try next, and a *Skip the walk* button goes straight to
+the springs. The night has no moon, so the walk is dark and the fog thick.
+
 **Cold open. Pitch black.** The game's first screen is almost entirely
 black: no City, no title, just the sound of surf and a line of text. Hell Rot
 is lying in a rock pool of hot water at the bottom of a cliff, at the foot of
@@ -2888,8 +2920,12 @@ the NES *Legend of Zelda* and the Game Boy *Pokémon* games.
   a two-frame walk. Walls, people and objects block him. **Space** or **E**
   uses the person or object he faces. The player can also click or tap a
   tile: he walks there on the shortest path, and if the tile holds a
-  hotspot he uses it when he arrives. On a phone, an on-screen D-pad and an
-  **A** button appear.
+  hotspot he uses it when he arrives. On a phone, an on-screen D-pad, an
+  **A** button (use) and a **B** button (hold to run) appear.
+- **Moves like Pokémon.** A tap on a new direction turns Hell Rot on the
+  spot without a step, so the player can face a person before talking.
+  Holding the direction walks. **Shift** (or **B**) runs at double speed. A
+  wall or a person stops him with a small bump, never a slide.
 - **Sprites.** Every character has a 16 × 16 sprite in four directions,
   drawn from the same spec as their portrait (skin, hair, clothes,
   glasses, beard, crucifix), with a dark NES outline and a belt in their
@@ -2904,8 +2940,24 @@ the NES *Legend of Zelda* and the Game Boy *Pokémon* games.
 - **Layout.** Doors, windows, screens and murals sit in the back wall.
   People stand in the middle rows, objects in the rows around them. The
   row below the back wall and the bottom rows stay clear, so every hotspot
-  can be reached. The exit is the ▼ gap in the bottom wall: walking onto it
-  goes back to the map.
+  can be reached.
+- **Portals.** Every place is left and entered through doors, as in
+  *Pokémon*. Walking onto a portal plays a short black-bar wipe and opens
+  what is behind it.
+  - **The street door** (the ▼ gap in the bottom wall) opens the City map
+    with every ride.
+  - **Station portals** sit in the side walls, each marked with its ride's
+    colour and letter: T (the Tube), C (cable car), R (glow rickshaw on the
+    Undertrack), F (night ferry), G (gondola), B (night bus), S (fog-surf
+    launch). A station opens the map with only that ride, and the place
+    must have the station: the Tube only from a Tube stop, the ferry only
+    from Pier 33 or the Rock.
+  - **Arrival** follows the ride: a player who takes the Tube steps out of
+    the Tube portal at the other end, and a player who walks in comes
+    through the street door. Villa Delirium has a front door and a Tube
+    portal in the cellar wall.
+  - Rides still cost time (§4.6). Portals only change how the player
+    reaches them.
 - **Tonight's scene** is a hotspot too. It appears only on the Issue the plot
   sets, and it has a glowing frame.
 - **Every location has its own room.** The floor and border change with the

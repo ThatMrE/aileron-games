@@ -20,6 +20,28 @@
 - **The numbers stay out of the prose.** Meters, Leads and Trust appear as
   pop-up tags, never inside a sentence.
 
+## The intro: how he came to be on the mountain
+
+**1.** Berkeley, 2044. Three in the morning in the anaesthesia suite: a bench of xenon tanks, and a monitor that measures how conscious you are. You built the measure. You are testing it on yourself. The number drops to zero and stays there for four minutes. So does your heart.
+
+**2.** Fax finds you on the floor and brings you back. When you can hold a pen, you write one line in the lab notebook: WENT TO HELL. IT ROTS. By breakfast the whole lab calls you Hell Rot. One of your eyes has gone a red so dark it is almost black. The other has gone almost white.
+
+**3.** A month later you walk out of the lab with an axolotl in a jar, and you keep walking until the road runs out, at a shack nobody wants on the side of Mount Tamalpais. You quit the gas the hard way. Your hands go numb. Words go missing. You call it the Rot.
+
+**4.** Five years clean. Three papers you wrote high at four in the morning, and barely remember, have become somebody's scripture. Tonight is Christmas, and the lowest tide of the year. Down at Steep Ravine the hot springs will be uncovered, and warm.
+
+## The walk down
+
+The line Hell Rot notices as he enters each area.
+
+**The shack.** The shack is cold. The window rattles. Outside, the fog is coming up the mountain faster than fog should.
+
+**Steep Ravine Trail.** Cold air, eucalyptus, and the sea somewhere below. The trail drops away under your boots.
+
+**The cliff stairs.** The stairs are wet. Below you the tide has pulled so far back that rocks you have never seen stand in the starlight. The moon set an hour ago.
+
+**The hot springs.** Steam rises from the pools. Forty people stand on the rocks, glowing faintly blue. In the far pool a woman grips the stone and breathes through her teeth.
+
 ## The Prologue: Low Water
 
 **The birth.**
