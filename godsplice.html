@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230d0a14'/%3E%3Crect x='4' y='3' width='8' height='6' fill='%23f6cfae'/%3E%3Crect x='3' y='9' width='10' height='5' fill='%23e8e4dc'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%230d0a14'/%3E%3Crect x='9' y='5' width='1' height='1' fill='%23d32f3f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
 <style>
 /* Layout: an 8-bit adventure frame — HUD bar on top, a framed scene (256×136, scaled) over a text box with a 48px portrait, side notebook on wide screens. Single night palette by design: the game is always after dark. */
 :root {
@@ -36,11 +36,11 @@
   --brass: #c48f52;          /* Auric Order */
   --violet: #a487dd;         /* Nortonians, Dissonance */
   --rose: #ff8ba2;           /* Villa Delirium */
-  --display: "Silkscreen", "Courier New", monospace;
+  --display: "Press Start 2P", "Courier New", monospace;
   --body: "VT323", "Courier New", ui-monospace, monospace;
 }
 html, body { height: 100%; }
-body { background: var(--night); color: var(--text); font-family: var(--body); font-size: 20px; line-height: 1.15; }
+body { -webkit-font-smoothing: none; -moz-osx-font-smoothing: grayscale; font-smooth: never; text-rendering: optimizeSpeed; background: var(--night); color: var(--text); font-family: var(--body); font-size: 20px; line-height: 1.15; }
 * { box-sizing: border-box; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
@@ -51,17 +51,17 @@ button { font: inherit; color: inherit; }
 
 /* HUD */
 .hud { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; background: var(--panel); border: 2px solid var(--line); padding: 8px 12px; }
-.brand { font-family: var(--display); font-size: 13px; line-height: 1.2; letter-spacing: .05em; }
+.brand { font-family: var(--display); font-size: 8px; line-height: 1.5; letter-spacing: 0; }
 .brand small { display: block; color: var(--grey); font-size: 9px; letter-spacing: .14em; }
 .clock { min-width: 190px; display: flex; flex-direction: column; gap: 3px; }
-.clock b { font-family: var(--display); font-weight: 400; font-size: 18px; font-variant-numeric: tabular-nums; }
+.clock b { font-family: var(--display); font-weight: 400; font-size: 16px; font-variant-numeric: tabular-nums; }
 .clock b span { font-size: 10px; color: var(--grey); margin-left: 6px; }
 .hours { display: grid; grid-template-columns: repeat(13, 1fr); gap: 2px; }
 .hours i { height: 6px; background: var(--sodium); display: block; }
 .hours i.spent { background: var(--line); }
 .meters { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: flex-end; }
 .m { display: flex; flex-direction: column; gap: 2px; min-width: 64px; }
-.m b { font-family: var(--display); font-weight: 400; font-size: 8px; letter-spacing: .12em; color: var(--grey); }
+.m b { font-family: var(--display); font-weight: 400; font-size: 8px; letter-spacing: 0; color: var(--grey); }
 .m .v { font-size: 18px; font-variant-numeric: tabular-nums; line-height: 1; }
 .bar { height: 6px; width: 72px; background: var(--line); position: relative; overflow: hidden; }
 .bar > i { position: absolute; inset: 0 auto 0 0; display: block; }
@@ -74,7 +74,7 @@ button { font: inherit; color: inherit; }
 
 /* tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
-.tab { font-family: var(--display); font-size: 11px; letter-spacing: .08em; padding: 7px 12px; border: 2px solid var(--line); background: var(--panel); cursor: pointer; }
+.tab { font-family: var(--display); font-size: 8px; letter-spacing: 0; padding: 7px 12px; border: 2px solid var(--line); background: var(--panel); cursor: pointer; }
 .tab[aria-current="page"] { background: var(--text); color: var(--ink); border-color: var(--text); }
 .tab:disabled { opacity: .35; cursor: not-allowed; }
 
@@ -82,21 +82,21 @@ button { font: inherit; color: inherit; }
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 10px; align-items: start; }
 @media (max-width: 960px) { .grid { grid-template-columns: minmax(0, 1fr); } }
 .frame { border: 2px solid var(--line); background: var(--panel); min-width: 0; }
-.frame h2, .h2 { font-family: var(--display); font-weight: 400; font-size: 15px; letter-spacing: .06em; margin: 0; text-wrap: balance; }
-.eyebrow { font-family: var(--display); font-size: 9px; letter-spacing: .14em; color: var(--grey); }
+.frame h2, .h2 { font-family: var(--display); font-weight: 400; font-size: 16px; letter-spacing: 0; margin: 0; text-wrap: balance; }
+.eyebrow { font-family: var(--display); font-size: 8px; letter-spacing: 0; color: var(--grey); }
 .pad { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
 .scene-art { display: block; width: 100%; height: auto; image-rendering: pixelated; aspect-ratio: 256 / 136; border-bottom: 2px solid var(--line); background: #000; }
 .textbox { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
 .textbox canvas, .portrait { width: 96px; height: 96px; image-rendering: pixelated; border: 2px solid var(--line); background: #000; display: block; }
-.speaker { font-family: var(--display); font-size: 11px; letter-spacing: .08em; color: var(--sodium); margin-bottom: 4px; }
+.speaker { font-family: var(--display); font-size: 8px; letter-spacing: 0; color: var(--sodium); margin-bottom: 4px; }
 .say p { margin: 0 0 6px; }
 .voice { color: var(--grey); font-style: italic; margin: 0 0 6px; padding-left: 10px; border-left: 2px solid var(--line); }
-.voice b { font-family: var(--display); font-weight: 400; font-style: normal; font-size: 9px; letter-spacing: .1em; color: var(--c, var(--text)); margin-right: 6px; }
+.voice b { font-family: var(--display); font-weight: 400; font-style: normal; font-size: 8px; letter-spacing: 0; color: var(--c, var(--text)); margin-right: 6px; }
 .choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; padding: 0 14px 14px; }
 .btn { text-align: left; padding: 8px 10px; border: 2px solid var(--line); background: var(--night); cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
 .btn:hover:not(:disabled) { border-color: var(--c, var(--text)); }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
-.btn .t { font-family: var(--display); font-size: 11px; letter-spacing: .05em; color: var(--c, var(--text)); display: flex; justify-content: space-between; gap: 8px; }
+.btn .t { font-family: var(--display); font-size: 8px; letter-spacing: 0; color: var(--c, var(--text)); display: flex; justify-content: space-between; gap: 8px; }
 .btn .t em { font-style: normal; color: var(--grey); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .btn .d { color: var(--grey); font-size: 17px; }
 .door { border-width: 3px; border-style: double; }
@@ -108,7 +108,7 @@ button { font: inherit; color: inherit; }
 .dpad .bbtn { grid-column: 4; grid-row: 2; justify-self: end; width: 56px; border-radius: 50%; background: #3a3442; }
 .dpad .abtn { grid-column: 5; grid-row: 1 / 3; border-radius: 50%; background: #d32f3f; border-color: #8a1a2a; font-size: 20px; }
 @media (hover: hover) and (pointer: fine) { .dpad { display: none; } }
-.intbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 6px 14px; border-bottom: 2px solid var(--line); font-family: var(--display); font-size: 10px; letter-spacing: .08em; color: var(--sodium); }
+.intbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 6px 14px; border-bottom: 2px solid var(--line); font-family: var(--display); font-size: 8px; letter-spacing: 0; color: var(--sodium); }
 .intbar .note { font-family: var(--body); letter-spacing: 0; font-size: 17px; color: var(--grey); }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .primary { background: var(--sodium); color: var(--ink); border-color: var(--sodium); }
@@ -122,7 +122,7 @@ button { font: inherit; color: inherit; }
 .log time { font-family: var(--display); font-size: 8px; margin-right: 6px; }
 .items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .items li { font-size: 17px; display: flex; gap: 6px; align-items: baseline; }
-.tag { font-family: var(--display); font-size: 8px; letter-spacing: .08em; padding: 1px 5px; border: 1px solid var(--c, var(--line)); color: var(--c, var(--grey)); white-space: nowrap; }
+.tag { font-family: var(--display); font-size: 8px; letter-spacing: 0; padding: 1px 5px; border: 1px solid var(--c, var(--line)); color: var(--c, var(--grey)); white-space: nowrap; }
 
 /* map */
 .mapwrap { position: relative; background: #0b1820; }
@@ -132,7 +132,7 @@ button { font: inherit; color: inherit; }
 .node .cell { fill-opacity: .15; stroke-width: 1.5; stroke-dasharray: 3 3; }
 .node:hover .cell, .node:focus .cell { fill-opacity: .35; }
 .node .core { stroke: #0d0a10; stroke-width: 2; }
-.node text { font-family: Silkscreen, monospace; font-size: 13px; fill: #efe7f0; paint-order: stroke; stroke: #0d0a10; stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.node text { font-family: VT323, monospace; font-size: 21px; fill: #efe7f0; paint-order: stroke; stroke: #0d0a10; stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
 .node.tonight .core { animation: pulse 1.6s steps(4) infinite; }
 .node.sel .cell { fill-opacity: .45; stroke-dasharray: none; stroke-width: 2.5; }
 @keyframes pulse { 50% { stroke: #efe7f0; stroke-width: 4; } }
@@ -142,7 +142,7 @@ button { font: inherit; color: inherit; }
 .room { border: 2px solid var(--line); background: var(--night); padding: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; text-align: left; }
 .room[aria-pressed="true"] { border-color: var(--rose); }
 .room canvas { width: 48px; height: 48px; image-rendering: pixelated; border: 1px solid var(--line); }
-.room .t { font-family: var(--display); font-size: 10px; letter-spacing: .06em; }
+.room .t { font-family: var(--display); font-size: 8px; letter-spacing: 0; }
 .room .d { font-size: 16px; color: var(--grey); }
 
 /* showdown */
@@ -156,12 +156,12 @@ button { font: inherit; color: inherit; }
 
 /* layout / spread */
 .spread { background: var(--paper); color: var(--ink); padding: 14px 16px; border: 2px solid var(--line); }
-.masthead { font-family: var(--display); font-size: 26px; letter-spacing: .02em; line-height: 1; background: linear-gradient(180deg, #ffffff, #9aa3ad 48%, #3c434b 52%, #e8edf2); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 1px #141014; }
-.spread h3 { font-family: var(--display); font-weight: 400; font-size: 18px; margin: 8px 0; color: var(--magenta); text-wrap: balance; }
+.masthead { font-family: var(--display); font-size: 24px; letter-spacing: 0; line-height: 1.5; background: linear-gradient(180deg, #ffffff, #9aa3ad 48%, #3c434b 52%, #e8edf2); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 1px #141014; }
+.spread h3 { font-family: var(--display); font-weight: 400; font-size: 16px; margin: 8px 0; color: var(--magenta); text-wrap: balance; }
 .spread p { margin: 0 0 6px; font-size: 19px; }
 .poll { display: flex; gap: 18px; flex-wrap: wrap; font-size: 18px; }
 fieldset { border: 2px solid var(--line); padding: 8px 10px; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; min-width: 0; }
-legend { font-family: var(--display); font-size: 9px; letter-spacing: .12em; color: var(--grey); padding: 0 4px; }
+legend { font-family: var(--display); font-size: 8px; letter-spacing: 0; color: var(--grey); padding: 0 4px; }
 label { cursor: pointer; }
 input[type=radio], input[type=checkbox] { accent-color: var(--sodium); }
 
@@ -169,16 +169,16 @@ input[type=radio], input[type=checkbox] { accent-color: var(--sodium); }
 .castgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
 .card { border: 2px solid var(--line); background: var(--night); padding: 8px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; text-align: left; }
 .card canvas { width: 96px; height: 96px; image-rendering: pixelated; border: 2px solid var(--c, var(--line)); }
-.card .t { font-family: var(--display); font-size: 10px; letter-spacing: .05em; }
+.card .t { font-family: var(--display); font-size: 8px; letter-spacing: 0; }
 .card .d { color: var(--grey); font-size: 16px; }
 .detail { display: grid; grid-template-columns: 192px minmax(0, 1fr); gap: 14px; }
 .detail canvas { width: 192px; height: 192px; image-rendering: pixelated; border: 2px solid var(--line); }
 @media (max-width: 560px) { .detail { grid-template-columns: 1fr; } }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font-family: var(--display); font-size: 9px; letter-spacing: .1em; padding: 4px 8px; border: 2px solid var(--c, var(--line)); background: var(--night); cursor: pointer; color: var(--c, var(--text)); }
+.chip { font-family: var(--display); font-size: 8px; letter-spacing: 0; padding: 4px 8px; border: 2px solid var(--c, var(--line)); background: var(--night); cursor: pointer; color: var(--c, var(--text)); }
 .chip[aria-pressed="true"] { background: var(--c, var(--text)); color: var(--ink); }
 .ending { text-align: center; padding: 26px 16px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
-.ending .num { font-family: var(--display); font-size: 12px; color: var(--grey); letter-spacing: .2em; }
+.ending .num { font-family: var(--display); font-size: 8px; color: var(--grey); letter-spacing: 0; }
 .ending h2 { font-size: 26px; }
 .ending p { max-width: 62ch; margin: 0; }
 .lobes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
@@ -190,7 +190,7 @@ input[type=radio], input[type=checkbox] { accent-color: var(--sodium); }
 @keyframes nb { 50% { box-shadow: 0 0 0 3px #fff3c4, 0 0 22px var(--sodium); } }
 .plan { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .plan li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; font-size: 18px; align-items: baseline; color: var(--grey); }
-.plan li .ic { font-family: var(--display); font-size: 11px; text-align: center; }
+.plan li .ic { font-family: var(--display); font-size: 8px; text-align: center; }
 .plan li.done { text-decoration: line-through; opacity: .6; }
 .plan li.now { color: var(--text); }
 .plan li.now .ic { color: var(--sodium); }
@@ -203,15 +203,15 @@ input[type=radio], input[type=checkbox] { accent-color: var(--sodium); }
 .day24 i.now { outline: 2px solid #fff; z-index: 1; }
 .day24 i.press::after, .day24 i.mid::after { content: ""; position: absolute; left: 50%; top: -5px; width: 2px; height: 20px; background: var(--magenta); }
 .day24 i.mid::after { background: var(--gold); }
-.daylab { display: flex; justify-content: space-between; font-family: var(--display); font-size: 8px; color: var(--grey); letter-spacing: .08em; }
+.daylab { display: flex; justify-content: space-between; font-family: var(--display); font-size: 8px; color: var(--grey); letter-spacing: 0; }
 .cal { display: flex; gap: 3px; flex-wrap: wrap; }
-.cal span { font-family: var(--display); font-size: 8px; letter-spacing: .06em; padding: 3px 5px; border: 1px solid var(--line); color: var(--grey); }
+.cal span { font-family: var(--display); font-size: 8px; letter-spacing: 0; padding: 3px 5px; border: 1px solid var(--line); color: var(--grey); }
 .cal span.on { background: var(--sodium); color: var(--ink); border-color: var(--sodium); }
 .cal span.past { opacity: .45; text-decoration: line-through; }
 .awake { width: 120px; height: 8px; background: var(--line); }
 .awake i { display: block; height: 100%; }
 #toasts { position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: 6px; z-index: 50; pointer-events: none; }
-.toast { font-family: var(--display); font-size: 11px; letter-spacing: .06em; padding: 6px 10px; background: var(--panel); border: 2px solid var(--c, var(--text)); color: var(--c, var(--text)); animation: tin 2.6s forwards; }
+.toast { font-family: var(--display); font-size: 8px; letter-spacing: 0; padding: 6px 10px; background: var(--panel); border: 2px solid var(--c, var(--text)); color: var(--c, var(--text)); animation: tin 2.6s forwards; }
 @keyframes tin { 0% { transform: translateY(8px); opacity: 0; } 12% { transform: none; opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
 body.delirium #screen { box-shadow: inset 0 0 60px #d32f3f66; }
 body.delirium .scene-art, body.delirium .big { animation: wob 3s ease-in-out infinite; }
@@ -222,6 +222,8 @@ body.booting .grid { grid-template-columns: minmax(0, 1fr); }
 .startbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; padding: 14px; text-align: center; }
 .startbar .note { flex-basis: 100%; margin: 0; }
 .tw { min-height: 1em; }
+/* the NES font needs room between lines */
+.btn .t, .eyebrow, .speaker, .tab, .brand, .h2, .frame h2, .toast, .chip, .room .t, .card .t, .tag, legend, .intbar, .masthead, .spread h3, .ending .num, .plan li .ic, .m b, .voice b, .clock b, .daylab, .cal span, .log time { line-height: 1.6; }
 /* animations (all off under prefers-reduced-motion, above) */
 #screen.enter > * { animation: scrIn .3s steps(5) both; }
 @keyframes scrIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -251,7 +253,7 @@ body.booting .grid { grid-template-columns: minmax(0, 1fr); }
 .keygrid > div { border: 2px solid var(--line); padding: 8px; display: flex; flex-direction: column; gap: 4px; }
 .sw { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 6px; background: var(--c); border: 1px solid #000; }
 .warn { color: var(--sodium); }
-.homelink { display: inline-block; margin: 10px 0 0 max(12px, env(safe-area-inset-left, 0px)); font-family: var(--display); font-size: 11px; letter-spacing: .1em; color: var(--grey); text-decoration: none; }
+.homelink { display: inline-block; margin: 10px 0 0 max(12px, env(safe-area-inset-left, 0px)); font-family: var(--display); font-size: 8px; line-height: 1.6; color: var(--grey); text-decoration: none; }
 .homelink:hover { color: var(--sodium); }
 </style>
 </head>
@@ -738,6 +740,19 @@ function side() {
 }
 
 /* ---------- title & creation ---------- */
+const PFONT = {"A": "010101111101101", "B": "110101110101110", "C": "011100100100011", "D": "110101101101110", "E": "111100110100111", "F": "111100110100100", "G": "011100101101011", "H": "101101111101101", "I": "111010010010111", "J": "001001001101010", "K": "101101110101101", "L": "100100100100111", "M": "101111111101101", "N": "110101101101101", "O": "010101101101010", "P": "110101110100100", "Q": "010101101110011", "R": "110101110101101", "S": "011100010001110", "T": "111010010010010", "U": "101101101101011", "V": "101101101010010", "W": "101101111111101", "X": "101101010101101", "Y": "101101010010010", "Z": "111001010100111", "0": "111101101101111", "1": "010110010010111", "2": "110001010100111", "3": "110001010001110", "4": "101101111001001", "5": "111100110001110", "6": "011100111101111", "7": "111001010100100", "8": "111101111101111", "9": "111101111001110", " ": "000000000000000", ".": "000000000000010", ",": "000000000010100", ":": "000010000010000", ";": "000010000010100", "!": "010010010000010", "?": "110001010000010", "'": "010010000000000", "\"": "101101000000000", "-": "000000111000000", "+": "000010111010000", "/": "001001010100100", "(": "010100100100010", ")": "010001001001010", "&": "010101010101011", "%": "101001010100101", "#": "101111101111101", "·": "000000010000000", "→": "000001111001000", "▶": "100110111110100", "◀": "001011111011001", "▲": "000010111111000", "▼": "000111111010000", "✓": "000001101010000", "↓": "010010010111010", "↑": "010111010010010", "°": "010101010000000", "×": "000101010101000", "*": "000101010101000", "=": "000111000111000", "<": "001010100010001", ">": "100010001010100", "_": "000000000000111", "|": "010010010010010", "…": "000000000000101"};
+const PFALIAS = { "—": "-", "–": "-", "−": "-", "’": "'", "‘": "'", "“": "\"", "”": "\"", "é": "E", "É": "E", "è": "E" };
+// a crisp 3×5 bitmap font for text drawn inside the 8-bit pictures (canvas text blurs when scaled up)
+function ptext(g, str, x, y, col, scale = 1, shadow = "#0d0a14") {
+  str = String(str).toUpperCase(); let cx = Math.round(x); const sc = scale;
+  for (const raw of str) { const ch = PFALIAS[raw] || raw, gl = PFONT[ch] || PFONT[" "];
+    for (let i = 0; i < 15; i++) if (gl[i] === "1") { const px = cx + (i % 3) * sc, py = Math.round(y) + Math.floor(i / 3) * sc; if (shadow) { g.fillStyle = shadow; g.fillRect(px + sc, py + sc, sc, sc); } }
+    for (let i = 0; i < 15; i++) if (gl[i] === "1") { g.fillStyle = col; g.fillRect(cx + (i % 3) * sc, Math.round(y) + Math.floor(i / 3) * sc, sc, sc); }
+    cx += 4 * sc; }
+  return cx - x;
+}
+const ptextW = (str, scale = 1) => String(str).length * 4 * scale - scale;
+function pbar(g, t, c) { rect(g, 0, 0, 256, 10, "#0d0a14e6"); ptext(g, t.slice(0, 62), 3, 3, c, 1, null); }
 let BOOT = true;
 function typeOut() {   // new story lines type themselves out; click the text to finish
   const els = [...document.querySelectorAll("#screen .tw")]; if (REDUCE || !els.length) return;
@@ -797,11 +812,11 @@ function drawStart(cv) {
       rect(g, px + 1, py + 1, 3, 3, "#0d0a14"); rect(g, px, py, 3, 3, r < 3 ? col[0] : col[1]); if (r === 0) rect(g, px, py, 3, 1, "#fff3aa"); })); });
   if (glitch) { rect(g, x0 - 6, y0 + 9, word.length * lw + 6, 1, "#3fe3d4"); rect(g, x0 - 6, y0 + 10, word.length * lw + 6, 1, "#e33f9c"); }
   // subtitle and the blinking start prompt
-  if (t > 1.5) { g.font = "8px monospace"; g.fillStyle = "#b9b4c4"; const sub = "SAN FRANCISCO · CHRISTMAS WEEK 2049"; g.fillText(sub, Math.round(128 - g.measureText(sub).width / 2), 50); }
+  if (t > 1.5) { const sub = "SAN FRANCISCO · CHRISTMAS WEEK 2049"; ptext(g, sub, Math.round(128 - ptextW(sub) / 2), 47, "#b9b4c4"); }
   // Hell Rot walks in along the waterline and stops
   const hx = Math.min(120, -16 + t * 52), walking = hx < 120; g.fillStyle = "#00000066"; g.fillRect(Math.round(hx) + 3, 133, 10, 2);
   g.drawImage(nesSprite("hellrot", walking ? "right" : "down", walking ? f % 2 : 0), Math.round(hx), 119);
-  if (t > 2.6 && f % 6 < 4) { g.font = "8px monospace"; g.fillStyle = "#f29b3a"; const ps = "▶ PRESS START"; g.fillText(ps, Math.round(128 - g.measureText(ps).width / 2), 114); }
+  if (t > 2.6 && f % 6 < 4) { const ps = "▶ PRESS START"; ptext(g, ps, Math.round(128 - ptextW(ps, 2) / 2), 104, "#f29b3a", 2); }
 }
 function scrTitle() {
   const spent = Object.values(S.lobes).reduce((a, b) => a + b, 0);
@@ -932,7 +947,7 @@ function drawMap() {
     svgEl("circle", { class: "cell", cx: x, cy: y, r: n.off ? 18 : 24, style: `fill:${c};stroke:${c}` }, g);
     svgEl("rect", { class: "core", x: x - 6, y: y - 6, width: 12, height: 12, style: `fill:${c}` }, g);
     const right = n.lab === "l" ? false : x < 870; const t = svgEl("text", { x: right ? x + 14 : x - 14, y: y + 4, "text-anchor": right ? "start" : "end" }, g); t.textContent = (n.s || n.n.replace(/^The /, "")).toUpperCase(); });
-  if (S.next && S.next.go && S.next.go.type === "node" && S.next.go.arg !== S.at) { const direct = MODES.some(m => rideOk(m, BY[S.at], BY[S.next.go.arg]) === true); const tgt = direct || !HUB[S.at] ? S.next.go.arg : HUB[S.at]; const [nx, ny] = BY[tgt].xy; const ag = svgEl("g", { class: "nextarrow", transform: `translate(${nx},${ny - 34})` }, nodes); svgEl("path", { d: "M-12 -18 L12 -18 L0 0 Z", fill: "#f29b3a", stroke: "#0d0a10", "stroke-width": 2 }, ag); const tt = svgEl("text", { x: 0, y: -24, "text-anchor": "middle", style: "font-family:Silkscreen,monospace;font-size:14px;fill:#f29b3a;paint-order:stroke;stroke:#0d0a10;stroke-width:4px" }, ag); tt.textContent = "NEXT"; }
+  if (S.next && S.next.go && S.next.go.type === "node" && S.next.go.arg !== S.at) { const direct = MODES.some(m => rideOk(m, BY[S.at], BY[S.next.go.arg]) === true); const tgt = direct || !HUB[S.at] ? S.next.go.arg : HUB[S.at]; const [nx, ny] = BY[tgt].xy; const ag = svgEl("g", { class: "nextarrow", transform: `translate(${nx},${ny - 34})` }, nodes); svgEl("path", { d: "M-12 -18 L12 -18 L0 0 Z", fill: "#f29b3a", stroke: "#0d0a10", "stroke-width": 2 }, ag); const tt = svgEl("text", { x: 0, y: -24, "text-anchor": "middle", style: "font-family:VT323,monospace;font-size:23px;fill:#f29b3a;paint-order:stroke;stroke:#0d0a10;stroke-width:4px" }, ag); tt.textContent = "NEXT"; }
   const me = $("me"); const [mx, my] = BY[S.at].xy; const mg = svgEl("g", { transform: `translate(${mx},${my - 26})` }, me);
   svgEl("rect", { x: -7, y: -9, width: 14, height: 14, fill: "#1a141f", stroke: "#efe7f0", "stroke-width": 1.5 }, mg); svgEl("rect", { x: -4, y: -5, width: 3, height: 3, fill: "#d32f3f" }, mg); svgEl("rect", { x: 1, y: -5, width: 3, height: 3, fill: "#e8f4ff" }, mg); svgEl("path", { d: "M0 5 L-3 9 L3 9 Z", fill: "#efe7f0" }, mg);
   if (S.sel !== S.at) { const a = BY[S.at].xy, b = BY[S.sel].xy; svgEl("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: "#efe7f0", "stroke-width": 2, "stroke-dasharray": "6 5", fill: "none" }, $("prev")); }
@@ -1372,16 +1387,16 @@ function drawPlayerAndPeople(g, people, frame) {
 }
 const towardPlayer = (c, r) => { const dx = PL.c - c, dy = PL.r - r; if (Math.abs(dx) + Math.abs(dy) > 2) return "down"; return Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? "right" : "left") : (dy > 0 ? "down" : "up"); };
 function marker(g, x, y, col, used, frame, story) {
-  if (used) { g.fillStyle = "#6a6270"; g.font = "7px monospace"; g.fillText("✓", x + 5, y - 1); return; }
+  if (used) { ptext(g, "✓", x + 6, y - 6, "#8d8496"); return; }
   const b = frame % 2; g.fillStyle = col; g.beginPath(); g.moveTo(x + 4, y - 6 + b); g.lineTo(x + 12, y - 6 + b); g.lineTo(x + 8, y - 1 + b); g.fill();
   if (story) { g.strokeStyle = frame % 2 ? "#f29b3a" : "#fff3aa"; g.lineWidth = 1; g.strokeRect(x - .5, y - .5, 17, 17); }
 }
 function drawPortal(g, p, st, frame) {   // a doorway or a station sign set into the wall
   const x = p.c * 16, y = p.r * 16;
-  if (!p.mode) { floorTile(g, st, p.c, p.r, x, y, frame); rect(g, x + 2, y + 4, 12, 10, OUTDOOR[st] ? "#4a4030" : "#5a2a2a"); g.fillStyle = "#efe7f0"; g.font = "8px monospace"; g.fillText("▼", x + 4, y + 13); return; }
+  if (!p.mode) { floorTile(g, st, p.c, p.r, x, y, frame); rect(g, x + 2, y + 4, 12, 10, OUTDOOR[st] ? "#4a4030" : "#5a2a2a"); ptext(g, "▼", x + 5, y + 6, "#efe7f0"); return; }
   const m = MODES.find(q => q.id === p.mode), col = m ? m.c : "#efe7f0";
   rect(g, x, y, 16, 16, "#0a0810"); rect(g, x + 2, y + 2, 12, 12, col + "55"); rect(g, x + 3, y + 3, 10, 10, "#0d0a14");
-  g.fillStyle = col; g.font = "bold 9px monospace"; g.fillText(STATION_ICON[p.mode], x + 5, y + 12);
+  ptext(g, STATION_ICON[p.mode], x + 5, y + 3, col, 2, null);
   if (frame % 4 < 2) { g.fillStyle = col; g.fillRect(x + 7, p.r === 8 ? y - 2 : y + 14, 2, 2); }
 }
 function drawGrid(g, st, frame) {
@@ -1410,7 +1425,7 @@ function drawInterior(cv, node) {
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.lineWidth = 1; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
   const west = ["fogbelt","baths","baker","park","forest","presidio","span","mountain"].includes(node.id) ? .9 : .35;
   for (let y = 0; y < 144; y += 3) for (let x = (y / 3) % 2 ? 1 : 0; x < 256; x += 3) { const v = Math.sin(x * .03 + frame * .15 + y * .02) + Math.cos(y * .05 - frame * .1); if (v * west > 1) P2(g, x, y, "#b9b4c433"); }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText(node.n.toUpperCase()); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  const [t, c] = barText(node.n.toUpperCase()); pbar(g, t, c);
   drawFade(g);
 }
 function drawHouse(cv) {
@@ -1424,7 +1439,7 @@ function drawHouse(cv) {
   drawSpark(g);
   if (nx) marker(g, (nx.who ? nx.c : nx.furn[0][0]) * 16, (nx.who ? nx.r : nx.furn[0][1]) * 16, "#f29b3a", false, frame, true);
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText("VILLA DELIRIUM"); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  const [t, c] = barText("VILLA DELIRIUM"); pbar(g, t, c);
   drawFade(g);
 }
 
@@ -1502,7 +1517,7 @@ function fieldTile(g, ch, c, r, frame, map) {
     case "=": R(0, 0, 16, 16, "#5a5260"); R(0, 7, 16, 1, "#3a3442"); R(0, 15, 16, 1, "#3a3442"); break;
     case "s": R(0, 0, 16, 16, "#bfa871"); if ((c * 3 + r * 5) % 4 === 0) P2(g, x + 6, y + 6, "#a08a58"); break;
     case "h": R(0, 0, 16, 16, "#1fa89d"); if (map && map[r - 1] && map[r - 1][c] !== "h") R(0, 0, 16, 2, "#5a5260"); if (map && map[r + 1] && map[r + 1][c] !== "h") R(0, 14, 16, 2, "#5a5260"); if (map && map[r][c - 1] !== "h") R(0, 0, 2, 16, "#5a5260"); if (map && map[r][c + 1] !== "h") R(14, 0, 2, 16, "#5a5260"); R(4, 5 + frame % 2, 5, 1, "#b8fff8"); for (let i = 0; i < 3; i++) P2(g, x + 3 + i * 4, y + ((frame * 2 + i * 5) % 12), "#e8f4ff88"); break;
-    case "D": R(0, 0, 16, 16, S.field === "cabin" ? "#3a2414" : "#5a4632"); R(2, 2, 12, 12, "#1a1208"); g.fillStyle = "#efe7f0"; g.font = "8px monospace"; g.fillText(r === 0 ? "▲" : "▼", x + 4, y + 12); break;
+    case "D": R(0, 0, 16, 16, S.field === "cabin" ? "#3a2414" : "#5a4632"); R(2, 2, 12, 12, "#1a1208"); ptext(g, r === 0 ? "▲" : "▼", x + 5, y + 6, "#efe7f0"); break;
   }
 }
 function drawField(cv, id) {
@@ -1516,7 +1531,7 @@ function drawField(cv, id) {
   if (id !== "cabin") { g.fillStyle = "#0a1230"; g.globalAlpha = .28; g.fillRect(0, 0, 256, 144); g.globalAlpha = 1; }   // night
   for (let y = 0; y < 144; y += 3) for (let x = (y / 3) % 2 ? 1 : 0; x < 256; x += 3) { const v = Math.sin(x * .03 + frame * .15 + y * .02) + Math.cos(y * .05 - frame * .1); if (v * (id === "cabin" ? .2 : .8) > 1) P2(g, x, y, "#b9b4c444"); }
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.lineWidth = 1; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); const [t, c] = barText(F.name.toUpperCase()); g.fillStyle = c; g.font = "8px monospace"; g.fillText(t.slice(0, 56), 3, 8);
+  const [t, c] = barText(F.name.toUpperCase()); pbar(g, t, c);
   drawFade(g);
   const hint = document.getElementById("tuthint"), h = tutHint(); if (hint && hint.textContent !== h) hint.textContent = h;
 }
@@ -1548,15 +1563,15 @@ function drawIntro(cv, i) {
     for (let k = 0; k < 4; k++) { rect(g, 20 + k * 14, 50, 10, 54, "#4a5a6a"); rect(g, 22 + k * 14, 46, 6, 4, "#8d8496"); rect(g, 20 + k * 14, 70, 10, 2, "#3fe3d4"); }
     rect(g, 140, 30, 80, 52, "#0a0810"); rect(g, 144, 34, 72, 40, "#06140c"); g.strokeStyle = "#a6e23f"; g.lineWidth = 1; g.beginPath();
     for (let x = 0; x < 72; x++) { const flat = (x + Math.floor(t * 30)) % 72 > 30; g.lineTo(144 + x, 56 + (flat ? 0 : Math.round(Math.sin(x * 1.3) * (x % 9 === 0 ? 10 : 2)))); } g.stroke();
-    g.fillStyle = f % 4 < 2 ? "#d32f3f" : "#5a1a1a"; g.font = "8px monospace"; g.fillText("ROTHSCHILD INDEX 0.00", 146, 44); g.fillStyle = "#a6e23f"; g.fillText("04:00", 146, 72);
+    ptext(g, "ROTHSCHILD INDEX 0.00", 146, 38, f % 4 < 2 ? "#d32f3f" : "#5a1a1a", 1, null); ptext(g, "04:00", 146, 66, "#a6e23f", 1, null);
     rect(g, 92, 112, 34, 8, "#e8e4dc"); rect(g, 86, 111, 9, 9, "#f6cfae"); P2(g, 88, 114, "#d32f3f"); P2(g, 91, 114, "#e8f4ff"); rect(g, 126, 113, 10, 4, "#1c1824");
     rect(g, 140, 116, 6, 3, "#9fc6e055"); rect(g, 142, 114, 3, 3, "#f7a6c2");
   } else if (i === 1) {   // the notebook
     rect(g, 0, 0, 256, 144, "#1a1410"); rect(g, 40, 12, 176, 124, "#efe7d0"); rect(g, 126, 12, 4, 124, "#c8bfa8");
     for (let y = 26; y < 132; y += 8) { rect(g, 46, y, 76, 1, "#b8c8e0"); rect(g, 134, y, 76, 1, "#b8c8e0"); }
-    g.fillStyle = "#3a3442"; g.font = "7px monospace"; ["xenon 0.6 MAC  04:00", "index 0.31 -> 0.12", "index 0.04", "index 0.00", "index 0.00", "index 0.00", "index 0.00"].forEach((s, k) => g.fillText(s, 48, 32 + k * 8));
+    ["XENON 0.6 MAC 04:00", "INDEX 0.31 → 0.12", "INDEX 0.04", "INDEX 0.00", "INDEX 0.00", "INDEX 0.00", "INDEX 0.00"].forEach((s, k) => ptext(g, s, 48, 27 + k * 8, "#3a3442", 1, null));
     const msg = "WENT TO HELL.", msg2 = "IT ROTS.", n = Math.min(msg.length + msg2.length, Math.floor((performance.now() % 6000) / 140));
-    g.fillStyle = "#c0392b"; g.font = "bold 10px monospace"; g.fillText(msg.slice(0, n), 138, 64); g.fillText(msg2.slice(0, Math.max(0, n - msg.length)), 150, 84);
+    ptext(g, msg.slice(0, n), 136, 52, "#c0392b", 2, null); ptext(g, msg2.slice(0, Math.max(0, n - msg.length)), 148, 72, "#c0392b", 2, null);
     rect(g, 196, 96, 3, 30, "#c0392b"); rect(g, 196, 126, 3, 3, "#3a2a2a");
   } else if (i === 2) {   // the mountain: a shack, a lit window, a man with a jar on the trail
     ["#0d0a14","#110d1c","#151124"].forEach((c, k) => rect(g, 0, k * 24, 256, 24, c)); for (let k = 0; k < 30; k++) P2(g, (k * 53) % 256, (k * 29) % 60, "#e8f4ff");
@@ -1571,9 +1586,9 @@ function drawIntro(cv, i) {
     g.fillStyle = "#2a2430"; g.beginPath(); g.moveTo(0, 144); g.lineTo(0, 60); g.lineTo(40, 70); g.lineTo(70, 100); g.lineTo(256, 112); g.lineTo(256, 144); g.fill();
     for (const [x, y] of [[90, 110], [130, 114], [170, 112]]) { rect(g, x, y, 24, 8, "#1fa89d"); for (let k = 0; k < 3; k++) P2(g, x + 4 + k * 8, y - 3 - ((f + k * 3) % 8), "#e8f4ff88"); }
     for (let k = 0; k < 7; k++) { const p = (t * .15 + k / 7) % 1; P2(g, Math.round(18 + p * 52), Math.round(62 + p * 40), (f + k) % 2 ? "#3fe3d4" : "#b8fff8"); }
-    g.fillStyle = "#b9b4c4"; g.font = "8px monospace"; g.fillText("25 DEC 2049 · STEEP RAVINE · TIDE −1.9 FT", 8, 138);
+    ptext(g, "25 DEC 2049 · STEEP RAVINE · TIDE −1.9 FT", 8, 135, "#b9b4c4");
   }
-  rect(g, 0, 0, 256, 11, "#0d0a14dd"); g.fillStyle = "#8d8496"; g.font = "8px monospace"; g.fillText(["BERKELEY, 2044", "THE LAB NOTEBOOK", "MOUNT TAMALPAIS, 2044–2049", "CHRISTMAS NIGHT, 2049"][i], 3, 8);
+  pbar(g, ["BERKELEY, 2044", "THE LAB NOTEBOOK", "MOUNT TAMALPAIS, 2044–2049", "CHRISTMAS NIGHT, 2049"][i], "#b9b4c4");
 }
 function scrIntro() {
   const i = S.introI || 0, last = i >= INTRO.length - 1;
