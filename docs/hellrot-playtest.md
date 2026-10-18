@@ -409,6 +409,31 @@ The bot now picks random party line-ups at home. It played 7 whole weeks
 (endings 14, 13, 16, 14, 14, 4, 15) with no errors. It tried 15 different
 line-ups and used 8 different pair approaches and 3 history options.
 
+### Santarchy, the fight tutorial
+
+The first fight is now the storming of the Geary Cathedral: five lessons
+against drunk Santas (design §3.7). A test played the whole tutorial on Hard
+by always pressing the button the guide window highlights, as a new player
+would. Each lesson showed what it teaches:
+
+| Lesson | What the guide said, in order |
+|---|---|
+| 1. Attack | Pick ATTACK; pick the Santa |
+| 2. Skills | Open SKILL; INVECTIVE is noise, carolers are weak to it; watch for WEAK POINT |
+| 3. Defend, items | Hit him while he isn't winding up; he's winding up (ATK▲), DEFEND now |
+| 4. The party | The elf steals cash, hit him first; Fax's COVER LINE hits all; Junie's BODY CHECK |
+| 5. Boss, status | Junie is asleep, use an Antacid on her; then AUTO |
+
+The party came out at levels 4, 4 and 4 with $135 and the first gear (a
+rolled newspaper). There were no errors. The first tuning pass ended
+lesson 3 before the Santa wound up, and lesson 5 before Silent Night
+mattered. Now the Candy-Cane Santa winds up before every swing, and the
+Santarchist is fast enough to sing first. A forced loss restarts the
+lesson with the party healed, with no blackout. Skip goes straight to the
+van. The bots played 7 whole weeks through the new Prologue (some took the
+lessons, some skipped them): endings 15, 13, 15, 6, 14, 13 and 15, with no
+errors.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
