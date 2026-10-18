@@ -3206,6 +3206,168 @@ other, and slowly become the funniest pairing in the cast.
   The Gelastic does nothing: she spliced out the laughter reflex years ago.
   It is the creepiest line in the game.
 
+### 5.5b Fights: the party battle system (the *Final Fantasy* model)
+
+Arguments stay in the showdown (§5.5). Fists, drones and hounds go to a
+party battle in the style of the NES and SNES *Final Fantasy* games. The
+wireframe has the full system. The rules are one small engine that the game
+and the stress test share.
+
+**The party.** Hell Rot always fights. He brings up to two housemates from
+the Garage. The first one is the lead and gives their story bonus, as
+before. All nine housemates can fight: Hell Rot, Junie, Yara, Fax, Otto,
+Bishop Null, Pru, Mary and Saint Nobody. Housemates who stay home get half
+the XP, and they never fall more than one level behind Hell Rot. In the
+Prologue, Hell Rot fights alone.
+
+**A turn.** Each round, everyone acts in speed order. On a party member's
+turn the blue window shows six commands:
+
+| Command | What it does |
+|---|---|
+| **Attack** | A physical hit on one enemy. |
+| **Skill** | Spend SP on a class skill (table below). |
+| **Item** | Use something from the bag. |
+| **Defend** | Take half damage until your next turn, and get back 8% SP. |
+| **Run** | Try to get away. Faster parties get away more often. Not in story or boss fights. |
+| **Moreau** | Once per Issue: he regrows the whole party to full HP. |
+| **Auto** | The party fights by itself until you stop it. |
+
+**Damage.** Attacks use ATK against DEF. Skills use MAG against RES. Each
+skill has a tag: *phys, truth, chem, noise* or *spirit*. Each enemy is weak
+to some tags (×1.5) and resists others (×0.5). Luck gives critical hits
+(×1.6). Status effects are poison, sleep, stun, blind, silence and
+confusion. A boss shrugs off a status or a debuff about half the time.
+
+**Nobody dies.** Enemies *stand down*: they sit, put their hands up, or
+walk off. Party members who drop are *out cold* and get up with 1 HP after
+a won fight. The sensitivity rules (item 10 of the city-and-cults doc) still apply.
+No failed splice is ever an enemy.
+
+**The classes and their skills.** Each class learns new skills at set
+levels (up to level 20).
+
+| Housemate | Class | Skills (level learned) |
+|---|---|---|
+| Hell Rot | Gonzo | Invective (1), Parrhesia (1), The Gelastic (3), Peer Review (5), Blood Eye (8), Jeremiad (12), Pale Eye (16) |
+| Junie | Driver | Body Check (1), Cover (2), Crucifix (5), Van Ram (9), Punk Volume (14) |
+| Yara | Fact-checker | Fact Check (1), Error Bars (3), Correction (6), Footnote Storm (10), Retraction (15) |
+| Fax | Art director | Cover Line (1), Jam Halos (3), Collage (6), Halftone (10), Double Spread (15) |
+| Otto | Chemist | Reagent (1), Antidote (3), Molotov Mix (6), Booster (10), Panacea (14) |
+| Bishop Null | Prophet | Benediction (1), Prophecy (2), Sermon (5), Last Rites (9), Raise the Dead (14) |
+| Pru | Analyst | Audit (steal, 1), Short Sell (3), Margin Call (6), Hostile Takeover (10), Liquidate (14) |
+| Mary | Archivist | Archive (scan, 1), Long Memory (3), Precedent (6), Recall (10), The Long View (14) |
+| Saint Nobody | Trickster | Prank (1), Costume Change (3), Discord (6), Pie (10), Erisian Apple (14) |
+
+Three of Hell Rot's skills touch the story. Invective gives Venom +1,
+Parrhesia gives Vow +1 and Jeremiad gives worship +1 to the cult that is
+watching. Each one counts once per fight, so a player cannot farm the
+meters.
+
+**The enemies.** There are 31 regular enemies and 4 bosses. Each place has
+an encounter table for its faction.
+
+| Table | Where | Enemies |
+|---|---|---|
+| Mountain | The trail and the cliff stairs (Prologue), the Mountain | Raccoon, Coyote, Fog Wisp, Delivery Drone |
+| Street | City streets, markets, parks | Heckler, Nitrous Cloud, Pigeon Swarm, Rat King, Pickpocket |
+| Church | Church of the Twin places | Church Usher, Halo Drone, Choir Bot, Merged Citizen, The Gold Lady |
+| Theogen | Theogen places and the salon | Splice-runner, Glow Hound, Cyan Leech, Spore Bloom, Cask's Enforcer |
+| Order | Auric Order places (from Issue 2) | A Gilder, Clockwork Butler, Vault Sentry, Keeper Acolyte |
+| Machine | Sunday's machine (from Issue 2) | Sunday's Beat Cop, Riot Drone, Campaign Canvasser, Lifeboat Rig |
+| Fog | Piers, beaches, the ferry | Fog Wisp, Union Sea Lion, Static Gull, Fog Hound |
+
+The bosses are **Sister Halcyon** (with an usher), **Brother Cask** (with an
+enforcer), **Old Dee and the Circle** (with two Merged Citizens) and
+**Mayor Sunday** (with a cop and a riot drone). Halcyon is the boss fight at
+the Dome in Issue 2. Old Dee is the boss fight at the Tomales Ward from
+Issue 4. If Hell Rot goes to a boss alone, Junie comes along anyway.
+
+**Encounters.** Random fights start while you walk, as in the old games.
+Each step on the trail and the cliff stairs has a 1 in 22 chance. Each step
+inside a location has a 1 in 26 chance. Difficulty changes the rate. After a
+fight, the next one cannot start for 8 steps. Villa Delirium, the North
+Beach meeting and the Lantern shelter are safe. The first fight is a
+scripted raccoon on the trail, which teaches the commands. Enemy level
+comes from the Issue: 1, 3, 6, 9, 12, 15 and 17 for the Prologue and
+Issues 1 to 6. The red *Fight* hotspots are now story fights with a party
+battle. You cannot run from them. A **Look for trouble** button in every
+unsafe location starts a random fight, so a player who uses only the
+buttons can still earn XP.
+
+Enemies come at the Issue's level, but never too far above the party.
+Story and boss fights are at most one level above the party's average.
+Random fights are at most two levels above it.
+
+**Levels and XP.** XP to the next level is 12 × level^1.3 + 6. A fight gives
+more XP for higher-level enemies. Party members below the enemy level get
++25% per level of difference. That way a new housemate catches up fast. A
+level-up refills that member's HP and SP. In the stress test the party needs
+about 5 to 8 fights per Issue to keep pace.
+
+**Losing.** A lost story or boss fight is a blackout (§4.4): Memory is
+lost and you wake at Villa Delirium. A lost random fight is lighter. Junie
+drives you home, one hour passes, and your Memory gets home safe into
+the Notebook. In the Prologue
+you wake on the trail and try again. A party that falls more than one level
+behind the Issue meets story enemies one at a time.
+
+**HP between fights.** HP and SP carry over from one fight to the next.
+Going home, sleeping or napping restores the whole house. A Rest hotspot
+restores half. Items from the bag work outside fights too.
+
+**The bag and the shops.** Consumables: Ghost Diner coffee, a bodega burrito,
+Lantern soup, smelling salts (revive), nicotine gum and Otto's tonic (SP),
+antacid (cure), glow sticks (damage to all enemies) and fog in a bottle
+(escape). Otto sells them in the Kitchen Lab. Mary sells gear in the
+Archive. Enemies drop items, and Pru's Audit can steal them. Ink pays for
+everything.
+
+**Gear.** Each member has three slots: a weapon, armour and a charm. Gear
+adds to stats. Some gear does more:
+
+| Gear | Effect |
+|---|---|
+| Rolled newspaper, steel umbrella, brass knuckles | ATK +3, +5 (and DEF +2), +9 |
+| Tire iron (Junie only) | ATK +12 |
+| Gelastic Mk II (Hell Rot only) | MAG +10 |
+| Red pencil, halo shard, cyan syringe, tuning fork | MAG +6 to +8, some with LUK or SPD |
+| Lab coat, leather jacket, derby pads, Lantern habit, Gilder waistcoat, Kevlar hoodie | DEF +3 to +14, RES up to +10 |
+| Lucky penny, fog charm, rivet cufflinks | LUK +8, SPD +4, DEF and RES +5 |
+| Mood ring | Resist status half the time |
+| Press pass | RES +6, +25% Ink after fights |
+| Shulgin notebook (Hell Rot only, his start charm) | MAG +2, +15% XP |
+| Axolotl charm | Get back up once per fight at 25% HP |
+
+The Party tab shows every member's level, XP, stats with the gear bonus in
+green, the three gear slots, and the skills still to learn.
+
+**Difficulty.** The player picks it once, on the creation screen, for the
+whole week. It changes how the enemy *thinks* as well as how strong it is.
+
+| | Easy | Normal | Hard |
+|---|---|---|---|
+| Enemy damage | ×0.95 | ×1.2 | ×1.35 |
+| Enemy DEF and RES | ×0.82 | ×1 | ×1.15 |
+| Enemy HP | ×0.85 | ×1 | ×1.25 |
+| Skill use | 30% of turns | 50% | 70% |
+| Targets | at random | the weakest, half the time | anyone it can drop this turn, then healers, then the weakest |
+| Tactics | none | heals hurt allies, opens with buffs, hits groups | all of Normal, every time, and it strips your buffs |
+| Random fights | ×0.6 | ×1 | ×1.35 |
+| XP | ×1 | ×1 | ×1.2 |
+
+**Balance targets and results.** The stress test (playtest report §6c)
+played 266,652 battles. With a full party of three at the right level, the
+auto-battle player wins:
+
+| | Easy | Normal | Hard |
+|---|---|---|---|
+| A random fight | 100% | 99.9% | 97.5% |
+| Five random fights in a row, no rest | 100% | 93% | 45% |
+| A boss | 99.9% | 97% | 51% |
+
+A smaller party has a harder time. That is the cost of going alone.
+
 ### 5.6 Time and pressure: Hours, Runs, press time, the Duchess
 
 - **Hours (per night).** Each night runs from dusk (about 5 p.m.) to press
@@ -3470,6 +3632,7 @@ Hell Rot's last column from whoever is left.
 | **The Eyes** | Not equipment — powers. The **blood eye** (truth) and the **pale eye** (foresight), each with a pure and a corrupt upgrade path (§5.14a). |
 | **Chemicals** | Consumables bought from the Conductor or made in the lab: skill boosts, extra Hours, visions. Each costs Clarity. |
 | **Moreau** | Once per Issue, a free success on any failed check. He grows one size every Issue. |
+| **Battle gear** | Weapons, armour and charms for the party battle system. See §5.5b. |
 
 ### 5.14a The Eyes: truth sight and foresight (powers)
 

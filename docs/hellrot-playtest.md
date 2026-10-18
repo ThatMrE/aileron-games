@@ -260,6 +260,93 @@ by the ▼ exit, rode to North Beach and played the story by clicking it.
 On an emulated phone the D-pad moved Hell Rot and the page did not scroll
 sideways.
 
+## 6c. Party battles: the stress test
+
+The wireframe now has party battles in the *Final Fantasy* style (design
+§5.5b). The battle rules are one engine. The game and a headless test both
+run it. The test played every combination below and checked each step for
+errors.
+
+| What varies | Values |
+|---|---|
+| Party | Hell Rot alone, Hell Rot and one housemate (8), Hell Rot and two (28): 37 parties |
+| Enemies | All 37 encounter groups at every Issue they appear in, each of the 31 enemies alone, and all 4 bosses with and without Moreau |
+| Difficulty | Easy, Normal, Hard |
+| Gear | None, and the gear a player can own by that Issue |
+| Player | An auto-battle player that plays well, and a "chaos" player that picks any legal command and any legal target |
+
+It played **266,652 battles** and about 2.9 million actions. After each
+action the test checked that HP and SP stay between 0 and the maximum, that
+no number is NaN, that a unit is out exactly when its HP is 0, that no item
+count goes below 0, and that no battle runs past 600 actions.
+
+To run it again: `node .github/sim/godsplice-battle-sim.js "" 4 all`. It
+reads the battle engine straight out of `godsplice.html`, so it tests the
+code the site serves.
+
+**Result: 0 errors, 0 stalemates.** The chaos player used every one of the
+66 skills and all 9 consumables.
+
+### What the test found and fixed
+
+| Problem | Fix |
+|---|---|
+| A confused Pru used Audit on a friend, and the steal code crashed | Audit steals only from the other side |
+| Regular fights ended in 1.3 rounds, so difficulty did not matter | Enemy HP ×2; each difficulty now sets enemy damage. Fights now take 2 to 4 rounds |
+| Fog Hound, Fog Wisp and Static Gull together won 79% of fights on Hard | The group is now Fog Hound and Static Gull |
+| Sister Halcyon and Old Dee won 85–90% on Hard; Brother Cask won 25% | A separate HP scale per boss; Halcyon and Old Dee have less MAG |
+| Hell Rot alone met bosses built for three | Enemies scale with party size; a boss sees Hell Rot alone and Junie comes too |
+| It took 13 to 19 fights to keep pace each Issue | A flatter XP curve: now 5 to 8 fights per Issue |
+
+### Final balance (auto-battle player, party of three)
+
+| Win rate | Easy | Normal | Hard |
+|---|---|---|---|
+| One random fight | 100% | 99.9% | 97.5% |
+| Five random fights in a row, no rest | 100% | 92.7% | 44.7% |
+| A boss | 99.9% | 96.7% | 50.5% |
+| A boss, Moreau ready | 97.8%* | 92.0%* | 52.7%* |
+
+\* All party sizes together. With smaller parties the numbers drop. On
+Normal, a party of two wins 74% of boss fights and Hell Rot alone wins 22%.
+
+The hardest regular group on Hard is the Fog Hound with a Static Gull (76%).
+The hardest boss on Hard is Old Dee and the Circle (22%, or 26% with
+Moreau). Mayor Sunday is the longest fight: 26 rounds on Hard.
+
+### The bot plays whole weeks with fights
+
+The browser bot now fights too. It played whole weeks on the last builds
+with three styles, on all three difficulties:
+
+| Style | Weeks | Endings | Fights won | Level at the end |
+|---|---|---|---|---|
+| Mixed: Auto half the time, and "Look for trouble" 12% of the time | 9 | 14, 13, 13, 13, 15, 13, 14, 13, 13 | Every story and boss fight on Easy and Normal; 9 of 13 story fights on one Hard week | 13 to 20 |
+| Manual: random commands and targets, every turn | 4 | 14, 4, 4, 13 | 36 of 47 story and boss fights | 5 to 10 |
+| Grinder: looks for trouble 35% of the time | 3 | 15, 13, 16 | 173 of 175 | 20 (the cap) |
+
+There were no errors and no time leaks. The bots found three problems on
+the way, and all three are fixed:
+
+1. **A player who never walks got no XP.** Random fights start only when
+   you walk, so a player who used only the buttons stayed at level 2 and
+   lost most story fights. Now every location has a **Look for trouble**
+   button. Story fights are at most one level above the party, and a party
+   that falls behind meets story enemies one at a time.
+2. **The NEXT button could leave the midnight screen.** On Issue 6, a click
+   on NEXT took Hell Rot away from the finale, and the week never ended.
+   NEXT is now hidden during the finale and during fights. Midnight on
+   Issue 6 now always brings back the finale.
+3. **A lost street fight was too harsh, then too sticky.** It first cost a
+   full blackout. Now Junie drives you home and one hour passes. The first
+   version of that left your Memory unfiled, so the "get home safe" step
+   never cleared. Now your Memory goes into the Notebook when you get home.
+
+A scripted test also walked the Prologue: the raccoon fight on the trail,
+the cliff stairs and the springs. It covered the Garage party picker, both
+shops, the gear menus, items used outside a fight, all four bosses, and a
+phone screen 390 px wide with no sideways scroll.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
