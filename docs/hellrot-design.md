@@ -3378,6 +3378,23 @@ turn the blue window shows six commands:
 | **Moreau** | Once per Issue: he regrows the whole party to full HP. |
 | **Auto** | The party fights by itself until you stop it. |
 
+**The battle screen.** The party stands on the left and faces right. The
+enemies stand on the right and face left. The party window is under the
+party, and the command window is under the enemies.
+
+**Hotkeys.** Press **?** in the game to see the list.
+
+| Where | Key | What it does |
+|---|---|---|
+| Anywhere | H, M, P, B, C, K | Villa Delirium, City map, Party, Notebook, Cast, Key |
+| Anywhere | N | The next step on the plan |
+| Menus | 1–9 | A choice on the screen, then a ride, then a room |
+| Fights | 1–9 | A command |
+| Fights | Enter or Space | The highlighted command, or Continue |
+| Fights | ↑ ↓ or W S | Move between commands |
+| Fights | Esc or X | Back |
+| Fights | Q | Auto on or off |
+
 **Damage.** Attacks use ATK against DEF. Skills use MAG against RES. Each
 skill has a tag: *phys, truth, chem, noise* or *spirit*. Each enemy is weak
 to some tags (×1.5) and resists others (×0.5). Luck gives critical hits
