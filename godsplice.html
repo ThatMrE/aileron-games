@@ -152,6 +152,48 @@ button { font: inherit; color: inherit; }
 .big { width: 128px; height: 128px; image-rendering: pixelated; border: 2px solid var(--line); background: #000; }
 .hp { height: 10px; background: var(--line); width: 100%; margin-top: 4px; }
 .hp i { display: block; height: 100%; background: var(--c, var(--blood)); }
+/* Battles: Final Fantasy blue windows under the 8-bit fight */
+.battle .scene-art { aspect-ratio: 256 / 144; }
+#btwin { display: grid; gap: 8px; padding: 10px 14px 14px; }
+.ffwin { background: linear-gradient(#22308f, #0c1452); border: 2px solid #e8f4ff; border-radius: 4px; box-shadow: inset 0 0 0 2px #0c1452, 0 0 0 2px #0d0a10; padding: 8px 10px; color: #efe7f0; min-width: 0; }
+.ffmsg { min-height: 2.6em; }
+.ffrow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 8px; align-items: start; }
+@media (max-width: 640px) { .ffrow { grid-template-columns: 1fr; } }
+.ffhead { font-family: var(--display); font-size: 8px; line-height: 1.6; color: #fff3aa; margin-bottom: 4px; }
+.ffwin p { margin: 2px 0; }
+.ffbtn { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 10px; width: 100%; text-align: left; background: transparent; border: 0; padding: 4px 6px 4px 22px; cursor: pointer; position: relative; color: #efe7f0; }
+.ffbtn em { font-style: normal; color: #b8c4ff; font-size: 17px; }
+.ffbtn b { color: #b8c4ff; font-weight: normal; }
+.ffbtn:hover, .ffbtn:focus-visible { background: #ffffff18; outline: none; }
+.ffbtn:hover::before, .ffbtn:focus-visible::before { content: "▶"; position: absolute; left: 6px; color: #fff3aa; }
+.ffbtn:disabled { color: #6a72b0; cursor: not-allowed; }
+.ffbtn:disabled em, .ffbtn:disabled b { color: #565c94; }
+.ffrowline { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.hp.sm { height: 6px; width: 70px; margin: 0; display: inline-block; vertical-align: middle; }
+.prow { display: grid; grid-template-columns: minmax(0, 1fr) auto 70px auto; gap: 2px 8px; align-items: center; padding: 2px 4px; }
+.prow.on { background: #ffffff14; }
+.prow.ko { color: #8d8496; }
+.prow .pn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.prow .sp { color: #b8c4ff; }
+.prow .pst { grid-column: 1 / -1; font-size: 16px; }
+.prow .pst:empty { display: none; }
+/* The Party screen */
+.party .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 10px; margin: 10px 0 14px; }
+.pcard { display: flex; gap: 12px; background: var(--panel-2); border: 2px solid var(--line); padding: 10px; min-width: 0; }
+.pcard .big { width: 72px; height: 72px; flex: none; }
+.pcard .pmain { flex: 1; min-width: 0; }
+.pcard h2 { margin: 2px 0; }
+.pcard .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 8px; margin: 6px 0; font-size: 18px; }
+.pcard .stats b { font-family: var(--display); font-size: 8px; color: var(--grey); font-weight: normal; }
+.pcard .stats i { font-style: normal; } .pcard .stats i.up { color: var(--acid); } .pcard .stats i.dn { color: var(--blood); }
+.pcard .slots { display: grid; gap: 4px; margin: 6px 0; }
+.pcard .slot { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 6px; align-items: center; font-size: 18px; color: var(--grey); }
+.pcard select { font: inherit; font-size: 17px; background: var(--night); color: var(--text); border: 2px solid var(--line); padding: 2px 4px; min-width: 0; width: 100%; }
+.pcard .skills { list-style: none; margin: 4px 0 0; padding: 0; font-size: 18px; }
+.pcard .skills li.locked { color: #6a6270; }
+.bagitem { cursor: default; }
+.mini { font: inherit; font-size: 17px; padding: 1px 8px; background: var(--panel); border: 2px solid var(--line); cursor: pointer; color: var(--text); }
+.mini:hover, .mini:focus-visible { border-color: var(--acid); }
 .modes { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; padding: 0 14px 14px; }
 
 /* layout / spread */
@@ -258,7 +300,6 @@ body.booting .grid { grid-template-columns: minmax(0, 1fr); }
 </style>
 </head>
 <body>
-
 
 <div id="toasts" aria-live="polite"></div>
 <a class="homelink" href="/">◂ AILERON GAMES</a>
@@ -724,9 +765,9 @@ function hud() {
     </div>`;
 }
 function tabs() {
-  const busy = ["scene","showdown","prologue","title","intro","field","layout","morning","lock","final","ending"].includes(S.screen);
-  const t = [["house","Villa Delirium", S.at === "house" && !busy], ["map","City map", !busy], ["notebook","Notebook", S.screen !== "title"], ["cast","Cast", true], ["key","Key", true]];
-  $("tabs").innerHTML = t.map(([id, n, ok]) => `<button class="tab" data-act="go" data-arg="${id}" ${S.screen === id ? 'aria-current="page"' : ""} ${ok ? "" : "disabled"}>${n.toUpperCase()}</button>`).join("") + `<button class="tab" data-act="restart">NEW GAME</button>`;
+  const busy = ["scene","showdown","prologue","title","intro","field","layout","morning","lock","final","ending","battle"].includes(S.screen) || S.issue < 1, fight = S.screen === "battle";
+  const t = [["house","Villa Delirium", S.at === "house" && !busy], ["map","City map", !busy], ["party","Party", !fight && !["title","intro"].includes(S.screen)], ["notebook","Notebook", S.screen !== "title" && !fight], ["cast","Cast", !fight], ["key","Key", !fight]];
+  $("tabs").innerHTML = t.map(([id, n, ok]) => `<button class="tab" data-act="go" data-arg="${id}" ${S.screen === id ? 'aria-current="page"' : ""} ${ok ? "" : "disabled"}>${n.toUpperCase()}</button>`).join("") + `<button class="tab" data-act="restart" ${S.screen === "battle" ? "disabled" : ""}>NEW GAME</button>`;
 }
 function side() {
   if (S.screen === "title") { $("side").innerHTML = `<div class="frame pad"><div class="eyebrow">HOW TO PLAY</div><p class="note">Each Issue is one night, 5 p.m. to the 6 a.m. press run. Only travel between locations costs time. Inside a location the clock stops: click people and things, win arguments, write down what you learn, come home, and file a column. After Issue 3 the City decides which god you belong to. Issue 6 is New Year's Eve.</p></div>`; return; }
@@ -825,6 +866,8 @@ function scrTitle() {
     <div class="eyebrow">YOUR MIND: FOUR LOBES · ${spent}/12 POINTS (MIN 1, MAX 5)</div>
     <div class="lobes">${Object.keys(LOBES).map(L => `<div class="lobe"><div class="row" style="justify-content:space-between"><span class="h2" style="font-size:12px">${L}</span><span class="row"><button data-act="lobe" data-arg="${L}:-1" aria-label="Lower ${L}">−</button><b style="font-size:24px;min-width:18px;text-align:center">${S.lobes[L]}</b><button data-act="lobe" data-arg="${L}:1" aria-label="Raise ${L}">+</button></span></div><span class="note">${LOBES[L].join(" · ")}</span></div>`).join("")}</div>
     <p class="note">Your Temperament is set later, by what you save from the fire.</p>
+    <div class="eyebrow">DIFFICULTY · HOW THE OTHER SIDE FIGHTS (SET ONCE, FOR THE WHOLE WEEK)</div>
+    <div class="choices" style="padding:0">${["easy","normal","hard"].map(k => `<button class="btn" style="--c:${({ easy: "#a6e23f", normal: "#f29b3a", hard: "#d32f3f" })[k]}" data-act="diff" data-arg="${k}" aria-pressed="${S.diff === k}"><span class="t">${S.diff === k ? "✓ " : ""}${BX.DIFF[k].n.toUpperCase()}</span><span class="d">${esc(BX.DIFF[k].d)}</span></button>`).join("")}</div>
     <div class="row"><button class="btn primary" data-act="begin" ${spent === 12 ? "" : "disabled"}><span class="t">BEGIN: CHRISTMAS NIGHT <em>${spent === 12 ? "" : "spend 12"}</em></span></button></div>
   </div>`;
 }
@@ -881,14 +924,14 @@ function roomPanel(r) {
     return head("duchess", "THE DUCHESS NYX") + `<div class="pad" style="padding-top:0"><p><b>Assignment:</b> ${esc(iss[2])}</p>${extra}
       ${S.issue >= 2 ? `<div class="choices" style="padding:0">${B("halos", "", S.halosOn ? "Halos on tonight" : "Wear the gold Halos tonight", S.halosOn ? `Wear ${S.wear}. +1 Clarity, City doors open. The Twin sees what you see.` : `Wear +1 (now ${S.wear}). +1 Clarity and Sainthood +1. The Twin sees what you see.`, S.halosOn || S.wear >= 4, "#f0bd3e")}</div>` : ""}</div>`;
   }
-  if (r === "garage") return head("junie", "THE GARAGE") + `<div class="choices">${Object.keys(COMPANIONS).map(k => B("comp", k, `${k === "none" ? "Nobody" : C[k].n}${S.comp === k ? " ✓" : ""}`, `${Object.entries(COMPANIONS[k].b).map(([s, n]) => `${s} +${n}`).join(", ") || "—"}. ${COMPANIONS[k].a}${S.trust[k] != null ? ` Trust ${S.trust[k]}.` : ""}`, false, k === "none" ? "" : FAC.house)).join("")}</div>`;
+  if (r === "garage") return head("junie", "THE GARAGE") + `<div class="pad" style="padding-top:0"><p class="note">Bring up to two housemates. Both fight beside you; the first also lends their story bonus. Housemates who stay home earn half XP. Tap someone already coming to make them the lead.</p>${S.party.length ? `<div class="row" style="gap:6px;flex-wrap:wrap">${S.party.map(k => `<button class="mini" data-act="unparty" data-arg="${k}">Leave ${esc(C[k].n)} at home</button>`).join("")}</div>` : ""}</div><div class="choices">${Object.keys(COMPANIONS).map(k => B("comp", k, `${k === "none" ? "Nobody" : C[k].n}${k === "none" ? (S.party.length ? "" : " ✓") : S.party.includes(k) ? (S.party[0] === k ? " ✓ (lead)" : " ✓") : ""}${k !== "none" && S.chars ? ` · Lv ${S.chars[k].lv}` : ""}`, `${Object.entries(COMPANIONS[k].b).map(([s, n]) => `${s} +${n}`).join(", ") || "—"}. ${COMPANIONS[k].a}${S.trust[k] != null ? ` Trust ${S.trust[k]}.` : ""}`, false, k === "none" ? "" : FAC.house)).join("")}</div>`;
   if (r === "desk") { const f = S.notebook.filter(i => i.kind === "frag").length; return head("yara", "THE FACT DESK") + `<div class="choices">${B("merge", "", "Merge two fragments into a Lead", `You have ${f} fragment${f === 1 ? "" : "s"}.`, f < 2 || left() < .5, "#3f8cf2")}</div>`; }
-  if (r === "lab") return head("otto", "THE KITCHEN LAB") + `<div class="choices">${["junie","yara","fax","otto","bishop","pru","mary"].map(k => B("gift", k, `A gift for ${C[k].n}`, `5 Ink. Trust +1 (now ${S.trust[k]}).`, left() < .5 || S.ink < 5 || S.flags["gift" + S.issue], "#ff8ba2")).join("")}</div><p class="note" style="padding:0 14px 12px">One gift per Issue.</p>`;
+  if (r === "lab") return head("otto", "THE KITCHEN LAB") + shopPanel("otto") + `<div class="pad" style="padding-top:0"><div class="eyebrow">GIFTS</div></div><div class="choices">${["junie","yara","fax","otto","bishop","pru","mary"].map(k => B("gift", k, `A gift for ${C[k].n}`, `5 Ink. Trust +1 (now ${S.trust[k]}).`, left() < .5 || S.ink < 5 || S.flags["gift" + S.issue], "#ff8ba2")).join("")}</div><p class="note" style="padding:0 14px 12px">One gift per Issue.</p>`;
   if (r === "archive") {
     const ups = [["wind","Second Wind","+2 maximum Clarity every Run",40],["steno","Steno","THE ROT can't swap a written-down item",40],["sk_PEER REVIEW","Peer Review training","PEER REVIEW +1",30],["sk_THE COLUMNIST","Column practice","THE COLUMNIST +1",30],["sk_BLOOD EYE","Cold Read","BLOOD EYE +1",30]];
     const cost = { pure: [1,1,2,2], corrupt: [1,1,1,1] };
     const eyeBtns = ["blood","pale"].map(e => { const [path, step] = S.eyes[e]; return ["pure","corrupt"].map(pth => { const can = (path === "" || path === pth) && step < 4; const c = can ? cost[pth][step] : 0; const names = { blood:{ pure:["Tell","Unmask","Under","Witness"], corrupt:["Fib","Glamour","Forgery","The Great Lie"] }, pale:{ pure:["The Good Path","Flash","Sure Feet","The Long Look"], corrupt:["Held Breath","Stopped Beat","Stillness","The Stopped Clock"] } }; return B("eye", `${e}:${pth}`, `${e === "blood" ? "Blood" : "Pale"} eye, ${pth}: ${can ? names[e][pth][step] : "—"}`, can ? `${c} Sight. Step ${step + 1} of 4.` : (path && path !== pth ? `This eye is ${path}.` : "Complete."), !can || S.sight < c, pth === "pure" ? "#e8f4ff" : "#d32f3f"); }).join(""); }).join("");
-    return head("mary", "THE ARCHIVE") + `<div class="pad" style="padding-top:0"><p class="note">Sight: <b>${S.sight}</b> (earned from Shulgin entries, blackouts survived and the Spin Question). Eyes: blood ${S.eyes.blood[0] || "—"} ${S.eyes.blood[1]}, pale ${S.eyes.pale[0] || "—"} ${S.eyes.pale[1]}. Mortal needs both pure, 5+ steps between them.</p></div><div class="choices">${ups.map(([k, n, d, c]) => B("up", k, `${n}${S.upgrades[k] ? " ✓" : ""}`, `${d}. ${c} Ink.`, S.upgrades[k] || S.ink < c, "#c48f52")).join("")}${eyeBtns}</div>`;
+    return head("mary", "THE ARCHIVE") + shopPanel("mary") + `<div class="pad" style="padding-top:0"><p class="note">Sight: <b>${S.sight}</b> (earned from Shulgin entries, blackouts survived and the Spin Question). Eyes: blood ${S.eyes.blood[0] || "—"} ${S.eyes.blood[1]}, pale ${S.eyes.pale[0] || "—"} ${S.eyes.pale[1]}. Mortal needs both pure, 5+ steps between them.</p></div><div class="choices">${ups.map(([k, n, d, c]) => B("up", k, `${n}${S.upgrades[k] ? " ✓" : ""}`, `${d}. ${c} Ink.`, S.upgrades[k] || S.ink < c, "#c48f52")).join("")}${eyeBtns}</div>`;
   }
   if (r === "conservatory") return head("moreau", "THE CONSERVATORY") + `<div class="pad" style="padding-top:0"><p>Moreau is size ${S.issue} of 4 (and counting). Once per Issue he grants a free success in a showdown. ${S.moreauUsed ? "Used this Issue." : "Ready."}</p><p class="note">A houseplant whispers: "${esc(pick(["The Twin can't see in here. The fog can't either.","Delphine's courier walked into the glass.","Yara reads your old papers at night.","Someone pays for this house. Not Rivet's bank."]))}"</p></div>`;
   if (r === "press") { const L = S.notebook.filter(i => i.kind === "lead").length; return head("fax", "THE PRESS") + `<div class="choices">${B("layout", "", S.filed ? "Column filed" : isNext("room", "press") ? "▶ NEXT · Lay out tonight's column" : "Lay out tonight's column", S.filed ? "Wait for the press." : `${L} Lead${L === 1 ? "" : "s"} written down. Three make a strong column.`, S.filed || L < 1, "#f29b3a")}</div>`; }
@@ -966,14 +1009,14 @@ function predictRoute() { const sa = S.saint, he = S.helix, cl = S.clar;
 const SPOT = {
   story:["Story","#f29b3a","The plot scene. Always a Lead."],
   talk:["Talk","#efe7f0","A Quote or a fragment."],
-  fight:["Showdown","#d32f3f","A minor showdown. Win a fragment and 5 Ink."],
+  fight:["Fight","#d32f3f","A story fight. Win a fragment, XP and 5 Ink. No running."],
   gold:["Gold door","#f0bd3e","The Church offers a Blessing. Sainthood +1."],
   cyan:["Cyan door","#3fe3d4","A Theogen clinic offers a Splice. Helix +1."],
   rest:["Rest","#3f8cf2","Clarity +3."],
   dis:["Dissonance","#a487dd","A prank (Clarity −1), then two fragments."],
   gas:["The gas","#e33f9c","Clarity refills. Craving +2. Junie will know."],
   meet:["The meeting","#e8f4ff","Craving −2. Nobody wants anything from you."],
-  boss:["Boss","#d32f3f","The district's boss. Hard. A Lead and 15 Ink."],
+  boss:["Boss","#d32f3f","The district's boss fight. Hard. A Lead, big XP and 15 Ink."],
   look:["Look","#8d8496","Look closer. Free, any time."]
 };
 // [type, x, label, who-or-prop, look text]
@@ -1047,6 +1090,7 @@ function scrScene() {
     <div class="intbar"><span>${esc(node.n).toUpperCase()} · ${clockStr(S.T)}</span><span class="note">WASD or arrows to walk · Space or E (A on a phone) to talk and use · or click where to go. Shift runs. The clock stops in here. Portals: ▼ the street door (every ride), lettered doors in the walls are stations (T Tube, C cable car, F ferry…).</span></div>${dpad()}
     <div class="textbox">${portrait(npc.id)}<div class="say"><div class="speaker">${esc(npc.n).toUpperCase()}</div>${lines}</div></div>
     <div class="choices">${btns}
+      ${SAFE_PLACES.includes(node.id) ? "" : `<button class="btn" style="--c:#d32f3f" data-act="patrol" ${S.delirium ? "disabled" : ""}><span class="t">Look for trouble<em>a random fight</em></span><span class="d">XP, Ink and loot. Walking around starts fights too.</span></button>`}
       <button class="btn${S.delirium || (S.next && S.next.go.type === "node" && S.next.go.arg !== S.scene.node) ? " nextglow" : ""}" data-act="go" data-arg="map"><span class="t">◀ Exit to the map<em>travel costs time</em></span><span class="d">Memory stays in your head until you write it down or get home.</span></button>
     </div>`;
 }
@@ -1060,10 +1104,10 @@ function resolveSpot(i) {
     const frag = Math.random() < (S.boons.includes("Omniscience (lite)") ? 1 : .55);
     if (frag) { remember({ kind:"frag", text:`${node.n}: ${pick(["a name","a date","a ledger page","a photo","a recording"])} from ${who}` }); L(`${who} tells you something worth a fragment.`); }
     else { remember({ kind:"quote", text:`"${q}" (${who})` }); L(`${who}: "${q}"`); } }
-  else if (sp.t === "fight") return startShowdown(FOES[sp.who] ? sp.who : foeFor(node));
-  else if (sp.t === "boss") { S.done.push(sc.node + "-boss"); return startShowdown(sp.who); }
+  else if (sp.t === "fight") return startStoryFight(FOES[sp.who] ? sp.who : foeFor(node), node, false);
+  else if (sp.t === "boss") { S.done.push(sc.node + "-boss"); return startStoryFight(sp.who, node, true); }
   else if (sp.t === "gold" || sp.t === "cyan") { const set = sp.t === "gold" ? BLESSINGS : SPLICES; const avail = set.filter(b => !S.boons.includes(b[0])); sc.offer = { k: sp.t, items: avail.sort(() => Math.random() - .5).slice(0, 3) }; L(sp.t === "gold" ? "A gold door. A warm voice offers you a Blessing." : "A cyan door. A glowing nurse offers you a Splice."); }
-  else if (sp.t === "rest") { S.clar = clamp(S.clar + 3, 0, maxClar()); L(node.id === "chinatown" ? "The Tonga Room. Every thirty minutes it rains indoors. Clarity +3." : "You sit. You breathe. Clarity +3."); }
+  else if (sp.t === "rest") { S.clar = clamp(S.clar + 3, 0, maxClar()); restoreParty(.5); L(node.id === "chinatown" ? "The Tonga Room. Every thirty minutes it rains indoors. Clarity +3." : "You sit. You breathe. Clarity +3."); }
   else if (sp.t === "dis") { S.clar -= 1; remember({ kind:"frag", text:`${node.n}: a prank's leftover (Dissonance)` }); remember({ kind:"frag", text:`${node.n}: what the prank revealed` }); L("The Dissonance Society hands you a Santa suit. Nobody takes you seriously for an hour (Clarity −1). Then a stranger in a wedding gown gives you two fragments."); }
   else if (sp.t === "gas") { S.clar = maxClar(); S.crave = clamp(S.crave + 2, 0, 5); S.flags.relapses = (S.flags.relapses || 0) + 1; S.flags["used" + S.issue] = true; S.sight += 1; L("You use. It is as good as you remember, which is the problem. Clarity refills. Craving +2. (Junie will know.)", { who: "THE CHEMIST" }); }
   else if (sp.t === "meet") { S.crave = clamp(S.crave - 2, 0, 5); S.flags.meeting = true; L("Folding chairs on pallets. You say your real name. Craving −2."); }
@@ -1351,7 +1395,7 @@ function plUpdate() {
   if (FADE && FADE.phase === "out") return;
   if (PL.bump > 0) PL.bump--;
   if (PL.moving) { const [dx, dy] = DV[PL.dir]; PL.x += dx * PL.spd; PL.y += dy * PL.spd; PL.step++;
-    if (PL.x === PL.tc * 16 && PL.y === PL.tr * 16) { PL.moving = false; PL.c = PL.tc; PL.r = PL.tr; if (inField()) S.flags.tutMoved = true; const p = portalAt(PL.c, PL.r); if (p) return usePortal(p); } return; }
+    if (PL.x === PL.tc * 16 && PL.y === PL.tr * 16) { PL.moving = false; PL.c = PL.tc; PL.r = PL.tr; if (inField()) S.flags.tutMoved = true; const p = portalAt(PL.c, PL.r); if (p) return usePortal(p); stepEncounter(); } return; }
   let want = ["up", "down", "left", "right"].find(d => KEYS[d]), keyed = !!want;
   if (want) { PL.path = []; PL.act = null; }
   else if (PL.path.length) { const [c, r] = PL.path.shift(); want = c > PL.c ? "right" : c < PL.c ? "left" : r > PL.r ? "down" : "up"; }
@@ -1551,6 +1595,7 @@ function walkLoop() {
   if (cv && S) { const place = cv.dataset.int || (cv.dataset.field ? "field:" + cv.dataset.field : "house"); if (PL.node !== place) plReset(place); plUpdate();
     const cv2 = document.querySelector("canvas.walk"); if (cv2) { if (cv2.dataset.int) drawInterior(cv2, BY[cv2.dataset.int]); else if (cv2.dataset.field) drawField(cv2, cv2.dataset.field); else drawHouse(cv2); } }
   const st = document.querySelector("canvas[data-start]"); if (st) drawStart(st);
+  const bc = document.querySelector("canvas[data-battle]"); if (bc) drawBattle(bc);
   const it = document.querySelector("canvas[data-intro]"); if (it) drawIntro(it, +it.dataset.intro);
   requestAnimationFrame(walkLoop);
 }
@@ -1600,7 +1645,8 @@ function scrIntro() {
 const INTRO = ["Berkeley, 2044. Three in the morning in the anaesthesia suite: a bench of xenon tanks, and a monitor that measures how conscious you are. You built the measure. You are testing it on yourself. The number drops to zero and stays there for four minutes. So does your heart.", "Fax finds you on the floor and brings you back. When you can hold a pen, you write one line in the lab notebook: WENT TO HELL. IT ROTS. By breakfast the whole lab calls you Hell Rot. One of your eyes has gone a red so dark it is almost black. The other has gone almost white.", "A month later you walk out of the lab with an axolotl in a jar, and you keep walking until the road runs out, at a shack nobody wants on the side of Mount Tamalpais. You quit the gas the hard way. Your hands go numb. Words go missing. You call it the Rot.", "Five years clean. Three papers you wrote high at four in the morning, and barely remember, have become somebody's scripture. Tonight is Christmas, and the lowest tide of the year. Down at Steep Ravine the hot springs will be uncovered, and warm."];
 const FIELD_ENTER = {"cabin": "The shack is cold. The window rattles. Outside, the fog is coming up the mountain faster than fog should.", "trail": "Cold air, eucalyptus, and the sea somewhere below. The trail drops away under your boots.", "cliff": "The stairs are wet. Below you the tide has pulled so far back that rocks you have never seen stand in the starlight. The moon set an hour ago.", "springs": "Steam rises from the pools. Forty people stand on the rocks, glowing faintly blue. In the far pool a woman grips the stone and breathes through her teeth."};
 window.__spots = () => S && S.scene ? spotsFor(BY[S.scene.node]) : [];   // test hook
-window.__pl = () => PL;                                                   // test hook
+window.__pl = () => Object.assign({ fade: FADE && FADE.phase, keys: JSON.stringify(KEYS) }, PL);                                                   // test hook
+window.__rpg = { bt: () => BT, S: () => S, startBattle: o => startBattle(o), bx: () => BX, sprite: (a, s) => foeSprite(a, s), hero: id => nesSprite(id, "left", 0) };   // test hook
 const dpad = () => `<div class="dpad" aria-label="Walk controls"><button data-pad="left" aria-label="Walk left">◀</button><button data-pad="up" aria-label="Walk up">▲</button><button data-pad="down" aria-label="Walk down">▼</button><button data-pad="right" aria-label="Walk right">▶</button><button data-pad="run" class="bbtn" aria-label="Hold to run">B</button><button data-pad="a" class="abtn" aria-label="Use what you face">A</button></div>`;
 
 const SCENES = {"loin:1": [["", "The Ghost Diner smells of burnt coffee and wet wool. Every booth faces the door."], ["benny", "Benny slides into your booth without asking. \"Cops clear the hotels tonight. For the developers. Two a.m.\" He taps the table twice and leaves you his bill."], ["", "At two the door bangs open. A cop grabs a kid by the collar, and her sleeve rides up. Her wrist glows cyan."], ["mamarue", "Mama Rue stands up slowly, like a queen leaving her throne. She looks the cop in the eye. She throws her coffee in his face."], ["", "The cup is still in the air when the whole diner stands up."]], "haight:2": [["", "Tie-dye in the windows, nitrous in the air. Every shop on Haight sells 1967 by the gram."], ["", "Behind a poster shop, twenty people sit in rows of folding chairs. Each one has a mask over the face and a number written on the back of the hand."], ["", "Number 31 stands up, sways and walks out. You follow him six blocks to a room with no furniture."], ["", "He sits on the floor and recites the Lifeboat's terms of service, word for word, smiling. On his wall someone has written his name eleven times, each time a little smaller."]], "geary:2": [["", "Twelve thousand people in the glass cathedral, and every one of them looks up at their own face on the screen. The Twin has made each face a little more beautiful."], ["halcyon", "Sister Halcyon lifts her hands. \"You were always divine.\" Twelve thousand Halos chime at once."], ["", "In the front row a girl with a glowing arm keeps her sleeve pulled down to her knuckles."], ["", "Then the screen stutters. For one frame every face becomes the same old man in a dented crown. Gold letters: WE APOLOGIZE FOR THE INCONVENIENCE. NORTON II."], ["", "The congregation applauds. They think it is part of the show."]], "spire:6": [["", "Market Street at dusk, and a thousand bicycles fill it from wall to wall. Bells, horns, a sound system on a cargo bike."], ["", "On every screen in the Spire, the Twin's feed freezes on a blur of wheels. It cannot follow this many faces this fast."], ["pru", "Pru checks her watch. \"One hour. Whatever you need to do where it can't see you, do it now.\""]], "rivet:2": [["", "Every window on Rivet Hill is lit. Nobody lives here but robots, and the robots still lay the table for one."], ["", "In the dumpster behind the kitchen, under gold-rimmed takeout boxes, there is a denim apron. Rivet denim, 1873 stitching, the family's first product."], ["", "A name tag is sewn into the pocket: JULIAN. The thread is new. The date on the receipt is November, a month after the funeral."]], "blackhouse:3": [["", "The Black House has no curtains. Every room is lit, and anyone on the street can look in."], ["magister", "\"Read anything you like,\" the Magister says, and waves at a lectern. \"We are not ashamed of our money.\""], ["", "The ledger is open. On the third page you understand it. Every donor to the Theogen clinics has also paid for a seat at the Ascension. They are buying both gods."]], "blackhouse:6": [["", "Black candles, black champagne, and a cake shaped like a tombstone. Your name is on it, in icing."], ["magister", "\"We write everyone's obituary before midnight,\" the Magister says. \"It is a kindness. Would you like to read yours?\""], ["", "The card has two endings written on it. Neither one is crossed out."]], "trident:5": [["", "Fog below you, stars above, the City's lights blurred like a wet photograph. The transmitter's legs hum through your shoes."], ["benny", "Benny holds out two canisters. \"This one helps you remember. This one helps you forget. Same price.\" His hands shake. He does not say which is which."]], "forest:5": [["", "The eucalyptus drip like slow rain. In the trees stands a disused lab with one lit window."], ["", "Through the glass: a baby in a padded cradle, wires on her scalp, and two people in Auric gold reading her numbers like a stock price."], ["", "She is not crying. She is watching the window. She is watching you."], ["wren", "When the door gives, Wren goes past you to the cradle. She unclips the wires from Ione's scalp one at a time, and says each one's name as it comes off."]], "baths:3": [["", "Warm air rises from the old pools. Under the data center's hum, a hundred people glow softly in the dark like a reef."], ["delphine", "Delphine walks beside you, barefoot on the wet stone. \"They read your papers,\" she says. \"Footnotes and all.\""], ["", "A woman in the congregation quotes your third paper back to you. She gets one word wrong. You do not correct her."], ["", "Further down, past a door with no sign, the glow gets uneven. Someone is singing to keep from shaking."], ["wren", "Wren is at a steel sink by the door, washing her hands. She is still washing them when you walk back past, ten minutes later."]], "baths:4": [["", "The cradle in the tunnels is empty. The blanket is still warm. The mobile above it is still turning."], ["delphine", "Delphine does not scream. She stands very straight, and the light under her skin flickers like a bad bulb."], ["wren", "Wren's scrubs are on inside out. She has not slept. She folds the same blanket, unfolds it, and folds it again."], ["", "By dawn the Mission is papered with LOST. The flyers have no photo. Delphine says the Twin would only use it."]], "cradle:3": [["", "Half the lab is underwater. Small fish move between the benches."], ["otto", "Otto touches a dry bench with two fingers, the way people touch a headstone. \"This is where she was brilliant,\" she says. \"Before she was holy.\""], ["", "On the wall, a peeling startup logo: a double helix wearing a crown. Under it, in marker: SHIP IT."]], "cradle:4": [["", "The Brandvold annex smells of rust and something sweet. The gas cabinet's door hangs open."], ["", "The 2044 logs are still on the screen. The last entry is yours. You do not remember writing it."], ["", "In a drawer there is a notebook in a careful hand. One line is underlined twice."]], "mission:4": [["", "The murals update live. On one wall your face is in gold leaf, with a halo. On the wall across the street your face glows cyan, with a double helix where your heart should be."], ["", "Painters on both sides work through the night. Nobody has asked you to sit for it."], ["cask", "Brother Cask studies the gold wall with his arms folded. \"They got your nose wrong,\" he says. \"We got it right.\""]], "dome:2": [["", "Forty brides in white climb the Dome steps, each with a Halo pinned to her veil. They are marrying the Twin before the year runs out."], ["sunday", "Mayor Sunday blesses them from a cue card. He reads \"until death do you part,\" laughs, and then stops laughing."], ["halcyon", "Sister Halcyon means every word. That is worse."]], "dome:5": [["", "The recount room smells of toner. A clerk hands you a clipboard: the Index test, the one the BFF are suing over."], ["", "Twenty questions. You answer honestly. The machine prints your score, and the clerk folds the paper before you can read it."], ["desh", "Down the hall Desh is testifying through his typing aid. Every keystroke is loud in the silence."]], "dome:6": [["", "The rotunda is full and nobody is sitting. The result comes in on paper, because nobody trusts a screen tonight."], ["", "The clerk reads it twice, the second time slower, as if the number might change."]], "fogbelt:1": [["", "The Lantern is a church hall with blue curtains and forty cots. Every cot is taken."], ["marisol", "Marisol ladles soup without looking up. \"No Halo, no problem. We just ask your name. You can lie.\""], ["", "At the end table a man talks to the fog through the window. The fog seems to answer."]], "fogbelt:3": [["", "Three hundred people stand on Ocean Beach around a fire built from Christmas trees. Somebody has made Karl a birthday cake out of sand."], ["", "At midnight they all breathe in at once. The fog pours into three hundred mouths, and everyone on the beach laughs at the same joke."], ["", "You do not know what the joke was. You laughed too."]], "fogbelt:4": [["", "A gold-edged Church envelope sits on the soup table, unopened. Inside is enough money for every bed for ten years."], ["", "One condition, in small print: a Halo reader at the door."], ["marisol", "The sisters look at you. \"You write things down,\" one says. \"What would you do?\""]], "baker:6": [["", "Baker Beach, New Year's Eve. The bonfire is three storeys tall, built from everything the City wants to forget this year."], ["saintnobody", "Saint Nobody hands you a marker and a dead Halo. \"Write what you're burning.\""], ["", "Behind the flames, the bridge goes into the fog one light at a time."]], "fill:1": [["", "The king tide comes over the seawall at sundown, quiet as a cat. By eight it is knee-deep in the Fill."], ["", "The Auric Order's Old Lodge has its doors open and its basement full. Men in gold-trimmed waders carry boxes up the stairs. Not furniture. Paper."], ["pell", "Augustus Pell watches from a dry step, smoking. \"Funny what people save first.\""]], "palace:6": [["", "Twelve thousand people in white stand in rows around the old rotunda. Each one holds a Halo in both hands like a candle."], ["halcyon", "Sister Halcyon walks the rows touching foreheads. Her hands are shaking. She smiles anyway."], ["", "On the dome, a countdown. On the lagoon, the reflection of the countdown, a little behind."]], "presidio:4": [["", "One lamp lights the lodge room. On the altar sits an 1849 gold pan, polished for so long that the bottom is thin as foil."], ["", "The minute book lies beside it. One page has been cut out with a razor, very neatly."], ["hale", "Dr. Hale steps out of the dark in her coat. \"I cut it,\" she says. \"I've been waiting for someone to notice.\""]], "span:6": [["", "The glass skywalk sways under the bridge. Wind goes through the cables like a held note."], ["", "On the south tower, canisters glow cyan in a row, hooked to the fog intakes. Theogens in white open the valves one by one."], ["wren", "Wren holds Ione inside her coat. She sees you and does not hide it. \"She's cried since the first valve,\" she says. \"Delphine says it's joy.\""]], "wharf:1": [["", "Sea lions sleep on the sidewalk. The tide laps at the doors of the Musée Mécanique."], ["", "Laffing Sal's glass case is dark. You put in a coin anyway. She does not laugh. Her head turns, slowly, toward you."], ["laffingsal", "\"WE KNOW YOUR NAME, HELL ROT,\" says a voice that is not hers. \"WE HAVE ALWAYS LIKED YOUR WORK.\" Then she laughs, and laughs, and does not stop."]], "northbeach:1": [["", "Water on the floor, folding chairs on pallets, a coffee urn plugged in with a very long cord."], ["", "Twelve people. Nobody looks at a phone. A woman says she has nineteen days, and everybody claps as if it were a hundred years."], ["junie", "Junie sits next to you and says nothing. She does not have to."]], "chinatown:1": [["", "Steam, red lanterns, and Cantonese opera from a radio under a tarp."], ["", "The fishmonger's tank holds fish that glow faintly at the gills."], ["", "\"For the Theogens,\" the fishmonger says, and nets one. \"Cash. They take them down Geary in a cooler, every Tuesday.\" He wraps it in yesterday's Mondo 3000, your column face up."]], "union:1": [["", "In every shop window on Union Square a dead relative waves. Grandmothers in sweaters, fathers in Santa hats, all a little too smooth."], ["", "A girl presses her hand to the glass. Her mother, on the other side, presses back half a second late."], ["", "Around the corner the returns line runs all the way down Stockton. Nobody in it is holding a sweater."]], "coit:4": [["", "The 1934 murals look down on workers, farmers, a man reading a newspaper, and a steel chair with straps and a crown of electrodes."], ["huck", "Huck Baptiste stands guard and says nothing. His eyes go to the chair and away, over and over."], ["", "On the floor lies a wristband: TEST SUBJECT 31. You have seen that number before."]], "coit:6": [["", "The feed is live. Sunday shakes hands with the test subject in the chair. The lights dim as the rig draws power."], ["", "The woman in the chair opens her mouth. Out comes Sunday's campaign slogan, over and over, in her own voice."], ["", "The feed cuts to a test pattern. Somebody in the crowd starts to cry."]], "park:3": [["", "Black tie under the Academy's living roof, penguins in the tank behind the bar. Old Dee receives a crystal award shaped like an open hand."], ["olddee", "\"We tell each other the truth here,\" he says, and the whole room laughs as if it were a joke."], ["rosa", "Across the room Rosa Quint checks her phone too often. A waiter has refilled her glass three times. She has not touched it."]], "ferry:2": [["", "The clock face on the Ferry Building is writing in fog. Letters form, hold and blow apart: WE DECREE A HAT FOR THE MAYOR."], ["emperor", "Under it, two hundred Nortonians in paper crowns sing the decree to the tune of a carol. They take it very seriously. They are having the time of their lives."]], "ferry:6": [["", "Feathers everywhere. A thousand people beat each other with pillows on the Embarcadero, and the fireworks barge waits for midnight."], ["", "A pillow bursts over your head. Somebody shouts HAPPY NEW YEAR an hour early, and nobody corrects them."]], "rock:2": [["", "The ferry docks in fog. Alcatraz Longevity's sign is lit gold. The cells are clinics now, and they have waiting lists."], ["duchess", "In the vault the Duchess stands at two steel doors with her parents' names on them. She touches the frost with one glove. \"They hated each other,\" she says. \"Now they share a wall forever.\""], ["", "The fog comes in through a vent and writes on the frost: WE COULD GIVE THEM BACK TO YOU. She wipes it off with her sleeve."]], "treasure:4": [["", "The plant runs all night. One line makes gold Halos. The next line over makes cyan splice canisters. Same robots. Same lunch room."], ["vail", "Cornelius Vail shows you both with the same smile. \"We are not a church,\" he says. \"We are a supplier.\""]], "tomales:4": [["", "Six shaved heads at the gate wave you in. Nobody speaks. The farm smells of cut grass and woodsmoke."], ["ana", "In the barn, a circle of chairs. A woman sits in the middle while the others shout at her. It is Ana Reyes. She nods along."], ["olddee", "Old Dee pats your shoulder. \"You'll sit in the middle one day,\" he says. \"Everybody does.\""]]};
@@ -1644,6 +1690,831 @@ function blackout() {
   S.screen = "house"; render();
 }
 
+/*BATTLE-ENGINE-START*/
+/* =====================================================================
+   COMBAT: a Final Fantasy-style turn-based battle engine. Pure data and
+   pure functions (no page, no save state), so the same code runs in the
+   game and in the headless stress test.
+   ===================================================================== */
+const BX = (() => {
+  const R = (rng, a, b) => a + rng() * (b - a);
+  const pick = (rng, a) => a[Math.floor(rng() * a.length)];
+  const STATS = ["hp", "sp", "atk", "def", "mag", "res", "spd", "luk"];
+
+  /* ---- the party: every housemate can fight ---- */
+  const HEROES = {
+    hellrot: { n: "Hell Rot", cls: "Gonzo", base: { hp: 62, sp: 22, atk: 9, def: 7, mag: 11, res: 8, spd: 9, luk: 10 }, grow: { hp: 9, sp: 3, atk: 1.8, def: 1.5, mag: 2.2, res: 1.5, spd: 1, luk: 1 },
+      skills: [["invective", 1], ["parrhesia", 1], ["gelastic", 3], ["peer", 5], ["bloodeye", 8], ["jeremiad", 12], ["paleeye", 16]] },
+    junie: { n: "Junie", cls: "Driver", base: { hp: 84, sp: 12, atk: 12, def: 10, mag: 4, res: 6, spd: 8, luk: 8 }, grow: { hp: 12, sp: 1.6, atk: 2.6, def: 2, mag: .7, res: 1, spd: 1, luk: 1 },
+      skills: [["bodycheck", 1], ["cover", 2], ["crucifix", 5], ["vanram", 9], ["punk", 14]] },
+    yara: { n: "Yara", cls: "Fact-checker", base: { hp: 54, sp: 24, atk: 7, def: 6, mag: 11, res: 11, spd: 11, luk: 9 }, grow: { hp: 8, sp: 3.4, atk: 1.4, def: 1.2, mag: 2.2, res: 2, spd: 1.2, luk: 1 },
+      skills: [["factcheck", 1], ["errorbars", 3], ["correction", 6], ["footnotes", 10], ["retraction", 15]] },
+    fax: { n: "Fax", cls: "Art director", base: { hp: 50, sp: 26, atk: 6, def: 6, mag: 13, res: 9, spd: 10, luk: 9 }, grow: { hp: 7.5, sp: 4, atk: 1.2, def: 1.2, mag: 2.6, res: 1.6, spd: 1.1, luk: 1 },
+      skills: [["coverline", 1], ["jam", 3], ["collage", 6], ["halftone", 10], ["spread", 15]] },
+    otto: { n: "Otto", cls: "Chemist", base: { hp: 50, sp: 30, atk: 5, def: 6, mag: 12, res: 12, spd: 7, luk: 10 }, grow: { hp: 7, sp: 4, atk: 1, def: 1.2, mag: 2.4, res: 2.2, spd: .8, luk: 1 },
+      skills: [["reagent", 1], ["antidote", 3], ["molotov", 6], ["booster", 10], ["panacea", 14]] },
+    bishop: { n: "Bishop Null", cls: "Prophet", base: { hp: 58, sp: 24, atk: 7, def: 8, mag: 11, res: 12, spd: 7, luk: 8 }, grow: { hp: 8.5, sp: 3.5, atk: 1.4, def: 1.6, mag: 2.2, res: 2.2, spd: .9, luk: 1 },
+      skills: [["benediction", 1], ["prophecy", 2], ["sermon", 5], ["lastrites", 9], ["raise", 14]] },
+    pru: { n: "Pru", cls: "Analyst", base: { hp: 56, sp: 16, atk: 10, def: 7, mag: 6, res: 7, spd: 13, luk: 13 }, grow: { hp: 8, sp: 2.5, atk: 2.1, def: 1.4, mag: 1.2, res: 1.3, spd: 1.5, luk: 1.5 },
+      skills: [["audit", 1], ["shortsell", 3], ["margincall", 6], ["takeover", 10], ["liquidate", 14]] },
+    mary: { n: "Mary", cls: "Archivist", base: { hp: 52, sp: 26, atk: 5, def: 7, mag: 11, res: 13, spd: 6, luk: 11 }, grow: { hp: 7.5, sp: 3.8, atk: 1, def: 1.3, mag: 2.1, res: 2.4, spd: .8, luk: 1 },
+      skills: [["archive", 1], ["longmemory", 3], ["precedent", 6], ["recall", 10], ["longview", 14]] },
+    saintnobody: { n: "Saint Nobody", cls: "Trickster", base: { hp: 58, sp: 20, atk: 9, def: 7, mag: 9, res: 9, spd: 12, luk: 14 }, grow: { hp: 8, sp: 3, atk: 1.9, def: 1.4, mag: 1.8, res: 1.6, spd: 1.4, luk: 1.6 },
+      skills: [["prank", 1], ["costume", 3], ["discord", 6], ["pie", 10], ["apple", 14]] }
+  };
+
+  /* ---- skills: kind dmg | heal | revive | buff | debuff | status | cure | steal | scan | sp | mixed ---- */
+  // tgt: enemy | enemies | ally | allies | self | ally-ko.  tag: phys | truth | chem | noise | spirit
+  const SKILLS = {
+    attack: { n: "Attack", cost: 0, kind: "dmg", stat: "atk", pow: 1, tag: "phys", tgt: "enemy" },
+    invective: { n: "Invective", cost: 4, kind: "dmg", stat: "mag", pow: 1.45, tag: "noise", tgt: "enemy", meta: { venom: 1 }, d: "An insult with a bass line. Venom +1." },
+    parrhesia: { n: "Parrhesia", cost: 6, kind: "dmg", stat: "mag", pow: 1.7, tag: "truth", tgt: "enemy", meta: { vow: 1 }, d: "The truth, said plainly. Vow +1." },
+    gelastic: { n: "The Gelastic", cost: 6, kind: "status", st: "stun", chance: .7, turns: 1, tgt: "enemy", d: "Ninety seconds of helpless laughter: stun." },
+    peer: { n: "Peer Review", cost: 5, kind: "debuff", stats: { def: .7, res: .7 }, turns: 3, tgt: "enemy", d: "DEF and RES −30% for 3 turns." },
+    bloodeye: { n: "Blood Eye", cost: 4, kind: "buff", stats: { crit: 1 }, turns: 2, tgt: "self", scan: true, d: "See through them: scan, and your next hits crit." },
+    jeremiad: { n: "Jeremiad", cost: 12, kind: "dmg", stat: "mag", pow: 1.1, tag: "truth", tgt: "enemies", meta: { worship: 1 }, d: "A sermon at all of them. The crowd loves it (worship +1)." },
+    paleeye: { n: "Pale Eye", cost: 14, kind: "buff", stats: { eva: 1.3 }, turns: 3, tgt: "allies", d: "See the good path: party evasion up." },
+    bodycheck: { n: "Body Check", cost: 3, kind: "dmg", stat: "atk", pow: 1.55, tag: "phys", tgt: "enemy", d: "Derby rules." },
+    cover: { n: "Cover", cost: 4, kind: "buff", stats: { taunt: 1, def: 1.3 }, turns: 2, tgt: "self", d: "Draw every hit for 2 turns, DEF up." },
+    crucifix: { n: "Crucifix", cost: 6, kind: "heal", flat: 28, perLv: 4, tgt: "ally", d: "A prayer she doesn't believe, and a bandage she does." },
+    vanram: { n: "Van Ram", cost: 10, kind: "dmg", stat: "atk", pow: 1.2, tag: "phys", tgt: "enemies", d: "The Mondo 3000 van, through all of them." },
+    punk: { n: "Punk Volume", cost: 10, kind: "buff", stats: { atk: 1.25, mag: 1.25 }, turns: 3, tgt: "allies", d: "Party ATK and MAG +25%." },
+    factcheck: { n: "Fact Check", cost: 4, kind: "dmg", stat: "mag", pow: 1.3, tag: "truth", tgt: "enemy", dispel: true, d: "Truth damage, and it strips their buffs." },
+    errorbars: { n: "Error Bars", cost: 5, kind: "status", st: "blind", chance: .8, turns: 3, tgt: "enemy", d: "Their aim gets error bars: blind." },
+    correction: { n: "Correction", cost: 14, kind: "revive", frac: .4, tgt: "ally-ko", d: "Print a correction: revive an ally at 40%." },
+    footnotes: { n: "Footnote Storm", cost: 12, kind: "dmg", stat: "mag", pow: 1.05, tag: "truth", tgt: "enemies", d: "Truth damage to all of them." },
+    retraction: { n: "Retraction", cost: 16, kind: "dmg", stat: "mag", pow: 2.5, tag: "truth", tgt: "enemy", d: "A front-page retraction. Huge truth damage." },
+    coverline: { n: "Cover Line", cost: 6, kind: "dmg", stat: "mag", pow: .95, tag: "noise", tgt: "enemies", d: "A headline that hits all of them." },
+    jam: { n: "Jam Halos", cost: 5, kind: "status", st: "silence", chance: .85, turns: 2, tgt: "enemy", d: "Jam their signal: no skills." },
+    collage: { n: "Collage", cost: 6, kind: "buff", random: true, turns: 3, tgt: "allies", d: "A random party buff, cut and pasted." },
+    halftone: { n: "Halftone", cost: 10, kind: "dmg", stat: "mag", pow: 2.1, tag: "chem", tgt: "enemy", d: "Printer's acid. Big chem damage." },
+    spread: { n: "Double Spread", cost: 18, kind: "dmg", stat: "mag", pow: 1.55, tag: "noise", tgt: "enemies", d: "The whole magazine, at all of them." },
+    reagent: { n: "Reagent", cost: 5, kind: "heal", stat: "mag", pow: 1.5, flat: 14, tgt: "ally", d: "Heal one." },
+    antidote: { n: "Antidote", cost: 3, kind: "cure", flat: 12, tgt: "ally", d: "Cure status and heal a little." },
+    molotov: { n: "Molotov Mix", cost: 9, kind: "dmg", stat: "mag", pow: 1.05, tag: "chem", tgt: "enemies", d: "Chem damage to all of them." },
+    booster: { n: "Booster", cost: 8, kind: "buff", stats: { atk: 1.35, mag: 1.35 }, turns: 3, tgt: "ally", d: "One ally's ATK and MAG +35%." },
+    panacea: { n: "Panacea", cost: 16, kind: "heal", stat: "mag", pow: 1.05, flat: 12, tgt: "allies", cure: true, d: "Heal and cure the party." },
+    benediction: { n: "Benediction", cost: 5, kind: "heal", stat: "mag", pow: 1.3, flat: 12, tgt: "ally", d: "Heal one." },
+    prophecy: { n: "Prophecy", cost: 8, kind: "buff", stats: { def: 1.25, res: 1.25 }, turns: 3, tgt: "allies", d: "Party DEF and RES +25%." },
+    sermon: { n: "Sermon", cost: 9, kind: "status", st: "sleep", chance: .5, turns: 3, tgt: "enemies", d: "A dull sermon: may put them all to sleep." },
+    lastrites: { n: "Last Rites", cost: 12, kind: "dmg", stat: "mag", pow: 2.3, tag: "spirit", tgt: "enemy", d: "Big spirit damage." },
+    raise: { n: "Raise the Dead", cost: 18, kind: "revive", frac: .7, tgt: "ally-ko", d: "Revive an ally at 70%." },
+    audit: { n: "Audit", cost: 2, kind: "steal", stat: "atk", pow: .8, tag: "phys", tgt: "enemy", d: "Hit, and steal an item or Ink." },
+    shortsell: { n: "Short Sell", cost: 4, kind: "debuff", stats: { atk: .7 }, turns: 3, tgt: "enemy", d: "Their ATK −30%." },
+    margincall: { n: "Margin Call", cost: 6, kind: "dmg", stat: "atk", pow: 1.5, tag: "phys", tgt: "enemy", inkScale: true, d: "Phys damage that grows with your Ink." },
+    takeover: { n: "Hostile Takeover", cost: 10, kind: "dmg", stat: "atk", pow: 1.15, tag: "phys", tgt: "enemies", d: "Phys damage to all of them." },
+    liquidate: { n: "Liquidate", cost: 12, kind: "dmg", stat: "atk", pow: 1.6, tag: "phys", tgt: "enemy", execute: .25, d: "Under 25% HP, a non-boss stands down at once." },
+    archive: { n: "Archive", cost: 2, kind: "scan", tgt: "enemies", d: "Look them up: weaknesses hit harder all battle." },
+    longmemory: { n: "Long Memory", cost: 8, kind: "buff", stats: { regen: .09 }, turns: 3, tgt: "allies", d: "The party heals 9% each turn." },
+    precedent: { n: "Precedent", cost: 8, kind: "debuff", stats: { mag: .7, atk: .85 }, turns: 3, tgt: "enemies", d: "All of them: MAG −30%, ATK −15%." },
+    recall: { n: "Recall", cost: 4, kind: "sp", flat: 14, perLv: 1.2, tgt: "ally", d: "Restore an ally's SP." },
+    longview: { n: "The Long View", cost: 18, kind: "heal", stat: "mag", pow: 1.35, flat: 14, tgt: "allies", d: "Heal the party." },
+    prank: { n: "Prank", cost: 4, kind: "status", st: "confuse", chance: .65, turns: 2, tgt: "enemy", d: "Confuse one." },
+    costume: { n: "Costume Change", cost: 4, kind: "buff", stats: { eva: 1.45 }, turns: 2, tgt: "self", d: "Evasion way up." },
+    discord: { n: "Discord", cost: 8, kind: "dmg", stat: "mag", pow: .75, tag: "noise", tgt: "random", hits: [2, 4], d: "2–4 hits at random." },
+    pie: { n: "Pie", cost: 9, kind: "status", st: "blind", chance: .55, turns: 3, tgt: "enemies", d: "Pies for everyone: blind." },
+    apple: { n: "Erisian Apple", cost: 16, kind: "dmg", stat: "mag", pow: 1.25, tag: "noise", tgt: "enemies", st: "confuse", chance: .4, turns: 2, d: "Noise damage to all, and maybe confusion." },
+    /* enemy skills */
+    bite: { n: "Bite", cost: 0, kind: "dmg", stat: "atk", pow: 1.25, tag: "phys", tgt: "enemy" },
+    swipe: { n: "Swipe", cost: 2, kind: "steal", stat: "atk", pow: .8, tag: "phys", tgt: "enemy", foeSteal: true },
+    howl: { n: "Howl", cost: 3, kind: "buff", stats: { atk: 1.3 }, turns: 3, tgt: "allies" },
+    chill: { n: "Chill Fog", cost: 4, kind: "dmg", stat: "mag", pow: 1.1, tag: "spirit", tgt: "enemies" },
+    whisper: { n: "Whisper", cost: 4, kind: "status", st: "confuse", chance: .45, turns: 2, tgt: "enemy" },
+    zap: { n: "Zap", cost: 3, kind: "dmg", stat: "mag", pow: 1.3, tag: "noise", tgt: "enemy" },
+    heckle: { n: "Heckle", cost: 3, kind: "debuff", stats: { atk: .8, mag: .8 }, turns: 2, tgt: "enemy" },
+    gas: { n: "Laughing Gas", cost: 4, kind: "status", st: "poison", chance: .7, turns: 3, tgt: "enemies" },
+    peck: { n: "Peck Storm", cost: 3, kind: "dmg", stat: "atk", pow: .6, tag: "phys", tgt: "random", hits: [2, 4] },
+    hymn: { n: "Hymn", cost: 5, kind: "status", st: "sleep", chance: .4, turns: 2, tgt: "enemies" },
+    bless: { n: "Blessing", cost: 5, kind: "heal", stat: "mag", pow: 1.2, flat: 10, tgt: "ally" },
+    compliment: { n: "Compliment", cost: 4, kind: "status", st: "confuse", chance: .5, turns: 2, tgt: "enemy" },
+    halobeam: { n: "Halo Beam", cost: 5, kind: "dmg", stat: "mag", pow: 1.5, tag: "spirit", tgt: "enemy" },
+    glow: { n: "Glow Burst", cost: 6, kind: "dmg", stat: "mag", pow: 1.0, tag: "chem", tgt: "enemies" },
+    leech: { n: "Leech", cost: 3, kind: "dmg", stat: "mag", pow: 1.1, tag: "chem", tgt: "enemy", drain: .5 },
+    spores: { n: "Spores", cost: 4, kind: "status", st: "poison", chance: .8, turns: 3, tgt: "enemy" },
+    gild: { n: "Gild", cost: 4, kind: "buff", stats: { def: 1.4, res: 1.2 }, turns: 3, tgt: "ally" },
+    tea: { n: "Serve Tea", cost: 4, kind: "heal", stat: "mag", pow: 1.0, flat: 14, tgt: "ally" },
+    baton: { n: "Baton", cost: 2, kind: "dmg", stat: "atk", pow: 1.4, tag: "phys", tgt: "enemy" },
+    taser: { n: "Taser", cost: 4, kind: "status", st: "stun", chance: .45, turns: 1, tgt: "enemy" },
+    teargas: { n: "Tear Gas", cost: 6, kind: "status", st: "blind", chance: .5, turns: 2, tgt: "enemies" },
+    slogan: { n: "Slogan", cost: 5, kind: "dmg", stat: "mag", pow: .95, tag: "noise", tgt: "enemies" },
+    bark: { n: "Union Bark", cost: 3, kind: "dmg", stat: "atk", pow: 1.1, tag: "noise", tgt: "enemies" },
+    dive: { n: "Dive", cost: 2, kind: "dmg", stat: "atk", pow: 1.5, tag: "phys", tgt: "enemy" },
+    rally: { n: "Rally", cost: 6, kind: "buff", stats: { atk: 1.25, def: 1.25 }, turns: 3, tgt: "allies" },
+    sermonx: { n: "Altar Call", cost: 8, kind: "dmg", stat: "mag", pow: 1.35, tag: "spirit", tgt: "enemies" },
+    gameon: { n: "The Game", cost: 8, kind: "debuff", stats: { def: .7, res: .7, mag: .8 }, turns: 3, tgt: "enemies" },
+    slam: { n: "Slam", cost: 5, kind: "dmg", stat: "atk", pow: 2.0, tag: "phys", tgt: "enemy" },
+    recount: { n: "Recount", cost: 8, kind: "heal", stat: "mag", pow: 1.4, flat: 30, tgt: "self" },
+    upload: { n: "Upload", cost: 10, kind: "dmg", stat: "mag", pow: 1.9, tag: "spirit", tgt: "enemy", drain: .4 }
+  };
+
+  /* ---- enemies: they stand down, they don't die ---- */
+  const E = (n, art, f, base, grow, weak, resist, skills, xp, ink, drops, boss) => ({ n, art, f, base, grow, weak, resist, skills, xp, ink, drops, boss: !!boss, hpx: boss || 1 });
+  const g1 = { hp: 9, sp: 1.5, atk: 1.6, def: 1.2, mag: 1.4, res: 1.1, spd: .9, luk: .6 };
+  const ENEMIES = {
+    raccoon: E("Raccoon", "raccoon", "wild", { hp: 26, sp: 6, atk: 7, def: 4, mag: 3, res: 4, spd: 9, luk: 10 }, g1, ["noise"], [], ["swipe"], 8, 3, [["coffee", .35], ["luckypenny", .05]]),
+    coyote: E("Coyote", "coyote", "wild", { hp: 32, sp: 6, atk: 9, def: 5, mag: 2, res: 4, spd: 10, luk: 6 }, g1, ["noise"], [], ["bite", "howl"], 10, 2, [["coffee", .3]]),
+    wisp: E("Fog Wisp", "wisp", "fog", { hp: 22, sp: 14, atk: 4, def: 3, mag: 9, res: 9, spd: 8, luk: 8 }, g1, ["chem"], ["phys"], ["chill", "whisper"], 10, 3, [["gum", .3], ["fogcharm", .05]]),
+    drone: E("Delivery Drone", "drone", "machine", { hp: 28, sp: 10, atk: 6, def: 7, mag: 7, res: 4, spd: 11, luk: 5 }, g1, ["noise"], ["chem"], ["zap"], 10, 5, [["salts", .15], ["tuningfork", .05]]),
+    heckler: E("Heckler", "heckler", "city", { hp: 30, sp: 10, atk: 8, def: 5, mag: 5, res: 5, spd: 8, luk: 7 }, g1, ["truth"], [], ["heckle"], 9, 6, [["coffee", .3], ["newspaper", .06]]),
+    nitrous: E("Nitrous Cloud", "nitrous", "city", { hp: 24, sp: 16, atk: 3, def: 3, mag: 9, res: 6, spd: 10, luk: 6 }, g1, ["chem"], ["phys"], ["gas"], 11, 5, [["antacid", .35]]),
+    pigeons: E("Pigeon Swarm", "pigeons", "city", { hp: 22, sp: 8, atk: 6, def: 3, mag: 2, res: 3, spd: 14, luk: 9 }, g1, ["noise", "chem"], [], ["peck"], 8, 3, [["burrito", .15]]),
+    ratking: E("Rat King", "ratking", "city", { hp: 46, sp: 10, atk: 9, def: 6, mag: 4, res: 5, spd: 7, luk: 7 }, g1, ["chem"], [], ["bite", "spores"], 16, 8, [["burrito", .3], ["leatherjacket", .06]]),
+    pickpocket: E("Pickpocket", "pickpocket", "city", { hp: 28, sp: 8, atk: 8, def: 4, mag: 4, res: 5, spd: 13, luk: 13 }, g1, ["truth"], [], ["swipe"], 11, 10, [["luckypenny", .08], ["coffee", .3]]),
+    usher: E("Church Usher", "usher", "church", { hp: 34, sp: 12, atk: 8, def: 7, mag: 8, res: 8, spd: 8, luk: 6 }, g1, ["truth"], ["spirit"], ["compliment", "halobeam"], 13, 8, [["haloshard", .07], ["coffee", .25]]),
+    halodrone: E("Halo Drone", "halodrone", "church", { hp: 30, sp: 14, atk: 5, def: 8, mag: 10, res: 6, spd: 11, luk: 5 }, g1, ["noise"], ["spirit"], ["halobeam", "zap"], 13, 7, [["haloshard", .1], ["salts", .1]]),
+    choirbot: E("Choir Bot", "choirbot", "church", { hp: 36, sp: 18, atk: 4, def: 6, mag: 10, res: 9, spd: 6, luk: 5 }, g1, ["noise"], ["spirit"], ["hymn", "bless"], 14, 8, [["gum", .3], ["mood", .06]]),
+    merged: E("Merged Citizen", "merged", "church", { hp: 34, sp: 14, atk: 6, def: 6, mag: 9, res: 6, spd: 7, luk: 6 }, g1, ["truth"], [], ["compliment", "bless"], 13, 6, [["coffee", .3]]),
+    goldlady: E("The Gold Lady", "goldlady", "church", { hp: 42, sp: 24, atk: 5, def: 7, mag: 12, res: 11, spd: 8, luk: 7 }, g1, ["truth"], ["spirit"], ["bless", "compliment", "halobeam"], 18, 12, [["tonic", .25], ["habit", .06]]),
+    runner: E("Splice-runner", "runner", "theogen", { hp: 36, sp: 12, atk: 10, def: 6, mag: 8, res: 6, spd: 11, luk: 7 }, g1, ["truth"], ["chem"], ["glow"], 14, 9, [["syringe", .07], ["burrito", .2]]),
+    hound: E("Glow Hound", "hound", "theogen", { hp: 38, sp: 10, atk: 11, def: 6, mag: 6, res: 5, spd: 12, luk: 7 }, g1, ["noise"], ["chem"], ["bite", "howl"], 15, 7, [["burrito", .2]]),
+    leechling: E("Cyan Leech", "leech", "theogen", { hp: 30, sp: 14, atk: 5, def: 5, mag: 10, res: 7, spd: 9, luk: 6 }, g1, ["chem"], [], ["leech"], 13, 6, [["antacid", .3]]),
+    bloom: E("Spore Bloom", "bloom", "theogen", { hp: 40, sp: 16, atk: 4, def: 6, mag: 9, res: 8, spd: 4, luk: 4 }, g1, ["chem"], ["noise"], ["spores", "glow"], 14, 6, [["antacid", .3], ["glowstick", .15]]),
+    enforcer: E("Cask's Enforcer", "enforcer", "theogen", { hp: 50, sp: 10, atk: 13, def: 9, mag: 4, res: 5, spd: 7, luk: 6 }, g1, ["truth"], ["phys"], ["slam", "rally"], 20, 12, [["kevlar", .05], ["burrito", .3]]),
+    gilder: E("A Gilder", "gilder", "order", { hp: 40, sp: 12, atk: 8, def: 10, mag: 8, res: 9, spd: 7, luk: 8 }, g1, ["truth"], ["phys"], ["gild", "heckle"], 15, 14, [["cufflinks", .06], ["tonic", .15]]),
+    butler: E("Clockwork Butler", "butler", "order", { hp: 44, sp: 14, atk: 9, def: 11, mag: 5, res: 6, spd: 6, luk: 4 }, g1, ["noise"], ["phys", "truth"], ["tea", "baton"], 16, 10, [["waistcoat", .05], ["tonic", .15]]),
+    sentry: E("Vault Sentry", "sentry", "order", { hp: 52, sp: 10, atk: 11, def: 12, mag: 4, res: 7, spd: 5, luk: 4 }, g1, ["noise", "chem"], ["phys"], ["slam"], 18, 12, [["kevlar", .05]]),
+    acolyte: E("Keeper Acolyte", "acolyte", "order", { hp: 36, sp: 18, atk: 6, def: 7, mag: 11, res: 10, spd: 9, luk: 7 }, g1, ["truth"], ["spirit"], ["chill", "gild"], 15, 10, [["mood", .06], ["gum", .25]]),
+    cop: E("Sunday's Beat Cop", "cop", "machine", { hp: 42, sp: 10, atk: 11, def: 8, mag: 4, res: 5, spd: 8, luk: 6 }, g1, ["truth"], [], ["baton", "taser"], 15, 10, [["kevlar", .04], ["coffee", .3]]),
+    riotdrone: E("Riot Drone", "riotdrone", "machine", { hp: 40, sp: 14, atk: 8, def: 10, mag: 9, res: 5, spd: 10, luk: 4 }, g1, ["noise"], ["chem"], ["teargas", "zap"], 16, 9, [["salts", .15]]),
+    canvasser: E("Campaign Canvasser", "canvasser", "machine", { hp: 32, sp: 14, atk: 6, def: 6, mag: 9, res: 7, spd: 10, luk: 8 }, g1, ["truth"], [], ["slogan", "heckle"], 13, 9, [["presspass", .05], ["gum", .25]]),
+    rig: E("Lifeboat Rig", "rig", "machine", { hp: 56, sp: 20, atk: 6, def: 10, mag: 12, res: 8, spd: 5, luk: 4 }, g1, ["noise"], ["truth"], ["upload", "zap"], 22, 14, [["tonic", .25]]),
+    sealion: E("Union Sea Lion", "sealion", "fog", { hp: 48, sp: 8, atk: 11, def: 8, mag: 3, res: 5, spd: 6, luk: 6 }, g1, ["chem"], [], ["bark", "bite"], 16, 6, [["burrito", .3]]),
+    gull: E("Static Gull", "gull", "fog", { hp: 26, sp: 10, atk: 9, def: 4, mag: 6, res: 4, spd: 15, luk: 9 }, g1, ["noise"], [], ["dive"], 12, 5, [["coffee", .25]]),
+    foghound: E("Fog Hound", "foghound", "fog", { hp: 40, sp: 16, atk: 9, def: 5, mag: 11, res: 10, spd: 11, luk: 7 }, g1, ["chem"], ["phys"], ["chill", "bite"], 17, 8, [["fogbottle", .2], ["fogcharm", .05]]),
+    /* bosses */
+    halcyon: E("Sister Halcyon", "halcyon", "church", { hp: 220, sp: 80, atk: 8, def: 9, mag: 11, res: 13, spd: 9, luk: 8 }, { hp: 30, sp: 4, atk: 1.5, def: 1.4, mag: 2.2, res: 1.8, spd: .9, luk: .5 }, ["truth"], ["spirit"], ["sermonx", "bless", "compliment", "halobeam"], 90, 40, [["habit", 1], ["tonic", 1]], .75),
+    cask: E("Brother Cask", "cask", "theogen", { hp: 260, sp: 60, atk: 15, def: 11, mag: 6, res: 8, spd: 7, luk: 6 }, { hp: 34, sp: 3, atk: 2.4, def: 1.8, mag: .8, res: 1.2, spd: .8, luk: .5 }, ["truth"], ["phys"], ["slam", "rally", "glow"], 110, 50, [["kevlar", 1], ["burrito", 1]], 1.15),
+    olddee: E("Old Dee and the Circle", "olddee", "church", { hp: 300, sp: 90, atk: 9, def: 10, mag: 12, res: 14, spd: 8, luk: 9 }, { hp: 36, sp: 4, atk: 1.6, def: 1.6, mag: 2.4, res: 2, spd: .8, luk: .6 }, ["truth"], ["noise"], ["gameon", "compliment", "sermonx", "bless"], 140, 60, [["mood", 1], ["tonic", 2]], .7),
+    sunday: E("Mayor Sunday", "sunday", "machine", { hp: 320, sp: 90, atk: 12, def: 11, mag: 14, res: 11, spd: 9, luk: 9 }, { hp: 38, sp: 4, atk: 2, def: 1.7, mag: 2.3, res: 1.8, spd: .9, luk: .6 }, ["truth"], ["spirit"], ["slogan", "recount", "upload", "taser"], 170, 80, [["presspass", 1], ["tonic", 2]], .85)
+  };
+
+  /* ---- items ---- */
+  const ITEMS = {
+    coffee: { n: "Ghost Diner coffee", type: "use", eff: { heal: 45 }, tgt: "ally", price: 8, d: "Restores 45 HP." },
+    burrito: { n: "Bodega burrito", type: "use", eff: { heal: 110 }, tgt: "ally", price: 18, d: "Restores 110 HP." },
+    soup: { n: "Lantern soup", type: "use", eff: { heal: 40 }, tgt: "allies", price: 22, d: "Restores 40 HP to the party." },
+    salts: { n: "Smelling salts", type: "use", eff: { revive: .35 }, tgt: "ally-ko", price: 20, d: "Revives an ally at 35%." },
+    gum: { n: "Nicotine gum", type: "use", eff: { sp: 20 }, tgt: "ally", price: 10, d: "Restores 20 SP." },
+    tonic: { n: "Otto's tonic", type: "use", eff: { sp: 50 }, tgt: "ally", price: 24, d: "Restores 50 SP." },
+    antacid: { n: "Antacid", type: "use", eff: { cure: 1, heal: 10 }, tgt: "ally", price: 6, d: "Cures status." },
+    glowstick: { n: "Glow stick", type: "use", eff: { dmg: 40, tag: "noise" }, tgt: "enemies", price: 16, d: "40 noise damage to every enemy." },
+    fogbottle: { n: "Fog in a bottle", type: "use", eff: { escape: 1 }, tgt: "self", price: 14, d: "Escape any fight but a boss." },
+    newspaper: { n: "Rolled newspaper", type: "equip", slot: "weapon", mod: { atk: 3 }, price: 12, d: "ATK +3. Yesterday's Mondo." },
+    umbrella: { n: "Steel umbrella", type: "equip", slot: "weapon", mod: { atk: 5, def: 2 }, price: 30, d: "ATK +5, DEF +2." },
+    knuckles: { n: "Brass knuckles", type: "equip", slot: "weapon", mod: { atk: 9 }, price: 55, d: "ATK +9." },
+    tireiron: { n: "Tire iron", type: "equip", slot: "weapon", mod: { atk: 12, spd: 1 }, for: ["junie"], price: 70, d: "Junie only. ATK +12." },
+    gelastic2: { n: "Gelastic Mk II", type: "equip", slot: "weapon", mod: { mag: 10, luk: 3 }, for: ["hellrot"], price: 80, d: "Hell Rot only. MAG +10." },
+    redpencil: { n: "Red pencil", type: "equip", slot: "weapon", mod: { mag: 6, luk: 4 }, for: ["hellrot", "yara", "mary"], price: 40, d: "MAG +6, LUK +4." },
+    haloshard: { n: "Halo shard", type: "equip", slot: "weapon", mod: { mag: 7 }, price: 45, d: "MAG +7. Still warm." },
+    syringe: { n: "Cyan syringe", type: "equip", slot: "weapon", mod: { mag: 8, atk: 2 }, price: 50, d: "MAG +8, ATK +2." },
+    tuningfork: { n: "Tuning fork", type: "equip", slot: "weapon", mod: { mag: 5, spd: 2 }, price: 35, d: "MAG +5, SPD +2." },
+    labcoat: { n: "Lab coat", type: "equip", slot: "armor", mod: { def: 3, res: 4 }, price: 18, d: "DEF +3, RES +4." },
+    leatherjacket: { n: "Leather jacket", type: "equip", slot: "armor", mod: { def: 7 }, price: 40, d: "DEF +7." },
+    derby: { n: "Derby pads", type: "equip", slot: "armor", mod: { def: 6, spd: 2 }, price: 45, d: "DEF +6, SPD +2." },
+    habit: { n: "Lantern habit", type: "equip", slot: "armor", mod: { def: 4, res: 10 }, price: 60, d: "DEF +4, RES +10." },
+    waistcoat: { n: "Gilder waistcoat", type: "equip", slot: "armor", mod: { def: 10, res: 4, spd: -1 }, price: 70, d: "DEF +10, RES +4, SPD −1." },
+    kevlar: { n: "Kevlar hoodie", type: "equip", slot: "armor", mod: { def: 14, res: 3 }, price: 95, d: "DEF +14, RES +3." },
+    luckypenny: { n: "Lucky penny", type: "equip", slot: "acc", mod: { luk: 8 }, price: 25, d: "LUK +8: more crits." },
+    mood: { n: "Mood ring", type: "equip", slot: "acc", mod: { stres: 1 }, price: 50, d: "Resist status half the time." },
+    fogcharm: { n: "Fog charm", type: "equip", slot: "acc", mod: { spd: 4 }, price: 45, d: "SPD +4." },
+    presspass: { n: "Press pass", type: "equip", slot: "acc", mod: { res: 6, inkx: .25 }, price: 55, d: "RES +6, +25% Ink after fights." },
+    cufflinks: { n: "Rivet cufflinks", type: "equip", slot: "acc", mod: { def: 5, res: 5 }, price: 55, d: "DEF +5, RES +5." },
+    notebook: { n: "Shulgin notebook", type: "equip", slot: "acc", mod: { xpx: .15, mag: 2 }, for: ["hellrot"], price: 0, d: "Hell Rot only. +15% XP, MAG +2." },
+    axocharm: { n: "Axolotl charm", type: "equip", slot: "acc", mod: { autolife: 1 }, price: 120, d: "Revive once per fight at 25%." }
+  };
+  const SHOP = { otto: ["coffee", "burrito", "soup", "salts", "gum", "tonic", "antacid", "glowstick", "fogbottle"], mary: ["newspaper", "umbrella", "knuckles", "redpencil", "tuningfork", "labcoat", "leatherjacket", "derby", "luckypenny", "fogcharm", "mood", "axocharm"] };
+
+  /* ---- difficulty: how the enemy thinks, and how tough it is ---- */
+  const DIFF = {
+    easy: { n: "Easy", stat: .82, dmg: .95, hp: .85, skill: .3, smart: 0, focus: 0, rate: .6, xp: 1, d: "Enemies hit softer, pick targets at random and rarely use skills. Fewer random fights." },
+    normal: { n: "Normal", stat: 1, dmg: 1.2, hp: 1, skill: .5, smart: .5, focus: .5, rate: 1, xp: 1, d: "Enemies use their skills, often go for whoever is weakest, and heal each other when hurt." },
+    hard: { n: "Hard", stat: 1.15, dmg: 1.35, hp: 1.25, skill: .7, smart: 1, focus: 1, rate: 1.35, xp: 1.2, d: "Enemies are tougher, focus your healers and your weakest, dispel your buffs, heal and buff on time. More random fights, +20% XP." }
+  };
+
+  /* ---- encounter tables: place → enemy groups ---- */
+  const TABLES = {
+    mountain: [["raccoon"], ["coyote"], ["raccoon", "raccoon"], ["wisp"], ["drone"]],
+    street: [["heckler"], ["heckler", "pickpocket"], ["pigeons", "pigeons"], ["ratking"], ["nitrous", "heckler"], ["pickpocket", "pigeons"]],
+    church: [["usher"], ["usher", "halodrone"], ["choirbot", "merged"], ["merged", "merged"], ["goldlady", "usher"], ["halodrone", "halodrone", "merged"]],
+    theogen: [["runner"], ["runner", "hound"], ["leechling", "leechling"], ["bloom", "runner"], ["enforcer"], ["hound", "leechling", "bloom"]],
+    order: [["gilder"], ["butler", "gilder"], ["sentry"], ["acolyte", "butler"], ["gilder", "acolyte", "butler"]],
+    machine: [["cop"], ["cop", "canvasser"], ["riotdrone"], ["rig"], ["canvasser", "canvasser", "riotdrone"]],
+    fog: [["wisp", "wisp"], ["gull", "gull"], ["sealion"], ["foghound"], ["foghound", "gull"]]
+  };
+  const BOSSES = { halcyon: ["halcyon", "usher"], cask: ["cask", "enforcer"], olddee: ["olddee", "merged", "merged"], sunday: ["sunday", "cop", "riotdrone"] };
+  const ISSUE_LV = [1, 3, 6, 9, 12, 15, 17];   // index = issue (0 = Prologue)
+
+  function xpToNext(lv) { return Math.round(12 * Math.pow(lv, 1.3)) + 6; }
+  function heroStats(id, lv, eq) {
+    const H = HEROES[id], s = {};
+    STATS.forEach(k => s[k] = Math.round(H.base[k] + H.grow[k] * (lv - 1)));
+    const mods = { stres: 0, inkx: 0, xpx: 0, autolife: 0 };
+    Object.values(eq || {}).forEach(it => { if (!it || !ITEMS[it]) return; for (const [k, v] of Object.entries(ITEMS[it].mod)) { if (k in s) s[k] += v; else mods[k] = (mods[k] || 0) + v; } });
+    STATS.forEach(k => s[k] = Math.max(1, s[k]));
+    return { s, mods };
+  }
+  function heroSkills(id, lv) { return HEROES[id].skills.filter(([, l]) => lv >= l).map(([k]) => k); }
+  // size = party size: a lone Hell Rot meets smaller crowds and softer bosses
+  function enemyStats(id, lv, diff, size = 3) {
+    const D = ENEMIES[id], df = DIFF[diff], s = {};
+    STATS.forEach(k => s[k] = D.base[k] + D.grow[k] * (lv - 1));
+    ["def", "res"].forEach(k => s[k] *= df.stat); ["atk", "mag"].forEach(k => s[k] *= D.boss ? df.stat * [.6, .85, 1][size - 1] : df.dmg); s.hp *= df.hp * (D.boss ? D.hpx : 2) * (D.boss ? [.4, .65, 1] : [.5, .75, 1])[size - 1]; s.sp *= 1.2;
+    STATS.forEach(k => s[k] = Math.max(1, Math.round(s[k])));
+    return s;
+  }
+  function canEquip(hero, item) { const I = ITEMS[item]; return I && I.type === "equip" && (!I.for || I.for.includes(hero)); }
+
+  /* ---- battle state ---- */
+  function makeBattle({ party, foes, diff = "normal", rng = Math.random, inv = {}, ink = 0, boss = false, moreau = false, noRun = false }) {
+    const units = [];
+    party.forEach((p, i) => { const { s, mods } = heroStats(p.id, p.lv, p.eq);
+      units.push({ uid: "h" + i, side: "hero", id: p.id, n: HEROES[p.id].n, lv: p.lv, max: s, mods, hp: Math.min(s.hp, p.hp ?? s.hp), sp: Math.min(s.sp, p.sp ?? s.sp), st: {}, buffs: [], skills: heroSkills(p.id, p.lv), ko: (p.hp ?? 1) <= 0, defend: false, autolife: mods.autolife || 0 }); });
+    const counts = {};
+    foes.forEach((f, i) => { const s = enemyStats(f.id, f.lv, diff, party.length), D = ENEMIES[f.id]; counts[f.id] = (counts[f.id] || 0) + 1;
+      units.push({ uid: "e" + i, side: "foe", id: f.id, n: D.n + (foes.filter(x => x.id === f.id).length > 1 ? " " + "ABCD"[counts[f.id] - 1] : ""), lv: f.lv, max: s, mods: {}, hp: s.hp, sp: s.sp, st: {}, buffs: [], skills: D.skills, ko: false, defend: false, boss: D.boss, weak: D.weak, resist: D.resist, stolen: false }); });
+    const B = { units, diff, rng, inv: inv, ink, boss, noRun, round: 0, queue: [], scanned: false, fled: false, log: [], moreau, inkDelta: 0, stolen: [], used: { skills: {}, items: {} } };
+    newRound(B); return B;
+  }
+  const alive = (B, side) => B.units.filter(u => u.side === side && !u.ko);
+  const eff = (u, k) => { let v = u.max[k] ?? 0; u.buffs.forEach(b => { if (b.stats[k]) v *= b.stats[k]; }); return v; };
+  const hasBuff = (u, k) => u.buffs.some(b => b.stats[k]);
+  function newRound(B) {
+    B.round++;
+    B.queue = B.units.filter(u => !u.ko).map(u => ({ u, k: eff(u, "spd") * R(B.rng, .85, 1.15) * (u.side === "foe" && B.diff === "hard" ? 1.08 : 1) })).sort((a, b) => b.k - a.k).map(x => x.u.uid);
+  }
+  function current(B) { while (B.queue.length) { const u = B.units.find(x => x.uid === B.queue[0]); if (u && !u.ko) return u; B.queue.shift(); } return null; }
+  function endCheck(B) { if (B.fled) return "fled"; if (!alive(B, "foe").length) return "win"; if (!alive(B, "hero").length) return "lose"; return null; }
+
+  /* what an actor may do */
+  function options(B, u) {
+    const out = [{ kind: "attack", skill: "attack" }, { kind: "defend" }];
+    if (!u.st.silence) u.skills.forEach(k => { const S = SKILLS[k]; out.push({ kind: "skill", skill: k, ok: u.sp >= S.cost }); });
+    if (u.side === "hero") { Object.entries(B.inv).forEach(([it, n]) => { if (n > 0 && ITEMS[it] && ITEMS[it].type === "use") out.push({ kind: "item", item: it }); }); if (!B.boss && !B.noRun) out.push({ kind: "run" }); if (B.moreau) out.push({ kind: "moreau" }); }
+    return out;
+  }
+  function targetsFor(B, u, tgt) {
+    const mine = u.side, other = mine === "hero" ? "foe" : "hero";
+    if (tgt === "enemy" || tgt === "enemies" || tgt === "random") return alive(B, other);
+    if (tgt === "ally" || tgt === "allies") return alive(B, mine);
+    if (tgt === "ally-ko") return B.units.filter(x => x.side === mine && x.ko);
+    return [u];
+  }
+
+  /* resolving an action → events for the animator */
+  function hitChance(B, a, t) { let acc = .95 - (a.st.blind ? .4 : 0); let ev = 0; t.buffs.forEach(b => { if (b.stats.eva) ev += (b.stats.eva - 1); }); return Math.max(.15, acc - ev * .6); }
+  function damage(B, a, t, S, mult = 1) {
+    const atkStat = eff(a, S.stat || "atk"), defStat = S.stat === "mag" ? eff(t, "res") : eff(t, "def");
+    let dmg = (atkStat * S.pow * 2.4) * (55 / (55 + defStat * 2.6)) * R(B.rng, .9, 1.1) * mult;
+    if (t.defend) dmg *= .5;
+    let tag = S.tag || "phys", weak = false, resist = false;
+    if (t.weak && t.weak.includes(tag)) { dmg *= B.scanned && a.side === "hero" ? 1.75 : 1.5; weak = true; }
+    if (t.resist && t.resist.includes(tag)) { dmg *= .5; resist = true; }
+    const critC = (eff(a, "luk") / 220) + (hasBuff(a, "crit") ? .6 : 0); const crit = B.rng() < critC; if (crit) dmg *= 1.6;
+    if (S.inkScale) dmg *= 1 + Math.min(1, (B.ink || 0) / 200);
+    return { dmg: Math.max(1, Math.round(dmg)), weak, resist, crit };
+  }
+  function resists(B, t) { return (t.mods && t.mods.stres && B.rng() < .5) || (t.boss && B.rng() < .55); }
+  function applyHit(B, a, t, amt, ev) {
+    t.hp = Math.max(0, t.hp - amt); if (t.st.sleep) delete t.st.sleep;
+    if (t.hp <= 0) { if (t.autolife) { t.autolife = 0; t.hp = Math.max(1, Math.round(t.max.hp * .25)); ev.push({ t: "revive", to: t.uid, text: `${t.n} gets back up (Axolotl charm)` }); } else { t.ko = true; t.st = {}; t.buffs = []; ev.push({ t: "ko", to: t.uid, text: t.side === "foe" ? `${t.n} stands down` : `${t.n} is out cold` }); } }
+  }
+  function act(B, u, action) {
+    const ev = []; const say = text => ev.push({ t: "msg", text });
+    u.defend = false;
+    if (action.kind === "defend") { u.defend = true; u.sp = Math.min(u.max.sp, u.sp + Math.ceil(u.max.sp * .08)); say(`${u.n} braces`); return finishTurn(B, u, ev); }
+    if (action.kind === "run") { if (B.boss || B.noRun) { say("No running from this one"); return finishTurn(B, u, ev); } const chance = .5 + (eff(u, "spd") - Math.max(...alive(B, "foe").map(f => eff(f, "spd")))) * .03; if (B.rng() < chance) { B.fled = true; say("You get away"); } else say("Can't get away!"); return finishTurn(B, u, ev); }
+    if (action.kind === "moreau") { B.moreau = false; B.units.filter(x => x.side === "hero").forEach(x => { x.ko = false; x.hp = x.max.hp; x.st = {}; }); ev.push({ t: "heal", to: "party", amt: 0, text: "Moreau regrows everyone. The whole party is restored" }); B.used.moreau = true; return finishTurn(B, u, ev); }
+    if (action.kind === "item") {
+      const I = ITEMS[action.item]; if (!I || !(B.inv[action.item] > 0)) { say("Nothing left"); return finishTurn(B, u, ev); }
+      B.inv[action.item]--; B.used.items[action.item] = (B.used.items[action.item] || 0) + 1;
+      const tg = I.tgt === "allies" ? alive(B, u.side) : I.tgt === "enemies" ? alive(B, u.side === "hero" ? "foe" : "hero") : [B.units.find(x => x.uid === action.target) || u];
+      tg.forEach(t => { const e = I.eff;
+        if (e.revive && t.ko) { t.ko = false; t.hp = Math.round(t.max.hp * e.revive); ev.push({ t: "revive", to: t.uid, text: `${t.n} is back up` }); }
+        if (e.heal && !t.ko) { const h = Math.min(e.heal, t.max.hp - t.hp); t.hp += h; ev.push({ t: "heal", to: t.uid, amt: h }); }
+        if (e.sp && !t.ko) { const h = Math.min(e.sp, t.max.sp - t.sp); t.sp += h; ev.push({ t: "sp", to: t.uid, amt: h }); }
+        if (e.cure) t.st = {};
+        if (e.dmg && !t.ko) { let d = e.dmg; if (t.weak && t.weak.includes(e.tag)) d = Math.round(d * 1.5); if (t.resist && t.resist.includes(e.tag)) d = Math.round(d * .5); ev.push({ t: "hit", from: u.uid, to: t.uid, amt: d }); applyHit(B, u, t, d, ev); }
+        if (e.escape) { if (B.boss || B.noRun) say("A boss blocks the way"); else { B.fled = true; say("The fog swallows you. You get away"); } } });
+      ev.unshift({ t: "use", from: u.uid, text: `${u.n} uses ${I.n}` });
+      return finishTurn(B, u, ev);
+    }
+    // attack or skill
+    const k = action.skill || "attack", S = SKILLS[k];
+    if (S.cost > u.sp) { say(`${u.n} doesn't have the SP`); return finishTurn(B, u, ev); }
+    u.sp -= S.cost; B.used.skills[k] = (B.used.skills[k] || 0) + 1;
+    if (S.meta && u.side === "hero") ev.push({ t: "meta", meta: S.meta });
+    ev.push({ t: "use", from: u.uid, text: k === "attack" ? `${u.n} attacks` : `${u.n}: ${S.n}` });
+    let pool = targetsFor(B, u, S.tgt);
+    // confusion: hit someone at random, maybe a friend
+    if (u.st.confuse && (S.tgt === "enemy" || k === "attack")) pool = B.units.filter(x => !x.ko && x !== u);
+    if (!pool.length) { say("No target"); return finishTurn(B, u, ev); }
+    let targets;
+    if (S.tgt === "enemies" || S.tgt === "allies") targets = pool;
+    else if (S.tgt === "self") targets = [u];
+    else if (S.tgt === "random") { const n = Math.floor(R(B.rng, S.hits[0], S.hits[1] + 1)); targets = Array.from({ length: n }, () => pick(B.rng, pool)); }
+    else { // single target: the chosen one, or a taunting hero
+      let t = pool.find(x => x.uid === action.target) || pool[0];
+      if (u.side === "foe" && (S.tgt === "enemy") && !u.st.confuse) { const tank = pool.find(x => hasBuff(x, "taunt")); if (tank) t = tank; }
+      if (u.st.confuse) t = pick(B.rng, pool);
+      targets = [t];
+    }
+    for (const t of targets) {
+      if (t.ko && S.kind !== "revive") continue;
+      if (S.kind === "dmg" || S.kind === "steal") {
+        if (B.rng() > hitChance(B, u, t)) { ev.push({ t: "miss", from: u.uid, to: t.uid }); continue; }
+        if (S.execute && !t.boss && t.hp / t.max.hp < S.execute) { ev.push({ t: "hit", from: u.uid, to: t.uid, amt: t.hp, crit: true }); applyHit(B, u, t, t.hp, ev); continue; }
+        const d = damage(B, u, t, S); ev.push({ t: "hit", from: u.uid, to: t.uid, amt: d.dmg, weak: d.weak, resist: d.resist, crit: d.crit }); applyHit(B, u, t, d.dmg, ev);
+        if (S.drain && !u.ko) { const h = Math.min(Math.round(d.dmg * S.drain), u.max.hp - u.hp); u.hp += h; ev.push({ t: "heal", to: u.uid, amt: h }); }
+        if (S.dispel && t.buffs.length) { t.buffs = []; ev.push({ t: "msg", text: `${t.n}'s buffs are gone` }); }
+        if (S.kind === "steal" && !t.ko && t.side !== u.side) {
+          if (S.foeSteal) { const take = Math.min(B.ink + B.inkDelta, Math.round(R(B.rng, 3, 9))); if (take > 0) { B.inkDelta -= take; ev.push({ t: "msg", text: `${u.n} steals ${take} Ink` }); } }
+          else if (!t.stolen) { t.stolen = true; const D = ENEMIES[t.id]; const it = D.drops.length && B.rng() < .6 ? D.drops[0][0] : null; if (it) { B.stolen.push(it); B.inv[it] = (B.inv[it] || 0) + 1; ev.push({ t: "msg", text: `Stole: ${ITEMS[it].n}` }); } else { const ink = Math.round(D.ink * .6) + 2; B.inkDelta += ink; ev.push({ t: "msg", text: `Stole ${ink} Ink` }); } }
+        }
+        if (S.st && !t.ko && B.rng() < S.chance && !resists(B, t)) { t.st[S.st] = S.turns; ev.push({ t: "status", to: t.uid, st: S.st }); }
+      } else if (S.kind === "heal") {
+        const amt = Math.round((S.stat ? eff(u, S.stat) * S.pow * 2 : 0) + (S.flat || 0) + (S.perLv || 0) * u.lv);
+        const h = Math.min(amt, t.max.hp - t.hp); t.hp += h; if (S.cure) t.st = {}; ev.push({ t: "heal", to: t.uid, amt: h });
+      } else if (S.kind === "revive") {
+        if (!t.ko) continue; t.ko = false; t.hp = Math.max(1, Math.round(t.max.hp * S.frac)); ev.push({ t: "revive", to: t.uid, text: `${t.n} is back up` });
+      } else if (S.kind === "cure") { t.st = {}; const h = Math.min(S.flat || 0, t.max.hp - t.hp); t.hp += h; ev.push({ t: "heal", to: t.uid, amt: h }); }
+      else if (S.kind === "sp") { const amt = Math.round(S.flat + (S.perLv || 0) * u.lv); const h = Math.min(amt, t.max.sp - t.sp); t.sp += h; ev.push({ t: "sp", to: t.uid, amt: h }); }
+      else if (S.kind === "buff") {
+        let stats = S.stats; if (S.random) stats = pick(B.rng, [{ atk: 1.3 }, { def: 1.3, res: 1.3 }, { spd: 1.3 }, { mag: 1.3 }, { eva: 1.25 }, { regen: .07 }]);
+        t.buffs = t.buffs.filter(b => !Object.keys(b.stats).some(k2 => k2 in stats)); t.buffs.push({ stats, turns: S.turns + (t === u ? 1 : 0) }); ev.push({ t: "buff", to: t.uid, stats });
+        if (S.scan) { B.scanned = true; ev.push({ t: "msg", text: "Weak points spotted" }); }
+      } else if (S.kind === "debuff") {
+        if (resists(B, t) && t.boss) { ev.push({ t: "msg", text: `${t.n} shrugs it off` }); continue; }
+        t.buffs.push({ stats: S.stats, turns: S.turns, debuff: true }); ev.push({ t: "debuff", to: t.uid, stats: S.stats });
+      } else if (S.kind === "status") {
+        if (B.rng() < S.chance && !resists(B, t)) { t.st[S.st] = S.turns; ev.push({ t: "status", to: t.uid, st: S.st }); } else ev.push({ t: "miss", from: u.uid, to: t.uid, text: "No effect" });
+      } else if (S.kind === "scan") { B.scanned = true; ev.push({ t: "msg", text: "Looked up: weak points hit harder" }); break; }
+    }
+    if (u.st.confuse) { u.st.confuse--; if (!u.st.confuse) delete u.st.confuse; }
+    return finishTurn(B, u, ev);
+  }
+  function finishTurn(B, u, ev) {
+    u.buffs.forEach(b => { if (b.stats.regen && !u.ko) { const h = Math.min(Math.round(u.max.hp * b.stats.regen), u.max.hp - u.hp); if (h > 0) { u.hp += h; ev.push({ t: "heal", to: u.uid, amt: h }); } } });
+    u.buffs.forEach(b => b.turns--); u.buffs = u.buffs.filter(b => b.turns > 0);
+    ["silence", "blind"].forEach(s => { if (u.st[s]) { u.st[s]--; if (!u.st[s]) delete u.st[s]; } });
+    if (B.queue[0] === u.uid) B.queue.shift();
+    if (!endCheck(B) && !current(B)) newRound(B);
+    return ev;
+  }
+  /* start of an actor's turn: poison, sleep and stun can take it away */
+  function startTurn(B, u) {
+    const ev = [];
+    if (u.st.poison) { const d = Math.max(1, Math.round(u.max.hp * .06)); ev.push({ t: "hit", to: u.uid, amt: d, text: "poison" }); applyHit(B, u, u, d, ev); u.st.poison--; if (!u.st.poison) delete u.st.poison; if (u.ko) return { skip: true, ev: finishTurn(B, u, ev) }; }
+    for (const s of ["sleep", "stun"]) if (u.st[s]) { u.st[s]--; if (!u.st[s]) delete u.st[s]; ev.push({ t: "msg", text: `${u.n} is ${s === "sleep" ? "asleep" : "stunned"}` }); return { skip: true, ev: finishTurn(B, u, ev) }; }
+    return { skip: false, ev };
+  }
+
+  /* ---- enemy AI, by difficulty ---- */
+  function enemyChoose(B, u) {
+    const D = DIFF[B.diff], heroes = alive(B, "hero"), foes = alive(B, "foe");
+    const usable = u.st.silence ? [] : u.skills.filter(k => SKILLS[k].cost <= u.sp);
+    const lowest = heroes.slice().sort((a, b) => a.hp / a.max.hp - b.hp / b.max.hp)[0];
+    const healer = heroes.find(h => h.skills.some(k => ["reagent", "benediction", "crucifix", "panacea", "longview", "correction", "raise"].includes(k)));
+    const smart = B.rng() < D.smart;
+    const pickTarget = () => { if (B.rng() < D.focus) { if (B.diff === "hard") { const killable = heroes.filter(h => h.hp < eff(u, "atk") * 2.5).sort((a, b) => a.hp - b.hp)[0]; if (killable) return killable; if (healer && B.rng() < .5) return healer; } return lowest; } return pick(B.rng, heroes); };
+    if (smart && usable.length) {
+      const hurt = foes.filter(f => f.hp / f.max.hp < .4).sort((a, b) => a.hp / a.max.hp - b.hp / b.max.hp)[0];
+      const heal = usable.find(k => SKILLS[k].kind === "heal"); if (hurt && heal) return { kind: "skill", skill: heal, target: SKILLS[heal].tgt === "self" ? u.uid : hurt.uid };
+      const buffed = heroes.some(h => h.buffs.some(b => !b.debuff));
+      const aoe = usable.find(k => SKILLS[k].tgt === "enemies" && (SKILLS[k].kind === "dmg" || SKILLS[k].kind === "status")); if (aoe && heroes.length >= 2 && B.rng() < .6) return { kind: "skill", skill: aoe };
+      const debuff = usable.find(k => SKILLS[k].kind === "debuff"); if (debuff && buffed && B.rng() < .5) return { kind: "skill", skill: debuff, target: pickTarget().uid };
+      const status = usable.find(k => SKILLS[k].kind === "status"); if (status && healer && !healer.st.sleep && !healer.st.stun && B.rng() < .5) return { kind: "skill", skill: status, target: healer.uid };
+      const buff = usable.find(k => SKILLS[k].kind === "buff"); if (buff && !u.buffs.length && B.round <= 2) return { kind: "skill", skill: buff, target: u.uid };
+    }
+    if (usable.length && B.rng() < D.skill) { const k = pick(B.rng, usable), S = SKILLS[k]; const tgt = S.tgt === "ally" || S.tgt === "self" ? (S.kind === "heal" ? foes.slice().sort((a, b) => a.hp / a.max.hp - b.hp / b.max.hp)[0] : u) : pickTarget(); return { kind: "skill", skill: k, target: tgt.uid }; }
+    return { kind: "attack", skill: "attack", target: pickTarget().uid };
+  }
+
+  /* ---- auto-battle (the stress test's player, and the AUTO button) ---- */
+  function autoChoose(B, u) {
+    const foes = alive(B, "foe"), heroes = alive(B, "hero"), down = B.units.filter(x => x.side === "hero" && x.ko);
+    const can = k => u.skills.includes(k) && !u.st.silence && SKILLS[k].cost <= u.sp;
+    const have = it => (B.inv[it] || 0) > 0;
+    const hurt = heroes.slice().sort((a, b) => a.hp / a.max.hp - b.hp / b.max.hp)[0];
+    if (down.length) { const rv = ["raise", "correction"].find(can); if (rv) return { kind: "skill", skill: rv, target: down[0].uid }; if (have("salts")) return { kind: "item", item: "salts", target: down[0].uid }; }
+    if (B.moreau && down.length >= Math.max(1, heroes.length) && heroes.length <= 1) return { kind: "moreau" };
+    const groupHurt = heroes.filter(h => h.hp / h.max.hp < .5).length >= 2;
+    if (groupHurt) { const ah = ["panacea", "longview"].find(can); if (ah) return { kind: "skill", skill: ah }; if (have("soup")) return { kind: "item", item: "soup" }; }
+    if (hurt && hurt.hp / hurt.max.hp < .42) { const hs = ["reagent", "benediction", "crucifix"].find(can); if (hs) return { kind: "skill", skill: hs, target: hurt.uid }; if (have("burrito") && hurt.max.hp - hurt.hp > 80) return { kind: "item", item: "burrito", target: hurt.uid }; if (have("coffee")) return { kind: "item", item: "coffee", target: hurt.uid }; }
+    const sick = heroes.find(h => h.st.sleep || h.st.confuse || h.st.poison); if (sick) { if (can("antidote")) return { kind: "skill", skill: "antidote", target: sick.uid }; }
+    if (u.sp < 4 && u.max.sp > 15) { if (have("gum") && B.rng() < .5) return { kind: "item", item: "gum", target: u.uid }; }
+    if (B.round === 1) { const b = ["prophecy", "punk", "longmemory", "archive"].find(can); if (b && (foes.length >= 2 || foes.some(f => f.boss))) return { kind: "skill", skill: b }; }
+    if (foes.some(f => f.boss)) { const d = ["peer", "shortsell", "precedent"].find(k => can(k) && !foes.find(f => f.boss).buffs.some(x => x.debuff)); if (d) return { kind: "skill", skill: d, target: foes.find(f => f.boss).uid }; }
+    // damage: best expected hit
+    let best = { score: eff(u, "atk") * 1, a: { kind: "attack", skill: "attack", target: foes.slice().sort((a, b) => a.hp - b.hp)[0].uid } };
+    for (const k of u.skills) { if (!can(k)) continue; const S = SKILLS[k]; if (S.kind !== "dmg" && S.kind !== "steal") continue;
+      const tg = S.tgt === "enemies" ? foes : [foes.slice().sort((a, b) => (b.weak && b.weak.includes(S.tag) ? 1 : 0) - (a.weak && a.weak.includes(S.tag) ? 1 : 0) || a.hp - b.hp)[0]];
+      let sc = 0; tg.forEach(t => { let m = eff(u, S.stat || "atk") * S.pow * (S.hits ? (S.hits[0] + S.hits[1]) / 2 : 1); if (t.weak && t.weak.includes(S.tag)) m *= 1.5; if (t.resist && t.resist.includes(S.tag)) m *= .5; sc += Math.min(m * 2, t.hp * 1.2); });
+      sc -= S.cost * .15; if (sc > best.score) best = { score: sc, a: { kind: "skill", skill: k, target: tg[0].uid } }; }
+    return best.a;
+  }
+
+  /* ---- rewards and levels ---- */
+  function rewards(B) {
+    const foes = B.units.filter(u => u.side === "foe"); let xp = 0, ink = 0; const drops = [];
+    foes.forEach(f => { const D = ENEMIES[f.id]; xp += D.xp * (1 + (f.lv - 1) * .5); ink += D.ink * (1 + (f.lv - 1) * .2); D.drops.forEach(([it, p]) => { if (B.rng() < p) drops.push(it); }); });
+    xp = Math.round(xp * DIFF[B.diff].xp); return { xp, ink: Math.round(ink) + B.inkDelta, drops };
+  }
+  function gainXP(ch, amt) { const ups = []; ch.xp += amt; while (ch.lv < 20 && ch.xp >= xpToNext(ch.lv)) { ch.xp -= xpToNext(ch.lv); ch.lv++; ups.push(ch.lv); } if (ch.lv >= 20) ch.xp = 0; return ups; }
+  function encounterGroup(table, lv, rng) { const g = pick(rng, TABLES[table]); return g.map(id => ({ id, lv: Math.max(1, lv + Math.round(R(rng, -1, 1))) })); }
+
+  return { HEROES, SKILLS, ENEMIES, ITEMS, SHOP, DIFF, TABLES, BOSSES, ISSUE_LV, xpToNext, heroStats, heroSkills, enemyStats, canEquip, makeBattle, current, endCheck, options, targetsFor, act, startTurn, enemyChoose, autoChoose, rewards, gainXP, encounterGroup, alive, eff };
+})();
+/*BATTLE-ENGINE-END*/
+
+Object.assign(PFONT, { "▼": "000111111010000", "▲": "000010111111000", "▶": "100110111110100", "◀": "001011111011001", "✓": "001001101010000" });
+/* =====================================================================
+   RPG: the party, levels, the bag, gear, random encounters and the
+   Final Fantasy-style battle screen. The rules live in BX above.
+   ===================================================================== */
+const HEROES_ORDER = ["hellrot", "junie", "yara", "fax", "otto", "bishop", "pru", "mary", "saintnobody"];
+const HOUSEMATES = HEROES_ORDER.slice(1);
+function rpgInit() {
+  if (!S) return;
+  if (!S.diff || !BX.DIFF[S.diff]) S.diff = "normal";
+  S.chars = S.chars || {};
+  HEROES_ORDER.forEach(id => { if (!S.chars[id]) { const st = BX.heroStats(id, 1, {}).s; S.chars[id] = { lv: 1, xp: 0, hp: st.hp, sp: st.sp, eq: { weapon: null, armor: null, acc: id === "hellrot" ? "notebook" : null } }; } });
+  if (!S.inv) S.inv = { coffee: 3, antacid: 1, gum: 1 };
+  if (!S.party) S.party = S.comp && S.comp !== "none" && HOUSEMATES.includes(S.comp) ? [S.comp] : [];
+  if (S.steps == null) { S.steps = 0; S.encGap = 0; }
+}
+const activeParty = () => S.issue < 1 ? ["hellrot"] : ["hellrot", ...S.party.filter(id => HOUSEMATES.includes(id))].slice(0, 3);
+const charStats = id => { const ch = S.chars[id]; return BX.heroStats(id, ch.lv, ch.eq); };
+const areaLv = () => BX.ISSUE_LV[clamp(S.issue || 0, 0, 6)];
+const partyLv = () => { const ids = activeParty(); return Math.round(ids.reduce((a, id) => a + S.chars[id].lv, 0) / ids.length); };
+// enemies come at the Issue's level, but never too far above the party: story fights at most +1, random fights at most +2
+const foeLv = story => Math.max(1, Math.min(areaLv(), partyLv() + (story ? 1 : 2)));
+function restoreParty(frac) {
+  HEROES_ORDER.forEach(id => { const ch = S.chars[id], m = charStats(id).s; ch.hp = clamp(Math.max(ch.hp, 0) + Math.ceil(m.hp * frac), 1, m.hp); ch.sp = clamp(ch.sp + Math.ceil(m.sp * frac), 0, m.sp); });
+}
+// housemates who sat out don't fall far behind: they keep within a level of Hell Rot
+function catchUp() {
+  const top = S.chars.hellrot.lv;
+  HOUSEMATES.forEach(id => { const ch = S.chars[id]; if (ch.lv < top - 1) { ch.lv = top - 1; ch.xp = 0; const m = charStats(id).s; ch.hp = m.hp; ch.sp = m.sp; } });
+}
+function setParty(list) { S.party = list.filter(id => HOUSEMATES.includes(id)).slice(0, 2); S.comp = S.party[0] || "none"; S.flags["comp" + S.issue] = true; catchUp(); }
+
+/* ---------- random encounters: a step counter, like the old days ---------- */
+const SAFE_PLACES = ["house", "northbeach", "fogbelt"];
+function encounterTable() {
+  if (!PL.node) return null;
+  if (PL.node.startsWith("field:")) return ["trail", "cliff"].includes(PL.node.slice(6)) ? "mountain" : null;
+  const node = BY[PL.node]; if (!node || SAFE_PLACES.includes(node.id) || !INT[node.id]) return null;
+  const st = INT[node.id].st;
+  let t = node.f === "church" ? "church" : node.f === "theogen" || node.f === "salon" ? "theogen" : node.f === "order" ? "order" : node.f === "machine" ? "machine" : node.f === "marin" ? "mountain" : ["pier", "beach", "shelter"].includes(st) || node.f === "norton" ? "fog" : "street";
+  if (S.issue < 2 && (t === "order" || t === "machine")) t = "street";
+  return t;
+}
+function stepEncounter() {
+  if (S.screen !== "field" && S.screen !== "scene") return false;
+  if (S.scene && (S.scene.offer || S.scene.choice)) return false;
+  const tb = encounterTable(); if (!tb) return false;
+  S.steps++; S.encGap = (S.encGap || 0) + 1;
+  if (PL.node === "field:trail" && !S.flags.tutFight && S.encGap >= 5) { S.flags.tutFight = true; startBattle({ kind: "tutorial", foes: [{ id: "raccoon", lv: 1 }] }); return true; }
+  if (S.encGap < 8) return false;
+  const rate = (PL.node.startsWith("field:") ? 1 / 22 : 1 / 26) * BX.DIFF[S.diff].rate;
+  if (Math.random() >= rate) return false;
+  startBattle({ kind: "random", foes: BX.encounterGroup(tb, foeLv(false), Math.random) });
+  return true;
+}
+// for players who use the buttons and never walk: go looking for a fight
+function patrol() { const node = S.scene && BY[S.scene.node]; if (!node || SAFE_PLACES.includes(node.id) || !INT[node.id] || S.scene.offer || S.scene.choice) return; S.encGap = 0;
+  startBattle({ kind: "random", foes: BX.encounterGroup(encounterTableFor(node), foeLv(false), Math.random) }); }
+
+/* ---------- story fights: the old showdown hotspots ---------- */
+function startStoryFight(foe, node, boss) {
+  const lv = foeLv(true), tb = encounterTableFor(node);
+  let foes;
+  if (boss && BX.BOSSES[foe]) foes = BX.BOSSES[foe].map(id => ({ id, lv }));
+  else { const lead = BX.ENEMIES[foe] ? foe : "heckler"; foes = [{ id: lead, lv }]; const extra = partyLv() < areaLv() - 1 ? 0 : S.issue >= 4 ? 2 : S.issue >= 2 ? 1 : 0;   // a party that has fallen behind meets one at a time
+    for (let k = 0; k < extra; k++) { const g = pick(BX.TABLES[tb]); foes.push({ id: pick(g), lv: Math.max(1, lv - 1) }); } }
+  startBattle({ kind: boss ? "boss" : "story", foes, foe, node: node.id, fac: FOES[foe] ? FOES[foe].f : node.f, after: () => storyWin(foe) });
+}
+function encounterTableFor(node) { const keep = PL.node; PL.node = node.id; const t = encounterTable() || "street"; PL.node = keep; return t; }
+function storyWin(foe) {
+  const F = FOES[foe] || FOES.heckler;
+  remember({ kind: F.boss ? "lead" : "frag", text: `Won against ${F.n}` }); S.ink += F.boss ? 15 : 5;
+  if (foe === "olddee") S.flags.olddee = true;
+  say(`You win against ${F.n}. ${F.boss ? "A Lead" : "A fragment"} and ${F.boss ? 15 : 5} Ink.`, "#a6e23f");
+  S.screen = "scene"; if (S.scene) S.scene.lines.push({ txt: `${F.n} stands down.` });
+}
+
+/* ---------- the battle ---------- */
+let BT = null;
+const ST_NAME = { poison: "poisoned", sleep: "asleep", stun: "stunned", blind: "blinded", silence: "silenced", confuse: "confused" };
+const ST_ICON = { poison: ["PSN", "#a6e23f"], sleep: ["SLP", "#a487dd"], stun: ["STN", "#f0bd3e"], blind: ["BLD", "#8d8496"], silence: ["SIL", "#3f8cf2"], confuse: ["CNF", "#e33f9c"] };
+function startBattle(o) {
+  rpgInit();
+  const ids = activeParty();
+  if (o.kind === "boss" && ids.length === 1 && S.issue > 0) { ids.push("junie"); o.joined = "Junie won't let you face this alone. She comes along."; }
+  const party = ids.map(id => { const ch = S.chars[id]; return { id, lv: ch.lv, hp: Math.max(1, ch.hp), sp: ch.sp, eq: ch.eq }; });
+  const B = BX.makeBattle({ party, foes: o.foes, diff: S.diff, inv: S.inv, ink: S.ink, boss: o.kind === "boss", moreau: !S.moreauUsed && (S.issue > 0 || !!S.flags.moreau), noRun: o.kind === "story" || o.kind === "tutorial" });
+  const foes = B.units.filter(u => u.side === "foe"), lead = foes[0];
+  const open = o.kind === "tutorial" ? "A raccoon blocks the trail. It wants your coffee. Pick ATTACK, then the raccoon." : o.kind === "boss" ? `${lead.n} steps forward. This is the district's boss.` : foes.length > 1 ? `${lead.n} and ${foes.length - 1} more get in your way!` : `${lead.n} gets in your way!`;
+  for (const k in KEYS) KEYS[k] = false;
+  BT = { B, o, phase: "intro", t0: performance.now(), anim: [], nums: [], msg: o.joined ? o.joined + " " + open : open, menu: "main", auto: !!(S.opts && S.opts.auto), fac: o.fac || (lead && BX.ENEMIES[lead.id].f), meta: {}, place: PL.node };
+  S.btRet = S.screen; S.screen = "battle"; render(); sceneIntoView();
+  BT.timer = setTimeout(btAdvance, REDUCE ? 50 : 900);
+}
+const btSpeed = () => (S.opts && S.opts.fast ? .3 : 1) * (BT && BT.auto ? .6 : 1) * (REDUCE ? .5 : 1);
+const unitOf = uid => BT.B.units.find(x => x.uid === uid);
+function btAdvance() {
+  if (!BT || BT.phase === "end") return;
+  const B = BT.B, res = BX.endCheck(B); if (res) return btEnd(res);
+  const u = BX.current(B); if (!u) return btEnd("lose");
+  const st = BX.startTurn(B, u);
+  if (st.ev.length) btPlay(st.ev, () => st.skip ? btAdvance() : btTurn(u)); else btTurn(u);
+}
+function btTurn(u) {
+  if (!BT) return; const B = BT.B, res = BX.endCheck(B); if (res) return btEnd(res);
+  if (u.ko) return btAdvance();
+  if (u.side === "hero" && u.st.confuse) return btGo(u, { kind: "attack", skill: "attack" });
+  if (u.side === "hero" && !BT.auto) { BT.phase = "input"; BT.actor = u.uid; BT.menu = "main"; BT.pending = null; BT.msg = `${u.n}: your move.`; btPaint(); return; }
+  btGo(u, u.side === "hero" ? BX.autoChoose(B, u) : BX.enemyChoose(B, u));
+}
+function btGo(u, a) { BT.phase = "anim"; BT.menu = "main"; BT.pending = null; const ev = BX.act(BT.B, u, a); btPlay(ev, btAdvance); }
+function btPlay(evs, done) {
+  let i = 0;
+  const next = () => { if (!BT) return; if (i >= evs.length) { btPaint(); return done(); } const d = btEvent(evs[i++]); btPaint(); BT.timer = setTimeout(next, Math.round(d * btSpeed())); };
+  next();
+}
+function btEvent(e) {
+  const now = performance.now(), N = (uid, txt, col) => BT.nums.push({ uid, txt, col, t0: now }), nm = uid => (unitOf(uid) || {}).n || "";
+  switch (e.t) {
+    case "use": BT.msg = e.text; BT.anim.push({ uid: e.from, k: "lunge", t0: now }); return 560;
+    case "msg": BT.msg = e.text; return 700;
+    case "hit": BT.anim.push({ uid: e.to, k: "hit", t0: now }); N(e.to, String(e.amt), e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : e.resist ? "#8d8496" : "#efe7f0");
+      if (e.crit || e.weak || e.resist) N(e.to, e.crit ? "CRITICAL" : e.weak ? "WEAK POINT" : "RESISTED", e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : "#8d8496");
+      if (e.text === "poison") BT.msg = `${nm(e.to)} feels the poison.`; return 420;
+    case "miss": N(e.to, e.text ? e.text.toUpperCase() : "MISS", "#8d8496"); return 360;
+    case "heal": if (e.to === "party") { BT.msg = e.text; BT.B.units.filter(u => u.side === "hero").forEach(u => BT.anim.push({ uid: u.uid, k: "glow", t0: now })); return 900; }
+      if (e.amt > 0) { N(e.to, "+" + e.amt, "#a6e23f"); BT.anim.push({ uid: e.to, k: "glow", t0: now }); } return 360;
+    case "sp": N(e.to, "+" + e.amt + " SP", "#3f8cf2"); return 340;
+    case "revive": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "glow", t0: now }); return 700;
+    case "ko": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "ko", t0: now }); return 760;
+    case "buff": N(e.to, Object.keys(e.stats).map(k => ({ taunt: "COVER", regen: "REGEN", eva: "EVADE", crit: "FOCUS" })[k] || k.toUpperCase() + "▲").join(" "), "#a6e23f"); return 340;
+    case "debuff": N(e.to, Object.keys(e.stats).map(k => k.toUpperCase() + "▼").join(" "), "#d32f3f"); return 340;
+    case "status": N(e.to, (ST_ICON[e.st] || [e.st])[0], (ST_ICON[e.st] || [0, "#efe7f0"])[1]); BT.msg = `${nm(e.to)} is ${ST_NAME[e.st] || e.st}.`; return 520;
+    case "meta": applyMeta(e.meta); return 0;
+  }
+  return 200;
+}
+// the street notices how you fight: once per fight, a skill can move the meters
+function applyMeta(m) {
+  if (!S.issue) return;
+  for (const k of Object.keys(m)) { if (BT.meta[k]) continue; BT.meta[k] = 1;
+    if (k === "venom") S.venom = clamp(S.venom + 1, 0, 10); if (k === "vow") S.vow = clamp(S.vow + 1, 0, 10);
+    if (k === "worship") addWorship(BT.fac === "theogen" ? "helix" : "saint", 1); }
+}
+function btEnd(res) {
+  const B = BT.B; BT.phase = "end"; BT.res = res; clearTimeout(BT.timer);
+  if (B.used.moreau) S.moreauUsed = true;
+  const out = [], heroes = B.units.filter(u => u.side === "hero");
+  heroes.forEach(u => { const ch = S.chars[u.id]; ch.hp = u.ko ? (res === "lose" ? 0 : 1) : u.hp; ch.sp = u.sp; });
+  if (res === "win") {
+    const R = BX.rewards(B), foes = B.units.filter(u => u.side === "foe"), flv = foes.reduce((a, f) => a + f.lv, 0) / foes.length;
+    const inkx = 1 + heroes.reduce((a, u) => a + (u.mods.inkx || 0), 0), ink = Math.max(0, Math.round((R.ink - B.inkDelta) * inkx) + B.inkDelta);
+    S.ink = Math.max(0, S.ink + ink);
+    out.push(`Victory! ${R.xp} XP${ink ? ` · ${ink} Ink` : ""}.`);
+    const inParty = heroes.map(u => u.id), met = S.issue >= 1 ? HOUSEMATES : [], benchUps = [];
+    [...inParty, ...met.filter(id => !inParty.includes(id))].forEach(id => {
+      const ch = S.chars[id], u = heroes.find(h => h.id === id), half = !u;
+      const amt = Math.round(R.xp * (half ? .5 : 1) * (1 + ((u && u.mods.xpx) || (id === "hellrot" && ch.eq.acc === "notebook" ? .15 : 0))) * (1 + .25 * Math.max(0, flv - ch.lv)));
+      const before = BX.heroSkills(id, ch.lv), ups = BX.gainXP(ch, amt);
+      if (ups.length) { const m = charStats(id).s; ch.hp = m.hp; ch.sp = m.sp; const learned = BX.heroSkills(id, ch.lv).filter(k => !before.includes(k));
+        if (half) benchUps.push(`${BX.HEROES[id].n} ${ch.lv}`); else out.push(`${BX.HEROES[id].n} reaches level ${ch.lv}!${learned.length ? " Learns " + learned.map(k => BX.SKILLS[k].n).join(", ") + "." : ""}`); }
+    });
+    if (benchUps.length) out.push(`At home, the bench levels up too: ${benchUps.join(", ")}.`);
+    R.drops.forEach(it => { S.inv[it] = (S.inv[it] || 0) + 1; });
+    if (R.drops.length) out.push(`Found: ${R.drops.map(it => BX.ITEMS[it].n).join(", ")}.`);
+    if (B.stolen.length) out.push(`Stolen in the fight: ${B.stolen.map(it => BX.ITEMS[it].n).join(", ")}.`);
+    BT.msg = foes.length > 1 ? "They all stand down." : `${foes[0].n} stands down.`;
+  } else if (res === "fled") { S.ink = Math.max(0, S.ink + B.inkDelta); BT.msg = "You get away."; out.push("You got away. No XP."); }
+  else { S.ink = Math.max(0, S.ink + B.inkDelta); BT.msg = "The party is out cold.";
+    out.push(S.issue < 1 ? "You wake on the trail with Moreau's jar warm in your hands. Try again." : BT.o.kind === "random" ? "Junie finds you and drives you home. You lose an hour, but your Memory gets home safe." : "Junie finds you. She always finds you. You wake at Villa Delirium, Memory lost."); }
+  if (B.inkDelta < 0) out.push(`They took ${-B.inkDelta} Ink.`);
+  BT.summary = out; btPaint();
+}
+// keep the picture on screen when a fight starts or ends (the windows below can scroll it away on a phone)
+function sceneIntoView() { setTimeout(() => { const c = document.querySelector("#screen .scene-art"); if (c && (c.getBoundingClientRect().top < 0 || c.getBoundingClientRect().top > innerHeight * .6)) c.scrollIntoView({ block: "start" }); }, 0); }
+function btFinish() { sceneIntoView();
+  const o = BT.o, res = BT.res; BT = null;
+  S.screen = S.btRet === "scene" && !S.scene ? "house" : (S.btRet || "house"); S.encGap = 0;
+  if (res === "lose") {
+    if (o.kind === "boss" && o.node) S.done = S.done.filter(x => x !== o.node + "-boss");
+    restoreParty(.5);
+    if (S.issue < 1) { HEROES_ORDER.forEach(id => { const m = charStats(id).s; S.chars[id].hp = m.hp; }); return; }
+    if (o.kind === "random") { const m = S.memory.length; S.scene = null; S.at = "house"; S.sel = "house"; S.room = "rest"; spend(1); S.notebook.push(...S.memory); S.memory = []; S.boons = []; S.clar = maxClar();
+      say(`A street fight goes wrong. Junie drags you home in the van. One hour lost.${m ? ` You get home with your Memory: ${m} item${m === 1 ? "" : "s"} go into the Notebook.` : ""}`, "#d32f3f"); S.screen = "house"; return; }
+    say(`The party is beaten${o.foe && FOES[o.foe] ? " by " + FOES[o.foe].n : ""}. Their version of the story runs first.`, "#d32f3f"); return blackout();
+  }
+  if (res === "win" && o.after) { o.after(); return afterAction(); }
+}
+
+/* ---------- sprites for the other side ---------- */
+const FOE_HUMAN = {
+  heckler: [{ skin: 1, hair: "short", hc: "#6a3a1a", top: "#7a6a3a" }, "city"], pickpocket: [{ skin: 2, hair: "buzz", hc: "#1a1410", top: "#2a2a3a" }, "city"],
+  usher: [{ skin: 0, hair: "short", hc: "#f0bd3e", top: "#efe7f0", acc: ["collar"] }, "church"], merged: [{ skin: 1, hair: "bald", top: "#f0bd3e" }, "church"],
+  goldlady: [{ skin: 3, hair: "bun", hc: "#f0bd3e", top: "#f0bd3e", acc: ["pearls"] }, "church"], runner: [{ skin: 2, hair: "locs", hc: "#3fe3d4", top: "#1fa89d" }, "theogen"],
+  enforcer: [{ skin: 1, hair: "shaved", hc: "#1a1410", top: "#3a3a44" }, "theogen"], gilder: [{ skin: 0, hair: "short", hc: "#c48f52", top: "#c48f52", acc: ["collar"] }, "order"],
+  acolyte: [{ skin: 2, hair: "bald", top: "#5a3a1a" }, "order"], cop: [{ skin: 1, hair: "short", hc: "#1a1410", top: "#3f5ab5" }, "machine"], canvasser: [{ skin: 0, hair: "pony", hc: "#d9541e", top: "#b5523b" }, "machine"]
+};
+Object.entries(FOE_HUMAN).forEach(([k, [spec, f]]) => { C["foe_" + k] = { id: "foe_" + k, n: k, spec, f }; });
+const FOESPR = {};
+function foeSprite(art, step) {
+  const key = art + ":" + step; if (FOESPR[key]) return FOESPR[key];
+  if (FOE_HUMAN[art]) return (FOESPR[key] = nesSprite("foe_" + art, "right", step));
+  if (C[art]) return (FOESPR[key] = nesSprite(art, "right", step));
+  const cv = document.createElement("canvas"); cv.width = cv.height = 16; const g = cv.getContext("2d");
+  const R = (x, y, w, h, c) => { g.fillStyle = c; g.fillRect(x, y, w, h); }, P = (x, y, c) => R(x, y, 1, 1, c), s = step ? 1 : 0;
+  const quad = (b, d, e, tail) => { R(2, 7, 10, 5, b); R(10, 4, 5, 5, b); P(13, 5, e); P(15, 7, d); R(3, 12, 2, 3 - s, d); R(9, 12, 2, 2 + s, d); R(0, 6 - s, 3, 2, tail || b); };
+  switch (art) {
+    case "raccoon": quad("#8d8496", "#3a3442", "#0d0a14", "#3a3442"); R(11, 5, 4, 1, "#1c1824"); P(0, 6, "#efe7f0"); P(2, 6, "#efe7f0"); break;
+    case "coyote": quad("#b08a5a", "#6a4a2a", "#0d0a14"); R(11, 2, 1, 2, "#b08a5a"); R(13, 2, 1, 2, "#b08a5a"); break;
+    case "hound": quad("#1fa89d", "#0a5a54", "#b8fff8"); if (FRAME % 2) R(4, 8, 6, 2, "#3fe3d4"); break;
+    case "foghound": quad("#b9b4c4", "#6a6478", "#fff3aa"); R(0, 10, 16, 2, "#b9b4c488"); break;
+    case "sealion": R(2, 6, 12, 7, "#5a3a24"); R(10, 3, 5, 5, "#5a3a24"); P(13, 4, "#0d0a14"); R(1, 12, 4, 2, "#3a2414"); R(10, 12, 4, 2, "#3a2414"); R(5, 8, 4, 3, "#efe7d0"); P(6, 9, "#d32f3f"); break;
+    case "wisp": R(4, 3, 8, 9, "#d8d4e0"); R(3, 5, 10, 5, "#b9b4c4"); R(5, 12, 2, 2 + s, "#b9b4c4"); R(9, 12, 2, 3 - s, "#b9b4c4"); P(6, 6, "#3f8cf2"); P(9, 6, "#3f8cf2"); break;
+    case "drone": R(3, 7, 10, 3, "#4a5a6a"); R(6, 10, 4, 2, "#2a3440"); R(1, 5, 4, 1, s ? "#efe7f0" : "#8d8496"); R(11, 5, 4, 1, s ? "#8d8496" : "#efe7f0"); P(8, 8, "#d32f3f"); R(7, 12, 2, 3, "#c48f52"); break;
+    case "halodrone": R(3, 7, 10, 3, "#efe7f0"); R(4, 3, 8, 1, "#f0bd3e"); P(3, 4, "#f0bd3e"); P(12, 4, "#f0bd3e"); R(1, 6, 3, 1, "#f0bd3e"); R(12, 6, 3, 1, "#f0bd3e"); P(8, 8, s ? "#fff3aa" : "#f0bd3e"); break;
+    case "riotdrone": R(2, 6, 12, 5, "#2a2a34"); R(4, 4, 8, 2, "#3a3a44"); R(0, 5, 3, 1, "#8d8496"); R(13, 5, 3, 1, "#8d8496"); R(5, 11, 6, 3, "#3f5ab5"); P(8, 8, s ? "#d32f3f" : "#3f8cf2"); break;
+    case "nitrous": R(2, 4, 12, 7, "#e33f9c99"); R(4, 2, 8, 10, "#ff8ba299"); R(6, 11, 4, 4, "#8d8496"); R(7, 10, 2, 1, "#efe7f0"); P(6, 6, "#0d0a14"); P(10, 6, "#0d0a14"); R(7, 8, 3, 1, "#0d0a14"); break;
+    case "pigeons": for (const [x, y] of [[1, 8], [6, 4 + s], [10, 9 - s]]) { R(x, y, 5, 3, "#6a6a7a"); P(x + 4, y - 1, "#3f8c6a"); P(x + 4, y, "#0d0a14"); R(x + 1, y + 3, 1, 1, "#e33f9c"); } break;
+    case "gull": R(4, 7, 8, 4, "#efe7f0"); R(0, 5 + s * 2, 5, 2, "#b9b4c4"); R(11, 5 + s * 2, 5, 2, "#b9b4c4"); R(10, 5, 3, 3, "#efe7f0"); P(12, 6, "#0d0a14"); R(13, 7, 2, 1, "#f0bd3e"); break;
+    case "ratking": R(2, 6, 12, 7, "#6a4a3a"); R(10, 4, 5, 5, "#6a4a3a"); P(13, 5, "#d32f3f"); R(10, 2, 5, 2, "#f0bd3e"); P(10, 1, "#f0bd3e"); P(12, 1, "#f0bd3e"); P(14, 1, "#f0bd3e"); R(0, 10 + s, 3, 1, "#e8a0a0"); R(3, 13, 2, 2, "#3a2a2a"); R(10, 13, 2, 2, "#3a2a2a"); break;
+    case "leech": for (let k = 0; k < 6; k++) R(2 + k * 2, 8 + Math.round(Math.sin(k + FRAME * .5) * 2), 3, 4, k % 2 ? "#1fa89d" : "#3fe3d4"); P(14, 9, "#0d0a14"); break;
+    case "bloom": R(7, 8, 2, 7, "#2a5a2a"); R(3, 3, 10, 6, "#7a3a9a"); R(5, 2, 6, 1, "#a487dd"); P(5, 5, "#fff3aa"); P(10, 4, "#fff3aa"); P(8, 6, "#fff3aa"); if (s) { P(2, 1, "#a6e23f"); P(13, 2, "#a6e23f"); } break;
+    case "choirbot": R(4, 3, 8, 9, "#c48f52"); R(5, 5, 2, 2, "#0d0a14"); R(9, 5, 2, 2, "#0d0a14"); R(6, 8, 4, 3 - s, "#0d0a14"); R(5, 12, 2, 3, "#6a4a2a"); R(9, 12, 2, 3, "#6a4a2a"); P(13, 2 + s, "#f0bd3e"); R(14, 1 + s, 1, 3, "#f0bd3e"); break;
+    case "butler": R(5, 1, 6, 5, "#c48f52"); P(6, 3, "#fff3aa"); P(9, 3, "#fff3aa"); R(4, 6, 8, 7, "#1c1824"); R(7, 6, 2, 4, "#efe7f0"); R(12, 7 + s, 3, 1, "#b9b4c4"); R(12, 6 + s, 3, 1, "#efe7f0"); R(5, 13, 2, 3, "#3a3442"); R(9, 13, 2, 3, "#3a3442"); break;
+    case "sentry": R(3, 2, 10, 12, "#6a6a74"); R(4, 3, 8, 3, "#2a2a34"); R(5, 4, 6, 1, s ? "#d32f3f" : "#5a1a1a"); R(5, 8, 6, 4, "#8d8496"); P(8, 10, "#f0bd3e"); R(3, 14, 3, 2, "#3a3a44"); R(10, 14, 3, 2, "#3a3a44"); break;
+    case "rig": R(2, 5, 12, 9, "#3a3442"); R(3, 6, 10, 4, "#0d1820"); for (let k = 0; k < 5; k++) P(4 + k * 2, 8 - ((k + FRAME) % 3), "#3fe3d4"); R(7, 1, 1, 4, "#8d8496"); P(7, 0, s ? "#d32f3f" : "#efe7f0"); R(3, 14, 10, 2, "#1c1824"); break;
+    default: R(3, 3, 10, 10, "#8d8496");
+  }
+  return (FOESPR[key] = cv);
+}
+
+/* ---------- drawing the fight ---------- */
+function btPos(u) {
+  const B = BT.B, side = B.units.filter(x => x.side === u.side), i = side.indexOf(u), n = side.length;
+  if (u.side === "hero") return ([[[206, 76]], [[200, 58], [214, 94]], [[200, 46], [216, 76], [200, 106]]][n - 1] || [])[i] || [206, 76];
+  return ([[[58, 74]], [[44, 56], [70, 96]], [[62, 44], [26, 74], [62, 106]]][n - 1] || [])[i] || [50, 74];
+}
+function btBackdrop(g) {
+  let wall = "#0e140e", floor = "#1a2a12", out = true, kind = "forest";
+  const p = BT.place || "", f = FRAME;
+  if (p.startsWith("field:")) { kind = p.slice(6) === "cliff" ? "cliff" : "forest"; [wall, floor] = kind === "cliff" ? ["#120d1c", "#2a2430"] : ["#0d1a10", "#1c2a14"]; }
+  else if (INT[p] && ROOMSTYLE[INT[p].st]) { const R = ROOMSTYLE[INT[p].st]; wall = R.wall; floor = R.floor; out = !!R.out; kind = INT[p].st; }
+  // the back: night sky outdoors, a wall with lit windows indoors
+  rect(g, 0, 0, 256, 56, out ? "#0d0a14" : wall);
+  if (out) { for (let k = 0; k < 24; k++) P2(g, (k * 53) % 256, (k * 29) % 40, k % 4 ? "#e8f4ff" : "#fff3aa");
+    if (kind === "forest" || kind === "park" || kind === "shack" || kind === "farm") for (let x = -6; x < 262; x += 18) { const h = 22 + ((x * 7) % 13); g.fillStyle = "#0a160c"; g.beginPath(); g.moveTo(x, 56); g.lineTo(x + 9, 56 - h); g.lineTo(x + 18, 56); g.fill(); }
+    else if (kind === "cliff" || kind === "beach" || kind === "pier") { rect(g, 0, 36, 256, 20, "#0b1a26"); for (let k = 0; k < 12; k++) rect(g, (k * 37 + f * 2) % 256, 40 + (k * 7) % 14, 6, 1, "#14394a"); }
+    else for (let x = 0; x < 256; x += 22) { const h = 18 + ((x * 11) % 24); rect(g, x, 56 - h, 18, h, wall); for (let y = 56 - h + 4; y < 52; y += 6) for (let wx = x + 3; wx < x + 16; wx += 5) if ((wx + y + x) % 3) rect(g, wx, y, 2, 2, "#f29b3a66"); } }
+  else { for (let x = 8; x < 256; x += 48) { rect(g, x, 12, 22, 26, "#0d0a14"); rect(g, x + 2, 14, 18, 22, kind === "nave" || kind === "hall" ? "#f0bd3e33" : kind === "lab" || kind === "tunnel" ? "#3fe3d433" : "#f29b3a33"); rect(g, x + 10, 14, 2, 22, "#0d0a14"); }
+    rect(g, 0, 50, 256, 6, "#00000040"); }
+  // the floor, in perspective
+  rect(g, 0, 56, 256, 88, floor);
+  for (let k = 1; k < 8; k++) rect(g, 0, 56 + k * k * 1.6, 256, 1, "#00000030");
+  for (let k = -8; k <= 8; k++) { g.strokeStyle = "#00000022"; g.beginPath(); g.moveTo(128 + k * 16, 56); g.lineTo(128 + k * 48, 144); g.stroke(); }
+  rect(g, 0, 56, 256, 2, "#00000066");
+}
+function drawBattle(cv) {
+  if (!BT) return; const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false;
+  const now = performance.now(), B = BT.B; btBackdrop(g);
+  BT.anim = BT.anim.filter(a => now - a.t0 < 900); BT.nums = BT.nums.filter(n => now - n.t0 < 1100);
+  const an = (u, k) => BT.anim.find(a => a.uid === u.uid && a.k === k);
+  const order = B.units.slice().sort((a, b) => btPos(a)[1] - btPos(b)[1]);
+  for (const u of order) {
+    let [x, y] = btPos(u); const boss = u.side === "foe" && u.boss, sc = boss ? 3 : 2, sz = 16 * sc;
+    const ko = an(u, "ko"), hit = an(u, "hit"), lunge = an(u, "lunge"), glow = an(u, "glow");
+    if (u.ko && u.side === "foe" && !ko) continue;   // they stood down and walked off
+    if (lunge) { const k = (now - lunge.t0) / 300, d = k < .5 ? k * 2 : Math.max(0, 2 - k * 2); x += (u.side === "hero" ? -14 : 14) * d; }
+    if (BT.phase === "input" && BT.actor === u.uid) x -= 10;
+    if (hit && now - hit.t0 < 320) { x += (Math.floor((now - hit.t0) / 40) % 2 ? 2 : -2); if (Math.floor((now - hit.t0) / 60) % 2) continue; }
+    const step = Math.floor(now / 380) % 2, spr = u.side === "hero" ? nesSprite(u.id, u.ko ? "down" : "left", u.ko ? 0 : step) : foeSprite(BX.ENEMIES[u.id].art, step);
+    g.save();
+    if (ko && u.side === "foe") { const k = Math.min(1, (now - ko.t0) / 700); g.globalAlpha = 1 - k; x -= k * 24; }
+    if (u.ko && u.side === "hero") g.globalAlpha = .45;
+    g.fillStyle = "#00000055"; g.fillRect(Math.round(x - sz / 2 + 4), Math.round(y + sz / 2 - 3), sz - 8, 4);
+    if (u.ko && u.side === "hero") { g.translate(Math.round(x), Math.round(y + 8)); g.rotate(Math.PI / 2); g.drawImage(spr, -16, -16, 32, 32); }
+    else g.drawImage(spr, Math.round(x - sz / 2), Math.round(y - sz / 2), sz, sz);
+    g.restore();
+    if (glow) { const k = (now - glow.t0) / 900; for (let i = 0; i < 6; i++) { g.fillStyle = i % 2 ? "#a6e23f" : "#fff3aa"; g.fillRect(Math.round(x - 10 + i * 4), Math.round(y + 10 - k * 30 - (i % 3) * 4), 2, 2); } }
+    if (u.ko && u.side === "hero") ptext(g, "ZZ", x + 6, y - 14, "#a487dd");
+    const sts = Object.keys(u.st); if (sts.length && !u.ko) ptext(g, ST_ICON[sts[0]] ? ST_ICON[sts[0]][0] : "", x - 8, y - sz / 2 - 8, ST_ICON[sts[0]] ? ST_ICON[sts[0]][1] : "#efe7f0");
+    if (u.defend && !u.ko) { g.strokeStyle = "#3f8cf2"; g.strokeRect(Math.round(x - sz / 2) - .5, Math.round(y - sz / 2) - .5, sz + 1, sz + 1); }
+    if (BT.phase === "input" && BT.actor === u.uid) ptext(g, "▼", x - 1, y - 26 + (Math.floor(now / 250) % 2), "#fff3aa");
+    if (BT.menu === "target" && BT.hover === u.uid) ptext(g, u.side === "foe" ? "▶" : "◀", u.side === "foe" ? x - sz / 2 - 8 : x + sz / 2 + 3, y - 2, "#fff3aa");
+  }
+  for (const n of BT.nums) { const u = unitOf(n.uid); if (!u) continue; const [x, y] = btPos(u), k = (now - n.t0) / 1100, same = BT.nums.filter(m => m.uid === n.uid && m.t0 === n.t0).indexOf(n);
+    const w = ptextW(n.txt, 2); ptext(g, n.txt, Math.round(x - w / 2), Math.round(y - 30 - k * 14 - same * 12), n.col, n.txt.length > 6 ? 1 : 2); }
+  // the opening swirl
+  const k = (now - BT.t0) / 650;
+  if (k < 1 && !REDUCE) { g.fillStyle = "#000"; for (let i = 0; i < 16; i++) for (let j = 0; j < 9; j++) if (((i * 7 + j * 13) % 16) / 16 > k) g.fillRect(i * 16, j * 16, 16, 16); if (k < .35 && Math.floor(k * 20) % 2) { g.fillStyle = "#efe7f0"; g.fillRect(0, 0, 256, 144); } }
+}
+
+/* ---------- the blue windows ---------- */
+function btPaint() { const el = document.getElementById("btwin"); if (el && BT) el.innerHTML = btWin(); }
+function btWin() {
+  const B = BT.B, u = BT.phase === "input" ? unitOf(BT.actor) : null;
+  const FB = (arg, t, d, dis, extra) => `<button class="ffbtn" data-act="bt" data-arg="${esc(arg)}" ${dis ? "disabled" : ""} ${extra || ""}><span>${t}</span>${d ? `<em>${d}</em>` : ""}</button>`;
+  let cmd = "";
+  if (BT.phase === "end") cmd = `<div class="ffhead">${BT.res === "win" ? "VICTORY" : BT.res === "fled" ? "ESCAPED" : "DEFEAT"}</div>${BT.summary.map(l => `<p>${esc(l)}</p>`).join("")}${FB("end", "▶ Continue", "", false, 'autofocus')}`;
+  else if (u && BT.menu === "target") {
+    const pool = BX.targetsFor(B, u, BT.tgtKind);
+    cmd = `<div class="ffhead">${esc(u.n).toUpperCase()} · CHOOSE A TARGET</div>${pool.map(t => FB("tgt:" + t.uid, esc(t.n), t.side === "hero" ? `HP ${t.hp}/${t.max.hp}` : (B.scanned ? `HP ${t.hp}/${t.max.hp}` : ""), false, `data-hover="${t.uid}"`)).join("")}${FB("back", "◀ Back")}`;
+  } else if (u && BT.menu === "skill") {
+    cmd = `<div class="ffhead">${esc(u.n).toUpperCase()} · SKILLS · SP ${u.sp}/${u.max.sp}</div>${u.skills.map(k => { const s = BX.SKILLS[k], empty = (s.tgt === "ally-ko" && !BX.targetsFor(B, u, "ally-ko").length); return FB("skill:" + k, `${esc(s.n)} <b>${s.cost} SP</b>`, esc(s.d || ""), u.sp < s.cost || u.st.silence || empty); }).join("")}${FB("back", "◀ Back")}`;
+  } else if (u && BT.menu === "item") {
+    const its = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "use");
+    cmd = `<div class="ffhead">ITEMS</div>${its.map(([it, n]) => { const I = BX.ITEMS[it], empty = I.tgt === "ally-ko" && !BX.targetsFor(B, u, "ally-ko").length; return FB("item:" + it, `${esc(I.n)} <b>×${n}</b>`, esc(I.d), empty || (I.eff.escape && (B.boss || B.noRun))); }).join("") || "<p>The bag is empty.</p>"}${FB("back", "◀ Back")}`;
+  } else if (u) {
+    const opts = BX.options(B, u), hasRun = opts.some(o => o.kind === "run");
+    const hasItems = Object.entries(S.inv).some(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "use");
+    cmd = `<div class="ffhead">${esc(u.n).toUpperCase()} · LV ${u.lv}</div>
+      ${FB("cmd:attack", "Attack", "")}${FB("menu:skill", "Skill", u.st.silence ? "silenced" : "", u.st.silence)}${FB("menu:item", "Item", "", !hasItems)}${FB("cmd:defend", "Defend", "halve damage, +8% SP")}
+      ${hasRun ? FB("cmd:run", "Run", "") : ""}${B.moreau ? FB("cmd:moreau", "Moreau", "once per Issue: revive and heal everyone") : ""}${FB("auto", "Auto ⟳", "let the party fight")}`;
+  } else {
+    const foes = B.units.filter(x => x.side === "foe" && !x.ko);
+    cmd = `<div class="ffhead">${BT.auto ? "AUTO · " : ""}ENEMIES</div>${foes.map(f => `<p class="ffrowline"><span>${esc(f.n)}</span>${B.scanned ? `<span class="hp sm"><i style="width:${f.hp / f.max.hp * 100}%"></i></span>` : ""}</p>`).join("")}${BT.auto && BT.phase !== "intro" ? FB("auto", "Stop Auto", "take back control") : ""}`;
+  }
+  const party = B.units.filter(x => x.side === "hero").map(h => `<div class="prow${u === h ? " on" : ""}${h.ko ? " ko" : ""}"><span class="pn">${u === h ? "▶ " : ""}${esc(h.n)}</span><span class="pv">${h.hp}/${h.max.hp}</span><span class="hp sm" style="--c:${h.hp / h.max.hp < .3 ? "#d32f3f" : "#a6e23f"}"><i style="width:${h.hp / h.max.hp * 100}%"></i></span><span class="pv sp">${h.sp} SP</span><span class="pst">${Object.keys(h.st).map(s => `<b style="color:${ST_ICON[s][1]}">${ST_ICON[s][0]}</b>`).join(" ")}</span></div>`).join("");
+  return `<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${BX.DIFF[S.diff].n.toUpperCase()}</div>${party}</div></div>`;
+}
+function scrBattle() {
+  return `<div class="battle"><canvas class="scene-art" data-battle="1" width="256" height="144" aria-label="A fight. Use the command window below."></canvas><div id="btwin">${btWin()}</div></div>`;
+}
+function btAct(a) {
+  if (!BT) return; const B = BT.B, [k, v] = a.split(":");
+  if (k === "end") { if (BT.phase === "end") btFinish(); return; }
+  if (k === "auto") { BT.auto = !BT.auto; S.opts = Object.assign(S.opts || {}, { auto: BT.auto }); if (BT.auto && BT.phase === "input") { const u = unitOf(BT.actor); btGo(u, BX.autoChoose(B, u)); } return; }
+  if (BT.phase !== "input") return;
+  const u = unitOf(BT.actor);
+  if (k === "menu") { BT.menu = v; return; }
+  if (k === "back") { BT.menu = BT.pending ? BT.pendingMenu : "main"; BT.pending = null; return; }
+  if (k === "cmd") { if (v === "attack") return btPick(u, { kind: "attack", skill: "attack" }, "enemy"); return btGo(u, { kind: v }); }
+  if (k === "skill") { const s = BX.SKILLS[v]; if (!s || u.sp < s.cost) return; return btPick(u, { kind: "skill", skill: v }, s.tgt); }
+  if (k === "item") { const I = BX.ITEMS[v]; if (!I || !(S.inv[v] > 0)) return; return btPick(u, { kind: "item", item: v }, I.tgt); }
+  if (k === "tgt" && BT.pending) { const act = Object.assign(BT.pending, { target: v }); return btGo(u, act); }
+}
+function btPick(u, action, tgt) {
+  if (tgt === "enemy" || tgt === "ally" || tgt === "ally-ko") { BT.pendingMenu = BT.menu; BT.pending = action; BT.menu = "target"; BT.tgtKind = tgt; BT.hover = (BX.targetsFor(BT.B, u, tgt)[0] || {}).uid; return; }
+  btGo(u, Object.assign(action, { target: u.uid }));
+}
+document.addEventListener("mouseover", e => { const b = e.target.closest && e.target.closest("[data-hover]"); if (b && BT) BT.hover = b.dataset.hover; });
+document.addEventListener("focusin", e => { const b = e.target.closest && e.target.closest("[data-hover]"); if (b && BT) BT.hover = b.dataset.hover; });
+
+/* ---------- the Party screen: levels, gear, the bag ---------- */
+const STAT_LABEL = { hp: "HP", sp: "SP", atk: "ATK", def: "DEF", mag: "MAG", res: "RES", spd: "SPD", luk: "LUK" };
+const SLOT_NAME = { weapon: "Weapon", armor: "Armour", acc: "Charm" };
+function scrParty() {
+  rpgInit();
+  const ids = activeParty(), home = S.at === "house" && S.issue >= 1;
+  const card = id => {
+    const ch = S.chars[id], H = BX.HEROES[id], { s, mods } = charStats(id), base = BX.heroStats(id, ch.lv, {}).s, next = BX.xpToNext(ch.lv);
+    const stats = Object.keys(STAT_LABEL).map(k => { const d = s[k] - base[k]; return `<span><b>${STAT_LABEL[k]}</b> ${k === "hp" ? `${ch.hp}/${s.hp}` : k === "sp" ? `${ch.sp}/${s.sp}` : s[k]}${d ? ` <i class="${d > 0 ? "up" : "dn"}">${d > 0 ? "+" : ""}${d}</i>` : ""}</span>`; }).join("");
+    const extra = [mods.stres && "Resists status", mods.inkx && `+${Math.round(mods.inkx * 100)}% Ink`, mods.xpx && `+${Math.round(mods.xpx * 100)}% XP`, mods.autolife && "Gets back up once per fight"].filter(Boolean).join(" · ");
+    const slots = ["weapon", "armor", "acc"].map(sl => { const cur = ch.eq[sl], own = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].slot === sl && BX.canEquip(id, it) && it !== cur).map(([it]) => it);
+      return `<label class="slot">${SLOT_NAME[sl]}<select data-act="equip" data-arg="${id}:${sl}" aria-label="${H.n} ${SLOT_NAME[sl]}"><option value="">— nothing —</option>${cur ? `<option value="${cur}" selected>${esc(BX.ITEMS[cur].n)} (${esc(BX.ITEMS[cur].d)})</option>` : ""}${own.map(it => `<option value="${it}">${esc(BX.ITEMS[it].n)} (${esc(BX.ITEMS[it].d)})</option>`).join("")}</select></label>`; }).join("");
+    const sk = H.skills.map(([k, l]) => `<li class="${ch.lv >= l ? "" : "locked"}"><b>${esc(BX.SKILLS[k].n)}</b> ${ch.lv >= l ? `${BX.SKILLS[k].cost} SP` : `at Lv ${l}`}<span class="note"> ${esc(BX.SKILLS[k].d)}</span></li>`).join("");
+    return `<div class="pcard">${portrait(id, "big", H.n)}<div class="pmain"><div class="eyebrow">${esc(H.cls).toUpperCase()} · LV ${ch.lv}${ch.lv >= 20 ? " (MAX)" : ` · XP ${ch.xp}/${next}`}</div><h2>${esc(H.n).toUpperCase()}</h2>
+      <div class="hp" style="--c:#a6e23f"><i style="width:${ch.hp / s.hp * 100}%"></i></div><div class="stats">${stats}</div>${extra ? `<p class="note">${extra}</p>` : ""}<div class="slots">${slots}</div><ul class="skills">${sk}</ul></div></div>`;
+  };
+  const bench = HOUSEMATES.filter(id => !ids.includes(id));
+  const benchHtml = S.issue >= 1 ? `<div class="eyebrow">THE HOUSE · ${home ? "TAP TO BRING ALONG (UP TO TWO; TAP AGAIN TO MAKE THEM LEAD)" : "CHANGE THE PARTY AT VILLA DELIRIUM"}</div>${home && S.party.length ? `<div class="row" style="gap:6px;flex-wrap:wrap;margin-bottom:6px">${S.party.map(k => `<button class="mini" data-act="unparty" data-arg="${k}">Leave ${esc(BX.HEROES[k].n)} at home</button>`).join("")}</div>` : ""}<div class="choices" style="padding:0">${HOUSEMATES.map(id => { const on = S.party.includes(id); return `<button class="btn" style="--c:${on ? "#a6e23f" : FAC.house}" data-act="comp" data-arg="${id}" ${home ? "" : "disabled"} aria-pressed="${on}"><span class="t">${on ? "✓ " : ""}${esc(BX.HEROES[id].n)}<em>Lv ${S.chars[id].lv}</em></span><span class="d">${esc(BX.HEROES[id].cls)}. ${esc((COMPANIONS[id] || {}).a || "")}</span></button>`; }).join("")}</div>` : `<p class="note">Your housemates join you from Issue 1.</p>`;
+  const uses = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "use");
+  const gear = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "equip");
+  const bag = `<div class="eyebrow">THE BAG · ${S.ink} INK</div>
+    <div class="choices" style="padding:0">${uses.map(([it, n]) => { const I = BX.ITEMS[it], field = I.eff.heal || I.eff.sp || I.eff.cure; return `<div class="btn bagitem"><span class="t">${esc(I.n)}<em>×${n}</em></span><span class="d">${esc(I.d)}${field ? "" : " In a fight only."}</span>${field ? `<span class="row" style="gap:4px;flex-wrap:wrap">${ids.map(id => `<button class="mini" data-act="useitem" data-arg="${it}:${id}">${esc(BX.HEROES[id].n)}</button>`).join("")}</span>` : ""}</div>`; }).join("") || `<p class="note">No items.</p>`}</div>
+    ${gear.length ? `<p class="note">Spare gear: ${gear.map(([it, n]) => `${esc(BX.ITEMS[it].n)} ×${n} (${esc(BX.ITEMS[it].d)})`).join(" · ")}</p>` : ""}`;
+  return `<div class="pad party"><div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><h2>THE PARTY</h2><span class="note">Difficulty: <b>${BX.DIFF[S.diff].n}</b>. ${esc(BX.DIFF[S.diff].d)}</span><button class="btn" data-act="partyback"><span class="t">◀ Back</span></button></div>
+    <div class="pgrid">${ids.map(card).join("")}</div>${benchHtml}${bag}</div>`;
+}
+function shopPanel(who) {
+  const list = BX.SHOP[who], title = who === "otto" ? "OTTO'S PHARMACY" : "MARY'S STALL (FROM THE ARCHIVE'S LOST PROPERTY)";
+  return `<div class="pad" style="padding-top:0"><div class="eyebrow">${title} · ${S.ink} INK</div></div><div class="choices">${list.map(it => { const I = BX.ITEMS[it], n = S.inv[it] || 0; return `<button class="btn" style="--c:#c48f52" data-act="buy" data-arg="${it}" ${S.ink < I.price ? "disabled" : ""}><span class="t">${esc(I.n)}<em>${I.price} Ink${n ? ` · have ${n}` : ""}</em></span><span class="d">${esc(I.d)}${I.for ? "" : ""}</span></button>`; }).join("")}</div>`;
+}
+const RPG_ACT = {
+  bt(a) { btAct(a); },
+  diff(a) { if (BX.DIFF[a] && S.issue < 1) S.diff = a; },
+  partyback() { S.screen = S.partyRet && S.partyRet !== "party" && S.partyRet !== "battle" ? S.partyRet : (S.at === "house" && S.issue >= 1 ? "house" : S.issue < 1 ? "field" : "map"); if (S.screen === "scene" && !S.scene) S.screen = "map"; },
+  equip(a) { const [id, sl, it] = a.split(":"), ch = S.chars[id]; if (!ch) return; const cur = ch.eq[sl];
+    if (it && (!BX.canEquip(id, it) || BX.ITEMS[it].slot !== sl || !(S.inv[it] > 0))) return;
+    if (cur) S.inv[cur] = (S.inv[cur] || 0) + 1; ch.eq[sl] = it || null; if (it) S.inv[it]--;
+    const m = charStats(id).s; ch.hp = Math.min(ch.hp, m.hp); ch.sp = Math.min(ch.sp, m.sp); },
+  useitem(a) { const [it, id] = a.split(":"), I = BX.ITEMS[it], ch = S.chars[id]; if (!I || !ch || !(S.inv[it] > 0)) return; const m = charStats(id).s, e = I.eff;
+    if (!(e.heal || e.sp || e.cure)) return; if ((e.heal && ch.hp >= m.hp) && !e.sp && !e.cure) { toast("Already at full HP", "#8d8496"); return; }
+    S.inv[it]--; if (I.tgt === "allies") activeParty().forEach(p => { const c2 = S.chars[p], m2 = charStats(p).s; c2.hp = Math.min(m2.hp, c2.hp + (e.heal || 0)); });
+    else { if (e.heal) ch.hp = Math.min(m.hp, ch.hp + e.heal); if (e.sp) ch.sp = Math.min(m.sp, ch.sp + e.sp); }
+    toast(`${I.n}: ${BX.HEROES[id].n}`, "#a6e23f"); },
+  patrol() { patrol(); },
+  buy(a) { const I = BX.ITEMS[a]; if (!I || S.ink < I.price) return; S.ink -= I.price; S.inv[a] = (S.inv[a] || 0) + 1; say(`Bought: ${I.n}.`, "#c48f52"); }
+};
+
 /* ---------- travel ---------- */
 function travel(dest, modeId) {
   const m = MODES.find(x => x.id === modeId), a = BY[S.at]; let to = dest; let h = m.time(a, BY[dest]); if (S.issue === 6 && nightT() >= 6 && nightT() < 7 && m.id !== "tube") h *= 2; if (rideOk(m, a, BY[dest]) !== true) return;
@@ -1655,7 +2526,7 @@ function travel(dest, modeId) {
   if (m.check) { const r = check(m.check[0], m.check[1]); note += ` ${r.txt}.`; if (!r.ok) S.clar += m.check[2]; }
   say(note, m.c);
   S.at = to; S.sel = to; S.arrive = m.id; S.board = null; fadeIn();
-  if (to === "house") { S.notebook.push(...S.memory); if (S.memory.length) say(`Home safe: ${S.memory.length} Memory item${S.memory.length === 1 ? "" : "s"} go into the Notebook.`, "#ff8ba2"); S.memory = []; S.boons = []; S.clar = maxClar(); S.screen = "house"; }
+  if (to === "house") { restoreParty(1); S.notebook.push(...S.memory); if (S.memory.length) say(`Home safe: ${S.memory.length} Memory item${S.memory.length === 1 ? "" : "s"} go into the Notebook.`, "#ff8ba2"); S.memory = []; S.boons = []; S.clar = maxClar(); S.screen = "house"; }
   else enterScene(to);
   if (S.clar <= 0) return blackout(); render();
 }
@@ -1786,7 +2657,7 @@ function scrMorning() {
   </div>`;
 }
 function startIssue(n) {
-  S.issue = n; S.filed = false; S.layout = null; S.morning = null; S.done = []; S.used = {}; S.moreauUsed = false; S.halosOn = false; S.room = null;
+  rpgInit(); catchUp(); S.issue = n; S.filed = false; S.layout = null; S.morning = null; S.done = []; S.used = {}; S.moreauUsed = false; S.halosOn = false; S.room = null;
   for (const k of ["saint","helix"]) if (n > 1 && S[k] > 5) S[k] -= 1;   // worship cools overnight
   S.clar = Math.min(S.clar, maxClar());
   say(`Issue ${n}: ${ISSUES[n][1]}. Dusk at Alamo Square. ${ISSUES[n][2]}`, "#ff8ba2");
@@ -1881,7 +2752,9 @@ function isNext(type, arg) { const n = S.next; if (!n || !n.go) return false;
   if (type === "room") return (n.go.type === "room" && n.go.arg === arg && S.at === "house") || (arg === "rest" && ["sleep","dusk"].includes(n.go.type) && S.at === "house");
   if (type === "node") return n.go.type === "node" && n.go.arg === arg;
   return n.go.type === type; }
+const LOCKED_SCREENS = ["final", "ending", "lock", "morning", "battle", "showdown"];
 function goNext() {
+  if (LOCKED_SCREENS.includes(S.screen)) return;
   const n = S.next; if (!n || !n.go) return; const g = n.go;
   const home = () => { if (S.at === "house") { S.screen = "house"; return true; } S.screen = "map"; S.sel = "house"; return false; };
   if (g.type === "room") { if (home()) { S.room = g.arg; if (g.arg === "salon") S.flags["salon" + S.issue] = true; } }
@@ -1896,7 +2769,7 @@ function planPanel() {
   if (!list.length) return "";
   return `<div class="frame pad"><div class="eyebrow">${toDeadline() > 0 ? `ISSUE ${S.issue} · TONIGHT'S PLAN` : `DAY AFTER ISSUE ${S.issue}`}</div>
     <ol class="plan">${list.map(o => `<li class="${o.done ? "done" : o === nx ? "now" : ""}${o.opt ? " opt" : ""}"><span class="ic">${o.done ? "✓" : o === nx ? "▶" : o.opt ? "·" : "○"}</span><span>${esc(o.label)}</span></li>`).join("")}</ol>
-    ${nx ? `<button class="btn primary nextglow nextbtn" data-act="next"><span class="t">▶ NEXT: ${esc(nx.label).toUpperCase()}</span></button>` : ""}</div>`;
+    ${nx && !LOCKED_SCREENS.includes(S.screen) ? `<button class="btn primary nextglow nextbtn" data-act="next"><span class="t">▶ NEXT: ${esc(nx.label).toUpperCase()}</span></button>` : ""}</div>`;
 }
 function snap() { return { SAINTHOOD: S.saint, HELIX: S.helix, CLARITY: S.clar, HEAT: S.heat, CRAVING: S.crave, VENOM: S.venom, VOW: S.vow, INK: S.ink, SIGHT: S.sight, WEAR: S.wear, LEADS: S.notebook.filter(i => i.kind === "lead").length, FRAGMENTS: S.notebook.filter(i => i.kind === "frag").length, MEMORY: S.memory.length, "JUNIE TRUST": S.trust.junie, "YARA TRUST": S.trust.yara, "WREN TRUST": S.trust.wren || 0, READERS: S.readers }; }
 const TCOL = { SAINTHOOD: "#f0bd3e", HELIX: "#3fe3d4", CLARITY: "#e8f4ff", HEAT: "#d32f3f", CRAVING: "#e33f9c", VENOM: "#d32f3f", VOW: "#3f8cf2", INK: "#c48f52", SIGHT: "#e8f4ff", WEAR: "#f0bd3e", LEADS: "#f29b3a", FRAGMENTS: "#3f8cf2", MEMORY: "#8d8496", "JUNIE TRUST": "#ff8ba2", "YARA TRUST": "#ff8ba2", "WREN TRUST": "#3fe3d4", READERS: "#a6e23f" };
@@ -1925,6 +2798,7 @@ function scrKey() {
   const k = (title, rows) => `<div><span class="h2" style="font-size:11px">${title}</span>${rows.map(([c, t]) => `<span class="note">${c ? `<i class="sw" style="--c:${c}"></i>` : ""}${t}</span>`).join("")}</div>`;
   return `<div class="pad"><h2>KEY · WHAT EVERYTHING MEANS</h2><div class="keygrid">
     ${k("THE CLOCK", [["#1d2550","Night hours: 5 p.m. dusk to 6 a.m."],["#6a5a2a","Day hours: 6 a.m. to 5 p.m. Sleep, catch up, wait for dusk."],["#e33f9c","Pink line: the 6 a.m. press. File before it."],["#f0bd3e","Gold line: midnight on New Year's Eve."],["","White box: now. The calendar shows the week; P = Prologue, E = Epilogue."]])}
+    ${k("FIGHTS", [["#22308f","Blue windows: commands on the left, the party on the right. Keys 1–9 pick a command."],["#a6e23f","Green numbers: healing. White: damage. Pink: a weak point (×1.5). Gold: a critical hit."],["#d32f3f","Red Fight spots are story fights: no running. Boss spots are harder."],["#f7a6c2","Moreau: once per Issue, the whole party back to full."],["","Walking starts random fights (not at home, the meeting or the shelter). HP carries over; sleep or go home to heal."],["","PSN poison · SLP sleep · STN stun · BLD blind · SIL silence · CNF confused."]])}
     ${k("AWAKE AND DELIRIUM", [["#a6e23f","Green: rested."],["#f29b3a","Orange at 36h: delirium is coming."],["#d32f3f","Red at 48h: DELIRIUM. Every ride except home is closed. Sleep 6 hours in the Tower Room."]])}
     ${k("THE METERS", [["#f0bd3e","Sainthood: the Church's worship of you. Smooth gold."],["#3fe3d4","Helix: the Theogens' worship. It always pulses."],["#e8f4ff","Clarity: your health on a Run. At 0 you black out."],["#d32f3f","Heat and Venom appear when they matter (3+)."],["#e33f9c","Craving: at 4+ the gas starts offering itself."],["","Pop-up tags in the corner show every change: +1 SAINTHOOD, −1 CLARITY…"]])}
     ${k("THE PLAN", [["#f29b3a","▶ = your next step. ✓ = done. ○ = still to do. · = optional."],["#f29b3a","Anything glowing orange is the next thing to click."],["","Press ▶ NEXT and the game takes you there."]])}
@@ -1960,6 +2834,9 @@ function scrCast() {
    RENDER + ACTIONS
    ===================================================================== */
 function render() {
+  // midnight on New Year's Eve always ends the week, whatever screen you were on
+  if (S.issue === 6 && S.T >= DEADLINE(6) && !S.ending && !["final", "ending", "showdown", "battle"].includes(S.screen)) { S.scene = null; S.sd = null; S.screen = "final"; S.final = S.final || { stage: "choose" }; }
+  rpgInit(); if (S.screen === "battle" && !BT) S.screen = S.btRet === "scene" && !S.scene ? "house" : (S.btRet || "house");
   S.next = nextObjective(objectives());
   document.body.classList.toggle("delirium", !!S.delirium); document.body.classList.toggle("booting", BOOT);
   hud(); tabs(); side();
@@ -1969,7 +2846,7 @@ function render() {
   else if (s === "scene") { html = scrScene(); const sc = S.scene; if (sc.offer) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${sc.offer.k === "gold" ? "THE TWIN'S BLESSINGS · SAINTHOOD +1" : "THE THEOGENS' SPLICES · HELIX +1"} · THIS RUN ONLY</div><div class="choices" style="padding:0">${sc.offer.items.map((b, i) => `<button class="btn" style="--c:${sc.offer.k === "gold" ? "#f0bd3e" : "#3fe3d4"}" data-act="boon" data-arg="${i}"><span class="t">${b[0]}</span><span class="d">${b[1]}</span></button>`).join("")}<button class="btn" data-act="noboon"><span class="t">Refuse</span><span class="d">Stay yourself.</span></button></div></div>`;
     if (sc.choice) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${esc(sc.choice.q).toUpperCase()}</div><div class="choices" style="padding:0">${sc.choice.opts.map(([v, t, d]) => `<button class="btn" style="--c:#f29b3a" data-act="beat" data-arg="${v}"><span class="t">${t}</span><span class="d">${d}</span></button>`).join("")}</div></div>`;
     if (sc.offer || sc.choice) html = html.replace(/data-act="spot"/g, 'data-act="spot" disabled'); }
-  else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
+  else if (s === "battle") html = scrBattle(); else if (s === "party") html = scrParty(); else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
   else if (s === "final") html = scrFinal(); else if (s === "ending") html = scrEnding(); else if (s === "notebook") html = scrNotebook(); else if (s === "cast") html = scrCast(); else if (s === "key") html = scrKey();
   $("screen").innerHTML = html; typeOut(); const scr = $("screen"); if (LASTSCREEN !== s) { scr.classList.remove("enter"); void scr.offsetWidth; scr.classList.add("enter"); LASTSCREEN = s; clearTimeout(ENTER_T); ENTER_T = setTimeout(() => scr.classList.remove("enter"), 950); }
   if (s === "map" && !BOOT) drawMap();
@@ -1978,7 +2855,7 @@ function render() {
 function paintScenes() { document.querySelectorAll("canvas[data-scene]").forEach(cv => drawScene(cv, BY[cv.dataset.scene] || { id: cv.dataset.scene, f: "theogen", k: "beach" }, FRAME)); }
 
 const ACT = {
-  go(a) { if (a === "house" && S.at !== "house") return; if (a === "map") S.board = null; if (S.screen === "cast" || S.screen === "notebook") S.prev = S.prev || "house"; S.screen = a; if (a === "map") S.sel = S.sel || S.at; render(); },
+  go(a) { if (a === "house" && S.at !== "house") return; if (a === "party" && S.screen !== "party") S.partyRet = S.screen; if (a === "map") S.board = null; if (S.screen === "cast" || S.screen === "notebook") S.prev = S.prev || "house"; S.screen = a; if (a === "map") S.sel = S.sel || S.at; render(); },
   restart() { S = newState(); render(); },
   start(a) { if (a === "new") { if (S.issue > 0 && !confirm("Start a new game? Your current week is lost.")) return; S = newState(); } BOOT = false; START_T0 = null; render(); },
   lobe(a) { const [L, d] = a.split(":"); const spent = Object.values(S.lobes).reduce((x, y) => x + y, 0); const v = S.lobes[L] + (+d); if (v < 1 || v > 5 || (+d > 0 && spent >= 12)) return; S.lobes[L] = v; render(); },
@@ -2000,16 +2877,17 @@ const ACT = {
   temp(a) { S.temp = a; if (a === "manuscript") S.patience = 2; if (a === "gelastic") S.heat = 2; if (a === "canister") S.crave = 1; S.flags.prologue = "ride"; render(); },
   ride(a) { if (a === "shuttle") S.saint++; if (a === "ambulance") S.helix++; S.log = []; say("The Santas storm the cathedral. Fax and Junie pull you into the van. The door of Villa Delirium closes. You sleep until the afternoon.", "#ff8ba2"); S.T = 0; S.awake = 5; S.queue = []; startIssue(1); S.at = "house"; S.sel = "house"; S.screen = "house"; S.clar = maxClar(); render(); },
   room(a) { S.room = a; if (a === "salon") S.flags["salon" + S.issue] = true; render(); },
-  comp(a) { S.comp = a; S.flags["comp" + S.issue] = true; render(); },
+  comp(a) { if (a === "none") setParty([]); else if (S.party.includes(a)) setParty([a, ...S.party.filter(x => x !== a)]); else if (S.party.length < 2) setParty([...S.party, a]); else setParty([S.party[0], a]); render(); },
+  unparty(a) { setParty(S.party.filter(x => x !== a)); render(); },
   halos() { if (S.halosOn || S.wear >= 4) return; S.halosOn = true; S.wear++; S.saint = clamp(S.saint + 1, 0, 10); S.clar = clamp(S.clar + 1, 0, maxClar()); say(`You put on the gold Halos. Wear ${S.wear}. The City's doors open. The Twin sees what you see.`, "#f0bd3e"); render(); },
   pell(a) { S.flags.pellAsked = true; S.pell = a === "yes"; say(S.pell ? "You take Pell's help. It feels like a handshake with a glove on." : "You refuse Pell.", "#3f8cf2"); render(); },
   merge() { const i = S.notebook.findIndex(x => x.kind === "frag"); if (i < 0) return; S.notebook.splice(i, 1); const j = S.notebook.findIndex(x => x.kind === "frag"); if (j < 0) return; const f = S.notebook.splice(j, 1)[0]; S.notebook.push({ kind: "lead", text: f.text.replace(/: .*/, "") + ": a verified Lead" }); say("Yara merges two fragments into a Lead.", "#3f8cf2"); render(); },
   gift(a) { if (S.flags["gift" + S.issue]) return; S.flags["gift" + S.issue] = true; S.ink -= 5; S.trust[a] = clamp(S.trust[a] + 1, 0, 5); say(`A gift for ${C[a].n}. Trust ${S.trust[a]}.`, "#ff8ba2"); render(); },
   up(a) { const cost = a.startsWith("sk_") ? 30 : 40; if (S.ink < cost || S.upgrades[a]) return; S.ink -= cost; S.upgrades[a] = 1; say("Archive upgrade bought.", "#c48f52"); render(); },
   eye(a) { const [e, p] = a.split(":"); const [path, step] = S.eyes[e]; const c = p === "pure" ? [1,1,2,2][step] : 1; if (S.sight < c || step >= 4 || (path && path !== p)) return; S.sight -= c; S.eyes[e] = [p, step + 1]; say(`${e === "blood" ? "Blood" : "Pale"} eye, ${p} step ${step + 1}.`, p === "pure" ? "#e8f4ff" : "#d32f3f"); render(); },
-  rest() { fxShow("sleep", 1); spend(1); S.clar = maxClar(); say("A one-hour nap. Clarity full.", "#ff8ba2"); render(); },
-  sleep6() { fxShow("sleep", 6); spend(6); S.awake = 0; S.delirium = false; S.clar = maxClar(); say("You sleep 6 hours in the tower room. Awake time reset.", "#ff8ba2"); render(); },
-  sleepdusk() { const h = S.issue * 24 - S.T; if (h <= 0) return; fxShow("sleep", h); spend(h); if (h >= 6) { S.awake = 0; S.delirium = false; } S.clar = maxClar(); say(`You sleep until dusk (${hrs(Math.round(h * 4) / 4)} Hr).`, "#ff8ba2"); render(); },
+  rest() { fxShow("sleep", 1); spend(1); restoreParty(1); S.clar = maxClar(); say("A one-hour nap. Clarity full.", "#ff8ba2"); render(); },
+  sleep6() { fxShow("sleep", 6); spend(6); restoreParty(1); S.awake = 0; S.delirium = false; S.clar = maxClar(); say("You sleep 6 hours in the tower room. Awake time reset.", "#ff8ba2"); render(); },
+  sleepdusk() { const h = S.issue * 24 - S.T; if (h <= 0) return; fxShow("sleep", h); spend(h); restoreParty(1); if (h >= 6) { S.awake = 0; S.delirium = false; } S.clar = maxClar(); say(`You sleep until dusk (${hrs(Math.round(h * 4) / 4)} Hr).`, "#ff8ba2"); render(); },
   stayup() { spend(1); say("You stay up and work. The tower room's lamp hums.", "#f29b3a"); render(); },
   afterlock() { S.screen = S.at === "house" ? "house" : "map"; render(); },
   next() { goNext(); },
@@ -2036,6 +2914,7 @@ const ACT = {
   castf(a) { S.castF = a; render(); },
   castsel(a) { S.castSel = a; render(); }
 };
+Object.assign(ACT, RPG_ACT);
 MODEDEF.moreau = { c: "#f7a6c2", sk: null, strong: [], weak: [], fx: "" };
 function dispatch(name, arg) {
   const f = ACT[name]; if (!f) return; const before = S.issue ? snap() : null, T0 = S.T; LASTHUD = S.issue ? { saint: S.saint, helix: S.helix, clar: S.clar, ink: S.ink } : null;
@@ -2045,7 +2924,9 @@ function dispatch(name, arg) {
   render();
 }
 document.addEventListener("click", e => { const cv = e.target.closest("canvas.walk"); if (cv && S) { const [c, r] = canvasTile(cv, e); walkTo(c, r); cv.focus(); return; }
-  const b = e.target.closest("[data-act]"); if (!b || b.disabled || b.hasAttribute("disabled")) return; if (b.tagName === "INPUT") { dispatch(b.dataset.act, b.dataset.arg); return; } e.preventDefault(); dispatch(b.dataset.act, b.dataset.arg); });
+  const b = e.target.closest("[data-act]"); if (b && b.tagName === "SELECT") return; if (!b || b.disabled || b.hasAttribute("disabled")) return; if (b.tagName === "INPUT") { dispatch(b.dataset.act, b.dataset.arg); return; } e.preventDefault(); dispatch(b.dataset.act, b.dataset.arg); });
+document.addEventListener("change", e => { const el = e.target.closest && e.target.closest("select[data-act]"); if (el) dispatch(el.dataset.act, el.dataset.arg + ":" + el.value); });
+document.addEventListener("keydown", e => { if (S && S.screen === "battle" && /^[1-9]$/.test(e.key) && !e.target.matches("input, select, textarea")) { const b = document.querySelectorAll("#btwin .ffcmd .ffbtn:not([disabled])")[+e.key - 1]; if (b) { e.preventDefault(); b.click(); } } });
 document.addEventListener("mousemove", e => { const cv = e.target.closest && e.target.closest("canvas.walk"); HOVER = cv ? canvasTile(cv, e) : null; });
 document.addEventListener("keydown", e => { if (BOOT && (e.key === "Enter" || e.key === " ") && !e.target.closest("button")) { e.preventDefault(); e.stopImmediatePropagation(); dispatch("start", S.issue > 0 ? "continue" : "new"); } });
 document.addEventListener("keydown", e => { if (!document.querySelector("canvas.walk") || e.target.matches("input, textarea, select")) return; const k = e.key.toLowerCase();
