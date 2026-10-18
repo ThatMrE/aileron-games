@@ -177,6 +177,29 @@ button { font: inherit; color: inherit; }
 .prow .sp { color: #b8c4ff; }
 .prow .pst { grid-column: 1 / -1; font-size: 16px; }
 .prow .pst:empty { display: none; }
+/* Talk boxes: a Pokemon text box over the scene, a Skyrim list of things to say above it */
+.stage { position: relative; }
+.dlg { position: absolute; left: 2%; right: 2%; bottom: 3%; max-height: 94%; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; z-index: 3; pointer-events: none; animation: dlgin .16s steps(3); }
+.dlg > * { pointer-events: auto; }
+@keyframes dlgin { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+.dlgbox { position: relative; display: flex; gap: 12px; align-items: flex-start; background: #f8f4e8; color: #1c1824; border: 4px solid #3a3442; outline: 3px solid #f8f4e8; box-shadow: 0 0 0 6px #0d0a10; border-radius: 6px; padding: 10px 40px 10px 12px; min-height: 72px; }
+.dlgbox .portrait { flex: none; border-color: #3a3442; }
+.dlgtext { min-width: 0; flex: 1; }
+.dlgname { display: block; font-family: var(--display); font-size: 8px; line-height: 1.6; color: #b5523b; font-weight: normal; }
+.dlgtext p { margin: 2px 0 0; font-size: 22px; line-height: 1.2; }
+.dlgnext { position: absolute; right: 8px; bottom: 6px; background: none; border: 0; color: #d32f3f; font-size: 18px; cursor: pointer; padding: 4px 6px; animation: blink .7s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+.dlgmore { align-self: flex-end; font-family: var(--display); font-size: 8px; color: #efe7f0; background: #0d0a10cc; padding: 3px 6px; }
+.dlgopts { display: flex; flex-direction: column; overflow-y: auto; min-height: 0; background: linear-gradient(90deg, #0d0a10f2, #0d0a10dd 70%, #0d0a10b0); border-top: 1px solid #c8bfa8; border-bottom: 1px solid #c8bfa8; padding: 6px 0; }
+.dlgopt { display: block; width: 100%; text-align: left; background: transparent; border: 0; color: #d8d2c4; padding: 3px 14px 3px 30px; position: relative; cursor: pointer; line-height: 1.15; }
+.dlgopt .k { position: absolute; left: 10px; color: #6a6270; font-size: 17px; }
+.dlgopt .dtag { color: var(--c); }
+.dlgopt em { color: #8d8496; font-style: normal; font-size: 17px; }
+.dlgopt:hover, .dlgopt:focus-visible { color: #fff; background: linear-gradient(90deg, #ffffff22, transparent); outline: none; }
+.dlgopt:hover .k, .dlgopt:focus-visible .k { color: #fff3aa; }
+.dlgopt.locked, .dlgopt:disabled { color: #5a5260; cursor: not-allowed; }
+.dlgopt.locked .dtag { color: #5a5260; }
+@media (max-width: 980px) { .dlg { position: static; margin: 8px 10px 0; max-height: none; } .dlgbox { min-height: 0; } }
 /* The Party screen */
 .party .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 10px; margin: 10px 0 14px; }
 .pcard { display: flex; gap: 12px; background: var(--panel-2); border: 2px solid var(--line); padding: 10px; min-width: 0; }
@@ -796,11 +819,11 @@ const ptextW = (str, scale = 1) => String(str).length * 4 * scale - scale;
 function pbar(g, t, c) { rect(g, 0, 0, 256, 10, "#0d0a14e6"); ptext(g, t.slice(0, 62), 3, 3, c, 1, null); }
 let BOOT = true;
 function typeOut() {   // new story lines type themselves out; click the text to finish
-  const els = [...document.querySelectorAll("#screen .tw")]; if (REDUCE || !els.length) return;
+  const els = [...document.querySelectorAll("#screen .tw")]; TYPING = false; if (REDUCE || !els.length) return;
   const nodes = []; els.forEach(el => { const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { nodes.push([n, n.nodeValue]); n.nodeValue = ""; } });
-  let i = 0, done = false; const fin = () => { done = true; nodes.forEach(([n, v]) => n.nodeValue = v); };
+  let i = 0, done = false; TYPING = true; const fin = () => { done = true; TYPING = false; nodes.forEach(([n, v]) => n.nodeValue = v); };
   els.forEach(el => el.closest(".say") && el.closest(".say").addEventListener("click", fin, { once: true }));
-  const step = () => { if (done) return; let k = 3; while (k-- > 0 && i < nodes.length) { const [n, v] = nodes[i]; n.nodeValue = v.slice(0, n.nodeValue.length + 1); if (n.nodeValue.length >= v.length) i++; } if (i < nodes.length) setTimeout(step, 12); };
+  const step = () => { if (done) return; let k = 3; while (k-- > 0 && i < nodes.length) { const [n, v] = nodes[i]; n.nodeValue = v.slice(0, n.nodeValue.length + 1); if (n.nodeValue.length >= v.length) i++; } if (i < nodes.length) setTimeout(step, 12); else TYPING = false; };
   step();
 }
 function scrStart() {
@@ -1069,7 +1092,7 @@ function spotsFor(node) {
   return out;
 }
 function enterScene(id) {
-  const node = BY[id]; S.scene = { node: id, lines: [] }; plReset(id); if (S.delirium) S.scene.lines.push({ txt: "Everything is too bright. You can't think. Go home and sleep." });
+  const node = BY[id]; S.scene = { node: id, lines: [], shown: 0 }; plReset(id); if (S.delirium) S.scene.lines.push({ txt: "Everything is too bright. You can't think. Go home and sleep." });
   const npc = C[node.npc];
   S.scene.lines.push({ who: npc.n, txt: npc.q });
   voice(node);
@@ -1081,12 +1104,12 @@ function voice(node) {
 }
 function scrScene() {
   const sc = S.scene, node = BY[sc.node], npc = C[node.npc];
-  const start = Math.max(0, sc.lines.length - 8), seen = sc.seen ?? 0; setTimeout(() => { if (S.scene === sc) sc.seen = sc.lines.length; }, 0);
-  const lines = sc.lines.slice(start).map((l, j) => { const tw = start + j >= seen ? " tw" : ""; return l.voice ? `<p class="voice${tw}"><b style="--c:${l.c}">${l.voice}</b>${esc(l.txt)}</p>` : `<p class="${tw}">${l.who ? `<b style="color:var(--sodium)">${esc(l.who)}:</b> ` : ""}${esc(l.txt)}</p>`; }).join("");
+  const start = Math.max(0, sc.lines.length - 8); setTimeout(() => { if (S.scene === sc) sc.twSeen = (sc.shown ?? sc.lines.length) + 1; }, 0);
+  const lines = sc.lines.slice(start).map((l, j) => { const tw = ""; return l.voice ? `<p class="voice${tw}"><b style="--c:${l.c}">${l.voice}</b>${esc(l.txt)}</p>` : `<p class="${tw}">${l.who ? `<b style="color:var(--sodium)">${esc(l.who)}:</b> ` : ""}${esc(l.txt)}</p>`; }).join("");
   const sps = spotsFor(node);
   const btns = sps.map(sp => { const [n, c, why] = SPOT[sp.t]; const nx = sp.t === "story" && !sp.used && isNext("node", node.id);
     return `<button class="btn door spot${nx ? " nextglow" : ""}" style="--c:${sp.used ? "#4a4250" : c}" data-act="spot" data-arg="${sp.i}" data-t="${sp.t}" ${S.delirium || sp.used ? "disabled" : ""}><span class="t">${nx ? "▶ NEXT · " : ""}${sp.used ? "✓ " : ""}${esc(sp.label)}<em>${n}</em></span><span class="d">${sp.used ? "Done this Issue." : sp.t === "look" ? esc(why) : why}</span></button>`; }).join("");
-  return `<canvas class="scene-art interior walk" data-int="${node.id}" width="256" height="144" tabindex="0" aria-label="${esc(node.n)}. Walk with WASD or the arrow keys, press Space or E to use what you face, or click where to go. The buttons below do the same."></canvas>
+  return `<div class="stage"><canvas class="scene-art interior walk" data-int="${node.id}" width="256" height="144" tabindex="0" aria-label="${esc(node.n)}. Walk with WASD or the arrow keys, press Space or E to use what you face, or click where to go. The buttons below do the same."></canvas>${sceneDlg()}</div>
     <div class="intbar"><span>${esc(node.n).toUpperCase()} · ${clockStr(S.T)}</span><span class="note">WASD or arrows to walk · Space or E (A on a phone) to talk and use · or click where to go. Shift runs. The clock stops in here. Portals: ▼ the street door (every ride), lettered doors in the walls are stations (T Tube, C cable car, F ferry…).</span></div>${dpad()}
     <div class="textbox">${portrait(npc.id)}<div class="say"><div class="speaker">${esc(npc.n).toUpperCase()}</div>${lines}</div></div>
     <div class="choices">${btns}
@@ -1097,13 +1120,11 @@ function scrScene() {
 function resolveSpot(i) {
   const sc = S.scene, node = BY[sc.node]; const sp = spotsFor(node).find(s => s.i === i); if (!sp || sp.used || S.delirium || sc.offer || sc.choice) return;
   const L = (t, extra) => sc.lines.push(Object.assign({ txt: t }, extra || {}));
-  if (sp.t !== "look" && sp.t !== "story" && sp.t !== "boss") { S.used = S.used || {}; (S.used[node.id] = S.used[node.id] || []).push(i); }
+  sc.shown = sc.lines.length; sc.talk = null; EMOTE = { c: sp.c, r: sp.r, ch: sp.t === "look" ? "?" : "!", col: sp.t === "fight" || sp.t === "boss" ? "#d32f3f" : "#3a3442", t0: performance.now() };
+  if (sp.t !== "look" && sp.t !== "story" && sp.t !== "boss" && sp.t !== "talk") { S.used = S.used || {}; (S.used[node.id] = S.used[node.id] || []).push(i); }
   if (sp.t === "look") { L(sp.txt); return render(); }
   if (sp.t === "story") storyBeat(node);
-  else if (sp.t === "talk") { const ch = C[sp.who], who = ch ? ch.n : "A stranger in the shadows", q = ch ? ch.q : "You didn't see me. Write that down.";
-    const frag = Math.random() < (S.boons.includes("Omniscience (lite)") ? 1 : .55);
-    if (frag) { remember({ kind:"frag", text:`${node.n}: ${pick(["a name","a date","a ledger page","a photo","a recording"])} from ${who}` }); L(`${who} tells you something worth a fragment.`); }
-    else { remember({ kind:"quote", text:`"${q}" (${who})` }); L(`${who}: "${q}"`); } }
+  else if (sp.t === "talk") { sc.talk = { who: sp.who, i }; return render(); }
   else if (sp.t === "fight") return startStoryFight(FOES[sp.who] ? sp.who : foeFor(node), node, false);
   else if (sp.t === "boss") { S.done.push(sc.node + "-boss"); return startStoryFight(sp.who, node, true); }
   else if (sp.t === "gold" || sp.t === "cyan") { const set = sp.t === "gold" ? BLESSINGS : SPLICES; const avail = set.filter(b => !S.boons.includes(b[0])); sc.offer = { k: sp.t, items: avail.sort(() => Math.random() - .5).slice(0, 3) }; L(sp.t === "gold" ? "A gold door. A warm voice offers you a Blessing." : "A cyan door. A glowing nurse offers you a Splice."); }
@@ -1368,11 +1389,13 @@ function drawSpark(g) {
   g.globalAlpha = 1;
 }
 function interact() {
+  if (dlgOpen()) { const nx = document.querySelector("#screen .dlg .dlgnext"); if (nx) nx.click(); return; }
   if (!PL.dir || !DV[PL.dir] || FADE) return;
   const [dx, dy] = DV[PL.dir], t = thingAt(PL.c + dx, PL.r + dy);
   if (!t) { const p = portalAt(PL.c + dx, PL.r + dy); FLASH = [p ? `${p.label}. Walk into it to go.` : "Nothing there.", 60]; return; }
   if (t.field) return fieldUse(t.field);
   if (t.house && !REDUCE) SPARK = { c: PL.c + dx, r: PL.r + dy, col: "#ff8ba2", t: performance.now() };
+  if (t.house && t.house.who) EMOTE = { c: t.house.c, r: t.house.r, ch: "!", col: "#e33f9c", t0: performance.now() };
   if (t.house) { if (S.delirium && t.house.room !== "rest") { FLASH = ["You can't think. Go to your bed in the Tower Room.", 90]; return; } return dispatch("room", t.house.room); }
   const sp = t.spot; if (sp.used) { FLASH = ["Done this Issue.", 60]; return; }
   if (S.delirium && sp.t !== "look") { FLASH = ["Too bright. Go home and sleep.", 80]; return; }
@@ -1392,6 +1415,7 @@ function usePortal(p) {   // stepped onto a door, a station or the end of a path
 }
 function plUpdate() {
   if (FLASH && --FLASH[1] <= 0) FLASH = null;
+  if (dlgOpen() || (PL.freeze && performance.now() < PL.freeze)) { PL.path = []; PL.act = null; if (!PL.moving) return; }
   if (FADE && FADE.phase === "out") return;
   if (PL.bump > 0) PL.bump--;
   if (PL.moving) { const [dx, dy] = DV[PL.dir]; PL.x += dx * PL.spd; PL.y += dy * PL.spd; PL.step++;
@@ -1409,7 +1433,7 @@ function plUpdate() {
   else if (!PL.bump) PL.bump = 10;
 }
 function walkTo(c, r) {
-  if (FADE) return;
+  if (FADE || dlgOpen()) return;
   if (thingAt(c, r)) { const p = bfs([c, r], true); if (p) { PL.path = p; PL.act = [c, r]; } return; }
   if (walkable(c, r)) { const p = bfs([c, r], false); if (p) PL.path = p; }
 }
@@ -1464,7 +1488,7 @@ function drawInterior(cv, node) {
     } else if (sp.r === 0) wallProp(g, sp.t === "gold" || sp.t === "cyan" || sp.t === "dis" ? sp.t : sp.who, x, y, col, frame);
     else floorProp(g, sp.t === "gold" || sp.t === "cyan" || sp.t === "dis" ? "default" : sp.who, x, y, col, frame);
   });
-  drawPlayerAndPeople(g, people, frame); drawSpark(g);
+  drawPlayerAndPeople(g, people, frame); drawSpark(g); drawEmotes(g);
   sps.forEach(sp => marker(g, sp.c * 16, sp.r * 16, SPOT[sp.t][1], sp.used, frame, sp.t === "story" && !sp.used));
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.lineWidth = 1; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
   const west = ["fogbelt","baths","baker","park","forest","presidio","span","mountain"].includes(node.id) ? .9 : .35;
@@ -1480,7 +1504,7 @@ function drawHouse(cv) {
     if (S.room === h.room) { g.strokeStyle = "#efe7f088"; g.strokeRect(zc * 16 + .5, zr * 16 + .5, zw * 16 - 1, zh * 16 - 1); }
     h.furn.forEach(([c, r, k]) => floorProp(g, k, c * 16, r * 16, "#555", frame)); }
   drawPlayerAndPeople(g, HSPOT.filter(h => h.who).map(h => ({ c: h.c, r: h.r, who: h.who, dir: towardPlayer(h.c, h.r) })), frame);
-  drawSpark(g);
+  drawSpark(g); drawEmotes(g);
   if (nx) marker(g, (nx.who ? nx.c : nx.furn[0][0]) * 16, (nx.who ? nx.r : nx.furn[0][1]) * 16, "#f29b3a", false, frame, true);
   if (HOVER) { g.strokeStyle = "#ffffff99"; g.strokeRect(HOVER[0] * 16 + .5, HOVER[1] * 16 + .5, 15, 15); }
   const [t, c] = barText("VILLA DELIRIUM"); pbar(g, t, c);
@@ -1569,7 +1593,7 @@ function drawField(cv, id) {
   F.map.forEach((row, r) => [...row].forEach((ch, c) => fieldTile(g, ch, c, r, frame, F.map)));
   const people = [];
   fieldThings(id).forEach(t => { if (t.kind === "person") people.push({ c: t.c, r: t.r, who: t.who, dir: towardPlayer(t.c, t.r) }); else if (t.kind === "jar") { rect(g, t.c * 16 + 4, t.r * 16 + 3, 8, 11, "#9fc6e055"); rect(g, t.c * 16 + 4, t.r * 16 + 3, 8, 1, "#9fc6e0"); rect(g, t.c * 16 + 6, t.r * 16 + 8, 4, 3, "#f7a6c2"); P2(g, t.c * 16 + 5, t.r * 16 + 7, "#e33f9c"); P2(g, t.c * 16 + 10, t.r * 16 + 7, "#e33f9c"); } else if (t.kind !== "none") floorProp(g, t.kind, t.c * 16, t.r * 16, "#555", frame); });
-  drawPlayerAndPeople(g, people, frame); drawSpark(g);
+  drawPlayerAndPeople(g, people, frame); drawSpark(g); drawEmotes(g);
   if (id === "cabin" && !S.flags.moreau) { const j = F.things.find(t => t.act === "moreau"); marker(g, j.c * 16, j.r * 16, "#f7a6c2", false, frame, false); }
   if (id === "springs") marker(g, 3 * 16, 3 * 16, "#3fe3d4", false, frame, true);
   if (id !== "cabin") { g.fillStyle = "#0a1230"; g.globalAlpha = .28; g.fillRect(0, 0, 256, 144); g.globalAlpha = 1; }   // night
@@ -1580,11 +1604,11 @@ function drawField(cv, id) {
   const hint = document.getElementById("tuthint"), h = tutHint(); if (hint && hint.textContent !== h) hint.textContent = h;
 }
 function scrField() {
-  const F = FIELDS[S.field], fresh = S.fieldSayFresh; S.fieldSayFresh = false;
+  const F = FIELDS[S.field], fresh = S.fieldSayFresh; S.fieldSayFresh = false; if (fresh) { S.fieldSayOpen = true; S.fieldSayTyped = false; } else S.fieldSayTyped = true;
   const looks = fieldThings(S.field).filter((t, i, a) => a.findIndex(u => u.label === t.label) === i);
-  return `<canvas class="scene-art interior walk" data-field="${S.field}" width="256" height="144" tabindex="0" aria-label="${esc(F.name)}. Walk with WASD or the arrow keys, Shift to run, Space to look. The buttons below do the same."></canvas>
+  return `<div class="stage"><canvas class="scene-art interior walk" data-field="${S.field}" width="256" height="144" tabindex="0" aria-label="${esc(F.name)}. Walk with WASD or the arrow keys, Shift to run, Space to look. The buttons below do the same."></canvas>${fieldDlg()}</div>
     <div class="intbar"><span>PROLOGUE · ${esc(F.name).toUpperCase()}</span><span class="note" id="tuthint">${esc(tutHint())}</span></div>${dpad()}
-    <div class="textbox">${portrait("hellrot")}<div class="say"><div class="speaker">CHRISTMAS NIGHT, 2049</div><p class="${fresh ? "tw" : ""}" id="fieldsay">${esc(S.fieldSay || "")}</p></div></div>
+
     <div class="choices">${looks.map(t => `<button class="btn" data-act="fieldlook" data-arg="${F.things.indexOf(t)}"><span class="t">${t.act === "birth" ? "▶ " : ""}${esc(t.label)}<em>${t.act === "birth" ? "go" : "look"}</em></span></button>`).join("")}
       ${F.portals.map((p, i) => `<button class="btn" data-act="fieldgo" data-arg="${i}" ${p.need && !S.flags[p.need] ? "disabled" : ""}><span class="t">${esc(p.label)}<em>portal</em></span></button>`).join("")}
       <button class="btn" data-act="tobirth"><span class="t">Skip the walk<em>tutorial</em></span><span class="d">Go straight to the springs.</span></button></div>`;
@@ -1981,9 +2005,9 @@ const BX = (() => {
   function act(B, u, action) {
     const ev = []; const say = text => ev.push({ t: "msg", text });
     u.defend = false;
-    if (action.kind === "defend") { u.defend = true; u.sp = Math.min(u.max.sp, u.sp + Math.ceil(u.max.sp * .08)); say(`${u.n} braces`); return finishTurn(B, u, ev); }
-    if (action.kind === "run") { if (B.boss || B.noRun) { say("No running from this one"); return finishTurn(B, u, ev); } const chance = .5 + (eff(u, "spd") - Math.max(...alive(B, "foe").map(f => eff(f, "spd")))) * .03; if (B.rng() < chance) { B.fled = true; say("You get away"); } else say("Can't get away!"); return finishTurn(B, u, ev); }
-    if (action.kind === "moreau") { B.moreau = false; B.units.filter(x => x.side === "hero").forEach(x => { x.ko = false; x.hp = x.max.hp; x.st = {}; }); ev.push({ t: "heal", to: "party", amt: 0, text: "Moreau regrows everyone. The whole party is restored" }); B.used.moreau = true; return finishTurn(B, u, ev); }
+    if (action.kind === "defend") { u.defend = true; u.sp = Math.min(u.max.sp, u.sp + Math.ceil(u.max.sp * .08)); ev.push({ t: "use", from: u.uid, act: "defend", text: `${u.n} braces` }); return finishTurn(B, u, ev); }
+    if (action.kind === "run") { ev.push({ t: "use", from: u.uid, act: "run", text: `${u.n} looks for a way out` }); if (B.boss || B.noRun) { say("No running from this one"); return finishTurn(B, u, ev); } const chance = .5 + (eff(u, "spd") - Math.max(...alive(B, "foe").map(f => eff(f, "spd")))) * .03; if (B.rng() < chance) { B.fled = true; ev.push({ t: "flee" }); say("You get away"); } else say("Can't get away!"); return finishTurn(B, u, ev); }
+    if (action.kind === "moreau") { ev.push({ t: "use", from: u.uid, act: "moreau", text: `${u.n} opens Moreau's jar` }); B.moreau = false; B.units.filter(x => x.side === "hero").forEach(x => { x.ko = false; x.hp = x.max.hp; x.st = {}; }); ev.push({ t: "heal", to: "party", amt: 0, text: "Moreau regrows everyone. The whole party is restored" }); B.used.moreau = true; return finishTurn(B, u, ev); }
     if (action.kind === "item") {
       const I = ITEMS[action.item]; if (!I || !(B.inv[action.item] > 0)) { say("Nothing left"); return finishTurn(B, u, ev); }
       B.inv[action.item]--; B.used.items[action.item] = (B.used.items[action.item] || 0) + 1;
@@ -1995,7 +2019,7 @@ const BX = (() => {
         if (e.cure) t.st = {};
         if (e.dmg && !t.ko) { let d = e.dmg; if (t.weak && t.weak.includes(e.tag)) d = Math.round(d * 1.5); if (t.resist && t.resist.includes(e.tag)) d = Math.round(d * .5); ev.push({ t: "hit", from: u.uid, to: t.uid, amt: d }); applyHit(B, u, t, d, ev); }
         if (e.escape) { if (B.boss || B.noRun) say("A boss blocks the way"); else { B.fled = true; say("The fog swallows you. You get away"); } } });
-      ev.unshift({ t: "use", from: u.uid, text: `${u.n} uses ${I.n}` });
+      ev.unshift({ t: "use", from: u.uid, item: action.item, text: `${u.n} uses ${I.n}` });
       return finishTurn(B, u, ev);
     }
     // attack or skill
@@ -2003,7 +2027,7 @@ const BX = (() => {
     if (S.cost > u.sp) { say(`${u.n} doesn't have the SP`); return finishTurn(B, u, ev); }
     u.sp -= S.cost; B.used.skills[k] = (B.used.skills[k] || 0) + 1;
     if (S.meta && u.side === "hero") ev.push({ t: "meta", meta: S.meta });
-    ev.push({ t: "use", from: u.uid, text: k === "attack" ? `${u.n} attacks` : `${u.n}: ${S.n}` });
+    ev.push({ t: "use", from: u.uid, skill: k, text: k === "attack" ? `${u.n} attacks` : `${u.n}: ${S.n}` });
     let pool = targetsFor(B, u, S.tgt);
     // confusion: hit someone at random, maybe a friend
     if (u.st.confuse && (S.tgt === "enemy" || k === "attack")) pool = B.units.filter(x => !x.ko && x !== u);
@@ -2027,8 +2051,8 @@ const BX = (() => {
         if (S.drain && !u.ko) { const h = Math.min(Math.round(d.dmg * S.drain), u.max.hp - u.hp); u.hp += h; ev.push({ t: "heal", to: u.uid, amt: h }); }
         if (S.dispel && t.buffs.length) { t.buffs = []; ev.push({ t: "msg", text: `${t.n}'s buffs are gone` }); }
         if (S.kind === "steal" && !t.ko && t.side !== u.side) {
-          if (S.foeSteal) { const take = Math.min(B.ink + B.inkDelta, Math.round(R(B.rng, 3, 9))); if (take > 0) { B.inkDelta -= take; ev.push({ t: "msg", text: `${u.n} steals ${take} Ink` }); } }
-          else if (!t.stolen) { t.stolen = true; const D = ENEMIES[t.id]; const it = D.drops.length && B.rng() < .6 ? D.drops[0][0] : null; if (it) { B.stolen.push(it); B.inv[it] = (B.inv[it] || 0) + 1; ev.push({ t: "msg", text: `Stole: ${ITEMS[it].n}` }); } else { const ink = Math.round(D.ink * .6) + 2; B.inkDelta += ink; ev.push({ t: "msg", text: `Stole ${ink} Ink` }); } }
+          if (S.foeSteal) { const take = Math.min(B.ink + B.inkDelta, Math.round(R(B.rng, 3, 9))); if (take > 0) { B.inkDelta -= take; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); ev.push({ t: "msg", text: `${u.n} steals ${take} Ink` }); } }
+          else if (!t.stolen) { t.stolen = true; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); const D = ENEMIES[t.id]; const it = D.drops.length && B.rng() < .6 ? D.drops[0][0] : null; if (it) { B.stolen.push(it); B.inv[it] = (B.inv[it] || 0) + 1; ev.push({ t: "msg", text: `Stole: ${ITEMS[it].n}` }); } else { const ink = Math.round(D.ink * .6) + 2; B.inkDelta += ink; ev.push({ t: "msg", text: `Stole ${ink} Ink` }); } }
         }
         if (S.st && !t.ko && B.rng() < S.chance && !resists(B, t)) { t.st[S.st] = S.turns; ev.push({ t: "status", to: t.uid, st: S.st }); }
       } else if (S.kind === "heal") {
@@ -2041,13 +2065,13 @@ const BX = (() => {
       else if (S.kind === "buff") {
         let stats = S.stats; if (S.random) stats = pick(B.rng, [{ atk: 1.3 }, { def: 1.3, res: 1.3 }, { spd: 1.3 }, { mag: 1.3 }, { eva: 1.25 }, { regen: .07 }]);
         t.buffs = t.buffs.filter(b => !Object.keys(b.stats).some(k2 => k2 in stats)); t.buffs.push({ stats, turns: S.turns + (t === u ? 1 : 0) }); ev.push({ t: "buff", to: t.uid, stats });
-        if (S.scan) { B.scanned = true; ev.push({ t: "msg", text: "Weak points spotted" }); }
+        if (S.scan) { B.scanned = true; ev.push({ t: "fx", fx: "scan" }); ev.push({ t: "msg", text: "Weak points spotted" }); }
       } else if (S.kind === "debuff") {
         if (resists(B, t) && t.boss) { ev.push({ t: "msg", text: `${t.n} shrugs it off` }); continue; }
         t.buffs.push({ stats: S.stats, turns: S.turns, debuff: true }); ev.push({ t: "debuff", to: t.uid, stats: S.stats });
       } else if (S.kind === "status") {
         if (B.rng() < S.chance && !resists(B, t)) { t.st[S.st] = S.turns; ev.push({ t: "status", to: t.uid, st: S.st }); } else ev.push({ t: "miss", from: u.uid, to: t.uid, text: "No effect" });
-      } else if (S.kind === "scan") { B.scanned = true; ev.push({ t: "msg", text: "Looked up: weak points hit harder" }); break; }
+      } else if (S.kind === "scan") { B.scanned = true; ev.push({ t: "fx", fx: "scan" }); ev.push({ t: "msg", text: "Looked up: weak points hit harder" }); break; }
     }
     if (u.st.confuse) { u.st.confuse--; if (!u.st.confuse) delete u.st.confuse; }
     return finishTurn(B, u, ev);
@@ -2174,13 +2198,15 @@ function stepEncounter() {
   if (S.scene && (S.scene.offer || S.scene.choice)) return false;
   const tb = encounterTable(); if (!tb) return false;
   S.steps++; S.encGap = (S.encGap || 0) + 1;
-  if (PL.node === "field:trail" && !S.flags.tutFight && S.encGap >= 5) { S.flags.tutFight = true; startBattle({ kind: "tutorial", foes: [{ id: "raccoon", lv: 1 }] }); return true; }
+  if (PL.node === "field:trail" && !S.flags.tutFight && S.encGap >= 5) { S.flags.tutFight = true; encounterStart({ kind: "tutorial", foes: [{ id: "raccoon", lv: 1 }] }); return true; }
   if (S.encGap < 8) return false;
   const rate = (PL.node.startsWith("field:") ? 1 / 22 : 1 / 26) * BX.DIFF[S.diff].rate;
   if (Math.random() >= rate) return false;
-  startBattle({ kind: "random", foes: BX.encounterGroup(tb, foeLv(false), Math.random) });
+  encounterStart({ kind: "random", foes: BX.encounterGroup(tb, foeLv(false), Math.random) });
   return true;
 }
+// the old trainer-spotted-you beat: "!" over Hell Rot, a held breath, then the swirl
+function encounterStart(o) { if (REDUCE) return startBattle(o); EMOTE = { c: PL.c, r: PL.r, ch: "!", col: "#d32f3f", t0: performance.now(), dur: 600 }; PL.freeze = performance.now() + 560; for (const k in KEYS) KEYS[k] = false; setTimeout(() => { if (S.screen === "field" || S.screen === "scene") startBattle(o); }, 560); }
 // for players who use the buttons and never walk: go looking for a fight
 function patrol() { const node = S.scene && BY[S.scene.node]; if (!node || SAFE_PLACES.includes(node.id) || !INT[node.id] || S.scene.offer || S.scene.choice) return; S.encGap = 0;
   startBattle({ kind: "random", foes: BX.encounterGroup(encounterTableFor(node), foeLv(false), Math.random) }); }
@@ -2216,7 +2242,7 @@ function startBattle(o) {
   const foes = B.units.filter(u => u.side === "foe"), lead = foes[0];
   const open = o.kind === "tutorial" ? "A raccoon blocks the trail. It wants your coffee. Pick ATTACK, then the raccoon." : o.kind === "boss" ? `${lead.n} steps forward. This is the district's boss.` : foes.length > 1 ? `${lead.n} and ${foes.length - 1} more get in your way!` : `${lead.n} gets in your way!`;
   for (const k in KEYS) KEYS[k] = false;
-  BT = { B, o, phase: "intro", t0: performance.now(), anim: [], nums: [], msg: o.joined ? o.joined + " " + open : open, menu: "main", auto: !!(S.opts && S.opts.auto), fac: o.fac || (lead && BX.ENEMIES[lead.id].f), meta: {}, place: PL.node };
+  BT = { B, o, phase: "intro", t0: performance.now(), anim: [], nums: [], fx: [], msg: o.joined ? o.joined + " " + open : open, menu: "main", auto: !!(S.opts && S.opts.auto), fac: o.fac || (lead && BX.ENEMIES[lead.id].f), meta: {}, place: PL.node };
   S.btRet = S.screen; S.screen = "battle"; render(); sceneIntoView();
   BT.timer = setTimeout(btAdvance, REDUCE ? 50 : 900);
 }
@@ -2242,26 +2268,74 @@ function btPlay(evs, done) {
   const next = () => { if (!BT) return; if (i >= evs.length) { btPaint(); return done(); } const d = btEvent(evs[i++]); btPaint(); BT.timer = setTimeout(next, Math.round(d * btSpeed())); };
   next();
 }
+const TAG_COL = { phys: "#efe7f0", truth: "#e8f4ff", chem: "#3fe3d4", noise: "#e33f9c", spirit: "#f0bd3e" };
+// one animation per kind of move: the tag of the skill (or item) picks the effect
+function btFx(k, o) { BT.fx.push(Object.assign({ k, t0: performance.now() }, o)); }
 function btEvent(e) {
-  const now = performance.now(), N = (uid, txt, col) => BT.nums.push({ uid, txt, col, t0: now }), nm = uid => (unitOf(uid) || {}).n || "";
+  const now = performance.now(), N = (uid, txt, col, delay) => BT.nums.push({ uid, txt, col, t0: now + (delay || 0) }), nm = uid => (unitOf(uid) || {}).n || "";
+  const cur = BT.cur || {}, S2 = cur.skill ? BX.SKILLS[cur.skill] : null, I2 = cur.item ? BX.ITEMS[cur.item] : null;
   switch (e.t) {
-    case "use": BT.msg = e.text; BT.anim.push({ uid: e.from, k: "lunge", t0: now }); return 560;
+    case "use": BT.msg = e.text; BT.cur = { from: e.from, skill: e.skill, item: e.item, act: e.act };
+      if (e.act === "defend") { btFx("shield", { uid: e.from }); return 520; }
+      if (e.act === "run") { BT.anim.push({ uid: e.from, k: "lunge", t0: now, back: true }); return 420; }
+      if (e.act === "moreau") { btFx("moreau", {}); return 1100; }
+      BT.anim.push({ uid: e.from, k: "lunge", t0: now });
+      if (e.item) { btFx("toss", { from: e.from, col: I2 && I2.eff.dmg ? "#e33f9c" : "#a6e23f" }); return 560; }
+      if (e.skill && e.skill !== "attack") { const sk = BX.SKILLS[e.skill]; btFx("charge", { uid: e.from, col: TAG_COL[sk.tag] || (sk.kind === "heal" || sk.kind === "revive" ? "#a6e23f" : sk.kind === "debuff" || sk.kind === "status" ? "#a487dd" : "#fff3aa") }); return 640; }
+      return 520;
     case "msg": BT.msg = e.text; return 700;
-    case "hit": BT.anim.push({ uid: e.to, k: "hit", t0: now }); N(e.to, String(e.amt), e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : e.resist ? "#8d8496" : "#efe7f0");
-      if (e.crit || e.weak || e.resist) N(e.to, e.crit ? "CRITICAL" : e.weak ? "WEAK POINT" : "RESISTED", e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : "#8d8496");
-      if (e.text === "poison") BT.msg = `${nm(e.to)} feels the poison.`; return 420;
-    case "miss": N(e.to, e.text ? e.text.toUpperCase() : "MISS", "#8d8496"); return 360;
-    case "heal": if (e.to === "party") { BT.msg = e.text; BT.B.units.filter(u => u.side === "hero").forEach(u => BT.anim.push({ uid: u.uid, k: "glow", t0: now })); return 900; }
-      if (e.amt > 0) { N(e.to, "+" + e.amt, "#a6e23f"); BT.anim.push({ uid: e.to, k: "glow", t0: now }); } return 360;
-    case "sp": N(e.to, "+" + e.amt + " SP", "#3f8cf2"); return 340;
-    case "revive": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "glow", t0: now }); return 700;
+    case "fx": if (e.fx === "steal") btFx("coin", { from: e.from, to: e.to }); if (e.fx === "scan") btFx("scan", {}); return e.fx === "scan" ? 520 : 380;
+    case "flee": BT.fleeT = now; return 600;
+    case "hit": {
+      if (e.text === "poison") { btFx("bubbles", { uid: e.to, col: "#a6e23f" }); N(e.to, String(e.amt), "#a6e23f"); BT.anim.push({ uid: e.to, k: "hit", t0: now }); BT.msg = `${nm(e.to)} feels the poison.`; return 460; }
+      const tag = (S2 && S2.tag) || (I2 && I2.eff.tag) || "phys", fx = !S2 && !I2 || tag === "phys" ? "slash" : tag === "truth" ? "beam" : tag === "chem" ? "bubbles" : tag === "noise" ? "rings" : "halo";
+      btFx(fx, { from: cur.from, uid: e.to, col: TAG_COL[tag] });
+      BT.anim.push({ uid: e.to, k: "hit", t0: now + 120 }); N(e.to, String(e.amt), e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : e.resist ? "#8d8496" : "#efe7f0", 120);
+      if (e.crit || e.weak || e.resist) N(e.to, e.crit ? "CRITICAL" : e.weak ? "WEAK POINT" : "RESISTED", e.crit ? "#f0bd3e" : e.weak ? "#ff8ba2" : "#8d8496", 120);
+      if (e.crit || e.amt >= (unitOf(e.to) || { max: { hp: 1 } }).max.hp * .35) { BT.shake = now + 120; btFx("flash", { col: e.crit ? "#fff3aa" : "#efe7f0" }); }
+      return 460; }
+    case "miss": btFx("whoosh", { uid: e.to }); N(e.to, e.text ? e.text.toUpperCase() : "MISS", "#8d8496"); return 380;
+    case "heal": if (e.to === "party") { BT.msg = e.text; BT.B.units.filter(u => u.side === "hero").forEach(u => btFx("plus", { uid: u.uid })); return 900; }
+      if (e.amt > 0) { N(e.to, "+" + e.amt, "#a6e23f"); btFx("plus", { uid: e.to }); } return 380;
+    case "sp": N(e.to, "+" + e.amt + " SP", "#3f8cf2"); btFx("plus", { uid: e.to, col: "#3f8cf2" }); return 360;
+    case "revive": BT.msg = e.text; btFx("pillar", { uid: e.to }); return 800;
     case "ko": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "ko", t0: now }); return 760;
-    case "buff": N(e.to, Object.keys(e.stats).map(k => ({ taunt: "COVER", regen: "REGEN", eva: "EVADE", crit: "FOCUS" })[k] || k.toUpperCase() + "▲").join(" "), "#a6e23f"); return 340;
-    case "debuff": N(e.to, Object.keys(e.stats).map(k => k.toUpperCase() + "▼").join(" "), "#d32f3f"); return 340;
-    case "status": N(e.to, (ST_ICON[e.st] || [e.st])[0], (ST_ICON[e.st] || [0, "#efe7f0"])[1]); BT.msg = `${nm(e.to)} is ${ST_NAME[e.st] || e.st}.`; return 520;
+    case "buff": btFx("arrows", { uid: e.to, up: true, col: "#a6e23f" }); N(e.to, Object.keys(e.stats).map(k => ({ taunt: "COVER", regen: "REGEN", eva: "EVADE", crit: "FOCUS" })[k] || k.toUpperCase() + "▲").join(" "), "#a6e23f"); return 380;
+    case "debuff": btFx("arrows", { uid: e.to, up: false, col: "#d32f3f" }); N(e.to, Object.keys(e.stats).map(k => k.toUpperCase() + "▼").join(" "), "#d32f3f"); return 380;
+    case "status": btFx("spiral", { uid: e.to, col: (ST_ICON[e.st] || [0, "#efe7f0"])[1] }); N(e.to, (ST_ICON[e.st] || [e.st])[0], (ST_ICON[e.st] || [0, "#efe7f0"])[1]); BT.msg = `${nm(e.to)} is ${ST_NAME[e.st] || e.st}.`; return 560;
     case "meta": applyMeta(e.meta); return 0;
   }
   return 200;
+}
+function drawFx(g, now) {
+  const pos = uid => { const u = uid && unitOf(uid); return u ? btPos(u) : [128, 72]; };
+  BT.fx = BT.fx.filter(f => now - f.t0 < (f.k === "moreau" ? 1200 : 800));
+  for (const f of BT.fx) {
+    const k = (now - f.t0) / (f.k === "moreau" ? 1200 : f.k === "pillar" || f.k === "plus" ? 800 : 500); if (k < 0 || k > 1) continue;
+    const [x, y] = pos(f.uid), col = f.col || "#efe7f0", R = (a, b, w, h, c) => { g.fillStyle = c; g.fillRect(Math.round(a), Math.round(b), w, h); };
+    g.save(); g.globalAlpha = Math.max(0, 1 - k * .8);
+    switch (f.k) {
+      case "charge": for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2 + k * 4, r = 22 * (1 - k); R(x + Math.cos(a) * r, y + Math.sin(a) * r * .7, 2, 2, i % 2 ? col : "#fff3aa"); } break;
+      case "slash": for (let i = 0; i < 3; i++) { const l = Math.min(1, k * 3) * 22; for (let j = 0; j < l; j += 2) R(x - 12 + i * 7 + j * .6, y - 14 + j, 2, 2, i === 1 ? "#fff3aa" : col); } if (k > .3) for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; R(x + Math.cos(a) * 14 * k, y + Math.sin(a) * 14 * k, 2, 2, "#efe7f0"); } break;
+      case "beam": { const [fx, fy] = pos(f.from), t = Math.min(1, k * 2.5); g.strokeStyle = col; g.lineWidth = 3 - k * 2; g.beginPath(); g.moveTo(fx, fy - 4); g.lineTo(fx + (x - fx) * t, fy - 4 + (y - fy) * t); g.stroke(); if (t >= 1) for (let i = 0; i < 8; i++) R(x - 10 + (i * 37 % 20), y - 10 + (i * 53 % 20), 2, 2, i % 2 ? "#e8f4ff" : "#3f8cf2"); break; }
+      case "bubbles": for (let i = 0; i < 9; i++) { const bx = x - 12 + (i * 7) % 24, by = y + 8 - k * (16 + (i % 4) * 6), r = 1 + (i % 3) + k * 2; g.strokeStyle = i % 2 ? col : "#a6e23f"; g.lineWidth = 1; g.beginPath(); g.arc(bx, by, r, 0, Math.PI * 2); g.stroke(); } break;
+      case "rings": for (let i = 0; i < 3; i++) { const r = Math.max(0, k * 30 - i * 8); g.strokeStyle = i % 2 ? "#ff8ba2" : col; g.lineWidth = 2; g.beginPath(); g.ellipse(x, y, r, r * .7, 0, 0, Math.PI * 2); g.stroke(); } break;
+      case "halo": { const hy = y - 40 + Math.min(1, k * 2) * 26; g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.ellipse(x, hy, 14, 4, 0, 0, Math.PI * 2); g.stroke(); if (k > .5) { g.fillStyle = "#fff3aa55"; g.fillRect(x - 12, hy, 24, y + 16 - hy); } break; }
+      case "plus": for (let i = 0; i < 5; i++) { const px = x - 12 + i * 6, py = y + 10 - k * 34 - (i % 2) * 6; ptext(g, "+", px, py, f.col || "#a6e23f", 1, null); } break;
+      case "arrows": for (let i = 0; i < 3; i++) { const px = x - 10 + i * 8, py = f.up ? y + 8 - k * 30 : y - 24 + k * 30; ptext(g, f.up ? "▲" : "▼", px, py - i * 3, col, 1, null); } break;
+      case "spiral": for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2 + k * 9; R(x + Math.cos(a) * 12, y - 22 + Math.sin(a) * 4, 2, 2, col); } break;
+      case "pillar": g.fillStyle = "#fff3aa66"; g.fillRect(x - 8 + k * 4, 0, 16 - k * 8, y + 16); for (let i = 0; i < 6; i++) R(x - 10 + i * 4, y - k * 60 - i * 7, 2, 2, "#fff3aa"); break;
+      case "coin": { const [fx, fy] = pos(f.from), [tx, ty] = pos(f.to), cx = fx + (tx - fx) * k, cy = fy + (ty - fy) * k - Math.sin(k * Math.PI) * 30; R(cx - 2, cy - 2, 5, 5, "#f0bd3e"); R(cx - 1, cy - 1, 2, 2, "#fff3aa"); break; }
+      case "toss": { const [fx, fy] = pos(f.from), tx = fx - 26, cy = fy - Math.sin(k * Math.PI) * 26; R(fx + (tx - fx) * k - 2, cy - 2, 5, 5, col); break; }
+      case "scan": for (const u of BT.B.units.filter(u => u.side === "foe" && !u.ko)) { const [ux, uy] = btPos(u), sy = uy - 20 + k * 40; g.fillStyle = "#3fe3d4"; g.fillRect(ux - 18, Math.round(sy), 36, 1); g.strokeStyle = "#3fe3d466"; g.strokeRect(ux - 18.5, uy - 20.5, 37, 41); } break;
+      case "shield": { const u = unitOf(f.uid), [sx, sy] = u ? btPos(u) : [x, y]; g.strokeStyle = "#3f8cf2"; g.lineWidth = 2; g.beginPath(); g.ellipse(sx, sy, 18 + Math.sin(k * 9) * 2, 20, 0, 0, Math.PI * 2); g.stroke(); break; }
+      case "whoosh": for (let i = 0; i < 3; i++) R(x - 20 + k * 40, y - 8 + i * 6, 10, 1, "#8d8496"); break;
+      case "flash": g.globalAlpha = .35 * (1 - k); g.fillStyle = col; g.fillRect(0, 0, 256, 144); break;
+      case "moreau": { const sc = 1 + Math.min(1, k * 3) * 3, spr = nesSprite("moreau", "down", Math.floor(k * 8) % 2); g.globalAlpha = k < .8 ? 1 : (1 - k) * 5; g.drawImage(spr, Math.round(128 - 8 * sc), Math.round(60 - 8 * sc), Math.round(16 * sc), Math.round(16 * sc));
+        for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, r = k * 120; R(128 + Math.cos(a) * r, 60 + Math.sin(a) * r * .6, 3, 3, i % 2 ? "#f7a6c2" : "#e33f9c"); } break; }
+    }
+    g.restore();
+  }
 }
 // the street notices how you fight: once per fight, a skill can move the meters
 function applyMeta(m) {
@@ -2275,7 +2349,7 @@ function btEnd(res) {
   if (B.used.moreau) S.moreauUsed = true;
   const out = [], heroes = B.units.filter(u => u.side === "hero");
   heroes.forEach(u => { const ch = S.chars[u.id]; ch.hp = u.ko ? (res === "lose" ? 0 : 1) : u.hp; ch.sp = u.sp; });
-  if (res === "win") {
+  if (res === "win") { BT.winT = performance.now(); BT.lvups = [];
     const R = BX.rewards(B), foes = B.units.filter(u => u.side === "foe"), flv = foes.reduce((a, f) => a + f.lv, 0) / foes.length;
     const inkx = 1 + heroes.reduce((a, u) => a + (u.mods.inkx || 0), 0), ink = Math.max(0, Math.round((R.ink - B.inkDelta) * inkx) + B.inkDelta);
     S.ink = Math.max(0, S.ink + ink);
@@ -2286,6 +2360,7 @@ function btEnd(res) {
       const amt = Math.round(R.xp * (half ? .5 : 1) * (1 + ((u && u.mods.xpx) || (id === "hellrot" && ch.eq.acc === "notebook" ? .15 : 0))) * (1 + .25 * Math.max(0, flv - ch.lv)));
       const before = BX.heroSkills(id, ch.lv), ups = BX.gainXP(ch, amt);
       if (ups.length) { const m = charStats(id).s; ch.hp = m.hp; ch.sp = m.sp; const learned = BX.heroSkills(id, ch.lv).filter(k => !before.includes(k));
+        if (u) BT.lvups.push(u.uid);
         if (half) benchUps.push(`${BX.HEROES[id].n} ${ch.lv}`); else out.push(`${BX.HEROES[id].n} reaches level ${ch.lv}!${learned.length ? " Learns " + learned.map(k => BX.SKILLS[k].n).join(", ") + "." : ""}`); }
     });
     if (benchUps.length) out.push(`At home, the bench levels up too: ${benchUps.join(", ")}.`);
@@ -2384,17 +2459,19 @@ function btBackdrop(g) {
 }
 function drawBattle(cv) {
   if (!BT) return; const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false;
-  const now = performance.now(), B = BT.B; btBackdrop(g);
-  BT.anim = BT.anim.filter(a => now - a.t0 < 900); BT.nums = BT.nums.filter(n => now - n.t0 < 1100);
+  const now = performance.now(), B = BT.B; g.save(); if (BT.shake && now < BT.shake + 200) g.translate(Math.round(Math.sin(now / 15) * 3), Math.round(Math.cos(now / 11) * 2)); btBackdrop(g);
+  BT.anim = BT.anim.filter(a => now - a.t0 < 900); BT.nums = BT.nums.filter(n => now - n.t0 < 1100); BT.fx = BT.fx || [];
   const an = (u, k) => BT.anim.find(a => a.uid === u.uid && a.k === k);
   const order = B.units.slice().sort((a, b) => btPos(a)[1] - btPos(b)[1]);
   for (const u of order) {
     let [x, y] = btPos(u); const boss = u.side === "foe" && u.boss, sc = boss ? 3 : 2, sz = 16 * sc;
     const ko = an(u, "ko"), hit = an(u, "hit"), lunge = an(u, "lunge"), glow = an(u, "glow");
     if (u.ko && u.side === "foe" && !ko) continue;   // they stood down and walked off
-    if (lunge) { const k = (now - lunge.t0) / 300, d = k < .5 ? k * 2 : Math.max(0, 2 - k * 2); x += (u.side === "hero" ? -14 : 14) * d; }
+    if (lunge && now >= lunge.t0) { const k = (now - lunge.t0) / 300, d = k < .5 ? k * 2 : Math.max(0, 2 - k * 2); x += (u.side === "hero" ? -14 : 14) * d * (lunge.back ? -1 : 1); }
+    if (u.side === "hero" && BT.fleeT) x += Math.min(1, (now - BT.fleeT) / 600) * 90;
+    if (u.side === "hero" && BT.res === "win" && !u.ko) y -= Math.abs(Math.sin((now - (BT.winT || now)) / 160 + btPos(u)[1])) * 6;
     if (BT.phase === "input" && BT.actor === u.uid) x -= 10;
-    if (hit && now - hit.t0 < 320) { x += (Math.floor((now - hit.t0) / 40) % 2 ? 2 : -2); if (Math.floor((now - hit.t0) / 60) % 2) continue; }
+    if (hit && now >= hit.t0 && now - hit.t0 < 320) { x += (Math.floor((now - hit.t0) / 40) % 2 ? 2 : -2); if (Math.floor((now - hit.t0) / 60) % 2) continue; }
     const step = Math.floor(now / 380) % 2, spr = u.side === "hero" ? nesSprite(u.id, u.ko ? "down" : "left", u.ko ? 0 : step) : foeSprite(BX.ENEMIES[u.id].art, step);
     g.save();
     if (ko && u.side === "foe") { const k = Math.min(1, (now - ko.t0) / 700); g.globalAlpha = 1 - k; x -= k * 24; }
@@ -2410,7 +2487,11 @@ function drawBattle(cv) {
     if (BT.phase === "input" && BT.actor === u.uid) ptext(g, "▼", x - 1, y - 26 + (Math.floor(now / 250) % 2), "#fff3aa");
     if (BT.menu === "target" && BT.hover === u.uid) ptext(g, u.side === "foe" ? "▶" : "◀", u.side === "foe" ? x - sz / 2 - 8 : x + sz / 2 + 3, y - 2, "#fff3aa");
   }
-  for (const n of BT.nums) { const u = unitOf(n.uid); if (!u) continue; const [x, y] = btPos(u), k = (now - n.t0) / 1100, same = BT.nums.filter(m => m.uid === n.uid && m.t0 === n.t0).indexOf(n);
+  drawFx(g, now);
+  if (BT.res === "win") { const w = ptextW("VICTORY", 3); ptext(g, "VICTORY", 128 - w / 2, 14 + Math.round(Math.sin(now / 200) * 2), "#fff3aa", 3); (BT.lvups || []).forEach(uid => { const u = unitOf(uid); if (!u) return; const [x, y] = btPos(u); ptext(g, "LV UP!", x - 11, y - 34 - Math.round(Math.abs(Math.sin(now / 150)) * 4), Math.floor(now / 120) % 2 ? "#f0bd3e" : "#fff3aa"); }); }
+  if (BT.res === "lose") { g.fillStyle = "#3a000055"; g.fillRect(0, 0, 256, 144); }
+  g.restore();
+  for (const n of BT.nums) { if (now < n.t0) continue; const u = unitOf(n.uid); if (!u) continue; const [x, y] = btPos(u), k = (now - n.t0) / 1100, same = BT.nums.filter(m => m.uid === n.uid && m.t0 === n.t0).indexOf(n);
     const w = ptextW(n.txt, 2); ptext(g, n.txt, Math.round(x - w / 2), Math.round(y - 30 - k * 14 - same * 12), n.col, n.txt.length > 6 ? 1 : 2); }
   // the opening swirl
   const k = (now - BT.t0) / 650;
@@ -2514,6 +2595,193 @@ const RPG_ACT = {
   patrol() { patrol(); },
   buy(a) { const I = BX.ITEMS[a]; if (!I || S.ink < I.price) return; S.ink -= I.price; S.inv[a] = (S.inv[a] || 0) + 1; say(`Bought: ${I.n}.`, "#c48f52"); }
 };
+
+/* =====================================================================
+   TALK: a Pokemon-style text box over the scene, and a Skyrim-style list
+   of things to say. What you can say comes from your character sheet:
+   your skills, your temperament, who came with you, your meters, your bag.
+   ===================================================================== */
+// tell: what the blood eye sees. secret: what they let slip (a fragment). likes / hates: approaches that land easier or harder.
+const TALK = {
+  ana: { tell: "She keeps touching the Halo scar behind her ear, like checking a lock.", secret: "the Lifeboat consent forms are signed in a hand that isn't hers", likes: ["source"], hates: ["needle"] },
+  benny: { tell: "He holds his cup with the canister grip. His thumb looks for a valve that isn't there.", secret: "the hotel sweeps run on a 2 a.m. schedule a developer paid for", likes: ["chem"], hates: ["charm"] },
+  bishop: { tell: "He prays with his eyes open. He's counting the exits.", secret: "the stadium prophecy was paid for by a Church that didn't exist yet", likes: ["history"], hates: ["needle"] },
+  cask: { tell: "He keeps his hands open where you can see them. Somebody taught him that, and it took.", secret: "Cask sends half his pay to a ward in the Baths, every week, in cash", likes: ["source"], hates: ["charm"] },
+  conductor: { tell: "The bell cord is wrapped twice around his wrist. He never lets go of it.", secret: "the cable car's night ledger lists one crate by weight, and it weighs exactly a person", likes: ["history"], hates: ["needle"] },
+  delphine: { tell: "Her hands shake. The glow in them comes on half a beat late.", secret: "Delphine schedules her sermons around tremors from her own failing splices", likes: ["source"], hates: ["charm"] },
+  desh: { tell: "The typing aid finishes his sentences a beat before he does. He lets it.", secret: "Desh has the list of Burn survivors the Lifeboat never called back", likes: ["source"], hates: ["charm"] },
+  duchess: { tell: "She says 'darling' every time she changes the subject. She has said it four times.", secret: "the patron who pays Villa Delirium's rent seals the cheques with a Rivet signet", likes: ["charm"], hates: ["needle"] },
+  emperor: { tell: "The clock hands move when it speaks. They are not telling the time.", secret: "the Emperor's decrees go out on the minute the Lifeboat uploads open", likes: ["history"], hates: ["needle"] },
+  fax: { tell: "She inks a margin while she listens: the same jack shape, over and over.", secret: "Fax kept the neural jack from the night you died", likes: ["charm"], hates: ["needle"] },
+  halcyon: { tell: "Her smile lands half a second after her words, like a dubbed film.", secret: "Halcyon's Halo logs show three hours a night when she is not there", likes: ["source"], hates: ["charm"] },
+  hale: { tell: "She washes her hands twice before she shakes yours.", secret: "the Order's cingulate trials skipped the second ethics board", likes: ["source"], hates: ["needle"] },
+  huck: { tell: "He has a card ready before you finish the question. NOT TODAY. It's worn soft.", secret: "the Quiet Squad's cards are printed in the Spire's own print shop", likes: ["history"], hates: ["needle"] },
+  ione: { tell: "She follows your voice, not your face.", secret: "Ione's hospital tag says 'it' where her name should be", likes: [], hates: [] },
+  julian: { tell: "He wipes the same plate three times. His lips move: dates, all in October.", secret: "Julian's cremation certificate is signed by a Gilder", likes: ["history"], hates: ["needle"] },
+  junie: { tell: "She's parked so the van faces the exit. She always does.", secret: "Junie has been paying your old dealer to stay away from you", likes: ["charm"], hates: ["needle"] },
+  karl: { tell: "The fog leans toward the warm windows, like a dog at a door.", secret: "the fog thickens around anyone wearing a Halo", likes: [], hates: [] },
+  laffingsal: { tell: "The laugh loops. On the fourth loop, one syllable is different.", secret: "Laffing Sal's laugh track carries a decree in Morse", likes: ["history"], hates: ["charm"] },
+  magister: { tell: "He hands you a drink and watches which hand you take it with.", secret: "the Black House guest list names three Church deacons", likes: ["charm"], hates: ["source"] },
+  mags: { tell: "She has the case citation ready before she has the coffee.", secret: "Proposition F was drafted on Lifeboat letterhead", likes: ["source"], hates: ["charm"] },
+  mamarue: { tell: "She pours your coffee before you sit. She's watching the window, not you.", secret: "every eviction notice in the Loin names the same shell company", likes: ["history"], hates: ["needle"] },
+  marisol: { tell: "She answers fast, looks at the door, then answers again, slower.", secret: "the Game kept Marisol's file and still bills her mother for it", likes: ["source"], hates: ["needle"] },
+  moreau: { tell: "( . )", secret: "Moreau has regrown a gill you didn't know he'd lost", likes: [], hates: [] },
+  olddee: { tell: "He touches the feed earpiece when he lies. He touches it a lot.", secret: "Old Dee is back on the feed he built the cure for", likes: ["needle"], hates: ["charm"] },
+  otto: { tell: "He checks his own pulse while he talks. An old chemist's habit.", secret: "Otto kept a sample of the original Brandvold reagent", likes: ["chem"], hates: ["charm"] },
+  pell: { tell: "His handshake lasts one beat too long. He's measuring your grip.", secret: "Pell's recall campaign is paid for through the Lodge", likes: ["needle"], hates: ["source"] },
+  pip: { tell: "He writes a card, crosses it out, writes it again.", secret: "Pip saw Old Dee at the snake's den the night it moved", likes: ["history"], hates: ["needle"] },
+  pru: { tell: "She rates your question out of ten before you finish it.", secret: "the Ledger still pays Pru a retainer she has never cashed", likes: ["source"], hates: ["charm"] },
+  rosa: { tell: "She checks her phone face-down. Twice.", secret: "Sunday's Lifeboat test list has a second, shorter list stapled behind it", likes: ["source"], hates: ["needle"] },
+  saintnobody: { tell: "The costume is new. The shoes are the same as last time.", secret: "the Dissonance Society knows where the Emperor sleeps", likes: ["charm"], hates: ["source"] },
+  sunday: { tell: "He laughs at his own joke before he tells it.", secret: "Sunday's nitrous dens deliver to the Lifeboat lab", likes: ["charm"], hates: ["source"] },
+  tem: { tell: "Her left sleeve is pulled down over her hand. She's done it so long it looks casual.", secret: "Tem knows which clinic doors open after midnight, and which ones don't open again", likes: [], hates: [] },
+  vail: { tell: "He polishes the gold pan's glass with his cuff. There's no dust on it.", secret: "Vail kept Julian's real ashes; the urn on display holds sand", likes: ["history"], hates: ["needle"] },
+  wren: { tell: "She asks before she sits. She asks before she pours. She asks.", secret: "Wren has a go-bag packed for two: herself and a baby", likes: ["source"], hates: ["needle"] },
+  shadow: { tell: "Whoever it is keeps their face out of the light, on purpose.", secret: "someone in the shadows has been following you since the springs", likes: [], hates: [] }
+};
+// minors and the very young: only gentle options, never a threat, never a bribe
+const GENTLE = ["tem", "ione", "karl", "moreau"];
+const APPROACH = {
+  read: { sk: "BLOOD EYE", dc: 8, c: "#d32f3f", say: "(Watch them while they talk.)", pass: (n, T) => `${T.tell} That's the tell. Then it slips out: ${T.secret}.`, fail: n => `${n} gives you nothing but a tired face.` },
+  needle: { sk: "THE BASTARD", dc: 9, c: "#d32f3f", say: "Needle them until something slips.", fx: { venom: 1 }, pass: (n, T) => `${n} snaps back, and in the snapping lets it slip: ${T.secret}.`, fail: n => `${n} doesn't bite. "Run along, columnist." (Clarity −1)`, failCost: 1 },
+  source: { sk: "PEER REVIEW", dc: 7, c: "#e8f4ff", say: "Show them your notes. Ask them to check one fact.", need: "lead", fx: { vow: 1 }, pass: (n, T) => `${n} reads your note twice. "That's wrong. Here's what's right": ${T.secret}.`, fail: n => `${n} hands the note back. "I don't do homework."` },
+  charm: { sk: "THE CELEBRITY", dc: 9, c: "#f0bd3e", say: "Be famous at them.", fx: { readers: 150 }, pass: (n, T) => `${n} asks for a selfie. While you pose, they tell you ${T.secret}.`, fail: n => `${n} has never heard of you. It stings more than it should.` },
+  history: { sk: "FOOTNOTE", dc: 8, c: "#e8f4ff", say: "Tell them what happened here the last time.", pass: (n, T) => `You tell them the old story. ${n} goes quiet, then: ${T.secret}.`, fail: n => `${n} has heard that story. From you. Last week.` },
+  chem: { sk: "THE CHEMIST", dc: 8, c: "#e33f9c", say: "Talk shop about what they're on.", pass: (n, T) => `Two chemists, one secret: ${T.secret}.`, fail: n => `${n} isn't on anything. They resent the question.` }
+};
+const PARTY_LINE = {
+  junie: ["Let Junie lean in the doorway.", "Junie leans in the doorway, arms folded. Nobody lies with Junie in the doorway."],
+  yara: ["Let Yara ask the follow-up.", "Yara asks one quiet, exact question. It's the right one."],
+  fax: ["Let Fax take their picture.", "Fax raises the camera. People say true things to a lens; she knows it."],
+  otto: ["Let Otto tell them a story from 1971.", "Otto tells a story from 1971. By the end, they're telling him one back."],
+  bishop: ["Let Bishop Null bless them.", "Bishop Null blesses them in no god's name. They answer like it's confession."],
+  pru: ["Let Pru run the numbers out loud.", "Pru runs the numbers out loud. They correct her, and the correction is the story."],
+  mary: ["Let Mary say where she's seen this before.", "Mary names the year this con last worked. They flinch, and keep talking."],
+  saintnobody: ["Let Saint Nobody do a bit.", "Saint Nobody does a bit with a rubber chicken. Somehow, it works."]
+};
+const talkName = who => who === "shadow" ? "A stranger in the shadows" : C[who] ? C[who].n : who;
+const hasLead = () => S.notebook.some(i => i.kind === "lead") || S.memory.some(i => i.kind === "lead");
+// every option the character sheet allows (and a few it doesn't, shown greyed with what they need)
+function talkOptions(who) {
+  const T = TALK[who] || TALK.shadow, n = talkName(who), gentle = GENTLE.includes(who), out = [];
+  const tag = (t, c) => ({ t, c });
+  if (who === "ione" || who === "moreau") out.push({ id: "ask", say: who === "ione" ? "Say hello. Quietly." : "Tap the glass and say hello.", tags: [] });
+  else out.push({ id: "ask", say: "Ask about tonight.", tags: [] });
+  if (who !== "ione" && who !== "moreau") {
+    const order = ["read", ...T.likes, "needle", "source", "charm", "history", "chem"].filter((v, i, a) => a.indexOf(v) === i && APPROACH[v]);
+    const checks = [];
+    order.forEach(id => { const A = APPROACH[id]; if (gentle && (id === "needle" || id === "charm" || id === "chem")) return;
+      if (id === "chem" && !["theogen", "salon", "city", "church"].includes((C[who] || {}).f)) return;
+      const dc = A.dc + (T.likes.includes(id) ? -2 : 0) + (T.hates.includes(id) ? 2 : 0), sk = skill(A.sk), locked = A.need === "lead" && !hasLead();
+      checks.push({ id, say: A.say, dc, sk: A.sk, p: locked ? -1 : odds(sk, dc), tags: [tag(`${A.sk} · ${locked ? "needs a Lead" : odds(sk, dc) + "%"}`, A.c)], locked, why: locked ? "Needs a Lead in your Notebook or Memory." : "" }); });
+    // Blood Eye always; then what this person responds to; then your best odds
+    const pickc = checks.filter(c => c.id === "read" || (T.likes.includes(c.id) && !c.locked)); checks.filter(c => !pickc.includes(c)).sort((x, y) => y.p - x.p).forEach(c => { if (pickc.length < 3) pickc.push(c); });
+    out.push(...checks.filter(c => pickc.includes(c)));
+
+    if (S.issue >= 1 && !S.flags["temptalk" + S.issue]) {
+      if (S.temp === "manuscript") out.push({ id: "temp", say: "Read them a line from your old column. They quoted it once.", tags: [tag("WRITER", "#f29b3a")] });
+      if (S.temp === "gelastic" && !gentle) out.push({ id: "temp", say: "Rest a hand on the Gelastic. Let them notice.", tags: [tag("BRAWLER · Heat +1", "#d32f3f")] });
+      if (S.temp === "canister" && !gentle) out.push({ id: "temp", say: "Ask, quietly, who's selling tonight.", tags: [tag("RELAPSER · Craving +1", "#e33f9c")] });
+    }
+    (S.issue >= 1 ? S.party : []).forEach(p => { if (PARTY_LINE[p] && p !== who && !S.flags["ptalk" + p + S.issue]) out.push({ id: "party:" + p, say: PARTY_LINE[p][0], tags: [tag(BX.HEROES[p].n.toUpperCase(), "#ff8ba2")] }); });
+    const out0 = out.length; if (!gentle) out.push({ id: "venom", say: "Promise to print their name in 48-point type.", tags: [tag(`VENOM ${S.venom}/5 · Heat +1`, "#d32f3f")], locked: S.venom < 5, why: "Needs Venom 5." });
+    out.push({ id: "vow", say: gentle ? "Promise you'll keep them out of the column." : "Swear you'll protect them as a source.", tags: [tag(`VOW ${S.vow}/5`, "#3f8cf2")], locked: S.vow < 5, why: "Needs Vow 5." });
+    if (S.saint >= 4 && !gentle) out.push({ id: "saint", say: "Bless them. Watch them kneel before they think.", tags: [tag("SAINTHOOD 4+ · Sainthood +1", "#f0bd3e")] });
+    if (S.helix >= 4 && !gentle) out.push({ id: "helix", say: "Let your wrist glow, just a little.", tags: [tag("HELIX 4+ · Helix +1", "#3fe3d4")] });
+    if (S.halosOn && !gentle) out.push({ id: "halos", say: "Let the Twin vouch for you.", tags: [tag("HALOS ON", "#f0bd3e")] });
+    { const ms = out.splice(out0); const open = ms.filter(m => !m.locked).slice(0, 2); if (open.length < 2) open.push(...ms.filter(m => m.locked).slice(0, 1)); out.push(...open); }
+    if (S.inv && S.inv.coffee > 0) out.push({ id: "coffee", say: gentle ? "Buy them something hot to drink." : "Slide a Ghost Diner coffee across.", tags: [tag("COFFEE ×" + S.inv.coffee, "#c48f52")] });
+    else if (gentle) out.push({ id: "ink", say: "Buy them dinner. No questions.", tags: [tag(`5 INK (have ${S.ink})`, "#c48f52")], locked: S.ink < 5, why: "Needs 5 Ink." });
+    else out.push({ id: "ink", say: "Slide them ten Ink.", tags: [tag(`10 INK (have ${S.ink})`, "#c48f52")], locked: S.ink < 10, why: "Needs 10 Ink." });
+  }
+  out.push({ id: "bye", say: "Goodbye.", tags: [] });
+  return out;
+}
+function talkPick(id) {
+  const sc = S.scene; if (!sc || !sc.talk) return;
+  const { who, i } = sc.talk, node = BY[sc.node], T = TALK[who] || TALK.shadow, n = talkName(who), gentle = GENTLE.includes(who);
+  if (id === "bye") { sc.talk = null; return render(); }
+  const opt = talkOptions(who).find(o => o.id === id); if (!opt || opt.locked) return;
+  sc.shown = sc.lines.length; sc.talk = null;
+  S.used = S.used || {}; (S.used[node.id] = S.used[node.id] || []).push(i);
+  const pid = who === "shadow" ? "karl" : who, me = t => sc.lines.push({ who: "Hell Rot", id: "hellrot", txt: t }), them = t => sc.lines.push(/^["“(]/.test(t) ? { who: n, id: pid, txt: t } : { id: pid, txt: t }), note = t => sc.lines.push({ txt: t });
+  const frag = () => remember({ kind: "frag", text: `${node.n}: ${T.secret}` }), quote = () => remember({ kind: "quote", text: `"${(C[who] || { q: "You didn't see me." }).q}" (${n})` });
+  me(opt.say.startsWith("(") ? opt.say : `"${opt.say.replace(/\.$/, "")}."`);
+  if (id === "ask") { if (who === "ione" || who === "moreau") { them(T.tell); note(who === "ione" ? "She grips your finger. Something in your chest unclenches. (Clarity +1)" : "He presses one pink hand to the glass. (Clarity +1)"); S.clar = clamp(S.clar + 1, 0, maxClar()); }
+    else { const f = Math.random() < (S.boons.includes("Omniscience (lite)") ? 1 : .4); them(`"${(C[who] || { q: "You didn't see me." }).q}"`); if (f) { note(`Worth a fragment: ${T.secret}.`); frag(); } else { note("You write the quote in your head."); quote(); } } }
+  else if (APPROACH[id]) { const A = APPROACH[id], r = check(A.sk, opt.dc); sc.lines.push({ voice: A.sk, c: A.c, txt: r.txt });
+    if (A.fx && A.fx.venom) S.venom = clamp(S.venom + 1, 0, 10);
+    if (r.ok) { them(A.pass(n, T)); frag(); if (A.fx && A.fx.vow) S.vow = clamp(S.vow + 1, 0, 10); if (A.fx && A.fx.readers) S.readers += A.fx.readers; }
+    else { them(A.fail(n)); if (A.failCost) S.clar -= A.failCost; if (id === "needle" && S.trust[who] != null) S.trust[who] = clamp(S.trust[who] - 1, 0, 5); } }
+  else if (id === "temp") { S.flags["temptalk" + S.issue] = true; if (S.temp === "gelastic") S.heat = clamp(S.heat + 1, 0, 10); if (S.temp === "canister") S.crave = clamp(S.crave + 1, 0, 5);
+    them(S.temp === "manuscript" ? `${n} mouths the line along with you. Then, softer: ${T.secret}.` : S.temp === "gelastic" ? `${n} looks at your hand, then at the door. "Fine. Fine." ${T.secret}.` : `${n} names a name. And, because you're one of them now: ${T.secret}.`); frag(); }
+  else if (id.startsWith("party:")) { const p = id.slice(6); S.flags["ptalk" + p + S.issue] = true; note(PARTY_LINE[p][1]); them(`"All right. ${T.secret[0].toUpperCase() + T.secret.slice(1)}."`); frag(); if (S.trust[p] != null) S.trust[p] = clamp(S.trust[p] + (Math.random() < .5 ? 1 : 0), 0, 5); }
+  else if (id === "venom") { S.heat = clamp(S.heat + 1, 0, 10); them(`${n} goes pale. "You wouldn't." You would. ${T.secret}.`); frag(); }
+  else if (id === "vow") { them(gentle ? `${n} studies you a long time. "Okay. Then I'll tell you one thing." ${T.secret}.` : `${n} takes your hand. "On the record, then": ${T.secret}.`); frag(); }
+  else if (id === "saint") { addWorship("saint", 1); them(`${n} kneels before they've decided to. Rising, they whisper: ${T.secret}.`); frag(); }
+  else if (id === "helix") { addWorship("helix", 1); them(`${n} stares at the cyan under your skin. "You're one of us." ${T.secret}.`); frag(); }
+  else if (id === "halos") { them(`The Halo on your temple blinks gold. ${n} relaxes. The Twin vouched. ${T.secret}.`); frag(); }
+  else if (id === "coffee") { S.inv.coffee--; them(`${n} wraps both hands round the cup. "${gentle ? "Thanks. Okay. One thing" : "Mama Rue's? Fine"}": ${T.secret}.`); frag(); }
+  else if (id === "ink") { S.ink -= gentle ? 5 : 10; them(gentle ? `${n} eats like it's the first meal today. It is. Between bites: ${T.secret}.` : `${n} counts it twice. "${T.secret[0].toUpperCase() + T.secret.slice(1)}. You didn't hear it here."`); frag(); }
+  afterAction();
+}
+
+/* ---------- the overlay: one page at a time, like a Game Boy ---------- */
+const lineSpeaker = l => l.voice ? { name: l.voice, id: null, c: l.c } : l.who ? { name: l.who, id: l.id || (Object.values(C).find(c => c.n === l.who) || {}).id || null } : { name: "", id: l.id || null };
+function dlgPage(name, id, txt, tw, c, extra) {
+  return `<div class="dlg" role="dialog" aria-label="${esc(name || "Story")}"><div class="dlgbox say">${id ? portrait(id) : ""}<div class="dlgtext">${name ? `<b class="dlgname" style="${c ? `color:${c}` : ""}">${esc(name).toUpperCase()}</b>` : ""}<p class="${tw ? "tw" : ""}">${esc(txt)}</p></div>
+    <button class="dlgnext" data-act="dlgnext" aria-label="Next (Space)">▼</button></div>${extra || ""}</div>`;
+}
+function dlgChoices(title, opts, id, name) {
+  return `<div class="dlg"><div class="dlgopts" role="menu" aria-label="${esc(title)}">${opts}</div><div class="dlgbox say">${id ? portrait(id) : ""}<div class="dlgtext">${name ? `<b class="dlgname">${esc(name).toUpperCase()}</b>` : ""}<p>${esc(title)}</p></div></div></div>`;
+}
+function sceneDlg() {
+  const sc = S.scene; if (!sc) return "";
+  if (sc.talk) { const who = sc.talk.who, T = TALK[who] || TALK.shadow, n = talkName(who), pid = who === "shadow" ? "karl" : who;
+    const opts = talkOptions(who).map((o, k) => `<button class="dlgopt${o.locked ? " locked" : ""}" role="menuitem" data-act="talkpick" data-arg="${o.id}" ${o.locked ? "disabled" : ""} title="${esc(o.why || "")}"><span class="k">${k + 1}</span>${o.tags.map(t => `<span class="dtag" style="--c:${t.c}">[${esc(t.t)}]</span>`).join("")} <span>${esc(o.say)}</span>${o.locked ? ` <em>${esc(o.why)}</em>` : ""}</button>`).join("");
+    return dlgChoices(who === "ione" ? "Wren holds Ione so you can see her." : (C[who] || { q: "You didn't see me." }).q, opts, pid, n); }
+  const shown = sc.shown ?? sc.lines.length;
+  if (shown < sc.lines.length) { const l = sc.lines[shown], sp = lineSpeaker(l), left = sc.lines.length - shown - 1;
+    return dlgPage(sp.name, sp.id, l.txt, (sc.twSeen ?? -1) <= shown, sp.c, left ? `<span class="dlgmore">${left} more</span>` : ""); }
+  if (sc.choice) return dlgChoices(sc.choice.q, sc.choice.opts.map(([v, t, d], k) => `<button class="dlgopt" data-act="beat" data-arg="${v}"><span class="k">${k + 1}</span><span>${esc(t)}</span> <em>${esc(d)}</em></button>`).join(""), null, "");
+  if (sc.offer) return dlgChoices(sc.offer.k === "gold" ? "A warm voice offers you a Blessing. (Sainthood +1, this Run only.)" : "A glowing nurse offers you a Splice. (Helix +1, this Run only.)", sc.offer.items.map((b, k) => `<button class="dlgopt" data-act="boon" data-arg="${k}"><span class="k">${k + 1}</span><span class="dtag" style="--c:${sc.offer.k === "gold" ? "#f0bd3e" : "#3fe3d4"}">[${esc(b[0])}]</span> <span>${esc(b[1])}</span></button>`).join("") + `<button class="dlgopt" data-act="noboon"><span class="k">${sc.offer.items.length + 1}</span><span>Refuse. Politely.</span></button>`, null, "");
+  return "";
+}
+function fieldDlg() { if (!S.fieldSayOpen || !S.fieldSay) return ""; return dlgPage("Hell Rot", "hellrot", S.fieldSay, !S.fieldSayTyped); }
+const dlgOpen = () => !!document.querySelector("#screen .dlg");
+let TYPING = false;
+const DLG_ACT = {
+  dlgnext() {
+    if (TYPING) { if (S.scene) S.scene.twSeen = (S.scene.shown ?? 0) + 1; S.fieldSayTyped = true; return; }
+    if (S.screen === "field") { S.fieldSayOpen = false; return; }
+    const sc = S.scene; if (sc && (sc.shown ?? sc.lines.length) < sc.lines.length) sc.shown = (sc.shown ?? 0) + 1;
+  },
+  talkpick(a) { talkPick(a); }
+};
+// keys: Space/Enter/E turn the page, arrows or W/S move through choices, 1–9 pick, Esc says goodbye
+document.addEventListener("keydown", e => {
+  if (!S || !dlgOpen() || e.target.matches("input, select, textarea")) return;
+  const k = e.key.toLowerCase(), opts = [...document.querySelectorAll("#screen .dlg .dlgopt:not([disabled])")], nx = document.querySelector("#screen .dlg .dlgnext");
+  const stop = () => { e.preventDefault(); e.stopImmediatePropagation(); };
+  if (nx && [" ", "enter", "e"].includes(k)) { stop(); if (!e.repeat) nx.click(); return; }
+  if (opts.length) {
+    const i = opts.indexOf(document.activeElement);
+    if (["arrowdown", "s", "arrowup", "w"].includes(k)) { stop(); const d = k === "arrowdown" || k === "s" ? 1 : -1; opts[(i + d + opts.length) % opts.length].focus(); return; }
+    if (/^[1-9]$/.test(k)) { const all = [...document.querySelectorAll("#screen .dlg .dlgopt")], b = all[+k - 1]; if (b && !b.disabled) { stop(); b.click(); } return; }
+    if ((k === "e" || k === " " || k === "enter") && i < 0) { stop(); opts[0].focus(); return; }
+    if (k === "e" && i >= 0) { stop(); opts[i].click(); return; }
+    if (k === "escape") { const bye = opts.find(b => b.dataset.arg === "bye"); if (bye) { stop(); bye.click(); } return; }
+  }
+  if (["w", "a", "s", "d", "arrowup", "arrowdown", "arrowleft", "arrowright", "shift"].includes(k)) stop();   // no walking while someone is talking
+}, true);
+// a Game Boy "!" over Hell Rot when a fight finds him, "…" over whoever you talk to
+let EMOTE = null;
+function drawEmote(g, c, r, ch, col) { const x = c * 16 + 4, y = r * 16 - 13; rect(g, x - 1, y - 1, 10, 9, "#0d0a14"); rect(g, x, y, 8, 7, "#efe7f0"); rect(g, x + 3, y + 7, 2, 2, "#efe7f0"); ptext(g, ch, x + 3 - (ch.length > 1 ? 2 : 0), y + 1, col || "#d32f3f", 1, null); }
+function drawEmotes(g) {
+  const now = performance.now();
+  if (EMOTE && now - EMOTE.t0 < (EMOTE.dur || 700)) { const bob = Math.floor((now - EMOTE.t0) / 90) % 2; drawEmote(g, EMOTE.c, EMOTE.r - bob / 16, EMOTE.ch, EMOTE.col); } else EMOTE = null;
+  const sc = S.scene; if (sc && sc.talk && sc.node) { const sp = spotsFor(BY[sc.node]).find(s => s.i === sc.talk.i); if (sp) drawEmote(g, sp.c, sp.r, Math.floor(now / 300) % 3 === 0 ? "." : Math.floor(now / 300) % 3 === 1 ? ".." : "...", "#3a3442"); }
+}
 
 /* ---------- travel ---------- */
 function travel(dest, modeId) {
@@ -2843,8 +3111,7 @@ function render() {
   const s = S.screen;
   let html = "";
   if (BOOT) html = scrStart(); else if (s === "intro") html = scrIntro(); else if (s === "field") html = scrField(); else if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
-  else if (s === "scene") { html = scrScene(); const sc = S.scene; if (sc.offer) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${sc.offer.k === "gold" ? "THE TWIN'S BLESSINGS · SAINTHOOD +1" : "THE THEOGENS' SPLICES · HELIX +1"} · THIS RUN ONLY</div><div class="choices" style="padding:0">${sc.offer.items.map((b, i) => `<button class="btn" style="--c:${sc.offer.k === "gold" ? "#f0bd3e" : "#3fe3d4"}" data-act="boon" data-arg="${i}"><span class="t">${b[0]}</span><span class="d">${b[1]}</span></button>`).join("")}<button class="btn" data-act="noboon"><span class="t">Refuse</span><span class="d">Stay yourself.</span></button></div></div>`;
-    if (sc.choice) html += `<div class="pad" style="padding-top:0"><div class="eyebrow">${esc(sc.choice.q).toUpperCase()}</div><div class="choices" style="padding:0">${sc.choice.opts.map(([v, t, d]) => `<button class="btn" style="--c:#f29b3a" data-act="beat" data-arg="${v}"><span class="t">${t}</span><span class="d">${d}</span></button>`).join("")}</div></div>`;
+  else if (s === "scene") { html = scrScene(); const sc = S.scene;
     if (sc.offer || sc.choice) html = html.replace(/data-act="spot"/g, 'data-act="spot" disabled'); }
   else if (s === "battle") html = scrBattle(); else if (s === "party") html = scrParty(); else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
   else if (s === "final") html = scrFinal(); else if (s === "ending") html = scrEnding(); else if (s === "notebook") html = scrNotebook(); else if (s === "cast") html = scrCast(); else if (s === "key") html = scrKey();
@@ -2914,7 +3181,7 @@ const ACT = {
   castf(a) { S.castF = a; render(); },
   castsel(a) { S.castSel = a; render(); }
 };
-Object.assign(ACT, RPG_ACT);
+Object.assign(ACT, RPG_ACT, DLG_ACT);
 MODEDEF.moreau = { c: "#f7a6c2", sk: null, strong: [], weak: [], fx: "" };
 function dispatch(name, arg) {
   const f = ACT[name]; if (!f) return; const before = S.issue ? snap() : null, T0 = S.T; LASTHUD = S.issue ? { saint: S.saint, helix: S.helix, clar: S.clar, ink: S.ink } : null;

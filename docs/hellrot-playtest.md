@@ -347,6 +347,27 @@ the cliff stairs and the springs. It covered the Garage party picker, both
 shops, the gear menus, items used outside a fight, all four bosses, and a
 phone screen 390 px wide with no sideways scroll.
 
+### Talk boxes and battle effects
+
+Talk now opens a menu over the scene (design §4.7e), and every battle move
+has an effect (§4.7b). The bot learned to read the text box page by page and
+to pick a random option it is allowed to take. It played 10 whole weeks in
+three styles:
+
+| Style | Weeks | Endings | Talks per week |
+|---|---|---|---|
+| Mixed | 4 | 14, 13, 15, 13 | 31 to 36 |
+| Manual battles | 3 | 14, 13, 16 | 26 to 31 |
+| Click a tile, walk there | 3 | 14, 13, 15 | 28 to 31 |
+
+There were no errors, no time leaks and no stuck boxes. A scripted test
+checked the Prologue walk with the box open (Hell Rot does not move until
+it closes), the keyboard menu (arrows, Enter, the number keys), Tem's
+menu (gentle options only), Benny's menu (Temperament, party, Venom and
+coffee options) and a phone screen. A frame capture checked the battle
+effects: the swirl, slashes, beams, bubbles, rings, halos, the crit flash,
+status markers, Moreau and the victory hop.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a

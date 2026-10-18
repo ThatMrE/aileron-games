@@ -2993,6 +2993,35 @@ off when the player's system asks for reduced motion.
 - **Screens** slide in when they change.
 - **Story text** types itself out, three letters at a time. A click on the
   text box shows the rest at once.
+- **Emotes:** a red "!" pops over Hell Rot when a random fight finds him,
+  as in the old games. He freezes for half a second, then the battle swirl
+  starts. A "!" or "?" pops over a person or a thing when you use it. A
+  "…" bubble stays over whoever is talking to you.
+- **Battles:** every move has its own effect, and the effect matches the
+  move's tag:
+
+  | What happens | Effect |
+  |---|---|
+  | Attack and *phys* skills | Three slashes and a burst of sparks |
+  | *Truth* skills | A white beam from the user to the target |
+  | *Chem* skills | Bubbles that rise and burst |
+  | *Noise* skills | Rings that spread out from the target |
+  | *Spirit* skills | A gold halo comes down onto the target |
+  | Any skill | The user gathers light in the skill's colour first |
+  | Heal, SP | Green or blue "+" signs float up |
+  | Buff, debuff | Green arrows up, red arrows down |
+  | Status | Dots circle the head, with PSN, SLP, STN, BLD, SIL or CNF |
+  | Revive | A pillar of light |
+  | Steal (Audit, Swipe) | A coin arcs from one side to the other |
+  | Scan (Archive, Blood Eye) | A cyan line sweeps down every enemy |
+  | Defend | A blue shield around the member |
+  | Item | The item arcs out of the user's hand |
+  | Moreau | The axolotl grows to fill the screen in a pink burst |
+  | Critical or very big hit | The screen shakes and flashes |
+  | Miss | Grey lines whoosh past |
+  | Run | The party dashes off the right edge |
+  | Victory | The party hops, VICTORY bounces at the top, LV UP! flashes over anyone who levels |
+  | Defeat | The screen goes dark red |
 
 ### 4.7c The start screen
 
@@ -3018,6 +3047,54 @@ Every story beat is a short scene written to show, not tell: what Hell Rot
 sees and hears, and what people do and say. The scenes, and the rules for
 writing them, are in the scene script:
 [hellrot-scenes.md](hellrot-scenes.md).
+
+### 4.7e Talk boxes and what you can say
+
+All story text plays in a **text box over the scene**, as in *Pokémon*: a
+cream box with a portrait, a name and one page at a time. A red ▼ blinks
+when there is more. Space, Enter, E or a click turns the page. The first
+press shows the whole page if it is still typing. Hell Rot cannot walk
+while a box is open. On a phone, the box sits under the picture instead
+of over it. The text box under the room keeps a log of the last few lines.
+
+**Talking is a choice menu**, as in *Skyrim*: a dark list of things to say
+above the text box. Arrow keys or W and S move, Enter or E picks, 1 to 9
+pick at once, and Esc says goodbye. The list comes from Hell Rot's
+**character sheet**. Each option shows a tag in brackets that says why it
+is there:
+
+| Tag | Where it comes from | What it does |
+|---|---|---|
+| `[BLOOD EYE · 83%]` | A skill check; the % is the real chance with your skills | Pass: the person's tell, then their secret (a fragment). Fail: nothing |
+| `[THE BASTARD · …]` | Needle them | Venom +1. Pass: the secret. Fail: Clarity −1 |
+| `[PEER REVIEW · …]` | Show your notes; needs a Lead | Vow +1 on a pass |
+| `[THE CELEBRITY · …]`, `[FOOTNOTE · …]`, `[THE CHEMIST · …]` | Charm, history, shop talk | The secret on a pass |
+| `[WRITER]`, `[BRAWLER]`, `[RELAPSER]` | Your Temperament, once per Issue | A sure secret; the Brawler adds Heat, the Relapser adds Craving |
+| `[JUNIE]`, `[YARA]`, … | A housemate in your party, once each per Issue | A sure secret, and maybe Trust +1 |
+| `[VENOM 5/5]`, `[VOW 5/5]` | Your reputation | A threat (Heat +1) or a promise to protect a source |
+| `[SAINTHOOD 4+]`, `[HELIX 4+]`, `[HALOS ON]` | Your worship meters | A sure secret, and the meter goes up: the trap again |
+| `[COFFEE ×3]`, `[10 INK]` | Your bag | Pay for it |
+
+The menu shows Blood Eye, the approaches this person likes, and your best
+odds: up to three checks. Each person likes some approaches (2 easier) and
+hates others (2 harder). Options you cannot take yet are greyed out with
+what they need. At most one locked option shows at a time. *Ask about
+tonight* is always there and needs no check. *Goodbye* costs nothing; the
+person is used up for the Issue only when you say something.
+
+Every person in a room has a written **tell** (what the blood eye sees) and
+a **secret** (what they let slip, which becomes the fragment). Examples:
+Benny holds his cup with the canister grip, his thumb looking for a valve
+that isn't there. Halcyon's smile lands half a second after her words. Vail
+polishes the gold pan's glass, and there is no dust on it.
+
+**Gentle options only for the young.** Tem, Ione and Karl never get a
+threat, a needle, a bribe, the Gelastic or the gas. They get *Ask*, Blood
+Eye, history, a promise to keep them out of the column, a hot drink or a
+meal, and help from the party.
+
+Story choices (the word for Column 1, Rosa's night, the bridge) and the
+Blessing and Splice offers use the same menu.
 
 ### 4.8 Rails and indicators (after the wireframe test)
 
