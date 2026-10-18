@@ -940,7 +940,7 @@ const ROOMS = [
 ];
 function scrHouse() {
   const r = S.room;
-  return `<div class="stage"><canvas class="scene-art interior walk" data-house="1" width="256" height="144" tabindex="0" aria-label="Villa Delirium. Walk with WASD or the arrow keys and press Space or E at a housemate, or click a room below."></canvas>${S.shop ? shopDlg() : ""}</div>
+  return `<div class="stage"><canvas class="scene-art interior walk" data-house="1" width="256" height="144" tabindex="0" aria-label="Villa Delirium. Walk with WASD or the arrow keys and press Space or E at a housemate, or click a room below."></canvas>${S.shop ? shopDlg() : houseDlg()}</div>
     <div class="intbar"><span>VILLA DELIRIUM · ${clockStr(S.T)}</span><span class="note">Walk to a housemate and press Space (A on a phone). Your bed is top right. ▼ at the bottom goes out into the City.</span></div>${dpad()}
     <div class="pad">
       <div class="row" style="justify-content:space-between"><h2>VILLA DELIRIUM</h2><button class="btn primary${S.next && S.next.go.type === "node" && S.next.go.arg !== "house" ? " nextglow" : ""}" data-act="go" data-arg="map" ${S.delirium ? "disabled" : ""}><span class="t">GO OUT INTO THE CITY <em>map</em></span></button></div>
@@ -948,7 +948,7 @@ function scrHouse() {
       <div class="frame" style="background:var(--panel-2)">${r ? roomPanel(r) : `<div class="pad"><p>Choose a room. The glowing one is your next step.</p></div>`}</div>
     </div>`;
 }
-function bark(id) { const lines = { duchess:["Darling. Tonight's assignment, and do try not to die before press.","The patron pays the rent. I pay attention."], junie:["Keys. Knees. Crucifix. Let's go.","If you black out again I'm charging you for gas. The van kind."], yara:["Bring me fragments. I'll bring you the truth, eventually.","Two fragments make a Lead. One fragment makes a rumour."], otto:["Gifts are just chemistry with manners.","I'm 101. I've earned the right to judge your reagents."], mary:["I remember when this house had a fax machine. And a fax.","Spend Ink wisely. Spend Sight carefully."], moreau:["( . )","(Moreau regrows a fourth leg. You take the hint.)"], fax:["Layout's ready. Give me a cover line that bites.","Paper is the only thing the Twin can't edit."], hellrot:["The tower room. The only bed in the City with no god in it."] }; return pick(lines[id] || ["..."]); }
+function bark(id) { const lines = { duchess:["Darling. Tonight's assignment, and do try not to die before press.","The patron pays the rent. I pay attention."], junie:["Keys. Knees. Crucifix. Let's go.","If you black out again I'm charging you for gas. The van kind."], yara:["Bring me fragments. I'll bring you the truth, eventually.","Two fragments make a Lead. One fragment makes a rumour."], otto:["Gifts are just chemistry with manners.","I'm 101. I've earned the right to judge your reagents."], mary:["I remember when this house had a fax machine. And a fax.","Spend Ink wisely. Spend Sight carefully."], moreau:["( . )","(Moreau regrows a fourth leg. You take the hint.)"], fax:["Layout's ready. Give me a cover line that bites.","Paper is the only thing the Twin can't edit."], hellrot:["The tower room. The only bed in the City with no god in it."], bishop:["The future is late. Thank God.","I'll pray for you. Out of habit."], pru:["I've priced tonight. Bring receipts.","Net-neutral. I've seen worse."], saintnobody:["Hail Eris. Pass the glitter.","I brought three costumes. One of them is for you."] }; return pick(lines[id] || ["..."]); }
 function roomPanel(r) {
   if (S.delirium && r !== "rest") return `<div class="pad"><p class="warn">You can't think straight. Go to the Tower Room and sleep 6 hours.</p></div>`;
   const head = (id, title) => `<div class="textbox">${portrait(id)}<div class="say"><div class="speaker">${esc(title)}</div><p>${esc(bark(id))}</p></div></div>`;
@@ -2198,7 +2198,7 @@ function catchUp() {
   const top = S.chars.hellrot.lv;
   HOUSEMATES.forEach(id => { const ch = S.chars[id]; if (ch.lv < top - 1) { ch.lv = top - 1; ch.xp = 0; const m = charStats(id).s; ch.hp = m.hp; ch.sp = m.sp; } });
 }
-function setParty(list) { S.party = list.filter(id => HOUSEMATES.includes(id)).slice(0, 2); S.comp = S.party[0] || "none"; S.flags["comp" + S.issue] = true; catchUp(); }
+function setParty(list) { const before = (S.party || []).slice(); S.party = list.filter(id => HOUSEMATES.includes(id)).slice(0, 2); partyBanter(before, S.party); S.comp = S.party[0] || "none"; S.flags["comp" + S.issue] = true; catchUp(); }
 
 /* ---------- random encounters: a step counter, like the old days ---------- */
 const SAFE_PLACES = ["house", "northbeach", "fogbelt"];
@@ -2694,10 +2694,10 @@ function talkOptions(who) {
     const checks = [];
     order.forEach(id => { const A = APPROACH[id]; if (gentle && (id === "needle" || id === "charm" || id === "chem")) return;
       if (id === "chem" && !["theogen", "salon", "city", "church"].includes((C[who] || {}).f)) return;
-      const dc = A.dc + (T.likes.includes(id) ? -2 : 0) + (T.hates.includes(id) ? 2 : 0), sk = skill(A.sk), locked = A.need === "lead" && !hasLead();
-      checks.push({ id, say: A.say, dc, sk: A.sk, p: locked ? -1 : odds(sk, dc), tags: [tag(`${A.sk} · ${locked ? "needs a Lead" : odds(sk, dc) + "%"}`, A.c)], locked, why: locked ? "Needs a Lead in your Notebook or Memory." : "" }); });
+      const dc = A.dc + (T.likes.includes(id) ? -2 : 0) + (T.hates.includes(id) ? 2 : 0), sk = skill(A.sk), clam = CLAMS[who] && CLAMS[who][1] === id && tonightParty().includes(CLAMS[who][0]), locked = (A.need === "lead" && !hasLead()) || clam;
+      checks.push({ id, say: A.say, dc, sk: A.sk, clam, p: locked ? -1 : odds(sk, dc), tags: [tag(`${A.sk} · ${clam ? "not tonight" : locked ? "needs a Lead" : odds(sk, dc) + "%"}`, A.c)], locked, why: clam ? CLAMS[who][2] : locked ? "Needs a Lead in your Notebook or Memory." : "" }); });
     // Blood Eye always; then what this person responds to; then your best odds
-    const pickc = checks.filter(c => c.id === "read" || (T.likes.includes(c.id) && !c.locked)); checks.filter(c => !pickc.includes(c)).sort((x, y) => y.p - x.p).forEach(c => { if (pickc.length < 3) pickc.push(c); });
+    const pickc = checks.filter(c => c.id === "read" || c.clam || (T.likes.includes(c.id) && !c.locked)); checks.filter(c => !pickc.includes(c)).sort((x, y) => y.p - x.p).forEach(c => { if (pickc.length < 3) pickc.push(c); });
     out.push(...checks.filter(c => pickc.includes(c)));
 
     if (S.issue >= 1 && !S.flags["temptalk" + S.issue]) {
@@ -2705,7 +2705,13 @@ function talkOptions(who) {
       if (S.temp === "gelastic" && !gentle) out.push({ id: "temp", say: "Rest a hand on the Gelastic. Let them notice.", tags: [tag("BRAWLER · Heat +1", "#d32f3f")] });
       if (S.temp === "canister" && !gentle) out.push({ id: "temp", say: "Ask, quietly, who's selling tonight.", tags: [tag("RELAPSER · Craving +1", "#e33f9c")] });
     }
-    (S.issue >= 1 ? S.party : []).forEach(p => { if (PARTY_LINE[p] && p !== who && !S.flags["ptalk" + p + S.issue]) out.push({ id: "party:" + p, say: PARTY_LINE[p][0], tags: [tag(BX.HEROES[p].n.toUpperCase(), "#ff8ba2")] }); });
+    const tp = tonightParty(), aff = AFFINITY[who] || {};
+    if (tp.length === 2 && PAIRS[pairKey(tp)] && !S.flags["pair" + pairKey(tp) + S.issue]) out.push({ id: "pair", say: PAIRS[pairKey(tp)][0], tags: [tag(`${tp.map(p => BX.HEROES[p].n.toUpperCase()).join(" + ")} ★ a Lead`, "#a6e23f")] });
+    tp.forEach(p => { if (aff[p] && !S.flags["aff" + who + p + S.issue]) out.push({ id: "aff:" + p, say: aff[p][0], tags: [tag(`${BX.HEROES[p].n.toUpperCase()} ★`, "#ff8ba2")] });
+      else if (PARTY_LINE[p] && p !== who && !S.flags["ptalk" + p + S.issue]) out.push({ id: "party:" + p, say: PARTY_LINE[p][0], tags: [tag(BX.HEROES[p].n.toUpperCase(), "#ff8ba2")] }); });
+    if (!tp.length && S.issue >= 1 && SOLO.includes(who) && !S.flags["solo" + who + S.issue]) out.push({ id: "solo", say: "Wait until it's just the two of you. Then ask.", tags: [tag("ALONE ★", "#e8f4ff")] });
+    { const miss = Object.keys(aff).find(p => !tp.includes(p) && !S.flags["aff" + who + p + S.issue]); if (miss && S.issue >= 1) out.push({ id: "hint:" + miss, say: aff[miss][0], tags: [tag(`${BX.HEROES[miss].n.toUpperCase()} ★`, "#ff8ba2")], locked: true, why: `Bring ${BX.HEROES[miss].n} tonight (the Garage).` });
+      else if (tp.length && SOLO.includes(who) && S.issue >= 1) out.push({ id: "hint:solo", say: "Wait until it's just the two of you. Then ask.", tags: [tag("ALONE ★", "#e8f4ff")], locked: true, why: "Come alone." }); }
     const out0 = out.length; if (!gentle) out.push({ id: "venom", say: "Promise to print their name in 48-point type.", tags: [tag(`VENOM ${S.venom}/5 · Heat +1`, "#d32f3f")], locked: S.venom < 5, why: "Needs Venom 5." });
     out.push({ id: "vow", say: gentle ? "Promise you'll keep them out of the column." : "Swear you'll protect them as a source.", tags: [tag(`VOW ${S.vow}/5`, "#3f8cf2")], locked: S.vow < 5, why: "Needs Vow 5." });
     if (S.saint >= 4 && !gentle) out.push({ id: "saint", say: "Bless them. Watch them kneel before they think.", tags: [tag("SAINTHOOD 4+ · Sainthood +1", "#f0bd3e")] });
@@ -2737,6 +2743,11 @@ function talkPick(id) {
     else { them(A.fail(n)); if (A.failCost) S.clar -= A.failCost; if (id === "needle" && S.trust[who] != null) S.trust[who] = clamp(S.trust[who] - 1, 0, 5); } }
   else if (id === "temp") { S.flags["temptalk" + S.issue] = true; if (S.temp === "gelastic") S.heat = clamp(S.heat + 1, 0, 10); if (S.temp === "canister") S.crave = clamp(S.crave + 1, 0, 5);
     them(S.temp === "manuscript" ? `${n} mouths the line along with you. Then, softer: ${T.secret}.` : S.temp === "gelastic" ? `${n} looks at your hand, then at the door. "Fine. Fine." ${T.secret}.` : `${n} names a name. And, because you're one of them now: ${T.secret}.`); frag(); }
+  else if (id === "pair") { const tp = tonightParty(), k = pairKey(tp), P = PAIRS[k]; S.flags["pair" + k + S.issue] = true; note(P[1]); them(`Between the two of them, it comes out whole: ${T.secret}.`);
+    remember({ kind: "lead", text: `${node.n}: ${T.secret} (two witnesses)` }); tp.forEach(p => { if (S.trust[p] != null && Math.random() < .5) S.trust[p] = clamp(S.trust[p] + 1, 0, 5); }); }
+  else if (id.startsWith("aff:")) { const p = id.slice(4), A = AFFINITY[who][p]; S.flags["aff" + who + p + S.issue] = true; note(A[1]); them(`And then, quietly: ${T.secret}.`); frag();
+    const f = A[2] || {}; if (f.clar) S.clar = clamp(S.clar + f.clar, 0, maxClar()); if (f.crave) S.crave = clamp(S.crave + f.crave, 0, 5); if (f.saint) S.saint = clamp(S.saint + f.saint, 0, 10); if (f.readers) S.readers += f.readers; if (S.trust[p] != null) S.trust[p] = clamp(S.trust[p] + 1, 0, 5); }
+  else if (id === "solo") { S.flags["solo" + who + S.issue] = true; note("You wait until the room empties. No housemates, no witnesses. Just you."); them(gentle ? `"Okay. Since it's only you." ${T.secret}.` : `"Since it's only you": ${T.secret}.`); frag(); S.clar = clamp(S.clar + 1, 0, maxClar()); }
   else if (id.startsWith("party:")) { const p = id.slice(6); S.flags["ptalk" + p + S.issue] = true; note(PARTY_LINE[p][1]); them(`"All right. ${T.secret[0].toUpperCase() + T.secret.slice(1)}."`); frag(); if (S.trust[p] != null) S.trust[p] = clamp(S.trust[p] + (Math.random() < .5 ? 1 : 0), 0, 5); }
   else if (id === "venom") { S.heat = clamp(S.heat + 1, 0, 10); them(`${n} goes pale. "You wouldn't." You would. ${T.secret}.`); frag(); }
   else if (id === "vow") { them(gentle ? `${n} studies you a long time. "Okay. Then I'll tell you one thing." ${T.secret}.` : `${n} takes your hand. "On the record, then": ${T.secret}.`); frag(); }
@@ -2775,8 +2786,9 @@ const dlgOpen = () => !!document.querySelector("#screen .dlg");
 let TYPING = false;
 const DLG_ACT = {
   dlgnext() {
-    if (TYPING) { if (S.scene) S.scene.twSeen = (S.scene.shown ?? 0) + 1; S.fieldSayTyped = true; return; }
+    if (TYPING) { if (S.scene) S.scene.twSeen = (S.scene.shown ?? 0) + 1; S.fieldSayTyped = true; S.houseDlgTyped = true; return; }
     if (S.screen === "field") { S.fieldSayOpen = false; return; }
+    if (S.screen === "house" && S.houseDlg && S.houseDlg.length) { S.houseDlg.shift(); S.houseDlgTyped = false; return; }
     const sc = S.scene; if (sc && (sc.shown ?? sc.lines.length) < sc.lines.length) sc.shown = (sc.shown ?? 0) + 1;
   },
   talkpick(a) { talkPick(a); }
@@ -2867,6 +2879,87 @@ function drawStall(g, x, y, frame) {
   rect(g, x - 1, y + 3, 1, 3, "#3a2414"); rect(g, x + 16, y + 3, 1, 3, "#3a2414");
   const sw = frame % 4 < 2 ? 0 : 1; rect(g, x + 5 + sw, y - 9, 7, 7, "#f0bd3e"); ptext(g, "$", x + 7 + sw, y - 8, "#3a2414", 1, null);
   rect(g, x + 2, y + 4, 3, 2, "#c48f52"); rect(g, x + 10, y + 3, 3, 3, "#3fe3d4");
+}
+
+/* =====================================================================
+   WHO YOU BRING CHANGES WHAT YOU CAN SAY. Every pair of housemates has a
+   joint approach and a bit of banter; some people have history with one
+   housemate; some only talk to Hell Rot alone; some clam up around
+   somebody.
+   ===================================================================== */
+const pairKey = ps => ps.slice().sort().join("+");
+// [joint approach, what happens, [first line, reply]]
+const PAIRS = {
+  "fax+junie": ["Fax shoots; Junie blocks the door.", "Junie fills the doorway. Fax's flash goes off. Nobody leaves until the picture is right.", [["junie", "If you photograph my van again, I'm billing you."], ["fax", "It's the only honest thing in the City."]]],
+  "junie+yara": ["Junie asks nicely. Yara asks exactly.", "Junie asks the friendly question. Yara asks the same one again, with the date in it.", [["yara", "You drive like you fact-check."], ["junie", "Fast and never wrong?"], ["yara", "Neither."]]],
+  "junie+otto": ["Otto talks chemistry; Junie keeps the room calm.", "Otto lectures on reagents. Junie keeps one hand on the door frame. It works like a clamp.", [["otto", "In 1971 I'd have married you."], ["junie", "In 1971 you'd have crashed my van."]]],
+  "bishop+junie": ["Junie holds the crucifix; Bishop Null holds the silence.", "Junie turns the crucifix in her fingers. Bishop Null says nothing at all, for a long time. They crack first.", [["bishop", "You carry a cross you don't believe in."], ["junie", "It's a bottle opener too."]]],
+  "junie+pru": ["Pru names the price; Junie names the consequences.", "Pru names a number. Junie names what happens if they don't take it. They take it.", [["pru", "You're a cost centre, Junie."], ["junie", "I'm the reason you still have a centre."]]],
+  "junie+mary": ["Mary remembers their record; Junie remembers their face.", "Mary recites their last arrest, date and docket. Junie adds what they were wearing.", [["mary", "I filed you under 'reliable' in 2041."], ["junie", "What was I filed under before that?"], ["mary", "Don't ask."]]],
+  "junie+saintnobody": ["Good cop, clown cop.", "Saint Nobody is the good cop. Saint Nobody is dressed as a lobster. Junie doesn't have to say a word.", [["saintnobody", "I'll be the good cop."], ["junie", "You're dressed as a lobster."]]],
+  "fax+yara": ["Fax lays the photos out; Yara circles the lie.", "Fax deals photos onto the table like cards. Yara circles one face in red.", [["fax", "Your corrections ruin my layouts."], ["yara", "Your layouts ruin my corrections."]]],
+  "otto+yara": ["Two scientists, one lab report.", "Otto asks for the method. Yara asks for the raw data. Between them there is nowhere to hide.", [["otto", "Peer review in my day was a fistfight."], ["yara", "It still is."]]],
+  "bishop+yara": ["Faith and fact at the same table.", "Bishop Null asks what they believe. Yara asks what they can prove. The gap between the answers is the story.", [["bishop", "You'd fact-check the Sermon on the Mount."], ["yara", "Someone should have."]]],
+  "pru+yara": ["Yara checks the numbers; Pru checks who paid for them.", "Yara finds the wrong number. Pru finds who it was wrong for.", [["pru", "Your sources are a rounding error."], ["yara", "Your rounding errors are my sources."]]],
+  "mary+yara": ["Cross-check it against the Archive.", "Mary quotes the 1975 version of the same lie. Yara marks every word that changed.", [["mary", "I have the 1975 edition of that lie."], ["yara", "Of course you do."]]],
+  "saintnobody+yara": ["A prank, with footnotes.", "Saint Nobody pulls the prank. Yara footnotes it. The footnote is what makes them talk.", [["saintnobody", "Fact: glitter is forever."], ["yara", "…That one checks out."]]],
+  "fax+otto": ["Fax sketches; Otto names everything in the sketch.", "Fax sketches the back room from memory. Otto names every bottle on the shelf.", [["otto", "Draw me young."], ["fax", "I'm an art director, not a magician."]]],
+  "bishop+fax": ["A sermon and a cover shoot.", "Bishop Null preaches. Fax shoots the faces in the crowd. One face doesn't belong.", [["fax", "You'd make a great cover."], ["bishop", "I was one. 2045. It aged badly."]]],
+  "fax+pru": ["Pru prices the story; Fax prices the picture.", "Pru names what the story is worth. Fax names what the picture is worth. It's more.", [["pru", "Covers don't move units."], ["fax", "Mine move people."]]],
+  "fax+mary": ["The old photo and the new one, side by side.", "Mary lays down a photo from 1999. Fax lays down tonight's. Same room, same man, younger.", [["mary", "I have your first cover in the Archive."], ["fax", "Burn it."], ["mary", "Never."]]],
+  "fax+saintnobody": ["Stage the photo-op of their nightmares.", "Saint Nobody poses with them. Fax takes the picture. They will do anything to stop it running.", [["saintnobody", "Shoot me from my good side."], ["fax", "Which costume is that?"]]],
+  "bishop+otto": ["Two old men who've seen the world end twice.", "Otto and Bishop Null compare apocalypses. The other person can't resist correcting them both.", [["otto", "Your Singularity was late."], ["bishop", "Your immortality was cancelled."]]],
+  "otto+pru": ["Otto knows the formula; Pru knows the invoice.", "Otto names the compound. Pru names the supplier who billed for it twice.", [["pru", "Your reagents cost us thirty a week."], ["otto", "And they've kept me alive for a century."]]],
+  "mary+otto": ["The two longest memories in the City.", "Otto remembers it one way. Mary remembers it another. Asked to settle it, the other person tells the truth.", [["mary", "You told me this story in 1999."], ["otto", "And you wrote it down wrong."]]],
+  "otto+saintnobody": ["Chemistry, and a whoopee cushion.", "Otto mixes something that fizzes. Saint Nobody sits on something that squeaks. In the confusion, the truth slips out.", [["saintnobody", "Can you make the glitter glow?"], ["otto", "I can make you glow. Briefly."]]],
+  "bishop+pru": ["Prophecy, with a spreadsheet.", "Bishop Null predicts what happens next. Pru shows what it will cost. They believe the cost.", [["pru", "Your stadium sold out at a loss."], ["bishop", "Salvation is a loss leader."]]],
+  "bishop+mary": ["Scripture and the record together.", "Bishop Null quotes the scripture. Mary quotes the minutes of the meeting where it was rewritten.", [["mary", "I kept the stadium programme."], ["bishop", "Please don't."]]],
+  "bishop+saintnobody": ["Two saints, one of them real.", "Two saints bless them at once, from both sides. Nobody, least of all them, knows which blessing took.", [["saintnobody", "Saint to saint: your halo's crooked."], ["bishop", "I don't wear one."], ["saintnobody", "Exactly."]]],
+  "mary+pru": ["The ledger and the archive agree.", "Pru reads the ledger. Mary reads the archive. When the two agree, nobody argues.", [["pru", "Can we sell any of the Archive?"], ["mary", "Over my dead body. Which, at my age, is a real offer."]]],
+  "pru+saintnobody": ["An audit in a clown suit.", "Saint Nobody holds the clipboard. Pru reads the questions. It is the most frightening audit of their life.", [["pru", "Your costume budget is unsustainable."], ["saintnobody", "So is capitalism."]]],
+  "mary+saintnobody": ["Read the Dissonance file aloud.", "Mary reads out a Dissonance Society file from 1978. Saint Nobody does the voices.", [["mary", "I have a file on every prank since 1978."], ["saintnobody", "Only the bad ones were mine."]]]
+};
+// people with history: [what Hell Rot proposes, what happens, an extra effect]
+const AFFINITY = {
+  tem: { junie: ["Let Junie tell Tem about roller derby.", "Junie talks about derby: falling down, getting up, falling down. Tem's sleeve rides up her wrist, and for once she lets it.", { clar: 1 }],
+    saintnobody: ["Let Saint Nobody find a coin behind Tem's ear.", "The coin comes out of Tem's ear, then out of her sleeve, then out of nowhere. Tem laughs before she can stop herself.", { clar: 1 }] },
+  benny: { junie: ["Let Junie stand next to Benny. Just stand.", "Benny sees Junie and puts both hands flat on the table. \"I'm not selling to him. I swear it.\"", { crave: -1 }] },
+  halcyon: { bishop: ["Let Bishop Null ask her about 2045.", "Halcyon's smile slips, for the first time. \"You filled a stadium. I filled a Church. Which of us lied?\"", { saint: -1 }] },
+  delphine: { otto: ["Let Otto ask Delphine what she's on.", "Two chemists, ninety and a hundred and one. Delphine shows Otto her hands. He doesn't say anything kind, and she thanks him for it.", {}] },
+  pell: { pru: ["Let Pru read Pell his own campaign filings.", "Pru reads the filings aloud, slowly. Pell's handshake hand goes into his pocket.", {}] },
+  vail: { mary: ["Let Mary ask Vail about the 1906 ledgers.", "Mary names a ledger number. Vail stops polishing the glass. \"Nobody has asked for that one in forty years.\"", {}] },
+  magister: { fax: ["Let Fax photograph the guest list.", "Fax photographs the guest list. The Magister Black watches and doesn't stop her. He wanted it seen.", {}] },
+  laffingsal: { saintnobody: ["Let Saint Nobody laugh back.", "Saint Nobody laughs back at Sal, loop for loop. On the fifth loop, Sal stops laughing first.", {}] },
+  emperor: { saintnobody: ["Let Saint Nobody issue a decree back.", "Saint Nobody decrees that the Emperor must wear a hat. The clock hands stop. Something in the fog is laughing.", {}] },
+  mags: { yara: ["Let Yara swap citations with Mags.", "Yara and Mags trade case numbers like baseball cards. You get the one Mags was saving.", {}] },
+  desh: { yara: ["Let Yara score Desh's test.", "Yara scores Desh's test. He scores hers. Both of them get a thirty-one.", { readers: 300 }] },
+  olddee: { bishop: ["Let Bishop Null remind Old Dee of the feed sermon.", "Bishop Null preached on Old Dee's feed once. Old Dee touches the earpiece, then takes it out.", {}] },
+  cask: { junie: ["Let Junie and Cask size each other up.", "Two people who stand in doorways for a living. Cask nods to Junie, professional to professional, and says more than he meant to.", {}] },
+  duchess: { pru: ["Let Pru ask who signs the rent cheques.", "\"Darling.\" A pause. \"Darling.\" Pru waits. The Duchess has never been out-waited.", {}] },
+  mamarue: { junie: ["Let Junie say she ate here as a kid.", "Mama Rue looks at Junie for a long moment. \"Vasquez girl. You still owe me for a pie.\" Then she tells you everything.", { clar: 1 }] },
+  wren: { otto: ["Let Otto ask Wren about her dosing charts.", "Otto reads Wren's charts and nods once. Wren lets out a breath she has held since Christmas.", {}] },
+  marisol: { bishop: ["Let Bishop Null tell Marisol how he left his own church.", "Bishop Null talks about the morning he walked out of the stadium. Marisol listens like it's a map.", {}] },
+  rosa: { pru: ["Let Pru offer Rosa a job, if she ever needs one.", "Pru slides a business card across. Rosa turns it over twice, then pockets it.", {}] },
+  sunday: { fax: ["Let Fax set up the unflattering angle.", "Fax kneels and shoots up Sunday's nose. He sees the screen and starts talking fast, to make it stop.", { readers: 300 }] },
+  conductor: { mary: ["Let Mary recall the night car's 1999 route.", "Mary recites every stop on the 1999 route. The Conductor rings the bell twice, which means: you're one of us.", {}] },
+  huck: { saintnobody: ["Let Saint Nobody answer Huck in cards.", "Saint Nobody writes a card: NOT TODAY EITHER. Huck reads it, and something like a smile happens.", {}] },
+  karl: { otto: ["Let Otto talk to the fog like an old dog.", "Otto talks to the fog in the voice he used for a dog in 1962. The fog leans in to listen.", {}] }
+};
+// some people only open up when it's just Hell Rot
+const SOLO = ["tem", "marisol", "rosa", "wren", "ana", "desh", "hale", "julian", "pip", "karl"];
+// and some clam up around someone: [housemate, approach it shuts, why]
+const CLAMS = { sunday: ["fax", "charm", "Not with Fax's camera in the room."], benny: ["junie", "chem", "Not with Junie watching."], tem: ["bishop", "history", "Tem goes quiet around preachers."], pell: ["yara", "needle", "Pell won't spar with a fact-checker present."], halcyon: ["saintnobody", "source", "Halcyon won't take notes seriously next to a lobster."], magister: ["pru", "charm", "The Magister doesn't perform for accountants."] };
+const tonightParty = () => S.issue >= 1 ? S.party.filter(p => HOUSEMATES.includes(p)) : [];
+// the house reacts when the party changes: a first-time joiner speaks up; a new pair trades a line or two
+function partyBanter(before, after) {
+  const pages = [];
+  after.filter(p => !before.includes(p)).forEach(p => { if (!S.flags["joined" + p]) { S.flags["joined" + p] = true; pages.push({ id: p, txt: bark(p) }); } });
+  if (after.length === 2) { const k = pairKey(after), P = PAIRS[k]; if (P && !S.flags["banter" + k]) { S.flags["banter" + k] = true; P[2].forEach(([w, t]) => pages.push({ id: w, txt: t })); pages.push({ txt: `New tonight: ${BX.HEROES[after[0]].n} and ${BX.HEROES[after[1]].n} have a joint approach when you talk to people.` }); } }
+  if (pages.length) S.houseDlg = (S.houseDlg || []).concat(pages);
+}
+function houseDlg() {
+  if (!S.houseDlg || !S.houseDlg.length) return ""; const p = S.houseDlg[0], tw = !S.houseDlgTyped; setTimeout(() => { S.houseDlgTyped = true; }, 0);
+  return dlgPage(p.id ? (C[p.id] || {}).n || "" : "", p.id || null, p.txt, tw, null, S.houseDlg.length > 1 ? `<span class="dlgmore">${S.houseDlg.length - 1} more</span>` : "");
 }
 
 /* ---------- travel ---------- */
@@ -3231,7 +3324,7 @@ const ACT = {
   temp(a) { S.temp = a; if (a === "manuscript") S.patience = 2; if (a === "gelastic") S.heat = 2; if (a === "canister") S.crave = 1; S.flags.prologue = "ride"; render(); },
   ride(a) { if (a === "shuttle") S.saint++; if (a === "ambulance") S.helix++; S.log = []; say("The Santas storm the cathedral. Fax and Junie pull you into the van. The door of Villa Delirium closes. You sleep until the afternoon.", "#ff8ba2"); S.T = 0; S.awake = 5; S.queue = []; startIssue(1); S.at = "house"; S.sel = "house"; S.screen = "house"; S.clar = maxClar(); render(); },
   room(a) { S.room = a; if (a === "salon") S.flags["salon" + S.issue] = true; render(); },
-  comp(a) { if (a === "none") setParty([]); else if (S.party.includes(a)) setParty([a, ...S.party.filter(x => x !== a)]); else if (S.party.length < 2) setParty([...S.party, a]); else setParty([S.party[0], a]); render(); },
+  comp(a) { if (a === "none") setParty([]); else if (S.party.includes(a)) setParty([a, ...S.party.filter(x => x !== a)]); else if (S.party.length < 2) setParty([...S.party, a]); else setParty([S.party[0], a]); render(); if (S.screen === "house" && S.houseDlg && S.houseDlg.length) { const c = document.querySelector("#screen .stage"); if (c) c.scrollIntoView({ block: "start", behavior: REDUCE ? "auto" : "smooth" }); } },
   unparty(a) { setParty(S.party.filter(x => x !== a)); render(); },
   halos() { if (S.halosOn || S.wear >= 4) return; S.halosOn = true; S.wear++; S.saint = clamp(S.saint + 1, 0, 10); S.clar = clamp(S.clar + 1, 0, maxClar()); say(`You put on the gold Halos. Wear ${S.wear}. The City's doors open. The Twin sees what you see.`, "#f0bd3e"); render(); },
   pell(a) { S.flags.pellAsked = true; S.pell = a === "yes"; say(S.pell ? "You take Pell's help. It feels like a handshake with a glove on." : "You refuse Pell.", "#3f8cf2"); render(); },

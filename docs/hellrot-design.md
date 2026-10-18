@@ -3089,6 +3089,35 @@ Benny holds his cup with the canister grip, his thumb looking for a valve
 that isn't there. Halcyon's smile lands half a second after her words. Vail
 polishes the gold pan's glass, and there is no dust on it.
 
+**Who you bring changes what you can say.** The party you pick in the
+Garage opens and closes options:
+
+- **Pairs.** Each of the 28 pairs of housemates has a joint approach, marked
+  `[JUNIE + YARA ★ a Lead]`. For example: "Junie asks nicely. Yara asks
+  exactly." Fax and Saint Nobody "stage the photo-op of their nightmares".
+  A pair gives a **Lead**, not a fragment, once per pair per Issue.
+- **History.** Some people have history with one housemate, marked
+  `[JUNIE ★]`. There are 23 of these, each with its own scene and effect.
+  With Junie at his side, Benny puts both hands flat on the table (Craving
+  −1). Bishop Null asks Halcyon about 2045, and her smile slips (Sainthood
+  −1). Saint Nobody finds a coin behind Tem's ear and she laughs
+  (Clarity +1). With Fax kneeling for the unflattering angle, Sunday talks
+  fast to make it stop (Readers +300). The housemate's Trust goes up by 1.
+- **Alone.** Tem, Marisol, Rosa, Wren, Ana, Desh, Hale, Julian, Pip and Karl
+  have one more option, `[ALONE ★]`, only when Hell Rot comes with nobody.
+  It gives a fragment and Clarity +1.
+- **Clamming up.** Some people refuse one approach when a certain housemate
+  is there. The option stays in the list, greyed, with the reason. Sunday:
+  "Not with Fax's camera in the room." Benny: "Not with Junie watching." Tem
+  goes quiet around preachers (Bishop Null). Pell won't spar with a
+  fact-checker (Yara). The Magister doesn't perform for accountants (Pru).
+- **Hints.** If someone has history with a housemate you left at home, the
+  menu shows that option greyed: "Bring Saint Nobody tonight (the Garage)."
+  If they only talk alone, it shows "Come alone."
+- **Banter.** The first time someone joins the party, they say a line. The
+  first time a new pair forms, the two trade a short exchange in a text box
+  at home, and the box tells you they now have a joint approach.
+
 **Gentle options only for the young.** Tem, Ione and Karl never get a
 threat, a needle, a bribe, the Gelastic or the gas. They get *Ask*, Blood
 Eye, history, a promise to keep them out of the column, a hot drink or a
