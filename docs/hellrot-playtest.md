@@ -391,6 +391,24 @@ never "used up", so the bot's "use the next unused spot" rule kept opening
 the shop. The bot now leaves stalls out of that rule and goes shopping by
 chance instead.
 
+### Who you bring
+
+Talk options now change with the party (design §4.7e): 28 pair approaches,
+23 people with history with one housemate, 10 people who talk only to
+Hell Rot alone, and 6 who clam up around someone. A scripted test checked:
+
+- the first time Junie and Yara pair up, they trade lines at home, once only;
+- with Junie and Yara, Tem's menu shows the pair approach, Junie's derby
+  story, and a greyed "Bring Saint Nobody tonight";
+- the pair approach gives a Lead marked "two witnesses";
+- with Junie there, Benny's chemist option is greyed: "Not with Junie
+  watching";
+- alone, Tem's menu shows `[ALONE ★]`.
+
+The bot now picks random party line-ups at home. It played 7 whole weeks
+(endings 14, 13, 16, 14, 14, 4, 15) with no errors. It tried 15 different
+line-ups and used 8 different pair approaches and 3 history options.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
