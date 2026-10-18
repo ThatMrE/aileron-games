@@ -200,6 +200,15 @@ button { font: inherit; color: inherit; }
 .dlgopt.locked, .dlgopt:disabled { color: #5a5260; cursor: not-allowed; }
 .dlgopt.locked .dtag { color: #5a5260; }
 @media (max-width: 980px) { .dlg { position: static; margin: 8px 10px 0; max-height: none; } .dlgbox { min-height: 0; } }
+/* Santarchy: the fight tutorial */
+.ffguide { background: linear-gradient(#5a1a24, #2a0a12); border-color: #f0bd3e; box-shadow: inset 0 0 0 2px #2a0a12, 0 0 0 2px #0d0a10; }
+.ffguide .ffhead { color: #f0bd3e; }
+.ffbtn.hl { background: #f0bd3e33; animation: hlpulse .8s steps(2) infinite; }
+.ffbtn.hl::before { content: "▶"; position: absolute; left: 6px; color: #fff3aa; }
+@keyframes hlpulse { 50% { background: #f0bd3e11; } }
+.lessonchip { font-family: var(--display); font-size: 8px; line-height: 1.6; padding: 4px 8px; border: 2px solid var(--line); color: var(--grey); }
+.lessonchip.now { border-color: #f0bd3e; color: #f0bd3e; }
+.lessonchip.done { border-color: #a6e23f; color: #a6e23f; }
 /* Merchants: a Poke Mart list over the scene */
 .shoplist { max-height: 70%; }
 .shophead { display: flex; align-items: center; gap: 6px; padding: 0 14px 6px; border-bottom: 1px solid #3a3442; margin-bottom: 4px; }
@@ -802,7 +811,7 @@ function hud() {
     </div>`;
 }
 function tabs() {
-  const busy = ["scene","showdown","prologue","title","intro","field","layout","morning","lock","final","ending","battle"].includes(S.screen) || S.issue < 1, fight = S.screen === "battle";
+  const busy = ["scene","showdown","prologue","title","intro","field","layout","morning","lock","final","ending","battle","santa"].includes(S.screen) || S.issue < 1, fight = S.screen === "battle";
   const t = [["house","Villa Delirium", S.at === "house" && !busy], ["map","City map", !busy], ["party","Party", !fight && !["title","intro"].includes(S.screen)], ["notebook","Notebook", S.screen !== "title" && !fight], ["cast","Cast", !fight], ["key","Key", !fight]];
   $("tabs").innerHTML = t.map(([id, n, ok]) => `<button class="tab" data-act="go" data-arg="${id}" ${S.screen === id ? 'aria-current="page"' : ""} ${ok ? "" : "disabled"}>${n.toUpperCase()}</button>`).join("") + `<button class="tab" data-act="restart" ${S.screen === "battle" ? "disabled" : ""}>NEW GAME</button>`;
 }
@@ -1637,6 +1646,7 @@ function walkLoop() {
     const cv2 = document.querySelector("canvas.walk"); if (cv2) { if (cv2.dataset.int) drawInterior(cv2, BY[cv2.dataset.int]); else if (cv2.dataset.field) drawField(cv2, cv2.dataset.field); else drawHouse(cv2); } }
   const st = document.querySelector("canvas[data-start]"); if (st) drawStart(st);
   const bc = document.querySelector("canvas[data-battle]"); if (bc) drawBattle(bc);
+  const sc = document.querySelector("canvas[data-santa]"); if (sc && S.santa) drawSanta(sc);
   const it = document.querySelector("canvas[data-intro]"); if (it) drawIntro(it, +it.dataset.intro);
   requestAnimationFrame(walkLoop);
 }
@@ -1845,6 +1855,11 @@ const BX = (() => {
     gameon: { n: "The Game", cost: 8, kind: "debuff", stats: { def: .7, res: .7, mag: .8 }, turns: 3, tgt: "enemies" },
     slam: { n: "Slam", cost: 5, kind: "dmg", stat: "atk", pow: 2.0, tag: "phys", tgt: "enemy" },
     recount: { n: "Recount", cost: 8, kind: "heal", stat: "mag", pow: 1.4, flat: 30, tgt: "self" },
+    wassail: { n: "Swig of Wassail", cost: 0, kind: "heal", flat: 18, tgt: "self" },
+    carol: { n: "Off-Key Carol", cost: 3, kind: "dmg", stat: "mag", pow: .8, tag: "noise", tgt: "enemies" },
+    windup: { n: "Wind-Up", cost: 0, kind: "buff", stats: { atk: 2.2 }, turns: 1, tgt: "self" },
+    silentnight: { n: "Silent Night", cost: 6, kind: "status", st: "sleep", chance: 1, turns: 3, tgt: "enemy" },
+    hoho: { n: "Ho Ho Ho", cost: 4, kind: "dmg", stat: "mag", pow: .9, tag: "noise", tgt: "enemies" },
     upload: { n: "Upload", cost: 10, kind: "dmg", stat: "mag", pow: 1.9, tag: "spirit", tgt: "enemy", drain: .4 }
   };
 
@@ -1882,6 +1897,12 @@ const BX = (() => {
     sealion: E("Union Sea Lion", "sealion", "fog", { hp: 48, sp: 8, atk: 11, def: 8, mag: 3, res: 5, spd: 6, luk: 6 }, g1, ["chem"], [], ["bark", "bite"], 16, 6, [["burrito", .3]]),
     gull: E("Static Gull", "gull", "fog", { hp: 26, sp: 10, atk: 9, def: 4, mag: 6, res: 4, spd: 15, luk: 9 }, g1, ["noise"], [], ["dive"], 12, 5, [["coffee", .25]]),
     foghound: E("Fog Hound", "foghound", "fog", { hp: 40, sp: 16, atk: 9, def: 5, mag: 11, res: 10, spd: 11, luk: 7 }, g1, ["chem"], ["phys"], ["chill", "bite"], 17, 8, [["fogbottle", .2], ["fogcharm", .05]]),
+    /* Santarchy: the Prologue's fight tutorial */
+    santa: E("Drunk Santa", "santa", "city", { hp: 22, sp: 8, atk: 6, def: 3, mag: 2, res: 3, spd: 6, luk: 5 }, g1, ["noise"], [], ["wassail"], 7, 6, [["coffee", .4]]),
+    caroler: E("Caroling Santa", "caroler", "city", { hp: 20, sp: 12, atk: 4, def: 3, mag: 6, res: 4, spd: 7, luk: 5 }, g1, ["noise"], ["truth"], ["carol"], 8, 7, [["gum", .3]]),
+    canesanta: E("Candy-Cane Santa", "canesanta", "city", { hp: 70, sp: 10, atk: 8, def: 4, mag: 2, res: 3, spd: 5, luk: 4 }, g1, ["noise"], [], ["windup"], 12, 10, [["newspaper", 1]]),
+    elf: E("Drunk Elf", "elf", "city", { hp: 14, sp: 8, atk: 5, def: 2, mag: 2, res: 2, spd: 13, luk: 12 }, g1, [], [], ["swipe"], 6, 9, [["coffee", .3]]),
+    santarchist: E("The Santarchist", "santarchist", "city", { hp: 230, sp: 40, atk: 8, def: 5, mag: 8, res: 6, spd: 15, luk: 6 }, { hp: 20, sp: 3, atk: 1.5, def: 1.2, mag: 1.5, res: 1.2, spd: .8, luk: .5 }, ["truth"], ["noise"], ["silentnight", "hoho", "wassail"], 45, 40, [["salts", 1]], .8),
     /* bosses */
     halcyon: E("Sister Halcyon", "halcyon", "church", { hp: 220, sp: 80, atk: 8, def: 9, mag: 11, res: 13, spd: 9, luk: 8 }, { hp: 30, sp: 4, atk: 1.5, def: 1.4, mag: 2.2, res: 1.8, spd: .9, luk: .5 }, ["truth"], ["spirit"], ["sermonx", "bless", "compliment", "halobeam"], 90, 40, [["habit", 1], ["tonic", 1]], .75),
     cask: E("Brother Cask", "cask", "theogen", { hp: 260, sp: 60, atk: 15, def: 11, mag: 6, res: 8, spd: 7, luk: 6 }, { hp: 34, sp: 3, atk: 2.4, def: 1.8, mag: .8, res: 1.2, spd: .8, luk: .5 }, ["truth"], ["phys"], ["slam", "rally", "glow"], 110, 50, [["kevlar", 1], ["burrito", 1]], 1.15),
@@ -2204,7 +2225,7 @@ function setParty(list) { const before = (S.party || []).slice(); S.party = list
 const SAFE_PLACES = ["house", "northbeach", "fogbelt"];
 function encounterTable() {
   if (!PL.node) return null;
-  if (PL.node.startsWith("field:")) return ["trail", "cliff"].includes(PL.node.slice(6)) ? "mountain" : null;
+  if (PL.node.startsWith("field:")) return null;   // the first fight is Santarchy, after the ride
   const node = BY[PL.node]; if (!node || SAFE_PLACES.includes(node.id) || !INT[node.id]) return null;
   const st = INT[node.id].st;
   let t = node.f === "church" ? "church" : node.f === "theogen" || node.f === "salon" ? "theogen" : node.f === "order" ? "order" : node.f === "machine" ? "machine" : node.f === "marin" ? "mountain" : ["pier", "beach", "shelter"].includes(st) || node.f === "norton" ? "fog" : "street";
@@ -2253,14 +2274,14 @@ const ST_NAME = { poison: "poisoned", sleep: "asleep", stun: "stunned", blind: "
 const ST_ICON = { poison: ["PSN", "#a6e23f"], sleep: ["SLP", "#a487dd"], stun: ["STN", "#f0bd3e"], blind: ["BLD", "#8d8496"], silence: ["SIL", "#3f8cf2"], confuse: ["CNF", "#e33f9c"] };
 function startBattle(o) {
   rpgInit();
-  const ids = activeParty();
+  const ids = o.party ? o.party.slice() : activeParty();
   if (o.kind === "boss" && ids.length === 1 && S.issue > 0) { ids.push("junie"); o.joined = "Junie won't let you face this alone. She comes along."; }
   const party = ids.map(id => { const ch = S.chars[id]; return { id, lv: ch.lv, hp: Math.max(1, ch.hp), sp: ch.sp, eq: ch.eq }; });
-  const B = BX.makeBattle({ party, foes: o.foes, diff: S.diff, inv: S.inv, cash: S.cash, boss: o.kind === "boss", moreau: !S.moreauUsed && (S.issue > 0 || !!S.flags.moreau), noRun: o.kind === "story" || o.kind === "tutorial" });
+  const B = BX.makeBattle({ party, foes: o.foes, diff: o.diff || S.diff, inv: S.inv, cash: S.cash, boss: o.kind === "boss" || !!(o.lesson && o.lesson.boss), moreau: o.moreau != null ? o.moreau : !S.moreauUsed && (S.issue > 0 || !!S.flags.moreau), noRun: o.kind === "story" || o.kind === "tutorial" || o.kind === "lesson" });
   const foes = B.units.filter(u => u.side === "foe"), lead = foes[0];
-  const open = o.kind === "tutorial" ? "A raccoon blocks the trail. It wants your coffee. Pick ATTACK, then the raccoon." : o.kind === "boss" ? `${lead.n} steps forward. This is the district's boss.` : foes.length > 1 ? `${lead.n} and ${foes.length - 1} more get in your way!` : `${lead.n} gets in your way!`;
+  const open = o.open ? o.open : o.kind === "tutorial" ? "A raccoon blocks the trail. It wants your coffee. Pick ATTACK, then the raccoon." : o.kind === "boss" ? `${lead.n} steps forward. This is the district's boss.` : foes.length > 1 ? `${lead.n} and ${foes.length - 1} more get in your way!` : `${lead.n} gets in your way!`;
   for (const k in KEYS) KEYS[k] = false;
-  BT = { B, o, phase: "intro", t0: performance.now(), anim: [], nums: [], fx: [], msg: o.joined ? o.joined + " " + open : open, menu: "main", auto: !!(S.opts && S.opts.auto), fac: o.fac || (lead && BX.ENEMIES[lead.id].f), meta: {}, place: PL.node };
+  BT = { B, o, phase: "intro", t0: performance.now(), anim: [], nums: [], fx: [], msg: o.joined ? o.joined + " " + open : open, menu: "main", auto: !!(S.opts && S.opts.auto), fac: o.fac || (lead && BX.ENEMIES[lead.id].f), meta: {}, place: o.place || PL.node };
   S.btRet = S.screen; S.screen = "battle"; render(); sceneIntoView();
   BT.timer = setTimeout(btAdvance, REDUCE ? 50 : 900);
 }
@@ -2278,7 +2299,7 @@ function btTurn(u) {
   if (u.ko) return btAdvance();
   if (u.side === "hero" && u.st.confuse) return btGo(u, { kind: "attack", skill: "attack" });
   if (u.side === "hero" && !BT.auto) { BT.phase = "input"; BT.actor = u.uid; BT.menu = "main"; BT.pending = null; BT.msg = `${u.n}: your move.`; btPaint(); return; }
-  btGo(u, u.side === "hero" ? BX.autoChoose(B, u) : BX.enemyChoose(B, u));
+  btGo(u, u.side === "hero" ? BX.autoChoose(B, u) : (BT.o.script && BT.o.script(B, u)) || BX.enemyChoose(B, u));
 }
 function btGo(u, a) { BT.phase = "anim"; BT.menu = "main"; BT.pending = null; const ev = BX.act(BT.B, u, a); btPlay(ev, btAdvance); }
 function btPlay(evs, done) {
@@ -2388,7 +2409,7 @@ function btEnd(res) {
     BT.msg = foes.length > 1 ? "They all stand down." : `${foes[0].n} stands down.`;
   } else if (res === "fled") { S.cash = Math.max(0, S.cash + B.cashDelta); BT.msg = "You get away."; out.push("You got away. No XP."); }
   else { S.cash = Math.max(0, S.cash + B.cashDelta); const drop = S.issue >= 1 ? Math.floor(S.cash / 4) : 0; S.cash -= drop; BT.msg = "The party is out cold."; if (drop) out.push(`You drop $${drop} in the scramble.`);
-    out.push(S.issue < 1 ? "You wake on the trail with Moreau's jar warm in your hands. Try again." : BT.o.kind === "random" ? "Junie finds you and drives you home. You lose an hour, but your Memory gets home safe." : "Junie finds you. She always finds you. You wake at Villa Delirium, Memory lost."); }
+    out.push(BT.o.kind === "lesson" ? "The crowd swallows you, then spits you out. Moreau's jar is warm in your hands. Try the lesson again." : S.issue < 1 ? "You wake on the trail with Moreau's jar warm in your hands. Try again." : BT.o.kind === "random" ? "Junie finds you and drives you home. You lose an hour, but your Memory gets home safe." : "Junie finds you. She always finds you. You wake at Villa Delirium, Memory lost."); }
   if (B.cashDelta < 0) out.push(`They lifted $${-B.cashDelta} off you.`);
   BT.summary = out; btPaint();
 }
@@ -2414,7 +2435,10 @@ const FOE_HUMAN = {
   usher: [{ skin: 0, hair: "short", hc: "#f0bd3e", top: "#efe7f0", acc: ["collar"] }, "church"], merged: [{ skin: 1, hair: "bald", top: "#f0bd3e" }, "church"],
   goldlady: [{ skin: 3, hair: "bun", hc: "#f0bd3e", top: "#f0bd3e", acc: ["pearls"] }, "church"], runner: [{ skin: 2, hair: "locs", hc: "#3fe3d4", top: "#1fa89d" }, "theogen"],
   enforcer: [{ skin: 1, hair: "shaved", hc: "#1a1410", top: "#3a3a44" }, "theogen"], gilder: [{ skin: 0, hair: "short", hc: "#c48f52", top: "#c48f52", acc: ["collar"] }, "order"],
-  acolyte: [{ skin: 2, hair: "bald", top: "#5a3a1a" }, "order"], cop: [{ skin: 1, hair: "short", hc: "#1a1410", top: "#3f5ab5" }, "machine"], canvasser: [{ skin: 0, hair: "pony", hc: "#d9541e", top: "#b5523b" }, "machine"]
+  acolyte: [{ skin: 2, hair: "bald", top: "#5a3a1a" }, "order"], cop: [{ skin: 1, hair: "short", hc: "#1a1410", top: "#3f5ab5" }, "machine"], canvasser: [{ skin: 0, hair: "pony", hc: "#d9541e", top: "#b5523b" }, "machine"],
+  santa: [{ skin: 1, hair: "short", hc: "#efe7f0", top: "#c3343f", acc: ["beard", "santahat"], beardc: "#efe7f0" }, "city"], caroler: [{ skin: 3, hair: "short", hc: "#efe7f0", top: "#c3343f", acc: ["beard", "santahat"], beardc: "#d8d0c0" }, "city"],
+  canesanta: [{ skin: 0, hair: "bald", top: "#a02030", acc: ["beard", "santahat"], beardc: "#efe7f0" }, "city"], elf: [{ skin: 2, hair: "short", hc: "#3a2414", top: "#2f8a2f", acc: ["santahat"] }, "city"],
+  santarchist: [{ skin: 1, hair: "short", hc: "#f0bd3e", top: "#c3343f", acc: ["beard", "santahat"], beardc: "#f0bd3e" }, "city"]
 };
 Object.entries(FOE_HUMAN).forEach(([k, [spec, f]]) => { C["foe_" + k] = { id: "foe_" + k, n: k, spec, f }; });
 const FOESPR = {};
@@ -2459,7 +2483,8 @@ function btPos(u) {
 function btBackdrop(g) {
   let wall = "#0e140e", floor = "#1a2a12", out = true, kind = "forest";
   const p = BT.place || "", f = FRAME;
-  if (p.startsWith("field:")) { kind = p.slice(6) === "cliff" ? "cliff" : "forest"; [wall, floor] = kind === "cliff" ? ["#120d1c", "#2a2430"] : ["#0d1a10", "#1c2a14"]; }
+  if (p === "santa") { wall = "#162236"; floor = "#2a2024"; out = true; kind = "street"; }
+  else if (p.startsWith("field:")) { kind = p.slice(6) === "cliff" ? "cliff" : "forest"; [wall, floor] = kind === "cliff" ? ["#120d1c", "#2a2430"] : ["#0d1a10", "#1c2a14"]; }
   else if (INT[p] && ROOMSTYLE[INT[p].st]) { const R = ROOMSTYLE[INT[p].st]; wall = R.wall; floor = R.floor; out = !!R.out; kind = INT[p].st; }
   // the back: night sky outdoors, a wall with lit windows indoors
   rect(g, 0, 0, 256, 56, out ? "#0d0a14" : wall);
@@ -2525,8 +2550,11 @@ function drawBattle(cv) {
 /* ---------- the blue windows ---------- */
 function btPaint() { const el = document.getElementById("btwin"); if (el && BT) el.innerHTML = btWin(); }
 function btWin() {
-  const B = BT.B, u = BT.phase === "input" ? unitOf(BT.actor) : null;
-  const FB = (arg, t, d, dis, extra) => `<button class="ffbtn" data-act="bt" data-arg="${esc(arg)}" ${dis ? "disabled" : ""} ${extra || ""}><span>${t}</span>${d ? `<em>${d}</em>` : ""}</button>`;
+  const B = BT.B, u = BT.phase === "input" ? unitOf(BT.actor) : null, L = BT.o.lesson;
+  let hl = null, guide = "";
+  if (L) { if (u) { const g = L.guide(B, u, BT.menu) || []; guide = g[0] || ""; hl = g[1] || null; BT.lastGuide = guide; } else guide = BT.phase === "end" ? (BT.res === "win" ? "Lesson learned. Press Continue." : "Press Continue to try again.") : (BT.lastGuide && BT.phase === "anim" ? L.idle : L.idle); }
+  const ok = k => !L || L.allow.includes(k), isHl = arg => hl && (arg === hl || (hl === "tgt" && arg.startsWith("tgt:")));
+  const FB = (arg, t, d, dis, extra) => `<button class="ffbtn${isHl(arg) ? " hl" : ""}" data-act="bt" data-arg="${esc(arg)}" ${dis ? "disabled" : ""} ${extra || ""}><span>${t}</span>${d ? `<em>${d}</em>` : ""}</button>`;
   let cmd = "";
   if (BT.phase === "end") cmd = `<div class="ffhead">${BT.res === "win" ? "VICTORY" : BT.res === "fled" ? "ESCAPED" : "DEFEAT"}</div>${BT.summary.map(l => `<p>${esc(l)}</p>`).join("")}${FB("end", "▶ Continue", "", false, 'autofocus')}`;
   else if (u && BT.menu === "target") {
@@ -2541,14 +2569,14 @@ function btWin() {
     const opts = BX.options(B, u), hasRun = opts.some(o => o.kind === "run");
     const hasItems = Object.entries(S.inv).some(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "use");
     cmd = `<div class="ffhead">${esc(u.n).toUpperCase()} · LV ${u.lv}</div>
-      ${FB("cmd:attack", "Attack", "")}${FB("menu:skill", "Skill", u.st.silence ? "silenced" : "", u.st.silence)}${FB("menu:item", "Item", "", !hasItems)}${FB("cmd:defend", "Defend", "halve damage, +8% SP")}
-      ${hasRun ? FB("cmd:run", "Run", "") : ""}${B.moreau ? FB("cmd:moreau", "Moreau", "once per Issue: revive and heal everyone") : ""}${FB("auto", "Auto ⟳", "let the party fight")}`;
+      ${FB("cmd:attack", "Attack", "", !ok("attack"))}${FB("menu:skill", "Skill", !ok("skill") ? "later" : u.st.silence ? "silenced" : "", u.st.silence || !ok("skill"))}${FB("menu:item", "Item", !ok("item") ? "later" : "", !hasItems || !ok("item"))}${FB("cmd:defend", "Defend", !ok("defend") ? "later" : "halve damage, +8% SP", !ok("defend"))}
+      ${hasRun ? FB("cmd:run", "Run", "") : L ? FB("cmd:run", "Run", "not in story fights", true) : ""}${B.moreau ? FB("cmd:moreau", "Moreau", !ok("moreau") ? "later" : "once per Issue: revive and heal everyone", !ok("moreau")) : ""}${FB("auto", "Auto ⟳", !ok("auto") ? "later" : "let the party fight", !ok("auto"))}`;
   } else {
     const foes = B.units.filter(x => x.side === "foe" && !x.ko);
     cmd = `<div class="ffhead">${BT.auto ? "AUTO · " : ""}ENEMIES</div>${foes.map(f => `<p class="ffrowline"><span>${esc(f.n)}</span>${B.scanned ? `<span class="hp sm"><i style="width:${f.hp / f.max.hp * 100}%"></i></span>` : ""}</p>`).join("")}${BT.auto && BT.phase !== "intro" ? FB("auto", "Stop Auto", "take back control") : ""}`;
   }
   const party = B.units.filter(x => x.side === "hero").map(h => `<div class="prow${u === h ? " on" : ""}${h.ko ? " ko" : ""}"><span class="pn">${u === h ? "▶ " : ""}${esc(h.n)}</span><span class="pv">${h.hp}/${h.max.hp}</span><span class="hp sm" style="--c:${h.hp / h.max.hp < .3 ? "#d32f3f" : "#a6e23f"}"><i style="width:${h.hp / h.max.hp * 100}%"></i></span><span class="pv sp">${h.sp} SP</span><span class="pst">${Object.keys(h.st).map(s => `<b style="color:${ST_ICON[s][1]}">${ST_ICON[s][0]}</b>`).join(" ")}</span></div>`).join("");
-  return `<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${BX.DIFF[S.diff].n.toUpperCase()} · $${S.cash}</div>${party}</div></div>`;
+  return `${L ? `<div class="ffwin ffguide"><div class="ffhead">LESSON ${BT.o.n + 1} OF ${LESSONS.length} · ${esc(L.title)}</div><p>${esc(guide)}</p></div>` : ""}<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${L ? "TUTORIAL" : BX.DIFF[S.diff].n.toUpperCase()} · $${S.cash}</div>${party}</div></div>`;
 }
 function scrBattle() {
   return `<div class="battle"><canvas class="scene-art" data-battle="1" width="256" height="144" aria-label="A fight. Use the command window below."></canvas><div id="btwin">${btWin()}</div></div>`;
@@ -2786,8 +2814,9 @@ const dlgOpen = () => !!document.querySelector("#screen .dlg");
 let TYPING = false;
 const DLG_ACT = {
   dlgnext() {
-    if (TYPING) { if (S.scene) S.scene.twSeen = (S.scene.shown ?? 0) + 1; S.fieldSayTyped = true; S.houseDlgTyped = true; return; }
+    if (TYPING) { if (S.santa) S.santa.typed = true; if (S.scene) S.scene.twSeen = (S.scene.shown ?? 0) + 1; S.fieldSayTyped = true; S.houseDlgTyped = true; return; }
     if (S.screen === "field") { S.fieldSayOpen = false; return; }
+    if (S.screen === "santa" && S.santa) { S.santa.page = (S.santa.page || 0) + 1; S.santa.typed = false; return; }
     if (S.screen === "house" && S.houseDlg && S.houseDlg.length) { S.houseDlg.shift(); S.houseDlgTyped = false; return; }
     const sc = S.scene; if (sc && (sc.shown ?? sc.lines.length) < sc.lines.length) sc.shown = (sc.shown ?? 0) + 1;
   },
@@ -2961,6 +2990,110 @@ function houseDlg() {
   if (!S.houseDlg || !S.houseDlg.length) return ""; const p = S.houseDlg[0], tw = !S.houseDlgTyped; setTimeout(() => { S.houseDlgTyped = true; }, 0);
   return dlgPage(p.id ? (C[p.id] || {}).n || "" : "", p.id || null, p.txt, tw, null, S.houseDlg.length > 1 ? `<span class="dlgmore">${S.houseDlg.length - 1} more</span>` : "");
 }
+
+/* =====================================================================
+   SANTARCHY: the fight tutorial. Christmas night, 3,000 drunk Santas
+   storm the Geary Cathedral's midnight Mass, and Hell Rot has to cross
+   them to reach the van. Five short lessons, one idea each. The Santas
+   follow a script so every lesson goes the way it should. Nobody gets
+   hurt for real: the Santas stand down, sit on the kerb and cry.
+   ===================================================================== */
+const heroOf = (B, id) => B.units.find(u => u.side === "hero" && u.id === id);
+const foeBuffed = B => B.units.some(u => u.side === "foe" && !u.ko && u.buffs.some(b => b.stats.atk > 1.5));
+const LESSONS = [
+  { title: "ATTACK", party: ["hellrot"], foes: ["santa"], allow: ["attack"],
+    pre: ["A Santa with a jug of wassail blocks the alley. He wants a hug. He wants it very badly.", "A FIGHT works in turns. Everyone acts in speed order. On your turn the blue window lists what you can do."],
+    open: "A Drunk Santa lurches out of the alley!",
+    guide: (B, u, m) => m === "target" ? ["Now pick who to hit. There's one Santa. Pick him (or press 1).", "tgt"] : ["Your turn. Pick ATTACK (or press 1). The white number over him is the damage you do.", "cmd:attack"],
+    idle: "Enemies act on their turns too. His HP is hidden, but he won't last long.",
+    script: B => ({ kind: "attack", skill: "attack", target: heroOf(B, "hellrot").uid }) },
+  { title: "SKILLS AND WEAK POINTS", party: ["hellrot"], foes: ["caroler", "caroler"], allow: ["attack", "skill"],
+    pre: ["Two Santas on a bin lid, singing 'Silent Night' a fifth apart. They cannot stand anyone louder than them.", "SKILLS cost SP, the blue number next to your HP. Every enemy is weak to some kinds of skill and takes half damage from others."],
+    open: "Two Caroling Santas stop singing to stare at you.",
+    guide: (B, u, m) => u.sp < 4 ? ["Out of SP. ATTACK still works, and costs nothing.", "cmd:attack"] : m === "skill" ? ["INVECTIVE is a NOISE skill. Carolers are weak to noise: ×1.5 damage, and it shows WEAK POINT. Pick it.", "skill:invective"] : m === "target" ? ["Pick a Santa. Watch the pink WEAK POINT.", "tgt"] : ["Open SKILL.", "menu:skill"],
+    idle: "Their Off-Key Carol hits everyone on your side at once. Some enemy skills do.",
+    script: (B, u) => B.round === 1 && u.sp >= 3 ? { kind: "skill", skill: "carol" } : { kind: "attack", skill: "attack", target: heroOf(B, "hellrot").uid } },
+  { title: "DEFEND AND ITEMS", party: ["hellrot"], foes: ["canesanta"], allow: ["attack", "skill", "defend", "item"],
+    pre: ["A Santa with a candy cane the size of a fence post. He winds up before every swing, slowly, like a man who has done this before.", "DEFEND halves the next hit and gives back a little SP. ITEMS come out of the bag: Ghost Diner coffee heals 45 HP."],
+    open: "A Candy-Cane Santa plants his feet.",
+    guide: (B, u, m) => { const hurt = u.hp < u.max.hp * .6 && (S.inv.coffee || 0) > 0;
+      if (m === "item") return ["Ghost Diner coffee: 45 HP. Pick it, then pick Hell Rot.", "item:coffee"];
+      if (m === "target") return hurt ? ["Pick Hell Rot.", "tgt"] : ["Pick the Santa.", "tgt"];
+      if (foeBuffed(B)) return ["He's winding up (ATK▲). His next swing hits double. DEFEND now.", "cmd:defend"];
+      if (hurt) return ["You're hurt. Open ITEM and drink a coffee.", "menu:item"];
+      return ["He isn't winding up. Hit him while you can.", "cmd:attack"]; },
+    idle: "Watch for the green ATK▲ over him. That's the wind-up.",
+    script: (B, u) => u.buffs.some(b => b.stats.atk > 1.5) ? { kind: "attack", skill: "attack", target: heroOf(B, "hellrot").uid } : { kind: "skill", skill: "windup", target: u.uid } },
+  { title: "THE PARTY", party: ["hellrot", "junie", "fax"], foes: ["santa", "elf", "santa"], allow: ["attack", "skill", "defend", "item"],
+    pre: ["A hand grabs your collar. Junie Vasquez, in derby pads, with a crucifix around her neck. Fax is behind her with a camera, already shooting.", "\"Van's on Polk,\" Junie says. \"Two blocks. Through them.\"", "Now you are a PARTY: three people, three turns a round. The ▶ in the blue window shows whose turn it is."],
+    open: "Two Santas and an elf link arms across the street.",
+    guide: (B, u, m) => { const elf = B.units.find(x => x.id === "elf" && !x.ko);
+      if (u.id === "fax") return m === "skill" ? ["COVER LINE hits EVERY enemy at once. Pick it.", "skill:coverline"] : ["Fax's turn. Her COVER LINE hits all of them. Open SKILL.", "menu:skill"];
+      if (u.id === "junie") return m === "skill" ? ["BODY CHECK: a big hit on one enemy.", "skill:bodycheck"] : m === "target" ? [elf ? "Pick the elf first. He steals cash." : "Pick a Santa.", "tgt"] : ["Junie's turn. She hits hardest. Open SKILL for BODY CHECK.", "menu:skill"];
+      return m === "target" ? [elf ? "Take the Drunk Elf out first: he picks pockets." : "Finish off the weakest one.", "tgt"] : [elf ? "The elf lifts cash from you (your $ is shown above the party). Hit him first." : "Hell Rot's turn. Attack, or a skill.", "cmd:attack"]; },
+    idle: "Fights pay CASH ($). Spend it at merchants: the $ stalls in the City, and Otto and Mary at home.",
+    script: null },
+  { title: "BOSSES, STATUS AND MOREAU", party: ["hellrot", "junie", "fax"], foes: ["santarchist", "caroler"], boss: true, allow: ["attack", "skill", "defend", "item", "moreau", "auto"],
+    pre: ["On the Cathedral steps stands the Santarchist: a Santa with a gold-leaf beard, conducting three thousand drunks with a candy cane.", "He sings. The people nearest him fall asleep on their feet.", "This is a BOSS: tougher, and it shrugs off status half the time. You can't run from a boss, or from any story fight."],
+    open: "The Santarchist raises his candy cane. The crowd hushes.",
+    guide: (B, u, m) => { const sleeper = B.units.find(x => x.side === "hero" && !x.ko && x.st.sleep), down = B.units.filter(x => x.side === "hero" && (x.ko || x.hp < x.max.hp * .3)).length;
+      if (m === "item") return sleeper ? ["Antacid cures status. Pick it, then pick " + sleeper.n + ".", "item:antacid"] : ["Pick what you need.", null];
+      if (m === "target") return sleeper && (S.inv.antacid || 0) > 0 ? ["Pick " + sleeper.n + ".", "tgt"] : ["The Santarchist is weak to TRUTH. Pick him.", "tgt"];
+      if (B.moreau && down >= 2) return ["Two of you are in trouble. MOREAU, once per Issue, brings the whole party back to full.", "cmd:moreau"];
+      if (sleeper && (S.inv.antacid || 0) > 0) return [`${sleeper.n} is asleep (SLP) and loses turns. Open ITEM and use an Antacid on them.`, "menu:item"];
+      if (u.id === "hellrot") return m === "skill" ? ["PARRHESIA is TRUTH. He's weak to it.", "skill:parrhesia"] : ["The Santarchist is weak to TRUTH. Hell Rot's PARRHESIA is truth. Open SKILL.", "menu:skill"];
+      return ["Your call now. AUTO lets the party fight on its own; press it again to take back control.", "auto"]; },
+    idle: "Status: PSN poison, SLP sleep, STN stun, BLD blind, SIL silence, CNF confused. The bag cures them.",
+    script: (B, u) => { if (u.id !== "santarchist") return null; const junie = heroOf(B, "junie");
+      if (B.round === 1 && junie && !junie.ko && u.sp >= 6) return { kind: "skill", skill: "silentnight", target: junie.uid };
+      if (u.hp < u.max.hp * .35 && !u.flags) { u.flags = 1; return { kind: "skill", skill: "wassail", target: u.uid }; }
+      return B.round % 2 && u.sp >= 4 ? { kind: "skill", skill: "hoho" } : null; } }
+];
+const SANTA_INTRO = ["The ride drops you at Van Ness. Geary Street is wall-to-wall red velvet: three thousand drunk Santas, marching on the Geary Cathedral's midnight Mass.", "Somebody hands you a Santa hat. Somebody else hands you a punch, the hitting kind.", "Fax's last text: VAN ON POLK. GET TO THE STEPS. You have Moreau under one arm and smoke in your coat. Three blocks of Santas between you and the van."];
+const SANTA_DONE = ["The Santarchist sits down on the Cathedral steps and starts to cry. Inside, the choir hits the high note. Outside, the fog joins in. It sings beautifully. Three thousand Santas weep. The Church will call it a miracle by morning.", "The crowd parts. Junie throws the van door open. Fax shoves you in, and Moreau's jar after you.", "\"Rule one of the job,\" Junie says, pulling out. \"Nobody dies. Rule two: nobody else dies either.\"", "Every Santa you fought tonight stood down, sat on the kerb and cried. That is how fights end in this City: nobody dies, nobody stays down."];
+const santaPages = st => st === 0 ? [...SANTA_INTRO, ...LESSONS[0].pre] : st >= LESSONS.length ? SANTA_DONE : [`Lesson ${st} done: ${LESSONS[st - 1].title.toLowerCase()}.`, ...LESSONS[st].pre];
+function startLesson(n) {
+  const L = LESSONS[n]; if (!L) return;
+  L.party.forEach(id => { const m = charStats(id).s; S.chars[id].hp = m.hp; S.chars[id].sp = m.sp; });
+  if ((S.inv.coffee || 0) < 2) S.inv.coffee = 2; if (n === 4 && !(S.inv.antacid > 0)) S.inv.antacid = 1;
+  startBattle({ kind: "lesson", lesson: L, n, place: "santa", party: L.party, diff: "easy", moreau: n === 4, foes: L.foes.map(id => ({ id, lv: n >= 3 ? 2 : 1 })), open: L.open, script: L.script,
+    after: () => { S.santa.step = n + 1; S.santa.page = 0; S.santa.typed = false; } });
+}
+// leave the Prologue for Villa Delirium (what the old ride did)
+function santaFinish() {
+  S.santa = null; S.log = []; say("The Santas storm the cathedral. Fax and Junie pull you into the van. The door of Villa Delirium closes. You sleep until the afternoon.", "#ff8ba2");
+  S.T = 0; S.awake = 5; S.queue = []; startIssue(1); S.at = "house"; S.sel = "house"; S.screen = "house"; S.clar = maxClar(); restoreParty(1);
+}
+function scrSanta() {
+  const st = S.santa.step, pages = santaPages(st), pg = S.santa.page || 0, done = st >= LESSONS.length;
+  let dlg;
+  if (pg < pages.length) { const t = pages[pg]; dlg = dlgPage("", /^"/.test(t) ? "junie" : null, t, !S.santa.typed, null, pages.length - pg > 1 ? `<span class="dlgmore">${pages.length - pg - 1} more</span>` : ""); setTimeout(() => { if (S.santa) S.santa.typed = true; }, 0); }
+  else if (done) dlg = dlgChoices("The van door slams. Alamo Square is twenty minutes away.", `<button class="dlgopt" data-act="santaend"><span class="k">1</span><span>▶ Into the van</span></button>`, "junie", "Junie Vasquez");
+  else dlg = dlgChoices(`Lesson ${st + 1} of ${LESSONS.length}: ${LESSONS[st].title}`, `<button class="dlgopt" data-act="santafight"><span class="k">1</span><span class="dtag" style="--c:#d32f3f">[LESSON ${st + 1}]</span> <span>▶ ${esc(LESSONS[st].title[0] + LESSONS[st].title.slice(1).toLowerCase())}</span></button><button class="dlgopt" data-act="santaskip"><span class="k">2</span><span>Skip the fight tutorial</span> <em>straight to the van</em></button>`, null, "");
+  return `<div class="stage"><canvas class="scene-art" data-santa="${st}" width="256" height="144" aria-label="Geary Street, Christmas night: three thousand drunk Santas storm the Geary Cathedral."></canvas>${dlg}</div>
+    <div class="intbar"><span>PROLOGUE · SANTARCHY · GEARY STREET</span><span class="note">The fight tutorial: ${done ? "done" : `lesson ${Math.min(st + 1, LESSONS.length)} of ${LESSONS.length}`}. Space or Enter turns the page.</span></div>
+    <div class="pad"><div class="row" style="gap:6px;flex-wrap:wrap">${LESSONS.map((L, i) => `<span class="lessonchip${i < st ? " done" : i === st ? " now" : ""}">${i < st ? "✓" : i + 1} ${esc(L.title)}</span>`).join("")}</div></div>`;
+}
+function drawSanta(cv) {
+  const g = cv.getContext("2d"); if (cv.width !== 256) { cv.width = 256; cv.height = 144; } g.imageSmoothingEnabled = false; const f = FRAME, t = performance.now() / 1000;
+  rect(g, 0, 0, 256, 144, "#0d0a14"); for (let k = 0; k < 30; k++) P2(g, (k * 53) % 256, (k * 29) % 50, "#e8f4ff");
+  // the cathedral: forty storeys of glass, gold at the doors
+  rect(g, 70, 0, 116, 96, "#162236"); for (let x = 74; x < 182; x += 8) for (let y = 4; y < 92; y += 8) rect(g, x, y, 5, 5, (x * 7 + y * 3 + f) % 11 === 0 ? "#f0bd3e" : "#22305a");
+  rect(g, 108, 60, 40, 36, "#f0bd3e55"); rect(g, 118, 66, 20, 30, "#fff3aa"); rect(g, 127, 66, 2, 30, "#c48f52");
+  rect(g, 60, 96, 136, 6, "#3a3442"); rect(g, 52, 102, 152, 6, "#2a2430");
+  rect(g, 0, 108, 256, 36, "#1a1418");
+  // the crowd: red suits bobbing, out of time
+  for (let i = 0; i < 26; i++) { const x = (i * 37) % 260 - 8, y = 104 + (i % 3) * 12 + ((f + i) % 4 < 2 ? 0 : 1); g.drawImage(nesSprite("foe_" + (i % 7 === 3 ? "elf" : i % 5 === 0 ? "caroler" : "santa"), i % 2 ? "left" : "right", (f + i) % 2), x, y); }
+  if ((S.santa.step || 0) >= 4) g.drawImage(nesSprite("foe_santarchist", "down", f % 2), 116, 76, 24, 24);
+  // fog rolling in from the west
+  for (let y = 60; y < 144; y += 2) for (let x = (y / 2) % 2 ? 1 : 0; x < 256; x += 2) { const v = Math.sin(x * .03 - t * .5 + y * .05) + (256 - x) / 260; if (v > 1.25) P2(g, x, y, "#b9b4c444"); }
+  pbar(g, `SANTARCHY · LESSON ${Math.min((S.santa.step || 0) + 1, LESSONS.length)} OF ${LESSONS.length}`, "#f0bd3e");
+}
+const SANTA_ACT = {
+  santafight() { if (S.santa) startLesson(S.santa.step); },
+  santaskip() { if (!S.santa) return; S.santa.step = LESSONS.length; S.santa.page = SANTA_DONE.length - 1; S.santa.typed = false; S.flags.tutSkipped = true; },
+  santaend() { santaFinish(); }
+};
 
 /* ---------- travel ---------- */
 function travel(dest, modeId) {
@@ -3293,7 +3426,7 @@ function render() {
   if (BOOT) html = scrStart(); else if (s === "intro") html = scrIntro(); else if (s === "field") html = scrField(); else if (s === "title") html = scrTitle(); else if (s === "prologue") html = scrPrologue(); else if (s === "house") html = scrHouse(); else if (s === "map") html = scrMap();
   else if (s === "scene") { html = scrScene(); const sc = S.scene;
     if (sc.offer || sc.choice) html = html.replace(/data-act="spot"/g, 'data-act="spot" disabled'); }
-  else if (s === "battle") html = scrBattle(); else if (s === "party") html = scrParty(); else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
+  else if (s === "santa" && S.santa) html = scrSanta(); else if (s === "battle") html = scrBattle(); else if (s === "party") html = scrParty(); else if (s === "showdown") html = scrShowdown(); else if (s === "layout") html = scrLayout(); else if (s === "morning") html = scrMorning(); else if (s === "lock") html = scrLock();
   else if (s === "final") html = scrFinal(); else if (s === "ending") html = scrEnding(); else if (s === "notebook") html = scrNotebook(); else if (s === "cast") html = scrCast(); else if (s === "key") html = scrKey();
   $("screen").innerHTML = html; typeOut(); const scr = $("screen"); if (LASTSCREEN !== s) { scr.classList.remove("enter"); void scr.offsetWidth; scr.classList.add("enter"); LASTSCREEN = s; clearTimeout(ENTER_T); ENTER_T = setTimeout(() => scr.classList.remove("enter"), 950); }
   if (s === "map" && !BOOT) drawMap();
@@ -3322,7 +3455,7 @@ const ACT = {
     if (a === "emergency") { S.saint++; S.ione = "stabilized"; t = "You call it in. The Twin logs the child within the hour. Somewhere in the fog, something notices."; }
     S.flags.birthText = t; S.flags.prologue = "fire"; render(); },
   temp(a) { S.temp = a; if (a === "manuscript") S.patience = 2; if (a === "gelastic") S.heat = 2; if (a === "canister") S.crave = 1; S.flags.prologue = "ride"; render(); },
-  ride(a) { if (a === "shuttle") S.saint++; if (a === "ambulance") S.helix++; S.log = []; say("The Santas storm the cathedral. Fax and Junie pull you into the van. The door of Villa Delirium closes. You sleep until the afternoon.", "#ff8ba2"); S.T = 0; S.awake = 5; S.queue = []; startIssue(1); S.at = "house"; S.sel = "house"; S.screen = "house"; S.clar = maxClar(); render(); },
+  ride(a) { if (a === "shuttle") S.saint++; if (a === "ambulance") S.helix++; rpgInit(); S.santa = { step: 0, page: 0 }; S.screen = "santa"; render(); },
   room(a) { S.room = a; if (a === "salon") S.flags["salon" + S.issue] = true; render(); },
   comp(a) { if (a === "none") setParty([]); else if (S.party.includes(a)) setParty([a, ...S.party.filter(x => x !== a)]); else if (S.party.length < 2) setParty([...S.party, a]); else setParty([S.party[0], a]); render(); if (S.screen === "house" && S.houseDlg && S.houseDlg.length) { const c = document.querySelector("#screen .stage"); if (c) c.scrollIntoView({ block: "start", behavior: REDUCE ? "auto" : "smooth" }); } },
   unparty(a) { setParty(S.party.filter(x => x !== a)); render(); },
@@ -3361,7 +3494,7 @@ const ACT = {
   castf(a) { S.castF = a; render(); },
   castsel(a) { S.castSel = a; render(); }
 };
-Object.assign(ACT, RPG_ACT, DLG_ACT, SHOP_ACT);
+Object.assign(ACT, RPG_ACT, DLG_ACT, SHOP_ACT, SANTA_ACT);
 MODEDEF.moreau = { c: "#f7a6c2", sk: null, strong: [], weak: [], fx: "" };
 function dispatch(name, arg) {
   const f = ACT[name]; if (!f) return; const before = S.issue ? snap() : null, T0 = S.T; LASTHUD = S.issue ? { saint: S.saint, helix: S.helix, clar: S.clar, ink: S.ink, cash: S.cash } : null;

@@ -1878,6 +1878,29 @@ blocked: 3,000 drunk Santas are storming the Geary Cathedral's midnight Mass
 smelling of smoke. Fax and Junie find him in the scrum and pull him into the
 *Mondo 3000* van.
 
+**Santarchy: the fight tutorial.** The crossing is the game's first fight,
+and it teaches every part of the battle system, one idea per lesson. A
+lesson starts with a text box that sets the scene. Then a red **guide
+window** sits above the blue command window. It says what to do, and the
+button to press pulses. Commands the player has not learned yet are greyed
+out, marked "later". The Santas follow a script, so each lesson shows its
+idea. Every Santa stands down, sits on the kerb and cries; nobody is hurt.
+
+| Lesson | Enemies | What it teaches |
+|---|---|---|
+| 1. Attack | A Drunk Santa with a jug of wassail | Turns, ATTACK, picking a target, damage numbers. Only Attack is open. |
+| 2. Skills and weak points | Two Caroling Santas | SP, the SKILL menu, weak points: Hell Rot's INVECTIVE is noise, and carolers take ×1.5 from noise. Their Off-Key Carol hits everyone. |
+| 3. Defend and items | A Candy-Cane Santa | He winds up (ATK▲) before every swing. The guide says DEFEND on the wind-up, and to drink a Ghost Diner coffee from ITEM when hurt. He drops a rolled newspaper: the first gear. |
+| 4. The party | Two Drunk Santas and a Drunk Elf | Junie and Fax find Hell Rot in the scrum. Three turns a round, speed order, Fax's COVER LINE hitting everyone, Junie's BODY CHECK. The elf steals cash, so the guide says hit him first. Fights pay cash. |
+| 5. Bosses, status and Moreau | The Santarchist (gold-leaf beard, conducting the crowd) and a caroler | A boss: no running, status half-resisted. His Silent Night puts Junie to sleep; the guide says use an Antacid. He is weak to truth (PARRHESIA). MOREAU and AUTO open. |
+
+Lessons use Easy enemy stats whatever the difficulty. Losing a lesson
+restarts it with the party healed: "The crowd swallows you, then spits you
+out." A Skip button goes straight to the van. Five chips under the
+picture show the lessons done. After lesson 5 the Santarchist sits down and
+cries, the fog sings with the choir, and Junie pulls Hell Rot into the van:
+"Rule one of the job: nobody dies. Rule two: nobody else dies either."
+
 **Then safety.** The Prologue ends at **Villa Delirium**, a painted Victorian
 on Alamo Square, at about 2 a.m. The door closes. No sensors, no fog, no
 gods: the one building in the City the Emperor cannot see into (§4.5). The
@@ -3391,11 +3414,11 @@ the Dome in Issue 2. Old Dee is the boss fight at the Tomales Ward from
 Issue 4. If Hell Rot goes to a boss alone, Junie comes along anyway.
 
 **Encounters.** Random fights start while you walk, as in the old games.
-Each step on the trail and the cliff stairs has a 1 in 22 chance. Each step
-inside a location has a 1 in 26 chance. Difficulty changes the rate. After a
-fight, the next one cannot start for 8 steps. Villa Delirium, the North
-Beach meeting and the Lantern shelter are safe. The first fight is a
-scripted raccoon on the trail, which teaches the commands. Enemy level
+Each step inside a location has a 1 in 26 chance. Difficulty changes the
+rate. After a fight, the next one cannot start for 8 steps. Villa Delirium,
+the North Beach meeting and the Lantern shelter are safe. There are no
+fights on the Prologue walk: the first fight is Santarchy, the fight
+tutorial (§3.7, the Prologue). Enemy level
 comes from the Issue: 1, 3, 6, 9, 12, 15 and 17 for the Prologue and
 Issues 1 to 6. The red *Fight* hotspots are now story fights with a party
 battle. You cannot run from them. A **Look for trouble** button in every
