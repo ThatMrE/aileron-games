@@ -434,6 +434,28 @@ van. The bots played 7 whole weeks through the new Prologue (some took the
 lessons, some skipped them): endings 15, 13, 15, 6, 14, 13 and 15, with no
 errors.
 
+### The raccoon again, and Santarchy as the team tutorial
+
+The fight tutorial is now two steps. The raccoon on the trail teaches the
+basics alone: Attack, Skills and weak points, Defend, Items. The Santa riot
+teaches team play in three lessons. A guide-following test won the raccoon
+fight 4 times in 4. In 3 of them it saw every step, including the rear-up
+(DEFEND) and the coffee. Tuning: at first the raccoon died before it
+reared up. Then a lone Hell Rot could lose while doing what the guide said.
+A lost tutorial now comes back on the trail; before, it was gone for good.
+The team lessons showed Junie's COVER protecting Fax, a teammate healing
+Junie, and a teammate waking Junie with an Antacid. There were no errors.
+
+Two gaps came out of further checks. First, the portal buttons on the
+mountain let a player jump from the trail to the springs without walking,
+past the raccoon. Now the last steps to the springs wait until the raccoon
+fight is done. If Hell Rot hurries past it on the trail, the raccoon waits on
+the cliff stairs. (SKIP THE WALK still skips the whole mountain tutorial, as
+it says.) Second, a bot on route A filed the last column at home and stopped:
+only travel and rest pass time, and nothing told it to rest. Now the plan
+says "Wait for midnight: rest in the tower room". The bot runs had no errors
+and no time leaks, and reached endings 4, 13, 14 and 15.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a
