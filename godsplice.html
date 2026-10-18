@@ -161,6 +161,8 @@ button { font: inherit; color: inherit; }
 @media (max-width: 640px) { .ffrow { grid-template-columns: 1fr; } }
 .ffhead { font-family: var(--display); font-size: 8px; line-height: 1.6; color: #fff3aa; margin-bottom: 4px; }
 .ffwin p { margin: 2px 0; }
+#hothelp { position: fixed; right: 16px; bottom: 16px; z-index: 50; max-width: min(340px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; }
+#hothelp b { display: inline-block; min-width: 92px; color: #fff3aa; }
 .ffbtn { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 10px; width: 100%; text-align: left; background: transparent; border: 0; padding: 4px 6px 4px 22px; cursor: pointer; position: relative; color: #efe7f0; }
 .ffbtn em { font-style: normal; color: #b8c4ff; font-size: 17px; }
 .ffbtn b { color: #b8c4ff; font-weight: normal; }
@@ -816,7 +818,7 @@ function tabs() {
   $("tabs").innerHTML = t.map(([id, n, ok]) => `<button class="tab" data-act="go" data-arg="${id}" ${S.screen === id ? 'aria-current="page"' : ""} ${ok ? "" : "disabled"}>${n.toUpperCase()}</button>`).join("") + `<button class="tab" data-act="restart" ${S.screen === "battle" ? "disabled" : ""}>NEW GAME</button>`;
 }
 function side() {
-  if (S.screen === "title") { $("side").innerHTML = `<div class="frame pad"><div class="eyebrow">HOW TO PLAY</div><p class="note">Each Issue is one night, 5 p.m. to the 6 a.m. press run. Only travel between locations costs time. Inside a location the clock stops: click people and things, win arguments, write down what you learn, come home, and file a column. After Issue 3 the City decides which god you belong to. Issue 6 is New Year's Eve.</p></div><div class="frame pad"><div class="eyebrow">THE COMIC</div><p class="note">The whole story in 16 pages, from Berkeley in 2044 to midnight on New Year's Eve. Page 4 is the raccoon fight; page 7 is the Santa riot.</p><p><a class="btn" href="/godsplice-comic.pdf" target="_blank" rel="noopener"><span class="t">Read the comic (PDF, 5 MB)</span></a></p></div>`; return; }
+  if (S.screen === "title") { $("side").innerHTML = `<div class="frame pad"><div class="eyebrow">HOW TO PLAY</div><p class="note">Each Issue is one night, 5 p.m. to the 6 a.m. press run. Only travel between locations costs time. Inside a location the clock stops: click people and things, win arguments, write down what you learn, come home, and file a column. After Issue 3 the City decides which god you belong to. Issue 6 is New Year's Eve. Press ? for hotkeys.</p></div><div class="frame pad"><div class="eyebrow">THE COMIC</div><p class="note">The whole story in 16 pages, from Berkeley in 2044 to midnight on New Year's Eve. Page 4 is the raccoon fight; page 7 is the Santa riot.</p><p><a class="btn" href="https://aileron.games/godsplice-comic.pdf" target="_blank" rel="noopener"><span class="t">Read the comic (PDF, 5 MB)</span></a></p></div>`; return; }
   const mem = S.memory.length ? S.memory.map(i => `<li><span class="tag" style="--c:${i.kind === "lead" ? "#f29b3a" : i.kind === "frag" ? "#3f8cf2" : "#8d8496"}">${i.kind.toUpperCase()}</span>${esc(i.text)}</li>`).join("") : `<li class="note">Nothing in Memory.</li>`;
   $("side").innerHTML = planPanel() + `
     <div class="frame pad">
@@ -2369,7 +2371,7 @@ function drawFx(g, now) {
       case "spiral": for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2 + k * 9; R(x + Math.cos(a) * 12, y - 22 + Math.sin(a) * 4, 2, 2, col); } break;
       case "pillar": g.fillStyle = "#fff3aa66"; g.fillRect(x - 8 + k * 4, 0, 16 - k * 8, y + 16); for (let i = 0; i < 6; i++) R(x - 10 + i * 4, y - k * 60 - i * 7, 2, 2, "#fff3aa"); break;
       case "coin": { const [fx, fy] = pos(f.from), [tx, ty] = pos(f.to), cx = fx + (tx - fx) * k, cy = fy + (ty - fy) * k - Math.sin(k * Math.PI) * 30; R(cx - 2, cy - 2, 5, 5, "#f0bd3e"); R(cx - 1, cy - 1, 2, 2, "#fff3aa"); break; }
-      case "toss": { const [fx, fy] = pos(f.from), tx = fx - 26, cy = fy - Math.sin(k * Math.PI) * 26; R(fx + (tx - fx) * k - 2, cy - 2, 5, 5, col); break; }
+      case "toss": { const [fx, fy] = pos(f.from), fu = unitOf(f.from), tx = fx + (fu && fu.side === "foe" ? -26 : 26), cy = fy - Math.sin(k * Math.PI) * 26; R(fx + (tx - fx) * k - 2, cy - 2, 5, 5, col); break; }
       case "scan": for (const u of BT.B.units.filter(u => u.side === "foe" && !u.ko)) { const [ux, uy] = btPos(u), sy = uy - 20 + k * 40; g.fillStyle = "#3fe3d4"; g.fillRect(ux - 18, Math.round(sy), 36, 1); g.strokeStyle = "#3fe3d466"; g.strokeRect(ux - 18.5, uy - 20.5, 37, 41); } break;
       case "shield": { const u = unitOf(f.uid), [sx, sy] = u ? btPos(u) : [x, y]; g.strokeStyle = "#3f8cf2"; g.lineWidth = 2; g.beginPath(); g.ellipse(sx, sy, 18 + Math.sin(k * 9) * 2, 20, 0, 0, Math.PI * 2); g.stroke(); break; }
       case "whoosh": for (let i = 0; i < 3; i++) R(x - 20 + k * 40, y - 8 + i * 6, 10, 1, "#8d8496"); break;
@@ -2481,8 +2483,8 @@ function foeSprite(art, step) {
 /* ---------- drawing the fight ---------- */
 function btPos(u) {
   const B = BT.B, side = B.units.filter(x => x.side === u.side), i = side.indexOf(u), n = side.length;
-  if (u.side === "hero") return ([[[206, 76]], [[200, 58], [214, 94]], [[200, 46], [216, 76], [200, 106]]][n - 1] || [])[i] || [206, 76];
-  return ([[[58, 74]], [[44, 56], [70, 96]], [[62, 44], [26, 74], [62, 106]]][n - 1] || [])[i] || [50, 74];
+  if (u.side === "hero") return ([[[50, 76]], [[56, 58], [42, 94]], [[56, 46], [40, 76], [56, 106]]][n - 1] || [])[i] || [50, 76];   // the party stands on the left
+  return ([[[198, 74]], [[212, 56], [186, 96]], [[194, 44], [230, 74], [194, 106]]][n - 1] || [])[i] || [206, 74];
 }
 function btBackdrop(g) {
   let wall = "#0e140e", floor = "#1a2a12", out = true, kind = "forest";
@@ -2514,17 +2516,18 @@ function drawBattle(cv) {
     let [x, y] = btPos(u); const boss = u.side === "foe" && u.boss, sc = boss ? 3 : 2, sz = 16 * sc;
     const ko = an(u, "ko"), hit = an(u, "hit"), lunge = an(u, "lunge"), glow = an(u, "glow");
     if (u.ko && u.side === "foe" && !ko) continue;   // they stood down and walked off
-    if (lunge && now >= lunge.t0) { const k = (now - lunge.t0) / 300, d = k < .5 ? k * 2 : Math.max(0, 2 - k * 2); x += (u.side === "hero" ? -14 : 14) * d * (lunge.back ? -1 : 1); }
-    if (u.side === "hero" && BT.fleeT) x += Math.min(1, (now - BT.fleeT) / 600) * 90;
+    if (lunge && now >= lunge.t0) { const k = (now - lunge.t0) / 300, d = k < .5 ? k * 2 : Math.max(0, 2 - k * 2); x += (u.side === "hero" ? 14 : -14) * d * (lunge.back ? -1 : 1); }
+    if (u.side === "hero" && BT.fleeT) x -= Math.min(1, (now - BT.fleeT) / 600) * 90;
     if (u.side === "hero" && BT.res === "win" && !u.ko) y -= Math.abs(Math.sin((now - (BT.winT || now)) / 160 + btPos(u)[1])) * 6;
-    if (BT.phase === "input" && BT.actor === u.uid) x -= 10;
+    if (BT.phase === "input" && BT.actor === u.uid) x += 10;
     if (hit && now >= hit.t0 && now - hit.t0 < 320) { x += (Math.floor((now - hit.t0) / 40) % 2 ? 2 : -2); if (Math.floor((now - hit.t0) / 60) % 2) continue; }
-    const step = Math.floor(now / 380) % 2, spr = u.side === "hero" ? nesSprite(u.id, u.ko ? "down" : "left", u.ko ? 0 : step) : foeSprite(BX.ENEMIES[u.id].art, step);
+    const step = Math.floor(now / 380) % 2, spr = u.side === "hero" ? nesSprite(u.id, u.ko ? "down" : "right", u.ko ? 0 : step) : foeSprite(BX.ENEMIES[u.id].art, step);
     g.save();
-    if (ko && u.side === "foe") { const k = Math.min(1, (now - ko.t0) / 700); g.globalAlpha = 1 - k; x -= k * 24; }
+    if (ko && u.side === "foe") { const k = Math.min(1, (now - ko.t0) / 700); g.globalAlpha = 1 - k; x += k * 24; }
     if (u.ko && u.side === "hero") g.globalAlpha = .45;
     g.fillStyle = "#00000055"; g.fillRect(Math.round(x - sz / 2 + 4), Math.round(y + sz / 2 - 3), sz - 8, 4);
     if (u.ko && u.side === "hero") { g.translate(Math.round(x), Math.round(y + 8)); g.rotate(Math.PI / 2); g.drawImage(spr, -16, -16, 32, 32); }
+    else if (u.side === "foe") { g.translate(Math.round(x + sz / 2), Math.round(y - sz / 2)); g.scale(-1, 1); g.drawImage(spr, 0, 0, sz, sz); }   // enemies face left, toward the party
     else g.drawImage(spr, Math.round(x - sz / 2), Math.round(y - sz / 2), sz, sz);
     g.restore();
     if (glow) { const k = (now - glow.t0) / 900; for (let i = 0; i < 6; i++) { g.fillStyle = i % 2 ? "#a6e23f" : "#fff3aa"; g.fillRect(Math.round(x - 10 + i * 4), Math.round(y + 10 - k * 30 - (i % 3) * 4), 2, 2); } }
@@ -2538,7 +2541,7 @@ function drawBattle(cv) {
   // the cash they drop: a burst of coins that land on the floor, then fly to the party
   for (const c of BT.ground || []) for (let i = 0; i < c.n; i++) {
     const a = i * 2.4, land = Math.min(1, (now - c.t0) / 450), bx = c.x + Math.cos(a) * (6 + i * 2) * land, by = c.y - Math.sin(land * Math.PI) * (10 + i % 3 * 4) + (i % 2) * 2;
-    let x = bx, y = by; if (BT.res === "win" && BT.winT) { const k = Math.min(1, Math.max(0, (now - BT.winT - i * 40) / 600)); if (k >= 1) continue; x = bx + (206 - bx) * k * k; y = by + (76 - by) * k * k - Math.sin(k * Math.PI) * 16; }
+    let x = bx, y = by; if (BT.res === "win" && BT.winT) { const k = Math.min(1, Math.max(0, (now - BT.winT - i * 40) / 600)); if (k >= 1) continue; x = bx + (50 - bx) * k * k; y = by + (76 - by) * k * k - Math.sin(k * Math.PI) * 16; }
     const spin = Math.floor((now + i * 90) / 120) % 4; g.fillStyle = "#3a2414"; g.fillRect(Math.round(x) - 2, Math.round(y) - 2, spin === 1 || spin === 3 ? 2 : 5, 5); g.fillStyle = spin === 2 ? "#fff3aa" : "#f0bd3e"; g.fillRect(Math.round(x) - 1, Math.round(y) - 1, spin === 1 || spin === 3 ? 1 : 3, 3); }
   if (BT.res === "win" && BT.cashGain && now - BT.winT > 500) { const t = "$+" + BT.cashGain, w = ptextW(t, 2); ptext(g, t, 128 - w / 2, 38, "#f0bd3e", 2); }
   if (BT.res === "win") { const w = ptextW("VICTORY", 3); ptext(g, "VICTORY", 128 - w / 2, 14 + Math.round(Math.sin(now / 200) * 2), "#fff3aa", 3); (BT.lvups || []).forEach(uid => { const u = unitOf(uid); if (!u) return; const [x, y] = btPos(u); ptext(g, "LV UP!", x - 11, y - 34 - Math.round(Math.abs(Math.sin(now / 150)) * 4), Math.floor(now / 120) % 2 ? "#f0bd3e" : "#fff3aa"); }); }
@@ -2580,7 +2583,7 @@ function btWin() {
     cmd = `<div class="ffhead">${BT.auto ? "AUTO · " : ""}ENEMIES</div>${foes.map(f => `<p class="ffrowline"><span>${esc(f.n)}</span>${B.scanned ? `<span class="hp sm"><i style="width:${f.hp / f.max.hp * 100}%"></i></span>` : ""}</p>`).join("")}${BT.auto && BT.phase !== "intro" ? FB("auto", "Stop Auto", "take back control") : ""}`;
   }
   const party = B.units.filter(x => x.side === "hero").map(h => `<div class="prow${u === h ? " on" : ""}${h.ko ? " ko" : ""}"><span class="pn">${u === h ? "▶ " : ""}${esc(h.n)}</span><span class="pv">${h.hp}/${h.max.hp}</span><span class="hp sm" style="--c:${h.hp / h.max.hp < .3 ? "#d32f3f" : "#a6e23f"}"><i style="width:${h.hp / h.max.hp * 100}%"></i></span><span class="pv sp">${h.sp} SP</span><span class="pst">${Object.keys(h.st).map(s => `<b style="color:${ST_ICON[s][1]}">${ST_ICON[s][0]}</b>`).join(" ")}</span></div>`).join("");
-  return `${L ? `<div class="ffwin ffguide"><div class="ffhead">${L.head ? `${L.head} · ${esc(L.title)}` : `SANTARCHY · LESSON ${BT.o.n + 1} OF ${LESSONS.length} · ${esc(L.title)}`}</div><p>${esc(guide)}</p></div>` : ""}<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${L ? "TUTORIAL" : BX.DIFF[S.diff].n.toUpperCase()} · $${S.cash}</div>${party}</div></div>`;
+  return `${L ? `<div class="ffwin ffguide"><div class="ffhead">${L.head ? `${L.head} · ${esc(L.title)}` : `SANTARCHY · LESSON ${BT.o.n + 1} OF ${LESSONS.length} · ${esc(L.title)}`}</div><p>${esc(guide)}</p></div>` : ""}<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffparty"><div class="ffhead">PARTY · ${L ? "TUTORIAL" : BX.DIFF[S.diff].n.toUpperCase()} · $${S.cash}</div>${party}</div><div class="ffwin ffcmd">${cmd}</div></div>`;
 }
 function scrBattle() {
   return `<div class="battle"><canvas class="scene-art" data-battle="1" width="256" height="144" aria-label="A fight. Use the command window below."></canvas><div id="btwin">${btWin()}</div></div>`;
@@ -3516,6 +3519,30 @@ document.addEventListener("click", e => { const cv = e.target.closest("canvas.wa
   const b = e.target.closest("[data-act]"); if (b && b.tagName === "SELECT") return; if (!b || b.disabled || b.hasAttribute("disabled")) return; if (b.tagName === "INPUT") { dispatch(b.dataset.act, b.dataset.arg); return; } e.preventDefault(); dispatch(b.dataset.act, b.dataset.arg); });
 document.addEventListener("change", e => { const el = e.target.closest && e.target.closest("select[data-act]"); if (el) dispatch(el.dataset.act, el.dataset.arg + ":" + el.value); });
 document.addEventListener("keydown", e => { if (S && S.screen === "battle" && /^[1-9]$/.test(e.key) && !e.target.matches("input, select, textarea")) { const b = document.querySelectorAll("#btwin .ffcmd .ffbtn:not([disabled])")[+e.key - 1]; if (b) { e.preventDefault(); b.click(); } } });
+/* hotkeys: faster menus. ? shows the list. */
+const HOTKEYS = [["H","Villa Delirium"],["M","City map"],["P","Party"],["B","Notebook"],["C","Cast"],["K","Key"],["N","Next step on the plan"],["1–9","Pick a choice, a ride or a room"],["?","Show or hide this list"],
+  ["",""],["FIGHTS",""],["1–9","Pick a command"],["Enter / Space","The highlighted command, or Continue"],["↑ ↓  W S","Move between commands"],["Esc / X","Back"],["Q","Auto on / off"]];
+function hotHelp(show) { let el = document.getElementById("hothelp"); if (!show) { if (el) el.remove(); return; }
+  if (el) return; el = document.createElement("div"); el.id = "hothelp"; el.className = "ffwin"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Hotkeys");
+  el.innerHTML = `<div class="ffhead">HOTKEYS</div>${HOTKEYS.map(([k, d]) => !k ? "<p></p>" : !d ? `<div class="ffhead">${k}</div>` : `<p><b>${k}</b> ${d}</p>`).join("")}<p class="note">Press ? or Esc to close.</p>`;
+  document.body.appendChild(el); }
+document.addEventListener("keydown", e => {
+  if (!S || BOOT || e.ctrlKey || e.metaKey || e.altKey || e.target.matches("input, select, textarea") || dlgOpen()) return;
+  const k = e.key.toLowerCase(), click = sel => { const b = document.querySelector(sel); if (!b || b.disabled) return false; e.preventDefault(); b.click(); return true; };
+  if (k === "?" || (k === "escape" && document.getElementById("hothelp"))) { e.preventDefault(); hotHelp(!document.getElementById("hothelp")); return; }
+  if (S.screen === "battle") {
+    const btns = [...document.querySelectorAll("#btwin .ffbtn:not([disabled])")], i = btns.indexOf(document.activeElement);
+    if (["arrowdown", "s", "arrowup", "w"].includes(k) && btns.length) { e.preventDefault(); const d = k === "arrowdown" || k === "s" ? 1 : -1; btns[i < 0 ? (d > 0 ? 0 : btns.length - 1) : (i + d + btns.length) % btns.length].focus(); return; }
+    if (k === "escape" || k === "x" || k === "backspace") { click('#btwin [data-arg="back"]'); return; }
+    if (k === "q") { click('#btwin [data-arg="auto"]'); return; }
+    if ((k === "enter" || k === " ") && i < 0 && !e.repeat) { click("#btwin .ffbtn.hl:not([disabled])") || click('#btwin [data-arg="end"]') || (btns[0] && (e.preventDefault(), btns[0].click())); }
+    return;
+  }
+  const tab = { h: "house", m: "map", p: "party", b: "notebook", c: "cast", k: "key" }[k];
+  if (tab) { click(`#tabs [data-arg="${tab}"]`); return; }
+  if (k === "n") { click('[data-act="next"]'); return; }
+  if (/^[1-9]$/.test(k) && !document.querySelector("canvas.walk")) { const vis = sel => [...document.querySelectorAll(sel)].filter(x => !x.disabled && x.offsetParent), list = ['#screen .choices button', '#screen [data-act="travel"]', '#screen .rooms button'].map(vis).find(l => l.length) || [], b = list[+k - 1]; if (b) { e.preventDefault(); b.click(); } }
+});
 document.addEventListener("mousemove", e => { const cv = e.target.closest && e.target.closest("canvas.walk"); HOVER = cv ? canvasTile(cv, e) : null; });
 document.addEventListener("keydown", e => { if (BOOT && (e.key === "Enter" || e.key === " ") && !e.target.closest("button")) { e.preventDefault(); e.stopImmediatePropagation(); dispatch("start", S.issue > 0 ? "continue" : "new"); } });
 document.addEventListener("keydown", e => { if (!document.querySelector("canvas.walk") || e.target.matches("input, textarea, select")) return; const k = e.key.toLowerCase();
