@@ -446,11 +446,15 @@ A lost tutorial now comes back on the trail; before, it was gone for good.
 The team lessons showed Junie's COVER protecting Fax, a teammate healing
 Junie, and a teammate waking Junie with an Antacid. There were no errors.
 
-A bot batch of six full runs found a gap. Bots that hurried down the trail
-never met the raccoon, so they never had the tutorial, and the cliff never
-had fights. Now the raccoon waits on the cliff stairs if Hell Rot passes it
-on the trail. The six runs had no errors and no time leaks, and reached
-endings 4, 13, 14 and 15.
+Two gaps came out of further checks. First, the portal buttons on the
+mountain let a player jump from the trail to the springs without walking,
+past the raccoon. Now the last steps to the springs wait until the raccoon
+fight is done. If Hell Rot hurries past it on the trail, the raccoon waits on
+the cliff stairs. (SKIP THE WALK still skips the whole mountain tutorial, as
+it says.) Second, a bot on route A filed the last column at home and stopped:
+only travel and rest pass time, and nothing told it to rest. Now the plan
+says "Wait for midnight: rest in the tower room". The bot runs had no errors
+and no time leaks, and reached endings 4, 13, 14 and 15.
 
 ## 7. Next tests
 

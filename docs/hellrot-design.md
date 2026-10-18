@@ -1898,7 +1898,7 @@ fight teaches the four basics in order:
 4. **Items:** when Hell Rot is hurt, a Ghost Diner coffee from ITEM.
 
 If Hell Rot hurries down the trail, the raccoon waits on the cliff stairs
-instead. Random mountain fights start only after the raccoon, on the trail
+instead, and the steps down to the springs open only after the fight. Random mountain fights start only after the raccoon, on the trail
 and the cliff stairs.
 
 *Santarchy (a team, three lessons).* The road into the City is the Santa riot.

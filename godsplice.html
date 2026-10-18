@@ -1428,10 +1428,12 @@ function interact() {
   if (!REDUCE) SPARK = { c: sp.c, r: sp.r, col: SPOT[sp.t][1], t: performance.now() };
   dispatch("spot", String(sp.i));
 }
+function startRaccoon() { S.flags.tutFight = true; if ((S.inv.coffee || 0) < 2) S.inv.coffee = 2; encounterStart({ kind: "tutorial", lesson: RACCOON, n: 0, party: ["hellrot"], diff: "easy", place: PL.node && PL.node.startsWith("field:") ? PL.node : "field:cliff", foes: [{ id: "bigraccoon", lv: 1 }], script: RACCOON.script, open: "A very large raccoon blocks the trail. It wants your coffee. It wants it very badly." }); }
 function usePortal(p) {   // stepped onto a door, a station or the end of a path
   const back = () => { const [c, r, dir] = inward(p); PL.c = PL.tc = c; PL.r = PL.tr = r; PL.x = c * 16; PL.y = r * 16; PL.dir = dir; };
   if (inField()) {
     if (p.need && !S.flags[p.need]) { FLASH = [p.needMsg, 110]; return back(); }
+    if (p.to === "springs" && !S.flags.tutFight) { back(); return startRaccoon(); }   // nobody skips the raccoon
     return fadeTo(() => { S.field = p.to; S.fieldSpawn = [p.tc, p.tr, p.dir]; plReset("field:" + p.to); dispatch("fieldenter", p.to); });
   }
   if (inHouse() && S.delirium) { FLASH = ["Delirium: sleep first (the bed, top right).", 90]; return back(); }
@@ -2238,7 +2240,7 @@ function stepEncounter() {
   if (S.scene && (S.scene.offer || S.scene.choice)) return false;
   const tb = encounterTable(); if (!tb) return false;
   S.steps++; S.encGap = (S.encGap || 0) + 1;
-  if (["field:trail", "field:cliff"].includes(PL.node) && !S.flags.tutFight && S.encGap >= (PL.node === "field:trail" ? 4 : 1)) { S.flags.tutFight = true; if ((S.inv.coffee || 0) < 2) S.inv.coffee = 2; encounterStart({ kind: "tutorial", lesson: RACCOON, n: 0, party: ["hellrot"], diff: "easy", place: PL.node, foes: [{ id: "bigraccoon", lv: 1 }], script: RACCOON.script, open: "A very large raccoon blocks the trail. It wants your coffee. It wants it very badly." }); return true; }
+  if (["field:trail", "field:cliff"].includes(PL.node) && !S.flags.tutFight && S.encGap >= (PL.node === "field:trail" ? 4 : 1)) { startRaccoon(); return true; }
   if (["field:trail", "field:cliff"].includes(PL.node) && !S.flags.tutFight) return false;
   if (S.encGap < 8) return false;
   const rate = (PL.node.startsWith("field:") ? 1 / 22 : 1 / 26) * BX.DIFF[S.diff].rate;
@@ -3325,6 +3327,7 @@ function objectives() {
     out.push({ label: iss === 6 ? "File the last column before midnight (Press)" : "File the column before 6 a.m. (Press)", done: S.filed, go: { type: "room", arg: "press" } });
     if (iss === 6 && S.route) out.push({ label: `Be at ${BY[SITE[S.route]].n} at midnight`, done: S.at === SITE[S.route], go: { type: "node", arg: SITE[S.route] } });
     if (S.filed && iss < 6) out.push({ label: "Sleep: the press runs at 6 a.m.", done: false, go: { type: "sleep" } });
+    if (iss === 6 && S.filed && S.route && SITE[S.route] === "house" && S.at === "house") out.push({ label: "Wait for midnight: rest in the tower room", done: false, go: { type: "sleep" } });
     N.filter(n => n.t[iss] && (OPT[n.id] || []).includes(iss)).forEach(n => out.push({ label: `Optional: ${n.n}`, done: S.done.includes(n.id), go: { type: "node", arg: n.id }, opt: true }));
   } else {
     out.push({ label: "Read the morning edition", done: true });
@@ -3451,7 +3454,7 @@ const ACT = {
   fieldsay(t) { S.fieldSay = t; S.fieldSayFresh = true; render(); },
   fieldenter(id) { S.field = id; S.screen = "field"; S.fieldSay = FIELD_ENTER[id] || ""; S.fieldSayFresh = true; render(); },
   fieldlook(i) { const t = FIELDS[S.field].things[+i]; if (t) fieldUse(t); },
-  fieldgo(i) { const p = FIELDS[S.field].portals[+i]; if (!p) return; if (p.need && !S.flags[p.need]) { FLASH = [p.needMsg, 110]; return; } fadeTo(() => { S.field = p.to; S.fieldSpawn = [p.tc, p.tr, p.dir]; plReset("field:" + p.to); dispatch("fieldenter", p.to); }); },
+  fieldgo(i) { const p = FIELDS[S.field].portals[+i]; if (!p) return; if (p.need && !S.flags[p.need]) { FLASH = [p.needMsg, 110]; return; } if (p.to === "springs" && !S.flags.tutFight) return startRaccoon(); fadeTo(() => { S.field = p.to; S.fieldSpawn = [p.tc, p.tr, p.dir]; plReset("field:" + p.to); dispatch("fieldenter", p.to); }); },
   tobirth() { S.screen = "prologue"; S.flags.prologue = "birth"; render(); },
   board(m) { S.board = m || null; S.screen = "map"; S.sel = S.at; render(); },
   birth(a) { S.birth = a; let t = "";
