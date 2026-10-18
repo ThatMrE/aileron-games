@@ -78,18 +78,18 @@ for (const diff of ["easy", "normal", "hard"]) {
         const lv = BX.ISSUE_LV[issue];
         for (const g of groups) for (let t = 0; t < TRIALS; t++) {
           const rng = mulberry(seed++);
-          const B = BX.makeBattle({ party: party.map(id => ({ id, lv, eq: gearFor(id, issue, gear) })), foes: g.map(id => ({ id, lv: Math.max(1, lv + Math.round(rng() * 2 - 1)) })), diff, rng, inv: invFor(issue), ink: 30 + issue * 40, moreau: false });
+          const B = BX.makeBattle({ party: party.map(id => ({ id, lv, eq: gearFor(id, issue, gear) })), foes: g.map(id => ({ id, lv: Math.max(1, lv + Math.round(rng() * 2 - 1)) })), diff, rng, inv: invFor(issue), cash: 30 + issue * 60, moreau: false });
           const res = run(B, `${diff} ${party.join("+")} ${tb}:${g.join(",")} I${issue}`); tally(`reg|${diff}`, res, B); tally(`reg|${diff}|size${party.length}`, res, B); tally(`tbl|${diff}|${tb}`, res, B); tally(`grp|${diff}|${g.join(",")}`, res, B); tally(`issue|${diff}|${issue}`, res, B);
         }
       }
       if (MODE === "all" || MODE === "single") for (const id of Object.keys(BX.ENEMIES)) { if (BX.ENEMIES[id].boss) continue; for (const issue of [1, 3, 5]) for (let t = 0; t < Math.ceil(TRIALS / 2); t++) {
         const rng = mulberry(seed++), lv = BX.ISSUE_LV[issue];
-        const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv, eq: gearFor(h, issue, gear) })), foes: [{ id, lv }], diff, rng, inv: invFor(issue), ink: 50 });
+        const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv, eq: gearFor(h, issue, gear) })), foes: [{ id, lv }], diff, rng, inv: invFor(issue), cash: 80 });
         const res = run(B, `${diff} ${party.join("+")} single:${id} I${issue}`); tally(`single|${diff}`, res, B); tally(`enemy|${diff}|${id}`, res, B);
       } }
       if (MODE === "all" || MODE === "boss") for (const [bid, grp] of Object.entries(BX.BOSSES)) for (const moreau of [false, true]) for (let t = 0; t < TRIALS; t++) {
         const issue = BOSS_ISSUE[bid], lv = BX.ISSUE_LV[issue], rng = mulberry(seed++);
-        const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv, eq: gearFor(h, issue, gear) })), foes: grp.map(id => ({ id, lv })), diff, rng, inv: invFor(issue), ink: 100, boss: true, moreau });
+        const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv, eq: gearFor(h, issue, gear) })), foes: grp.map(id => ({ id, lv })), diff, rng, inv: invFor(issue), cash: 150, boss: true, moreau });
         const res = run(B, `${diff} ${party.join("+")} boss:${bid}${moreau ? "+moreau" : ""}`); tally(`boss|${diff}${moreau ? "|moreau" : ""}`, res, B); tally(`bossid|${diff}|${bid}${moreau ? "+M" : ""}`, res, B); tally(`boss|${diff}|size${party.length}`, res, B);
       }
     }
@@ -99,7 +99,7 @@ if (MODE === "all" || MODE === "chaos") for (const diff of ["easy", "normal", "h
   const lv = BX.ISSUE_LV[issue];
   const groups = [...Object.values(BX.TABLES).flat(), ...Object.values(BX.BOSSES)];
   for (const g of groups) { const rng = mulberry(seed++), boss = g.some(id => BX.ENEMIES[id].boss);
-    const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv: Math.min(20, lv + 3), eq: gearFor(h, issue, true) })), foes: g.map(id => ({ id, lv })), diff, rng, inv: Object.fromEntries(Object.keys(BX.ITEMS).filter(k => BX.ITEMS[k].type === "use").map(k => [k, 3])), ink: 80, boss, moreau: true });
+    const B = BX.makeBattle({ party: party.map(h => ({ id: h, lv: Math.min(20, lv + 3), eq: gearFor(h, issue, true) })), foes: g.map(id => ({ id, lv })), diff, rng, inv: Object.fromEntries(Object.keys(BX.ITEMS).filter(k => BX.ITEMS[k].type === "use").map(k => [k, 3])), cash: 120, boss, moreau: true });
     const res = run(B, `chaos ${diff} ${party.join("+")} ${g.join(",")} I${issue}`, true); tally(`chaos|${diff}`, res, B); }
 }
 // attrition: five random fights in a row, HP/SP/items carried, no rest
@@ -107,7 +107,7 @@ if (MODE === "all" || MODE === "gauntlet") for (const diff of ["easy", "normal",
   const lv = BX.ISSUE_LV[issue], rng = mulberry(seed++), inv = invFor(issue); let mem = party.map(id => ({ id, lv, eq: gearFor(id, issue, true) })), ok = true, B;
   const tabs = Object.keys(TABLE_ISSUES).filter(k => TABLE_ISSUES[k].includes(issue));
   for (let f = 0; f < 5 && ok; f++) {
-    B = BX.makeBattle({ party: mem, foes: BX.encounterGroup(tabs[Math.floor(rng() * tabs.length)], lv, rng), diff, rng, inv, ink: 60 });
+    B = BX.makeBattle({ party: mem, foes: BX.encounterGroup(tabs[Math.floor(rng() * tabs.length)], lv, rng), diff, rng, inv, cash: 90 });
     const res = run(B, `gauntlet ${diff} ${party.join("+")} I${issue} f${f}`); if (res === "lose" || res === "stall") ok = false;
     mem = B.units.filter(u => u.side === "hero").map((u, i) => ({ id: u.id, lv, eq: mem[i].eq, hp: u.ko ? 0 : u.hp, sp: u.sp }));
     // after a fight the downed get up with 1 HP (as in the game)

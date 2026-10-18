@@ -368,6 +368,29 @@ coffee options) and a phone screen. A frame capture checked the battle
 effects: the swirl, slashes, beams, bubbles, rings, halos, the crit flash,
 status markers, Moreau and the victory hop.
 
+### Cash and merchants
+
+Fights now pay cash ($) instead of Ink, and four merchants sell for cash
+(design §5.5b). The stress test re-ran clean on the new rules: 142,673
+battles, 0 errors. Over a whole run, normal play earns about $1,800. That
+buys about one good piece of gear per Issue plus supplies.
+
+A scripted test won a fight in the Loin ($18 to $26). It bought a burrito at
+the Ghost Diner counter, sold a coffee back for half price, and switched
+the BUY and SELL tabs with the arrow keys. It checked that the Conductor's
+night car locks its later stock (for example "Axolotl charm: Issue 5") and
+shows each party member's stat change ("Hell Rot: ATK ▲9 · Junie: ATK ▲9").
+It also opened Mary's stall at home, and checked a phone screen with no
+sideways scroll.
+
+The bots played 4 mixed weeks (endings 15, 13, 15, 13) and 3 weeks walking by
+clicking tiles (endings 15, 4, 15), with no errors and no time leaks.
+They ended the week holding $300 to $2,300, because the bot rarely
+shops. The bots found one problem, in the bot itself: a merchant stall is
+never "used up", so the bot's "use the next unused spot" rule kept opening
+the shop. The bot now leaves stalls out of that rule and goes shopping by
+chance instead.
+
 ## 7. Next tests
 
 1. A paper prototype of Issue 2, played by hand with dice, to test whether a

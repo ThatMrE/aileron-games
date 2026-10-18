@@ -200,6 +200,19 @@ button { font: inherit; color: inherit; }
 .dlgopt.locked, .dlgopt:disabled { color: #5a5260; cursor: not-allowed; }
 .dlgopt.locked .dtag { color: #5a5260; }
 @media (max-width: 980px) { .dlg { position: static; margin: 8px 10px 0; max-height: none; } .dlgbox { min-height: 0; } }
+/* Merchants: a Poke Mart list over the scene */
+.shoplist { max-height: 70%; }
+.shophead { display: flex; align-items: center; gap: 6px; padding: 0 14px 6px; border-bottom: 1px solid #3a3442; margin-bottom: 4px; }
+.shoptab { font-family: var(--display); font-size: 8px; line-height: 1.6; background: transparent; color: #8d8496; border: 1px solid #3a3442; padding: 3px 8px; cursor: pointer; }
+.shoptab[aria-pressed="true"] { color: #0d0a10; background: #f0bd3e; border-color: #f0bd3e; }
+.shophead .cash { margin-left: auto; color: #f0bd3e; position: relative; font-size: 22px; }
+.shopfx { position: absolute; right: 0; top: -2px; color: var(--c); animation: shopfx 1.1s steps(8) forwards; white-space: nowrap; }
+@keyframes shopfx { to { transform: translateY(-22px); opacity: 0; } }
+.shoprow { display: grid; grid-template-columns: minmax(0, 1fr) auto 3em; gap: 10px; }
+.shoprow .pr { color: #f0bd3e; text-align: right; } .shoprow:disabled .pr { color: #5a5260; }
+.shoprow .own { color: #8d8496; text-align: right; }
+#shopinfo .dim, .shop .dim { color: #8d8496; }
+#shopinfo i { font-style: normal; } #shopinfo i.up { color: #2f8a2f; } #shopinfo i.dn { color: #b5523b; }
 /* The Party screen */
 .party .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 10px; margin: 10px 0 14px; }
 .pcard { display: flex; gap: 12px; background: var(--panel-2); border: 2px solid var(--line); padding: 10px; min-width: 0; }
@@ -785,6 +798,7 @@ function hud() {
       <div class="m"><b>LEADS</b><span class="v">${S.notebook.filter(i => i.kind === "lead").length} <small style="color:var(--grey)">+${S.notebook.filter(i => i.kind === "frag").length} frag</small></span></div>
       <div class="m"><b>MEMORY</b><span class="v">${S.memory.length}/6</span></div>
       <div class="m"><b>INK</b><span class="v${bump("ink")}">${S.ink}</span></div>
+      ${S.issue >= 1 || S.cash ? `<div class="m"><b>CASH</b><span class="v${bump("cash")}" style="color:#f0bd3e">$${S.cash ?? 0}</span></div>` : ""}
     </div>`;
 }
 function tabs() {
@@ -926,7 +940,7 @@ const ROOMS = [
 ];
 function scrHouse() {
   const r = S.room;
-  return `<canvas class="scene-art interior walk" data-house="1" width="256" height="144" tabindex="0" aria-label="Villa Delirium. Walk with WASD or the arrow keys and press Space or E at a housemate, or click a room below."></canvas>
+  return `<div class="stage"><canvas class="scene-art interior walk" data-house="1" width="256" height="144" tabindex="0" aria-label="Villa Delirium. Walk with WASD or the arrow keys and press Space or E at a housemate, or click a room below."></canvas>${S.shop ? shopDlg() : ""}</div>
     <div class="intbar"><span>VILLA DELIRIUM · ${clockStr(S.T)}</span><span class="note">Walk to a housemate and press Space (A on a phone). Your bed is top right. ▼ at the bottom goes out into the City.</span></div>${dpad()}
     <div class="pad">
       <div class="row" style="justify-content:space-between"><h2>VILLA DELIRIUM</h2><button class="btn primary${S.next && S.next.go.type === "node" && S.next.go.arg !== "house" ? " nextglow" : ""}" data-act="go" data-arg="map" ${S.delirium ? "disabled" : ""}><span class="t">GO OUT INTO THE CITY <em>map</em></span></button></div>
@@ -1039,12 +1053,13 @@ const SPOT = {
   dis:["Dissonance","#a487dd","A prank (Clarity −1), then two fragments."],
   gas:["The gas","#e33f9c","Clarity refills. Craving +2. Junie will know."],
   meet:["The meeting","#e8f4ff","Craving −2. Nobody wants anything from you."],
+  shop:["Merchant","#f0bd3e","Buy and sell. Cash only."],
   boss:["Boss","#d32f3f","The district's boss fight. Hard. A Lead, big XP and 15 Ink."],
   look:["Look","#8d8496","Look closer. Free, any time."]
 };
 // [type, x, label, who-or-prop, look text]
 const INT = {
- loin:{ st:"diner", s:[["talk",44,"Mama Rue's booth","mamarue"],["talk",72,"Tem","tem"],["story",104,"The front window","window"],["talk",136,"Benny at the counter","benny"],["cyan",166,"Basement clinic","cyan"],["gas",192,"Benny's jacket","canister"],["look",226,"Jukebox","jukebox","It plays 'Lavender Hill' on a loop. Somebody paid for that in 1966."]] },
+ loin:{ st:"diner", s:[["talk",44,"Mama Rue's booth","mamarue"],["talk",72,"Tem","tem"],["story",104,"The front window","window"],["talk",136,"Benny at the counter","benny"],["cyan",166,"Basement clinic","cyan"],["gas",192,"Benny's jacket","canister"],["look",226,"Jukebox","jukebox","It plays 'Lavender Hill' on a loop. Somebody paid for that in 1966."],["shop",120,"The diner counter","mamarue"]] },
  haight:{ st:"street", s:[["talk",44,"Ana Reyes","ana"],["look",74,"Flyers","sign","Fourteen recruiters, one wall. The Game's flyer is the only one with no picture."],["story",106,"The nitrous den","door"],["gas",138,"Sunday's den","canister"],["cyan",170,"Trial clinic","cyan"],["fight",202,"A recruiter","heckler"],["dis",232,"A Santa on stilts","dis"]] },
  geary:{ st:"nave", s:[["talk",44,"Bishop Null in the pews","bishop"],["look",76,"The pews","pews","Every pew has a Halo reader. Every reader is warm."],["gold",110,"The altar","gold"],["story",146,"The feed screen","screen"],["look",180,"Halo kiosk","kiosk","TAP TO BE SEEN. Below it, in Sharpie: 'Jim said that too.'"],["fight",216,"An usher","usher"]] },
  spire:{ st:"lobby", s:[["talk",44,"Pru","pru"],["gold",80,"Node chapel","gold"],["story",120,"Market Street window","window"],["fight",160,"An usher","usher"],["look",204,"The server glass","screen","The Twin's racks hum behind the glass. One light blinks in Morse: N-O-R-T-O-N."]] },
@@ -1065,7 +1080,7 @@ const INT = {
  span:{ st:"skywalk", s:[["talk",44,"Wren Castillo","wren"],["story",104,"The towers","rail"],["look",160,"Karl through the glass","fog","He presses against the glass like a dog at a door."],["fight",210,"A Gilder","gilder"]] },
  wharf:{ st:"pier", s:[["talk",44,"Laffing Sal","laffingsal"],["story",90,"Pier 39 high water","rail"],["look",136,"Sea lions","lion","Union cards on their flippers. They're on strike against the tourists."],["dis",180,"Musée cabinet","dis"],["look",224,"Pier 33 sign","sign","NIGHT FERRY TO THE ROCK. Ride it from here."]] },
  northbeach:{ st:"basement", s:[["talk",44,"Junie at the urn","junie"],["meet",96,"The folding chairs","chairs"],["story",146,"The flooded basement","pool"],["look",196,"The coffee urn","urn","Terrible coffee. The best in the City."]] },
- chinatown:{ st:"market", s:[["talk",44,"The Conductor","conductor"],["story",90,"The fishmonger","tank"],["look",134,"Steam","fog","Ginger, diesel, and something cyan underneath."],["cyan",176,"The back-room tank","cyan"],["rest",216,"The Tonga Room","cot"]] },
+ chinatown:{ st:"market", s:[["talk",44,"The Conductor","conductor"],["story",90,"The fishmonger","tank"],["look",134,"Steam","fog","Ginger, diesel, and something cyan underneath."],["cyan",176,"The back-room tank","cyan"],["rest",216,"The Tonga Room","cot"],["shop",110,"The night car (a cable car that never leaves)","conductor"]] },
  union:{ st:"street", s:[["talk",44,"Karl in the fog","karl"],["story",88,"The dead in the windows","window"],["gold",132,"The returns line","gold"],["look",174,"A window ghost","window","A dead grandmother wishes you merry Christmas. She gets your name wrong. She was never yours."],["fight",214,"An usher","usher"]] },
  coit:{ st:"overlook", s:[["talk",44,"Huck Baptiste","huck"],["story",92,"The Lifeboat rig","machine"],["look",140,"1930s murals","mural","Workers, 1934. Someone painted a Halo onto one. Someone else scratched it off."],["talk",186,"Pip Okada","pip"],["fight",224,"Sunday's beat cop","cop"]] },
  park:{ st:"park", s:[["talk",44,"Rosa Quint","rosa"],["story",92,"The donor dinner","table"],["look",140,"The bison","lion","The bison have Halos. They don't care."],["gold",184,"The Game's table","gold"],["fight",224,"An usher","usher"]] },
@@ -1092,7 +1107,7 @@ function spotsFor(node) {
   return out;
 }
 function enterScene(id) {
-  const node = BY[id]; S.scene = { node: id, lines: [], shown: 0 }; plReset(id); if (S.delirium) S.scene.lines.push({ txt: "Everything is too bright. You can't think. Go home and sleep." });
+  const node = BY[id]; S.scene = { node: id, lines: [], shown: 0 }; S.shop = null; plReset(id); if (S.delirium) S.scene.lines.push({ txt: "Everything is too bright. You can't think. Go home and sleep." });
   const npc = C[node.npc];
   S.scene.lines.push({ who: npc.n, txt: npc.q });
   voice(node);
@@ -1121,8 +1136,9 @@ function resolveSpot(i) {
   const sc = S.scene, node = BY[sc.node]; const sp = spotsFor(node).find(s => s.i === i); if (!sp || sp.used || S.delirium || sc.offer || sc.choice) return;
   const L = (t, extra) => sc.lines.push(Object.assign({ txt: t }, extra || {}));
   sc.shown = sc.lines.length; sc.talk = null; EMOTE = { c: sp.c, r: sp.r, ch: sp.t === "look" ? "?" : "!", col: sp.t === "fight" || sp.t === "boss" ? "#d32f3f" : "#3a3442", t0: performance.now() };
-  if (sp.t !== "look" && sp.t !== "story" && sp.t !== "boss" && sp.t !== "talk") { S.used = S.used || {}; (S.used[node.id] = S.used[node.id] || []).push(i); }
+  if (sp.t !== "look" && sp.t !== "story" && sp.t !== "boss" && sp.t !== "talk" && sp.t !== "shop") { S.used = S.used || {}; (S.used[node.id] = S.used[node.id] || []).push(i); }
   if (sp.t === "look") { L(sp.txt); return render(); }
+  if (sp.t === "shop") { openShop(sp.who); return render(); }
   if (sp.t === "story") storyBeat(node);
   else if (sp.t === "talk") { sc.talk = { who: sp.who, i }; return render(); }
   else if (sp.t === "fight") return startStoryFight(FOES[sp.who] ? sp.who : foeFor(node), node, false);
@@ -1485,7 +1501,8 @@ function drawInterior(cv, node) {
       const who = sp.t === "fight" ? (FOES[sp.who] ? FOES[sp.who].p : FOES[foeFor(node)].p) : sp.who === "shadow" ? "karl" : sp.who;
       if (sp.t !== "talk") { g.fillStyle = col + "44"; g.fillRect(x + 1, y + 12, 14, 4); }
       people.push({ c: sp.c, r: sp.r, who, dir: towardPlayer(sp.c, sp.r) });
-    } else if (sp.r === 0) wallProp(g, sp.t === "gold" || sp.t === "cyan" || sp.t === "dis" ? sp.t : sp.who, x, y, col, frame);
+    } else if (sp.t === "shop") drawStall(g, x, y, frame);
+    else if (sp.r === 0) wallProp(g, sp.t === "gold" || sp.t === "cyan" || sp.t === "dis" ? sp.t : sp.who, x, y, col, frame);
     else floorProp(g, sp.t === "gold" || sp.t === "cyan" || sp.t === "dis" ? "default" : sp.who, x, y, col, frame);
   });
   drawPlayerAndPeople(g, people, frame); drawSpark(g); drawEmotes(g);
@@ -1783,9 +1800,9 @@ const BX = (() => {
     sermon: { n: "Sermon", cost: 9, kind: "status", st: "sleep", chance: .5, turns: 3, tgt: "enemies", d: "A dull sermon: may put them all to sleep." },
     lastrites: { n: "Last Rites", cost: 12, kind: "dmg", stat: "mag", pow: 2.3, tag: "spirit", tgt: "enemy", d: "Big spirit damage." },
     raise: { n: "Raise the Dead", cost: 18, kind: "revive", frac: .7, tgt: "ally-ko", d: "Revive an ally at 70%." },
-    audit: { n: "Audit", cost: 2, kind: "steal", stat: "atk", pow: .8, tag: "phys", tgt: "enemy", d: "Hit, and steal an item or Ink." },
+    audit: { n: "Audit", cost: 2, kind: "steal", stat: "atk", pow: .8, tag: "phys", tgt: "enemy", d: "Hit, and steal an item or their cash." },
     shortsell: { n: "Short Sell", cost: 4, kind: "debuff", stats: { atk: .7 }, turns: 3, tgt: "enemy", d: "Their ATK −30%." },
-    margincall: { n: "Margin Call", cost: 6, kind: "dmg", stat: "atk", pow: 1.5, tag: "phys", tgt: "enemy", inkScale: true, d: "Phys damage that grows with your Ink." },
+    margincall: { n: "Margin Call", cost: 6, kind: "dmg", stat: "atk", pow: 1.5, tag: "phys", tgt: "enemy", cashScale: true, d: "Phys damage that grows with the cash in your pocket." },
     takeover: { n: "Hostile Takeover", cost: 10, kind: "dmg", stat: "atk", pow: 1.15, tag: "phys", tgt: "enemies", d: "Phys damage to all of them." },
     liquidate: { n: "Liquidate", cost: 12, kind: "dmg", stat: "atk", pow: 1.6, tag: "phys", tgt: "enemy", execute: .25, d: "Under 25% HP, a non-boss stands down at once." },
     archive: { n: "Archive", cost: 2, kind: "scan", tgt: "enemies", d: "Look them up: weaknesses hit harder all battle." },
@@ -1832,7 +1849,7 @@ const BX = (() => {
   };
 
   /* ---- enemies: they stand down, they don't die ---- */
-  const E = (n, art, f, base, grow, weak, resist, skills, xp, ink, drops, boss) => ({ n, art, f, base, grow, weak, resist, skills, xp, ink, drops, boss: !!boss, hpx: boss || 1 });
+  const E = (n, art, f, base, grow, weak, resist, skills, xp, cash, drops, boss) => ({ n, art, f, base, grow, weak, resist, skills, xp, cash, drops, boss: !!boss, hpx: boss || 1 });
   const g1 = { hp: 9, sp: 1.5, atk: 1.6, def: 1.2, mag: 1.4, res: 1.1, spd: .9, luk: .6 };
   const ENEMIES = {
     raccoon: E("Raccoon", "raccoon", "wild", { hp: 26, sp: 6, atk: 7, def: 4, mag: 3, res: 4, spd: 9, luk: 10 }, g1, ["noise"], [], ["swipe"], 8, 3, [["coffee", .35], ["luckypenny", .05]]),
@@ -1874,39 +1891,39 @@ const BX = (() => {
 
   /* ---- items ---- */
   const ITEMS = {
-    coffee: { n: "Ghost Diner coffee", type: "use", eff: { heal: 45 }, tgt: "ally", price: 8, d: "Restores 45 HP." },
-    burrito: { n: "Bodega burrito", type: "use", eff: { heal: 110 }, tgt: "ally", price: 18, d: "Restores 110 HP." },
-    soup: { n: "Lantern soup", type: "use", eff: { heal: 40 }, tgt: "allies", price: 22, d: "Restores 40 HP to the party." },
-    salts: { n: "Smelling salts", type: "use", eff: { revive: .35 }, tgt: "ally-ko", price: 20, d: "Revives an ally at 35%." },
-    gum: { n: "Nicotine gum", type: "use", eff: { sp: 20 }, tgt: "ally", price: 10, d: "Restores 20 SP." },
-    tonic: { n: "Otto's tonic", type: "use", eff: { sp: 50 }, tgt: "ally", price: 24, d: "Restores 50 SP." },
-    antacid: { n: "Antacid", type: "use", eff: { cure: 1, heal: 10 }, tgt: "ally", price: 6, d: "Cures status." },
-    glowstick: { n: "Glow stick", type: "use", eff: { dmg: 40, tag: "noise" }, tgt: "enemies", price: 16, d: "40 noise damage to every enemy." },
-    fogbottle: { n: "Fog in a bottle", type: "use", eff: { escape: 1 }, tgt: "self", price: 14, d: "Escape any fight but a boss." },
-    newspaper: { n: "Rolled newspaper", type: "equip", slot: "weapon", mod: { atk: 3 }, price: 12, d: "ATK +3. Yesterday's Mondo." },
-    umbrella: { n: "Steel umbrella", type: "equip", slot: "weapon", mod: { atk: 5, def: 2 }, price: 30, d: "ATK +5, DEF +2." },
-    knuckles: { n: "Brass knuckles", type: "equip", slot: "weapon", mod: { atk: 9 }, price: 55, d: "ATK +9." },
-    tireiron: { n: "Tire iron", type: "equip", slot: "weapon", mod: { atk: 12, spd: 1 }, for: ["junie"], price: 70, d: "Junie only. ATK +12." },
-    gelastic2: { n: "Gelastic Mk II", type: "equip", slot: "weapon", mod: { mag: 10, luk: 3 }, for: ["hellrot"], price: 80, d: "Hell Rot only. MAG +10." },
-    redpencil: { n: "Red pencil", type: "equip", slot: "weapon", mod: { mag: 6, luk: 4 }, for: ["hellrot", "yara", "mary"], price: 40, d: "MAG +6, LUK +4." },
-    haloshard: { n: "Halo shard", type: "equip", slot: "weapon", mod: { mag: 7 }, price: 45, d: "MAG +7. Still warm." },
-    syringe: { n: "Cyan syringe", type: "equip", slot: "weapon", mod: { mag: 8, atk: 2 }, price: 50, d: "MAG +8, ATK +2." },
-    tuningfork: { n: "Tuning fork", type: "equip", slot: "weapon", mod: { mag: 5, spd: 2 }, price: 35, d: "MAG +5, SPD +2." },
-    labcoat: { n: "Lab coat", type: "equip", slot: "armor", mod: { def: 3, res: 4 }, price: 18, d: "DEF +3, RES +4." },
-    leatherjacket: { n: "Leather jacket", type: "equip", slot: "armor", mod: { def: 7 }, price: 40, d: "DEF +7." },
-    derby: { n: "Derby pads", type: "equip", slot: "armor", mod: { def: 6, spd: 2 }, price: 45, d: "DEF +6, SPD +2." },
-    habit: { n: "Lantern habit", type: "equip", slot: "armor", mod: { def: 4, res: 10 }, price: 60, d: "DEF +4, RES +10." },
-    waistcoat: { n: "Gilder waistcoat", type: "equip", slot: "armor", mod: { def: 10, res: 4, spd: -1 }, price: 70, d: "DEF +10, RES +4, SPD −1." },
-    kevlar: { n: "Kevlar hoodie", type: "equip", slot: "armor", mod: { def: 14, res: 3 }, price: 95, d: "DEF +14, RES +3." },
-    luckypenny: { n: "Lucky penny", type: "equip", slot: "acc", mod: { luk: 8 }, price: 25, d: "LUK +8: more crits." },
-    mood: { n: "Mood ring", type: "equip", slot: "acc", mod: { stres: 1 }, price: 50, d: "Resist status half the time." },
-    fogcharm: { n: "Fog charm", type: "equip", slot: "acc", mod: { spd: 4 }, price: 45, d: "SPD +4." },
-    presspass: { n: "Press pass", type: "equip", slot: "acc", mod: { res: 6, inkx: .25 }, price: 55, d: "RES +6, +25% Ink after fights." },
-    cufflinks: { n: "Rivet cufflinks", type: "equip", slot: "acc", mod: { def: 5, res: 5 }, price: 55, d: "DEF +5, RES +5." },
+    coffee: { n: "Ghost Diner coffee", type: "use", eff: { heal: 45 }, tgt: "ally", price: 12, d: "Restores 45 HP." },
+    burrito: { n: "Bodega burrito", type: "use", eff: { heal: 110 }, tgt: "ally", price: 30, d: "Restores 110 HP." },
+    soup: { n: "Lantern soup", type: "use", eff: { heal: 40 }, tgt: "allies", price: 40, d: "Restores 40 HP to the party." },
+    salts: { n: "Smelling salts", type: "use", eff: { revive: .35 }, tgt: "ally-ko", price: 40, d: "Revives an ally at 35%." },
+    gum: { n: "Nicotine gum", type: "use", eff: { sp: 20 }, tgt: "ally", price: 18, d: "Restores 20 SP." },
+    tonic: { n: "Otto's tonic", type: "use", eff: { sp: 50 }, tgt: "ally", price: 45, d: "Restores 50 SP." },
+    antacid: { n: "Antacid", type: "use", eff: { cure: 1, heal: 10 }, tgt: "ally", price: 10, d: "Cures status." },
+    glowstick: { n: "Glow stick", type: "use", eff: { dmg: 40, tag: "noise" }, tgt: "enemies", price: 30, d: "40 noise damage to every enemy." },
+    fogbottle: { n: "Fog in a bottle", type: "use", eff: { escape: 1 }, tgt: "self", price: 25, d: "Escape any fight but a boss." },
+    newspaper: { n: "Rolled newspaper", type: "equip", slot: "weapon", mod: { atk: 3 }, price: 30, d: "ATK +3. Yesterday's Mondo." },
+    umbrella: { n: "Steel umbrella", type: "equip", slot: "weapon", mod: { atk: 5, def: 2 }, price: 80, d: "ATK +5, DEF +2." },
+    knuckles: { n: "Brass knuckles", type: "equip", slot: "weapon", mod: { atk: 9 }, price: 180, d: "ATK +9." },
+    tireiron: { n: "Tire iron", type: "equip", slot: "weapon", mod: { atk: 12, spd: 1 }, for: ["junie"], price: 260, d: "Junie only. ATK +12." },
+    gelastic2: { n: "Gelastic Mk II", type: "equip", slot: "weapon", mod: { mag: 10, luk: 3 }, for: ["hellrot"], price: 300, d: "Hell Rot only. MAG +10." },
+    redpencil: { n: "Red pencil", type: "equip", slot: "weapon", mod: { mag: 6, luk: 4 }, for: ["hellrot", "yara", "mary"], price: 140, d: "MAG +6, LUK +4." },
+    haloshard: { n: "Halo shard", type: "equip", slot: "weapon", mod: { mag: 7 }, price: 160, d: "MAG +7. Still warm." },
+    syringe: { n: "Cyan syringe", type: "equip", slot: "weapon", mod: { mag: 8, atk: 2 }, price: 200, d: "MAG +8, ATK +2." },
+    tuningfork: { n: "Tuning fork", type: "equip", slot: "weapon", mod: { mag: 5, spd: 2 }, price: 110, d: "MAG +5, SPD +2." },
+    labcoat: { n: "Lab coat", type: "equip", slot: "armor", mod: { def: 3, res: 4 }, price: 50, d: "DEF +3, RES +4." },
+    leatherjacket: { n: "Leather jacket", type: "equip", slot: "armor", mod: { def: 7 }, price: 120, d: "DEF +7." },
+    derby: { n: "Derby pads", type: "equip", slot: "armor", mod: { def: 6, spd: 2 }, price: 150, d: "DEF +6, SPD +2." },
+    habit: { n: "Lantern habit", type: "equip", slot: "armor", mod: { def: 4, res: 10 }, price: 220, d: "DEF +4, RES +10." },
+    waistcoat: { n: "Gilder waistcoat", type: "equip", slot: "armor", mod: { def: 10, res: 4, spd: -1 }, price: 260, d: "DEF +10, RES +4, SPD −1." },
+    kevlar: { n: "Kevlar hoodie", type: "equip", slot: "armor", mod: { def: 14, res: 3 }, price: 380, d: "DEF +14, RES +3." },
+    luckypenny: { n: "Lucky penny", type: "equip", slot: "acc", mod: { luk: 8 }, price: 80, d: "LUK +8: more crits." },
+    mood: { n: "Mood ring", type: "equip", slot: "acc", mod: { stres: 1 }, price: 200, d: "Resist status half the time." },
+    fogcharm: { n: "Fog charm", type: "equip", slot: "acc", mod: { spd: 4 }, price: 160, d: "SPD +4." },
+    presspass: { n: "Press pass", type: "equip", slot: "acc", mod: { res: 6, cashx: .25 }, price: 180, d: "RES +6, +25% cash after fights." },
+    cufflinks: { n: "Rivet cufflinks", type: "equip", slot: "acc", mod: { def: 5, res: 5 }, price: 200, d: "DEF +5, RES +5." },
     notebook: { n: "Shulgin notebook", type: "equip", slot: "acc", mod: { xpx: .15, mag: 2 }, for: ["hellrot"], price: 0, d: "Hell Rot only. +15% XP, MAG +2." },
-    axocharm: { n: "Axolotl charm", type: "equip", slot: "acc", mod: { autolife: 1 }, price: 120, d: "Revive once per fight at 25%." }
+    axocharm: { n: "Axolotl charm", type: "equip", slot: "acc", mod: { autolife: 1 }, price: 450, d: "Revive once per fight at 25%." }
   };
-  const SHOP = { otto: ["coffee", "burrito", "soup", "salts", "gum", "tonic", "antacid", "glowstick", "fogbottle"], mary: ["newspaper", "umbrella", "knuckles", "redpencil", "tuningfork", "labcoat", "leatherjacket", "derby", "luckypenny", "fogcharm", "mood", "axocharm"] };
+  const SHOP = { otto: ["coffee", "burrito", "soup", "salts", "gum", "tonic", "antacid", "glowstick", "fogbottle"], mary: ["newspaper", "umbrella", "redpencil", "tuningfork", "labcoat", "leatherjacket", "derby", "luckypenny", "fogcharm"] };
 
   /* ---- difficulty: how the enemy thinks, and how tough it is ---- */
   const DIFF = {
@@ -1932,7 +1949,7 @@ const BX = (() => {
   function heroStats(id, lv, eq) {
     const H = HEROES[id], s = {};
     STATS.forEach(k => s[k] = Math.round(H.base[k] + H.grow[k] * (lv - 1)));
-    const mods = { stres: 0, inkx: 0, xpx: 0, autolife: 0 };
+    const mods = { stres: 0, cashx: 0, xpx: 0, autolife: 0 };
     Object.values(eq || {}).forEach(it => { if (!it || !ITEMS[it]) return; for (const [k, v] of Object.entries(ITEMS[it].mod)) { if (k in s) s[k] += v; else mods[k] = (mods[k] || 0) + v; } });
     STATS.forEach(k => s[k] = Math.max(1, s[k]));
     return { s, mods };
@@ -1949,14 +1966,14 @@ const BX = (() => {
   function canEquip(hero, item) { const I = ITEMS[item]; return I && I.type === "equip" && (!I.for || I.for.includes(hero)); }
 
   /* ---- battle state ---- */
-  function makeBattle({ party, foes, diff = "normal", rng = Math.random, inv = {}, ink = 0, boss = false, moreau = false, noRun = false }) {
+  function makeBattle({ party, foes, diff = "normal", rng = Math.random, inv = {}, cash = 0, boss = false, moreau = false, noRun = false }) {
     const units = [];
     party.forEach((p, i) => { const { s, mods } = heroStats(p.id, p.lv, p.eq);
       units.push({ uid: "h" + i, side: "hero", id: p.id, n: HEROES[p.id].n, lv: p.lv, max: s, mods, hp: Math.min(s.hp, p.hp ?? s.hp), sp: Math.min(s.sp, p.sp ?? s.sp), st: {}, buffs: [], skills: heroSkills(p.id, p.lv), ko: (p.hp ?? 1) <= 0, defend: false, autolife: mods.autolife || 0 }); });
     const counts = {};
     foes.forEach((f, i) => { const s = enemyStats(f.id, f.lv, diff, party.length), D = ENEMIES[f.id]; counts[f.id] = (counts[f.id] || 0) + 1;
       units.push({ uid: "e" + i, side: "foe", id: f.id, n: D.n + (foes.filter(x => x.id === f.id).length > 1 ? " " + "ABCD"[counts[f.id] - 1] : ""), lv: f.lv, max: s, mods: {}, hp: s.hp, sp: s.sp, st: {}, buffs: [], skills: D.skills, ko: false, defend: false, boss: D.boss, weak: D.weak, resist: D.resist, stolen: false }); });
-    const B = { units, diff, rng, inv: inv, ink, boss, noRun, round: 0, queue: [], scanned: false, fled: false, log: [], moreau, inkDelta: 0, stolen: [], used: { skills: {}, items: {} } };
+    const B = { units, diff, rng, inv: inv, cash, boss, noRun, round: 0, queue: [], scanned: false, fled: false, log: [], moreau, cashDelta: 0, stolen: [], used: { skills: {}, items: {} } };
     newRound(B); return B;
   }
   const alive = (B, side) => B.units.filter(u => u.side === side && !u.ko);
@@ -1994,7 +2011,7 @@ const BX = (() => {
     if (t.weak && t.weak.includes(tag)) { dmg *= B.scanned && a.side === "hero" ? 1.75 : 1.5; weak = true; }
     if (t.resist && t.resist.includes(tag)) { dmg *= .5; resist = true; }
     const critC = (eff(a, "luk") / 220) + (hasBuff(a, "crit") ? .6 : 0); const crit = B.rng() < critC; if (crit) dmg *= 1.6;
-    if (S.inkScale) dmg *= 1 + Math.min(1, (B.ink || 0) / 200);
+    if (S.cashScale) dmg *= 1 + Math.min(1, (B.cash || 0) / 400);
     return { dmg: Math.max(1, Math.round(dmg)), weak, resist, crit };
   }
   function resists(B, t) { return (t.mods && t.mods.stres && B.rng() < .5) || (t.boss && B.rng() < .55); }
@@ -2051,8 +2068,8 @@ const BX = (() => {
         if (S.drain && !u.ko) { const h = Math.min(Math.round(d.dmg * S.drain), u.max.hp - u.hp); u.hp += h; ev.push({ t: "heal", to: u.uid, amt: h }); }
         if (S.dispel && t.buffs.length) { t.buffs = []; ev.push({ t: "msg", text: `${t.n}'s buffs are gone` }); }
         if (S.kind === "steal" && !t.ko && t.side !== u.side) {
-          if (S.foeSteal) { const take = Math.min(B.ink + B.inkDelta, Math.round(R(B.rng, 3, 9))); if (take > 0) { B.inkDelta -= take; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); ev.push({ t: "msg", text: `${u.n} steals ${take} Ink` }); } }
-          else if (!t.stolen) { t.stolen = true; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); const D = ENEMIES[t.id]; const it = D.drops.length && B.rng() < .6 ? D.drops[0][0] : null; if (it) { B.stolen.push(it); B.inv[it] = (B.inv[it] || 0) + 1; ev.push({ t: "msg", text: `Stole: ${ITEMS[it].n}` }); } else { const ink = Math.round(D.ink * .6) + 2; B.inkDelta += ink; ev.push({ t: "msg", text: `Stole ${ink} Ink` }); } }
+          if (S.foeSteal) { const take = Math.min(B.cash + B.cashDelta, Math.round(R(B.rng, 6, 18))); if (take > 0) { B.cashDelta -= take; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); ev.push({ t: "msg", text: `${u.n} lifts $${take}` }); } }
+          else if (!t.stolen) { t.stolen = true; ev.push({ t: "fx", fx: "steal", from: t.uid, to: u.uid }); const D = ENEMIES[t.id]; const it = D.drops.length && B.rng() < .6 ? D.drops[0][0] : null; if (it) { B.stolen.push(it); B.inv[it] = (B.inv[it] || 0) + 1; ev.push({ t: "msg", text: `Stole: ${ITEMS[it].n}` }); } else { const cash = Math.round(D.cash * 1.2) + 4; B.cashDelta += cash; ev.push({ t: "msg", text: `Lifted $${cash}` }); } }
         }
         if (S.st && !t.ko && B.rng() < S.chance && !resists(B, t)) { t.st[S.st] = S.turns; ev.push({ t: "status", to: t.uid, st: S.st }); }
       } else if (S.kind === "heal") {
@@ -2139,9 +2156,9 @@ const BX = (() => {
 
   /* ---- rewards and levels ---- */
   function rewards(B) {
-    const foes = B.units.filter(u => u.side === "foe"); let xp = 0, ink = 0; const drops = [];
-    foes.forEach(f => { const D = ENEMIES[f.id]; xp += D.xp * (1 + (f.lv - 1) * .5); ink += D.ink * (1 + (f.lv - 1) * .2); D.drops.forEach(([it, p]) => { if (B.rng() < p) drops.push(it); }); });
-    xp = Math.round(xp * DIFF[B.diff].xp); return { xp, ink: Math.round(ink) + B.inkDelta, drops };
+    const foes = B.units.filter(u => u.side === "foe"); let xp = 0, cash = 0; const drops = [];
+    foes.forEach(f => { const D = ENEMIES[f.id]; xp += D.xp * (1 + (f.lv - 1) * .5); cash += D.cash * (1 + (f.lv - 1) * .25); D.drops.forEach(([it, p]) => { if (B.rng() < p) drops.push(it); }); });
+    xp = Math.round(xp * DIFF[B.diff].xp); return { xp, cash: Math.round(cash) + B.cashDelta, drops };
   }
   function gainXP(ch, amt) { const ups = []; ch.xp += amt; while (ch.lv < 20 && ch.xp >= xpToNext(ch.lv)) { ch.xp -= xpToNext(ch.lv); ch.lv++; ups.push(ch.lv); } if (ch.lv >= 20) ch.xp = 0; return ups; }
   function encounterGroup(table, lv, rng) { const g = pick(rng, TABLES[table]); return g.map(id => ({ id, lv: Math.max(1, lv + Math.round(R(rng, -1, 1))) })); }
@@ -2150,7 +2167,7 @@ const BX = (() => {
 })();
 /*BATTLE-ENGINE-END*/
 
-Object.assign(PFONT, { "▼": "000111111010000", "▲": "000010111111000", "▶": "100110111110100", "◀": "001011111011001", "✓": "001001101010000" });
+Object.assign(PFONT, { "$": "011110111011110", "▼": "000111111010000", "▲": "000010111111000", "▶": "100110111110100", "◀": "001011111011001", "✓": "001001101010000" });
 /* =====================================================================
    RPG: the party, levels, the bag, gear, random encounters and the
    Final Fantasy-style battle screen. The rules live in BX above.
@@ -2163,6 +2180,7 @@ function rpgInit() {
   S.chars = S.chars || {};
   HEROES_ORDER.forEach(id => { if (!S.chars[id]) { const st = BX.heroStats(id, 1, {}).s; S.chars[id] = { lv: 1, xp: 0, hp: st.hp, sp: st.sp, eq: { weapon: null, armor: null, acc: id === "hellrot" ? "notebook" : null } }; } });
   if (!S.inv) S.inv = { coffee: 3, antacid: 1, gum: 1 };
+  if (S.cash == null) S.cash = 20;
   if (!S.party) S.party = S.comp && S.comp !== "none" && HOUSEMATES.includes(S.comp) ? [S.comp] : [];
   if (S.steps == null) { S.steps = 0; S.encGap = 0; }
 }
@@ -2238,7 +2256,7 @@ function startBattle(o) {
   const ids = activeParty();
   if (o.kind === "boss" && ids.length === 1 && S.issue > 0) { ids.push("junie"); o.joined = "Junie won't let you face this alone. She comes along."; }
   const party = ids.map(id => { const ch = S.chars[id]; return { id, lv: ch.lv, hp: Math.max(1, ch.hp), sp: ch.sp, eq: ch.eq }; });
-  const B = BX.makeBattle({ party, foes: o.foes, diff: S.diff, inv: S.inv, ink: S.ink, boss: o.kind === "boss", moreau: !S.moreauUsed && (S.issue > 0 || !!S.flags.moreau), noRun: o.kind === "story" || o.kind === "tutorial" });
+  const B = BX.makeBattle({ party, foes: o.foes, diff: S.diff, inv: S.inv, cash: S.cash, boss: o.kind === "boss", moreau: !S.moreauUsed && (S.issue > 0 || !!S.flags.moreau), noRun: o.kind === "story" || o.kind === "tutorial" });
   const foes = B.units.filter(u => u.side === "foe"), lead = foes[0];
   const open = o.kind === "tutorial" ? "A raccoon blocks the trail. It wants your coffee. Pick ATTACK, then the raccoon." : o.kind === "boss" ? `${lead.n} steps forward. This is the district's boss.` : foes.length > 1 ? `${lead.n} and ${foes.length - 1} more get in your way!` : `${lead.n} gets in your way!`;
   for (const k in KEYS) KEYS[k] = false;
@@ -2299,7 +2317,7 @@ function btEvent(e) {
       if (e.amt > 0) { N(e.to, "+" + e.amt, "#a6e23f"); btFx("plus", { uid: e.to }); } return 380;
     case "sp": N(e.to, "+" + e.amt + " SP", "#3f8cf2"); btFx("plus", { uid: e.to, col: "#3f8cf2" }); return 360;
     case "revive": BT.msg = e.text; btFx("pillar", { uid: e.to }); return 800;
-    case "ko": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "ko", t0: now }); return 760;
+    case "ko": BT.msg = e.text; BT.anim.push({ uid: e.to, k: "ko", t0: now }); { const u = unitOf(e.to); if (u && u.side === "foe") { const [x, y] = btPos(u); (BT.ground = BT.ground || []).push({ x, y: y + 12, t0: now, n: u.boss ? 9 : 5 }); } } return 760;
     case "buff": btFx("arrows", { uid: e.to, up: true, col: "#a6e23f" }); N(e.to, Object.keys(e.stats).map(k => ({ taunt: "COVER", regen: "REGEN", eva: "EVADE", crit: "FOCUS" })[k] || k.toUpperCase() + "▲").join(" "), "#a6e23f"); return 380;
     case "debuff": btFx("arrows", { uid: e.to, up: false, col: "#d32f3f" }); N(e.to, Object.keys(e.stats).map(k => k.toUpperCase() + "▼").join(" "), "#d32f3f"); return 380;
     case "status": btFx("spiral", { uid: e.to, col: (ST_ICON[e.st] || [0, "#efe7f0"])[1] }); N(e.to, (ST_ICON[e.st] || [e.st])[0], (ST_ICON[e.st] || [0, "#efe7f0"])[1]); BT.msg = `${nm(e.to)} is ${ST_NAME[e.st] || e.st}.`; return 560;
@@ -2351,9 +2369,9 @@ function btEnd(res) {
   heroes.forEach(u => { const ch = S.chars[u.id]; ch.hp = u.ko ? (res === "lose" ? 0 : 1) : u.hp; ch.sp = u.sp; });
   if (res === "win") { BT.winT = performance.now(); BT.lvups = [];
     const R = BX.rewards(B), foes = B.units.filter(u => u.side === "foe"), flv = foes.reduce((a, f) => a + f.lv, 0) / foes.length;
-    const inkx = 1 + heroes.reduce((a, u) => a + (u.mods.inkx || 0), 0), ink = Math.max(0, Math.round((R.ink - B.inkDelta) * inkx) + B.inkDelta);
-    S.ink = Math.max(0, S.ink + ink);
-    out.push(`Victory! ${R.xp} XP${ink ? ` · ${ink} Ink` : ""}.`);
+    const cashx = 1 + heroes.reduce((a, u) => a + (u.mods.cashx || 0), 0), cash = Math.max(0, Math.round((R.cash - B.cashDelta) * cashx) + B.cashDelta);
+    S.cash = Math.max(0, S.cash + cash); BT.cashGain = cash;
+    out.push(`Victory! ${R.xp} XP${cash ? ` · $${cash}` : ""}.`);
     const inParty = heroes.map(u => u.id), met = S.issue >= 1 ? HOUSEMATES : [], benchUps = [];
     [...inParty, ...met.filter(id => !inParty.includes(id))].forEach(id => {
       const ch = S.chars[id], u = heroes.find(h => h.id === id), half = !u;
@@ -2368,10 +2386,10 @@ function btEnd(res) {
     if (R.drops.length) out.push(`Found: ${R.drops.map(it => BX.ITEMS[it].n).join(", ")}.`);
     if (B.stolen.length) out.push(`Stolen in the fight: ${B.stolen.map(it => BX.ITEMS[it].n).join(", ")}.`);
     BT.msg = foes.length > 1 ? "They all stand down." : `${foes[0].n} stands down.`;
-  } else if (res === "fled") { S.ink = Math.max(0, S.ink + B.inkDelta); BT.msg = "You get away."; out.push("You got away. No XP."); }
-  else { S.ink = Math.max(0, S.ink + B.inkDelta); BT.msg = "The party is out cold.";
+  } else if (res === "fled") { S.cash = Math.max(0, S.cash + B.cashDelta); BT.msg = "You get away."; out.push("You got away. No XP."); }
+  else { S.cash = Math.max(0, S.cash + B.cashDelta); const drop = S.issue >= 1 ? Math.floor(S.cash / 4) : 0; S.cash -= drop; BT.msg = "The party is out cold."; if (drop) out.push(`You drop $${drop} in the scramble.`);
     out.push(S.issue < 1 ? "You wake on the trail with Moreau's jar warm in your hands. Try again." : BT.o.kind === "random" ? "Junie finds you and drives you home. You lose an hour, but your Memory gets home safe." : "Junie finds you. She always finds you. You wake at Villa Delirium, Memory lost."); }
-  if (B.inkDelta < 0) out.push(`They took ${-B.inkDelta} Ink.`);
+  if (B.cashDelta < 0) out.push(`They lifted $${-B.cashDelta} off you.`);
   BT.summary = out; btPaint();
 }
 // keep the picture on screen when a fight starts or ends (the windows below can scroll it away on a phone)
@@ -2488,6 +2506,12 @@ function drawBattle(cv) {
     if (BT.menu === "target" && BT.hover === u.uid) ptext(g, u.side === "foe" ? "▶" : "◀", u.side === "foe" ? x - sz / 2 - 8 : x + sz / 2 + 3, y - 2, "#fff3aa");
   }
   drawFx(g, now);
+  // the cash they drop: a burst of coins that land on the floor, then fly to the party
+  for (const c of BT.ground || []) for (let i = 0; i < c.n; i++) {
+    const a = i * 2.4, land = Math.min(1, (now - c.t0) / 450), bx = c.x + Math.cos(a) * (6 + i * 2) * land, by = c.y - Math.sin(land * Math.PI) * (10 + i % 3 * 4) + (i % 2) * 2;
+    let x = bx, y = by; if (BT.res === "win" && BT.winT) { const k = Math.min(1, Math.max(0, (now - BT.winT - i * 40) / 600)); if (k >= 1) continue; x = bx + (206 - bx) * k * k; y = by + (76 - by) * k * k - Math.sin(k * Math.PI) * 16; }
+    const spin = Math.floor((now + i * 90) / 120) % 4; g.fillStyle = "#3a2414"; g.fillRect(Math.round(x) - 2, Math.round(y) - 2, spin === 1 || spin === 3 ? 2 : 5, 5); g.fillStyle = spin === 2 ? "#fff3aa" : "#f0bd3e"; g.fillRect(Math.round(x) - 1, Math.round(y) - 1, spin === 1 || spin === 3 ? 1 : 3, 3); }
+  if (BT.res === "win" && BT.cashGain && now - BT.winT > 500) { const t = "$+" + BT.cashGain, w = ptextW(t, 2); ptext(g, t, 128 - w / 2, 38, "#f0bd3e", 2); }
   if (BT.res === "win") { const w = ptextW("VICTORY", 3); ptext(g, "VICTORY", 128 - w / 2, 14 + Math.round(Math.sin(now / 200) * 2), "#fff3aa", 3); (BT.lvups || []).forEach(uid => { const u = unitOf(uid); if (!u) return; const [x, y] = btPos(u); ptext(g, "LV UP!", x - 11, y - 34 - Math.round(Math.abs(Math.sin(now / 150)) * 4), Math.floor(now / 120) % 2 ? "#f0bd3e" : "#fff3aa"); }); }
   if (BT.res === "lose") { g.fillStyle = "#3a000055"; g.fillRect(0, 0, 256, 144); }
   g.restore();
@@ -2524,7 +2548,7 @@ function btWin() {
     cmd = `<div class="ffhead">${BT.auto ? "AUTO · " : ""}ENEMIES</div>${foes.map(f => `<p class="ffrowline"><span>${esc(f.n)}</span>${B.scanned ? `<span class="hp sm"><i style="width:${f.hp / f.max.hp * 100}%"></i></span>` : ""}</p>`).join("")}${BT.auto && BT.phase !== "intro" ? FB("auto", "Stop Auto", "take back control") : ""}`;
   }
   const party = B.units.filter(x => x.side === "hero").map(h => `<div class="prow${u === h ? " on" : ""}${h.ko ? " ko" : ""}"><span class="pn">${u === h ? "▶ " : ""}${esc(h.n)}</span><span class="pv">${h.hp}/${h.max.hp}</span><span class="hp sm" style="--c:${h.hp / h.max.hp < .3 ? "#d32f3f" : "#a6e23f"}"><i style="width:${h.hp / h.max.hp * 100}%"></i></span><span class="pv sp">${h.sp} SP</span><span class="pst">${Object.keys(h.st).map(s => `<b style="color:${ST_ICON[s][1]}">${ST_ICON[s][0]}</b>`).join(" ")}</span></div>`).join("");
-  return `<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${BX.DIFF[S.diff].n.toUpperCase()}</div>${party}</div></div>`;
+  return `<div class="ffwin ffmsg" aria-live="polite">${esc(BT.msg || "")}</div><div class="ffrow"><div class="ffwin ffcmd">${cmd}</div><div class="ffwin ffparty"><div class="ffhead">PARTY · ${BX.DIFF[S.diff].n.toUpperCase()} · $${S.cash}</div>${party}</div></div>`;
 }
 function scrBattle() {
   return `<div class="battle"><canvas class="scene-art" data-battle="1" width="256" height="144" aria-label="A fight. Use the command window below."></canvas><div id="btwin">${btWin()}</div></div>`;
@@ -2558,7 +2582,7 @@ function scrParty() {
   const card = id => {
     const ch = S.chars[id], H = BX.HEROES[id], { s, mods } = charStats(id), base = BX.heroStats(id, ch.lv, {}).s, next = BX.xpToNext(ch.lv);
     const stats = Object.keys(STAT_LABEL).map(k => { const d = s[k] - base[k]; return `<span><b>${STAT_LABEL[k]}</b> ${k === "hp" ? `${ch.hp}/${s.hp}` : k === "sp" ? `${ch.sp}/${s.sp}` : s[k]}${d ? ` <i class="${d > 0 ? "up" : "dn"}">${d > 0 ? "+" : ""}${d}</i>` : ""}</span>`; }).join("");
-    const extra = [mods.stres && "Resists status", mods.inkx && `+${Math.round(mods.inkx * 100)}% Ink`, mods.xpx && `+${Math.round(mods.xpx * 100)}% XP`, mods.autolife && "Gets back up once per fight"].filter(Boolean).join(" · ");
+    const extra = [mods.stres && "Resists status", mods.cashx && `+${Math.round(mods.cashx * 100)}% cash`, mods.xpx && `+${Math.round(mods.xpx * 100)}% XP`, mods.autolife && "Gets back up once per fight"].filter(Boolean).join(" · ");
     const slots = ["weapon", "armor", "acc"].map(sl => { const cur = ch.eq[sl], own = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].slot === sl && BX.canEquip(id, it) && it !== cur).map(([it]) => it);
       return `<label class="slot">${SLOT_NAME[sl]}<select data-act="equip" data-arg="${id}:${sl}" aria-label="${H.n} ${SLOT_NAME[sl]}"><option value="">— nothing —</option>${cur ? `<option value="${cur}" selected>${esc(BX.ITEMS[cur].n)} (${esc(BX.ITEMS[cur].d)})</option>` : ""}${own.map(it => `<option value="${it}">${esc(BX.ITEMS[it].n)} (${esc(BX.ITEMS[it].d)})</option>`).join("")}</select></label>`; }).join("");
     const sk = H.skills.map(([k, l]) => `<li class="${ch.lv >= l ? "" : "locked"}"><b>${esc(BX.SKILLS[k].n)}</b> ${ch.lv >= l ? `${BX.SKILLS[k].cost} SP` : `at Lv ${l}`}<span class="note"> ${esc(BX.SKILLS[k].d)}</span></li>`).join("");
@@ -2569,15 +2593,14 @@ function scrParty() {
   const benchHtml = S.issue >= 1 ? `<div class="eyebrow">THE HOUSE · ${home ? "TAP TO BRING ALONG (UP TO TWO; TAP AGAIN TO MAKE THEM LEAD)" : "CHANGE THE PARTY AT VILLA DELIRIUM"}</div>${home && S.party.length ? `<div class="row" style="gap:6px;flex-wrap:wrap;margin-bottom:6px">${S.party.map(k => `<button class="mini" data-act="unparty" data-arg="${k}">Leave ${esc(BX.HEROES[k].n)} at home</button>`).join("")}</div>` : ""}<div class="choices" style="padding:0">${HOUSEMATES.map(id => { const on = S.party.includes(id); return `<button class="btn" style="--c:${on ? "#a6e23f" : FAC.house}" data-act="comp" data-arg="${id}" ${home ? "" : "disabled"} aria-pressed="${on}"><span class="t">${on ? "✓ " : ""}${esc(BX.HEROES[id].n)}<em>Lv ${S.chars[id].lv}</em></span><span class="d">${esc(BX.HEROES[id].cls)}. ${esc((COMPANIONS[id] || {}).a || "")}</span></button>`; }).join("")}</div>` : `<p class="note">Your housemates join you from Issue 1.</p>`;
   const uses = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "use");
   const gear = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].type === "equip");
-  const bag = `<div class="eyebrow">THE BAG · ${S.ink} INK</div>
+  const bag = `<div class="eyebrow">THE BAG · $${S.cash} CASH · ${S.ink} INK</div>
     <div class="choices" style="padding:0">${uses.map(([it, n]) => { const I = BX.ITEMS[it], field = I.eff.heal || I.eff.sp || I.eff.cure; return `<div class="btn bagitem"><span class="t">${esc(I.n)}<em>×${n}</em></span><span class="d">${esc(I.d)}${field ? "" : " In a fight only."}</span>${field ? `<span class="row" style="gap:4px;flex-wrap:wrap">${ids.map(id => `<button class="mini" data-act="useitem" data-arg="${it}:${id}">${esc(BX.HEROES[id].n)}</button>`).join("")}</span>` : ""}</div>`; }).join("") || `<p class="note">No items.</p>`}</div>
     ${gear.length ? `<p class="note">Spare gear: ${gear.map(([it, n]) => `${esc(BX.ITEMS[it].n)} ×${n} (${esc(BX.ITEMS[it].d)})`).join(" · ")}</p>` : ""}`;
   return `<div class="pad party"><div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><h2>THE PARTY</h2><span class="note">Difficulty: <b>${BX.DIFF[S.diff].n}</b>. ${esc(BX.DIFF[S.diff].d)}</span><button class="btn" data-act="partyback"><span class="t">◀ Back</span></button></div>
     <div class="pgrid">${ids.map(card).join("")}</div>${benchHtml}${bag}</div>`;
 }
 function shopPanel(who) {
-  const list = BX.SHOP[who], title = who === "otto" ? "OTTO'S PHARMACY" : "MARY'S STALL (FROM THE ARCHIVE'S LOST PROPERTY)";
-  return `<div class="pad" style="padding-top:0"><div class="eyebrow">${title} · ${S.ink} INK</div></div><div class="choices">${list.map(it => { const I = BX.ITEMS[it], n = S.inv[it] || 0; return `<button class="btn" style="--c:#c48f52" data-act="buy" data-arg="${it}" ${S.ink < I.price ? "disabled" : ""}><span class="t">${esc(I.n)}<em>${I.price} Ink${n ? ` · have ${n}` : ""}</em></span><span class="d">${esc(I.d)}${I.for ? "" : ""}</span></button>`; }).join("")}</div>`;
+  return `<div class="choices"><button class="btn" style="--c:#f0bd3e" data-act="shop" data-arg="${who}"><span class="t">${esc(MERCHANTS[who].n)}<em>$${S.cash}</em></span><span class="d">Buy and sell, cash only. ${who === "otto" ? "Food, medicine and tonics." : "Gear: weapons, armour and charms."}</span></button></div>`;
 }
 const RPG_ACT = {
   bt(a) { btAct(a); },
@@ -2593,7 +2616,6 @@ const RPG_ACT = {
     else { if (e.heal) ch.hp = Math.min(m.hp, ch.hp + e.heal); if (e.sp) ch.sp = Math.min(m.sp, ch.sp + e.sp); }
     toast(`${I.n}: ${BX.HEROES[id].n}`, "#a6e23f"); },
   patrol() { patrol(); },
-  buy(a) { const I = BX.ITEMS[a]; if (!I || S.ink < I.price) return; S.ink -= I.price; S.inv[a] = (S.inv[a] || 0) + 1; say(`Bought: ${I.n}.`, "#c48f52"); }
 };
 
 /* =====================================================================
@@ -2691,8 +2713,8 @@ function talkOptions(who) {
     if (S.halosOn && !gentle) out.push({ id: "halos", say: "Let the Twin vouch for you.", tags: [tag("HALOS ON", "#f0bd3e")] });
     { const ms = out.splice(out0); const open = ms.filter(m => !m.locked).slice(0, 2); if (open.length < 2) open.push(...ms.filter(m => m.locked).slice(0, 1)); out.push(...open); }
     if (S.inv && S.inv.coffee > 0) out.push({ id: "coffee", say: gentle ? "Buy them something hot to drink." : "Slide a Ghost Diner coffee across.", tags: [tag("COFFEE ×" + S.inv.coffee, "#c48f52")] });
-    else if (gentle) out.push({ id: "ink", say: "Buy them dinner. No questions.", tags: [tag(`5 INK (have ${S.ink})`, "#c48f52")], locked: S.ink < 5, why: "Needs 5 Ink." });
-    else out.push({ id: "ink", say: "Slide them ten Ink.", tags: [tag(`10 INK (have ${S.ink})`, "#c48f52")], locked: S.ink < 10, why: "Needs 10 Ink." });
+    else if (gentle) out.push({ id: "ink", say: "Buy them dinner. No questions.", tags: [tag(`$8 (have $${S.cash})`, "#f0bd3e")], locked: S.cash < 8, why: "Needs $8." });
+    else out.push({ id: "ink", say: "Fold twenty dollars into their hand.", tags: [tag(`$20 (have $${S.cash})`, "#f0bd3e")], locked: S.cash < 20, why: "Needs $20." });
   }
   out.push({ id: "bye", say: "Goodbye.", tags: [] });
   return out;
@@ -2722,7 +2744,7 @@ function talkPick(id) {
   else if (id === "helix") { addWorship("helix", 1); them(`${n} stares at the cyan under your skin. "You're one of us." ${T.secret}.`); frag(); }
   else if (id === "halos") { them(`The Halo on your temple blinks gold. ${n} relaxes. The Twin vouched. ${T.secret}.`); frag(); }
   else if (id === "coffee") { S.inv.coffee--; them(`${n} wraps both hands round the cup. "${gentle ? "Thanks. Okay. One thing" : "Mama Rue's? Fine"}": ${T.secret}.`); frag(); }
-  else if (id === "ink") { S.ink -= gentle ? 5 : 10; them(gentle ? `${n} eats like it's the first meal today. It is. Between bites: ${T.secret}.` : `${n} counts it twice. "${T.secret[0].toUpperCase() + T.secret.slice(1)}. You didn't hear it here."`); frag(); }
+  else if (id === "ink") { S.cash -= gentle ? 8 : 20; them(gentle ? `${n} eats like it's the first meal today. It is. Between bites: ${T.secret}.` : `${n} counts it twice. "${T.secret[0].toUpperCase() + T.secret.slice(1)}. You didn't hear it here."`); frag(); }
   afterAction();
 }
 
@@ -2736,6 +2758,7 @@ function dlgChoices(title, opts, id, name) {
   return `<div class="dlg"><div class="dlgopts" role="menu" aria-label="${esc(title)}">${opts}</div><div class="dlgbox say">${id ? portrait(id) : ""}<div class="dlgtext">${name ? `<b class="dlgname">${esc(name).toUpperCase()}</b>` : ""}<p>${esc(title)}</p></div></div></div>`;
 }
 function sceneDlg() {
+  if (S.shop) return shopDlg();
   const sc = S.scene; if (!sc) return "";
   if (sc.talk) { const who = sc.talk.who, T = TALK[who] || TALK.shadow, n = talkName(who), pid = who === "shadow" ? "karl" : who;
     const opts = talkOptions(who).map((o, k) => `<button class="dlgopt${o.locked ? " locked" : ""}" role="menuitem" data-act="talkpick" data-arg="${o.id}" ${o.locked ? "disabled" : ""} title="${esc(o.why || "")}"><span class="k">${k + 1}</span>${o.tags.map(t => `<span class="dtag" style="--c:${t.c}">[${esc(t.t)}]</span>`).join("")} <span>${esc(o.say)}</span>${o.locked ? ` <em>${esc(o.why)}</em>` : ""}</button>`).join("");
@@ -2772,6 +2795,7 @@ document.addEventListener("keydown", e => {
     if (k === "e" && i >= 0) { stop(); opts[i].click(); return; }
     if (k === "escape") { const bye = opts.find(b => b.dataset.arg === "bye"); if (bye) { stop(); bye.click(); } return; }
   }
+  if (S.shop && ["arrowleft", "arrowright", "a", "d"].includes(k)) { stop(); dispatch("shoptab", S.shop.tab === "buy" ? "sell" : "buy"); return; }
   if (["w", "a", "s", "d", "arrowup", "arrowdown", "arrowleft", "arrowright", "shift"].includes(k)) stop();   // no walking while someone is talking
 }, true);
 // a Game Boy "!" over Hell Rot when a fight finds him, "…" over whoever you talk to
@@ -2781,6 +2805,68 @@ function drawEmotes(g) {
   const now = performance.now();
   if (EMOTE && now - EMOTE.t0 < (EMOTE.dur || 700)) { const bob = Math.floor((now - EMOTE.t0) / 90) % 2; drawEmote(g, EMOTE.c, EMOTE.r - bob / 16, EMOTE.ch, EMOTE.col); } else EMOTE = null;
   const sc = S.scene; if (sc && sc.talk && sc.node) { const sp = spotsFor(BY[sc.node]).find(s => s.i === sc.talk.i); if (sp) drawEmote(g, sp.c, sp.r, Math.floor(now / 300) % 3 === 0 ? "." : Math.floor(now / 300) % 3 === 1 ? ".." : "...", "#3a3442"); }
+}
+
+/* =====================================================================
+   CASH AND MERCHANTS. Fights pay cash ($), not Ink: Ink is what the
+   magazine pays you, cash is what falls out of a street fight. Merchants
+   buy and sell for cash, like a Poke Mart with worse lighting.
+   ===================================================================== */
+// stock: [item, first Issue it is on sale]
+const MERCHANTS = {
+  otto: { n: "Otto's pharmacy", who: "otto", greet: "Everything here is legal in at least one decade. Cash, please.", stock: BX.SHOP.otto.map(it => [it, 0]), pays: .5 },
+  mary: { n: "Mary's stall", who: "mary", greet: "Lost property from the Archive. Nobody has come back for any of it since 1999.", stock: BX.SHOP.mary.map(it => [it, 0]), pays: .5 },
+  mamarue: { n: "The Ghost Diner counter", who: "mamarue", greet: "Honey, cash only. The card machine believes in the Twin.", stock: [["coffee", 0], ["burrito", 0], ["soup", 0], ["antacid", 0], ["gum", 0], ["tonic", 2]], pays: .5 },
+  conductor: { n: "The night car", who: "conductor", greet: "Ding ding. Exact change, or a secret. Tonight, I'll take change.", pays: .6,
+    stock: [["knuckles", 1], ["salts", 1], ["tonic", 1], ["fogbottle", 1], ["glowstick", 2], ["haloshard", 2], ["syringe", 2], ["presspass", 2], ["cufflinks", 3], ["waistcoat", 3], ["tireiron", 3], ["gelastic2", 4], ["kevlar", 4], ["mood", 4], ["axocharm", 5]] }
+};
+const sellPrice = (m, it) => Math.floor(BX.ITEMS[it].price * MERCHANTS[m].pays);
+function openShop(m) { if (!MERCHANTS[m]) return; S.shop = { m, tab: "buy" }; }
+// what an item would do for each member of tonight's party
+function itemInfo(it) {
+  const I = BX.ITEMS[it]; if (!I) return "";
+  let h = `<b>${esc(I.n)}</b> · ${esc(I.d)} <span class="dim">You have ${S.inv[it] || 0}.</span>`;
+  if (I.type === "equip") {
+    const rows = activeParty().map(id => { const ch = S.chars[id], nm = BX.HEROES[id].n;
+      if (!BX.canEquip(id, it)) return `<span class="dim">${esc(nm)}: can't use</span>`;
+      const now = charStats(id).s, eq2 = Object.assign({}, ch.eq, { [I.slot]: it }), next = BX.heroStats(id, ch.lv, eq2).s;
+      const diffs = ["atk", "def", "mag", "res", "spd", "luk", "hp"].map(k => [k, next[k] - now[k]]).filter(([, d]) => d);
+      return `${esc(nm)}: ${ch.eq[I.slot] === it ? "wearing it" : diffs.length ? diffs.map(([k, d]) => `<i class="${d > 0 ? "up" : "dn"}">${k.toUpperCase()} ${d > 0 ? "▲" : "▼"}${Math.abs(d)}</i>`).join(" ") : "no change"}`; });
+    h += `<br>${rows.join(" · ")}`;
+  }
+  return h;
+}
+function shopDlg() {
+  const sh = S.shop, M = MERCHANTS[sh.m]; if (!M) return "";
+  const now = Date.now(), fx = sh.fx && now - sh.fx.t < 1200 ? `<span class="shopfx" style="--c:${sh.fx.c}">${esc(sh.fx.txt)}</span>` : "";
+  let rows = "";
+  if (sh.tab === "buy") rows = M.stock.map(([it, iss], k) => { const I = BX.ITEMS[it], soon = S.issue < iss, poor = S.cash < I.price;
+    return `<button class="dlgopt shoprow" data-act="shopbuy" data-arg="${it}" data-item="${it}" ${soon || poor ? "disabled" : ""}><span class="k">${k + 1}</span><span class="nm">${esc(I.n)}</span><span class="pr">${soon ? `Issue ${iss}` : "$" + I.price}</span><span class="own">${S.inv[it] ? "×" + S.inv[it] : ""}</span></button>`; }).join("");
+  else { const mine = Object.entries(S.inv).filter(([it, n]) => n > 0 && BX.ITEMS[it] && BX.ITEMS[it].price > 0);
+    rows = mine.map(([it, n], k) => `<button class="dlgopt shoprow" data-act="shopsell" data-arg="${it}" data-item="${it}"><span class="k">${k + 1}</span><span class="nm">${esc(BX.ITEMS[it].n)}</span><span class="pr">$${sellPrice(sh.m, it)}</span><span class="own">×${n}</span></button>`).join("") || `<p class="dim" style="padding:4px 14px">Nothing to sell. Gear you are wearing stays on (take it off on the Party tab first).</p>`; }
+  return `<div class="dlg shop"><div class="dlgopts shoplist" role="menu" aria-label="${esc(M.n)}">
+      <div class="shophead"><button class="shoptab" data-act="shoptab" data-arg="buy" aria-pressed="${sh.tab === "buy"}">BUY</button><button class="shoptab" data-act="shoptab" data-arg="sell" aria-pressed="${sh.tab === "sell"}">SELL</button><span class="cash">$${S.cash}${fx}</span></div>
+      ${rows}<button class="dlgopt" data-act="shopleave" data-arg="bye"><span class="k">0</span><span>Leave</span></button></div>
+    <div class="dlgbox say">${portrait(M.who)}<div class="dlgtext"><b class="dlgname">${esc(M.n).toUpperCase()}</b><p id="shopinfo">${esc(M.greet)}${sh.tab === "sell" ? ` <span class="dim">(Pays ${Math.round(M.pays * 100)}% of the price.)</span>` : ""}</p></div></div></div>`;
+}
+document.addEventListener("focusin", e => { const b = e.target.closest && e.target.closest("[data-item]"), el = document.getElementById("shopinfo"); if (b && el) el.innerHTML = itemInfo(b.dataset.item); });
+document.addEventListener("mouseover", e => { const b = e.target.closest && e.target.closest("[data-item]"), el = document.getElementById("shopinfo"); if (b && el) el.innerHTML = itemInfo(b.dataset.item); });
+const SHOP_ACT = {
+  shop(a) { openShop(a); },
+  shoptab(a) { if (S.shop) S.shop.tab = a === "sell" ? "sell" : "buy"; },
+  shopleave() { S.shop = null; },
+  shopbuy(a) { const sh = S.shop, I = BX.ITEMS[a]; if (!sh || !I) return; const row = MERCHANTS[sh.m].stock.find(([it]) => it === a); if (!row || S.issue < row[1] || S.cash < I.price) return;
+    S.cash -= I.price; S.inv[a] = (S.inv[a] || 0) + 1; sh.fx = { txt: `−$${I.price}`, c: "#d32f3f", t: Date.now() }; say(`Bought ${I.n} at ${MERCHANTS[sh.m].n} ($${I.price}).`, "#f0bd3e"); sh.focus = a; },
+  shopsell(a) { const sh = S.shop, I = BX.ITEMS[a]; if (!sh || !I || !(S.inv[a] > 0) || !I.price) return; const p = sellPrice(sh.m, a);
+    S.inv[a]--; S.cash += p; sh.fx = { txt: `+$${p}`, c: "#a6e23f", t: Date.now() }; say(`Sold ${I.n} for $${p}.`, "#f0bd3e"); sh.focus = a; }
+};
+// a market stall: counter, striped awning, a swinging $ sign
+function drawStall(g, x, y, frame) {
+  rect(g, x - 2, y + 6, 20, 9, "#5a3a24"); rect(g, x - 2, y + 6, 20, 2, "#8a5a34");
+  for (let i = 0; i < 5; i++) rect(g, x - 2 + i * 4, y - 2, 4, 5, i % 2 ? "#efe7f0" : "#d32f3f");
+  rect(g, x - 1, y + 3, 1, 3, "#3a2414"); rect(g, x + 16, y + 3, 1, 3, "#3a2414");
+  const sw = frame % 4 < 2 ? 0 : 1; rect(g, x + 5 + sw, y - 9, 7, 7, "#f0bd3e"); ptext(g, "$", x + 7 + sw, y - 8, "#3a2414", 1, null);
+  rect(g, x + 2, y + 4, 3, 2, "#c48f52"); rect(g, x + 10, y + 3, 3, 3, "#3fe3d4");
 }
 
 /* ---------- travel ---------- */
@@ -3039,8 +3125,8 @@ function planPanel() {
     <ol class="plan">${list.map(o => `<li class="${o.done ? "done" : o === nx ? "now" : ""}${o.opt ? " opt" : ""}"><span class="ic">${o.done ? "✓" : o === nx ? "▶" : o.opt ? "·" : "○"}</span><span>${esc(o.label)}</span></li>`).join("")}</ol>
     ${nx && !LOCKED_SCREENS.includes(S.screen) ? `<button class="btn primary nextglow nextbtn" data-act="next"><span class="t">▶ NEXT: ${esc(nx.label).toUpperCase()}</span></button>` : ""}</div>`;
 }
-function snap() { return { SAINTHOOD: S.saint, HELIX: S.helix, CLARITY: S.clar, HEAT: S.heat, CRAVING: S.crave, VENOM: S.venom, VOW: S.vow, INK: S.ink, SIGHT: S.sight, WEAR: S.wear, LEADS: S.notebook.filter(i => i.kind === "lead").length, FRAGMENTS: S.notebook.filter(i => i.kind === "frag").length, MEMORY: S.memory.length, "JUNIE TRUST": S.trust.junie, "YARA TRUST": S.trust.yara, "WREN TRUST": S.trust.wren || 0, READERS: S.readers }; }
-const TCOL = { SAINTHOOD: "#f0bd3e", HELIX: "#3fe3d4", CLARITY: "#e8f4ff", HEAT: "#d32f3f", CRAVING: "#e33f9c", VENOM: "#d32f3f", VOW: "#3f8cf2", INK: "#c48f52", SIGHT: "#e8f4ff", WEAR: "#f0bd3e", LEADS: "#f29b3a", FRAGMENTS: "#3f8cf2", MEMORY: "#8d8496", "JUNIE TRUST": "#ff8ba2", "YARA TRUST": "#ff8ba2", "WREN TRUST": "#3fe3d4", READERS: "#a6e23f" };
+function snap() { return { SAINTHOOD: S.saint, HELIX: S.helix, CLARITY: S.clar, HEAT: S.heat, CRAVING: S.crave, VENOM: S.venom, VOW: S.vow, INK: S.ink, CASH: S.cash || 0, SIGHT: S.sight, WEAR: S.wear, LEADS: S.notebook.filter(i => i.kind === "lead").length, FRAGMENTS: S.notebook.filter(i => i.kind === "frag").length, MEMORY: S.memory.length, "JUNIE TRUST": S.trust.junie, "YARA TRUST": S.trust.yara, "WREN TRUST": S.trust.wren || 0, READERS: S.readers }; }
+const TCOL = { SAINTHOOD: "#f0bd3e", HELIX: "#3fe3d4", CLARITY: "#e8f4ff", HEAT: "#d32f3f", CRAVING: "#e33f9c", VENOM: "#d32f3f", VOW: "#3f8cf2", INK: "#c48f52", CASH: "#f0bd3e", SIGHT: "#e8f4ff", WEAR: "#f0bd3e", LEADS: "#f29b3a", FRAGMENTS: "#3f8cf2", MEMORY: "#8d8496", "JUNIE TRUST": "#ff8ba2", "YARA TRUST": "#ff8ba2", "WREN TRUST": "#3fe3d4", READERS: "#a6e23f" };
 const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function fxShow(kind, h, label) {
   if (REDUCE) return; const old = $("fx"); if (old) old.remove();
@@ -3066,7 +3152,7 @@ function scrKey() {
   const k = (title, rows) => `<div><span class="h2" style="font-size:11px">${title}</span>${rows.map(([c, t]) => `<span class="note">${c ? `<i class="sw" style="--c:${c}"></i>` : ""}${t}</span>`).join("")}</div>`;
   return `<div class="pad"><h2>KEY · WHAT EVERYTHING MEANS</h2><div class="keygrid">
     ${k("THE CLOCK", [["#1d2550","Night hours: 5 p.m. dusk to 6 a.m."],["#6a5a2a","Day hours: 6 a.m. to 5 p.m. Sleep, catch up, wait for dusk."],["#e33f9c","Pink line: the 6 a.m. press. File before it."],["#f0bd3e","Gold line: midnight on New Year's Eve."],["","White box: now. The calendar shows the week; P = Prologue, E = Epilogue."]])}
-    ${k("FIGHTS", [["#22308f","Blue windows: commands on the left, the party on the right. Keys 1–9 pick a command."],["#a6e23f","Green numbers: healing. White: damage. Pink: a weak point (×1.5). Gold: a critical hit."],["#d32f3f","Red Fight spots are story fights: no running. Boss spots are harder."],["#f7a6c2","Moreau: once per Issue, the whole party back to full."],["","Walking starts random fights (not at home, the meeting or the shelter). HP carries over; sleep or go home to heal."],["","PSN poison · SLP sleep · STN stun · BLD blind · SIL silence · CNF confused."]])}
+    ${k("FIGHTS", [["#22308f","Blue windows: commands on the left, the party on the right. Keys 1–9 pick a command."],["#a6e23f","Green numbers: healing. White: damage. Pink: a weak point (×1.5). Gold: a critical hit."],["#d32f3f","Red Fight spots are story fights: no running. Boss spots are harder."],["#f7a6c2","Moreau: once per Issue, the whole party back to full."],["","Walking starts random fights (not at home, the meeting or the shelter). HP carries over; sleep or go home to heal."],["","PSN poison · SLP sleep · STN stun · BLD blind · SIL silence · CNF confused."],["#f0bd3e","$ Cash: what fights pay. Spend it at merchants ($ stalls in the Loin and Chinatown, Otto and Mary at home). Ink is the magazine's money, for upgrades and gifts."]])}
     ${k("AWAKE AND DELIRIUM", [["#a6e23f","Green: rested."],["#f29b3a","Orange at 36h: delirium is coming."],["#d32f3f","Red at 48h: DELIRIUM. Every ride except home is closed. Sleep 6 hours in the Tower Room."]])}
     ${k("THE METERS", [["#f0bd3e","Sainthood: the Church's worship of you. Smooth gold."],["#3fe3d4","Helix: the Theogens' worship. It always pulses."],["#e8f4ff","Clarity: your health on a Run. At 0 you black out."],["#d32f3f","Heat and Venom appear when they matter (3+)."],["#e33f9c","Craving: at 4+ the gas starts offering itself."],["","Pop-up tags in the corner show every change: +1 SAINTHOOD, −1 CLARITY…"]])}
     ${k("THE PLAN", [["#f29b3a","▶ = your next step. ✓ = done. ○ = still to do. · = optional."],["#f29b3a","Anything glowing orange is the next thing to click."],["","Press ▶ NEXT and the game takes you there."]])}
@@ -3104,6 +3190,7 @@ function scrCast() {
 function render() {
   // midnight on New Year's Eve always ends the week, whatever screen you were on
   if (S.issue === 6 && S.T >= DEADLINE(6) && !S.ending && !["final", "ending", "showdown", "battle"].includes(S.screen)) { S.scene = null; S.sd = null; S.screen = "final"; S.final = S.final || { stage: "choose" }; }
+  if (S.shop && !["scene", "house"].includes(S.screen)) S.shop = null;
   rpgInit(); if (S.screen === "battle" && !BT) S.screen = S.btRet === "scene" && !S.scene ? "house" : (S.btRet || "house");
   S.next = nextObjective(objectives());
   document.body.classList.toggle("delirium", !!S.delirium); document.body.classList.toggle("booting", BOOT);
@@ -3181,10 +3268,10 @@ const ACT = {
   castf(a) { S.castF = a; render(); },
   castsel(a) { S.castSel = a; render(); }
 };
-Object.assign(ACT, RPG_ACT, DLG_ACT);
+Object.assign(ACT, RPG_ACT, DLG_ACT, SHOP_ACT);
 MODEDEF.moreau = { c: "#f7a6c2", sk: null, strong: [], weak: [], fx: "" };
 function dispatch(name, arg) {
-  const f = ACT[name]; if (!f) return; const before = S.issue ? snap() : null, T0 = S.T; LASTHUD = S.issue ? { saint: S.saint, helix: S.helix, clar: S.clar, ink: S.ink } : null;
+  const f = ACT[name]; if (!f) return; const before = S.issue ? snap() : null, T0 = S.T; LASTHUD = S.issue ? { saint: S.saint, helix: S.helix, clar: S.clar, ink: S.ink, cash: S.cash } : null;
   f(arg); processQueue();
   if (before && S.issue) { const after = snap(); for (const k in after) { const d = after[k] - before[k]; if (d && k !== "MEMORY" && !(k === "READERS")) toast(`${d > 0 ? "+" : ""}${d} ${k}`, TCOL[k]); else if (d && k === "READERS") toast(`+${d.toLocaleString()} READERS`, TCOL[k]); }
     const dt = S.T - T0; if (dt > 0) toast(`+${hrs(Math.round(dt * 4) / 4)} HR · ${clockStr(S.T)}`, "#8d8496"); }

@@ -3020,7 +3020,8 @@ off when the player's system asks for reduced motion.
   | Critical or very big hit | The screen shakes and flashes |
   | Miss | Grey lines whoosh past |
   | Run | The party dashes off the right edge |
-  | Victory | The party hops, VICTORY bounces at the top, LV UP! flashes over anyone who levels |
+  | An enemy stands down | Coins burst out of them and land on the floor |
+  | Victory | The party hops, VICTORY bounces at the top, LV UP! flashes over anyone who levels, the coins fly to the party and "$+N" shows |
   | Defeat | The screen goes dark red |
 
 ### 4.7c The start screen
@@ -3073,7 +3074,7 @@ is there:
 | `[JUNIE]`, `[YARA]`, … | A housemate in your party, once each per Issue | A sure secret, and maybe Trust +1 |
 | `[VENOM 5/5]`, `[VOW 5/5]` | Your reputation | A threat (Heat +1) or a promise to protect a source |
 | `[SAINTHOOD 4+]`, `[HELIX 4+]`, `[HALOS ON]` | Your worship meters | A sure secret, and the meter goes up: the trap again |
-| `[COFFEE ×3]`, `[10 INK]` | Your bag | Pay for it |
+| `[COFFEE ×3]`, `[$20]` | Your bag and your cash | Pay for it |
 
 The menu shows Blood Eye, the approaches this person likes, and your best
 odds: up to three checks. Each person likes some approaches (2 easier) and
@@ -3396,9 +3397,37 @@ restores half. Items from the bag work outside fights too.
 **The bag and the shops.** Consumables: Ghost Diner coffee, a bodega burrito,
 Lantern soup, smelling salts (revive), nicotine gum and Otto's tonic (SP),
 antacid (cure), glow sticks (damage to all enemies) and fog in a bottle
-(escape). Otto sells them in the Kitchen Lab. Mary sells gear in the
-Archive. Enemies drop items, and Pru's Audit can steal them. Ink pays for
-everything.
+(escape). Enemies drop items, and Pru's Audit can steal an item or the
+enemy's cash.
+
+**Cash and merchants.** Fights pay **cash ($)**, not Ink. Ink is what the
+magazine pays you, for columns and story fights, and it buys Archive
+upgrades and gifts. Cash is what falls out of a street fight, and it buys
+things from merchants. The two never mix, so street fights cannot inflate
+the story economy.
+
+- **Earning.** Each enemy carries some cash, more at higher levels. When an
+  enemy stands down, coins burst out and land on the floor. On a win they
+  fly to the party, and "$+N" shows under VICTORY. The Press pass adds 25%.
+  A whole run of normal play earns about $1,800.
+- **Losing it.** Enemies with Swipe can lift a few dollars mid-fight. A lost
+  fight drops a quarter of your cash in the scramble.
+- **Merchants.** Each one opens a shop screen over the scene, like a
+  *Poké Mart*: a BUY and a SELL tab (arrow keys switch), the price list, and
+  your cash. Hover or focus an item to see what it does. For gear, it shows
+  what changes for each member of tonight's party, for example
+  "Junie: ATK ▲9", or "can't use".
+
+| Merchant | Where | Sells | Pays for your items |
+|---|---|---|---|
+| The Ghost Diner counter | A $ stall in the Loin | Coffee, burritos, soup, antacid, gum; Otto's tonic from Issue 2 | 50% |
+| The night car | A $ stall in Chinatown: the Conductor's cable car that never leaves | Rare gear that unlocks by Issue: brass knuckles (1), halo shard and cyan syringe (2), tire iron and Gilder waistcoat (3), Gelastic Mk II and Kevlar hoodie (4), Axolotl charm (5) | 60% |
+| Otto's pharmacy | The Kitchen Lab, at home | All consumables | 50% |
+| Mary's stall | The Archive, at home | Starter and mid gear, from the Archive's lost property | 50% |
+
+Prices run from $10 (antacid) to $450 (Axolotl charm). Gear you are
+wearing cannot be sold; take it off on the Party tab first. Talk options
+that pay someone now cost cash: $20, or $8 to buy Tem a meal.
 
 **Gear.** Each member has three slots: a weapon, armour and a charm. Gear
 adds to stats. Some gear does more:
@@ -3412,7 +3441,7 @@ adds to stats. Some gear does more:
 | Lab coat, leather jacket, derby pads, Lantern habit, Gilder waistcoat, Kevlar hoodie | DEF +3 to +14, RES up to +10 |
 | Lucky penny, fog charm, rivet cufflinks | LUK +8, SPD +4, DEF and RES +5 |
 | Mood ring | Resist status half the time |
-| Press pass | RES +6, +25% Ink after fights |
+| Press pass | RES +6, +25% cash after fights |
 | Shulgin notebook (Hell Rot only, his start charm) | MAG +2, +15% XP |
 | Axolotl charm | Get back up once per fight at 25% HP |
 
