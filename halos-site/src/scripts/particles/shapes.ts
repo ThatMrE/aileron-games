@@ -1,7 +1,7 @@
 // Target positions for the hero particles, one Float32Array (xyz per
 // particle) per shape. Units: the halo ring has radius 1.
 
-export const COUNT = 6000;
+export const COUNT = 9000;
 
 // Small seeded PRNG so every visit forms the same object.
 function rng(seed: number) {
@@ -41,19 +41,20 @@ export function ringBar(n = COUNT) {
   const half = 11.5 * k;
   const barW = 186 * k;
   const barH = 24 * k;
-  const ringShare = 0.74;
+  const ringShare = 0.82;
   for (let i = 0; i < n; i++) {
     let x: number, y: number;
     if (r() < ringShare) {
       const a = r() * Math.PI * 2;
-      const rad = 1 + (r() * 2 - 1) * half;
+      // Triangular spread: densest along the middle of the stroke, so the ring reads solid.
+      const rad = 1 + (r() + r() - 1) * half;
       x = Math.cos(a) * rad;
       y = ringY + Math.sin(a) * rad;
     } else {
       x = (r() - 0.5) * barW;
       y = barY + (r() - 0.5) * barH;
     }
-    out.set([x, y, (r() - 0.5) * 0.12], i * 3);
+    out.set([x, y, (r() - 0.5) * 0.06], i * 3);
   }
   return out;
 }
@@ -158,7 +159,7 @@ export function colors(n = COUNT) {
     let c = rgb[0];
     for (const p of rgb) { if ((t -= p[3]) <= 0) { c = p; break; } }
     col.set([c[0], c[1], c[2]], i * 3);
-    size[i] = 1 + r() * 2;   // 1 to 3 CSS px
+    size[i] = 1.4 + r() * 1.6;   // 1.4 to 3 CSS px
     seed[i] = r();
   }
   return { col, size, seed };

@@ -117,7 +117,7 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
     uTime: { value: 0 },
     uPixelRatio: { value: dpr },
     uScale: { value: 1 },
-    uOpacity: { value: 0.9 },
+    uOpacity: { value: 1 },
   };
   const material = new ShaderMaterial({
     vertexShader: vertex,
