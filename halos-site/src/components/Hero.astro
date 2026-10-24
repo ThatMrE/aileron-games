@@ -4,6 +4,7 @@ import ParticleHalo from './ParticleHalo.astro';
 ---
 <section class="hero grain" id="top" aria-labelledby="hero-title" data-hero>
   <div class="hero__bloom opal-shimmer--turn" aria-hidden="true"></div>
+  <canvas class="hero__sparkles" aria-hidden="true" data-sparkles></canvas>
   <div class="container grid hero__grid">
     <div class="hero__object">
       <ParticleHalo />
@@ -20,6 +21,20 @@ import ParticleHalo from './ParticleHalo.astro';
     </div>
   </div>
 </section>
+
+<script>
+  // Cursor sparkles: only with motion allowed, only on devices with a mouse
+  // (the cloud follows a cursor), and only after first paint.
+  const canvas = document.querySelector<HTMLCanvasElement>('[data-sparkles]');
+  const hero = document.querySelector<HTMLElement>('[data-hero]');
+  const mouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (canvas && hero && mouse && document.documentElement.classList.contains('motion')) {
+    const start = () => import('../scripts/sparkles').then(({ mountSparkles }) => mountSparkles(canvas, hero));
+    const idle = (cb: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(cb, { timeout: 1500 }) : setTimeout(cb, 200));
+    if (document.readyState === 'complete') idle(start);
+    else window.addEventListener('load', () => idle(start), { once: true });
+  }
+</script>
 
 <style>
   .hero {
@@ -44,6 +59,16 @@ import ParticleHalo from './ParticleHalo.astro';
     filter: blur(80px);
     pointer-events: none;
   }
+  .hero__sparkles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hero__sparkles:global(.is-live) { opacity: 1; }
   .hero__grid { position: relative; z-index: 1; row-gap: 8px; align-items: center; }
   .hero__object { grid-column: 1 / -1; height: 40svh; min-height: 240px; }
   .hero__copy { grid-column: 1 / -1; display: grid; gap: 22px; }
