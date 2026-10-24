@@ -4,3 +4,4 @@ dist/
 .netlify/
 qa/*.json
 qa/*.png
+qa/*.html
