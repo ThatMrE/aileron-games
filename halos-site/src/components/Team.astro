@@ -1,0 +1,121 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import MaskReveal from './MaskReveal.astro';
+import Img from './Img.astro';
+
+const founders = [
+  {
+    name: 'Dr Dominique Darvas', role: 'CEO', img: 'darvas',
+    bio: 'MD with a PhD in emergency blood transfusion protocols and a second thesis in mitohormesis. After a career in emergency medicine she founded several medical ventures. She leads scientific direction and clinical strategy.',
+  },
+  {
+    name: 'Jonas Aufdermauer', role: 'CTO', img: 'aufdermauer',
+    bio: 'Biophysicist with a PhD in aging biology from CECAD Cologne and the Max Planck Institute of Biophysics. He leads all lab execution.',
+  },
+  {
+    name: 'Eloi Chouvet', role: 'COO', img: 'chouvet',
+    bio: 'Software engineer trained at 42 Paris with a business degree from NYU, formerly in venture capital at VELAMAR and Alpha Intelligence Capital. He leads fundraising, operations and go-to-market.',
+  },
+];
+const advisors = [
+  { name: 'Aubrey de Grey', cred: 'Founder, SENS and LEV Foundations', img: 'degrey' },
+  { name: 'Jon A. Rowley', cred: 'Founder, RoosterBio', img: 'rowley' },
+  { name: 'Dr Dobri Kiprov', cred: 'Founder, Global Apheresis', img: 'kiprov' },
+  { name: 'Matthew Scholz', cred: 'Founder, Oisín and Immusoft', img: 'scholz' },
+];
+---
+<section class="section team" id="team" aria-labelledby="team-title">
+  <SectionFrame label="07 / TEAM" />
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Who we are</p>
+      <SplitReveal id="team-title" text="An MD, a biophysicist and a business *operator*." />
+    </div>
+
+    <ul class="founders" role="list">
+      {founders.map((f) => (
+        <li class="founder" data-fade>
+          <div class="halo-portrait">
+            <img src={`/team/${f.img}.webp`} width="480" height="480" loading="lazy" decoding="async" alt={`Portrait of ${f.name}`} />
+          </div>
+          <h3>{f.name}</h3>
+          <p class="label">{f.role}</p>
+          <p class="founder__bio">{f.bio}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h3 class="label advisors__title">Advisors</h3>
+    <ul class="advisors" role="list">
+      {advisors.map((a) => (
+        <li class="advisor" data-fade>
+          <img src={`/team/${a.img}.webp`} width="480" height="480" loading="lazy" decoding="async" alt={`Portrait of ${a.name}`} />
+          <div>
+            <p class="advisor__name">{a.name}</p>
+            <p class="advisor__cred">{a.cred}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="container grid haloband">
+    <figure class="haloband__img">
+      <MaskReveal shape="arch">
+        <Img name="halo-portrait-elder" sizes="(min-width: 960px) 30vw, 80vw"
+          alt="Illustrative portrait of an older woman with silver hair, eyes closed, a soft ring of light behind her head against a rose wall." />
+        <span class="illus" slot="overlay">Illustrative image</span>
+      </MaskReveal>
+    </figure>
+    <SplitReveal as="p" class="display haloband__text" text="For the people we serve, and the people who *make* it." />
+    <figure class="haloband__img">
+      <MaskReveal shape="arch">
+        <Img name="halo-portrait-scientist" sizes="(min-width: 960px) 30vw, 80vw"
+          alt="Illustrative portrait of a scientist in a white lab coat holding a small vial, a soft ring of light behind her head against a lilac wall." />
+        <span class="illus" slot="overlay">Illustrative image</span>
+      </MaskReveal>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .founders { display: grid; gap: 64px; }
+  .founder { display: grid; gap: 10px; justify-items: start; align-content: start; }
+  .founder h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; line-height: 1.15; margin-top: 18px; }
+  .founder__bio { font-size: 16px; max-width: 40ch; margin-top: 6px; }
+
+  /* Halo light: a 2px gradient ring plus a blurred glow behind the portrait */
+  .halo-portrait { position: relative; width: 200px; aspect-ratio: 1; }
+  .halo-portrait::before, .halo-portrait::after {
+    content: ""; position: absolute; inset: -10px; border-radius: 50%;
+    padding: 2px; background: var(--grad-halo);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    transition: opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+  }
+  .halo-portrait::after { filter: blur(24px); opacity: 0.5; padding: 10px; }
+  .founder:hover .halo-portrait::after { opacity: 0.9; }
+  .halo-portrait img { position: relative; z-index: 1; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+  .advisors__title { margin-top: 96px; margin-bottom: 28px; }
+  .advisors { display: grid; gap: 28px; }
+  .advisor { display: flex; gap: 16px; align-items: center; }
+  .advisor img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; }
+  .advisor__name { color: var(--ink); font-weight: 500; }
+  .advisor__cred { font-size: 15px; line-height: 1.45; }
+
+  .haloband { margin-top: clamp(96px, 10vw, 160px); row-gap: 40px; align-items: center; }
+  .haloband__img { grid-column: 1 / -1; width: min(100%, 360px); justify-self: center; }
+  .haloband__text { grid-column: 1 / -1; text-align: center; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.625rem); line-height: 1.2; max-width: 18ch; justify-self: center; }
+
+  @media (min-width: 640px) {
+    .advisors { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 960px) {
+    .founders { grid-template-columns: repeat(3, 1fr); gap: var(--gutter); }
+    .advisors { grid-template-columns: repeat(4, 1fr); gap: var(--gutter); }
+    .haloband__img { grid-column: span 4; width: 100%; }
+    .haloband__text { grid-column: span 4; }
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+
+const notes: { text: string; journal?: string; rest?: string; doi?: string }[] = [
+  { text: 'López-Otín C, et al. Hallmarks of aging: an expanding universe.', journal: 'Cell', rest: '2023;186(2):243-278.', doi: '10.1016/j.cell.2022.11.001' },
+  { text: 'Larson BJ, Longaker MT, Lorenz HP. Scarless fetal wound healing: a basic science review.', journal: 'Plast Reconstr Surg', rest: '2010;126(4):1172-1180.', doi: '10.1097/PRS.0b013e3181eae781' },
+  { text: 'Conboy IM, et al. Rejuvenation of aged progenitor cells by exposure to a young systemic environment.', journal: 'Nature', rest: '2005;433:760-764.', doi: '10.1038/nature03260' },
+  { text: 'Ruckh JM, et al. Rejuvenation of regeneration in the aging central nervous system.', journal: 'Cell Stem Cell', rest: '2012;10(1):96-103.', doi: '10.1016/j.stem.2011.11.019' },
+  { text: 'Zhang B, et al. Multi-omic rejuvenation and life span extension on exposure to youthful circulation.', journal: 'Nat Aging', rest: '2023;3(8):948-964.', doi: '10.1038/s43587-023-00451-9' },
+  { text: 'Villeda SA, et al. Young blood reverses age-related impairments in cognitive function and synaptic plasticity in mice.', journal: 'Nat Med', rest: '2014;20(6):659-663.', doi: '10.1038/nm.3569' },
+  { text: 'Chen X, et al. Small extracellular vesicles from young plasma reverse age-related functional declines.', journal: 'Nat Aging', rest: '2024;4(6):814-838.', doi: '10.1038/s43587-024-00612-4' },
+  { text: 'Castellano JM, et al. Human umbilical cord plasma proteins revitalize hippocampal function in aged mice.', journal: 'Nature', rest: '2017;544:488-492.', doi: '10.1038/nature22067' },
+  { text: 'Clement J, et al. Umbilical cord plasma concentrate has beneficial effects on DNA methylation GrimAge and human clinical biomarkers.', journal: 'Aging Cell', rest: '2022;21(10):e13696.', doi: '10.1111/acel.13696' },
+  { text: 'Parker JE, et al. Safety of plasma infusions in Parkinson’s disease.', journal: 'Mov Disord', rest: '2020;35(11):1905-1913.', doi: '10.1002/mds.28198' },
+  { text: 'Fuentealba M, Kiprov D, et al. Multi-omics analysis reveals biomarkers that contribute to biological age rejuvenation in response to therapeutic plasma exchange.', journal: 'Aging Cell', rest: '2025;24(8):e70103.', doi: '10.1111/acel.70103' },
+  { text: 'Grand View Research. Fetal Bovine Serum Market Report. February 2026.' },
+  { text: 'Straits Research. Anti-Aging Cosmetics Market Report. Accessed October 2026.' },
+  { text: 'Straits Research. Neurodegenerative Disease Market. Accessed October 2026.' },
+];
+---
+<section class="section notes" id="notes" aria-labelledby="notes-title">
+  <SectionFrame />
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Notes and sources</p>
+      <SplitReveal id="notes-title" text="We cite, and we say what is not yet *proven*." />
+    </div>
+    <ol class="notes__list" data-notes>
+      {notes.map((n, i) => (
+        <li id={`note-${i + 1}`}>
+          {n.text}{n.journal && <> <em>{n.journal}</em>. {n.rest} </>}
+          {n.doi && <a href={`https://doi.org/${n.doi}`} rel="noopener">{`doi.org/${n.doi}`}</a>}
+        </li>
+      ))}
+    </ol>
+    <p class="notes__image fine">Product stills and portraits are illustrative computer-generated images, not HALOS products or packaging. Figure 1 adapted from López-Otín et al., 2023. Figure 3 adapted from an illustration by IntegriCulture Inc.</p>
+  </div>
+</section>
+
+<style>
+  .notes__list { font-size: 15px; line-height: 1.55; padding-left: 1.6em; display: grid; gap: 14px; }
+  .notes__list li { padding-left: 4px; scroll-margin-top: 120px; overflow-wrap: anywhere; }
+  .notes__list li::marker { color: var(--halo-indigo); font-family: var(--font-label); font-size: 12px; }
+  .notes__list li:target { background: var(--shell-light); border-radius: 6px; }
+  .notes__image { margin-top: 48px; max-width: 72ch; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  @media (min-width: 960px) {
+    .notes__list { columns: 2; column-gap: calc(var(--gutter) * 3); display: block; }
+    .notes__list li { break-inside: avoid; margin-bottom: 14px; }
+  }
+</style>

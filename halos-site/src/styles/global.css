@@ -1,0 +1,246 @@
+/* Global styles. Every color comes from tokens.css. */
+
+:root {
+  --pad: 24px;
+  --gutter: 24px;
+  --max: 1440px;
+  --section-y: 96px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.1 0 0 0 0 0.12 2.2 0 0 0 -1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (min-width: 960px) {
+  :root { --pad: 48px; --section-y: 160px; }
+}
+@media (min-width: 1280px) {
+  :root { --pad: 64px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 96px;
+}
+body {
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img, svg, canvas, picture { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--halo-indigo); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--halo-indigo);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+h1, h2, h3, .display {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-wrap: balance;
+}
+h1 em, h2 em, h3 em, .display em { font-style: italic; font-weight: 400; }
+h2 { font-size: clamp(2.25rem, 1.4rem + 3.2vw, var(--step-4)); line-height: 1.15; letter-spacing: -0.005em; }
+h3 { font-size: var(--step-1); line-height: 1.25; font-weight: 500; }
+p { text-wrap: pretty; }
+
+sup { line-height: 0; font-size: 0.62em; vertical-align: super; }
+.cite a { text-decoration: none; padding-inline: 0.08em; font-feature-settings: "tnum"; }
+.cite a:hover { text-decoration: underline; }
+
+/* Text roles */
+.eyebrow {
+  font-family: var(--font-text);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--halo-indigo);
+  line-height: 1.4;
+}
+.label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.lede { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem); font-weight: 300; line-height: 1.5; }
+.fine { font-size: var(--step--1); line-height: 1.55; }
+.italic-line { font-family: var(--font-display); font-style: italic; color: var(--ink); }
+.hl { color: var(--halo-indigo); }
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+}
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+.section-head { display: grid; gap: 20px; max-width: 900px; margin-bottom: clamp(48px, 6vw, 88px); }
+
+.card {
+  background: var(--shell-light);
+  border-radius: var(--radius-card);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+.btn--primary { background: var(--ink); color: var(--paper); }
+.btn--primary:hover { background: var(--halo-indigo); border-color: var(--halo-indigo); }
+.btn--ghost { background: transparent; color: var(--ink); border-color: rgba(22, 25, 30, 0.22); }
+.btn--ghost:hover { border-color: var(--ink); }
+
+/* The fixed hairline frame: the two outer column lines */
+.frame {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.frame__inner {
+  max-width: var(--max);
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--pad) - var(--gutter) / 2);
+}
+.frame__inner::before {
+  content: "";
+  display: block;
+  height: 100%;
+  border-inline: 1px solid var(--hairline);
+}
+main, footer { position: relative; z-index: 1; }
+
+/* Shared grain overlay (one static noise tile) */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 220px 220px;
+  opacity: 0.06;
+}
+
+/* "Illustrative image" chip */
+.illus {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.figcap { display: grid; gap: 6px; margin-top: 18px; }
+.figcap .italic-line { font-size: 17px; line-height: 1.45; color: var(--ink-soft); }
+
+.spark { display: inline-block; width: 12px; height: 12px; flex: none; color: var(--halo-indigo); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+.skip {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 500;
+}
+.skip:focus { top: 16px; }
+
+/* ---------- Motion ----------
+   html.motion is set before first paint only when motion is allowed, so
+   without JS or with reduced motion everything is simply visible. */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Blur-to-sharp words. The hero H1 runs on CSS straight away (no wait for
+   GSAP) so the largest paint is not held back. */
+.motion [data-split] .w { display: inline-block; opacity: 0; filter: blur(12px); transform: translateY(12px); will-change: opacity, filter, transform; }
+.motion .hero [data-split] .w {
+  animation: word-in 1s var(--ease-out) forwards;
+  animation-delay: calc(0.15s + var(--wi, 0) * 0.06s);
+}
+@keyframes word-in { to { opacity: 1; filter: blur(0); transform: none; } }
+/* Once played, keep the hero words put: re-parenting (the pin) or a resize
+   would otherwise restart the animation from hidden. */
+.motion.hero-in .hero [data-split] .w { animation: none; opacity: 1; filter: none; transform: none; }
+.motion [data-split-scrub] .w { opacity: 0; filter: none; transform: none; }
+/* Safety net: if the motion script never runs, show everything. */
+.motion.motion-failed [data-split] .w { opacity: 1; filter: none; transform: none; }
+
+/* Section lines draw in */
+.motion [data-sline] .sline__rule { transform: scaleX(0); }
+.motion [data-sline] .sline__plus,
+.motion [data-sline] .sline__label { opacity: 0; }
+
+/* Opal shimmer: hero glow and the one opal card. The large blurred glows
+   drift by rotating (compositor only, no repaint); the small card shifts
+   its background position. */
+@keyframes opal-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@keyframes opal-turn { from { rotate: -24deg; } to { rotate: 24deg; } }
+.motion .opal-shimmer { animation: opal-drift 20s ease-in-out infinite alternate; }
+.motion .opal-shimmer--turn { animation: opal-turn 20s ease-in-out infinite alternate; will-change: rotate; }
+
+/* Generic fade-up */
+.motion [data-fade] { opacity: 0; transform: translateY(16px); }

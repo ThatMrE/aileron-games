@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 228" role="img" aria-label="HALOS">
+  <defs>
+    <linearGradient id="halo" x1="0" y1="0" x2="186" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#96B8FF"/>
+      <stop offset="1" stop-color="#E793FE"/>
+    </linearGradient>
+  </defs>
+  <circle cx="93" cy="93" r="81.5" fill="none" stroke="url(#halo)" stroke-width="23"/>
+  <rect x="0" y="204" width="186" height="24" fill="url(#halo)"/>
+</svg>

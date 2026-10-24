@@ -1,0 +1,100 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import Spark from './Spark.astro';
+import Cite from './Cite.astro';
+
+const tiers = [
+  {
+    title: 'Heterochronic parabiosis',
+    dates: '1957 → 2023',
+    findings: [
+      { text: 'Joining old and young circulation rejuvenated aged muscle, liver and myelin repair.', n: [3, 4] },
+      { text: 'Three months of shared circulation extended median lifespan in old mice by six weeks.', n: [5] },
+    ],
+  },
+  {
+    title: 'Young plasma and its vesicles',
+    dates: '2014 → 2024',
+    findings: [
+      { text: 'Young plasma improved learning and memory in aged mice.', n: [6] },
+      { text: 'Small vesicles from young plasma extended median lifespan in aged mice by about 12%.', n: [7] },
+    ],
+  },
+  {
+    title: 'Umbilical cord plasma',
+    dates: '2017 → 2022',
+    findings: [
+      { text: 'Human cord plasma revitalized hippocampal function in aged mice.', n: [8] },
+      { text: 'Cord plasma concentrate lowered the GrimAge clock in 18 older adults.', n: [9] },
+    ],
+  },
+  {
+    title: 'Early human trials',
+    dates: '2020 → 2025',
+    findings: [
+      { text: 'Young plasma was safe in Parkinson’s disease and lowered TNF-alpha.', n: [10] },
+      { text: 'Plasma exchange improved markers of biological age in 42 adults over 50.', n: [11] },
+    ],
+  },
+];
+---
+<section class="section evidence" id="science" aria-labelledby="science-title">
+  <SectionFrame label="04 / SCIENCE" />
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The science that inspired us</p>
+      <SplitReveal id="science-title" text="A young environment tells old cells to *repair*." />
+    </div>
+
+    <ol class="tiers" role="list">
+      {tiers.map((t, i) => (
+        <li class="tier" style={`--i:${i}`} data-tier data-fade>
+          <div class="tier__head">
+            <div class="tier__title"><Spark size={14} /><h3>{t.title}</h3></div>
+            <span class="label tier__dates">{t.dates}</span>
+          </div>
+          <ul class="tier__findings" role="list">
+            {t.findings.map((f) => <li>{f.text}<Cite n={f.n} /></li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
+
+    <p class="italic-line evidence__foot">These studies are small and most await replication: lifespan is ours to test, not yet a claim.</p>
+  </div>
+</section>
+
+<style>
+  .tiers { display: grid; gap: 14px; }
+  .tier {
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: grid;
+    gap: 18px;
+    background: var(--paper);
+  }
+  .tier__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; }
+  .tier__title { display: flex; align-items: center; gap: 12px; }
+  .tier__head h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.2; }
+  .tier__dates { margin-left: auto; }
+  .tier__findings { display: grid; gap: 12px; font-size: 16px; }
+  .tier__findings li { padding-left: 16px; border-left: 1px solid var(--rule-rose); }
+  .evidence__foot { margin-top: 40px; color: var(--ink-soft); font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); max-width: 48ch; }
+
+  @media (min-width: 960px) {
+    /* Tiers widen downward, like a taxonomy chart */
+    .tier {
+      margin-inline: calc((3 - var(--i)) * 4%);
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      align-items: start;
+      padding: 28px 32px;
+      gap: 32px;
+    }
+    .tier__head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .tier__dates { margin-left: 0; }
+    .tier__findings { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .evidence__foot { margin-inline: auto; text-align: center; }
+  }
+</style>

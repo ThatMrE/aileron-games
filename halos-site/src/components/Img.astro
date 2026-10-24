@@ -1,0 +1,25 @@
+---
+import { images, type ImageName } from '../data/images';
+interface Props {
+  name: ImageName;
+  alt: string;
+  sizes?: string;
+  eager?: boolean;
+  class?: string;
+}
+const { name, alt, sizes = '(min-width: 960px) 50vw, 100vw', eager = false, class: cls } = Astro.props;
+const meta = images[name];
+const h = Math.round(meta.sm / meta.ratio);
+---
+<img
+  class={cls}
+  src={`/img/${name}-800.webp`}
+  srcset={`/img/${name}-800.webp ${meta.sm}w, /img/${name}-1600.webp ${meta.lg}w`}
+  sizes={sizes}
+  width={meta.sm}
+  height={h}
+  alt={alt}
+  loading={eager ? 'eager' : 'lazy'}
+  decoding="async"
+  fetchpriority={eager ? 'high' : undefined}
+/>

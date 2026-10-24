@@ -1,0 +1,90 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import GrowDiagram from './GrowDiagram.astro';
+import CulNetFigure from './CulNetFigure.astro';
+
+const steps = [
+  {
+    title: 'Choose the cells',
+    body: 'Fully profiled, GMP-compliant human progenitor cells, chosen for the lineages that secrete the signals we are targeting.',
+  },
+  {
+    title: 'Connect the chambers',
+    body: 'Cells grow in sequenced chambers on IntegriCulture’s patented CulNet system, sharing one circulating medium, the way organs share one bloodstream.',
+  },
+  {
+    title: 'Collect the secretome',
+    body: 'The circulating medium accumulates what the cells secrete together. The output is a lab-grown human fetal plasma analog: human in origin, free of donors, designed to be consistent from batch to batch.',
+  },
+  {
+    title: 'Profile every batch',
+    body: 'Proteomics, metabolomics and transcriptomics on every batch train our virtual secretome model, so we can design formulations for specific cells, indications and applications.',
+  },
+] as const;
+---
+<section class="section grow-sec" id="platform" aria-labelledby="platform-title">
+  <SectionFrame label="03 / PLATFORM" />
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The platform</p>
+      <SplitReveal id="platform-title" text="How we *grow* it." />
+    </div>
+
+    <div class="grid steps" data-steps>
+      <div class="steps__col">
+      <div class="steps__track" aria-hidden="true">
+        <div class="steps__progress" data-steps-progress></div>
+        {steps.map((_, i) => <span class="steps__tick" style={`top:${(i / (steps.length - 1)) * 100}%`}></span>)}
+      </div>
+      <ol class="steps__list" role="list">
+        {steps.map((s, i) => (
+          <li class="step" data-step-item={i + 1}>
+            <p class="label">{`0${i + 1} / 04`}</p>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+            <div class="step__diagram"><GrowDiagram state={(i + 1) as 1 | 2 | 3 | 4} /></div>
+          </li>
+        ))}
+      </ol>
+      </div>
+      <div class="steps__stage">
+        <div class="steps__sticky card">
+          <GrowDiagram state={4} class="steps__diagram" />
+        </div>
+      </div>
+    </div>
+
+    <CulNetFigure />
+  </div>
+</section>
+
+<style>
+  .steps { row-gap: 0; }
+  .steps__col { grid-column: 1 / -1; position: relative; padding-left: 36px; }
+  .steps__list { display: grid; gap: 72px; }
+  .steps__track { position: absolute; left: 4px; top: 8px; bottom: 8px; width: 1px; background: var(--hairline); }
+  .steps__progress { position: absolute; inset: 0; background: var(--halo-indigo); transform-origin: top; }
+  .steps__tick {
+    position: absolute; left: 50%; width: 9px; height: 9px;
+    transform: translate(-50%, -50%); border-radius: 50%;
+    background: var(--paper); border: 1px solid var(--halo-indigo);
+  }
+  .step { display: grid; gap: 12px; max-width: 520px; }
+  .step h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.25rem); line-height: 1.15; }
+  .step__diagram { margin-top: 16px; max-width: 360px; padding: 20px; background: var(--shell-light); border-radius: var(--radius-card); }
+  .steps__stage { display: none; }
+  .steps.is-live .step { opacity: 0.32; transition: opacity 0.6s var(--ease-out); }
+  .steps.is-live .step.is-active { opacity: 1; }
+
+
+  @media (min-width: 960px) {
+    .steps__col { grid-column: 1 / span 5; }
+    .steps__list { gap: 0; }
+    .step { min-height: 72vh; align-content: center; }
+    .step__diagram { display: none; }
+    .steps__stage { display: block; grid-column: 7 / span 6; }
+    .steps__sticky { position: sticky; top: calc(50vh - min(260px, 36vh)); padding: clamp(24px, 3vw, 48px); }
+    .steps__sticky :global(.steps__diagram) { max-height: min(440px, 60vh); margin-inline: auto; }
+  }
+</style>

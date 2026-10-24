@@ -1,0 +1,69 @@
+---
+// The hero's living object. The static ring below is the fallback and the
+// reduced-motion state; the three.js scene mounts over it once it loads.
+---
+<div class="halo" data-halo aria-hidden="true">
+  <div class="halo__glow opal-shimmer--turn"></div>
+  <svg class="halo__static" viewBox="-40 -30 266 300" focusable="false">
+    <defs>
+      <linearGradient id="halo-static-grad" x1="0" y1="0" x2="186" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#96B8FF" />
+        <stop offset="1" stop-color="#E793FE" />
+      </linearGradient>
+    </defs>
+    <circle cx="93" cy="93" r="81.5" fill="none" stroke="url(#halo-static-grad)" stroke-width="23" />
+    <rect x="0" y="204" width="186" height="24" fill="url(#halo-static-grad)" />
+  </svg>
+</div>
+
+<script>
+  // Load three.js only after first paint, only when motion is allowed and
+  // WebGL works. Otherwise the static ring stays.
+  const host = document.querySelector<HTMLElement>('[data-halo]');
+  const allowed = document.documentElement.classList.contains('motion');
+  // Check for real GPU rendering before downloading three.js at all. Software
+  // WebGL (SwiftShader, llvmpipe) would stall the page for seconds.
+  const hasGpu = () => {
+    try {
+      const gl = document.createElement('canvas').getContext('webgl', { failIfMajorPerformanceCaveat: true });
+      if (!gl) return false;
+      const info = gl.getExtension('WEBGL_debug_renderer_info');
+      const name = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      return !/swiftshader|llvmpipe|softpipe|software/i.test(name);
+    } catch {
+      return false;
+    }
+  };
+  const start = () => {
+    if (!host || !hasGpu()) return;
+    import('../scripts/particles/scene').then(({ mountHalo }) => {
+      const halo = mountHalo(host, () => window.__halosHero?.progress ?? 0);
+      if (halo) (window as unknown as { __halo: typeof halo }).__halo = halo;
+    });
+  };
+  if (host && allowed) {
+    const idle = (cb: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(cb, { timeout: 1500 }) : setTimeout(cb, 200));
+    if (document.readyState === 'complete') idle(start);
+    else window.addEventListener('load', () => idle(start), { once: true });
+  }
+</script>
+
+<style>
+  .halo { position: relative; width: 100%; height: 100%; display: grid; place-items: center; }
+  .halo :global(.halo__canvas) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .halo__static { transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  .halo.is-live .halo__static { opacity: 0; }
+  .halo__static { position: relative; width: min(56%, 380px); height: auto; }
+  /* Soft opal glow behind the ring; the symbol itself is never glowed. */
+  .halo__glow {
+    position: absolute;
+    width: min(80%, 560px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--grad-opal);
+    background-size: 300% 300%;
+    filter: blur(48px);
+    opacity: 0.75;
+  }
+</style>

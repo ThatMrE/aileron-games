@@ -1,0 +1,199 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import MaskReveal from './MaskReveal.astro';
+import Img from './Img.astro';
+
+const roles = ['Researcher', 'Cell therapy or biotech team', 'Clinician', 'Investor', 'Press', 'Other'];
+---
+<section class="section join grain" id="waitlist" aria-labelledby="waitlist-title">
+  <SectionFrame label="08 / JOIN" />
+  <div class="container grid join__grid">
+    <figure class="join__media">
+      <div class="join__opal opal-shimmer">
+        <MaskReveal shape="arch">
+          <Img name="opal-packaging" sizes="(min-width: 960px) 40vw, 90vw"
+            alt="Illustrative render of a slim vial of pale rose liquid beside iridescent white packaging, casting rainbow light on a pale surface." />
+          <span class="illus" slot="overlay">Illustrative image</span>
+        </MaskReveal>
+      </div>
+    </figure>
+
+    <div class="join__body">
+      <p class="eyebrow">Join the waitlist</p>
+      <SplitReveal id="waitlist-title" text="Be first to *work* with it." />
+      <p>We will send research updates and first access to samples as they become available.</p>
+
+      <form name="waitlist" method="POST" action="/?submitted=waitlist" data-netlify="true" netlify-honeypot="bot-field" class="form" novalidate data-form>
+        <input type="hidden" name="form-name" value="waitlist" />
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="form__row">
+          <div class="field">
+            <label for="w-name">Name</label>
+            <input id="w-name" name="name" type="text" autocomplete="name" required aria-describedby="w-name-err" />
+            <p class="field__err" id="w-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="w-email">Email</label>
+            <input id="w-email" name="email" type="email" autocomplete="email" required aria-describedby="w-email-err" />
+            <p class="field__err" id="w-email-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="w-role">Role</label>
+          <select id="w-role" name="role" required aria-describedby="w-role-err">
+            <option value="">Choose one</option>
+            {roles.map((r) => <option>{r}</option>)}
+          </select>
+          <p class="field__err" id="w-role-err"></p>
+        </div>
+        <div class="field">
+          <label for="w-use">What would you use it for? <span class="field__opt">(optional)</span></label>
+          <textarea id="w-use" name="use" rows="3"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Join the waitlist</button>
+        <p class="form__status" role="status" aria-live="polite" data-status></p>
+      </form>
+      <p class="form__success italic-line" hidden data-success tabindex="-1">Thank you. You are on the list.</p>
+    </div>
+  </div>
+
+  <div class="container partner" id="partner">
+    <div class="partner__card card">
+      <h3>Partner or invest</h3>
+      <form name="partner" method="POST" action="/?submitted=partner" data-netlify="true" netlify-honeypot="bot-field" class="form" novalidate data-form>
+        <input type="hidden" name="form-name" value="partner" />
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="form__row">
+          <div class="field">
+            <label for="p-name">Name</label>
+            <input id="p-name" name="name" type="text" autocomplete="name" required aria-describedby="p-name-err" />
+            <p class="field__err" id="p-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="p-email">Email</label>
+            <input id="p-email" name="email" type="email" autocomplete="email" required aria-describedby="p-email-err" />
+            <p class="field__err" id="p-email-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="p-org">Organization</label>
+          <input id="p-org" name="organization" type="text" autocomplete="organization" required aria-describedby="p-org-err" />
+          <p class="field__err" id="p-org-err"></p>
+        </div>
+        <div class="field">
+          <label for="p-msg">Message</label>
+          <textarea id="p-msg" name="message" rows="4" required aria-describedby="p-msg-err"></textarea>
+          <p class="field__err" id="p-msg-err"></p>
+        </div>
+        <button class="btn btn--primary" type="submit">Start a conversation</button>
+        <p class="form__status" role="status" aria-live="polite" data-status></p>
+      </form>
+      <p class="form__success italic-line" hidden data-success tabindex="-1">Thank you. We will be in touch.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Inline validation and in-place submission to Netlify Forms.
+  const messages: Record<string, string> = {
+    valueMissing: 'This field is required.',
+    typeMismatch: 'Enter a valid email address.',
+  };
+  const errorFor = (el: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) => {
+    if (el.validity.valueMissing) return el.tagName === 'SELECT' ? 'Choose a role.' : messages.valueMissing;
+    if (el.validity.typeMismatch) return messages.typeMismatch;
+    return '';
+  };
+
+  document.querySelectorAll<HTMLFormElement>('[data-form]').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('[data-status]')!;
+    const success = form.parentElement!.querySelector<HTMLElement>('[data-success]')!;
+    const fields = [...form.querySelectorAll<HTMLInputElement>('[required]')];
+
+    const show = (el: HTMLInputElement) => {
+      const msg = errorFor(el);
+      const out = document.getElementById(el.getAttribute('aria-describedby') || '');
+      if (out) out.textContent = msg;
+      el.toggleAttribute('aria-invalid', Boolean(msg));
+      return !msg;
+    };
+    fields.forEach((el) => el.addEventListener('blur', () => el.value && show(el)));
+    fields.forEach((el) => el.addEventListener('input', () => el.hasAttribute('aria-invalid') && show(el)));
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const bad = fields.filter((el) => !show(el));
+      if (bad.length) {
+        status.textContent = `Please fix ${bad.length === 1 ? 'one field' : `${bad.length} fields`} before sending.`;
+        bad[0].focus();
+        return;
+      }
+      status.textContent = 'Sending…';
+      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+      btn.disabled = true;
+      try {
+        const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString();
+        const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
+        if (!res.ok) throw new Error(String(res.status));
+        form.hidden = true;
+        success.hidden = false;
+        success.focus();
+      } catch {
+        status.textContent = 'Something went wrong. Please try again, or email eloi@halos.bio.';
+        btn.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .join__grid { row-gap: 56px; align-items: center; position: relative; z-index: 1; }
+  .join__media { grid-column: 1 / -1; width: min(100%, 440px); justify-self: center; }
+  /* The page's one opal card: an iridescent frame around the packaging arch */
+  .join__opal {
+    padding: 14px;
+    border-radius: 50% 50% calc(var(--radius-card) + 8px) calc(var(--radius-card) + 8px) / 40% 40% calc(var(--radius-card) + 8px) calc(var(--radius-card) + 8px);
+    background: var(--grad-opal);
+    background-size: 300% 300%;
+  }
+  .join__media :global(.mask img) { object-position: 78% 50%; }
+  .join__body { grid-column: 1 / -1; display: grid; gap: 22px; max-width: 560px; }
+
+  .form { display: grid; gap: 18px; margin-top: 12px; }
+  .form__row { display: grid; gap: 18px; }
+  .field { display: grid; gap: 6px; }
+  .field label { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .field__opt { font-weight: 400; color: var(--ink-soft); }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid rgba(22, 25, 30, 0.28);
+    border-radius: 12px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .field textarea { resize: vertical; }
+  .field [aria-invalid] { border-color: var(--deep-plasma); }
+  .field__err { font-size: 13px; color: var(--deep-plasma); min-height: 0; }
+  .field__err:empty { display: none; }
+  .form .btn { justify-self: start; }
+  .form__status { font-size: 14px; color: var(--ink-soft); }
+  .form__status:empty { display: none; }
+  .form__success { font-size: 28px; padding-block: 24px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .partner { margin-top: clamp(72px, 8vw, 120px); position: relative; z-index: 1; }
+  .partner__card { padding: clamp(24px, 4vw, 48px); max-width: 860px; margin-left: auto; display: grid; gap: 20px; }
+  .partner__card h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; }
+
+  @media (min-width: 640px) {
+    .form__row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 960px) {
+    .join__media { grid-column: 1 / span 5; }
+    .join__body { grid-column: 7 / span 6; }
+  }
+</style>

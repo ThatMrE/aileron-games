@@ -1,0 +1,78 @@
+---
+// The "How we grow it" diagram. `state` (1 to 4) sets how much is built; the
+// motion layer animates the groups in on desktop. Indigo hairlines, rose fills.
+interface Props { state?: 1 | 2 | 3 | 4; class?: string }
+const { state = 4, class: cls } = Astro.props;
+const chambers = [30, 140, 250, 360];
+const dots: [number, number][] = [[28, 30], [52, 46], [36, 62], [62, 26], [58, 66]];
+const bars = [38, 62, 46, 78, 54];
+// [x, y, originX, originY]: lines leave from the vessel walls, not its middle
+const sparks: [number, number, number, number][] = [[70, 290, 170, 300], [96, 380, 170, 350], [120, 450, 190, 406], [420, 250, 310, 270], [440, 450, 310, 390]];
+const on = (n: number) => (state >= n ? 'is-on' : 'is-off');
+---
+<svg class:list={['grow', cls]} viewBox="0 0 480 480" aria-hidden="true" focusable="false" data-grow>
+  <defs>
+    <linearGradient id={`rose-${state}`} x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDCDC2" />
+      <stop offset="1" stop-color="#DDB3A7" />
+    </linearGradient>
+    <clipPath id={`vessel-clip-${state}`}><rect x="170" y="236" width="140" height="170" rx="26" /></clipPath>
+  </defs>
+
+  <!-- 1: chambers with cells -->
+  <g class:list={['grow__g', on(1)]} data-step="1">
+    {chambers.map((cx) => (
+      <g transform={`translate(${cx} 40)`}>
+        <rect width="90" height="90" rx="20" fill="#FAF1EC" stroke="#4B57B8" stroke-width="1.25" />
+        {dots.map(([dx, dy]) => <circle cx={dx} cy={dy} r="6" fill="#DDB3A7" stroke="#4B57B8" stroke-width="0.75" />)}
+      </g>
+    ))}
+  </g>
+
+  <!-- 2: tubes and circulating medium -->
+  <g class:list={['grow__g', on(2)]} data-step="2" fill="none" stroke="#4B57B8">
+    <path d="M120 85 H140 M230 85 H250 M340 85 H360" stroke-width="1.25" />
+    <path class="grow__tube" d="M75 130 V184 H405 V130" stroke-width="1.25" />
+    <path class="grow__flow" d="M75 130 V184 H405 V130" stroke="#85484D" stroke-width="1.5" stroke-dasharray="4 10" stroke-linecap="round" />
+    <path d="M240 184 V236" stroke-width="1.25" />
+  </g>
+
+  <!-- 3: collection vessel -->
+  <g class:list={['grow__g', on(3)]} data-step="3">
+    <g clip-path={`url(#vessel-clip-${state})`}>
+      <rect class="grow__fill" x="170" y="292" width="140" height="120" fill={`url(#rose-${state})`} />
+    </g>
+    <rect x="170" y="236" width="140" height="170" rx="26" fill="none" stroke="#4B57B8" stroke-width="1.25" />
+    <path d="M186 292 H294" stroke="#4B57B8" stroke-width="0.75" stroke-dasharray="2 4" />
+  </g>
+
+  <!-- 4: profiling, a small bar chart and spark nodes -->
+  <g class:list={['grow__g', on(4)]} data-step="4">
+    <g transform="translate(350 300)">
+      <line x1="0" y1="100" x2="100" y2="100" stroke="#4B57B8" stroke-width="1" />
+      {bars.map((h, i) => <rect class="grow__bar" x={6 + i * 19} y={100 - h} width="11" height={h} rx="2" fill={i === 3 ? '#85484D' : '#EDCDC2'} stroke="#4B57B8" stroke-width="0.75" />)}
+    </g>
+    <g stroke="#4B57B8" stroke-width="0.75" stroke-dasharray="2 4">
+      {sparks.map(([sx, sy, ox, oy]) => <line x1={ox} y1={oy} x2={sx} y2={sy} />)}
+    </g>
+    {sparks.map(([sx, sy]) => (
+      <path transform={`translate(${sx - 9} ${sy - 9}) scale(0.18)`} d="M50 0 C55 35 65 45 100 50 C65 55 55 65 50 100 C45 65 35 55 0 50 C35 45 45 35 50 0Z" fill="#4B57B8" />
+    ))}
+  </g>
+</svg>
+
+<style>
+  .grow { width: 100%; height: auto; overflow: visible; }
+  .grow__g { transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+  .grow__g.is-off { opacity: 0; }
+  .grow__fill { transform-box: fill-box; transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s; }
+  .is-off .grow__fill { transform: translateY(100%); }
+  .grow__tube { stroke-dasharray: 600; stroke-dashoffset: 0; transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  .is-off .grow__tube { stroke-dashoffset: 600; }
+  .grow__bar { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+  .grow__bar:nth-child(3) { transition-delay: 0.08s; } .grow__bar:nth-child(4) { transition-delay: 0.16s; }
+  .grow__bar:nth-child(5) { transition-delay: 0.24s; } .grow__bar:nth-child(6) { transition-delay: 0.32s; }
+  .is-off .grow__bar { transform: scaleY(0); }
+  :global(.motion) .grow__flow { animation: grow-flow 1.6s linear infinite; }
+  @keyframes grow-flow { to { stroke-dashoffset: -28; } }
+</style>

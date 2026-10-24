@@ -1,0 +1,45 @@
+---
+import SplitReveal from './SplitReveal.astro';
+// The page's one Vespers section. A CSS starfield of 40 dots stands in for
+// the hero particles.
+const stars = Array.from({ length: 40 }, (_, i) => {
+  // Deterministic scatter so builds are stable
+  const a = Math.sin(i * 12.9898) * 43758.5453;
+  const b = Math.sin(i * 78.233) * 12543.2341;
+  return { x: ((a % 1) + 1) % 1 * 100, y: ((b % 1) + 1) % 1 * 100, s: 1 + (i % 3) };
+});
+---
+<section class="statement grain" aria-label="Statement">
+  <div class="statement__stars" aria-hidden="true">
+    {stars.map((s) => <span style={`left:${s.x.toFixed(2)}%;top:${s.y.toFixed(2)}%;width:${s.s}px;height:${s.s}px`}></span>)}
+  </div>
+  <div class="container statement__inner">
+    <SplitReveal as="p" class="display statement__text" text="Our cells keep the hardware to regenerate for life. We are switching the *software* back on." />
+    <span class="statement__rule" aria-hidden="true"></span>
+    <p class="label statement__names">DOMINIQUE DARVAS · JONAS AUFDERMAUER · ELOI CHOUVET</p>
+  </div>
+</section>
+
+<style>
+  .statement {
+    position: relative;
+    z-index: 1;
+    background: var(--grad-vespers);
+    background-color: var(--ink);
+    padding-block: clamp(120px, 16vw, 220px);
+    overflow: hidden;
+    text-align: center;
+  }
+  .statement.grain::after { filter: invert(1); opacity: 0.08; }
+  .statement__stars { position: absolute; inset: 0; }
+  .statement__stars span { position: absolute; border-radius: 50%; background: var(--paper); opacity: 0.3; }
+  .statement__inner { position: relative; z-index: 1; display: grid; justify-items: center; gap: 40px; }
+  .statement__text {
+    color: var(--paper);
+    font-size: clamp(2.25rem, 1.2rem + 3.6vw, var(--step-5));
+    line-height: 1.12;
+    max-width: 20ch;
+  }
+  .statement__rule { width: 96px; height: 6px; background: var(--grad-halo); border-radius: 3px; }
+  .statement__names { color: var(--paper); }
+</style>

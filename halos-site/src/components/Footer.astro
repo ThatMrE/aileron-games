@@ -1,0 +1,57 @@
+---
+import Logo from './Logo.astro';
+const { home = true } = Astro.props as { home?: boolean };
+const base = home ? '' : '/';
+---
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <Logo variant="stacked" href={home ? '#top' : '/'} />
+      <p class="italic-line footer__tag">Human in origin, free of donors.</p>
+    </div>
+    <nav class="footer__col" aria-label="Company">
+      <p class="label">Company</p>
+      <ul role="list">
+        <li><a href={base + '#science'}>Science</a></li>
+        <li><a href={base + '#platform'}>Platform</a></li>
+        <li><a href={base + '#team'}>Team</a></li>
+        <li><a href={base + '#notes'}>Notes</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <p class="label">Contact</p>
+      <ul role="list">
+        <li><a href="mailto:eloi@halos.bio">eloi@halos.bio</a></li>
+        <li><a href={base + '#partner'}>Partner with us</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <p class="label">Locations</p>
+      <p class="label footer__loc">SAN FRANCISCO · TOKYO</p>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p class="fine">R&amp;D stage. Information is exploratory and subject to change. Nothing here is medical advice, an offer of investment, or a promise of product availability.</p>
+    <p class="fine">© 2026 HALOS Biosciences, Inc.</p>
+  </div>
+</footer>
+
+<style>
+  .footer { position: relative; background: var(--paper); padding-block: 88px 40px; }
+  .footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--grad-halo); }
+  .footer__top { display: grid; gap: 48px; }
+  .footer__brand { display: grid; gap: 24px; justify-items: start; }
+  .footer__tag { font-size: 22px; }
+  .footer__col { display: grid; gap: 14px; align-content: start; }
+  .footer__col ul { display: grid; gap: 8px; }
+  .footer__col a { color: var(--ink); text-decoration: none; font-size: 16px; }
+  .footer__col a:hover { color: var(--halo-indigo); text-decoration: underline; }
+  .footer__loc { color: var(--ink); }
+  .footer__bottom { display: grid; gap: 12px; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--hairline); }
+  @media (min-width: 960px) {
+    .footer__top { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    .footer__bottom { grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
+    .footer__bottom .fine:first-child { max-width: 70ch; }
+  }
+</style>

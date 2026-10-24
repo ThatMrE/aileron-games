@@ -1,0 +1,58 @@
+/* HALOS brand tokens, from HALOS Brand Guidelines v1.1 (October 2026). Do not invent new colors. */
+:root {
+  /* Primary: identity */
+  --paper: #FFFFFF;            /* Paper White: 60% of every layout */
+  --ink: #16191E;              /* Ink: headings, labels. 17.6:1 on white */
+  --halo-periwinkle: #96B8FF;  /* logo and gradient only, never text (2.0:1) */
+  --halo-lilac: #BEA5FC;       /* gradient midpoint */
+  --halo-orchid: #E793FE;      /* logo and gradient only, never text (2.1:1) */
+
+  /* Secondary: plasma rose */
+  --shell-light: #FAF1EC;      /* standard card fill */
+  --shell: #F5E3D9;
+  --blush-rose: #EDCDC2;
+  --clay-rose: #DDB3A7;
+  --deep-plasma: #85484D;      /* "don't" labels, data highlights. 6.9:1 */
+
+  /* Text */
+  --ink-soft: #4A4D57;         /* all running text. 8.4:1 on white, 7.6:1 on shell-light */
+  --halo-indigo: #4B57B8;      /* eyebrows, links, "do". 6.3:1 on white */
+
+  /* Campaign layer only (not used on the homepage) */
+  --ivory: #FBF7EF;
+  --lavender: #DCD3EE;
+  --baby-blue: #CFE3F2;
+  --mint: #D6EEE3;
+  --aureate-gold: #C9A24B;     /* ornament only */
+  --campaign-gilt: #7E5F1A;    /* gold text */
+
+  /* Gradients */
+  --grad-halo: linear-gradient(90deg, #96B8FF 0%, #E793FE 100%);                    /* logo, rules, one accent per layout */
+  --grad-mist: linear-gradient(135deg, #DCE6FF 0%, #E9DEFF 50%, #F6DEFF 100%);      /* at most one field per page */
+  --grad-dawn: linear-gradient(180deg, #FFFFFF 0%, #F5E3D9 100%);
+  --grad-plasma: linear-gradient(135deg, #F5E3D9 0%, #DDB3A7 100%);
+  --grad-opal: linear-gradient(120deg, #CFE3F2 0%, #DCD3EE 22%, #F6DEFF 42%, #F5E3D9 62%, #D6EEE3 82%, #E9DEFF 100%);
+  --grad-vespers: radial-gradient(circle at 50% 40%, #85484D 0%, #16191E 75%);     /* the one dark section */
+
+  /* Lines */
+  --hairline: rgba(75, 87, 184, 0.16);   /* Halo Indigo at low alpha, for the grid frame */
+  --rule-rose: #DDB3A7;
+
+  /* Type */
+  --font-display: "Bodoni Moda", Georgia, serif;          /* weights 400, 500 + italics. Never 600+ */
+  --font-text: "Inter", "Helvetica Neue", sans-serif;     /* weights 300 to 800 */
+  --font-label: "Geist Mono", "IBM Plex Mono", ui-monospace, monospace; /* tiny tracked labels only */
+
+  /* Web type scale: perfect fourth (1.333) from an 18px body */
+  --step--1: 0.8125rem;  /* 13px eyebrow, uppercase, tracking 0.2em, Inter 600, Halo Indigo */
+  --step-0: 1.125rem;    /* 18px body, line-height 1.6, 45 to 75 characters */
+  --step-1: 1.5rem;      /* 24px */
+  --step-2: 2rem;        /* 32px H3, Inter 500 */
+  --step-3: 2.625rem;    /* 42px */
+  --step-4: 3.5rem;      /* 56px H2, Bodoni 400, line-height 1.15 */
+  --step-5: 4.6875rem;   /* 75px H1, Bodoni 400, line-height 1.1 */
+  --step-6: 6.25rem;     /* 100px display, Bodoni 400, line-height 1.1, tracking -1% */
+
+  --radius-card: 16px;
+  --radius-img: 12px;
+}
