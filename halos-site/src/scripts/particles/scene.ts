@@ -1,6 +1,8 @@
-// The hero's living object: ~6,000 soft particles that settle into the HALOS
+// The hero's living object: ~9,000 soft particles that settle into the HALOS
 // symbol, then morph ring → vial → wheel → drift as the hero scrolls.
 // All interpolation happens in the vertex shader from one uMorph value.
+// The cursor (or a finger) parts the particles where it passes and the object
+// tilts gently toward it.
 import {
   BufferAttribute,
   BufferGeometry,
@@ -26,6 +28,9 @@ const vertex = /* glsl */ `
   uniform float uTime;
   uniform float uPixelRatio;
   uniform float uScale;
+  uniform vec2 uPointer;   // cursor on the z = 0 plane, world units
+  uniform float uPull;     // 0 to 1, eased in while the cursor is near
+  uniform float uRadius;   // reach of the parting, world units
   varying vec3 vColor;
   varying float vAlpha;
 
@@ -47,9 +52,18 @@ const vertex = /* glsl */ `
     p *= 1.0 + 0.012 * sin(t * 1.1);
     p += 0.018 * vec3(sin(t * 0.7 + aSeed * 40.0), cos(t * 0.6 + aSeed * 31.0), sin(t * 0.5 + aSeed * 17.0));
 
-    vec4 mv = modelViewMatrix * vec4(p, 1.0);
-    gl_Position = projectionMatrix * mv;
-    gl_PointSize = aSize * uPixelRatio * uScale;
+    // Part around the cursor: push out with a slight swirl and lift toward the
+    // viewer, falling off smoothly with distance.
+    vec4 world = modelMatrix * vec4(p, 1.0);
+    vec2 d = world.xy - uPointer;
+    float dist = length(d);
+    float fall = exp(-(dist * dist) / (uRadius * uRadius)) * uPull;
+    vec2 dir = d / max(dist, 1e-4);
+    world.xy += (dir * 0.55 + vec2(-dir.y, dir.x) * 0.16) * fall * (0.7 + aSeed * 0.6);
+    world.z += fall * 0.25;
+
+    gl_Position = projectionMatrix * viewMatrix * world;
+    gl_PointSize = aSize * uPixelRatio * uScale * (1.0 + fall * 0.5);
     vColor = aColor;
     // Released particles fade out as the next section arrives.
     vAlpha = 1.0 - smoothstep(3.2, 4.0, uMorph);
@@ -118,6 +132,9 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
     uPixelRatio: { value: dpr },
     uScale: { value: 1 },
     uOpacity: { value: 1 },
+    uPointer: { value: [99, 99] as [number, number] },
+    uPull: { value: 0 },
+    uRadius: { value: 0.6 },
   };
   const material = new ShaderMaterial({
     vertexShader: vertex,
@@ -147,6 +164,29 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
   ro.observe(host);
   resize();
 
+  // Cursor or finger, as normalized device coordinates of this canvas.
+  let tx = 0;
+  let ty = 0;
+  let near = false;
+  let px = 0;
+  let py = 0;
+  const track = (cx: number, cy: number) => {
+    const r = canvas.getBoundingClientRect();
+    tx = ((cx - r.left) / r.width) * 2 - 1;
+    ty = -(((cy - r.top) / r.height) * 2 - 1);
+    // Respond a little beyond the canvas edge so the effect eases in.
+    near = Math.abs(tx) < 1.15 && Math.abs(ty) < 1.15;
+  };
+  const onMove = (e: PointerEvent) => { if (e.pointerType !== 'touch') track(e.clientX, e.clientY); };
+  const onTouch = (e: TouchEvent) => { const t = e.touches[0]; if (t) track(t.clientX, t.clientY); };
+  const onLeave = () => (near = false);
+  window.addEventListener('pointermove', onMove, { passive: true });
+  window.addEventListener('touchstart', onTouch, { passive: true });
+  window.addEventListener('touchmove', onTouch, { passive: true });
+  window.addEventListener('touchend', onLeave, { passive: true });
+  window.addEventListener('touchcancel', onLeave, { passive: true });
+  document.addEventListener('pointerleave', onLeave);
+
   // Intro: drift in from the cloud and settle into the ring.
   let intro = 0;
   let introStart = performance.now();
@@ -167,9 +207,18 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
     const eased = 1 - Math.pow(1 - intro, 3);
     uniforms.uMorph.value = forced ?? eased + progress() * 3.6;
     uniforms.uTime.value = t;
-    // Gentle rotation within ±8 degrees.
-    points.rotation.y = Math.sin(t * 0.35) * 0.14;
-    points.rotation.x = Math.sin(t * 0.23) * 0.05;
+    // Ease the pointer so the parting trails the cursor, then map it onto the
+    // z = 0 plane the object sits on.
+    px += (tx - px) * 0.12;
+    py += (ty - py) * 0.12;
+    const pull = uniforms.uPull;
+    pull.value += ((near ? 1 : 0) - pull.value) * 0.06;
+    const halfH = Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
+    uniforms.uPointer.value = [px * halfH * camera.aspect, py * halfH];
+    // Gentle rotation within ±8 degrees, leaning toward the cursor while it is near.
+    // Idle sway and lean together stay within 0.14 rad (8 degrees).
+    points.rotation.y = Math.sin(t * 0.35) * 0.07 + px * 0.07 * pull.value;
+    points.rotation.x = Math.sin(t * 0.23) * 0.04 - py * 0.05 * pull.value;
     renderer.render(scene, camera);
   };
   // Compile the shader off the main thread where the browser supports it,
@@ -185,6 +234,12 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
     setMorph(m) { forced = m; },
     destroy() {
       cancelAnimationFrame(raf);
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('touchstart', onTouch);
+      window.removeEventListener('touchmove', onTouch);
+      window.removeEventListener('touchend', onLeave);
+      window.removeEventListener('touchcancel', onLeave);
+      document.removeEventListener('pointerleave', onLeave);
       ro.disconnect();
       io.disconnect();
       geo.dispose();
