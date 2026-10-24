@@ -175,6 +175,26 @@ function heroPin() {
   });
 }
 
+function culnet() {
+  const fig = document.querySelector<HTMLElement>('[data-culnet]');
+  if (!fig) return;
+  // Loops run only while the figure is on screen.
+  new IntersectionObserver(([e]) => fig.classList.toggle('is-playing', e.isIntersecting)).observe(fig);
+  // Build in: vessels rise one by one, tubes draw in flow order, then the medium starts.
+  const vessels = fig.querySelectorAll('.cn__vessel');
+  const lines = fig.querySelectorAll('.cn__tube-line');
+  const beads = fig.querySelectorAll('.cn__bead');
+  const tissues = fig.querySelectorAll('.cn__tissues');
+  gsap.set(vessels, { opacity: 0, y: 24 });
+  gsap.set(lines, { strokeDasharray: 1, strokeDashoffset: 1 });
+  gsap.set([beads, tissues], { opacity: 0 });
+  gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 75%', once: true } })
+    .to(vessels, { opacity: 1, y: 0, duration: 0.9, ease: EASE, stagger: 0.12 })
+    .to(tissues, { opacity: 1, duration: 0.6 }, '-=0.4')
+    .to(lines, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', stagger: 0.08 }, '-=0.3')
+    .to(beads, { opacity: 1, duration: 0.6, stagger: 0.12 }, '-=0.4');
+}
+
 function fades() {
   ScrollTrigger.batch('[data-fade]', {
     start: 'top 88%',
@@ -192,6 +212,7 @@ if (root.classList.contains('motion')) {
   masks();
   windowCurve();
   stickySteps();
+  culnet();
   fades();
   root.classList.add('motion-ready');
   // Fonts and late images change layout; re-measure once things settle.

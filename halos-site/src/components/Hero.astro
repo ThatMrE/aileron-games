@@ -23,12 +23,10 @@ import ParticleHalo from './ParticleHalo.astro';
 </section>
 
 <script>
-  // Cursor sparkles: only with motion allowed, only on devices with a mouse
-  // (the cloud follows a cursor), and only after first paint.
+  // Sparkles: only with motion allowed, and only after first paint.
   const canvas = document.querySelector<HTMLCanvasElement>('[data-sparkles]');
   const hero = document.querySelector<HTMLElement>('[data-hero]');
-  const mouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (canvas && hero && mouse && document.documentElement.classList.contains('motion')) {
+  if (canvas && hero && document.documentElement.classList.contains('motion')) {
     const start = () => import('../scripts/sparkles').then(({ mountSparkles }) => mountSparkles(canvas, hero));
     const idle = (cb: () => void) => ('requestIdleCallback' in window ? requestIdleCallback(cb, { timeout: 1500 }) : setTimeout(cb, 200));
     if (document.readyState === 'complete') idle(start);

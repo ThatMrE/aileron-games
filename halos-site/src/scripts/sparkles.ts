@@ -1,6 +1,7 @@
 // Hero sparkles: a field of small twinkling particles that gather into a
-// cloud around the cursor and scatter again when it leaves (after the hover
-// "attract" field on halos.bio). A click adds a few at the cursor.
+// cloud around the cursor, or a finger on touch screens, and scatter again
+// when it leaves (after the hover "attract" field on halos.bio). A click or
+// tap adds a few.
 // Plain 2D canvas, no library.
 
 // Halo Indigo carries the cloud on white; the halo gradient colors add light.
@@ -10,7 +11,8 @@ const PALETTE: [string, number][] = [
   ['#BEA5FC', 0.24],
   ['#E793FE', 0.2],
 ];
-const DENSITY = 100;          // particles per 400 x 400 px
+const DENSITY = 100;          // particles per 400 x 400 px (desktop)
+const DENSITY_SMALL = 60;     // lighter on phones, where the hero is tall and CPUs slower
 const RADIUS = 250;           // attract distance, px
 const CORE = 42;              // cloud radius the particles settle into, px
 const PULL = 0.32;            // attract strength
@@ -27,6 +29,7 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
   let w = 0;
   let h = 0;
   let ps: P[] = [];
+  const density = () => (w < 640 ? DENSITY_SMALL : DENSITY);
   const groups: P[][] = Array.from({ length: PALETTE.length * ALPHA_BUCKETS }, () => []);
 
   const pickColor = () => {
@@ -55,27 +58,30 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const target = Math.round((w * h) / (400 * 400) * DENSITY);
+    const target = Math.round((w * h) / (400 * 400) * density());
     while (ps.length < target) ps.push(make());
     ps.length = Math.min(ps.length, target + 100);
   };
 
-  // Pointer, in canvas coordinates. Touch is ignored so it never fights scrolling.
+  // Pointer, in canvas coordinates. Touch uses passive touch events so it
+  // follows the finger without ever blocking scrolling.
   let px = -9999;
   let py = -9999;
   let inside = false;
-  const onMove = (e: PointerEvent) => {
-    if (e.pointerType === 'touch') return;
+  const track = (x: number, y: number) => {
     const rect = canvas.getBoundingClientRect();
-    px = e.clientX - rect.left;
-    py = e.clientY - rect.top;
+    px = x - rect.left;
+    py = y - rect.top;
     inside = px >= 0 && py >= 0 && px <= rect.width && py <= rect.height;
   };
+  const onMove = (e: PointerEvent) => { if (e.pointerType !== 'touch') track(e.clientX, e.clientY); };
+  const onTouch = (e: TouchEvent) => { const t = e.touches[0]; if (t) track(t.clientX, t.clientY); };
   const onLeave = () => (inside = false);
   const onClick = (e: PointerEvent) => {
-    if (!inside || e.pointerType === 'touch') return;
+    if (e.pointerType === 'touch') track(e.clientX, e.clientY);
+    if (!inside) return;
     for (let i = 0; i < 4; i++) ps.push(make(px + (Math.random() - 0.5) * 8, py + (Math.random() - 0.5) * 8));
-    const cap = Math.round((w * h) / (400 * 400) * DENSITY) + 100;
+    const cap = Math.round((w * h) / (400 * 400) * density()) + 100;
     if (ps.length > cap) ps.splice(0, ps.length - cap);
   };
 
@@ -143,6 +149,10 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
   ro.observe(area);
   window.addEventListener('pointermove', onMove, { passive: true });
   window.addEventListener('pointerdown', onClick, { passive: true });
+  window.addEventListener('touchstart', onTouch, { passive: true });
+  window.addEventListener('touchmove', onTouch, { passive: true });
+  window.addEventListener('touchend', onLeave, { passive: true });
+  window.addEventListener('touchcancel', onLeave, { passive: true });
   document.addEventListener('pointerleave', onLeave);
   raf = requestAnimationFrame(loop);
   canvas.classList.add('is-live');
@@ -153,6 +163,10 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
     ro.disconnect();
     window.removeEventListener('pointermove', onMove);
     window.removeEventListener('pointerdown', onClick);
+    window.removeEventListener('touchstart', onTouch);
+    window.removeEventListener('touchmove', onTouch);
+    window.removeEventListener('touchend', onLeave);
+    window.removeEventListener('touchcancel', onLeave);
     document.removeEventListener('pointerleave', onLeave);
   };
 }

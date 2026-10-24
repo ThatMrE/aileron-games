@@ -2,6 +2,7 @@
 import SectionFrame from './SectionFrame.astro';
 import SplitReveal from './SplitReveal.astro';
 import GrowDiagram from './GrowDiagram.astro';
+import CulNetFigure from './CulNetFigure.astro';
 
 const steps = [
   {
@@ -54,14 +55,7 @@ const steps = [
       </div>
     </div>
 
-    <figure class="culnet card" data-fade>
-      <img src="/figures/culnet-principle.webp" width="910" height="540" loading="lazy" decoding="async"
-        alt="Diagram of the CulNet principle: four culture vessels, each holding a different tissue, linked by tubing that carries one circulating medium." />
-      <figcaption class="figcap">
-        <span class="label">FIGURE 3</span>
-        <span class="italic-line">The CulNet principle. Illustration: IntegriCulture Inc.</span>
-      </figcaption>
-    </figure>
+    <CulNetFigure />
   </div>
 </section>
 
@@ -83,8 +77,6 @@ const steps = [
   .steps.is-live .step { opacity: 0.32; transition: opacity 0.6s var(--ease-out); }
   .steps.is-live .step.is-active { opacity: 1; }
 
-  .culnet { margin-top: clamp(72px, 8vw, 120px); max-width: 560px; padding: 20px; }
-  .culnet img { border-radius: var(--radius-img); width: 100%; }
 
   @media (min-width: 960px) {
     .steps__col { grid-column: 1 / span 5; }
