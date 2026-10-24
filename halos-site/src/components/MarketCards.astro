@@ -1,0 +1,109 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import MaskReveal from './MaskReveal.astro';
+import Img from './Img.astro';
+import Cite from './Cite.astro';
+
+const cards = [
+  { year: 'YEAR 2', title: 'Human cell and tissue culture', figure: '$2.4B → $6.9B', source: 'FBS market, 2025 → 2033', n: 12, tone: 'shell' },
+  { year: 'YEAR 3', title: 'Topicals for skin, hair and wound healing', figure: '$49B → $83B', source: 'Anti-aging cosmetics, 2025 → 2034', n: 13, tone: 'blush' },
+  { year: 'YEAR 5', title: 'Regenerative medicine, starting with neurodegeneration', figure: '$59B → $110B', source: 'Neurodegeneration, 2025 → 2034', n: 14, tone: 'clay' },
+  { year: 'YEAR 8', title: 'Systemic rejuvenation', figure: 'Uncapped', source: 'Elective healthspan extension', n: 0, tone: 'deep' },
+];
+---
+<section class="section products" id="products" aria-labelledby="products-title">
+  <SectionFrame label="05 / PRODUCTS" />
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">One plasma, four markets</p>
+      <SplitReveal id="products-title" text="A platform, released in *sequence*." />
+    </div>
+
+    <div class="band" data-band>
+      <div class="band__media">
+        <Img name="product-line" sizes="(min-width: 1440px) 1312px, 100vw"
+          alt="Illustrative render of a square bottle, a dropper bottle and a vial of pale rose liquid on a stone plinth in soft daylight." />
+      </div>
+      <span class="illus">Illustrative image</span>
+    </div>
+
+    <ul class="cards" role="list">
+      {cards.map((c) => (
+        <li class:list={['mcard', `mcard--${c.tone}`]}>
+          <span class="label mcard__year">{c.year}</span>
+          <h3>{c.title}</h3>
+          <p class="mcard__figure">{c.figure}</p>
+          <p class="mcard__src">{c.source}{c.n > 0 && <Cite n={c.n} />}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="fine products__note">Market sizes are third-party estimates. Timelines are targets, not commitments.</p>
+
+    <div class="grid pair">
+      <figure class="pair__item">
+        <MaskReveal shape="ring">
+          <Img name="dropper-halo" sizes="(min-width: 960px) 40vw, 90vw"
+            alt="Illustrative render of a glass dropper above a bottle of pale rose liquid, with a soft ring of light behind it." />
+        </MaskReveal>
+        <figcaption class="label">TOPICALS</figcaption>
+      </figure>
+      <figure class="pair__item">
+        <MaskReveal shape="arch" class="pair__macro">
+          <Img name="drop-macro" sizes="(min-width: 960px) 40vw, 90vw"
+            alt="Illustrative macro render of a pipette releasing a drop into a shallow dish of pale rose liquid." />
+        </MaskReveal>
+        <figcaption class="label">THE LIQUID ITSELF</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .band {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--shell-light);
+  }
+  .band__media { position: absolute; inset: 0; }
+  .band__media :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  @media (min-width: 960px) { .band { aspect-ratio: 21 / 9; } }
+
+  .cards { display: grid; gap: 16px; margin-top: 24px; }
+  .mcard {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 28px 24px 24px;
+    border-radius: var(--radius-card);
+    min-height: 300px;
+  }
+  .mcard h3 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.2; }
+  .mcard__figure { margin-top: auto; font-family: var(--font-display); font-style: italic; font-size: clamp(1.75rem, 1.4rem + 0.8vw, 2.25rem); line-height: 1.1; color: var(--ink); white-space: nowrap; }
+  .mcard__src { font-size: 14px; }
+  .mcard--shell { background: var(--shell); }
+  .mcard--blush { background: var(--blush-rose); }
+  .mcard--clay { background: var(--clay-rose); }
+  .mcard--clay .mcard__src, .mcard--clay .label, .mcard--blush .label, .mcard--blush .mcard__src { color: var(--ink); }
+  .mcard--deep { background: var(--deep-plasma); color: var(--paper); }
+  .mcard--deep h3, .mcard--deep .mcard__figure, .mcard--deep .label { color: var(--paper); }
+  .products__note { margin-top: 18px; }
+
+  .pair { margin-top: clamp(72px, 8vw, 128px); row-gap: 56px; align-items: end; }
+  .pair__item { grid-column: 1 / -1; display: grid; gap: 16px; justify-items: center; }
+  .pair__item :global(.mask) { width: min(100%, 440px); }
+  .pair__item :global(.pair__macro img) { object-position: 74% 50%; }
+
+  @media (min-width: 640px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 960px) {
+    .pair__item:first-child { grid-column: 1 / span 6; }
+    .pair__item:last-child { grid-column: 7 / span 6; }
+  }
+  @media (min-width: 1280px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>

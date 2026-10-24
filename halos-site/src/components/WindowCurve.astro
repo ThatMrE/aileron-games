@@ -1,0 +1,77 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import Cite from './Cite.astro';
+
+// Abstract curve only: week markers on an axis, no anatomical drawing.
+// x maps week 0..40 onto 60..760 in an 800 x 360 viewBox.
+const x = (w: number) => 60 + w * 17.5;
+const pct = (w: number) => `${(x(w) / 800) * 100}%`;
+const curve = `M60,292 C140,292 180,290 ${x(8)},282 C260,250 300,74 ${x(17)},64 C${x(20) - 10},58 ${x(21)},120 ${x(24)},262 C${x(26)},288 600,291 760,292`;
+---
+<section class="section window" aria-labelledby="window-title">
+  <SectionFrame label="02 / WINDOW" />
+  <div class="container grid window__grid">
+    <div class="window__copy">
+      <p class="eyebrow">The window</p>
+      <SplitReveal id="window-title" text="Our biology builds a body only *once*." />
+      <p>Between roughly 8 and 24 weeks of gestation, human plasma carries the most potent regenerative profile known in human biology: scarless healing, immune tolerance, rapid organ formation and stem cell expansion, all at full capacity. By about 24 weeks the body switches to a maintenance program, and skin loses its ability to heal without scarring.<Cite n={2} /></p>
+    </div>
+
+    <figure class="window__fig" data-curve>
+      <div class="window__plot">
+        <svg viewBox="0 0 800 360" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="curve-grad" x1="60" y1="0" x2="760" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0.15" stop-color="#96B8FF" />
+              <stop offset="0.6" stop-color="#E793FE" />
+            </linearGradient>
+            <linearGradient id="window-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#CFE3F2" />
+              <stop offset="0.35" stop-color="#DCD3EE" />
+              <stop offset="0.65" stop-color="#F6DEFF" />
+              <stop offset="1" stop-color="#F5E3D9" />
+            </linearGradient>
+            <clipPath id="window-clip"><rect x={x(8)} y="0" width={x(24) - x(8)} height="300" /></clipPath>
+          </defs>
+          <g clip-path="url(#window-clip)">
+            <path class="window__area" d={`${curve} L760,300 L60,300 Z`} fill="url(#window-fill)" />
+          </g>
+          <line x1="60" y1="300" x2="760" y2="300" stroke="#16191E" stroke-opacity="0.35" stroke-width="1" vector-effect="non-scaling-stroke" />
+          {[8, 24, 40].map((w) => (
+            <line x1={x(w)} y1="300" x2={x(w)} y2="308" stroke="#16191E" stroke-opacity="0.5" vector-effect="non-scaling-stroke" />
+          ))}
+          <line class="window__scar" x1={x(24)} y1="24" x2={x(24)} y2="300" stroke="#4B57B8" stroke-width="1.25" stroke-dasharray="5 6" vector-effect="non-scaling-stroke" />
+          <path class="window__curve" d={curve} fill="none" stroke="url(#curve-grad)" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" />
+        </svg>
+        <span class="label window__tag" style="left:0;top:0">SCIENTIFIC FIGURE</span>
+        <span class="label window__tag window__tag--scar" style={`left:${pct(24)};top:4%`}>SCAR TRANSITION</span>
+        <span class="label window__tag window__tag--window" style={`left:${pct(16)};top:64%`}>THE WINDOW</span>
+        {[8, 24, 40].map((w) => (
+          <span class="label window__tick" style={`left:${pct(w)}`}>{`WK ${w}`}</span>
+        ))}
+      </div>
+      <figcaption class="visually-hidden">Scientific figure: an abstract curve of regenerative signaling across 40 weeks of gestation. It rises from week 8, peaks around weeks 16 to 20 and falls by week 24, the scar transition. The span from week 8 to 24 is marked as the window.</figcaption>
+    </figure>
+
+    <p class="italic-line window__close">Fetal plasma cannot be sourced ethically or at scale from donors. So we grow it.</p>
+  </div>
+</section>
+
+<style>
+  .window__grid { row-gap: 56px; align-items: center; }
+  .window__copy { grid-column: 1 / -1; display: grid; gap: 24px; max-width: 560px; }
+  .window__fig { grid-column: 1 / -1; }
+  .window__plot { position: relative; aspect-ratio: 800 / 360; margin-bottom: 28px; }
+  .window__plot svg { width: 100%; height: 100%; }
+  .window__tag { position: absolute; white-space: nowrap; font-size: 10px; }
+  .window__tag--scar { transform: translateX(10px); color: var(--halo-indigo); }
+  .window__tag--window { transform: translateX(-50%); color: var(--ink); }
+  .window__tick { position: absolute; top: calc(100% * 312 / 360); transform: translateX(-50%); font-size: 10px; white-space: nowrap; }
+  .window__close { grid-column: 1 / -1; font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); line-height: 1.35; max-width: 34ch; }
+  @media (min-width: 960px) {
+    .window__copy { grid-column: 1 / span 5; }
+    .window__fig { grid-column: 6 / span 7; }
+    .window__close { grid-column: 6 / span 7; }
+  }
+</style>

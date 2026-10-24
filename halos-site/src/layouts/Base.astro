@@ -1,0 +1,70 @@
+---
+import '@fontsource/inter/latin-300.css';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-800.css';
+import '@fontsource/bodoni-moda/latin-400.css';
+import '@fontsource/bodoni-moda/latin-400-italic.css';
+import '@fontsource/bodoni-moda/latin-500.css';
+import '@fontsource/geist-mono/latin-400.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props { title?: string; description?: string; home?: boolean }
+const {
+  title = 'HALOS | Lab-grown human fetal plasma',
+  description = 'HALOS grows lab-grown human fetal plasma: human in origin, free of donors. The most regenerative biochemical environment known in human biology, engineered at scale.',
+  home = true,
+} = Astro.props;
+const site = Astro.site!.toString().replace(/\/$/, '');
+const url = new URL(Astro.url.pathname, Astro.site).toString();
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'HALOS Biosciences, Inc.',
+  url: site,
+  logo: `${site}/brand/halos-symbol.svg`,
+  email: 'eloi@halos.bio',
+};
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HALOS" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={`${site}/og.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The HALOS symbol and the words Lab-grown human fetal plasma beside a vial of pale rose liquid." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}/og.jpg`} />
+    <script type="application/ld+json" set:html={JSON.stringify(org)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="frame" aria-hidden="true"><div class="frame__inner"></div></div>
+    <Nav home={home} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer home={home} />
+  </body>
+</html>

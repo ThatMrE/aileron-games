@@ -1,0 +1,37 @@
+---
+// Opens a section: a full-width hairline, two "+" crosshairs at the frame
+// columns, and a small mono label at the left.
+interface Props { label?: string }
+const { label } = Astro.props;
+---
+<div class="sline" data-sline aria-hidden="true">
+  <div class="sline__rule"></div>
+  <div class="container sline__inner">
+    <span class="sline__plus sline__plus--l"></span>
+    <span class="sline__plus sline__plus--r"></span>
+    {label && <span class="label sline__label">{label}</span>}
+  </div>
+</div>
+
+<style>
+  .sline { position: absolute; top: 0; left: 0; right: 0; height: 0; }
+  .sline__rule {
+    position: absolute; left: 0; right: 0; top: 0;
+    border-top: 1px solid var(--hairline);
+    transform-origin: left center;
+  }
+  .sline__inner { position: relative; height: 0; }
+  .sline__plus {
+    position: absolute; top: 0; width: 12px; height: 12px;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+  }
+  .sline__plus::before, .sline__plus::after {
+    content: ""; position: absolute; background: var(--halo-indigo);
+  }
+  .sline__plus::before { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+  .sline__plus::after { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+  .sline__plus--l { left: calc(var(--pad) - var(--gutter) / 2); }
+  .sline__plus--r { left: calc(100% - var(--pad) + var(--gutter) / 2); }
+  .sline__label { position: absolute; top: 14px; left: var(--pad); }
+</style>

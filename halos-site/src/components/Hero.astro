@@ -1,0 +1,67 @@
+---
+import SplitReveal from './SplitReveal.astro';
+import ParticleHalo from './ParticleHalo.astro';
+---
+<section class="hero grain" id="top" aria-labelledby="hero-title" data-hero>
+  <div class="hero__bloom" aria-hidden="true"></div>
+  <div class="container grid hero__grid">
+    <div class="hero__object">
+      <ParticleHalo />
+    </div>
+    <div class="hero__copy">
+      <p class="label hero__eyebrow">LAB-GROWN · HUMAN IN ORIGIN · FREE OF DONORS</p>
+      <SplitReveal as="h1" id="hero-title" class="hero__title" text="Lab-grown human fetal plasma, engineered at *scale*." />
+      <p class="lede hero__lede">The most regenerative biochemical environment known in human biology, grown from human cells for cell culture, skin and regenerative medicine.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#waitlist">Join the waitlist</a>
+        <a class="btn btn--ghost" href="#partner">Partner with us</a>
+      </div>
+      <p class="fine hero__fine">R&amp;D stage. Information is exploratory and subject to change. Nothing here is medical advice, an offer of investment, or a promise of product availability.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 56px;
+    overflow: hidden;
+  }
+  .hero__bloom {
+    position: absolute;
+    width: min(1100px, 140vw);
+    aspect-ratio: 1;
+    right: -30%;
+    top: -10%;
+    border-radius: 50%;
+    background: var(--grad-opal);
+    background-size: 300% 300%;
+    opacity: 0.4;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .hero__grid { position: relative; z-index: 1; row-gap: 8px; align-items: center; }
+  .hero__object { grid-column: 1 / -1; height: 55svh; min-height: 300px; }
+  .hero__copy { grid-column: 1 / -1; display: grid; gap: 22px; }
+  .hero__eyebrow { color: var(--halo-indigo); }
+  .hero__title {
+    font-size: clamp(2.75rem, 1.6rem + 4.6vw, var(--step-5));
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    max-width: 14ch;
+  }
+  .hero__lede { max-width: 560px; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+  .hero__fine { max-width: 500px; margin-top: 4px; }
+
+  @media (min-width: 960px) {
+    .hero { padding-top: 120px; }
+    .hero__copy { grid-column: 1 / span 6; grid-row: 1; }
+    .hero__object { grid-column: 7 / span 6; grid-row: 1; height: min(78svh, 720px); }
+    .hero__bloom { right: -12%; top: 50%; transform: translateY(-50%); }
+  }
+</style>

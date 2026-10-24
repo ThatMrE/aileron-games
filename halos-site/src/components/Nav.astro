@@ -1,0 +1,199 @@
+---
+import Logo from './Logo.astro';
+import Spark from './Spark.astro';
+
+// Ordered to match the page, so the active marker moves downward as you scroll.
+const links = [
+  { href: '#platform', label: 'Platform' },
+  { href: '#science', label: 'Science' },
+  { href: '#products', label: 'Products' },
+  { href: '#team', label: 'Team' },
+  { href: '#notes', label: 'Notes' },
+];
+const { home = true } = Astro.props as { home?: boolean };
+const base = home ? '' : '/';
+---
+<header class="nav" data-nav>
+  <div class="nav__pill">
+    <Logo href={home ? '#top' : '/'} />
+    <nav class="nav__links" aria-label="Primary">
+      <ul role="list">
+        {links.map((l) => (
+          <li><a href={base + l.href} data-navlink={l.href.slice(1)}><Spark class="nav__spark" size={9} />{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <p class="label nav__clocks" aria-label="Local time in Tokyo and San Francisco">
+        <span>TOKYO <time data-clock="Asia/Tokyo">--:--</time></span>
+        <span aria-hidden="true">·</span>
+        <span>SF <time data-clock="America/Los_Angeles">--:--</time></span>
+      </p>
+      <a class="btn btn--primary nav__cta" href={base + '#waitlist'}>Join the waitlist</a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="menu-sheet" data-menu-open>Menu</button>
+    </div>
+  </div>
+</header>
+
+<div class="sheet" id="menu-sheet" hidden data-sheet>
+  <div class="sheet__top">
+    <Logo href={home ? '#top' : '/'} />
+    <button class="nav__menu" type="button" data-menu-close>Close</button>
+  </div>
+  <nav aria-label="Menu">
+    <ul role="list" class="sheet__links">
+      {links.map((l) => <li><a href={base + l.href} data-sheet-link>{l.label}</a></li>)}
+      <li><a href={base + '#waitlist'} data-sheet-link>Join the waitlist</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  // Live clocks
+  const fmt = (tz: string) => new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz });
+  const clocks = [...document.querySelectorAll<HTMLTimeElement>('[data-clock]')].map((el) => ({ el, f: fmt(el.dataset.clock!) }));
+  const tick = () => clocks.forEach(({ el, f }) => (el.textContent = f.format(new Date())));
+  tick();
+  setInterval(tick, 15000);
+
+  // Shrink after 80px
+  const nav = document.querySelector<HTMLElement>('[data-nav]')!;
+  const onScroll = () => nav.classList.toggle('is-compact', window.scrollY > 80);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Active section marker
+  const links = new Map(
+    [...document.querySelectorAll<HTMLAnchorElement>('[data-navlink]')].map((a) => [a.dataset.navlink!, a]),
+  );
+  const sections = [...links.keys()].map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+  if (sections.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          links.forEach((a) => a.removeAttribute('aria-current'));
+          links.get(e.target.id)?.setAttribute('aria-current', 'true');
+        }
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+
+  // Mobile sheet
+  const sheet = document.querySelector<HTMLElement>('[data-sheet]')!;
+  const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]')!;
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-menu-close]')!;
+  const setOpen = (open: boolean) => {
+    sheet.hidden = !open;
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.documentElement.classList.toggle('menu-open', open);
+    (open ? closeBtn : openBtn).focus();
+  };
+  openBtn.addEventListener('click', () => setOpen(true));
+  closeBtn.addEventListener('click', () => setOpen(false));
+  sheet.querySelectorAll('[data-sheet-link]').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !sheet.hidden) setOpen(false); });
+</script>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding-inline: 12px;
+    pointer-events: none;
+  }
+  .nav__pill {
+    pointer-events: auto;
+    max-width: 1180px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px 10px 10px 20px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    box-shadow: 0 8px 32px rgba(75, 87, 184, 0.08);
+    transition: padding 0.5s var(--ease-out), max-width 0.5s var(--ease-out);
+  }
+  .nav__links { display: none; }
+  .nav__links ul { display: flex; gap: 28px; }
+  .nav__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav__links a:hover { color: var(--halo-indigo); }
+  .nav__links :global(.nav__spark) {
+    width: 0;
+    opacity: 0;
+    transform: rotate(-45deg);
+    transition: width 0.4s var(--ease-out), opacity 0.4s var(--ease-out), transform 0.6s var(--ease-out);
+  }
+  .nav__links a[aria-current] :global(.nav__spark) { width: 9px; opacity: 1; transform: rotate(0deg); }
+  .nav__right { display: flex; align-items: center; gap: 18px; }
+  .nav__clocks {
+    display: none;
+    gap: 8px;
+    white-space: nowrap;
+    transition: opacity 0.3s var(--ease-out);
+  }
+  .nav__cta { display: none; min-height: 40px; padding: 8px 18px; font-size: 14px; }
+  .nav__menu {
+    min-height: 40px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(22, 25, 30, 0.22);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  @media (min-width: 960px) {
+    .nav { top: 16px; padding-inline: 24px; }
+    .nav__links, .nav__cta { display: block; }
+    .nav__menu { display: none; }
+  }
+  @media (min-width: 1280px) {
+    .nav__clocks { display: inline-flex; }
+    .nav.is-compact .nav__clocks { display: none; }
+  }
+  .nav.is-compact .nav__pill { padding: 6px 6px 6px 18px; max-width: 980px; }
+
+  .sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: var(--paper);
+    padding: 22px 24px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    overflow-y: auto;
+  }
+  .sheet[hidden] { display: none; }
+  .sheet__top { display: flex; justify-content: space-between; align-items: center; }
+  .sheet__links { display: grid; gap: 14px; }
+  .sheet__links a {
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 1.2;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  :global(html.menu-open) { overflow: hidden; }
+</style>

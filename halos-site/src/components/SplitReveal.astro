@@ -1,0 +1,37 @@
+---
+// Renders a heading with each word in its own span so it can resolve from blur.
+// Mark the one italic word with *asterisks*. Optional `highlight` phrases are
+// colored Halo Indigo. Words are never split into letters, and nothing is
+// hidden from assistive tech.
+interface Props {
+  text: string;
+  as?: 'h1' | 'h2' | 'h3' | 'p';
+  class?: string;
+  highlight?: string[];
+  id?: string;
+}
+const { text, as: Tag = 'h2', class: cls, highlight = [], id } = Astro.props;
+
+const clean = (s: string) => s.replace(/[*.,:;!?]/g, '').toLowerCase();
+const tokens = text.split(/\s+/).map((raw) => {
+  const m = raw.match(/^([^*]*)\*([^*]+)\*(.*)$/);
+  return m
+    ? { pre: m[1], word: m[2], post: m[3], italic: true, hl: false }
+    : { pre: '', word: raw, post: '', italic: false, hl: false };
+});
+for (const phrase of highlight) {
+  const words = phrase.toLowerCase().split(/\s+/);
+  for (let i = 0; i + words.length <= tokens.length; i++) {
+    if (words.every((w, j) => clean(tokens[i + j].word) === w)) {
+      for (let j = 0; j < words.length; j++) tokens[i + j].hl = true;
+    }
+  }
+}
+---
+<Tag class:list={['split', cls]} id={id} data-split>
+  {tokens.map((t, i) => (
+    <>{t.italic
+      ? <span class:list={['w', { hl: t.hl }]}>{t.pre}<em class="w-i">{t.word}</em>{t.post}</span>
+      : <span class:list={['w', { hl: t.hl }]}>{t.word}</span>}{i < tokens.length - 1 && ' '}</>
+  ))}
+</Tag>

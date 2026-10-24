@@ -1,0 +1,21 @@
+---
+// Two lockups from the brand guidelines: "nav" (symbol beside the wordmark)
+// and "stacked" (symbol above a widely tracked wordmark).
+interface Props { variant?: 'nav' | 'stacked'; href?: string }
+const { variant = 'nav', href = '/' } = Astro.props;
+---
+<a href={href} class:list={['logo', `logo--${variant}`]} aria-label="HALOS, back to top">
+  <img src="/brand/halos-symbol.svg" alt="" width="186" height="228" class="logo__mark" />
+  <span class="logo__word" aria-hidden="true">HALOS</span>
+</a>
+
+<style>
+  .logo { display: inline-flex; align-items: center; color: var(--ink); text-decoration: none; }
+  /* The symbol file carries its own clear space (viewBox padding), so no extra margin is added. */
+  .logo--nav { gap: 10px; }
+  .logo--nav .logo__mark { height: 28px; width: auto; }
+  .logo--nav .logo__word { font-family: var(--font-text); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; line-height: 1; }
+  .logo--stacked { flex-direction: column; gap: 14px; }
+  .logo--stacked .logo__mark { height: 44px; width: auto; }
+  .logo--stacked .logo__word { font-family: var(--font-text); font-weight: 500; font-size: 15px; letter-spacing: 0.42em; margin-right: -0.42em; line-height: 1; }
+</style>

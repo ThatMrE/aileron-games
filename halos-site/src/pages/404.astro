@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import SplitReveal from '../components/SplitReveal.astro';
+---
+<Base title="Page not found | HALOS" description="This page could not be found." home={false}>
+  <section class="lost">
+    <div class="lost__glow" aria-hidden="true"></div>
+    <img class="lost__mark" src="/brand/halos-symbol.svg" alt="" width="186" height="228" />
+    <SplitReveal as="h1" text="This page has *drifted*." />
+    <a class="btn btn--primary" href="/">Back to home</a>
+  </section>
+</Base>
+
+<style>
+  .lost { position: relative; min-height: 100svh; display: grid; place-content: center; justify-items: center; gap: 36px; padding: 120px 24px; text-align: center; overflow: hidden; }
+  .lost__glow { position: absolute; width: min(720px, 120vw); aspect-ratio: 1; left: 50%; top: 45%; transform: translate(-50%, -50%); border-radius: 50%; background: var(--grad-opal); opacity: 0.4; filter: blur(70px); }
+  .lost__mark { position: relative; width: 96px; height: auto; }
+  .lost :global(h1) { position: relative; font-size: clamp(2.75rem, 2rem + 3vw, var(--step-5)); line-height: 1.1; }
+  .lost .btn { position: relative; }
+</style>

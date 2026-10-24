@@ -1,0 +1,51 @@
+---
+import SectionFrame from './SectionFrame.astro';
+import SplitReveal from './SplitReveal.astro';
+import MaskReveal from './MaskReveal.astro';
+import Cite from './Cite.astro';
+---
+<section class="section problem" aria-labelledby="problem-title">
+  <SectionFrame label="01 / PROBLEM" />
+  <div class="container">
+    <p class="eyebrow" id="problem-title">The problem</p>
+    <SplitReveal
+      as="p"
+      class="display problem__statement"
+      text="Aging has *twelve* hallmarks, and one upstream layer connects them all: the signals carried in our plasma."
+      highlight={['twelve hallmarks', 'one upstream layer']}
+    />
+    <div class="grid problem__cols">
+      <div class="problem__text">
+        <p>Aging is defined by at least twelve hallmarks, from genomic instability to stem cell exhaustion and chronic inflammation.<Cite n={1} /> Going after one with a single molecule does not solve the larger problem.</p>
+        <p>As we age, the regenerative signals in our plasma fade and are replaced by maintenance and inflammatory signals. Our cells keep the hardware to regenerate. What changes is the software running on it.</p>
+      </div>
+      <figure class="problem__fig">
+        <MaskReveal shape="ring" class="problem__ring">
+          <img src="/figures/hallmarks-wheel.webp" width="1328" height="1328" loading="lazy" decoding="async"
+            alt="Circular diagram titled Signaling environment: the twelve hallmarks of aging, grouped as primary, antagonistic and integrative, around figures spanning the human lifespan." />
+        </MaskReveal>
+        <figcaption class="figcap">
+          <span class="label">FIGURE 1</span>
+          <span class="italic-line">The signaling environment surrounds all twelve hallmarks of aging. Adapted from López-Otín et al., 2023.<Cite n={1} /></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .eyebrow { margin-bottom: 28px; }
+  .problem__statement {
+    font-size: clamp(2.125rem, 1.3rem + 2.8vw, var(--step-4));
+    line-height: 1.15;
+    max-width: 22ch;
+    letter-spacing: -0.005em;
+  }
+  .problem__cols { margin-top: clamp(56px, 7vw, 112px); row-gap: 56px; align-items: center; }
+  .problem__text { grid-column: 1 / -1; display: grid; gap: 22px; max-width: 560px; }
+  .problem__fig { grid-column: 1 / -1; max-width: 520px; width: 100%; justify-self: center; }
+  @media (min-width: 960px) {
+    .problem__text { grid-column: 1 / span 5; }
+    .problem__fig { grid-column: 7 / span 6; justify-self: end; }
+  }
+</style>

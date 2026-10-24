@@ -1,0 +1,8 @@
+---
+// Superscript citation(s) linking to the Notes list.
+interface Props { n: number | number[] }
+const list = ([] as number[]).concat(Astro.props.n);
+---
+<sup class="cite">{list.map((n, i) => (
+  <><a href={`#note-${n}`} aria-label={`Note ${n}`}>{n}</a>{i < list.length - 1 && ','}</>
+))}</sup>
