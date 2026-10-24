@@ -222,7 +222,10 @@ html.lenis, html.lenis body { height: auto; }
   animation-delay: calc(0.15s + var(--wi, 0) * 0.06s);
 }
 @keyframes word-in { to { opacity: 1; filter: blur(0); transform: none; } }
-.motion [data-split-scrub] .w { opacity: 0.16; filter: none; transform: none; }
+/* Once played, keep the hero words put: re-parenting (the pin) or a resize
+   would otherwise restart the animation from hidden. */
+.motion.hero-in .hero [data-split] .w { animation: none; opacity: 1; filter: none; transform: none; }
+.motion [data-split-scrub] .w { opacity: 0; filter: none; transform: none; }
 /* Safety net: if the motion script never runs, show everything. */
 .motion.motion-failed [data-split] .w { opacity: 1; filter: none; transform: none; }
 
@@ -231,9 +234,13 @@ html.lenis, html.lenis body { height: auto; }
 .motion [data-sline] .sline__plus,
 .motion [data-sline] .sline__label { opacity: 0; }
 
-/* Opal shimmer: hero glow and the one opal card */
+/* Opal shimmer: hero glow and the one opal card. The large blurred glows
+   drift by rotating (compositor only, no repaint); the small card shifts
+   its background position. */
 @keyframes opal-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@keyframes opal-turn { from { rotate: -24deg; } to { rotate: 24deg; } }
 .motion .opal-shimmer { animation: opal-drift 20s ease-in-out infinite alternate; }
+.motion .opal-shimmer--turn { animation: opal-turn 20s ease-in-out infinite alternate; will-change: rotate; }
 
 /* Generic fade-up */
 .motion [data-fade] { opacity: 0; transform: translateY(16px); }

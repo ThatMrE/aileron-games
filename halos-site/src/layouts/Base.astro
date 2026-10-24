@@ -10,6 +10,10 @@ import '@fontsource/bodoni-moda/latin-500.css';
 import '@fontsource/geist-mono/latin-400.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
+// Preload the faces used above the fold (same hashed files the CSS uses).
+import bodoni400 from '@fontsource/bodoni-moda/files/bodoni-moda-latin-400-normal.woff2?url';
+import inter300 from '@fontsource/inter/files/inter-latin-300-normal.woff2?url';
+import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
@@ -19,6 +23,9 @@ const {
   description = 'HALOS grows lab-grown human fetal plasma: human in origin, free of donors. The most regenerative biochemical environment known in human biology, engineered at scale.',
   home = true,
 } = Astro.props;
+// The preview is always noindex. HALOS_INDEX=1 builds an indexable copy only to
+// measure the Lighthouse SEO score without the deliberate noindex penalty.
+const indexable = process.env.HALOS_INDEX === '1';
 const site = Astro.site!.toString().replace(/\/$/, '');
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 const org = {
@@ -37,8 +44,9 @@ const org = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex, nofollow" />
+    {!indexable && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={url} />
+    {[bodoni400, inter300, inter400].map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />

@@ -87,6 +87,8 @@ const cards = [
   .mcard--blush { background: var(--blush-rose); }
   .mcard--clay { background: var(--clay-rose); }
   .mcard--clay .mcard__src, .mcard--clay .label, .mcard--blush .label, .mcard--blush .mcard__src { color: var(--ink); }
+  /* Halo Indigo fails contrast on the rose fills, so card citations use Ink. */
+  .mcard :global(.cite a) { color: var(--ink); text-decoration: underline; text-underline-offset: 0.15em; }
   .mcard--deep { background: var(--deep-plasma); color: var(--paper); }
   .mcard--deep h3, .mcard--deep .mcard__figure, .mcard--deep .label { color: var(--paper); }
   .products__note { margin-top: 18px; }

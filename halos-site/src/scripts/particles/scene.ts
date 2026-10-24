@@ -73,8 +73,17 @@ export interface Halo { destroy(): void; setMorph(m: number | null): void }
 export function mountHalo(host: HTMLElement, progress: () => number): Halo | null {
   let renderer: WebGLRenderer;
   try {
-    renderer = new WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'low-power' });
+    renderer = new WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'low-power', failIfMajorPerformanceCaveat: true });
   } catch {
+    return null;
+  }
+  // Software WebGL (no usable GPU) would stall the page for seconds; keep the
+  // static ring instead.
+  const gl = renderer.getContext();
+  const info = gl.getExtension('WEBGL_debug_renderer_info');
+  const name = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+  if (/swiftshader|llvmpipe|softpipe|software/i.test(name)) {
+    renderer.dispose();
     return null;
   }
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -140,7 +149,8 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
 
   // Intro: drift in from the cloud and settle into the ring.
   let intro = 0;
-  const introStart = performance.now();
+  let introStart = performance.now();
+  const introStartAt = (t: number) => (introStart = t);
   let forced: number | null = null;
 
   let visible = true;
@@ -148,7 +158,7 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
   io.observe(host);
 
   let raf = 0;
-  const t0 = performance.now();
+  let t0 = performance.now();
   const frame = (now: number) => {
     raf = requestAnimationFrame(frame);
     if (!visible || document.hidden) return;
@@ -162,8 +172,14 @@ export function mountHalo(host: HTMLElement, progress: () => number): Halo | nul
     points.rotation.x = Math.sin(t * 0.23) * 0.05;
     renderer.render(scene, camera);
   };
-  raf = requestAnimationFrame(frame);
-  host.classList.add('is-live');
+  // Compile the shader off the main thread where the browser supports it,
+  // then start the intro.
+  renderer.compileAsync(scene, camera).catch(() => {}).finally(() => {
+    t0 = performance.now();
+    introStartAt(t0);
+    raf = requestAnimationFrame(frame);
+    host.classList.add('is-live');
+  });
 
   return {
     setMorph(m) { forced = m; },

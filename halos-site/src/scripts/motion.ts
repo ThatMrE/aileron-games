@@ -34,7 +34,10 @@ function initLenis() {
 function headings() {
   // Hero H1: CSS keyframes, staggered by index with the italic word last.
   document.querySelectorAll('.hero [data-split]').forEach((h) => {
-    words(h).forEach((w, i) => w.style.setProperty('--wi', String(i)));
+    const ws = words(h);
+    ws.forEach((w, i) => w.style.setProperty('--wi', String(i)));
+    // Matches the CSS: 0.15s delay + 0.06s per word + 1s duration.
+    setTimeout(() => root.classList.add('hero-in'), (0.15 + ws.length * 0.06 + 1) * 1000);
   });
 
   document.querySelectorAll<HTMLElement>('[data-split]').forEach((h) => {
@@ -42,7 +45,7 @@ function headings() {
     const ws = words(h);
     if (h.hasAttribute('data-split-scrub')) {
       // A reading reveal follows the sentence in order.
-      gsap.to(h.querySelectorAll('.w'), {
+      gsap.fromTo(h.querySelectorAll('.w'), { opacity: 0 }, {
         opacity: 1,
         stagger: 0.12,
         ease: 'none',

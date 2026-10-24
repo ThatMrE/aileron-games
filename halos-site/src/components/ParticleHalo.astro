@@ -3,7 +3,7 @@
 // reduced-motion state; the three.js scene mounts over it once it loads.
 ---
 <div class="halo" data-halo aria-hidden="true">
-  <div class="halo__glow opal-shimmer"></div>
+  <div class="halo__glow opal-shimmer--turn"></div>
   <svg class="halo__static" viewBox="-40 -30 266 300" focusable="false">
     <defs>
       <linearGradient id="halo-static-grad" x1="0" y1="0" x2="186" y2="0" gradientUnits="userSpaceOnUse">
@@ -21,8 +21,22 @@
   // WebGL works. Otherwise the static ring stays.
   const host = document.querySelector<HTMLElement>('[data-halo]');
   const allowed = document.documentElement.classList.contains('motion');
+  // Check for real GPU rendering before downloading three.js at all. Software
+  // WebGL (SwiftShader, llvmpipe) would stall the page for seconds.
+  const hasGpu = () => {
+    try {
+      const gl = document.createElement('canvas').getContext('webgl', { failIfMajorPerformanceCaveat: true });
+      if (!gl) return false;
+      const info = gl.getExtension('WEBGL_debug_renderer_info');
+      const name = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '';
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      return !/swiftshader|llvmpipe|softpipe|software/i.test(name);
+    } catch {
+      return false;
+    }
+  };
   const start = () => {
-    if (!host) return;
+    if (!host || !hasGpu()) return;
     import('../scripts/particles/scene').then(({ mountHalo }) => {
       const halo = mountHalo(host, () => window.__halosHero?.progress ?? 0);
       if (halo) (window as unknown as { __halo: typeof halo }).__halo = halo;
