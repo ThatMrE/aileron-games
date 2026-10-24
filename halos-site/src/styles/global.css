@@ -205,3 +205,35 @@ main, footer { position: relative; z-index: 1; }
   font-weight: 500;
 }
 .skip:focus { top: 16px; }
+
+/* ---------- Motion ----------
+   html.motion is set before first paint only when motion is allowed, so
+   without JS or with reduced motion everything is simply visible. */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Blur-to-sharp words. The hero H1 runs on CSS straight away (no wait for
+   GSAP) so the largest paint is not held back. */
+.motion [data-split] .w { display: inline-block; opacity: 0; filter: blur(12px); transform: translateY(12px); will-change: opacity, filter, transform; }
+.motion .hero [data-split] .w {
+  animation: word-in 1s var(--ease-out) forwards;
+  animation-delay: calc(0.15s + var(--wi, 0) * 0.06s);
+}
+@keyframes word-in { to { opacity: 1; filter: blur(0); transform: none; } }
+.motion [data-split-scrub] .w { opacity: 0.16; filter: none; transform: none; }
+/* Safety net: if the motion script never runs, show everything. */
+.motion.motion-failed [data-split] .w { opacity: 1; filter: none; transform: none; }
+
+/* Section lines draw in */
+.motion [data-sline] .sline__rule { transform: scaleX(0); }
+.motion [data-sline] .sline__plus,
+.motion [data-sline] .sline__label { opacity: 0; }
+
+/* Opal shimmer: hero glow and the one opal card */
+@keyframes opal-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+.motion .opal-shimmer { animation: opal-drift 20s ease-in-out infinite alternate; }
+
+/* Generic fade-up */
+.motion [data-fade] { opacity: 0; transform: translateY(16px); }

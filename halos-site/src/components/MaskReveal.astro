@@ -1,10 +1,10 @@
 ---
 // Wraps an image in a ring or arch mask. The motion layer animates
 // clip-path and the image scale; without it the mask is simply open.
-interface Props { shape: 'ring' | 'arch'; class?: string; ratio?: string }
-const { shape, class: cls, ratio } = Astro.props;
+interface Props { shape: 'ring' | 'arch'; class?: string; ratio?: string; spin?: boolean }
+const { shape, class: cls, ratio, spin } = Astro.props;
 ---
-<div class:list={['mask', `mask--${shape}`, cls]} data-mask={shape} style={ratio ? `aspect-ratio:${ratio}` : undefined}>
+<div class:list={['mask', `mask--${shape}`, cls]} data-mask={shape} data-mask-spin={spin ? '' : undefined} style={ratio ? `aspect-ratio:${ratio}` : undefined}>
   <div class="mask__media"><slot /></div>
   <slot name="overlay" />
 </div>

@@ -35,7 +35,7 @@ const advisors = [
 
     <ul class="founders" role="list">
       {founders.map((f) => (
-        <li class="founder">
+        <li class="founder" data-fade>
           <div class="halo-portrait">
             <img src={`/team/${f.img}.webp`} width="480" height="480" loading="lazy" decoding="async" alt={`Portrait of ${f.name}`} />
           </div>
@@ -49,7 +49,7 @@ const advisors = [
     <h3 class="label advisors__title">Advisors</h3>
     <ul class="advisors" role="list">
       {advisors.map((a) => (
-        <li class="advisor">
+        <li class="advisor" data-fade>
           <img src={`/team/${a.img}.webp`} width="480" height="480" loading="lazy" decoding="async" alt={`Portrait of ${a.name}`} />
           <div>
             <p class="advisor__name">{a.name}</p>

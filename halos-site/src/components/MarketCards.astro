@@ -30,7 +30,7 @@ const cards = [
 
     <ul class="cards" role="list">
       {cards.map((c) => (
-        <li class:list={['mcard', `mcard--${c.tone}`]}>
+        <li class:list={['mcard', `mcard--${c.tone}`]} data-fade>
           <span class="label mcard__year">{c.year}</span>
           <h3>{c.title}</h3>
           <p class="mcard__figure">{c.figure}</p>

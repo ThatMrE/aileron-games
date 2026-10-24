@@ -57,6 +57,15 @@ const org = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${site}/og.jpg`} />
     <script type="application/ld+json" set:html={JSON.stringify(org)} />
+    <script is:inline>
+      // Motion only when allowed. If the motion script has not started in 4s,
+      // reveal everything rather than leave words hidden.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var r = document.documentElement;
+        r.classList.add('motion');
+        setTimeout(function () { if (!r.classList.contains('motion-ready')) r.classList.add('motion-failed'); }, 4000);
+      }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -66,5 +75,6 @@ const org = {
       <slot />
     </main>
     <Footer home={home} />
+    <script>import '../scripts/motion';</script>
   </body>
 </html>

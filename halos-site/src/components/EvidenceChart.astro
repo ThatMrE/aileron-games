@@ -49,7 +49,7 @@ const tiers = [
 
     <ol class="tiers" role="list">
       {tiers.map((t, i) => (
-        <li class="tier" style={`--i:${i}`} data-tier>
+        <li class="tier" style={`--i:${i}`} data-tier data-fade>
           <div class="tier__head">
             <div class="tier__title"><Spark size={14} /><h3>{t.title}</h3></div>
             <span class="label tier__dates">{t.dates}</span>

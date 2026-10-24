@@ -9,8 +9,10 @@ interface Props {
   class?: string;
   highlight?: string[];
   id?: string;
+  /** Reveal word by word tied to scroll position instead of on entry. */
+  scrub?: boolean;
 }
-const { text, as: Tag = 'h2', class: cls, highlight = [], id } = Astro.props;
+const { text, as: Tag = 'h2', class: cls, highlight = [], id, scrub = false } = Astro.props;
 
 const clean = (s: string) => s.replace(/[*.,:;!?]/g, '').toLowerCase();
 const tokens = text.split(/\s+/).map((raw) => {
@@ -28,7 +30,7 @@ for (const phrase of highlight) {
   }
 }
 ---
-<Tag class:list={['split', cls]} id={id} data-split>
+<Tag class:list={['split', cls]} id={id} data-split data-split-scrub={scrub ? '' : undefined}>
   {tokens.map((t, i) => (
     <>{t.italic
       ? <span class:list={['w', { hl: t.hl }]}>{t.pre}<em class="w-i">{t.word}</em>{t.post}</span>

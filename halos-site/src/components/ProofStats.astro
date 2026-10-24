@@ -18,13 +18,13 @@ const stats = [
     </div>
     <ul class="stats" role="list">
       {stats.map((s) => (
-        <li class="stat">
+        <li class="stat" data-fade>
           <span class="stat__n" data-count={s.n}>{s.n}</span>
           <span class="stat__label">{s.label}</span>
         </li>
       ))}
     </ul>
-    <p class="strip card">
+    <p class="strip card" data-fade>
       <Spark size={16} />
       <span>Winner, startup pitch competition, International Longevity Summit Madrid 2026 · CRRATE Capital Readiness Award</span>
     </p>
