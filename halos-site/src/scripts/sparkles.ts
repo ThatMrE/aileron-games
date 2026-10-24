@@ -12,9 +12,11 @@ const PALETTE: [string, number][] = [
   ['#E793FE', 0.2],
 ];
 const DENSITY = 100;          // particles per 400 x 400 px (desktop)
-const DENSITY_SMALL = 60;     // lighter on phones, where the hero is tall and CPUs slower
-const RADIUS = 250;           // attract distance, px
-const CORE = 42;              // cloud radius the particles settle into, px
+const DENSITY_SMALL = 75;     // lighter on phones, where the hero is tall and CPUs slower
+const RADIUS = 250;           // attract distance, px (desktop)
+const CORE = 42;              // cloud radius the particles settle into, px (desktop)
+const RADIUS_SMALL = 340;     // phones: reach further and hold a bigger cloud,
+const CORE_SMALL = 80;        // so it reads under a fingertip
 const PULL = 0.32;            // attract strength
 const SWIRL = 0.05;           // sideways drift inside the cloud
 const DAMPING = 0.9;          // velocity kept per frame while attracted
@@ -30,6 +32,8 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
   let h = 0;
   let ps: P[] = [];
   const density = () => (w < 640 ? DENSITY_SMALL : DENSITY);
+  let reach = RADIUS;
+  let coreR = CORE;
   const groups: P[][] = Array.from({ length: PALETTE.length * ALPHA_BUCKETS }, () => []);
 
   const pickColor = () => {
@@ -44,7 +48,7 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
       x, y,
       vx: Math.cos(a) * s, vy: Math.sin(a) * s,
       bx: Math.cos(a) * s, by: Math.sin(a) * s,
-      r: 0.4 + Math.random() * 2,          // 0.4 to 2.4 px
+      r: (0.4 + Math.random() * 2) * (w < 640 ? 1.3 : 1), // 0.4 to 2.4 px; a touch larger on phones
       c: pickColor(),
       ph: Math.random() * Math.PI * 2,
       tw: 0.6 + Math.random() * 1.2,        // twinkle speed
@@ -58,6 +62,8 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    reach = w < 640 ? RADIUS_SMALL : RADIUS;
+    coreR = w < 640 ? CORE_SMALL : CORE;
     const target = Math.round((w * h) / (400 * 400) * density());
     while (ps.length < target) ps.push(make());
     ps.length = Math.min(ps.length, target + 100);
@@ -91,12 +97,12 @@ export function mountSparkles(canvas: HTMLCanvasElement, area: HTMLElement) {
         const dx = px - p.x;
         const dy = py - p.y;
         const d = Math.hypot(dx, dy) || 1;
-        if (d < RADIUS) {
+        if (d < reach) {
           // Outside the core: pulled in, weaker toward the edge. Inside: only a
           // faint pull, a slow swirl and more jitter, so they fill a cloud
           // instead of piling up on its rim.
-          const core = d < CORE;
-          const f = core ? PULL * 0.08 : PULL * (1 - d / RADIUS);
+          const core = d < coreR;
+          const f = core ? PULL * 0.08 : PULL * (1 - d / reach);
           const jitter = core ? 0.7 : 0.25;
           const ux = dx / d;
           const uy = dy / d;
